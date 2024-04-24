@@ -1,0 +1,171 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/64297/missing-ways-while-using-osmconvert-clip">missing ways while using osmconvert clip</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/64297/up/" id="post-64297-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-64297-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/64297/down/" id="post-64297-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/64297/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am using osmconvert to clip countries/regions from the planet.osm.pbf file. My end goal is creating a multimodal transport network, using (mostly) osm data. Mainly for academic purposes. To speed up this creation process, I am splitting up the planet file into countries/regions to create this network parallel. Recently, I have started to realize that I am missing quite some ways in the extracted/clipped files. </p>
+<p>For example, openstreetmap.org shows a near complete and connected railway system for tanzania. In my extracted osm.pbf for tanzania (either using a bbox or a .poly file), I am missing quite some railway segments. The same issue is the case for the download.geofabrik.de extracts (at least in the case for Tanzania, where I started to realize this issue).</p>
+<p>Perhaps good to emphasize: I am <strong>not</strong> missing these segments around the borders (this is ofcourse already addressed in the osmconvert wiki), it is really in the middle of the bbox/.poly file.</p>
+<p>The osmconvert code I am using is:</p>
+<pre><code>osmconvert64 planet-latest.osm.pbf -B=tanzania.poly --complete-ways -o=tanzania.osm.pbf'
+</code></pre>
+<p>Did anyone have this problem with osmconvert before? And more importantly, found a solution to the problem?</p>
+<p>Thanks! </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osmconvert" href="/tags/osmconvert/" rel="tag" title="see questions tagged 'osmconvert'">osmconvert</a>
+<a class="post-tag tag-link-clip" href="/tags/clip/" rel="tag" title="see questions tagged 'clip'">clip</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Jun '18, 09:04</strong>
+</p>
+<img alt="ElcoK's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f56afcd82ff07e180554c51c4e7aec41?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15276/elcok">ElcoK</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ElcoK has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/64297/">
+                edited
+                <strong>21 Jun '18, 09:24</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-64297">
+<a name="64298"></a>
+<div class="comment" id="comment-64298">
+<div class="comment-score" id="post-64298-score"></div>
+<div class="comment-text"><p>Without knowing exactly what you're doing it may be difficult for people to comment.  Could you provide a bit more detail and some examples?</p></div>
+<div class="comment-info" id="comment-64298-info">
+<span class="comment-age">(21 Jun '18, 09:17)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="64299"></a>
+<div class="comment" id="comment-64299">
+<div class="comment-score" id="post-64299-score"></div>
+<div class="comment-text"><p>If you are saying that the Geofabrik download for Tanzania is missing data, I would be interested in a way ID so I can check.</p></div>
+<div class="comment-info" id="comment-64299-info">
+<span class="comment-age">(21 Jun '18, 09:37)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="64300"></a>
+<div class="comment" id="comment-64300">
+<div class="comment-score" id="post-64300-score"></div>
+<div class="comment-text"><p>Hi Frederik,</p>
+<p>One example is Way: 396139210</p>
+<p>At least, I don't see it in the file I've downloaded today (and yesterday) from geofabrik. It use to be there, and it is also on openstreetmap.org</p>
+<p>If you open the lines from tanzania-latest.osm.pbf in QGIS and overlay this with the openstreetmap, you'll see that (for instance in Dar Es Salaam) also many roads are missing.</p></div>
+<div class="comment-info" id="comment-64300-info">
+<span class="comment-age">(21 Jun '18, 09:43)</span>
+<a class="comment-user userinfo" href="/users/15276/elcok">ElcoK</a>
+</div>
+</div>
+<a name="64301"></a>
+<div class="comment" id="comment-64301">
+<div class="comment-score" id="post-64301-score"></div>
+<div class="comment-text"><p>Must be an issue with QGIS then, since the way is definitely present in tanzania-latest.osm.pbf. Perhaps whatever logic QGIS applies is stumped by the fact that your way is part of relation 1183489 which is (at the time of writing with v99 being current) erroneously tagged as highway=residential?</p></div>
+<div class="comment-info" id="comment-64301-info">
+<span class="comment-age">(21 Jun '18, 10:41)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="64303"></a>
+<div class="comment not_top_scorer" id="comment-64303">
+<div class="comment-score" id="post-64303-score"></div>
+<div class="comment-text"><p>I've narrowed down the problem now. The reason why my confusion started was because some part of the railway in TZA (not the way I mentioned above) was missing (this is apparently deleted by someone, even though it is still there). </p>
+<p>So the problem is not in the osmconvert clip (which is good to know!), but apparently something goes wrong in the ogr2ogr drivers when trying to directly load in the data (either through python directly or QGIS, as they were missing the quite often the same elements). </p>
+<p>After extracting all line features from the pbf file by using the following code in python, I miss quite a lot of segments.</p>
+<pre><code>driver=ogr.GetDriverByName('OSM')
+data = ogr.Open('C://planet_osm//tanzania-latest.osm.pbf')
+layer = data.GetLayer('lines')
+
+features=[x for x in layer]
+
+for feature in features:
+    if feature.GetField('railway') is not None:
+        osm_id = feature.GetField('osm_id')
+</code></pre></div>
+<div class="comment-info" id="comment-64303-info">
+<span class="comment-age">(21 Jun '18, 11:21)</span>
+<a class="comment-user userinfo" href="/users/15276/elcok">ElcoK</a>
+</div>
+</div>
+<a name="64309"></a>
+<div class="comment not_top_scorer" id="comment-64309">
+<div class="comment-score" id="post-64309-score"></div>
+<div class="comment-text"><p>My default ogr2ogr osm =&gt; geojson places railway in other tags for lines. It may be worth checking say against geojson for the same feature using overpass-turbo.</p></div>
+<div class="comment-info" id="comment-64309-info">
+<span class="comment-age">(21 Jun '18, 17:12)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="64317"></a>
+<div class="comment" id="comment-64317">
+<div class="comment-score" id="post-64317-score">1</div>
+<div class="comment-text"><p>Hmm interesting point. As this is now turning into a osgeo/gdal question (why different results between ogr2ogr command line and python import), I will post that question at stackoverflow. Thanks for the help!</p></div>
+<div class="comment-info" id="comment-64317-info">
+<span class="comment-age">(22 Jun '18, 08:21)</span>
+<a class="comment-user userinfo" href="/users/15276/elcok">ElcoK</a>
+</div>
+</div>
+<a name="64318"></a>
+<div class="comment not_top_scorer" id="comment-64318">
+<div class="comment-score" id="post-64318-score"></div>
+<div class="comment-text"><p>... which is this one, just for reference: <a href="https://gis.stackexchange.com/questions/287193/different-results-ogr2ogr-command-line-vs-osgeo-import-ogr-with-reading-osm-data">https://gis.stackexchange.com/questions/287193/different-results-ogr2ogr-command-line-vs-osgeo-import-ogr-with-reading-osm-data</a></p></div>
+<div class="comment-info" id="comment-64318-info">
+<span class="comment-age">(22 Jun '18, 10:14)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-64297">
+<span class="comments-showing">
+            showing 5 of 8
+        </span>
+<a class="show-all-comments-link" href="#">show 3 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-64297-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/64297/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="hhZCC3phm2xHhAZkDxBvoSJeig2yDq5K"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,229 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/73178/freaking-mapnik-error-renderd-no-datasource-for-type-postgis">freaking mapnik! (error renderd, no datasource for type: 'postgis' )</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/73178/up/" id="post-73178-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-73178-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/73178/down/" id="post-73178-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/73178/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Recently I was assigned with a task of setting up a portable offline OSM tile server. 
+So naturally I went there: </p>
+<p><code><a href="https://switch2osm.org/serving-tiles/manually-building-a-tile-server-18-04-lts/">https://switch2osm.org/serving-tiles/manually-building-a-tile-server-18-04-lts/</a></code></p>
+<p>And tried to follow all the instructions on a virtual machine. (a VDI image with Ubuntu 19.10)
+And there I had soooooo much PAIN trying to install this freaking Mapnik thing! 
+Literally I'm going to f*cking hate this name for god knows how long...but that's not the point. 
+The point is that after I managed to install it using "pip", everything went smoothly until I tried to execute </p>
+<pre><code>renderd -f -c /usr/local/etc/renderd.conf
+</code></pre>
+<p>There I got in trouble once again as the following errors popped:</p>
+<pre><code>renderd[15908]: An error occurred while loading the map layer 'ajt': Could not create datasource for type: 'postgis' (no datasource plugin directories have been successfully registered)  encountered during parsing of layer 'landcover-low-zoom' in Layer of '/home/osboxes/src/openstreetmap-carto/mapnik.xml'
+</code></pre>
+<p>After some searching I found this topic:</p>
+<pre><code><a href="https://github.com/mapnik/node-mapnik/issues/311">https://github.com/mapnik/node-mapnik/issues/311</a>
+</code></pre>
+<p>which hinted that I should </p>
+<pre><code>`Try calling mapnik.register_default_input_plugins(); at the top of your script.`
+</code></pre>
+<p>But where in the hell should I put this line I don't understand!
+I have no script. I suppose I have to launch python and somehow run it there but I haven't figured out how to do this. I could have gone and tried learning python to figure this out, sure, but this thing is taking too much time already and I don't think it should. </p>
+<p>So I thought maybe somebody could help me out with this. </p>
+<p>ALthough I anticipate a sh#tstorm coming my way about how incompetent I am and how I should go read the f<em>cking manual (which one, god damn it!).
+I definitely could have chosen words more carefully but f</em>ck this, I am so sick of this cr@p. This freaking mapnik! Why does it have to take so much attention on itself!</p>
+<p>P.S. I had to install postgres 11 because my packet manager didn't see version 10. 
+And when I was compiling a "mode_tile" module I commented out whe whole "gen_tile_test.cpp" because it failed to find guess what...A FREAKING <code>#include &lt;mapnik/box2d.hpp&gt;</code>!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-renderd" href="/tags/renderd/" rel="tag" title="see questions tagged 'renderd'">renderd</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Feb '20, 13:27</strong>
+</p>
+<img alt="kartman1's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7d9dea8db6c9981b45d28f28bb29f49d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17942/kartman1">kartman1</a><br/>
+<span class="score" title="38 reputation points">38</span><span title="6 badges"><span class="badge1">●</span><span class="badgecount">6</span></span><span title="7 badges"><span class="silver">●</span><span class="badgecount">7</span></span><span title="11 badges"><span class="bronze">●</span><span class="badgecount">11</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="kartman1 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/73178/">
+                edited
+                <strong>21 Feb '20, 13:31</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-73178">
+<a name="73179"></a>
+<div class="comment" id="comment-73179">
+<div class="comment-score" id="post-73179-score">3</div>
+<div class="comment-text"><p>This forum is for questions which can be answered, not rants about your software installation experience. I note that you were installing on an entirely different version of the Operating System rather than 18.04 LTS: it is only to be expected that some things may have changed.</p></div>
+<div class="comment-info" id="comment-73179-info">
+<span class="comment-age">(21 Feb '20, 13:34)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="73180"></a>
+<div class="comment" id="comment-73180">
+<div class="comment-score" id="post-73180-score"></div>
+<div class="comment-text"><p>Ok, my bad, I ll go and try this with 18.04=(
+although it's strange that fundamentally most things worked as expected and yet they didn't</p></div>
+<div class="comment-info" id="comment-73180-info">
+<span class="comment-age">(21 Feb '20, 13:44)</span>
+<a class="comment-user userinfo" href="/users/17942/kartman1">kartman1</a>
+</div>
+</div>
+<a name="73181"></a>
+<div class="comment" id="comment-73181">
+<div class="comment-score" id="post-73181-score">2</div>
+<div class="comment-text"><p>This is not strange at all. Your error message seems to point at Mapnik's PostGIS plugin not being found, likely because it has not been installed (sometimes, between distributions, packages are split up in several parts and where you only needed to install one in version A you now need to install three in version B) or because it resides in a different directory than anticipated. Your swearing is inappropriate, even more so as you already suspected, when writing your message, that you might be criticised for it!</p></div>
+<div class="comment-info" id="comment-73181-info">
+<span class="comment-age">(21 Feb '20, 14:13)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-73178">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-73178-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/73178/freaking-mapnik-error-renderd-no-datasource-for-type-postgis?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/73178/freaking-mapnik-error-renderd-no-datasource-for-type-postgis?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/73178/freaking-mapnik-error-renderd-no-datasource-for-type-postgis?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/73178/freaking-mapnik-error-renderd-no-datasource-for-type-postgis?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="73182"></a>
+<div class="answer accepted-answer" id="answer-container-73182">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/73182/up/" id="post-73182-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-73182-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/73182/down/" id="post-73182-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/73182/" rel="nofollow" title="kartman1 has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Perhaps this paragraph</p>
+<pre><code>Note that these instructions are have been written and tested against a newly-installed Ubuntu 18.04 server. If you have got other versions of some software already installed (perhaps you upgraded from an earlier Ubuntu version, or you set up some PPAs to load from) then you may need to make some adjustments
+</code></pre>
+<p>overdoes the "British reserve" somewhat (disclaimer - I wrote it).  Maybe it should say "depending on where you are starting from, you may be in a whole world of pain".</p>
+<p>It doesn't surprise me that you've had issues with Ubuntu 19.  My experience with earlier Ubuntu interim releases haven't always been positive - I get the feeling that Ubuntu uses them to "throw functionality at the wall and see what sticks", which you probably don't want to be dealing with if you want a server to be around for more than a few months.</p>
+<p>There's a new LTS version out this year, and I expect that we'll update the switch2osm guides once we've got something that works.  Ubuntu 18.04 LTS is due to be receive regular support through <a href="https://ubuntu.com/about/release-cycle">2023</a> though, so there's no hurry.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/73182/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+<div class="community-wiki">
+        This answer is marked "community wiki".
+        
+    </div>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Feb '20, 14:14</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/73182/">
+                edited
+                <strong>22 Feb '20, 10:33</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-73182">
+<a name="73184"></a>
+<div class="comment" id="comment-73184">
+<div class="comment-score" id="post-73184-score">1</div>
+<div class="comment-text"><p>Yeah it worked on Ubuntu 18.04.3 Bionic Beaver (64bit).
+Although there was an error in a "sudo apt install npm nodejs" line:
+npm didn't want to install because one of its dependencies was broken.
+Luckly though there was a topic just on that matter (<a href="https://askubuntu.com/questions/1088662/npm-depends-node-gyp-0-10-9-but-it-is-not-going-to-be-installed)">https://askubuntu.com/questions/1088662/npm-depends-node-gyp-0-10-9-but-it-is-not-going-to-be-installed)</a> 
+So I did "sudo apt-get install nodejs-dev node-gyp libssl1.0-dev" and it all worked. 
+Although I had  "default-libmysqlclient-dev libgdal-dev libmapnik-dev libmysqlclient-dev libssl-dev" removed in the process.
+I really hope that "libmapnik-dev" is not going to backfire...
+Thanks!</p></div>
+<div class="comment-info" id="comment-73184-info">
+<span class="comment-age">(21 Feb '20, 15:08)</span>
+<a class="comment-user userinfo" href="/users/17942/kartman1">kartman1</a>
+</div>
+</div>
+<a name="73185"></a>
+<div class="comment" id="comment-73185">
+<div class="comment-score" id="post-73185-score">1</div>
+<div class="comment-text"><p>You can test whether the lack of libmapnik-dev will cause a problem by building some other software that might need it locally (but not doing a "make install" or similar).</p>
+<p>"node" changes every 5 mins - maybe we need to revisit that bit of the instructions.  They're in github, so you can make a pull request there. There's one other postgres version oddity as an issue already, I think.</p></div>
+<div class="comment-info" id="comment-73185-info">
+<span class="comment-age">(21 Feb '20, 16:52)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-73182">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-73182-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/73178/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="rxx73yVTb2T08GWtQXSsEWIbM32oVZ0P"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

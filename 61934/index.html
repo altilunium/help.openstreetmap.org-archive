@@ -1,0 +1,99 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/61934/filtering-locations-by-layers">Filtering Locations by Layers</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/61934/up/" id="post-61934-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-61934-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/61934/down/" id="post-61934-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/61934/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi all,</p>
+<p>I would like to filter locations in a map with regard of multiple values. With "Filtering" I mean to blend out layers / locations which are not of interest. For instance, I want to find all places in my map which have a size of 21-50sqm AND can host 51-100 people. </p>
+<p>My desired structure of layers looks like this:</p>
+<p><strong>1. Size</strong></p>
+<p><strong>1.1</strong> 1-20 sqm <em>(disabled)</em></p>
+<p><strong>1.2</strong> 21-50 sqm <em>(visible)</em></p>
+<p><strong>1.3</strong> 51-100 sqm <em>(disabled)</em></p>
+<p><strong>2. Capacity</strong></p>
+<p><strong>2.1</strong> 10-50 people <em>(disabled)</em></p>
+<p><strong>2.2</strong> 51-100 people <em>(visible)</em></p>
+<p><strong>2.3</strong> 101-200 <em>(disabled)</em></p>
+<p>I have found a tool which can solve this issue but doesn't support other features that I will need. Nevertheless, I want to share it with you to express better my need: <a href="https://www.geosheets.com/map/s:L5J0wAYM/real-estate-analysis">https://www.geosheets.com/map/s:L5J0wAYM/real-estate-analysis</a></p>
+<p>Can you help me, how I could realise this with OSM + uMAP?</p>
+<p>Thanks a lot,
+Anne</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-filter" href="/tags/filter/" rel="tag" title="see questions tagged 'filter'">filter</a>
+<a class="post-tag tag-link-layers" href="/tags/layers/" rel="tag" title="see questions tagged 'layers'">layers</a>
+<a class="post-tag tag-link-sublayers" href="/tags/sublayers/" rel="tag" title="see questions tagged 'sublayers'">sublayers</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>02 Feb '18, 16:25</strong>
+</p>
+<img alt="aboenemann's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/75dae34fb2138a92113aec8084ca8720?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14707/aboenemann">aboenemann</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="aboenemann has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-61934">
+<a name="61936"></a>
+<div class="comment" id="comment-61936">
+<div class="comment-score" id="post-61936-score">2</div>
+<div class="comment-text"><p>Can you clarify what you mean when you say "find all places"? What do you define as a place in this context? Restaurants? Residential buildings? Any building that has been mapped? Capacity could be difficult, because this isn't something that's typically recorded for most POIs.</p></div>
+<div class="comment-info" id="comment-61936-info">
+<span class="comment-age">(02 Feb '18, 16:38)</span>
+<a class="comment-user userinfo" href="/users/8189/alester">alester</a>
+</div>
+</div>
+<a name="61942"></a>
+<div class="comment" id="comment-61942">
+<div class="comment-score" id="post-61942-score"></div>
+<div class="comment-text"><p>Let's say, I have 100 places. Only 20 of these 100 have a size of 21-50sqm. And 15 of these 20 have a capacity of 51-100 people. The overlap of places which have as well a size of 21-50sqm and a capacity of 51-100 is 15. Consequently, I want to "find all these 15 places".</p>
+<p>It is not important of which type these places are. They are place marks that I set myself. Also the Capacity is a value that I add myself.</p></div>
+<div class="comment-info" id="comment-61942-info">
+<span class="comment-age">(03 Feb '18, 09:45)</span>
+<a class="comment-user userinfo" href="/users/14707/aboenemann">aboenemann</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-61934">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-61934-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/61934/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="6VmSuJg49omoh290avru8FJ9CLc5eW0n"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,150 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/56411/find-overlapping-part-about-line-and-polygon">Find overlapping part about line and polygon</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/56411/up/" id="post-56411-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-56411-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/56411/down/" id="post-56411-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/56411/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm try to find Singapore MRT line in a range like below:</p>
+<pre><code>[out:json][timeout:100];(node(around:1000,1.284249, 103.844004)["name"~"Downtown Line MRT"];way(around:1000,1.284249, 103.844004)["name"~"Downtown Line MRT"];);out body;._;&gt;;out skel qt;
+</code></pre>
+<p>(around:1000,1.284249, 103.844004) is a circle polygon and Downtown Line MRT is a line.
+How can I get the overlapping part only(red line in picture)? The query result will partially out of circle.</p>
+<p><img alt="alt text" src="https://help.openstreetmap.org/upfiles/Noname.jpg"/></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-mrt" href="/tags/mrt/" rel="tag" title="see questions tagged 'mrt'">mrt</a>
+<a class="post-tag tag-link-line" href="/tags/line/" rel="tag" title="see questions tagged 'line'">line</a>
+<a class="post-tag tag-link-polygon" href="/tags/polygon/" rel="tag" title="see questions tagged 'polygon'">polygon</a>
+<a class="post-tag tag-link-overpass-ql" href="/tags/overpass-ql/" rel="tag" title="see questions tagged 'overpass-ql'">overpass-ql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>02 Jun '17, 03:37</strong>
+</p>
+<img alt="ob9619's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/adb24ae063869f3b1c62e61672cf087b?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/13728/ob9619">ob9619</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ob9619 has no accepted answers">0%</span>
+</p>
+</img></div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/56411/">
+                edited
+                <strong>02 Jun '17, 04:25</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-56411">
+</div>
+<div class="comment-tools" id="comment-tools-56411">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-56411-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/56411/find-overlapping-part-about-line-and-polygon?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/56411/find-overlapping-part-about-line-and-polygon?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/56411/find-overlapping-part-about-line-and-polygon?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/56411/find-overlapping-part-about-line-and-polygon?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="56559"></a>
+<div class="answer" id="answer-container-56559">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/56559/up/" id="post-56559-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-56559-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/56559/down/" id="post-56559-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You are indicating two issues - for a given poly-line and circle/polygon detect the poly-line's segments being inside the circle/polygon (clipping a poly-line by a circle/polygon). If you have not yet found these functions (answers) in the OSM public tools, here are some hints in bullets. Namely, the mentioned tools (should) have functions like - vectors to none crossing vectors transformation, point in (on, outside) a polygon, vectors to poly-lines transformation, change poly-line's orientation and some more, even simpler, functions and using them you (anyone) may create the missing functions.  <br/>
+The simple/circle case's procedure. 1)From the poly-line edge-vector set detect/select the set {Vi} where any of the vectors Vi has a point inside the circle's bounding box. 2)If the line defined by a vector Vi crosses the circle, let us say in points A and B, select the vector Ej as part of Vi being inside the segment AB. The new set {Ej} contains only vectors being strictly inside the circle. 3)Connect the vectors from {Ej} into poly-line(s) and if necessary change the orientation of these.  <br/>
+The general/polygon case's procedure is the same as the former (when "circle" is replaced by "polygon") except the step 2. Here, the procedure is more complex. The {Ej} set contains all Vi vectors having no common points with the polygon. If a vector Vi is crossing the polygon, let us say in a point X, then Vi should be divided by X into two new Ej vectors. Further, if a Vi is overlapping a polygon edge vector Pk then we replace Vi with its Ej parts being outside the vector Pk. Now, the set {Ej} contains vectors never crossing the polygon. You may prove that a vector Ej from this set {Ej} is strictly inside the polygon if, and only if, an inner point of it (e.g. the midpoint) is inside the polygon. Using the mentioned "point-in-polygon" function, from the set {Ej} we can keep only the elements being inside the polygon.  <br/>
+Note that the former general/polygon model is (should be) used in a robust data preparation toll chain. For instance, we can detect and remove common area parts from one of the areas when two areas partly overlap (remove from a forest area part of it that is over a lake area), or find and recognize a missing section of a river area, or detect and remove anomalies caused by incorrect relations between river-lines (waterway=river) and the corresponding river-area objects and so on. For illustration of many similar examples see the river in the link <a href="https://goo.gl/p9lR3R">https://goo.gl/p9lR3R</a> . There are many (really large number) of virtual islands, wrong name positions, wrong river width, large redundancy, unnecessary rendering... just to mention some. These anomalies could be removed by using the mentioned general model.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/56559/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Jun '17, 16:05</strong>
+</p>
+<img alt="sanser's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/03cd9ea0efd97a7040fda0d6a76aba8e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3194/sanser">sanser</a><br>
+<span class="score" title="695 reputation points">695</span><span title="38 badges"><span class="badge1">●</span><span class="badgecount">38</span></span><span title="39 badges"><span class="silver">●</span><span class="badgecount">39</span></span><span title="55 badges"><span class="bronze">●</span><span class="badgecount">55</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="sanser has 2 accepted answers">5%</span>
+</br></br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-56559">
+<a name="56612"></a>
+<div class="comment" id="comment-56612">
+<div class="comment-score" id="post-56612-score"></div>
+<div class="comment-text"><p>Thank you for getting me back. In OSM, way is a set of nodes. Currently, I  could find the nodes inside the circle polygon. However, sometimes there is only one point inside the circle polygon. How can I get the intersection points of line and circle? There should be two intersection points about one line and one circle which is not OSM nodes. I am still trying~ Do you have any idea? Thanks!</p></div>
+<div class="comment-info" id="comment-56612-info">
+<span class="comment-age">(14 Jun '17, 03:26)</span>
+<a class="comment-user userinfo" href="/users/13728/ob9619">ob9619</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-56559">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-56559-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/56411/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Un09ukdznzMmgF0icXkCxvmUUQYa8P02"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

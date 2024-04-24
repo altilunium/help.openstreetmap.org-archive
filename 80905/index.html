@@ -1,0 +1,128 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/80905/incorrect-city-on-border-street-causing-missing-packages-and-deliveries">Incorrect city on border street causing missing packages and deliveries</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80905/up/" id="post-80905-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80905-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/80905/down/" id="post-80905-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/80905/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>My address is on a street in another city from the one in which I live. Our entire building is in Cambridge, MA, but the street we live on is within Somerville, MA. Therefore our address is XX Russell Street, Cambridge, MA 02140. However, Russell Street is tagged as Somerville, MA. Some applications do not let me select "Cambridge" as my city because of this discrepancy. This has cause several of our deliveries to end up at Russell Road, Somerville, MA instead. I did some searching and found <a href="https://help.openstreetmap.org/questions/17995/zip-code-may-be-prevent-locating-address">this thread</a> where the answer was to tag the street with the correct city. However, houses on the north side of the street are Somerville addresses while houses on the south side of the street are Cambridge addresses. </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-border" href="/tags/border/" rel="tag" title="see questions tagged 'border'">border</a>
+<a class="post-tag tag-link-zipcodes" href="/tags/zipcodes/" rel="tag" title="see questions tagged 'zipcodes'">zipcodes</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>09 Jul '21, 15:50</strong>
+</p>
+<img alt="smlevorse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e6d9f59de6bbeb158372f69c5e826015?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20475/smlevorse">smlevorse</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="smlevorse has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80905">
+</div>
+<div class="comment-tools" id="comment-tools-80905">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80905-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/80905/incorrect-city-on-border-street-causing-missing-packages-and-deliveries?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/80905/incorrect-city-on-border-street-causing-missing-packages-and-deliveries?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/80905/incorrect-city-on-border-street-causing-missing-packages-and-deliveries?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/80905/incorrect-city-on-border-street-causing-missing-packages-and-deliveries?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="80906"></a>
+<div class="answer accepted-answer" id="answer-container-80906">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80906/up/" id="post-80906-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80906-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/80906/down/" id="post-80906-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/80906/" rel="nofollow" title="smlevorse has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>How unfortunate to be an edge case!</p>
+<p>I see you have added addr:city to the relevant houses, which is probably the best response one can manage within OpenStreetMap itself. You can see what the native search engine on OSM returns <a href="https://nominatim.openstreetmap.org/ui/search.html?q=40+russell+street+cambridge+ma">here</a>. The only other thing which occurs to me is to extend the zipcode to a full 9-digit one.</p>
+<p>However, this may not resolve the issue. Many logistics companies whilst using OSM for things like routing may not use it for finding the location of a specific address (geocoding). This is for often simple reasons such as many addresses missing (Massachusetts is unusual in having all addresses on OSM). Some will use hybrid approaches to search (first OSM, then another, more expensive, source).</p>
+<p>One other thing. Often the data will be updated on something like a monthly schedule, so changes on OSM will not immediately be used by third-parties.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/80906/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Jul '21, 16:58</strong>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br/>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SK53 has 121 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80906">
+</div>
+<div class="comment-tools" id="comment-tools-80906">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80906-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/80905/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="y5yC2ac0ZFOUFphLOLruvZEHgk81GxjV"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

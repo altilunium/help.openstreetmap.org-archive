@@ -1,0 +1,158 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/35103/rendering-maps-with-bounding-box-overlays">Rendering maps with bounding box overlays</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/35103/up/" id="post-35103-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-35103-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/35103/down/" id="post-35103-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/35103/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>I'd like to render my own maps with bounding box overlays. I do not wish to use tiles since the application will require multiple requests, therefore burdening the OSM servers, and I have enough knowledge to set Mapnik up myself.</p>
+<p>However, Mapnik seems to just be a map renderer. I'd like to render static map cutouts with bounding box overlays over the map region. This seems to only be possible via software like OpenLayers, which only work on webpages. (The desired output must be a static image!)</p>
+<p>I guess my question is this: </p>
+<p>For rendering static images of regions on a map,</p>
+<ul>
+<li>Is Mapnik overkill, or is it necessary?</li>
+<li>Does Mapnik (or similar software) render city labels and state/county/city boundary lines? (Region is United States.)</li>
+<li>What software would I use to stitch the map tiles together?</li>
+<li>What software would I use to render overlays above my map?</li>
+</ul>
+<p>Thanks in advance!</p>
+<p><strong>EDIT:</strong> Solutions in Python are preferred, but not required.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-rendering" href="/tags/rendering/" rel="tag" title="see questions tagged 'rendering'">rendering</a>
+<a class="post-tag tag-link-map" href="/tags/map/" rel="tag" title="see questions tagged 'map'">map</a>
+<a class="post-tag tag-link-overlay" href="/tags/overlay/" rel="tag" title="see questions tagged 'overlay'">overlay</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>23 Jul '14, 14:09</strong>
+</p>
+<img alt="alberth's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/28afe1f2109cf13de14dab893cd252c7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9307/alberth">alberth</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="alberth has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/35103/">
+                edited
+                <strong>23 Jul '14, 14:20</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-35103">
+<a name="35107"></a>
+<div class="comment" id="comment-35107">
+<div class="comment-score" id="post-35107-score">1</div>
+<div class="comment-text"><p>Not a direct answer to the question but:</p>
+<pre><code> I do not wish to use tiles since the application will require multiple requests, therefore burdening the OSM servers
+</code></pre>
+<p>One option would be to <a href="http://switch2osm.org/serving-tiles/">set up your own tile server</a>.</p></div>
+<div class="comment-info" id="comment-35107-info">
+<span class="comment-age">(23 Jul '14, 16:07)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-35103">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-35103-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/35103/rendering-maps-with-bounding-box-overlays?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/35103/rendering-maps-with-bounding-box-overlays?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/35103/rendering-maps-with-bounding-box-overlays?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/35103/rendering-maps-with-bounding-box-overlays?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="35111"></a>
+<div class="answer" id="answer-container-35111">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/35111/up/" id="post-35111-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-35111-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/35111/down/" id="post-35111-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I haven't worked with the new CartoCSS way of describing styles to Mapnik, but you certainly can do what you want with Mapnik. You can define as may layers as you want selecting which features show in what layers. Finally, you can use local or non-OSM data in layers too. I did all this to create some specialized printed paper maps for an area. If you are not worrying about printer pixels per inch and what it takes to get a 1:24000 scaled printed image at, say 600dpi, they you can even crib from the web scale factor logic.</p>
+<p>I don't really know Python but all the Mapnik examples I found were in Python so that is what I used. So yes, you can do it in Python too.</p>
+<p>Software I used were: Mapnik, Postgresql and the gdal library for the basic map. I also used PHP in command line mode to set a color profile on the resultant image and turn everything to a PDF. Don't know if you can do that part in Python or not but since I know PHP and had the library for it that did PDF creation I used it.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/35111/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>23 Jul '14, 16:47</strong>
+</p>
+<img alt="n76's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f60af53a4eba0c21f25c22674fb4a8cc?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5918/n76">n76</a><br/>
+<span class="score" title="10839 reputation points"><span class="">10.8k</span></span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="82 badges"><span class="silver">●</span><span class="badgecount">82</span></span><span title="172 badges"><span class="bronze">●</span><span class="badgecount">172</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="n76 has 48 accepted answers">17%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-35111">
+</div>
+<div class="comment-tools" id="comment-tools-35111">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-35111-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/35103/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="k4aqqYARojhjYO9wmqXBpTu4uJcjhGd8"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,196 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/48975/what-is-the-difference-between-conflict-resolution-and-version-mismatch">What is the difference between conflict resolution and version mismatch?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48975/up/" id="post-48975-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48975-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/48975/down/" id="post-48975-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/48975/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have been using the iD Tool to create edits on OSM. While uploading I have faced two situations:</p>
+<ol>
+<li>Before uploading changes the iD tool asks to resolve conflicts either by choosing "Keep theirs" or "Keep Mine" option for all conflicts.</li>
+<li>The iD tool does not ask for any conflict resolution and tries to upload the changes and gives a version mismatch error saying "Version mismatch: provided: 1 server had: 2 of way w123456".</li>
+</ol>
+<p>What is the difference between these two? </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-ideditor" href="/tags/ideditor/" rel="tag" title="see questions tagged 'ideditor'">ideditor</a>
+<a class="post-tag tag-link-conflicts" href="/tags/conflicts/" rel="tag" title="see questions tagged 'conflicts'">conflicts</a>
+<a class="post-tag tag-link-versioning" href="/tags/versioning/" rel="tag" title="see questions tagged 'versioning'">versioning</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>31 Mar '16, 17:33</strong>
+</p>
+<img alt="basu007's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1865ea54d2946f43be6aa64263855daa?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12132/basu007">basu007</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="basu007 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/48975/">
+                edited
+                <strong>31 Mar '16, 19:49</strong>
+</a>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48975">
+<a name="48976"></a>
+<div class="comment" id="comment-48976">
+<div class="comment-score" id="post-48976-score">1</div>
+<div class="comment-text"><p>Are you sure you saw both variants in the current iD version? Conflict resolution is a quite recent feature.</p></div>
+<div class="comment-info" id="comment-48976-info">
+<span class="comment-age">(31 Mar '16, 19:53)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+<a name="48978"></a>
+<div class="comment" id="comment-48978">
+<div class="comment-score" id="post-48978-score"></div>
+<div class="comment-text"><p>I don't understand. Do you mean that with conflict resolution in place we cant have the version mismatch error in the current version of the iD editor?</p></div>
+<div class="comment-info" id="comment-48978-info">
+<span class="comment-age">(31 Mar '16, 19:56)</span>
+<a class="comment-user userinfo" href="/users/12132/basu007">basu007</a>
+</div>
+</div>
+<a name="48979"></a>
+<div class="comment" id="comment-48979">
+<div class="comment-score" id="post-48979-score">1</div>
+<div class="comment-text"><p>There are essentially two kind of potential conflicts
+- referential (out of scope for this discussion)
+- version conflicts 
+Before the conflict resolution code was added you always got an error message, now you should always be able to resolve them (there may be some edge cases I'm not aware of but they are likely rare).</p></div>
+<div class="comment-info" id="comment-48979-info">
+<span class="comment-age">(31 Mar '16, 20:02)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-48975">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48975-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/48975/what-is-the-difference-between-conflict-resolution-and-version-mismatch?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/48975/what-is-the-difference-between-conflict-resolution-and-version-mismatch?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/48975/what-is-the-difference-between-conflict-resolution-and-version-mismatch?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/48975/what-is-the-difference-between-conflict-resolution-and-version-mismatch?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="48977"></a>
+<div class="answer" id="answer-container-48977">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48977/up/" id="post-48977-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48977-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/48977/down/" id="post-48977-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>In the first case iD is aware of a conflict. In the second case iD is not (the error you see is coming directly from the OSM server, as far as I know). In principle I would think that iD will move on to the first case after encountering the second. Maybe an iD dev comes by here ... </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/48977/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>31 Mar '16, 19:55</strong>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="aseerel4c26 has 169 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/48977/">
+                edited
+                <strong>31 Mar '16, 19:57</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48977">
+<a name="48980"></a>
+<div class="comment" id="comment-48980">
+<div class="comment-score" id="post-48980-score"></div>
+<div class="comment-text"><p>I understand that the 1st is inside the iD editor and the 2nd one comes from the server. However, what I don't understand is that if there is the conflict resolution module in place inside the iD editor why should there be the version mismatch error in the first place even after the conflicts have been resolved?</p></div>
+<div class="comment-info" id="comment-48980-info">
+<span class="comment-age">(31 Mar '16, 20:02)</span>
+<a class="comment-user userinfo" href="/users/12132/basu007">basu007</a>
+</div>
+</div>
+<a name="48981"></a>
+<div class="comment" id="comment-48981">
+<div class="comment-score" id="post-48981-score"></div>
+<div class="comment-text"><p><a href="http://help.openstreetmap.org/users/12132/basu007">@basu007</a>: as said, I don't really understand that, too.</p></div>
+<div class="comment-info" id="comment-48981-info">
+<span class="comment-age">(31 Mar '16, 20:42)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-48977">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48977-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/48975/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="2bxLeGSLKZuei2OmPIxwTTHNCJtwiU2K"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

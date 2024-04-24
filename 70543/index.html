@@ -1,0 +1,309 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/70543/get-street-like-an-element-not-chunks-without-relation">Get Street like an element not chunks without relation</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/70543/up/" id="post-70543-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-70543-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/70543/down/" id="post-70543-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/70543/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello!
+Im triying to get streets like unique element, but open street maps returns me the id of the chunk and a chunk that doesnt have a clearly relation between the other chunks of the same street and if i use the name like identifier sometimes in a small radius that name of street repeats and i cant get the street like an element.
+Any idea?
+thanks!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-indentify" href="/tags/indentify/" rel="tag" title="see questions tagged 'indentify'">indentify</a>
+<a class="post-tag tag-link-indentifier" href="/tags/indentifier/" rel="tag" title="see questions tagged 'indentifier'">indentifier</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>29 Aug '19, 07:59</strong>
+</p>
+<img alt="markvex's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ade8a947ba75b44a417615043cfff3f0?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17108/markvex">markvex</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="markvex has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-70543">
+<a name="70544"></a>
+<div class="comment" id="comment-70544">
+<div class="comment-score" id="post-70544-score">1</div>
+<div class="comment-text"><p>What are you trying to accomplish?</p></div>
+<div class="comment-info" id="comment-70544-info">
+<span class="comment-age">(29 Aug '19, 08:26)</span>
+<a class="comment-user userinfo" href="/users/4426/insertuser">InsertUser</a>
+</div>
+</div>
+<a name="70545"></a>
+<div class="comment" id="comment-70545">
+<div class="comment-score" id="post-70545-score"></div>
+<div class="comment-text"><p>Get all the chunks of a street from a query. The only way i found was using the name of the street and a bounding box, but sometimes it returns two different near streets that are called equal...</p></div>
+<div class="comment-info" id="comment-70545-info">
+<span class="comment-age">(29 Aug '19, 08:35)</span>
+<a class="comment-user userinfo" href="/users/17108/markvex">markvex</a>
+</div>
+</div>
+<a name="70551"></a>
+<div class="comment" id="comment-70551">
+<div class="comment-score" id="post-70551-score"></div>
+<div class="comment-text"><p>What is "a street" to you?  How do you define it?  Is it just the having the same name, or exactly the same highway tag (look at some of the elements of <a href="https://overpass-turbo.eu/s/LUL">https://overpass-turbo.eu/s/LUL</a> for example).  What about <a href="https://overpass-turbo.eu/s/LUM">https://overpass-turbo.eu/s/LUM</a> ?  Is "High Street East" there part of the same street as "High Street" to the west?  Is the pedestrian area to the west part of the same street?</p></div>
+<div class="comment-info" id="comment-70551-info">
+<span class="comment-age">(29 Aug '19, 10:30)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="70553"></a>
+<div class="comment" id="comment-70553">
+<div class="comment-score" id="post-70553-score"></div>
+<div class="comment-text"><p>For me in that example that you gave me those are different elements /streets. I know that different chunks are necesary to label it with their own properties but in this case street is the same and one chunk doesnt have a relation to the others =&gt; "http://lz4.overpass-api.de/api/interpreter?data=[out:json];%20way[%27highway%27]<a href="42.597639598334,-5.5825567245483,42.617538785605,-5.5655193328857">%22name%22=%27Calle%20Lope%20de%20Vega%27</a>;%20out;%20%3E;%20out%20skel%20qt;"</p></div>
+<div class="comment-info" id="comment-70553-info">
+<span class="comment-age">(29 Aug '19, 10:40)</span>
+<a class="comment-user userinfo" href="/users/17108/markvex">markvex</a>
+</div>
+</div>
+<a name="70554"></a>
+<div class="comment" id="comment-70554">
+<div class="comment-score" id="post-70554-score"></div>
+<div class="comment-text"><p>Can you link to that in OSM?  Across the world there are many streets with that name: <a href="https://overpass-turbo.eu/s/LUO">https://overpass-turbo.eu/s/LUO</a> .</p></div>
+<div class="comment-info" id="comment-70554-info">
+<span class="comment-age">(29 Aug '19, 10:42)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="70555"></a>
+<div class="comment not_top_scorer" id="comment-70555">
+<div class="comment-score" id="post-70555-score"></div>
+<div class="comment-text"><p>Yes, and in 2km around as well...thats the problem why i cannot limit it. The thing is that actually the postman can deliver the package to the correct street because ZIP adds a unique id to differ one street to another with the same name but open street maps doesnt supply me anything to know we are talking about the same element</p></div>
+<div class="comment-info" id="comment-70555-info">
+<span class="comment-age">(29 Aug '19, 10:46)</span>
+<a class="comment-user userinfo" href="/users/17108/markvex">markvex</a>
+</div>
+</div>
+<a name="70556"></a>
+<div class="comment not_top_scorer" id="comment-70556">
+<div class="comment-score" id="post-70556-score"></div>
+<div class="comment-text"><p>Can you link to the area that you are talking about in OSM?  Without that, we've no idea where in the world you're talking about.</p></div>
+<div class="comment-info" id="comment-70556-info">
+<span class="comment-age">(29 Aug '19, 10:56)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="70557"></a>
+<div class="comment not_top_scorer" id="comment-70557">
+<div class="comment-score" id="post-70557-score"></div>
+<div class="comment-text"><p>Im talking in general to some cases for example in spain, most of the cities have that problem</p></div>
+<div class="comment-info" id="comment-70557-info">
+<span class="comment-age">(29 Aug '19, 11:05)</span>
+<a class="comment-user userinfo" href="/users/17108/markvex">markvex</a>
+</div>
+</div>
+<a name="70560"></a>
+<div class="comment not_top_scorer" id="comment-70560">
+<div class="comment-score" id="post-70560-score"></div>
+<div class="comment-text"><p>Sounds like it's <a href="https://overpass-turbo.eu/s/LV0">here</a></p></div>
+<div class="comment-info" id="comment-70560-info">
+<span class="comment-age">(29 Aug '19, 12:06)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-70543">
+<span class="comments-showing">
+            showing 5 of 9
+        </span>
+<a class="show-all-comments-link" href="#">show 4 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-70543-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/70543/get-street-like-an-element-not-chunks-without-relation?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/70543/get-street-like-an-element-not-chunks-without-relation?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/70543/get-street-like-an-element-not-chunks-without-relation?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/70543/get-street-like-an-element-not-chunks-without-relation?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="70546"></a>
+<div class="answer" id="answer-container-70546">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/70546/up/" id="post-70546-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-70546-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/70546/down/" id="post-70546-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>There is no ready-made API that would give you that. It is also often subject to interpretation, as a street could well have gaps in it where there's a small plaza or something - when is it still "the same street"? What you can do is download all the chunks and look at the node IDs at either end - if two chunks share a node id then they belong together. But even if you do that you will often not end up with a linear object since it is not unusual to have little stubs branching off that carry the same name as the main street...</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/70546/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>29 Aug '19, 09:29</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-70546">
+<a name="70547"></a>
+<div class="comment" id="comment-70547">
+<div class="comment-score" id="post-70547-score"></div>
+<div class="comment-text"><p>But nodes wont be shared so i can get a relation in there rigth?</p></div>
+<div class="comment-info" id="comment-70547-info">
+<span class="comment-age">(29 Aug '19, 09:38)</span>
+<a class="comment-user userinfo" href="/users/17108/markvex">markvex</a>
+</div>
+</div>
+<a name="70548"></a>
+<div class="comment" id="comment-70548">
+<div class="comment-score" id="post-70548-score"></div>
+<div class="comment-text"><p>Can you say this again, I don't understand where relations come into it.</p></div>
+<div class="comment-info" id="comment-70548-info">
+<span class="comment-age">(29 Aug '19, 09:40)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="70549"></a>
+<div class="comment not_top_scorer" id="comment-70549">
+<div class="comment-score" id="post-70549-score"></div>
+<div class="comment-text"><p>I mean, i can check if some chunks are of the same street by the node id independently of the name they have
+edit: i have check that and its only usefull in cases where the street chunks are stick to the next, if there is something in the middle nodes doesnt relate...so..How get the whole street?</p></div>
+<div class="comment-info" id="comment-70549-info">
+<span class="comment-age">(29 Aug '19, 09:46)</span>
+<a class="comment-user userinfo" href="/users/17108/markvex">markvex</a>
+</div>
+</div>
+<a name="70550"></a>
+<div class="comment" id="comment-70550">
+<div class="comment-score" id="post-70550-score">1</div>
+<div class="comment-text"><p>All streets are connected somehow. The node at the end of one street will be connected to another street, e.g. here: <a href="https://www.openstreetmap.org/node/17716584">https://www.openstreetmap.org/node/17716584</a> so if you <em>only</em> check connectedness then all streets in the city are one!</p></div>
+<div class="comment-info" id="comment-70550-info">
+<span class="comment-age">(29 Aug '19, 09:58)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="70552"></a>
+<div class="comment not_top_scorer" id="comment-70552">
+<div class="comment-score" id="post-70552-score"></div>
+<div class="comment-text"><p>Not always check "http://lz4.overpass-api.de/api/interpreter?data=[out:json];%20way[%27highway%27]<a href="42.597639598334,-5.5825567245483,42.617538785605,-5.5655193328857">%22name%22=%27Calle%20Lope%20de%20Vega%27</a>;%20out;%20%3E;%20out%20skel%20qt;" One chunk of that street its not related to the others and its the same street</p></div>
+<div class="comment-info" id="comment-70552-info">
+<span class="comment-age">(29 Aug '19, 10:38)</span>
+<a class="comment-user userinfo" href="/users/17108/markvex">markvex</a>
+</div>
+</div>
+<a name="70558"></a>
+<div class="comment" id="comment-70558">
+<div class="comment-score" id="post-70558-score">1</div>
+<div class="comment-text"><blockquote>
+<p>One chunk of that street its not related to the others and its the same street</p>
+</blockquote>
+<p>Which actual street are you talking about?</p></div>
+<div class="comment-info" id="comment-70558-info">
+<span class="comment-age">(29 Aug '19, 11:15)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="70559"></a>
+<div class="comment not_top_scorer" id="comment-70559">
+<div class="comment-score" id="post-70559-score"></div>
+<div class="comment-text"><p>Calle Lope de Vega, León, España</p></div>
+<div class="comment-info" id="comment-70559-info">
+<span class="comment-age">(29 Aug '19, 11:52)</span>
+<a class="comment-user userinfo" href="/users/17108/markvex">markvex</a>
+</div>
+</div>
+<a name="70561"></a>
+<div class="comment not_top_scorer" id="comment-70561">
+<div class="comment-score" id="post-70561-score"></div>
+<div class="comment-text"><p>If you're talking about <a href="https://www.openstreetmap.org/way/46509089">this street</a>, you can see that the last node of the way (594795551) is connected to <a href="https://www.openstreetmap.org/way/496936666">another way with the same name</a>.</p></div>
+<div class="comment-info" id="comment-70561-info">
+<span class="comment-age">(29 Aug '19, 16:53)</span>
+<a class="comment-user userinfo" href="/users/8189/alester">alester</a>
+</div>
+</div>
+<a name="70563"></a>
+<div class="comment not_top_scorer" id="comment-70563">
+<div class="comment-score" id="post-70563-score"></div>
+<div class="comment-text"><p>Although <a href="https://www.openstreetmap.org/way/680382506">this</a> has no name, it does have pieces named "Calle Lope de Vega" at each end.  It's up to you whether you consider them all part of the "same street" or not - that's why I asked those questions in comments above.</p></div>
+<div class="comment-info" id="comment-70563-info">
+<span class="comment-age">(29 Aug '19, 21:33)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="70564"></a>
+<div class="comment" id="comment-70564">
+<div class="comment-score" id="post-70564-score">2</div>
+<div class="comment-text"><p>It would really help us if you can describe what goal you're trying to reach once you have this data.</p></div>
+<div class="comment-info" id="comment-70564-info">
+<span class="comment-age">(29 Aug '19, 23:28)</span>
+<a class="comment-user userinfo" href="/users/8189/alester">alester</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-70546">
+<span class="comments-showing">
+            showing 5 of 10
+        </span>
+<a class="show-all-comments-link" href="#">show 5 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-70546-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/70543/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="R35B5YrPjPbOM220cAFvABtqYLmJNya2"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

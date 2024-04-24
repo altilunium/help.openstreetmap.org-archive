@@ -1,0 +1,169 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/46363/why-am-i-missing-polygonsfeatures-from-osm-data-when-importing-to-esri">Why am i missing polygons/features from OSM data when importing to ESRI</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/46363/up/" id="post-46363-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-46363-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/46363/down/" id="post-46363-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/46363/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi All,</p>
+<p>I have been importing OSM data into ESRI ArcGIS and I am noticing in some places features are missing (mainly Polygons).</p>
+<p>I am importing data from geofabrik Bulgaria.osm.pbf but comparing the attached image in ESRI to the osm data, there appears to be a lot of the wood or forest areas missing in the south of Bulgaria.  Also looking at the raw polygon files imported there are no polygons present, but there are linear features which seem to match the wood boundaries.</p>
+<p>Are there possible issues that the Areas features are not being imported or created from the nodes and can this be fixed?</p>
+<p>Many thanks</p>
+<p>Jon</p>
+<p><img alt="alt text" src="http://help.openstreetmap.org/upfiles/OSM_Bulgaria_ESRI_Import.png"/></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-shapefile" href="/tags/shapefile/" rel="tag" title="see questions tagged 'shapefile'">shapefile</a>
+<a class="post-tag tag-link-esri" href="/tags/esri/" rel="tag" title="see questions tagged 'esri'">esri</a>
+<a class="post-tag tag-link-data" href="/tags/data/" rel="tag" title="see questions tagged 'data'">data</a>
+<a class="post-tag tag-link-missing" href="/tags/missing/" rel="tag" title="see questions tagged 'missing'">missing</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 Nov '15, 12:39</strong>
+</p>
+<img alt="Jon2709's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad7df450e9cbc9f0133014ef50c8bcf0?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/11458/jon2709">Jon2709</a><br/>
+<span class="score" title="36 reputation points">36</span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="8 badges"><span class="bronze">●</span><span class="badgecount">8</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jon2709 has no accepted answers">0%</span>
+</p>
+</img></div>
+</div>
+<div class="comments-container" id="comments-container-46363">
+</div>
+<div class="comment-tools" id="comment-tools-46363">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-46363-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/46363/why-am-i-missing-polygonsfeatures-from-osm-data-when-importing-to-esri?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/46363/why-am-i-missing-polygonsfeatures-from-osm-data-when-importing-to-esri?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/46363/why-am-i-missing-polygonsfeatures-from-osm-data-when-importing-to-esri?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/46363/why-am-i-missing-polygonsfeatures-from-osm-data-when-importing-to-esri?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="46364"></a>
+<div class="answer answered-by-owner" id="answer-container-46364">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/46364/up/" id="post-46364-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-46364-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/46364/down/" id="post-46364-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hi All,</p>
+<p>It seems that I have identified the possible problem, </p>
+<p><a href="https://wiki.openstreetmap.org/wiki/Area/The_Future_of_Areas">https://wiki.openstreetmap.org/wiki/Area/The_Future_of_Areas</a></p>
+<p>I will have a look at the Tag area=yes and see if these ways are closed or multipolygons</p>
+<p>If anyone has further info, please share.</p>
+<p>Thanks</p>
+<p>Jon</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/46364/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Nov '15, 13:21</strong>
+</p>
+<img alt="Jon2709's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad7df450e9cbc9f0133014ef50c8bcf0?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11458/jon2709">Jon2709</a><br/>
+<span class="score" title="36 reputation points">36</span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="8 badges"><span class="bronze">●</span><span class="badgecount">8</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jon2709 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-46364">
+<a name="46366"></a>
+<div class="comment" id="comment-46366">
+<div class="comment-score" id="post-46366-score">4</div>
+<div class="comment-text"><p>I wouldn't read too much into "the future of areas" - it doesn't really have much bearing on OSM as it is now.  There is no area datatype, and you can't rely on closed ways having an "area=yes" tag.</p></div>
+<div class="comment-info" id="comment-46366-info">
+<span class="comment-age">(03 Nov '15, 13:59)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="46386"></a>
+<div class="comment" id="comment-46386">
+<div class="comment-score" id="post-46386-score">1</div>
+<div class="comment-text"><p>I have now noticed that the majority of these issues have now been resolved since I posted.  The Bulgaria.osm has been updated and now all forests are importing into ESRI.</p>
+<p>Thank you for the updates!! </p>
+<p>I am working on Eastern Europe and would be very glad to share any issues that I come across to help improve the quality of the data.</p>
+<p>Please let me know how I should post these issues.</p>
+<p>Best</p>
+<p>Jon</p></div>
+<div class="comment-info" id="comment-46386-info">
+<span class="comment-age">(04 Nov '15, 15:56)</span>
+<a class="comment-user userinfo" href="/users/11458/jon2709">Jon2709</a>
+</div>
+</div>
+<a name="46387"></a>
+<div class="comment" id="comment-46387">
+<div class="comment-score" id="post-46387-score">2</div>
+<div class="comment-text"><p>That depends on the kind of issue. If you spot a specific mistake, you're best of making a "Note" (available on the main website, right hand side of the map) describing the problem. If it is something more general, a good plpace to start might be the country specific mailing list <a href="http://wiki.openstreetmap.org/wiki/Mailing_lists#Country-Specific_Lists">http://wiki.openstreetmap.org/wiki/Mailing_lists#Country-Specific_Lists</a> or forum <a href="http://forum.openstreetmap.org/">http://forum.openstreetmap.org/</a></p></div>
+<div class="comment-info" id="comment-46387-info">
+<span class="comment-age">(04 Nov '15, 16:06)</span>
+<a class="comment-user userinfo" href="/users/10142/joost-schouppe">joost schouppe</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-46364">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-46364-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/46363/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="UltfIVE48ifhszWjgiuN1sd2Y0S7PVDS"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

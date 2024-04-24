@@ -1,0 +1,137 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/65315/how-to-search-golf-features-linked-with-golf-course">How to search golf features linked with golf course</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/65315/up/" id="post-65315-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-65315-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/65315/down/" id="post-65315-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/65315/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello everyone, just want to ask how to find a golf course that also with golf features linked (e.g golf holes, tee, green)?</p>
+<p>I used the following script to find the golf course in a list format in Overpass turbo:</p>
+<p><strong>[out:csv(::id,::type,"name")];
+  area[name="London"]-&gt;.a;
+  ( node(area.a)[leisure=golf_course];
+    way(area.a)[leisure=golf_course];
+    rel(area.a)[leisure=golf_course];
+  );
+  out;</strong></p>
+<p>I can find out the list of golf course , but once i add golf=hole, i cannot find the golf hole , is it related to the unfinished mapping of the golf course or i am using the wrong script to query for a golf course details?</p>
+<p>Thanks everyone!</p>
+<p>8/14/2018 11:44PM edit</p>
+<p>the script i use to query the golf course with golf features is as follow:</p>
+<p><strong>[out:csv(::id,::type,"name")];
+  area[name="London"]-&gt;.a;
+  ( node(area.a)[leisure=golf_course];
+    way(area.a)[leisure=golf_course];
+    rel(area.a)[leisure=golf_course];
+   node(area.a)[golf=hole];
+    way(area.a)[golf=hole];
+    rel(area.a)[golf=hole];
+  );
+  out;</strong></p>
+<p>and i receive the follow result(just part of it):
+<strong>436469360 way 
+485708432   way South Norwood Pitch and Putt
+498692711   way Hole 1
+498955422   way Hole 2
+498955430   way Hole 3
+498960293   way Hole 4
+498960312   way Hole 5
+499153239   way Hole 6
+499153253   way Hole 7
+499153272   way Hole 8
+499153283   way Hole 9
+499157766   way Hole 10
+499157773   way Hole 11
+499996506   way Hole 13
+499996508   way Hole 17
+499996512   way Hole 12
+499996513   way Hole 15
+499996516   way Hole 18
+499996519   way Hole 16
+501679797   way 
+508221481   way 9 Hole Par 3 Golf Course
+511273594   way Alexandra Palace Pitch &amp; Putt</strong></p>
+<p>what i want to ask is whether i can use this script to query the golf course mapped with golf features already? thanks a lot !
+ </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-golf" href="/tags/golf/" rel="tag" title="see questions tagged 'golf'">golf</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>14 Aug '18, 04:48</strong>
+</p>
+<img alt="JohnLee65's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e39d564e8c50f9fc137cb4273ee4659a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15524/johnlee65">JohnLee65</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="JohnLee65 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/65315/">
+                edited
+                <strong>14 Aug '18, 16:48</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-65315">
+<a name="65341"></a>
+<div class="comment" id="comment-65341">
+<div class="comment-score" id="post-65341-score"></div>
+<div class="comment-text"><p>There are five golf courses with golf=hole in London, so you should get some results. Can you edit your question to add the query you're trying to use for getting the holes? There may just be a problem with the syntax.</p></div>
+<div class="comment-info" id="comment-65341-info">
+<span class="comment-age">(14 Aug '18, 16:40)</span>
+<a class="comment-user userinfo" href="/users/8189/alester">alester</a>
+</div>
+</div>
+<a name="65342"></a>
+<div class="comment" id="comment-65342">
+<div class="comment-score" id="post-65342-score"></div>
+<div class="comment-text"><p>Hello Alester, i have edited the question, thanks for the suggest!</p></div>
+<div class="comment-info" id="comment-65342-info">
+<span class="comment-age">(14 Aug '18, 16:49)</span>
+<a class="comment-user userinfo" href="/users/15524/johnlee65">JohnLee65</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-65315">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-65315-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/65315/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="twkKxGXeuUYFX6Hvs55r4KbjVrVMR5Pe"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

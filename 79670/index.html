@@ -1,0 +1,139 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/79670/is-there-a-way-to-api-fetch-multiple-nodes-simultaneously">Is there a way to API fetch multiple nodes simultaneously?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/79670/up/" id="post-79670-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-79670-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/79670/down/" id="post-79670-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/79670/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have an array of nodes and am using <a href="https://api.openstreetmap.org/api/0.6/node/{node}">https://api.openstreetmap.org/api/0.6/node/{node}</a> to get the lng and lat of each node. Is their an easier way to fetch multiple nodes at the same time?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-api" href="/tags/api/" rel="tag" title="see questions tagged 'api'">api</a>
+<a class="post-tag tag-link-node" href="/tags/node/" rel="tag" title="see questions tagged 'node'">node</a>
+<a class="post-tag tag-link-nodes" href="/tags/nodes/" rel="tag" title="see questions tagged 'nodes'">nodes</a>
+<a class="post-tag tag-link-javascript" href="/tags/javascript/" rel="tag" title="see questions tagged 'javascript'">javascript</a>
+<a class="post-tag tag-link-nodejs" href="/tags/nodejs/" rel="tag" title="see questions tagged 'nodejs'">nodejs</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>14 Apr '21, 14:52</strong>
+</p>
+<img alt="zgivod's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9e3a09c93f408b1f16f2daa7cae61821?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16896/zgivod">zgivod</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="zgivod has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-79670">
+</div>
+<div class="comment-tools" id="comment-tools-79670">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-79670-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/79670/is-there-a-way-to-api-fetch-multiple-nodes-simultaneously?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/79670/is-there-a-way-to-api-fetch-multiple-nodes-simultaneously?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/79670/is-there-a-way-to-api-fetch-multiple-nodes-simultaneously?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/79670/is-there-a-way-to-api-fetch-multiple-nodes-simultaneously?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="79678"></a>
+<div class="answer" id="answer-container-79678">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/79678/up/" id="post-79678-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-79678-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/79678/down/" id="post-79678-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can ask for multiple nodes by ID like this:</p>
+<p><a href="https://api.openstreetmap.org/api/0.6/nodes/?nodes=123456700,123456701,123456702">https://api.openstreetmap.org/api/0.6/nodes/?nodes=123456700,123456701,123456702</a></p>
+<p>The same command works for just a single node ID as well:</p>
+<p><a href="https://api.openstreetmap.org/api/0.6/nodes/?nodes=123456700">https://api.openstreetmap.org/api/0.6/nodes/?nodes=123456700</a></p>
+<p>See the API documentation:</p>
+<p><a href="https://wiki.openstreetmap.org/wiki/API_v0.6#Multi_fetch:_GET_.2Fapi.2F0.6.2F.5Bnodes.7Cways.7Crelations.5D.3F.23parameters">https://wiki.openstreetmap.org/wiki/API_v0.6#Multi fetch: GET /api/0.6/[nodes|ways|relations]?#parameters</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/79678/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>14 Apr '21, 23:45</strong>
+</p>
+<img alt="jmapb's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/977d95e2184a885d9a01fb3297225872?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14350/jmapb">jmapb</a><br/>
+<span class="score" title="3387 reputation points"><span class="">3.4k</span></span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="33 badges"><span class="silver">●</span><span class="badgecount">33</span></span><span title="61 badges"><span class="bronze">●</span><span class="badgecount">61</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="jmapb has 22 accepted answers">22%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/79678/">
+                edited
+                <strong>15 Apr '21, 01:02</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-79678">
+</div>
+<div class="comment-tools" id="comment-tools-79678">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-79678-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/79670/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="AStxb4Efjt7P22AqcKiScbf7KYsxBpWX"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

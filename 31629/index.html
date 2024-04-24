@@ -1,0 +1,218 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/31629/restricting-nominatim-search-results-to-a-certain-adminstrative-level">Restricting nominatim search results to a certain adminstrative "level"</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/31629/up/" id="post-31629-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-31629-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/31629/down/" id="post-31629-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/31629/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Is it possible to restrict a query result with nominatim to say "countries, counties and towns"? I am not too interested in the roads or streets for example, rather the high level adminsitrative regions.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>17 Mar '14, 21:42</strong>
+</p>
+<img alt="leforthomas's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ee9b01cfe7104e9236bfbec854a5a5db?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8520/leforthomas">leforthomas</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="leforthomas has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-31629">
+</div>
+<div class="comment-tools" id="comment-tools-31629">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-31629-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/31629/restricting-nominatim-search-results-to-a-certain-adminstrative-level?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/31629/restricting-nominatim-search-results-to-a-certain-adminstrative-level?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/31629/restricting-nominatim-search-results-to-a-certain-adminstrative-level?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/31629/restricting-nominatim-search-results-to-a-certain-adminstrative-level?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="31654"></a>
+<div class="answer accepted-answer" id="answer-container-31654">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/31654/up/" id="post-31654-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-31654-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/31654/down/" id="post-31654-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/31654/" rel="nofollow" title="leforthomas has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>There is a currently undocumented parameter <code>featuretype</code> that might be useful for you. Adding  a parameter <code>featuretype=settlement</code> to the query, e.g. <a href="http://nominatim.osm.org/search?q=paris&amp;featuretype=settlement">like this</a>, restricts the results to objects below country level and above street level. That means that results will include states, counties, cities and villages and also natural features like national parks and rivers, but they do not contain countries, streets or POIs.</p>
+<p>Other possible values for <code>featuretype</code> are: <code>country</code>, <code>state</code>, <code>city</code>.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/31654/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>18 Mar '14, 12:40</strong>
+</p>
+<img alt="lonvia's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d888b712d85dee0aa304297f2dc697c7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2921/lonvia">lonvia</a><br/>
+<span class="score" title="6213 reputation points"><span class="">6.2k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="57 badges"><span class="silver">●</span><span class="badgecount">57</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="lonvia has 43 accepted answers">40%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-31654">
+<a name="31656"></a>
+<div class="comment" id="comment-31656">
+<div class="comment-score" id="post-31656-score">1</div>
+<div class="comment-text"><p>that sounds pretty much like what I need. Is it possible to include countries as well? eg can I do featuretype=settlement,country? (seems to work)</p></div>
+<div class="comment-info" id="comment-31656-info">
+<span class="comment-age">(18 Mar '14, 13:13)</span>
+<a class="comment-user userinfo" href="/users/8520/leforthomas">leforthomas</a>
+</div>
+</div>
+<a name="31661"></a>
+<div class="comment" id="comment-31661">
+<div class="comment-score" id="post-31661-score">1</div>
+<div class="comment-text"><p>Multiple values are not supported, so including countries does not work. featuretype=settlement,country just works like you have not given any parameter at all.</p></div>
+<div class="comment-info" id="comment-31661-info">
+<span class="comment-age">(18 Mar '14, 13:38)</span>
+<a class="comment-user userinfo" href="/users/2921/lonvia">lonvia</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-31654">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-31654-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="31630"></a>
+<div class="answer" id="answer-container-31630">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/31630/up/" id="post-31630-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-31630-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/31630/down/" id="post-31630-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>If I enter this "fish and chips huntingdon" that works and gives the three shops mapped in my town, is that to sort of restriction you wanted?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/31630/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>17 Mar '14, 22:14</strong>
+</p>
+<img alt="andy%20mackey's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/efa7ca36d4499200879223dc5ad5ecac?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/644/andy-mackey">andy mackey</a><br/>
+<span class="score" title="13238 reputation points"><span class="">13.2k</span></span><span title="87 badges"><span class="badge1">●</span><span class="badgecount">87</span></span><span title="143 badges"><span class="silver">●</span><span class="badgecount">143</span></span><span title="285 badges"><span class="bronze">●</span><span class="badgecount">285</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="andy mackey has 37 accepted answers">4%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-31630">
+<a name="31631"></a>
+<div class="comment" id="comment-31631">
+<div class="comment-score" id="post-31631-score"></div>
+<div class="comment-text"><p>No. What I want is to type 'Paris' and only get the countries, counties or towns called Paris, but none of the streets or airpots (or fish and ship shops) that have Paris in their names.</p></div>
+<div class="comment-info" id="comment-31631-info">
+<span class="comment-age">(17 Mar '14, 22:17)</span>
+<a class="comment-user userinfo" href="/users/8520/leforthomas">leforthomas</a>
+</div>
+</div>
+<a name="31649"></a>
+<div class="comment" id="comment-31649">
+<div class="comment-score" id="post-31649-score"></div>
+<div class="comment-text"><p>Using my a Win7 PC "paris" search yields <a href="/upfiles/paris.JPG">this (screenshot)</a>.</p></div>
+<div class="comment-info" id="comment-31649-info">
+<span class="comment-age">(18 Mar '14, 09:08)</span>
+<a class="comment-user userinfo" href="/users/644/andy-mackey">andy mackey</a>
+</div>
+</div>
+<a name="31650"></a>
+<div class="comment" id="comment-31650">
+<div class="comment-score" id="post-31650-score"></div>
+<div class="comment-text"><p>OK, look down in your list and you will find "Bus stop, Paris...". What I am asking is whether or not there is a way with the API to filter out these type of results (bus stops, etc...).</p></div>
+<div class="comment-info" id="comment-31650-info">
+<span class="comment-age">(18 Mar '14, 09:14)</span>
+<a class="comment-user userinfo" href="/users/8520/leforthomas">leforthomas</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-31630">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-31630-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/31629/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="HHdmgWQMnerDhRznx3vFVph7eVQDFX15"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,181 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/67267/adding-countries-to-an-existing-osm-tile-server">Adding countries to an existing OSM Tile Server</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/67267/up/" id="post-67267-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-67267-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/67267/down/" id="post-67267-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/67267/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>I've followed the tutorial @ https://switch2osm.org/manually-building-a-tile-server-18-04-lts/. Since building a tile server for all of Europe took too long I've started with Germany. The map server is working fine. I have pre-rendered all tiles for zoom level 1 to 12.</p>
+<p>Now I wanted to add other countries to complete Europe but the new data is not showing up on the lower zoom levels.</p>
+<p>I used the command:
+osm2pgsql ... --append --slim  -G --hstore --tag-transform-script ~/src/openstreetmap-carto/openstreetmap-carto.lua -C 20000 --number-processes 2 -S ~/src/openstreetmap-carto/openstreetmap-carto.style ~/data/liechtenstein-latest.osm.pbf</p>
+<p>This command finished without problems. I can not see Liechtenstein in any zoom level above 13. If I zoom to 13 or 14 it renders the new tiles on the fly and its working fine. If I zoom out tho the map just turns blank. I see no borders or anything. I tried to render with the force command and it seems to pre-render the tiles again. Atleast the timestamp on the file is new, yet no visible changes can be seen.
+I used the following command:</p>
+<p>render_list -f -a -z 1 -Z 7 -n 1 -m ajt -s /var/run/renderd/renderd.sock</p>
+<p>What am I missing or doing wrong?</p>
+<p>with kind regards,
+Karl</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-add" href="/tags/add/" rel="tag" title="see questions tagged 'add'">add</a>
+<a class="post-tag tag-link-countries" href="/tags/countries/" rel="tag" title="see questions tagged 'countries'">countries</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>18 Dec '18, 17:52</strong>
+</p>
+<img alt="Karl%20Gustav's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2a837616ba3a40ffb05281918e20a35?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16061/karl-gustav">Karl Gustav</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Karl Gustav has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-67267">
+<a name="67271"></a>
+<div class="comment" id="comment-67271">
+<div class="comment-score" id="post-67271-score"></div>
+<div class="comment-text"><p>Could it be a browser caching issue?</p></div>
+<div class="comment-info" id="comment-67271-info">
+<span class="comment-age">(18 Dec '18, 19:18)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="67292"></a>
+<div class="comment" id="comment-67292">
+<div class="comment-score" id="post-67292-score"></div>
+<div class="comment-text"><p>I've tried different devices and browsers, cleared caches on all of them and pulled the the rendered tiles via wget and they show as blank images.</p></div>
+<div class="comment-info" id="comment-67292-info">
+<span class="comment-age">(20 Dec '18, 12:24)</span>
+<a class="comment-user userinfo" href="/users/16061/karl-gustav">Karl Gustav</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-67267">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-67267-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/67267/adding-countries-to-an-existing-osm-tile-server?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/67267/adding-countries-to-an-existing-osm-tile-server?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/67267/adding-countries-to-an-existing-osm-tile-server?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/67267/adding-countries-to-an-existing-osm-tile-server?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="67293"></a>
+<div class="answer accepted-answer" id="answer-container-67293">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/67293/up/" id="post-67293-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-67293-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/67293/down/" id="post-67293-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/67293/" rel="nofollow" title="Karl Gustav has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>If you've reloaded the data then you'll need to:</p>
+<ul>
+<li>Stop and restart apache</li>
+<li>Stop and restart renderd</li>
+<li>Clear your local browser cache</li>
+</ul>
+<p>You may also want to:</p>
+<ul>
+<li>remove previously-rendered "blank" tiles from disk altogether.  You can append /status to find the on-disk path for a particular path, see e.g. <a href="https://map.atownsend.org.uk/hot/9/253/166.png/status">https://map.atownsend.org.uk/hot/9/253/166.png/status</a> .</li>
+<li>force-rerender tiles using e.g. /dirty for an individual tile - <a href="https://map.atownsend.org.uk/hot/9/253/166.png/dirty">https://map.atownsend.org.uk/hot/9/253/166.png/dirty</a> .</li>
+</ul>
+<p>I wrote some scripts for doing these sorts of things on a map site I look after - see <a href="https://github.com/SomeoneElseOSM/SomeoneElse-style/blob/master/update_render.sh">here</a>, <a href="https://github.com/SomeoneElseOSM/SomeoneElse-style/blob/master/update_carto.sh">here</a> and <a href="https://github.com/SomeoneElseOSM/SomeoneElse-style-legend/blob/master/rerender_legend.sh">here</a>.  These won't be useful to you exactly as they stand, but they will be helpful for showing examples of the things above that I've said you'll need to do.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/67293/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>20 Dec '18, 16:04</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/67293/">
+                edited
+                <strong>20 Dec '18, 16:04</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-67293">
+<a name="67306"></a>
+<div class="comment" id="comment-67306">
+<div class="comment-score" id="post-67306-score"></div>
+<div class="comment-text"><p>Thank you, with /dirty and /status I got the "broken" tiles to rerender properly.</p></div>
+<div class="comment-info" id="comment-67306-info">
+<span class="comment-age">(21 Dec '18, 10:29)</span>
+<a class="comment-user userinfo" href="/users/16061/karl-gustav">Karl Gustav</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-67293">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-67293-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/67267/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="nftQ9f61K8ebmJ5eGFuG8lBmVvSfpA4Q"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

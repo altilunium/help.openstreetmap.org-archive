@@ -1,0 +1,133 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/81195/region-wise-boundary-with-drill-down">Region wise boundary with drill down</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/81195/up/" id="post-81195-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-81195-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/81195/down/" id="post-81195-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/81195/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>Hope all are doing well. Can someone please let me know following functionalities can be implemented using Openstreetmap ?</p>
+<p>1- want to show only one state (suppose Maharastra in Inda), not complete map. 
+2- Show all districts of that state (Maharastra) with boundaries 
+3- Show regions (Blocks of district) on click on specific district </p>
+<p>If doable then please share any sample, API or help manual for implementation. </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-drilldown" href="/tags/drilldown/" rel="tag" title="see questions tagged 'drilldown'">drilldown</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>04 Aug '21, 12:17</strong>
+</p>
+<img alt="JaydevJangid's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/370407edaee250db11e4bead7a068425?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20591/jaydevjangid">JaydevJangid</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="JaydevJangid has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-81195">
+</div>
+<div class="comment-tools" id="comment-tools-81195">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-81195-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/81195/region-wise-boundary-with-drill-down?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/81195/region-wise-boundary-with-drill-down?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/81195/region-wise-boundary-with-drill-down?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/81195/region-wise-boundary-with-drill-down?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="81200"></a>
+<div class="answer" id="answer-container-81200">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/81200/up/" id="post-81200-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-81200-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/81200/down/" id="post-81200-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hello,</p>
+<p>For 1, it's tricky, but <a href="https://wiki.openstreetmap.org/wiki/UMap">UMap</a> allows to restrict the map view to some bounding box. To really display only the state, and blank tiles otherwise, you'll have to create your own rendering stack AFAIK.</p>
+<p>This <a href="http://overpass-turbo.eu/s/1a0Z">overpass query</a> will display all the districts (admin_level=5) of Maharastra, this resolves 2. </p>
+<p>And you can load the result of overpass queries in UMap, to combine 1 and 2. Either dynamically, but the load on the server is high and the data should not change often, or statically, you export the data from overpass turbo, and import it as a layer in UMap.</p>
+<p>But for 3, I don't see the regions in the <a href="https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dadministrative#10_admin_level_values_for_specific_countries">list of admin_levels for India</a>, so I don't think they exists in OSM.</p>
+<p>Hope this helps.
+Regards.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/81200/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Aug '21, 16:06</strong>
+</p>
+<img alt="H_mlet's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9434692e9afccaf03af5acf20b3a3279?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13231/h_mlet">H_mlet</a><br/>
+<span class="score" title="5443 reputation points"><span class="">5.4k</span></span><span title="17 badges"><span class="silver">●</span><span class="badgecount">17</span></span><span title="81 badges"><span class="bronze">●</span><span class="badgecount">81</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="H_mlet has 40 accepted answers">13%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-81200">
+</div>
+<div class="comment-tools" id="comment-tools-81200">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-81200-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/81195/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="taruit6qZYp8kkhF54IOLZZfmhQFWUlY"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

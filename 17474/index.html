@@ -1,0 +1,189 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/17474/tirex-prefetching-of-next-zoom-level">Tirex: Prefetching of next zoom level</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/17474/up/" id="post-17474-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-17474-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/17474/down/" id="post-17474-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/17474/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Consider a low-loaded tile server.</p>
+<p>The actions of the users might be to: </p>
+<ul>
+<li>pan around</li>
+<li>zoom in at the current map position</li>
+</ul>
+<p>One idea might be to put the tiles in the queue that are next to the current meta tile (8 pieces - but this case might be already covered by the meta-tile technique) and the meta tile in the next zoom level at the current map position.</p>
+<p>What is the starting point to implement such kind of pre-rendering in Tirex?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-rendering" href="/tags/rendering/" rel="tag" title="see questions tagged 'rendering'">rendering</a>
+<a class="post-tag tag-link-tirex" href="/tags/tirex/" rel="tag" title="see questions tagged 'tirex'">tirex</a>
+<a class="post-tag tag-link-tileserver" href="/tags/tileserver/" rel="tag" title="see questions tagged 'tileserver'">tileserver</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>04 Nov '12, 20:38</strong>
+</p>
+<img alt="AddisMap_Alexander's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9ac1de0d402dfdf47bd4c4d664156c64?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/80/addismap_alexander">AddisMap_Ale...</a><br/>
+<span class="score" title="1120 reputation points"><span class="">1.1k</span></span><span title="31 badges"><span class="badge1">●</span><span class="badgecount">31</span></span><span title="40 badges"><span class="silver">●</span><span class="badgecount">40</span></span><span title="62 badges"><span class="bronze">●</span><span class="badgecount">62</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="AddisMap_Alexander has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/17474/">
+                edited
+                <strong>04 Nov '12, 20:38</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-17474">
+</div>
+<div class="comment-tools" id="comment-tools-17474">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-17474-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/17474/tirex-prefetching-of-next-zoom-level?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/17474/tirex-prefetching-of-next-zoom-level?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/17474/tirex-prefetching-of-next-zoom-level?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/17474/tirex-prefetching-of-next-zoom-level?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="17485"></a>
+<div class="answer" id="answer-container-17485">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/17485/up/" id="post-17485-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-17485-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/17485/down/" id="post-17485-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can not implement this in Tirex alone, because requests to existing tiles are handled by mod-tile and never reach Tirex. So you would have to change mod_tile. You could probably change mod-tile to send low priority rendering requests for the next zoom level in addition to the high priority request for the current zoom level.</p>
+<p>But I think this is a bad idea. Chances are you'll do more harm than good. A typical scenario is this: User looks at zoom level n, your setup will calculate tiles for same position at n+1. User pans over a bit and zooms in. All renderers are now blocked with rendering what was requested before and can't render what the user actually wants to look at. Tirex promotes low-priority jobs if a high-priority job for the same tile comes in and it can reserve renderers for high-priority jobs, so maybe it can actually work. But there would still be contention for CPU, database access etc. so I don't believe it would be worth it.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/17485/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>05 Nov '12, 07:57</strong>
+</p>
+<img alt="Jochen%20Topf's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2d4dfcdcde73aa5e2ffa4a9b3a7cb51d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/112/jochen-topf">Jochen Topf</a><br/>
+<span class="score" title="5244 reputation points"><span class="">5.2k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="50 badges"><span class="silver">●</span><span class="badgecount">50</span></span><span title="74 badges"><span class="bronze">●</span><span class="badgecount">74</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jochen Topf has 32 accepted answers">31%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/17485/">
+                edited
+                <strong>05 Nov '12, 13:25</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-17485">
+<a name="17486"></a>
+<div class="comment" id="comment-17486">
+<div class="comment-score" id="post-17486-score"></div>
+<div class="comment-text"><p>Concerning the scenario: When the user zooms in, I was hoping that this new high-prio renderings are rendered before the queued low-prior renderings.</p></div>
+<div class="comment-info" id="comment-17486-info">
+<span class="comment-age">(05 Nov '12, 08:24)</span>
+<a class="comment-user userinfo" href="/users/164/alex_addismap">Alex_AddisMap</a>
+</div>
+</div>
+<a name="17487"></a>
+<div class="comment" id="comment-17487">
+<div class="comment-score" id="post-17487-score"></div>
+<div class="comment-text"><p>Yes, if they are only queued. But if they have already started rendering, they keep rendering till they are finished. And your scenario only makes sense if they often start rendering immediately. If they end up sitting in the queue for a long time anyway, why bother with your scheme?</p></div>
+<div class="comment-info" id="comment-17487-info">
+<span class="comment-age">(05 Nov '12, 08:55)</span>
+<a class="comment-user userinfo" href="/users/112/jochen-topf">Jochen Topf</a>
+</div>
+</div>
+<a name="17488"></a>
+<div class="comment" id="comment-17488">
+<div class="comment-score" id="post-17488-score"></div>
+<div class="comment-text"><p>It could work, but it'd need more smarts :</p>
+<ul>
+<li>Only schedule if a worker is otherwise idle.</li>
+<li>Ability to promote the job from low priority to high.</li>
+</ul>
+<p>Maybe could be implemented with a low-priority, low-TTL queue ? Remove job from the  low queue if it is added in the high queue. And make sure that you have a lot of workers. Not such a low-haging-fruit improvement, but worth experimenting with.</p></div>
+<div class="comment-info" id="comment-17488-info">
+<span class="comment-age">(05 Nov '12, 11:01)</span>
+<a class="comment-user userinfo" href="/users/867/vincent-de-phily">Vincent de P... ♦</a>
+</div>
+</div>
+<a name="17494"></a>
+<div class="comment" id="comment-17494">
+<div class="comment-score" id="post-17494-score"></div>
+<div class="comment-text"><p>I updated my answer based on the comment from Vincent de Phily, because Tirex can actually do the things he requests.</p></div>
+<div class="comment-info" id="comment-17494-info">
+<span class="comment-age">(05 Nov '12, 13:26)</span>
+<a class="comment-user userinfo" href="/users/112/jochen-topf">Jochen Topf</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-17485">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-17485-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/17474/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="PpATO9QuwgCgC2f5WdKNlOmIHsVEcfgL"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

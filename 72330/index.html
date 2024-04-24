@@ -1,0 +1,175 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/72330/how-to-uniquely-identify-a-location-from-osm">How to uniquely identify a location from OSM?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/72330/up/" id="post-72330-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-72330-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/72330/down/" id="post-72330-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/72330/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>If I want to store an identifier to a particular location in OSM, what's the best way to do this please?</p>
+<p>For example:</p>
+<p>If I want to store the link to Hyde Park, I can use this: Way: Hyde Park (<strong>372975520</strong>)
+<a href="https://www.openstreetmap.org/way/372975520">https://www.openstreetmap.org/way/372975520</a></p>
+<p>Whereas if I want to store a link to Wimbledon Common, it's listed as this: Relation: Wimbledon Common (<strong>4285108</strong>)
+<a href="https://www.openstreetmap.org/relation/4285108">https://www.openstreetmap.org/relation/4285108</a></p>
+<p>Note that one is a <em>Way</em> and the other is a <em>Relation</em>. Are these numbers still useful as UIDs? Or should I be storing the ID and the type (Way/Relation etc)?</p>
+<p>Any guidance appreciated!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-uid" href="/tags/uid/" rel="tag" title="see questions tagged 'uid'">uid</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>02 Jan '20, 11:24</strong>
+</p>
+<img alt="ab76555's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a46552eca5ac633d307cf48128c76950?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17646/ab76555">ab76555</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ab76555 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-72330">
+<a name="72331"></a>
+<div class="comment" id="comment-72331">
+<div class="comment-score" id="post-72331-score"></div>
+<div class="comment-text"><p>For completeness, if you just want to store a link to a location, you can store what's in the browser URL (for Hyde Park at zoom 15 that's <a href="https://www.openstreetmap.org/#map=15/51.5070/-0.1729">https://www.openstreetmap.org/#map=15/51.5070/-0.1729</a> ).  That's not linking to a particular object in OSM but is linking to a location.</p></div>
+<div class="comment-info" id="comment-72331-info">
+<span class="comment-age">(02 Jan '20, 11:31)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="72332"></a>
+<div class="comment" id="comment-72332">
+<div class="comment-score" id="post-72332-score"></div>
+<div class="comment-text"><p>Thanks for the quick reply! What if I do want access to OSM object too? For example, if I've got a database that stores locations alongside ratings (which I'm accessing through my API), and I occasionally want to access the OSM object (for example, I might query my_location_id/osm_object_coordinates).</p></div>
+<div class="comment-info" id="comment-72332-info">
+<span class="comment-age">(02 Jan '20, 11:47)</span>
+<a class="comment-user userinfo" href="/users/17646/ab76555">ab76555</a>
+</div>
+</div>
+<a name="72338"></a>
+<div class="comment" id="comment-72338">
+<div class="comment-score" id="post-72338-score">1</div>
+<div class="comment-text"><p>escada's answer covers the aspect of permanent linking. Regarding your question about the way and relation IDs, each object type has its own numbering. That is, there's a node #1, way #1, and relation #1, all representing different things. So, to identify an object using its ID, you'd also need to record its object type.</p></div>
+<div class="comment-info" id="comment-72338-info">
+<span class="comment-age">(02 Jan '20, 17:22)</span>
+<a class="comment-user userinfo" href="/users/8189/alester">alester</a>
+</div>
+</div>
+<a name="72347"></a>
+<div class="comment" id="comment-72347">
+<div class="comment-score" id="post-72347-score">1</div>
+<div class="comment-text"><p>Brilliant - thanks all for your help. That's great to know about the node/way numbering!</p></div>
+<div class="comment-info" id="comment-72347-info">
+<span class="comment-age">(03 Jan '20, 09:25)</span>
+<a class="comment-user userinfo" href="/users/17646/ab76555">ab76555</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-72330">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-72330-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/72330/how-to-uniquely-identify-a-location-from-osm?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/72330/how-to-uniquely-identify-a-location-from-osm?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/72330/how-to-uniquely-identify-a-location-from-osm?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/72330/how-to-uniquely-identify-a-location-from-osm?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="72333"></a>
+<div class="answer accepted-answer" id="answer-container-72333">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/72333/up/" id="post-72333-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-72333-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/72333/down/" id="post-72333-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/72333/" rel="nofollow" title="ab76555 has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Since IDs can change, there is no definite solution. There are some workarounds (e.g. using Wikidata) listed on the wiki page <a href="https://wiki.openstreetmap.org/wiki/Permanent_ID">Permanent ID</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/72333/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>02 Jan '20, 13:44</strong>
+</p>
+<img alt="escada's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/813a136afe7d4c95fd5bccdd78705e0e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5390/escada">escada</a><br/>
+<span class="score" title="19043 reputation points"><span class="">19.0k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="166 badges"><span class="silver">●</span><span class="badgecount">166</span></span><span title="302 badges"><span class="bronze">●</span><span class="badgecount">302</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="escada has 97 accepted answers">21%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/72333/">
+                edited
+                <strong>02 Jan '20, 13:45</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-72333">
+</div>
+<div class="comment-tools" id="comment-tools-72333">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-72333-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/72330/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="CROtIMyNxkbSGRwcACobfZAiKNfNJkZu"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

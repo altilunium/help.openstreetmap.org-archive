@@ -1,0 +1,119 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/44332/plot-200-points-using-open-street-map">[closed] Plot 200 points using open street map</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44332/up/" id="post-44332-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44332-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/44332/down/" id="post-44332-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/44332/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am trying to plot 200 locations on map using open street map layer. I have stored all addresses in array. I am running the loop but my code doesn't plot more than 9 locations on map.</p>
+<p>My code is:</p>
+<p>&lt;body background-color="green"&gt;
+  </p><div></div><p></p>
+&lt;script&gt;
+
+<pre><code>map = new OpenLayers.Map('mapdiv');
+map.addLayer(new OpenLayers.Layer.OSM());
+
+epsg4326 =  new OpenLayers.Projection('EPSG:4326'); //WGS 1984 projection
+projectTo = map.getProjectionObject();
+
+var lonLat = new OpenLayers.LonLat( 90.417931,36.778259).transform(epsg4326, projectTo);
+
+var zoom=4;
+map.setCenter (lonLat, zoom);
+
+var vectorLayer = new OpenLayers.Layer.Vector('Overlay');
+
+var geocoder = new google.maps.Geocoder();
+</code></pre>
+<p>var address = ['address1','address2'------'address200'];
+for (i = 0; i&lt; 200;  i++)
+ {
+    geocoder.geocode( { 'address': address[i]}, function(results, status) {</p>
+<p>if (status == google.maps.GeocoderStatus.OK) {</p>
+<p>var feature = new OpenLayers.Feature.Vector(
+            new OpenLayers.Geometry.Point( results[0].geometry.location.lng(),results[0].geometry.location.lat()).transform(epsg4326, projectTo),{description:'This is the value of<br/>the description attribute'} , {externalGraphic: 'http://leafletjs.com/dist/images/marker-icon-2x.png', graphicHeight: 25, graphicWidth: 21, graphicXOffset:-12,graphicYOffset:-25  }
+        );    </p>
+<pre><code>vectorLayer.addFeatures(feature);
+map.addLayer(vectorLayer);
+</code></pre>
+<p>} 
+}); 
+}
+  map.addLayer(vectorLayer);</p>
+&lt;/script&gt;
+                            </div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap" href="/tags/openstreetmap/" rel="tag" title="see questions tagged 'openstreetmap'">openstreetmap</a>
+<a class="post-tag tag-link-openlayers" href="/tags/openlayers/" rel="tag" title="see questions tagged 'openlayers'">openlayers</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Jul '15, 22:44</strong>
+</p>
+<img alt="Ashnav's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/09bd09f31c49d237d773a26f0dc3b88d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11235/ashnav">Ashnav</a><br>
+<span class="score" title="11 reputation points">11</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Ashnav has no accepted answers">0%</span>
+</br></p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/44332/">
+                closed
+                <strong>21 Jul '15, 23:52</strong>
+</a>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br/>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44332">
+</div>
+<div class="comment-tools" id="comment-tools-44332">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44332-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<div class="question-status" style="margin-bottom:15px">
+<h3>
+                The question has been closed for the following reason "Question seems to be about Google geo-coding with OpenLayers" by
+                <a href="/users/647/sk53">SK53</a>
+                 21 Jul '15, 23:52
+            </h3>
+</div>
+<form action="/questions/44332/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="5lg4GRysu6mnVTQAWJ8sck1zZLZsZ57f"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

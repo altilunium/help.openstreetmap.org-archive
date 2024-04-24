@@ -1,0 +1,222 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/1706/how-do-i-use-the-osm-tile-map-server-in-mapinfo">How do I use the osm tile map server in mapinfo?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1706/up/" id="post-1706-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1706-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/1706/down/" id="post-1706-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/1706/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>How do I use the osm tile map server in mapinfo 10.5?
+What do the .tab and .xml files have to contain?
+What does the projection data look like?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-tile" href="/tags/tile/" rel="tag" title="see questions tagged 'tile'">tile</a>
+<a class="post-tag tag-link-mapinfo10.5" href="/tags/mapinfo10.5/" rel="tag" title="see questions tagged 'mapinfo10.5'">mapinfo10.5</a>
+<a class="post-tag tag-link-server" href="/tags/server/" rel="tag" title="see questions tagged 'server'">server</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>02 Dec '10, 15:04</strong>
+</p>
+<img alt="jp_osm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c7dfe3b189b79e6e81fa213a4a491cd1?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/503/jp_osm">jp_osm</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="jp_osm has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/1706/">
+                edited
+                <strong>20 Jan '11, 14:11</strong>
+</a>
+</p>
+<img alt="TomH's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/dee41dcf0aa0c08cf6b0eb935b7504b7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1/tomh">TomH ♦♦</a><br/>
+<span class="score" title="3325 reputation points"><span class="">3.3k</span></span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="39 badges"><span class="silver">●</span><span class="badgecount">39</span></span><span title="43 badges"><span class="bronze">●</span><span class="badgecount">43</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1706">
+</div>
+<div class="comment-tools" id="comment-tools-1706">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1706-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/1706/how-do-i-use-the-osm-tile-map-server-in-mapinfo?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/1706/how-do-i-use-the-osm-tile-map-server-in-mapinfo?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/1706/how-do-i-use-the-osm-tile-map-server-in-mapinfo?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/1706/how-do-i-use-the-osm-tile-map-server-in-mapinfo?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="1710"></a>
+<div class="answer" id="answer-container-1710">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1710/up/" id="post-1710-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1710-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/1710/down/" id="post-1710-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>OpenStreetMap tiles are in Spherical Mercator EPSG:900913 (EPSG:3857). The origin is top left. The URL layout is <a href="http://tile.openstreetmap.org/%Z/%X/%Y.png">http://tile.openstreetmap.org/%Z/%X/%Y.png</a></p>
+<p>I've never used MapInfo, but a likely good starting point is to modify an existing .tab/.xml setup designed for Google Maps or similar map service.</p>
+<p>The OpenStreetMap Tile server has a usage policy: <a href="http://wiki.openstreetmap.org/wiki/Tile_Usage_Policy"></a><a href="http://wiki.openstreetmap.org/wiki/Tile_Usage_Policy"></a><a href="http://wiki.openstreetmap.org/wiki/Tile_Usage_Policy">http://wiki.openstreetmap.org/wiki/Tile_Usage_Policy</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/1710/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+<div class="community-wiki">
+        This answer is marked "community wiki".
+        
+    </div>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>02 Dec '10, 17:41</strong>
+</p>
+<img alt="Firefishy's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e79628d44a15e95c607f8c5007d0ccd2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/48/firefishy">Firefishy ♦♦</a><br/>
+<span class="score" title="1296 reputation points"><span class="">1.3k</span></span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="36 badges"><span class="silver">●</span><span class="badgecount">36</span></span><span title="52 badges"><span class="bronze">●</span><span class="badgecount">52</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Firefishy has 14 accepted answers">29%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/1710/">
+                edited
+                <strong>02 Dec '10, 17:43</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1710">
+</div>
+<div class="comment-tools" id="comment-tools-1710">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1710-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="1712"></a>
+<div class="answer answered-by-owner" id="answer-container-1712">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1712/up/" id="post-1712-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1712-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/1712/down/" id="post-1712-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Thnx
+The documentation of MapInfo is not very elaborate on it : V 10.5 has Bing incorporated, and further the documentation just says OSM is fully supported.</p>
+<p>So from the Bing files and the info of Firefishy I produced :</p>
+<p>TAB file:</p>
+<p>!table
+!version 1050
+!charset WindowsLatin1</p>
+<p>Definition Table</p>
+<p>File "open_street.xml"</p>
+<p>Type "TILESERVER"</p>
+<p>CoordSys Earth Projection 10, 157, 7, 0 Bounds (-20037508.343,-20037508.343) (20037508.343,20037508.343)</p>
+<p>and XML file :</p>
+<p>[?xml version="1.0" encoding="utf-8"?]</p>
+<p>[TileServerInfo Type="LevelRowColumn"]</p>
+<p><a href="http://[Url]http://tile.openstreetmap.org">[Url]http://tile.openstreetmap.org</a>/{LEVEL}/{ROW}/{COL}.png[/Url]</p>
+<p>[MaxLevel]18[/MaxLevel]</p>
+<p>[TileSize Height="256" /]</p>
+<p>[AttributionText Font="Font("Arial",3,12,0,16777215)"]OpenStreetMap[/AttributionText]
+[/TileServerInfo]</p>
+<p>This works fairly well, but it has the same problem as I had with Bing (which promted my efforts in the first place) : the produced maps are not very sharp, they appear somewhat fuzzy at any zoom level.</p>
+<p>Probably has to do with resolution of mapwindows in MapInfo, compared to the downloaded tiles : I suppose I have to somehow adjust the MapWindow to multiples of 256 pixels or so ...</p>
+<p>Not sure on how to go about that : Any ideas are welcom</p>
+<p>By the way, I am a very light user. </p>
+<p>jp_osm</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/1712/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Dec '10, 09:28</strong>
+</p>
+<img alt="jp_osm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c7dfe3b189b79e6e81fa213a4a491cd1?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/503/jp_osm">jp_osm</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="jp_osm has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1712">
+</div>
+<div class="comment-tools" id="comment-tools-1712">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1712-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/1706/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="A2YMo478h2F5iDNykbY9mr3gYpPsoJxt"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

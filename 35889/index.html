@@ -1,0 +1,94 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/35889/overpass-api-installation-out-of-memory">Overpass API installation 'Out of memory'</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/35889/up/" id="post-35889-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-35889-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/35889/down/" id="post-35889-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/35889/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi all, 
+I'm trying to install an overpass implementation on a custom server (to free resources on the public server), but im running into an 'out of memory' error while trying to build the database for a small .bz2 file (for the UK). </p>
+<p>As the documentation states, 1GB ram is the minimum for the server install. </p>
+<p>My server has 3072MB RAM, 512MB VSWAP, quad core, 275 GB SSD-Cached.</p>
+<p>I have already set up the overpass api on a 4GB RAM server (with lower spec on everything else). </p>
+<p>Should my server be able to run this? I also tried to install the API with a 512MB ram server before now, and the install ran for 10mins before terminating but on this new server it terminates almost immediately.</p>
+<p>The error itself (from dmesg) is </p>
+<p><code>[4551398.870288] Out of memory in UB 25187: OOM killed process 21091 (update_database) score 0                vm:4228424kB, rss:3102376kB, swap:503952kB</code>.</p>
+<p>Regards and many thanks, </p>
+<p>George</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-api" href="/tags/api/" rel="tag" title="see questions tagged 'api'">api</a>
+<a class="post-tag tag-link-installation" href="/tags/installation/" rel="tag" title="see questions tagged 'installation'">installation</a>
+<a class="post-tag tag-link-error" href="/tags/error/" rel="tag" title="see questions tagged 'error'">error</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Aug '14, 12:48</strong>
+</p>
+<img alt="gmeister's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/001dba1b5051c50ad90d82f873ecea0f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9459/gmeister">gmeister</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="gmeister has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-35889">
+<a name="36770"></a>
+<div class="comment" id="comment-36770">
+<div class="comment-score" id="post-36770-score">1</div>
+<div class="comment-text"><p>Did you try to bump up your swap space to say 8-16GB?</p></div>
+<div class="comment-info" id="comment-36770-info">
+<span class="comment-age">(11 Sep '14, 19:08)</span>
+<a class="comment-user userinfo" href="/users/8708/mmd">mmd</a>
+</div>
+</div>
+<a name="36818"></a>
+<div class="comment" id="comment-36818">
+<div class="comment-score" id="post-36818-score">1</div>
+<div class="comment-text"><p>Hey, Thanks for the reply, I managed to avoid the out of memory error by adding <code>--flush-size=1</code> as a parameter when calling update_database, so in my case, adding it to the last line in the <code>init_osm3s.sh</code> script. Ill add this to the wiki.</p></div>
+<div class="comment-info" id="comment-36818-info">
+<span class="comment-age">(14 Sep '14, 19:43)</span>
+<a class="comment-user userinfo" href="/users/8446/gmeister4">gmeister4</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-35889">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-35889-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/35889/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="GjoU14OLMrurACK09FumcrV0OW0Dj4Uz"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,138 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/48831/retrieve-all-bus-routes-for-a-given-city">Retrieve all bus routes for a given city</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48831/up/" id="post-48831-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48831-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/48831/down/" id="post-48831-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/48831/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,
+I would like to extract a list of all the relations representing bus routes in a given city (i would then access their information via RelationFullRecur(relID) API). Let's say I would like all the bus routes in London, how would i do that? I could look at <a href="http://wiki.openstreetmap.org/wiki/Bus_routes_in_London">http://wiki.openstreetmap.org/wiki/Bus_routes_in_London</a> but I'm looking for like something more automatic and programmable</p>
+<p>Let's then extend it to include also tram routers, shuttles, and even boat routes (ie, all terrestrial public transportation services, nothing underground).</p>
+<p>Thanks!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-bus" href="/tags/bus/" rel="tag" title="see questions tagged 'bus'">bus</a>
+<a class="post-tag tag-link-route" href="/tags/route/" rel="tag" title="see questions tagged 'route'">route</a>
+<a class="post-tag tag-link-api" href="/tags/api/" rel="tag" title="see questions tagged 'api'">api</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>24 Mar '16, 21:38</strong>
+</p>
+<img alt="sandrotosi's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/16afbe4d5f7d86de8aa279adae4945d4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12114/sandrotosi">sandrotosi</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="sandrotosi has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48831">
+</div>
+<div class="comment-tools" id="comment-tools-48831">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48831-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/48831/retrieve-all-bus-routes-for-a-given-city?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/48831/retrieve-all-bus-routes-for-a-given-city?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/48831/retrieve-all-bus-routes-for-a-given-city?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/48831/retrieve-all-bus-routes-for-a-given-city?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="48834"></a>
+<div class="answer" id="answer-container-48834">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48834/up/" id="post-48834-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48834-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/48834/down/" id="post-48834-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It appears you want to process data with the "osmapi" Python package. This package is a Python wrapper around OSM API functions. The RelationFullRecur(relID) method downloads a relation and all its members from the API using the <code>relation/&lt;id&gt;/full</code> API call. This should <strong>not</strong> be used for large scale data retrieval; if you're planning to download the complete surface transport network for one or more cities, or (even worse) if you plan do build that into some application that will be used by more people than just you, think again!</p>
+<p>A suitable way to get all relations of a particular kind in a particular area is using the Overpass API; see for example the last answer on <a href="https://help.openstreetmap.org/questions/37461/how-to-get-tram-stops-and-lines-routes">How to get tram stops and lines (routes).</a></p>
+<p>Another option is simply downloading the full OSM data file for the region you're interested in and then pull the data from that; if you want to do that with Python, check out the <a href="https://github.com/osmcode/pyosmium">Python bindings for the Osmium library.</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/48834/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>24 Mar '16, 22:09</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48834">
+<a name="48835"></a>
+<div class="comment" id="comment-48835">
+<div class="comment-score" id="post-48835-score"></div>
+<div class="comment-text"><p>thanks for the references, I will look at them</p></div>
+<div class="comment-info" id="comment-48835-info">
+<span class="comment-age">(24 Mar '16, 22:27)</span>
+<a class="comment-user userinfo" href="/users/12114/sandrotosi">sandrotosi</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-48834">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48834-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/48831/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="HPAeDkyx7XKFdUPBLxPKBWN9wILyPZSn"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,186 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/44875/how-to-set-srid-of-a-single-point-coordinates-pair-using-postgis">How to set srid of a single point coordinates pair using PostGis?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44875/up/" id="post-44875-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44875-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/44875/down/" id="post-44875-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/44875/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I think is better explain with a small example: selected a geometry point i get it back in a coordinates pair</p>
+<pre><code>SELECT ST_AsGeoJSON('010100002031BF0D009A999919F9BD2D41CDCCCC4C758E5241')
+--result:
+"{"type":"Point","coordinates":[974588.55,4864469.2]}"
+</code></pre>
+<p>to return back the geometry simply i make</p>
+<pre><code>SELECT ST_GeometryFromText('POINT(974588.55 4864469.2)')
+</code></pre>
+<p>having for example the same pair of geographic coordinates in degrees</p>
+<pre><code>coordinates:[9.7458855,48.644692]}
+</code></pre>
+<p>How can i transform them into the previous pair format and get the starting geometry?</p>
+<p>I'm working with leaflet and i would implement a kind of routing service using pgRouting,
+I have populated postgis with "osm2pgsql" tool and all geometries are of 900913 SRID type.
+My goal is to compare the source and target points on a map with the vertices stored in postgres. 
+Applying a transformation on a point picked from the map to 900913 srid don't get me the right thing,
+also i notice that the last four numbers (5241) are the same for each geometry in the db and them are different when i transform the geometry returned from my point, what they refer? </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-pgrouting" href="/tags/pgrouting/" rel="tag" title="see questions tagged 'pgrouting'">pgrouting</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>22 Aug '15, 20:11</strong>
+</p>
+<img alt="gaia's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2dc2dce97c04e173e2dd1e0bee21edcc?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11391/gaia">gaia</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="gaia has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/44875/">
+                edited
+                <strong>22 Aug '15, 23:13</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44875">
+<a name="44880"></a>
+<div class="comment" id="comment-44880">
+<div class="comment-score" id="post-44880-score">1</div>
+<div class="comment-text"><p>This question is not really on topic, it's more a general GIS question.</p></div>
+<div class="comment-info" id="comment-44880-info">
+<span class="comment-age">(23 Aug '15, 09:59)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="44882"></a>
+<div class="comment" id="comment-44882">
+<div class="comment-score" id="post-44882-score"></div>
+<div class="comment-text"><p>I thought there was some special function of osm2pgsql, is osm2pgsql on topic with the forum?</p></div>
+<div class="comment-info" id="comment-44882-info">
+<span class="comment-age">(23 Aug '15, 12:36)</span>
+<a class="comment-user userinfo" href="/users/11391/gaia">gaia</a>
+</div>
+</div>
+<a name="44884"></a>
+<div class="comment" id="comment-44884">
+<div class="comment-score" id="post-44884-score"></div>
+<div class="comment-text"><p>You can change the SRID used by osm2pgsql too, but the question focussed on changing SRID with leaflet, pg_routing and already populated db.</p></div>
+<div class="comment-info" id="comment-44884-info">
+<span class="comment-age">(23 Aug '15, 18:14)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-44875">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44875-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/44875/how-to-set-srid-of-a-single-point-coordinates-pair-using-postgis?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/44875/how-to-set-srid-of-a-single-point-coordinates-pair-using-postgis?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/44875/how-to-set-srid-of-a-single-point-coordinates-pair-using-postgis?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/44875/how-to-set-srid-of-a-single-point-coordinates-pair-using-postgis?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="44881"></a>
+<div class="answer accepted-answer" id="answer-container-44881">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44881/up/" id="post-44881-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44881-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/44881/down/" id="post-44881-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/44881/" rel="nofollow" title="gaia has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The two functions you want are ST_SRID and ST_SetSRID.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/44881/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>23 Aug '15, 10:00</strong>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br/>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SK53 has 121 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44881">
+<a name="44883"></a>
+<div class="comment" id="comment-44883">
+<div class="comment-score" id="post-44883-score"></div>
+<div class="comment-text"><p>yes, i solved setting first the srid of the coordinates and only then applying a transformation</p></div>
+<div class="comment-info" id="comment-44883-info">
+<span class="comment-age">(23 Aug '15, 12:40)</span>
+<a class="comment-user userinfo" href="/users/11391/gaia">gaia</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-44881">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44881-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/44875/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Jd4BxGHI8NCKF8r0Bj3SYRRzYDAHmTdr"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

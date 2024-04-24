@@ -1,0 +1,198 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/70870/how-to-add-custom-imagery-to-josm">How to add custom imagery to JOSM?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/70870/up/" id="post-70870-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-70870-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/70870/down/" id="post-70870-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/70870/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'd like to add the tile layer behind <a href="https://map.atownsend.org.uk">map.atownsend.org.uk</a> to JOSM.  I believe that the resulting string should be:</p>
+<pre><code>tms[24]:<a href="https://map.atownsend.org.uk/hot/{zoom}/{x}/{y}.png">https://map.atownsend.org.uk/hot/{zoom}/{x}/{y}.png</a>
+</code></pre>
+<p>Unfortunately, JOSM never sends requests for high zoom levels to the tile server.  The problem isn't at the tile server end, as a request such as <a href="https://map.atownsend.org.uk/maps/map/map.html#zoom=24&amp;lat=54.04597259&amp;lon=-0.99491842">this</a> gets back tiles such as <a href="https://map.atownsend.org.uk/hot/24/8342241/5383209.png">https://map.atownsend.org.uk/hot/24/8342241/5383209.png</a>.  What I get back instead is a black screen for tiles from zoom levels 21/22 and up.  Oddly it sometimes requests zoom 22 tiles but mostly not.  it doesn't matter if the required tile is already rendered or not.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-josm" href="/tags/josm/" rel="tag" title="see questions tagged 'josm'">josm</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Sep '19, 12:11</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/70870/">
+                edited
+                <strong>29 Sep '19, 18:29</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-70870">
+<a name="70887"></a>
+<div class="comment" id="comment-70887">
+<div class="comment-score" id="post-70887-score"></div>
+<div class="comment-text"><p>1 extra bit of info: I'm using JOSM 14945 (which is quite old).  However, another user is also testing (presumably after seeing this help question) with JOSM 15322 and seeing the same effect (or at least, they're not sending me requests for zooms &gt; 22 from JOSM).</p></div>
+<div class="comment-info" id="comment-70887-info">
+<span class="comment-age">(22 Sep '19, 16:04)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-70870">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-70870-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/70870/how-to-add-custom-imagery-to-josm?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/70870/how-to-add-custom-imagery-to-josm?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/70870/how-to-add-custom-imagery-to-josm?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/70870/how-to-add-custom-imagery-to-josm?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="70871"></a>
+<div class="answer accepted-answer" id="answer-container-70871">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/70871/up/" id="post-70871-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-70871-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/70871/down/" id="post-70871-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/70871/" rel="nofollow" title="SomeoneElse has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>If you go into imagery preferences and look at the settings tab there is a Panel for TMS settings where you can set max and min zoom. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/70871/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Sep '19, 15:07</strong>
+</p>
+<img alt="InsertUser's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ec8a0cf213f9797ad1c1ae2c28c2332d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4426/insertuser">InsertUser</a><br/>
+<span class="score" title="11005 reputation points"><span class="">11.0k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="69 badges"><span class="silver">●</span><span class="badgecount">69</span></span><span title="185 badges"><span class="bronze">●</span><span class="badgecount">185</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="InsertUser has 73 accepted answers">19%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-70871">
+<a name="70872"></a>
+<div class="comment" id="comment-70872">
+<div class="comment-score" id="post-70872-score"></div>
+<div class="comment-text"><p>There are (at a rough guess) 1000 preferences in there and about 30 of those match the search word "zoom".  Which one(s) should be changed?  I did try changing one (imagery.tms.max_zoom_lvl) before asking the question but it didn't seem to have any effect.</p>
+<p>Edit:  It appears that the button that I was pressing to get to that list is actually "advanced preferences", despite it being next to a label that says "imagery preferences".  JOSM is (how can I put this tactfully) "somewhat unclear" at indicating what user actions will have what effect.</p></div>
+<div class="comment-info" id="comment-70872-info">
+<span class="comment-age">(21 Sep '19, 15:24)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="70873"></a>
+<div class="comment" id="comment-70873">
+<div class="comment-score" id="post-70873-score"></div>
+<div class="comment-text"><p>It'll probably end up there, but this is in the main imagery preferences area one tab right of the list of sources.</p></div>
+<div class="comment-info" id="comment-70873-info">
+<span class="comment-age">(21 Sep '19, 16:32)</span>
+<a class="comment-user userinfo" href="/users/4426/insertuser">InsertUser</a>
+</div>
+</div>
+<a name="70885"></a>
+<div class="comment" id="comment-70885">
+<div class="comment-score" id="post-70885-score"></div>
+<div class="comment-text"><p>No, that doesn't fix it.  I went into "JOSM / Imagery / Imagery preferences / settings" and in "TMS Settings" changed "Max zoom level" from 20 to 24.</p>
+<p>On the server I can see tile requests for zoom 22:</p>
+<pre><code>Sep 22 15:26:31 map renderd[1810]: DEBUG: START TILE ajt 22 2084208-2084215 1344664-1344671, new metatile
+</code></pre>
+<p>but not for zoom level 23, and just a black screen in JOSM.</p></div>
+<div class="comment-info" id="comment-70885-info">
+<span class="comment-age">(22 Sep '19, 14:29)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="70888"></a>
+<div class="comment" id="comment-70888">
+<div class="comment-score" id="post-70888-score">1</div>
+<div class="comment-text"><p>JOSM seems to be acting rather oddly at these zooms. </p>
+<p>For your example URL it seems I can get the scale in the top left to go down as far as 1.0m. <em>OS OpenData StreetView</em> and <em>NLS - Bartholomew Half inch, 1897-1907</em> seems to (over)zoom down to between 0.5m and 0.01m depending on exactly where I look on the map. JOSM also doesn't like switching layers or panning when the zoom slider is 'against the stop'. </p>
+<p>The <em>Kartverket Address Overlay</em> (WMS) seems to work OK at zoom 24 when looking at a random part of Oslo. </p>
+<p>I think you may have found a bug.</p></div>
+<div class="comment-info" id="comment-70888-info">
+<span class="comment-age">(22 Sep '19, 16:27)</span>
+<a class="comment-user userinfo" href="/users/4426/insertuser">InsertUser</a>
+</div>
+</div>
+<a name="70961"></a>
+<div class="comment" id="comment-70961">
+<div class="comment-score" id="post-70961-score"></div>
+<div class="comment-text"><p>I've logged this at <a href="https://josm.openstreetmap.de/ticket/18184#ticket">https://josm.openstreetmap.de/ticket/18184#ticket</a></p>
+<p>Actually, one tile request for "23/0/0.png" and "24/0/0.png" is sent, and after the latter it crashes (details on the ticket, along with the conversion function that's failing with a "Not a Number" error.</p></div>
+<div class="comment-info" id="comment-70961-info">
+<span class="comment-age">(29 Sep '19, 18:42)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-70871">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-70871-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/70870/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="vF6eRy8lexZIZ7Qm3hRWudzZGLYMgcMa"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

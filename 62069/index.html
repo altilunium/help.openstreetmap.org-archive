@@ -1,0 +1,156 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/62069/wrong-importance-in-results-from-nominatim-osm-search-api">[closed] Wrong importance in results from Nominatim OSM Search API</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/62069/up/" id="post-62069-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-62069-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/62069/down/" id="post-62069-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/62069/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>When searching for <code>Dubai</code> in the website, it's returning a list with the city of <code>Dubai</code> at the top, so I guess the importance of the city in the United Arab Emirates, is the highest.</p>
+<p>When doing a search request to the Nominatim OSM search API, I'm getting Uganda as the country with the highest priority, which is not right.</p>
+<p>These are the results of the API call for <a href="https://nominatim.openstreetmap.org/search?q=Dubai&amp;format=json">https://nominatim.openstreetmap.org/search?q=Dubai&amp;format=json</a></p>
+<p><code>[
+    {
+        "place_id": "226938824",
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. <a href="https://www.openstreetmap.org/copyright">https://www.openstreetmap.org/copyright",</a>
+        "osm_type": "node",
+        "osm_id": "5404871640",
+        "boundingbox": [
+            "2.9270179",
+            "2.9670179",
+            "30.941206",
+            "30.981206"
+        ],
+        "lat": "2.9470179",
+        "lon": "30.961206",
+        "display_name": "Dubai, Arua, Northern Region, Uganda",
+        "class": "place",
+        "type": "village",
+        "importance": 0.17875,
+        "icon": "https://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png"
+    },
+    {
+        "place_id": "16284768",
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. <a href="https://www.openstreetmap.org/copyright">https://www.openstreetmap.org/copyright",</a>
+        "osm_type": "node",
+        "osm_id": "1404229008",
+        "boundingbox": [
+            "2.78168",
+            "2.82168",
+            "44.06159",
+            "44.10159"
+        ],
+        "lat": "2.80168",
+        "lon": "44.08159",
+        "display_name": "Dubai, Buurhakaba بورحكب, Buur Hakaba بورحكب, Bay باي, Soomaaliya الصومال",
+        "class": "place",
+        "type": "suburb",
+        "importance": 0.1725,
+        "icon": "https://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png"
+    },
+    [...]
+]</code></p>
+<p>And this is the wesbite results for <code>Dubai</code> as search parameter.</p>
+<p><img alt="screen shot 2018-02-13 at 11 45 09" src="https://user-images.githubusercontent.com/7332540/36143309-6b345ddc-10b3-11e8-890c-c7f17797699c.png" width="713"/></p>
+<p>There is something clearly wrong with my request or the server because Dubai in UAE should have the highest priority always, unless you are searching from Uganda.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-api" href="/tags/api/" rel="tag" title="see questions tagged 'api'">api</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>13 Feb '18, 10:09</strong>
+</p>
+<img alt="octohedron's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/4bdb36e27701d86cc80919cba423d4c9?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/14747/octohedron">octohedron</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="octohedron has no accepted answers">0%</span>
+</p>
+</img></div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/62069/">
+                edited
+                <strong>16 Feb '18, 23:18</strong>
+</a>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-62069">
+<a name="62071"></a>
+<div class="comment" id="comment-62071">
+<div class="comment-score" id="post-62071-score"></div>
+<div class="comment-text"><p>Please do not waste everybodies time by asking the same question in multiple places at the same time.</p></div>
+<div class="comment-info" id="comment-62071-info">
+<span class="comment-age">(13 Feb '18, 10:34)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+<a name="62166"></a>
+<div class="comment" id="comment-62166">
+<div class="comment-score" id="post-62166-score">2</div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/2053/simonpoole">@SimonPoole</a>: please add a link for people finding this question here.</p></div>
+<div class="comment-info" id="comment-62166-info">
+<span class="comment-age">(16 Feb '18, 23:18)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+<a name="62194"></a>
+<div class="comment" id="comment-62194">
+<div class="comment-score" id="post-62194-score">1</div>
+<div class="comment-text"><p>See <a href="https://github.com/openstreetmap/Nominatim/issues/916">https://github.com/openstreetmap/Nominatim/issues/916</a></p></div>
+<div class="comment-info" id="comment-62194-info">
+<span class="comment-age">(19 Feb '18, 01:02)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-62069">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-62069-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<div class="question-status" style="margin-bottom:15px">
+<h3>
+                The question has been closed for the following reason "Duplicate Question (asked on Github too)" by
+                <a href="/users/2053/simonpoole">SimonPoole</a>
+                 13 Feb '18, 10:35
+            </h3>
+</div>
+<form action="/questions/62069/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="oQStSBQzoqVBJUctBNzjwrJ2YapqNnnG"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

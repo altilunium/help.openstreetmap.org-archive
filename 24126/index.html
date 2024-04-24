@@ -1,0 +1,193 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/24126/overpassapi-different-json-formats">OverpassAPI: different json formats</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/24126/up/" id="post-24126-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-24126-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/24126/down/" id="post-24126-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/24126/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>I use the OverpassAPI to extract some data. Exporting them via the webinterface as geoJSON works fine but when I use an OverpassQL-link (example below) I receive a JSON-file with a different structure. How can I get a geoJSON-file with this link?</p>
+<p><a href="http://overpass-api.de/api/interpreter?data=[out:json];node(51.69,10.48,51.73,10.56)[">http://overpass-api.de/api/interpreter?data=[out:json];node(51.69,10.48,51.73,10.56)["highway"="street_lamp"];out;;</a> </p>
+<p>regards</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpassapi" href="/tags/overpassapi/" rel="tag" title="see questions tagged 'overpassapi'">overpassapi</a>
+<a class="post-tag tag-link-json" href="/tags/json/" rel="tag" title="see questions tagged 'json'">json</a>
+<a class="post-tag tag-link-geojson" href="/tags/geojson/" rel="tag" title="see questions tagged 'geojson'">geojson</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>09 Jul '13, 12:34</strong>
+</p>
+<img alt="Ogmios's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7ef3a3c25492438c9f0e5a548a36fa07?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6268/ogmios">Ogmios</a><br/>
+<span class="score" title="766 reputation points">766</span><span title="20 badges"><span class="badge1">●</span><span class="badgecount">20</span></span><span title="26 badges"><span class="silver">●</span><span class="badgecount">26</span></span><span title="39 badges"><span class="bronze">●</span><span class="badgecount">39</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Ogmios has 3 accepted answers">25%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-24126">
+<a name="24127"></a>
+<div class="comment" id="comment-24127">
+<div class="comment-score" id="post-24127-score"></div>
+<div class="comment-text"><p>How does the structure differ? Is it a valid GeoJSON file? Did you remove the duplicated semicolon at the end of your link?</p></div>
+<div class="comment-info" id="comment-24127-info">
+<span class="comment-age">(09 Jul '13, 13:02)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-24126">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-24126-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/24126/overpassapi-different-json-formats?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/24126/overpassapi-different-json-formats?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/24126/overpassapi-different-json-formats?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/24126/overpassapi-different-json-formats?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="24201"></a>
+<div class="answer accepted-answer" id="answer-container-24201">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/24201/up/" id="post-24201-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-24201-score" title="current number of votes">
+    6
+</div>
+<a class="ajax-command post-vote down" href="/vote/24201/down/" id="post-24201-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/24201/" rel="nofollow" title="Ogmios has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Overpass returns a JSON format that is a direct representation of OSM data. This is not GeoJSON, because GeoJSON doesn't fit the OSM data structure.</p>
+<p>In particular, in GeoJSON everything has a geometry, and topological incidence (like two ways sharing a node) is not represented directly. Also, GeoJSON differentiates between simple polygons and non-closed ways, which OSM does not (or again, not directly).</p>
+<p>For these reasons, you need a conversion from OSM data to GeoJSON, and this is what Overpass Turbo does.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/24201/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>13 Jul '13, 10:24</strong>
+</p>
+<img alt="Roland%20Olbricht's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fcfdb0825826fd13d2ff0d83d58819c6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3480/roland-olbricht">Roland Olbricht</a><br/>
+<span class="score" title="6666 reputation points"><span class="">6.7k</span></span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="64 badges"><span class="silver">●</span><span class="badgecount">64</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Roland Olbricht has 40 accepted answers">36%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-24201">
+</div>
+<div class="comment-tools" id="comment-tools-24201">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-24201-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="24990"></a>
+<div class="answer" id="answer-container-24990">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/24990/up/" id="post-24990-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-24990-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/24990/down/" id="post-24990-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I have looked at the code that Overpass Turbo uses, in the hope that I could adapt the <a href="https://github.com/tyrasd/overpass-ide/blob/gh-pages/js/OSM4Leaflet.js">OSM4Leaflet.js</a> code to easily add standard overpass JSON queries to my map.</p>
+<p>This is the sort of thing I'd ideally like to be able to do:</p>
+<pre><code>var jsonLayer = new L.OSM4Leaflet(json).addTo(map);
+</code></pre>
+<p>Unfortunately I can't understand the complexities of the code used by Overpass Turbo. Could anyone help me out? It would be very useful to have a simple method be generally known.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/24990/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Aug '13, 15:41</strong>
+</p>
+<img alt="Tom%20Chance's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1878d01ce6631ca1cca8c339a92b4d29?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7038/tom-chance">Tom Chance</a><br/>
+<span class="score" title="16 reputation points">16</span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Tom Chance has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-24990">
+</div>
+<div class="comment-tools" id="comment-tools-24990">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-24990-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/24126/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="06kRqRN3WvhYw6tmv9gpYAFPOUXc0QYq"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

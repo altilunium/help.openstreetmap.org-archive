@@ -1,0 +1,190 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/72591/whats-the-good-way-to-get-a-freshly-downloaded-planet-latestosmpbf-up-to-date-as-its-published-once-per-week">What's the good way to get a freshly downloaded planet-latest.osm.pbf up to date as it's published once per week ?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/72591/up/" id="post-72591-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-72591-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/72591/down/" id="post-72591-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/72591/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>EDIT: see next question please (reformulated as I did not have answers to the first one)</p>
+<p>Hi,</p>
+<p>I don't really understand what Osmosis 'maxInterval' configuration option does when using <code>osmosis --read-replication-interval workingDirectory=. --simplify-change --write-xml-change changes.osc.gz</code>.</p>
+<p>My understanding is: it helps to merge multiple <code>.osc.gz</code> files available at the replication tree <code>baseUrl</code> to a merged <code>changes.osc.gz</code> file.</p>
+<p>For instance, if Osmosis configuration options are set to</p>
+<ul>
+<li><code>maxInterval=345600</code> which corresponds to 1 week in seconds</li>
+<li><code>baseUrl=<a href="https://planet.osm.org/replication/day/">https://planet.osm.org/replication/day/</a></code></li>
+</ul>
+<p>the behaviour will be: Osmosis get all available <code>xxx.osc.gz</code> daily changes at <a href="https://planet.osm.org/replication/day/">/replication/day/</a> for which the corresponding <code>xxx.state.txt</code> file</p>
+<ul>
+<li>indicates a <code>sequenceNumber</code> higher than the <code>sequenceNumber</code> of <code>$osmosis_workind_dir_state.txt</code></li>
+<li>indicates a <code>timestamp</code> higher than the <code>'timestamp_1'</code> of <code>$osmosis_workind_dir_state.txt</code> and lower than <code>'timestamp_1' + 345600</code></li>
+</ul>
+<p>and then produce a <code>changes.osc.gz</code> file merging all these changes which are "simplified" (result file contains "a maximum of one change per entity"). With these settings, the limit is 7 <code>.osc.gz</code> daily changes for each Osmosis run.</p>
+<p>Is it correct ?</p>
+<p>Hope it is clear, thanks in advance.</p>
+<p>Augustin</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-planet" href="/tags/planet/" rel="tag" title="see questions tagged 'planet'">planet</a>
+<a class="post-tag tag-link-replication" href="/tags/replication/" rel="tag" title="see questions tagged 'replication'">replication</a>
+<a class="post-tag tag-link-.osc" href="/tags/.osc/" rel="tag" title="see questions tagged '.osc'">.osc</a>
+<a class="post-tag tag-link-changes" href="/tags/changes/" rel="tag" title="see questions tagged 'changes'">changes</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Jan '20, 10:45</strong>
+</p>
+<img alt="augustind's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e8872726c57a506c351071fc1b7b3aa7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17708/augustind">augustind</a><br/>
+<span class="score" title="166 reputation points">166</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="13 badges"><span class="bronze">●</span><span class="badgecount">13</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="augustind has one accepted answer">10%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/72591/">
+                edited
+                <strong>26 Jan '20, 18:38</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-72591">
+<a name="73380"></a>
+<div class="comment" id="comment-73380">
+<div class="comment-score" id="post-73380-score"></div>
+<div class="comment-text"><p>Hi Augustin - did you end up solving this?  I'm trying to do much the same thing and struggling to get changes downloaded.  Be interested in your solution</p>
+<p>Cheers</p></div>
+<div class="comment-info" id="comment-73380-info">
+<span class="comment-age">(05 Mar '20, 04:57)</span>
+<a class="comment-user userinfo" href="/users/17983/quannah">Quannah</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-72591">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-72591-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/72591/whats-the-good-way-to-get-a-freshly-downloaded-planet-latestosmpbf-up-to-date-as-its-published-once-per-week?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/72591/whats-the-good-way-to-get-a-freshly-downloaded-planet-latestosmpbf-up-to-date-as-its-published-once-per-week?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/72591/whats-the-good-way-to-get-a-freshly-downloaded-planet-latestosmpbf-up-to-date-as-its-published-once-per-week?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/72591/whats-the-good-way-to-get-a-freshly-downloaded-planet-latestosmpbf-up-to-date-as-its-published-once-per-week?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="72692"></a>
+<div class="answer answered-by-owner" id="answer-container-72692">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/72692/up/" id="post-72692-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-72692-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/72692/down/" id="post-72692-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hi,</p>
+<p>Just to pull up the question .. does anybody has an idea if last statement is correct ?</p>
+<p>My main goal is to apply in one shot all the diffs available to planet-osm-latest.osm.pbf (because it's published only once per week) to get the freshest data as possible, regardless the day of the week I download it.</p>
+<p>My solution for now is:</p>
+<ol>
+<li>get the latest available planet-latest.osm.pbf and /replication/day/state.txt file at <a href="https://planet.osm.org/">https://planet.osm.org/</a></li>
+<li>get the corresponding replication number X</li>
+<li>download all the Y.osc.gz available where  X - 7 &lt; Y &lt;= X</li>
+<li>use osmium merge-changes to merge all Y.osc.gz files to a merge.osc.gz</li>
+<li>use osmium apply-changes to apply merge.osc.gz to the latest available <code>planet-latest.osm.pbf</code></li>
+</ol>
+<p>but I guess I could use <code>osmosis --read-replication-interval workingDirectory=. --simplify-change --write-xml-change merge.osc.gz</code> to avoid steps 1 to 4 by getting in one shot desired <code>merge.osc.gz</code>.</p>
+<p>I tried last settings (<code>maxInterval=345600</code> - one week in seconds - with the Planet OSM daily replication tree) but I got errors like "Pipeline entities are not sorted", like here</p>
+<ul>
+<li><a href="https://help.openstreetmap.org/questions/47785/osmosis-issue-pipeline-entities-are-not-sorted">Osmosis issue : Pipeline entities are not sorted
+</a></li>
+<li><a href="https://help.openstreetmap.org/questions/12469/osmosis-merge-issue-pipeline-entities-are-not-sorted-or-contain-multiple-versions">Osmosis - merge issue (Pipeline entities are not sorted or contain multiple versions)
+</a></li>
+</ul>
+<p>Hope you can help :) thanks,</p>
+<p>Augustin</p>
+<p>PS: I will retitle the question to make it more clear</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/72692/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>26 Jan '20, 18:34</strong>
+</p>
+<img alt="augustind's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e8872726c57a506c351071fc1b7b3aa7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17708/augustind">augustind</a><br/>
+<span class="score" title="166 reputation points">166</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="13 badges"><span class="bronze">●</span><span class="badgecount">13</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="augustind has one accepted answer">10%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/72692/">
+                edited
+                <strong>26 Jan '20, 18:40</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-72692">
+</div>
+<div class="comment-tools" id="comment-tools-72692">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-72692-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/72591/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="HBBArO8pJVG6ANF2SME0VVRxPMISmDjU"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

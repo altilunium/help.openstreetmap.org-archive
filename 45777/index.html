@@ -1,0 +1,233 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/45777/ways-processing-extremely-slowly-008ks-on-planet-import">Ways processing extremely slowly (0.08k/s) on planet import</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/45777/up/" id="post-45777-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-45777-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/45777/down/" id="post-45777-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/45777/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm doing a full planet import on an Ubuntu machine with 28GB of RAM. I've changed the postgres.conf proportionally to <a href="http://wiki.openstreetmap.org/wiki/Nominatim/Installation#PostgreSQL_Tuning">what is recommended on the wiki</a> and kicked off the import process with the following options:</p>
+<pre><code>sudo -u postgres ./utils/setup.php --osm-file /datadrive/downloadedfilesforimport/planet-latest.osm.bz2 --all --osm2pgsql-cache 21000 2&gt;&amp;1 | sudo tee setup.log
+</code></pre>
+<p>Nodes import quickly enough, but Ways are moving at less than 1/1000th the speed in terms of k/s. The process is chugging along and using lot's of memory but relatively little CPU compared to when it was importing Nodes. I know that Ways are supposed to take longer than Nodes to import but what I've read in the <a href="http://wiki.openstreetmap.org/wiki/Osm2pgsql/benchmarks">benchmarks</a> and elsewhere, this doesn't seem right. Here's the current output:</p>
+<pre><code>Import
+osm2pgsql SVN version 0.89.0-dev (64bit id space)
+
+Using projection SRS 4326 (Latlong)
+NOTICE:  table "place" does not exist, skipping
+Allocating memory for dense node cache
+Allocating dense node cache in one big chunk
+Allocating memory for sparse node cache
+Sharing dense sparse
+Node-cache: cache=21000MB, maxblocks=2688000*8192, allocation method=11
+Mid: pgsql, scale=10000000 cache=21000
+Setting up table: planet_osm_nodes
+Setting up table: planet_osm_ways
+Setting up table: planet_osm_rels
+
+Reading in file: /datadrive/downloadedfilesforimport/planet-latest.osm.bz2
+Using XML parser.
+Processing: Node(3046040k 107.4k/s) Way(3566k 0.08k/s) Relation(0 0.00/s)
+</code></pre>
+<p>Ways started processing about 12 hours ago. Any idea what could be going on here? Should I just be patient?</p>
+<p><strong>EDIT:</strong> being that I'm from the Windows world, the muscle memory around Ctrl+C to copy is strong and as a result has caused me to kill the import. If I need to adjust settings and restart the import, that's no longer a problem.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-planet_osm_ways" href="/tags/planet_osm_ways/" rel="tag" title="see questions tagged 'planet_osm_ways'">planet_osm_ways</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-planet_osm" href="/tags/planet_osm/" rel="tag" title="see questions tagged 'planet_osm'">planet_osm</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>07 Oct '15, 14:15</strong>
+</p>
+<img alt="joelmdev's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9b2b0a805463173c9cb4a740aefbac55?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11559/joelmdev">joelmdev</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="joelmdev has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/45777/">
+                edited
+                <strong>07 Oct '15, 16:46</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-45777">
+<a name="45783"></a>
+<div class="comment" id="comment-45783">
+<div class="comment-score" id="post-45783-score"></div>
+<div class="comment-text"><p>Have you checked if/how much your system is paging? (In linux getting it wrong terms "swaping") 28GB is likely not really enough memory for a current planet all things considered.</p></div>
+<div class="comment-info" id="comment-45783-info">
+<span class="comment-age">(07 Oct '15, 15:33)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+<a name="45785"></a>
+<div class="comment" id="comment-45785">
+<div class="comment-score" id="post-45785-score"></div>
+<div class="comment-text"><p><a href="http://help.openstreetmap.org/users/2053/simonpoole"></a><a href="http://help.openstreetmap.org/users/2053/simonpoole">@SimonPoole</a> swap is not currently configured on the machine. It's a fresh VM, and I tried to use proportional RAM settings for postgres and osm2pgsql as what were outlined in the wiki. The wiki had also pointed out that swapping should be avoided, so I didn't pursue it any further. I'm assuming I could create a swap file via the instructions here <a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04">https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04</a> but I'd need some guidance on how large to make it and how to tweak the kernel. I can also bump the machine up to 56GB during the import if needed. Also worth noting that I intend to drop the resources on the machine significantly after the import is finished.</p></div>
+<div class="comment-info" id="comment-45785-info">
+<span class="comment-age">(07 Oct '15, 16:26)</span>
+<a class="comment-user userinfo" href="/users/11559/joelmdev">joelmdev</a>
+</div>
+</div>
+<a name="45787"></a>
+<div class="comment" id="comment-45787">
+<div class="comment-score" id="post-45787-score"></div>
+<div class="comment-text"><p>Not really answer, but someone else was looking at the same thing
+<a href="https://www.openstreetmap.org/user/baditaflorin/diary/35848">https://www.openstreetmap.org/user/baditaflorin/diary/35848</a>
+and
+<a href="https://www.openstreetmap.org/user/baditaflorin/diary/35848">https://www.openstreetmap.org/user/baditaflorin/diary/35848</a></p></div>
+<div class="comment-info" id="comment-45787-info">
+<span class="comment-age">(07 Oct '15, 16:54)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+<a name="45798"></a>
+<div class="comment" id="comment-45798">
+<div class="comment-score" id="post-45798-score">1</div>
+<div class="comment-text"><p>Bumping up the memory would likely be a good idea in any case.</p></div>
+<div class="comment-info" id="comment-45798-info">
+<span class="comment-age">(08 Oct '15, 09:48)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+<a name="45818"></a>
+<div class="comment" id="comment-45818">
+<div class="comment-score" id="post-45818-score"></div>
+<div class="comment-text"><p>I'm sure that more memory would be good, but would memory alone be enough to cause the Ways to import this slowly?</p></div>
+<div class="comment-info" id="comment-45818-info">
+<span class="comment-age">(09 Oct '15, 15:35)</span>
+<a class="comment-user userinfo" href="/users/11559/joelmdev">joelmdev</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-45777">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-45777-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/45777/ways-processing-extremely-slowly-008ks-on-planet-import?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/45777/ways-processing-extremely-slowly-008ks-on-planet-import?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/45777/ways-processing-extremely-slowly-008ks-on-planet-import?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/45777/ways-processing-extremely-slowly-008ks-on-planet-import?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="63327"></a>
+<div class="answer" id="answer-container-63327">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/63327/up/" id="post-63327-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-63327-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/63327/down/" id="post-63327-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Would like to make some contribution here on exactly the same problem: my semi-production nominatim installation test setup initially included 2GB of RAM for VM with Ubuntu 16.04. While installing using <a href="http://nominatim.org/release-docs/latest/appendix/Install-on-Ubuntu-16/">the guideline</a> I kept all postgresql buffer sizes to their defaults (e.g. did not increase them to 2G/10G/24G as <a href="http://nominatim.org/release-docs/latest/admin/Installation/#postgresql-tuning">this manual</a> suggests), and also decreased --osm2pgsql-cache setting by 10x, e.g. running:</p>
+<pre><code>./utils/setup.php --osm-file /srv/nominatim/Nominatim-3.1.0/data/russia-latest.osm.pbf
+--all --osm2pgsql-cache 2800 2&gt;&amp;1 | tee setup.log
+</code></pre>
+<p>However this attempt failed with exactly the same problem as Op described, producing processing speed as follows (approx. values, as I did not keep the 1st attempt logs):</p>
+<pre><code>Processing: Node(290006k 73.0k/s) Way(1003k 0.11k/s) Relation(0 0.0/s)
+</code></pre>
+<p>The thread was stuck for hours at this stage with 0,11k/s throughput for Way processing, so I cancelled the import, decided to increase VM RAM from 2GB to 8GB. This lead to success: both import speed doubled and the processing stage was finished, overall import continued to next stages:</p>
+<pre><code>Reading in file: /srv/nominatim/Nominatim-3.1.0/data/russia-latest.osm.pbf
+Using PBF parser.
+Processing: Node(290006k 154.0k/s) Way(25978k 47.15k/s) Relation(744260 515.77/s)  parse time: 3877s
+Node stats: total(290006204), max(5597166795) in 1883s
+Way stats: total(25978618), max(585757808) in 551s
+Relation stats: total(745112), max(8271126) in 1443s
+</code></pre>
+<p>While writing this lines I'm waiting for Load Data stage completion:</p>
+<pre><code>2018-05-05 19:09:29 == Loading word list
+ count
+--------
+ 885590
+(1 row)
+
+ count
+-------
+ 46228
+(1 row)
+
+2018-05-05 19:19:29 == Load Data
+.......................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/63327/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>05 May '18, 18:19</strong>
+</p>
+<img alt="Ivan%20M3's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/469f1370fd837b672771f5e5234eaf24?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15083/ivan-m3">Ivan M3</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Ivan M3 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-63327">
+</div>
+<div class="comment-tools" id="comment-tools-63327">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-63327-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/45777/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="989pENECc707zdaM873DmK8PhpA7hjla"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

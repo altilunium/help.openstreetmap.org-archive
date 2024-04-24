@@ -1,0 +1,214 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/22588/is-there-any-way-to-get-list-data-location-from-osm-around-a-location-by-poi-types-eg-restaurants-banks-as-geojson">Is there any way to get list data location from OSM around a location by POI types (e.g: restaurants , banks , ...) as geoJson?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/22588/up/" id="post-22588-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-22588-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/22588/down/" id="post-22588-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/22588/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi everyone</p>
+<p>I am a beginer with OSM dev
+I am currently working with different technologies for searching and showing OSM data in by search POI types . Like Google map , we have :
+<a href="https://maps.googleapis.com/maps/api/place/nearbysearch/json?">https://maps.googleapis.com/maps/api/place/nearbysearch/json?</a></p>
+<p>and then put parameter to this URL so we can get a JSON Array with location data in types and nearby a location</p>
+<p>Does anyone know if there exists something ? and any one have 
+idead to help me 
+Sorry about my English . I am not good at english. 
+Thank you very much.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-geojson" href="/tags/geojson/" rel="tag" title="see questions tagged 'geojson'">geojson</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 May '13, 03:58</strong>
+</p>
+<img alt="TuanDM's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/380319feffefcd9263465a1414850662?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6447/tuandm">TuanDM</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="TuanDM has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-22588">
+</div>
+<div class="comment-tools" id="comment-tools-22588">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-22588-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/22588/is-there-any-way-to-get-list-data-location-from-osm-around-a-location-by-poi-types-eg-restaurants-banks-as-geojson?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/22588/is-there-any-way-to-get-list-data-location-from-osm-around-a-location-by-poi-types-eg-restaurants-banks-as-geojson?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/22588/is-there-any-way-to-get-list-data-location-from-osm-around-a-location-by-poi-types-eg-restaurants-banks-as-geojson?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/22588/is-there-any-way-to-get-list-data-location-from-osm-around-a-location-by-poi-types-eg-restaurants-banks-as-geojson?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="22590"></a>
+<div class="answer" id="answer-container-22590">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/22590/up/" id="post-22590-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-22590-score" title="current number of votes">
+    8
+</div>
+<a class="ajax-command post-vote down" href="/vote/22590/down/" id="post-22590-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The <a href="https://wiki.openstreetmap.org/wiki/Overpass_API">Overpass API</a> supports an <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Language_Guide#Something_near_something_else">around</a> keyword (see <a href="http://overpass-turbo.eu/?Q=%3Cosm-script%3E%0A%20%20%3Cquery%20type%3D%22node%22%3E%0A%20%20%20%20%3Chas-kv%20k%3D%22name%22%20v%3D%22Bonn%22%2F%3E%0A%20%20%3C%2Fquery%3E%0A%20%20%3Cquery%20type%3D%22node%22%3E%0A%20%20%20%20%3Caround%20radius%3D%221000%22%2F%3E%0A%20%20%20%20%3Chas-kv%20k%3D%22name%22%20v%3D%22Gielgen%22%2F%3E%0A%20%20%3C%2Fquery%3E%0A%20%20%3Cprint%2F%3E%0A%3C%2Fosm-script%3E&amp;C=50.74033;7.19436;16&amp;R">Overpass Turbo</a> for a visualization of the example) and of course instead of a place you can also <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Language_Guide#All_kind_of_objects">specify a bounding box</a>. <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Language_Guide#Control_output_format">Various output formats</a> are supported.</p>
+<p>Example:</p>
+<pre><code>[out:json]
+;
+node["name"="Leipzig"];
+(
+  node
+    (around:150)
+    ["amenity"~"bank|restaurant"];
+  way
+    (around:150)
+    ["amenity"~"bank|restaurant"];
+  relation
+    (around:150)
+    ["amenity"~"bank|restaurant"];
+);
+out body;
+&gt;;
+out skel;
+</code></pre>
+<p>This query <a href="http://overpass-turbo.eu/s/cx">returns</a> all bank and restaurant within a distance of 150 meter around any node with the name <em>Leipzig</em>.</p>
+<p>Or <a href="http://overpass-turbo.eu/s/cw">another query</a> using a <a href="http://wiki.openstreetmap.org/wiki/Bounding_Box">bounding box</a> instead of an object:</p>
+<pre><code>[out:json]
+;
+(
+  node
+    ["amenity"~"bank|restaurant"]
+    (51.335,12.368,51.345,12.378);
+  way
+    ["amenity"~"bank|restaurant"]
+    (51.335,12.368,51.345,12.378);
+  relation
+    ["amenity"~"bank|restaurant"]
+    (51.335,12.368,51.345,12.378);
+);
+out body;
+&gt;;
+out skel;
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/22590/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 May '13, 06:26</strong>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="scai has 168 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/22590/">
+                edited
+                <strong>21 May '13, 19:19</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-22590">
+<a name="22594"></a>
+<div class="comment" id="comment-22594">
+<div class="comment-score" id="post-22594-score">1</div>
+<div class="comment-text"><p>First, thank for your answer.It's very helpful to me . One more question.How about Search with exactly lat and long , not an exactly node's name.
+Thanks</p></div>
+<div class="comment-info" id="comment-22594-info">
+<span class="comment-age">(21 May '13, 10:21)</span>
+<a class="comment-user userinfo" href="/users/6447/tuandm">TuanDM</a>
+</div>
+</div>
+<a name="22596"></a>
+<div class="comment" id="comment-22596">
+<div class="comment-score" id="post-22596-score">1</div>
+<div class="comment-text"><p>You can also specify a bounding box as already explained. I updated my answer with a bbox example.</p></div>
+<div class="comment-info" id="comment-22596-info">
+<span class="comment-age">(21 May '13, 12:33)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="22605"></a>
+<div class="comment" id="comment-22605">
+<div class="comment-score" id="post-22605-score">1</div>
+<div class="comment-text"><p>Might want to add ways to that query. If the buildings are mapped then, as I understand it, the POI (restaurant, bank, etc.) may (should) be tagged on the way instead of on a node.</p></div>
+<div class="comment-info" id="comment-22605-info">
+<span class="comment-age">(21 May '13, 17:04)</span>
+<a class="comment-user userinfo" href="/users/5918/n76">n76</a>
+</div>
+</div>
+<a name="22607"></a>
+<div class="comment" id="comment-22607">
+<div class="comment-score" id="post-22607-score">1</div>
+<div class="comment-text"><p>I updated both examples to search for nodes, ways and relations.</p></div>
+<div class="comment-info" id="comment-22607-info">
+<span class="comment-age">(21 May '13, 19:19)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-22590">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-22590-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/22588/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="4pBrgBLKZ77Gjk9Y7vrdBYjhMhjygkVs"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,232 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/45114/missing-tiles-at-certain-zoom-level-for-certain-parts-on-my-own-tile-server">Missing tiles at certain zoom level for certain parts on my own tile server</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/45114/up/" id="post-45114-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-45114-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/45114/down/" id="post-45114-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/45114/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi all</p>
+<p>I have setup an osm tile server (following switch2osm) and wrote a simple openlayers script to browse the content. I have seen a problem that is for certain parts on the map when I zoomed into certain levels, the tiles were just missing and the missing areas were simply blank squares. I have checked the tiles that are missing are always for the same areas at the same zoom level.</p>
+<p>I downloaded the osm data from bbbike.org. Any idea on how this happens and what I should do to fix it? Thanks. I have uploaded a screen-shot as well as a Youtube video that can visually show the problem. Video: <a href="http://youtu.be/vkp3JTbPepo">link text</a></p>
+<p><img alt="alt text" src="http://help.openstreetmap.org/upfiles/Screenshot_from_2015-09-08_15:49:24.png"/></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-tiles" href="/tags/tiles/" rel="tag" title="see questions tagged 'tiles'">tiles</a>
+<a class="post-tag tag-link-missing" href="/tags/missing/" rel="tag" title="see questions tagged 'missing'">missing</a>
+<a class="post-tag tag-link-tileserver" href="/tags/tileserver/" rel="tag" title="see questions tagged 'tileserver'">tileserver</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>08 Sep '15, 10:02</strong>
+</p>
+<img alt="dalishi's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0cd6d6bd835d840ee1df1f5a3310d099?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/11425/dalishi">dalishi</a><br/>
+<span class="score" title="126 reputation points">126</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="11 badges"><span class="bronze">●</span><span class="badgecount">11</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="dalishi has no accepted answers">0%</span>
+</p>
+</img></div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/45114/">
+                edited
+                <strong>08 Sep '15, 10:04</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-45114">
+<a name="45159"></a>
+<div class="comment" id="comment-45159">
+<div class="comment-score" id="post-45159-score">2</div>
+<div class="comment-text"><p>Are exactly the same tiles still missing if you try to access them after a few minutes? Try to empty your browser cache before trying to access them again.</p></div>
+<div class="comment-info" id="comment-45159-info">
+<span class="comment-age">(10 Sep '15, 10:51)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="45161"></a>
+<div class="comment" id="comment-45161">
+<div class="comment-score" id="post-45161-score">1</div>
+<div class="comment-text"><p>Hi <a href="http://help.openstreetmap.org/users/158/scai">@scai</a> you hit the point. First I deleted all the rendered tiles from /var/lib/mod_tile, observed not exactly the same tiles missing. Some missing tiles come back. Then I tried to clear my browser's cache and problem seems solved. The previous missing tiles appeared. Thanks for your enlightening. But I still want to figure out the reason behind this why it is happening.</p></div>
+<div class="comment-info" id="comment-45161-info">
+<span class="comment-age">(10 Sep '15, 11:18)</span>
+<a class="comment-user userinfo" href="/users/11425/dalishi">dalishi</a>
+</div>
+</div>
+<a name="45163"></a>
+<div class="comment" id="comment-45163">
+<div class="comment-score" id="post-45163-score">1</div>
+<div class="comment-text"><p>Just a guess but maybe your tile server is just too slow for rendering and/or delivering the tiles within time.</p></div>
+<div class="comment-info" id="comment-45163-info">
+<span class="comment-age">(10 Sep '15, 11:44)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-45114">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-45114-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/45114/missing-tiles-at-certain-zoom-level-for-certain-parts-on-my-own-tile-server?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/45114/missing-tiles-at-certain-zoom-level-for-certain-parts-on-my-own-tile-server?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/45114/missing-tiles-at-certain-zoom-level-for-certain-parts-on-my-own-tile-server?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/45114/missing-tiles-at-certain-zoom-level-for-certain-parts-on-my-own-tile-server?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="45176"></a>
+<div class="answer" id="answer-container-45176">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/45176/up/" id="post-45176-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-45176-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/45176/down/" id="post-45176-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I suspect that <a href="http://help.openstreetmap.org/users/158/scai">@scai</a> hit the nail on the head above - the renderer isn't able to render tiles fast enough for them to appear in the browser.  When I see this problem I do the following:</p>
+<pre><code>sudo tail -f /var/log/syslog | grep "TILE "
+</code></pre>
+<p>(note the space after "TILE")</p>
+<p>You should see "START TILE" and "DONE TILE" lines in response for tile requests.  If a tile fails to appear, wait for the "DONE TILE" line and then refresh the request for it in the browser and you should see it.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/45176/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>10 Sep '15, 19:01</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-45176">
+</div>
+<div class="comment-tools" id="comment-tools-45176">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-45176-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="45157"></a>
+<div class="answer" id="answer-container-45157">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/45157/up/" id="post-45157-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-45157-score" title="current number of votes">
+    -2
+</div>
+<a class="ajax-command post-vote down" href="/vote/45157/down/" id="post-45157-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Dalishi, since you’ve downloaded the OSM data from a third party, there several update changes possible. Tiles are updated at different levels and moments. So ask the operator bbbike.org for their update frequency or even an explanation. Collect them over a certain period and remember that the tiles are updated all the time, just as everything else in OSM. Consider a download directly from the OSM servers as well.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/45157/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>10 Sep '15, 10:32</strong>
+</p>
+<img alt="Hendrikklaas's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/742e93034cd38ad243f7ab26f350b659?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3443/hendrikklaas">Hendrikklaas</a><br/>
+<span class="score" title="9286 reputation points"><span class="">9.3k</span></span><span title="207 badges"><span class="badge1">●</span><span class="badgecount">207</span></span><span title="238 badges"><span class="silver">●</span><span class="badgecount">238</span></span><span title="387 badges"><span class="bronze">●</span><span class="badgecount">387</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Hendrikklaas has 39 accepted answers">5%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-45157">
+<a name="45158"></a>
+<div class="comment" id="comment-45158">
+<div class="comment-score" id="post-45158-score"></div>
+<div class="comment-text"><p>He is running his own tile server.</p></div>
+<div class="comment-info" id="comment-45158-info">
+<span class="comment-age">(10 Sep '15, 10:49)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="45162"></a>
+<div class="comment" id="comment-45162">
+<div class="comment-score" id="post-45162-score"></div>
+<div class="comment-text"><p>Hi <a href="http://help.openstreetmap.org/users/3443/hendrikklaas">@Hendrikklaas</a> thanks for your reply. The problem seems because my browser's cache. I did what <a href="http://help.openstreetmap.org/users/158/scai">@scai</a> suggested and problem solved. Still try to figure out what's going on behind. Thanks.</p></div>
+<div class="comment-info" id="comment-45162-info">
+<span class="comment-age">(10 Sep '15, 11:20)</span>
+<a class="comment-user userinfo" href="/users/11425/dalishi">dalishi</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-45157">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-45157-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/45114/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="woXbDilyS7GWWK2VvSf1oT6rEc687gXi"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

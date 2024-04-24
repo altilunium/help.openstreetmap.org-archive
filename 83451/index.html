@@ -1,0 +1,67 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/83451/osmosis-cannot-fit-even-a-small-pbf-in-memory">osmosis cannot fit even a small pbf in memory</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/83451/up/" id="post-83451-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-83451-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/83451/down/" id="post-83451-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/83451/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi, I am working on optimizing the process of converting pbf files to Postgres ingestion files with osmosis --write-pgsql-dump. In my case, Osmosis cannot complete the writing of dump files for Europe even in 5 days so I was looking for different options to speed it up and I found the nodeLocationStoreType=InMemory parameter which will read the nodes in memory and thus speed up the process significantly. However, it seems that this is not possible even with a small pbf for Albania for example (43MB) with a machine with 64GB of ram. I get an OutofmemoryError: Java heap space and I have allocated 55GB RAM to JVM with JAVACMD_OPTIONS="-Xmx55G". I don't understand how is this possible and if I am missing something.
+The command that i use is: osmosis -v --read-pbf-fast file="albania-latest.osm.pbf" --log-progress interval=60 --used-node --write-pgsql-dump enableBboxBuilder=yes enableLinestringBuilder=yes directory=/home keepInvalidWays=no nodeLocationStoreType=InMemory </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-performance" href="/tags/performance/" rel="tag" title="see questions tagged 'performance'">performance</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+<a class="post-tag tag-link-memory" href="/tags/memory/" rel="tag" title="see questions tagged 'memory'">memory</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>11 Feb '22, 10:18</strong>
+</p>
+<img alt="LiliaAngelova's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e1f88b5309d38cefd8e5c9c328002848?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/21404/liliaangelova">LiliaAngelova</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="LiliaAngelova has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-83451">
+</div>
+<div class="comment-tools" id="comment-tools-83451">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-83451-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/83451/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="XD9jRU2Rp6MImn78qUQv94ito5bryIoo"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,261 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/66194/jagged-geometry-after-osm-update-with-osmosis-and-osm2pgsql">Jagged geometry after OSM update with Osmosis and Osm2pgsql</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66194/up/" id="post-66194-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66194-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/66194/down/" id="post-66194-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/66194/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>In my previous question <a href="https://help.openstreetmap.org/questions/66092,">https://help.openstreetmap.org/questions/66092,</a> I asked for help concerning why edited features were missing after applying a daily changefile to my OSM postgis dataset. It was determined that I used the flat nodes option upon initial planet.pbf import to postgres (--flat-nodes D:\nodes.cache), and this option was also required in the osm2pgsql --append command.</p>
+<p>I was able to successfully append a daily changefile to my database using the flat nodes option in the append command. However, after viewing the data through a localhost Geoserver service, all of the database geometry is corrupted. Specifically, what were once smooth curves in the osm_line layer are now jagged and blocky. Polygons are incorrectly shaped as well. Rectangular building footprints are now often triangular. It looks like some sort of generalization process is happening to the nodes.</p>
+<p>Graphical examples:</p>
+<p>Lines - <a href="https://imgur.com/YJeDrMg">https://imgur.com/YJeDrMg</a><br/>
+Red is the original linework (before the append command). Thin purple is what the osm_line layer looks like after the append command.</p>
+<p>Polygons - <a href="https://imgur.com/fXtftjk">https://imgur.com/fXtftjk</a><br/>
+Blue is the original linework (before append). Thin blue is what osm_polygon looks like after the append command.</p>
+<p>Here are my commands used:</p>
+<p>1) Initial planet import<br/>
+osm2pgsql -c -d planet -U postgres -W -H localhost -S default.style c:\osm\planet.pbf -E 4326 -C 8000 -s --flat-nodes D:\osm_updates\nodes.cache --number-processes 6</p>
+<p>2) Osmosis pull changefile based on local db state id  <br/>
+osmosis --read-replication-interval workingDirectory=d:\osm_updates --simplify-change --write-xml-change d:\osm_updates\changes.osc.gz</p>
+<p>3) Osm2pgql append changefile to local postgres db<br/>
+osm2pgsql --append d:\osm_updates\changes.osc.gz -d planet -U postgres -S default.style -E 4326 -C 8000 --slim --flat-nodes d:\osm_updates\nodes.cache --number-processes 6</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-changeset" href="/tags/changeset/" rel="tag" title="see questions tagged 'changeset'">changeset</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>06 Oct '18, 18:54</strong>
+</p>
+<img alt="mykol404's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bbd0e184c8bbe03544aefb4e57ac5ccd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15726/mykol404">mykol404</a><br>
+<span class="score" title="36 reputation points">36</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mykol404 has no accepted answers">0%</span>
+</br></br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66194">
+<a name="66195"></a>
+<div class="comment" id="comment-66195">
+<div class="comment-score" id="post-66195-score"></div>
+<div class="comment-text"><p>This looks interesting. Can you tell us which version of osm2pgsql and which versions of PostgreSQL/PostGIS you are using? I am not sure if it is going to be relevant but someone who wants to debug this would likely want to use the same versions. Also, are you sure that between the original import and the update, you have not updated osm2pgsql, postgres, postgis, or the GEOS library on your system? Again, this would not necessarily be a problem but it could be.</p></div>
+<div class="comment-info" id="comment-66195-info">
+<span class="comment-age">(06 Oct '18, 21:38)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="66196"></a>
+<div class="comment" id="comment-66196">
+<div class="comment-score" id="post-66196-score"></div>
+<div class="comment-text"><p>What if you look at the actual coordinates of an affected feature through a database IDE like DBeaver? Does it indeed show simplication for e.g. for a building now displayed as triangle. In DBeaver you can easily view this information by opening the table and looking at the "way" column. You can even copy the contents to some text editor to view the full coordinate info.</p></div>
+<div class="comment-info" id="comment-66196-info">
+<span class="comment-age">(06 Oct '18, 21:57)</span>
+<a class="comment-user userinfo" href="/users/9580/mboeringa">mboeringa</a>
+</div>
+</div>
+<a name="66197"></a>
+<div class="comment" id="comment-66197">
+<div class="comment-score" id="post-66197-score"></div>
+<div class="comment-text"><p>I had a suspicion that there might be a flatnode precision issue with <code>-E 4326</code> which is not widely used, but I ran an import followed by an update using the same setup as you (albeit for a small area) and I saw no problems. This was using the latest osm2pgsql from github. My theory would also not explain how in your setup <em>all</em> nodes seem to be affected by an update, not only those whose coordinates have actually changed.</p></div>
+<div class="comment-info" id="comment-66197-info">
+<span class="comment-age">(06 Oct '18, 22:14)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="66224"></a>
+<div class="comment" id="comment-66224">
+<div class="comment-score" id="post-66224-score"></div>
+<div class="comment-text"><p>I am running the latest version of osm2pgsql (0.96.0).<br/>
+PostgreSQL version 10.4, and PostGIS 2.4.4
+Not sure what the GEOS library is.</p></div>
+<div class="comment-info" id="comment-66224-info">
+<span class="comment-age">(08 Oct '18, 18:39)</span>
+<a class="comment-user userinfo" href="/users/15726/mykol404">mykol404</a>
+</div>
+</div>
+<a name="66225"></a>
+<div class="comment" id="comment-66225">
+<div class="comment-score" id="post-66225-score"></div>
+<div class="comment-text"><p>Have you looked at the actual coordinates of affected features at the database level as I suggested? This is crucial. E.g. if the buildings now having become triangular in display, turn out to be unaffected in the database, than the problem is not with osm2pgsql, osmosis or your append workflow, but can solely be in the Geoserver service.</p></div>
+<div class="comment-info" id="comment-66225-info">
+<span class="comment-age">(08 Oct '18, 19:00)</span>
+<a class="comment-user userinfo" href="/users/9580/mboeringa">mboeringa</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-66194">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66194-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/66194/jagged-geometry-after-osm-update-with-osmosis-and-osm2pgsql?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/66194/jagged-geometry-after-osm-update-with-osmosis-and-osm2pgsql?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/66194/jagged-geometry-after-osm-update-with-osmosis-and-osm2pgsql?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/66194/jagged-geometry-after-osm-update-with-osmosis-and-osm2pgsql?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="66327"></a>
+<div class="answer accepted-answer" id="answer-container-66327">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66327/up/" id="post-66327-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66327-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/66327/down/" id="post-66327-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/66327/" rel="nofollow" title="mykol404 has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Good you managed to solve your issues. </p>
+<p>As to DBeaver: yes, it takes a little bit of time to get used to, however, once you have used it a bit longer, there is much to like about the application. I have also found the developer very responsive and pro-active regarding bug reports and enhancement suggestions. At least it is a much better application than pgAdmin3. I haven't yet looked at pgAdmin4, so can't compare them yet.</p>
+<p>As to coordinate read-out in DBeaver, simply switch to Data view and select the way column and a record, then choose "Copy" from the right-click context menu. You can subsequently paste in Notepad, as I did in this screenshot.</p>
+<p><img alt="alt text" src="https://help.openstreetmap.org/upfiles/DBeaver.jpg"/></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/66327/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>13 Oct '18, 14:40</strong>
+</p>
+<img alt="mboeringa's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/dc8a1ef54d3e25744ee52d1ad1459a81?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/9580/mboeringa">mboeringa</a><br>
+<span class="score" title="1542 reputation points"><span class="">1.5k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="15 badges"><span class="silver">●</span><span class="badgecount">15</span></span><span title="27 badges"><span class="bronze">●</span><span class="badgecount">27</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mboeringa has 4 accepted answers">9%</span>
+</br></br></p>
+</img></div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/66327/">
+                edited
+                <strong>13 Oct '18, 14:47</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66327">
+</div>
+<div class="comment-tools" id="comment-tools-66327">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66327-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="66321"></a>
+<div class="answer answered-by-owner" id="answer-container-66321">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66321/up/" id="post-66321-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66321-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/66321/down/" id="post-66321-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Thanks for the help everyone.  It ended up being duplicate Java environment variables in Windows causing conflict for Geoserver to serve out the data.  I guess it was jumping the math around when calling upon Geoserver to feed the data?  Who knows.</p>
+<p>I tried DBeaver, as suggested by a member.  I was able to query a feature but couldn't figure out how to view it or export the coords in this utility. </p>
+<p>I then came across a release note for PostgreSQL's pgAdmin4 database management console.  They came out with a new version in September that allows you to directly view geometric features through the PostGIS extension, displaying the queried feature in a map window (overlaid on OSM, too!).  </p>
+<p>I jumped to a given jagged road or triangular building and they were fine!  </p>
+<p><img alt="alt text" src="https://help.openstreetmap.org/upfiles/image_(1).png"/></p>
+<p>This is when we learned that Geoserver was likely the culprit.  Looks like it was two conflicting Java path variables (not sure how that happened, but other people share the machine).  </p>
+<p>Thanks for everyone's help!  Cheers</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/66321/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Oct '18, 20:17</strong>
+</p>
+<img alt="mykol404's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bbd0e184c8bbe03544aefb4e57ac5ccd?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/15726/mykol404">mykol404</a><br>
+<span class="score" title="36 reputation points">36</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mykol404 has no accepted answers">0%</span>
+</br></br></p>
+</img></div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/66321/">
+                edited
+                <strong>12 Oct '18, 20:21</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66321">
+</div>
+<div class="comment-tools" id="comment-tools-66321">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66321-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/66194/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="ozcMe6xxu3UlckGex1WjK9ruWRfRQwo8"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,145 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/52966/nominatim-geocoding-slow-queries-optimization">Nominatim geocoding slow queries optimization</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/52966/up/" id="post-52966-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-52966-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/52966/down/" id="post-52966-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/52966/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi ,</p>
+<p>We are using Nominatim with following configs for geocoding (getting lat and lon)
+Nominatim Version 2.4.0
+16 core CPUS,     122GB RAM    320GB SSD HD</p>
+<p>And our postgresql.conf looks like following</p>
+<p>shared_buffers = 1GB            # min 128kB
+maintenance_work_mem = 10GB        # min 1MB
+work_mem = 50MB                # min 64kB
+maintenance_work_mem = 10GB        # min 1MB
+effective_cache_size = 24GB
+synchronous_commit = off        # synchronization level;
+checkpoint_segments = 100        # in logfile segments, min 1, 16MB each
+checkpoint_timeout = 10min        # range 30s-1h
+checkpoint_completion_target = 0.9    # checkpoint target duration, 0.0 - 1.0</p>
+<p>We are seeing following queries taking time (almost always&gt; 5 seconds) in postgres logs for geocode
+<a href="http://nominatim.local.com/nominatim/search.php?format=json&amp;limit=1&amp;q=322+West+Street%2CCarlisle%2CMassachusetts%2C01741%2CUnited+States">http://nominatim.local.com/nominatim/search.php?format=json&amp;limit=1&amp;q=322+West+Street%2CCarlisle%2CMassachusetts%2C01741%2CUnited+States</a></p>
+<p>LOG:  duration: 19915.484 ms  statement: select place_id, (select count(*) from (select unnest(ARRAY[4523464,5730972,36867388]) INTERSECT select unnest(nameaddress_vector))s) as exactmatch from search_name where name_vector @&gt; ARRAY[2832006] and array_cat(nameaddress_vector,ARRAY[]::integer[]) @&gt; ARRAY[15678054,348921,362979,36867389] and country_code = 'us' order by (case when importance = 0 OR importance IS NULL then 0.75-(search_rank::float/40) else importance end) DESC, exactmatch DESC limit 2</p>
+<p><a href="http://nominatim.local.com/nominatim/search.php?format=json&amp;limit=1&amp;q=106+Winchester+Street+%232%2CBrookline%2CMassachusetts%2C02446%2CUnited+States">http://nominatim.local.com/nominatim/search.php?format=json&amp;limit=1&amp;q=106+Winchester+Street+%232%2CBrookline%2CMassachusetts%2C02446%2CUnited+States</a></p>
+<p>LOG:  duration: 13518.676 ms  statement: select place_id, (select count(*) from (select unnest(ARRAY[6122619,5730972,18878827]) INTERSECT select unnest(nameaddress_vector))s) as exactmatch from search_name where name_vector @&gt; ARRAY[2294177] and array_cat(nameaddress_vector,ARRAY[]::integer[]) @&gt; ARRAY[1997025,53652,362979,18878828] and country_code = 'us' order by (case when importance = 0 OR importance IS NULL then 0.75-(search_rank::float/40) else importance end) DESC, exactmatch DESC limit 2</p>
+<p>Can someone suggest what are we missing here? Anyways to improve like creating indexes or changing postgres configs?</p>
+<p>Thanks.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-slow" href="/tags/slow/" rel="tag" title="see questions tagged 'slow'">slow</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-query" href="/tags/query/" rel="tag" title="see questions tagged 'query'">query</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>15 Nov '16, 07:46</strong>
+</p>
+<img alt="aaphadke's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d2cd39e451cff2d68baea8d2070a9e8e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12988/aaphadke">aaphadke</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="aaphadke has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-52966">
+</div>
+<div class="comment-tools" id="comment-tools-52966">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-52966-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/52966/nominatim-geocoding-slow-queries-optimization?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/52966/nominatim-geocoding-slow-queries-optimization?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/52966/nominatim-geocoding-slow-queries-optimization?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/52966/nominatim-geocoding-slow-queries-optimization?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="52967"></a>
+<div class="answer" id="answer-container-52967">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/52967/up/" id="post-52967-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-52967-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/52967/down/" id="post-52967-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This is a duplicate of <a href="https://github.com/twain47/Nominatim/issues/578">https://github.com/twain47/Nominatim/issues/578</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/52967/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>15 Nov '16, 10:57</strong>
+</p>
+<img alt="mtmail's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/96aad1e1801b7ea36fba50687924c935?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/150/mtmail">mtmail</a><br/>
+<span class="score" title="4757 reputation points"><span class="">4.8k</span></span><span title="15 badges"><span class="silver">●</span><span class="badgecount">15</span></span><span title="74 badges"><span class="bronze">●</span><span class="badgecount">74</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mtmail has 50 accepted answers">27%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-52967">
+</div>
+<div class="comment-tools" id="comment-tools-52967">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-52967-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/52966/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="iVxxdqduHeRhoGWTnOFVaiFiYy35kcAn"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

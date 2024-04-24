@@ -1,0 +1,131 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/78118/select-ways-by-following-a-gpx-track">Select ways by following a GPX track</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/78118/up/" id="post-78118-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-78118-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/78118/down/" id="post-78118-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/78118/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have a GPX track of a bike trip which was entirely on asphalt, so I would like to add <code>surface=asphalt</code> on all the ways I used.</p>
+<p>From the GPX track, is it possible (for instance in JOSM) to automatically select the nearest ways in OSM? Ideally by taking into account that these must form a valid path as a whole (which hopefully helps disambiguate edge cases).</p>
+<p>I would then just need to review that the selection is correct and apply the tag to all these ways.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-ways" href="/tags/ways/" rel="tag" title="see questions tagged 'ways'">ways</a>
+<a class="post-tag tag-link-josm" href="/tags/josm/" rel="tag" title="see questions tagged 'josm'">josm</a>
+<a class="post-tag tag-link-gpx" href="/tags/gpx/" rel="tag" title="see questions tagged 'gpx'">gpx</a>
+<a class="post-tag tag-link-post_process_gpx" href="/tags/post_process_gpx/" rel="tag" title="see questions tagged 'post_process_gpx'">post_process_gpx</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>30 Dec '20, 09:02</strong>
+</p>
+<img alt="Pintoch's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c447f40cf43cf6c458112f3b46ee3093?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18394/pintoch">Pintoch</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Pintoch has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-78118">
+</div>
+<div class="comment-tools" id="comment-tools-78118">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-78118-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/78118/select-ways-by-following-a-gpx-track?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/78118/select-ways-by-following-a-gpx-track?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/78118/select-ways-by-following-a-gpx-track?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/78118/select-ways-by-following-a-gpx-track?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="78124"></a>
+<div class="answer accepted-answer" id="answer-container-78124">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/78124/up/" id="post-78124-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-78124-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/78124/down/" id="post-78124-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/78124/" rel="nofollow" title="Pintoch has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I think the general term for this is <a href="https://en.wikipedia.org/wiki/Map_matching">map matching</a>. It is supported by some of the routers that use OSM data, but generally isn't present in editors.</p>
+<p>While there have been a few tools that use errors during map matching/navigation to flag potential errors in OSM (<a href="https://wiki.openstreetmap.org/wiki/MapDust">MapDust</a>, <a href="https://wiki.openstreetmap.org/wiki/That_Shouldnt_Be_Possible">That Shouldn't be Possible</a>) I'm not aware of any JOSM plugin that will do this. </p>
+<p>I think you will have to overlay the GPS trace and select ways manually.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/78124/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Dec '20, 13:12</strong>
+</p>
+<img alt="InsertUser's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ec8a0cf213f9797ad1c1ae2c28c2332d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4426/insertuser">InsertUser</a><br/>
+<span class="score" title="11005 reputation points"><span class="">11.0k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="69 badges"><span class="silver">●</span><span class="badgecount">69</span></span><span title="185 badges"><span class="bronze">●</span><span class="badgecount">185</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="InsertUser has 73 accepted answers">19%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-78124">
+</div>
+<div class="comment-tools" id="comment-tools-78124">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-78124-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/78118/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="iere9werz5HpHWEvdNNbhgjrbIwv4bKI"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

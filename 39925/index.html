@@ -1,0 +1,314 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/39925/how-to-show-marker-detail-on-marker-click-in-android-osm">how to show marker detail on marker click in android osm ?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/39925/up/" id="post-39925-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-39925-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/39925/down/" id="post-39925-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/39925/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am new to use osm in android.I have successfully show OSM in android.But i have no idea " <strong>how to click on marker and show marker detail like google map v2 infowindow popup</strong>".</p>
+<p><strong>How to show marker details with image onclick marker openstreetmap android, same as Google map Infowindow show on marker click.</strong></p>
+<p>Please give me code or idea to implement marker click event in osm android.</p>
+<p>Thank you in advance.</p>
+<p>This is my code which i have implemented in android java</p>
+<pre><code>public class MainActivity extends Activity 
+{
+private MapView mapView;
+private MapController mapController;    
+LocationManager locationManager;
+
+ArrayList&lt;OverlayItem&gt; overlayItemArray;
+
+@Override
+protected void onCreate(Bundle savedInstanceState) 
+{
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    mapView = (MapView)findViewById(R.id.mapview);
+
+    mapView.setBuiltInZoomControls(true);
+    mapView.setMultiTouchControls(true);
+    mapView.setClickable(true);
+    //mapView.setUseDataConnection(false);
+    mapController = (MapController) mapView.getController();
+    mapController.setZoom(17);
+
+    //--- Create Overlay
+    overlayItemArray = new ArrayList&lt;OverlayItem&gt;();
+
+    DefaultResourceProxyImpl defaultResourceProxyImpl = new DefaultResourceProxyImpl(this);
+    MyItemizedIconOverlay myItemizedIconOverlay = new MyItemizedIconOverlay(overlayItemArray, null, defaultResourceProxyImpl);
+    mapView.getOverlays().add(myItemizedIconOverlay);
+    //---
+
+    locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+
+    //for demo, getLastKnownLocation from GPS only, not from NETWORK
+    Location lastLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+    if(lastLocation != null)
+    {
+        updateLoc(lastLocation);
+    }
+
+    //Add Scale Bar
+    ScaleBarOverlay myScaleBarOverlay = new ScaleBarOverlay(this);
+    mapView.getOverlays().add(myScaleBarOverlay);
+}
+
+@Override
+protected void onResume()
+{
+    super.onResume();
+    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, myLocationListener);
+    locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, myLocationListener);
+}
+
+@Override
+protected void onPause() 
+{
+    super.onPause();
+    locationManager.removeUpdates(myLocationListener);
+}
+
+private void updateLoc(Location loc)
+{
+    GeoPoint locGeoPoint = new GeoPoint(loc.getLatitude(), loc.getLongitude());
+    mapController.setCenter(locGeoPoint);
+    mapController.animateTo(locGeoPoint);
+
+    setOverlayLoc(loc);
+
+    mapView.invalidate();
+}
+
+private void setOverlayLoc(Location overlayloc)
+{
+    GeoPoint overlocGeoPoint = new GeoPoint(overlayloc);
+    //---
+    overlayItemArray.clear();
+
+    OverlayItem newMyLocationItem = new OverlayItem("My Location", "My Location", overlocGeoPoint);
+    overlayItemArray.add(newMyLocationItem);
+    //---
+}
+
+private LocationListener myLocationListener = new LocationListener()
+{
+    @Override
+    public void onLocationChanged(Location location)
+    {
+        updateLoc(location);
+    }
+
+    @Override
+    public void onProviderDisabled(String provider)
+    {           
+    }
+
+    @Override
+    public void onProviderEnabled(String provider)
+    {           
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras)
+    {           
+    }
+};
+
+private class MyItemizedIconOverlay extends ItemizedIconOverlay&lt;OverlayItem&gt;
+{
+
+    public MyItemizedIconOverlay(List&lt;OverlayItem&gt; pList,org.osmdroid.views.overlay.ItemizedIconOverlay.OnItemGestureListener&lt;OverlayItem&gt; pOnItemGestureListener,
+            ResourceProxy pResourceProxy)
+    {
+        super(pList, pOnItemGestureListener, pResourceProxy);           
+    }
+
+    @Override
+    public void draw(Canvas canvas, MapView mapview, boolean arg2)
+    {
+        super.draw(canvas, mapview, arg2);
+
+        if(!overlayItemArray.isEmpty())
+        {
+            //overlayItemArray have only ONE element only, so I hard code to get(0)
+            GeoPoint in = overlayItemArray.get(0).getPoint();
+
+            Point out = new Point();
+            mapview.getProjection().toPixels(in, out);
+
+            Bitmap bm = BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher);
+            canvas.drawBitmap(bm,out.x - bm.getWidth()/2,out.y - bm.getHeight()/2,null);
+        }
+    }
+
+    @Override
+    public boolean onSingleTapUp(MotionEvent event, MapView mapView)
+    {
+        //return super.onSingleTapUp(event, mapView);
+        return true;
+    }
+
+    @Override
+    public boolean onSingleTapConfirmed(MotionEvent event, MapView mapView)
+    {
+        return true;
+    }
+}
+</code></pre>
+<p>}</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-marker" href="/tags/marker/" rel="tag" title="see questions tagged 'marker'">marker</a>
+<a class="post-tag tag-link-android" href="/tags/android/" rel="tag" title="see questions tagged 'android'">android</a>
+<a class="post-tag tag-link-osmdroid" href="/tags/osmdroid/" rel="tag" title="see questions tagged 'osmdroid'">osmdroid</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>30 Dec '14, 09:16</strong>
+</p>
+<img alt="nehalkumar's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/6ce327f00b711d021de7bb7928fc5c57?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10247/nehalkumar">nehalkumar</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="nehalkumar has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/39925/">
+                edited
+                <strong>30 Dec '14, 10:22</strong>
+</a>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-39925">
+<a name="39926"></a>
+<div class="comment" id="comment-39926">
+<div class="comment-score" id="post-39926-score"></div>
+<div class="comment-text"><p>Can you explain what you've done so far to "show OSM in android"?  Are you writing an Android application, and if so in what - Android Java, or something else?</p></div>
+<div class="comment-info" id="comment-39926-info">
+<span class="comment-age">(30 Dec '14, 09:21)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="39927"></a>
+<div class="comment" id="comment-39927">
+<div class="comment-score" id="post-39927-score"></div>
+<div class="comment-text"><p>i have added code please check and give suggestion.Yes this is android apllication</p></div>
+<div class="comment-info" id="comment-39927-info">
+<span class="comment-age">(30 Dec '14, 09:29)</span>
+<a class="comment-user userinfo" href="/users/10247/nehalkumar">nehalkumar</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-39925">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-39925-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/39925/how-to-show-marker-detail-on-marker-click-in-android-osm?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/39925/how-to-show-marker-detail-on-marker-click-in-android-osm?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/39925/how-to-show-marker-detail-on-marker-click-in-android-osm?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/39925/how-to-show-marker-detail-on-marker-click-in-android-osm?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="39928"></a>
+<div class="answer answered-by-owner" id="answer-container-39928">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/39928/up/" id="post-39928-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-39928-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/39928/down/" id="post-39928-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I got Solution from this link</p>
+<p>"<a href="http://code.google.com/p/osmdroid/issues/detail?id=245#makechanges">http://code.google.com/p/osmdroid/issues/detail?id=245#makechanges</a>"</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/39928/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Dec '14, 10:16</strong>
+</p>
+<img alt="nehalkumar's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/6ce327f00b711d021de7bb7928fc5c57?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10247/nehalkumar">nehalkumar</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="nehalkumar has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/39928/">
+                edited
+                <strong>30 Dec '14, 10:17</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-39928">
+</div>
+<div class="comment-tools" id="comment-tools-39928">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-39928-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/39925/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="QywTnOq4xbecjQxeWSsaE4rlURT9f2Rw"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

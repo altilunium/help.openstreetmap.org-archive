@@ -1,0 +1,220 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/11624/librarytool-for-generating-an-mbtiles-file-from-online-osm-data">library/tool for generating an MBTiles file from online osm data</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/11624/up/" id="post-11624-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-11624-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/11624/down/" id="post-11624-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/11624/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi all,</p>
+<p>I am aware of TileMill, however, I need a library or tool that can take osm data (from a URL, rather than a local file source) and return an MBTiles file. I would like to create my own application where the user can view an area on the map (I plan on using OpenLayers + data from OpenStreetMap) and upon selection of an area, the application can call this tool/library and an MBTiles file can be generated and saved locally. I would then use this MBTiles file to display a map to the user when he/she is off-line.</p>
+<p>Does such a tool/library exist? Can TileMill offer this functionality via an API?</p>
+<p>Thank you,</p>
+<p>-f.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-generate_tiles" href="/tags/generate_tiles/" rel="tag" title="see questions tagged 'generate_tiles'">generate_tiles</a>
+<a class="post-tag tag-link-tilemill" href="/tags/tilemill/" rel="tag" title="see questions tagged 'tilemill'">tilemill</a>
+<a class="post-tag tag-link-api" href="/tags/api/" rel="tag" title="see questions tagged 'api'">api</a>
+<a class="post-tag tag-link-library" href="/tags/library/" rel="tag" title="see questions tagged 'library'">library</a>
+<a class="post-tag tag-link-mbtiles" href="/tags/mbtiles/" rel="tag" title="see questions tagged 'mbtiles'">mbtiles</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>30 Mar '12, 06:24</strong>
+</p>
+<img alt="fabasi's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/78b0f3c5ce5eaccf8d0e1cd7011d70dc?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3213/fabasi">fabasi</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="fabasi has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/11624/">
+                edited
+                <strong>30 Mar '12, 06:25</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-11624">
+</div>
+<div class="comment-tools" id="comment-tools-11624">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-11624-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/11624/librarytool-for-generating-an-mbtiles-file-from-online-osm-data?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/11624/librarytool-for-generating-an-mbtiles-file-from-online-osm-data?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/11624/librarytool-for-generating-an-mbtiles-file-from-online-osm-data?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/11624/librarytool-for-generating-an-mbtiles-file-from-online-osm-data?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="11625"></a>
+<div class="answer" id="answer-container-11625">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/11625/up/" id="post-11625-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-11625-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/11625/down/" id="post-11625-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It looks like you will either have to download the files first and then use <a href="https://github.com/mapbox/mbutil">mbutil</a> to make an MBTiles file, or you will have to modify that utility to read from the web instead of from a file.</p>
+<p>Be aware that while it is ok to use <em>data</em> from OpenStreetMap for your purpose, it is not acceptable that you use the OSM-provided tile server; you will have to set up your own tile server for that. See <a href="http://wiki.openstreetmap.org/wiki/Tile_usage_policy">Tile Usage Policy.</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/11625/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Mar '12, 07:17</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-11625">
+<a name="11626"></a>
+<div class="comment" id="comment-11626">
+<div class="comment-score" id="post-11626-score"></div>
+<div class="comment-text"><p>Thanks for the answer; that makes sense. I would be happy to setup my own tiles server, if that is what is needed. So in that case, would I download all the data from osm (periodically?), and host that on my own server? What is required to setup a tiles server? I think that an "enhanced" tiles server which generates MBTiles files is essentially what I am trying to build for the project described above.</p>
+<p>Cheers,</p>
+<p>-f.</p></div>
+<div class="comment-info" id="comment-11626-info">
+<span class="comment-age">(30 Mar '12, 07:50)</span>
+<a class="comment-user userinfo" href="/users/3213/fabasi">fabasi</a>
+</div>
+</div>
+<a name="34782"></a>
+<div class="comment" id="comment-34782">
+<div class="comment-score" id="post-34782-score"></div>
+<div class="comment-text"><p>Well, planet.osm if 29GB (400GB uncompressed XML) so if possible start from a smaller part; see <a href="http://wiki.openstreetmap.org/wiki/Planet.osm#Country_and_area_extracts">http://wiki.openstreetmap.org/wiki/Planet.osm#Country_and_area_extracts</a></p></div>
+<div class="comment-info" id="comment-34782-info">
+<span class="comment-age">(09 Jul '14, 22:41)</span>
+<a class="comment-user userinfo" href="/users/9216/sesam">sesam</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-11625">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-11625-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="81373"></a>
+<div class="answer" id="answer-container-81373">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/81373/up/" id="post-81373-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-81373-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/81373/down/" id="post-81373-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can create MBTiles from any .osm.pbf file using this tool - <a href="https://github.com/systemed/tilemaker">https://github.com/systemed/tilemaker</a></p>
+<ol>
+<li>
+<p>Download .osm.pbf file from <a href="https://download.geofabrik.de/">Geofabric</a>. To download for a custom area, you can use <a href="https://protomaps.com/extracts">Protomaps</a> or <a href="https://extract.bbbike.org/">BBBike Extract</a></p>
+</li>
+<li>
+<p>Download <a href="https://github.com/systemed/tilemaker/releases">tilemaker</a></p>
+</li>
+<li>
+<p>Execute the following command</p>
+</li>
+</ol>
+<p><code>tilemaker --input netherlands.osm.pbf --output netherlands.mbtiles --process resources/process-openmaptiles.lua --config resources/config-openmaptiles.json</code></p>
+<p>You can read more about it in this blog post - <a href="https://blog.kleunen.nl/blog/tilemaker-generate-map">https://blog.kleunen.nl/blog/tilemaker-generate-map</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/81373/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Aug '21, 19:48</strong>
+</p>
+<img alt="protos29's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/79e65eed0a4d543a7229550d59f0e309?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20659/protos29">protos29</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="protos29 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-81373">
+</div>
+<div class="comment-tools" id="comment-tools-81373">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-81373-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/11624/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="CcGMVvQ4I9cNGJ89l4HU5Fg6dOBgfC7C"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

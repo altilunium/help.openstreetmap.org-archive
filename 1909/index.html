@@ -1,0 +1,232 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/1909/bridges-duplicating-highway-segments">Bridges duplicating highway segments</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1909/up/" id="post-1909-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1909-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/1909/down/" id="post-1909-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/1909/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>In the north-eastern USA, there are many, many places where highway bridges duplicate a highway road segment.</p>
+<p>That is to say, a long segment of highway crosses over another road with nodes on the highway just before and after the other road, and there is a segment of highway crossing the other road.  But, the highway segment that crosses is NOT marked as a bridge.  However, there is also a second road segment that has been placed directly on top of the short crossing segment and this second road segment IS marked as a bridge.  Sometimes this second segment is tagged with the highway's name and refs, etc, but more often than not it isn't.  Of course, running the validator on these segments shows up the overlapping roads.</p>
+<p>The fix is to delete the duplicate bridge segment, break the underlying highway into three segments (before, crossing, and after) and tag the crossing segment with a bridge tag.</p>
+<p>I have done this now for several roads, recently Connecticut's Merritt Parkway (CT-15), and also the western end of the Long Island Expressway (LIE).   But there are many other instances of this problem.</p>
+<p>Is it possible to automate the fixing of this problem?  I can see many other instances of this on other roads too all over the north-east US: in the NY area, in Connecticut and in Massachusetts and possibly in other areas too.  Finding and fixing them all will be lots of work if it has to be done manually.</p>
+<p>An example that I have not yet fixed exists on the Long Island Expressway here: 40.7834724N -71.5894013W: select either of the highway bridges and delete it and you will see the underlying road segment.</p>
+<p>Thanks,
+Jaiy.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-bridge" href="/tags/bridge/" rel="tag" title="see questions tagged 'bridge'">bridge</a>
+<a class="post-tag tag-link-highway" href="/tags/highway/" rel="tag" title="see questions tagged 'highway'">highway</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 Dec '10, 05:27</strong>
+</p>
+<img alt="Jaiy's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0fee73d51555cb4c6fe881f9e56c0e19?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/576/jaiy">Jaiy</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jaiy has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1909">
+</div>
+<div class="comment-tools" id="comment-tools-1909">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1909-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/1909/bridges-duplicating-highway-segments?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/1909/bridges-duplicating-highway-segments?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/1909/bridges-duplicating-highway-segments?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/1909/bridges-duplicating-highway-segments?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="1910"></a>
+<div class="answer" id="answer-container-1910">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1910/up/" id="post-1910-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1910-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/1910/down/" id="post-1910-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It might be possible to make a bot that fixes these problems. But it is hard and there is a chance that other problems might arise. If you look at the history you might discover that some of the duplicated ways are actually made by bots that were trying to fix other part of the TIGER import.</p>
+<p>It is better to do it properly manually and maybe fix other problems too then to let loose bots.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/1910/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Dec '10, 10:31</strong>
+</p>
+<img alt="Gnonthgol's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/44a4438f0146dfd898e24c221fd28b58?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/131/gnonthgol">Gnonthgol ♦</a><br/>
+<span class="score" title="13750 reputation points"><span class="">13.8k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="103 badges"><span class="silver">●</span><span class="badgecount">103</span></span><span title="198 badges"><span class="bronze">●</span><span class="badgecount">198</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Gnonthgol has 57 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1910">
+</div>
+<div class="comment-tools" id="comment-tools-1910">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1910-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="1911"></a>
+<div class="answer" id="answer-container-1911">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1911/up/" id="post-1911-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1911-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/1911/down/" id="post-1911-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Trying to fix these problems automatically would probably not be helpful. But there are some tools which can be useful in finding these sort of errors.</p>
+<p>One useful tool is <a href="http://keepright.ipax.at/">Keep Right</a>. It shows a map of "overlapping ways" and  "intersections without junctions", which seem to be part of the problems you are describing. So worth checking your local area on there, and fixing any errors.</p>
+<p>The <a href="http://wiki.openstreetmap.org/wiki/JOSM/Validator">JOSM Validator</a> can also highlight these problems.</p>
+<p>Also, as much of these errors are probably from the TIGER import, you could look at the <code>tiger:reviewed</code> tag. If something is tagged as <code>tiger:reviewed=no</code>, that means no one has checked it, so there may be problems with it. I think JOSM highlights everything that has this tag. If you have checked a road, and are pretty sure it is correct, then you can remove this tag.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/1911/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Dec '10, 13:52</strong>
+</p>
+<img alt="Vclaw's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/aa505c046b1c010e997a7849c6f3dbbe?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/62/vclaw">Vclaw</a><br/>
+<span class="score" title="9217 reputation points"><span class="">9.2k</span></span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="95 badges"><span class="silver">●</span><span class="badgecount">95</span></span><span title="141 badges"><span class="bronze">●</span><span class="badgecount">141</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Vclaw has 41 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1911">
+</div>
+<div class="comment-tools" id="comment-tools-1911">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1911-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="1920"></a>
+<div class="answer answered-by-owner" id="answer-container-1920">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1920/up/" id="post-1920-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1920-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/1920/down/" id="post-1920-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Thanks for those quick replies.</p>
+<p>Unfortunately, the dup bridges that I am removing appear to be added by individual contributors - there's no indication they were made by a bot.  I can keep on editing them, but it is very slow... the process involves examining an entire highway, often several hundred kilometers long, in close-up mode looking for bridges, and then performing a sequence of edits to remove the dup bridges, split the underlying way, and mark the crossing segments as a bridges.  And, given how dense the NY area is, the JOSM downloads can only be done in small areas at a time.  So, it is very tedious and time-consuming work.  I have been using the JOSM validator to help find these, and it does, but it also finds lots of other errors/warnings nearby that delay the task at hand.  Is there a way to use the validator to just validate the entire length of a single way?</p>
+<p>As for the TIGER data... I have been leaving that alone.  I just read the Wiki pages about the TIGER data and TIGER_fixup, so maybe I will start deleting tiger:reviewed=no tags as I go.  But, am I supposed to review all the TIGER fields or just that the road has the correct position, type, name, ref and intersections?  I can do this part, but the validity of tags like tiger:source, tiger:tlid and tiger:upload_uuid, I have no idea.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/1920/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>26 Dec '10, 15:49</strong>
+</p>
+<img alt="Jaiy's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0fee73d51555cb4c6fe881f9e56c0e19?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/576/jaiy">Jaiy</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jaiy has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1920">
+</div>
+<div class="comment-tools" id="comment-tools-1920">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1920-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/1909/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="x2RB50z1NbpiAExkiGz49iUAvQefFxRd"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

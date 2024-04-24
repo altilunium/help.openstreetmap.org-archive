@@ -1,0 +1,155 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/73110/osmcoastline">osmcoastline</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/73110/up/" id="post-73110-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-73110-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/73110/down/" id="post-73110-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/73110/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>I have some problems with osmcoastline, hope some can help !
+I want to extract the land polygons and want them in shape-format.</p>
+<p>osmcoastline -V
+osmcoastline version 2.1.2
+Copyright (C) 2012-2016  Jochen Topf <a href="mailto:jochen@topf.org">jochen@topf.org</a>
+License: GNU GENERAL PUBLIC LICENSE Version 3 <a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.</p>
+<p>I run osmcoastline:
+osmcoastline -o coastline.db cyprus-latest.osm.pbf 
+There were 0 warnings.
+There were 0 errors.</p>
+<p>Then I want the output in shape-format:
+ogr2ogr -f "ESRI Shapefile" land_polygons.shp coastline.db land_polygons
+FAILURE:
+Unable to open datasource <code>coastline.db' with the following drivers.
+  -&gt;</code>PCIDSK'
+ + long list of alternative formats</p>
+<p>Am I doing something wrong? How to get the data in shape-format ?</p>
+<p>Best regards
+Håvard</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osmcoastline" href="/tags/osmcoastline/" rel="tag" title="see questions tagged 'osmcoastline'">osmcoastline</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>17 Feb '20, 08:37</strong>
+</p>
+<img alt="HaavardHolm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/db5b7b23235694ee1b9ef036a4393416?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17918/haavardholm">HaavardHolm</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="HaavardHolm has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-73110">
+</div>
+<div class="comment-tools" id="comment-tools-73110">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-73110-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/73110/osmcoastline?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/73110/osmcoastline?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/73110/osmcoastline?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/73110/osmcoastline?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="73115"></a>
+<div class="answer" id="answer-container-73115">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/73115/up/" id="post-73115-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-73115-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/73115/down/" id="post-73115-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>First, there are pregenerated coastlines available from <a href="https://osmdata.openstreetmap.de/">here</a>. It might be easier to just use those. Second, your version of osmcoastline is pretty old, I'd suggest using a more current version. Third, it seems osmcoastline did its job and ogr2ogr didn't so this doesn't really have anything to do with osmcoastline, but with ogr2ogr. You left out the most important pieces of information, that is the "long list of alternative formats". You should have a format "SQLite / Spatialite" or something like it in there. If you don't then your version of ogr2ogr doesn't have the necessary driver. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/73115/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>17 Feb '20, 16:28</strong>
+</p>
+<img alt="Jochen%20Topf's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2d4dfcdcde73aa5e2ffa4a9b3a7cb51d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/112/jochen-topf">Jochen Topf</a><br/>
+<span class="score" title="5244 reputation points"><span class="">5.2k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="50 badges"><span class="silver">●</span><span class="badgecount">50</span></span><span title="74 badges"><span class="bronze">●</span><span class="badgecount">74</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jochen Topf has 32 accepted answers">31%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-73115">
+<a name="73120"></a>
+<div class="comment" id="comment-73120">
+<div class="comment-score" id="post-73120-score"></div>
+<div class="comment-text"><p>Thank you Jochen,</p>
+<p>All your comments was to the point. The problem was my ogr2ogr.</p>
+<p>Best regards
+Håvard</p></div>
+<div class="comment-info" id="comment-73120-info">
+<span class="comment-age">(18 Feb '20, 09:07)</span>
+<a class="comment-user userinfo" href="/users/17918/haavardholm">HaavardHolm</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-73115">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-73115-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/73110/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="8fQUgJIFdHtXDo5fLhyiqDcyaI05GNY4"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

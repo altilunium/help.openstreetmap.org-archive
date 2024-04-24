@@ -1,0 +1,155 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/87968/multiple-nominatim-instances-one-per-region">Multiple nominatim instances, one per region.</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/87968/up/" id="post-87968-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-87968-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/87968/down/" id="post-87968-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/87968/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>I have successfully installed Nominatim with a single Postgres Database in my infrastructure. However, our infrastructure team has informed me that the planet database is too large, and they recommend working with smaller databases for better performance. My initial idea is to set up separate instances of Nominatim for different regions and create a gateway to expose the API as a unified deployment.</p>
+<p>To achieve this, I'm considering making the 'countryCode' mandatory in user requests and then forwarding the request to the appropriate Nominatim instance based on the country code. For example, if the 'countryCode' is 'Austria,' I would route the request to the Europe region instance.</p>
+<p>However, I'm concerned about potential issues, especially when a user requests an address in a place like Hawaii, which falls within the Oceania region. In this case, for a 'countryCode' of 'US,' I may need to query at least two regions simultaneously and somehow combine the results.</p>
+<p>My primary concern is not the increased complexity of this deployment (multiple databases and API servers) as the infrastructure constraints take precedence. I'm more interested in understanding potential functional issues that I might not be aware of at the moment. Has anyone faced a similar challenge or has insights to share on the best practices for handling such a multi-region Nominatim deployment?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-region" href="/tags/region/" rel="tag" title="see questions tagged 'region'">region</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-database" href="/tags/database/" rel="tag" title="see questions tagged 'database'">database</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>31 Oct '23, 14:31</strong>
+</p>
+<img alt="MattCon's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0900332f0ef93125d5acc2bf12fbae47?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/23321/mattcon">MattCon</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="MattCon has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-87968">
+</div>
+<div class="comment-tools" id="comment-tools-87968">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-87968-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/87968/multiple-nominatim-instances-one-per-region?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/87968/multiple-nominatim-instances-one-per-region?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/87968/multiple-nominatim-instances-one-per-region?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/87968/multiple-nominatim-instances-one-per-region?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="87969"></a>
+<div class="answer" id="answer-container-87969">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/87969/up/" id="post-87969-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-87969-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/87969/down/" id="post-87969-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Let me guess, your IT people want to run everything "in the cloud" and somehow a single cloud node (or whatever the term in the particular cloud infrastructure is) cannot allocate the resources needed. And now you are on a quest to spend several person-weeks of design time to implement a workaround for this infrastructure shortcoming, resulting in a system that is more complex and more prone to failure and where (unlike when running a "standard" Nominatim) your organisation will be the only group on earth using it, so the chances of finding others with similar problems (should problems arise) are near zero. Brilliant plan!</p>
+<p>Less cynically, I think your plan can work as long as you avoid splitting countries. Nominatim doesn't like it if a country boundary is not fully there. This could require some work if you are dealing with countries that have overseas territories, like France. You might have to cut out your regions from a planet file with Osmium and ensure referential integrity on county border relations, something that is not granted in e.g. Geofabrik download files (where the Europe file will not contain French Dom-Tom areas like Martinique).</p>
+<p>I would still strongly advise against your plan. If you cannot allocate the ~ 1 TB of disk space and 64 GB of RAM to run a full-blown Nominatim server (and finding these resources will almost certainly be cheaper than continuing down the path you have started on!), then you might consider</p>
+<ul>
+<li>doing the Nominatim <em>import</em> on a beefy machine that is non-production and therefore maybe sits outside the strict requirements by your infrastructure team, then only replicating the necessary bits of the database to a production machine with less resources. This way you might get away with something like 16 GB RAM, 500 GB disk space for the client machine</li>
+<li>switching to "Photon" altogether for which you can download ready-made database files that will only need ~250 GB of disk space; Photon may not do everything that Nominatim does but if it is sufficient for you then things are way easier.</li>
+</ul>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/87969/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>31 Oct '23, 14:59</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-87969">
+<a name="87970"></a>
+<div class="comment" id="comment-87970">
+<div class="comment-score" id="post-87970-score"></div>
+<div class="comment-text"><p>Thanks Frederik for your answer, you made me smile. I want to assure you than except for this question, no more time was spent on this cursed path and no more will be spent. </p>
+<p>The critical resource here is space, so I'm interested in the first option you pictured. Could you please elaborate or point me to existing resources on this? Thanks a lot!</p></div>
+<div class="comment-info" id="comment-87970-info">
+<span class="comment-age">(31 Oct '23, 16:00)</span>
+<a class="comment-user userinfo" href="/users/23321/mattcon">MattCon</a>
+</div>
+</div>
+<a name="87971"></a>
+<div class="comment" id="comment-87971">
+<div class="comment-score" id="post-87971-score"></div>
+<div class="comment-text"><p>When Nominatim does the initial import it uses a number of extra database tables that are not required for production use, but are needed during the import process and - if later incremental updates are desired - also during updates.</p>
+<p>If you do not need incremental updates (and instead can live with, say, doing a full new data load once a month) then you can simply remove the excess information from your database after the import, see <a href="https://nominatim.org/release-docs/latest/admin/Import/#dropping-data-required-for-dynamic-updates">https://nominatim.org/release-docs/latest/admin/Import/#dropping-data-required-for-dynamic-updates</a> - and after that copy the much-reduced database to the actual production machine.</p>
+<p>If you would like to do incremental updates, then a variant of the above can be achieved by setting up PostgreSQL logical replication between a beefy "import server" (that has the extra tables needed for updates, and keeps them), and one (or more - there's an easy option for scaling here) "followers" that do the actual request serving but only have the subset of tables required for that. PostgreSQL replication allows you to selectively replicate tables.</p></div>
+<div class="comment-info" id="comment-87971-info">
+<span class="comment-age">(31 Oct '23, 18:10)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-87969">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-87969-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/87968/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="D5bdVnBIoH96XgSsc3EEIOZWf8UKDMrL"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

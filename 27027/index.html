@@ -1,0 +1,229 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/27027/height-of-land">Height of land</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/27027/up/" id="post-27027-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-27027-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/27027/down/" id="post-27027-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/27027/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Is there a better way to mark the highest elevation of a highway other then using a simple node with the tag ele=xxx meters?</p>
+<p>The kind of place I'm referring to is known in hiker's parlance as the "height of land". It is not necessarily a mountain pass but does mark the highest point a highway (or trail) attains.</p>
+<p>Furthermore, because the height specified in the "ele" tag is supposed to be in meters should one refrain from adding a units indicator (e.g. "m." or "meters")? </p>
+<p>Thanks,
+Dave</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-elevation" href="/tags/elevation/" rel="tag" title="see questions tagged 'elevation'">elevation</a>
+<a class="post-tag tag-link-tagging" href="/tags/tagging/" rel="tag" title="see questions tagged 'tagging'">tagging</a>
+<a class="post-tag tag-link-height" href="/tags/height/" rel="tag" title="see questions tagged 'height'">height</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>09 Oct '13, 03:50</strong>
+</p>
+<img alt="AlaskaDave's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/04dddf6f5ffde333747d385af3ce5829?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5016/alaskadave">AlaskaDave</a><br/>
+<span class="score" title="5415 reputation points"><span class="">5.4k</span></span><span title="76 badges"><span class="badge1">●</span><span class="badgecount">76</span></span><span title="107 badges"><span class="silver">●</span><span class="badgecount">107</span></span><span title="164 badges"><span class="bronze">●</span><span class="badgecount">164</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="AlaskaDave has 17 accepted answers">16%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/27027/">
+                edited
+                <strong>09 Oct '13, 03:51</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-27027">
+</div>
+<div class="comment-tools" id="comment-tools-27027">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-27027-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/27027/height-of-land?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/27027/height-of-land?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/27027/height-of-land?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/27027/height-of-land?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="27032"></a>
+<div class="answer accepted-answer" id="answer-container-27032">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/27032/up/" id="post-27032-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-27032-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/27032/down/" id="post-27032-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/27032/" rel="nofollow" title="AlaskaDave has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>If you tag the elevation anywhere, it should be on a node as it doesn't make sense otherwise (puting contour lines into osm is not a good idea either). It is usually combined with natural=peak, but it is usable on any physical feature really.</p>
+<p>Note that there are many different reference points that can be used to give the elevation of a point. If you know which one is being used, you should tag the specific ele:XXXX in addition to ele.</p>
+<p>However, depending on your needs, OSM might not be the best place to store elevation data, because elevation is continuous whereas osm is discrete. Most often, elevation data is obtained from STRM and ASTER public datasets, and combined with OSM to get the desired output.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/27032/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Oct '13, 11:12</strong>
+</p>
+<img alt="Vincent%20de%20Phily's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d20f86db9a6f03cb070e9fbaaf0b7228?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/867/vincent-de-phily">Vincent de P... ♦</a><br/>
+<span class="score" title="17304 reputation points"><span class="">17.3k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="152 badges"><span class="silver">●</span><span class="badgecount">152</span></span><span title="249 badges"><span class="bronze">●</span><span class="badgecount">249</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Vincent de Phily has 64 accepted answers">19%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-27032">
+<a name="27043"></a>
+<div class="comment" id="comment-27043">
+<div class="comment-score" id="post-27043-score">1</div>
+<div class="comment-text"><p>I wasn't wanting to add contours but I was hoping for something more significant than a simple node with an ele=1500 tag. At the high point of these highways there are no reference points, only the fact that the road is at its highest elevation.
+Thanks for your help.</p></div>
+<div class="comment-info" id="comment-27043-info">
+<span class="comment-age">(09 Oct '13, 14:46)</span>
+<a class="comment-user userinfo" href="/users/5016/alaskadave">AlaskaDave</a>
+</div>
+</div>
+<a name="27044"></a>
+<div class="comment" id="comment-27044">
+<div class="comment-score" id="post-27044-score"></div>
+<div class="comment-text"><p>As already explained by Vincent the highest point can be tagged as <a href="http://wiki.openstreetmap.org/wiki/Tag:natural%3Dpeak">natural=peak</a>. But this should only be done for somewhat important peaks and not every small hill.</p></div>
+<div class="comment-info" id="comment-27044-info">
+<span class="comment-age">(09 Oct '13, 14:52)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="27045"></a>
+<div class="comment" id="comment-27045">
+<div class="comment-score" id="post-27045-score"></div>
+<div class="comment-text"><p>Roads and trails often go through passes rather than over peaks. And they may well have an elevation marker on them. For hikers especially they have significance in trip planning. So natural=peak would not be appropriate. I see a few natural=pass tags in use but despite its low usage I think it would be appropriate.</p>
+<p>Rereading original post and apparently passes are not specific here. I agree that tagging the high point on a trail or road is useful but can't suggest another companion tag to use in all cases.</p></div>
+<div class="comment-info" id="comment-27045-info">
+<span class="comment-age">(09 Oct '13, 15:13)</span>
+<a class="comment-user userinfo" href="/users/5918/n76">n76</a>
+</div>
+</div>
+<a name="27065"></a>
+<div class="comment" id="comment-27065">
+<div class="comment-score" id="post-27065-score">1</div>
+<div class="comment-text"><p>I'm fairly sure this point is an actual pass so the natural=pass tag should serve. Thailand is not as carefully mapped or as well known as most countries I've been in -- we're working to change that ;-) </p>
+<p>Thanks again to all.</p></div>
+<div class="comment-info" id="comment-27065-info">
+<span class="comment-age">(10 Oct '13, 04:06)</span>
+<a class="comment-user userinfo" href="/users/5016/alaskadave">AlaskaDave</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-27032">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-27032-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="27047"></a>
+<div class="answer" id="answer-container-27047">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/27047/up/" id="post-27047-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-27047-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/27047/down/" id="post-27047-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Simply add the tag "ele" (described <a href="http://wiki.openstreetmap.org/wiki/Key:ele">here</a>) to the nodes of interest on the trail/path/highway. If the node doesn't exist, add a new node on the way. This node does <em>not</em> need to be tagged with anything else, like natural=peak.</p>
+<p>There are a few examples on the documentation page for the tag, and it seems that these use cases are the ones you described in the original question.</p>
+<p>Also, ways <em>may</em> be tagged with the "ele" key, like airport runways, etc, as described in the documentation as well, provided they are "flat".</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/27047/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Oct '13, 16:26</strong>
+</p>
+<img alt="MCPicoli's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/94b019f273c04cd88bc1c8dd0a8f2161?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4231/mcpicoli">MCPicoli</a><br/>
+<span class="score" title="2172 reputation points"><span class="">2.2k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="30 badges"><span class="silver">●</span><span class="badgecount">30</span></span><span title="47 badges"><span class="bronze">●</span><span class="badgecount">47</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="MCPicoli has 10 accepted answers">24%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-27047">
+</div>
+<div class="comment-tools" id="comment-tools-27047">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-27047-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/27027/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="VOTNgPWn3Rx1DJvRiA5nkDR5ZT91pA6z"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

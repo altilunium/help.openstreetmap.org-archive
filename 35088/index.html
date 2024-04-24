@@ -1,0 +1,147 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/35088/connection-between-city-placetown-and-street-highway">Connection between city (place=town) and street (highway=*)</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/35088/up/" id="post-35088-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-35088-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/35088/down/" id="post-35088-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/35088/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>I have problem with extract datas, which I need.
+I need data like: "city;street" (but i have country file, with all streets and cities in selected country)</p>
+<p>I know that some of information i can get from "addr:street" but much more streets we can find in tag k="highway". With osmfilter I can filter that datas, but there is no connection with city name?</p>
+<p>Is it possible to filter/convert streets (highway=*) from osm file and connected it to specify city (place=town)?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-city" href="/tags/city/" rel="tag" title="see questions tagged 'city'">city</a>
+<a class="post-tag tag-link-street" href="/tags/street/" rel="tag" title="see questions tagged 'street'">street</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>22 Jul '14, 22:38</strong>
+</p>
+<img alt="miklosz_deki's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c44250c8ac6a5ab1985e327cb9a28a84?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9301/miklosz_deki">miklosz_deki</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="miklosz_deki has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-35088">
+</div>
+<div class="comment-tools" id="comment-tools-35088">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-35088-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/35088/connection-between-city-placetown-and-street-highway?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/35088/connection-between-city-placetown-and-street-highway?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/35088/connection-between-city-placetown-and-street-highway?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/35088/connection-between-city-placetown-and-street-highway?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="35091"></a>
+<div class="answer" id="answer-container-35091">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/35091/up/" id="post-35091-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-35091-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/35091/down/" id="post-35091-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Does the country in question have aministrative boundary polygons for the cities? If yes you probably can use the overpass api to get all streets in a city. </p>
+<p>See <a href="http://overpass-turbo.eu/">http://overpass-turbo.eu/</a></p>
+<p>A further method to get the information is to use nominatim ( <a href="http://nominatim.openstreetmap.org/">http://nominatim.openstreetmap.org/</a> ) which will build hierarchies with the required information (this will even work approximately with place nodes if the polygons are missing).</p>
+<p>Note that in both cases you should respect the corresponding acceptable use policies and protentially run your own servers.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/35091/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Jul '14, 23:30</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/35091/">
+                edited
+                <strong>23 Jul '14, 09:45</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-35091">
+<a name="35100"></a>
+<div class="comment" id="comment-35100">
+<div class="comment-score" id="post-35100-score">1</div>
+<div class="comment-text"><p>In addition, you have to know that "addr:street" is not a tag you find normally on the "street" itself but on an "address" item (a node or a small building polygon along the street road). Also the "highway=*" key is used for all roads, not only the ones in cities. They can be combined with a "name" tag but not necessarily  (OSM is not strict in attributes like in classic GIS datasets)</p></div>
+<div class="comment-info" id="comment-35100-info">
+<span class="comment-age">(23 Jul '14, 12:53)</span>
+<a class="comment-user userinfo" href="/users/87/pieren">Pieren</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-35091">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-35091-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/35088/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="UB078SAOZ9exkcIu7n12NftzNjRwZ2rn"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

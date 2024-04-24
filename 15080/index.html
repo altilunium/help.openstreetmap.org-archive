@@ -1,0 +1,139 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/15080/how-to-distinguish-a-building-and-its-tenant">How to distinguish a building and its tenant?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/15080/up/" id="post-15080-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-15080-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/15080/down/" id="post-15080-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/15080/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Basically I'm running into cases where the building has an established name (usually because it's an historic building), but is currently occupied by an amenity which bears a different name.</p>
+<p>The specific case I ran into is the <a href="http://www.openstreetmap.org/browse/way/48056817">American Security and Trust Company Building</a>, currently occupied by a <a href="http://www.openstreetmap.org/browse/node/751881364">Bank of America branch</a>. It's slightly less an issue where, like here, both names are "related" (BoA is the ultimate successor of American Security and Trust), but what of the <a href="http://www.openstreetmap.org/browse/way/171562484">New York Savings Bank building</a>, currently occupied by a <a href="http://www.openstreetmap.org/browse/node/1825739832">CVS pharmacy</a> (and previously by a Balducci's supermarket)?</p>
+<p>I disapprove of the building-node separation currently in place, but none of the current tagging schemes for multiple names work: clearly the names here refer to different <em>thing</em> (the structure's name, and the amenity/tenant's name), not variant names for one of the two things. It is also clearly not an <code>addr:housename</code>, because it is not used for addressing.</p>
+<p>I know very well about the "no tagging for the renderer" mantra, but either way this results in unsatisfying tagging (if only because the more lasting feature, the building, gets tagged with the least lasting). Anybody got suggestions?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-building" href="/tags/building/" rel="tag" title="see questions tagged 'building'">building</a>
+<a class="post-tag tag-link-amenity" href="/tags/amenity/" rel="tag" title="see questions tagged 'amenity'">amenity</a>
+<a class="post-tag tag-link-name" href="/tags/name/" rel="tag" title="see questions tagged 'name'">name</a>
+<a class="post-tag tag-link-tagging" href="/tags/tagging/" rel="tag" title="see questions tagged 'tagging'">tagging</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>14 Aug '12, 16:48</strong>
+</p>
+<img alt="Circeus's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/01d01832dff61a6bcf68913f1dc001bb?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2838/circeus">Circeus</a><br/>
+<span class="score" title="583 reputation points">583</span><span title="9 badges"><span class="badge1">●</span><span class="badgecount">9</span></span><span title="14 badges"><span class="silver">●</span><span class="badgecount">14</span></span><span title="26 badges"><span class="bronze">●</span><span class="badgecount">26</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Circeus has 2 accepted answers">7%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-15080">
+</div>
+<div class="comment-tools" id="comment-tools-15080">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-15080-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/15080/how-to-distinguish-a-building-and-its-tenant?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/15080/how-to-distinguish-a-building-and-its-tenant?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/15080/how-to-distinguish-a-building-and-its-tenant?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/15080/how-to-distinguish-a-building-and-its-tenant?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="15084"></a>
+<div class="answer" id="answer-container-15084">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/15084/up/" id="post-15084-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-15084-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/15084/down/" id="post-15084-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>My first thought would be to separate between node and contour. As the new amenity or shop in that building probably doesn't use the entire building, that split up would make sense.</p>
+<p>Otherwise, you could split between name and operator (the Bank of America is operating the American Security and Trust company building). </p>
+<p>Or use name for the current name, and old_name for the name it used to have, but is still visible on the building.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/15084/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>14 Aug '12, 17:28</strong>
+</p>
+<img alt="Sanderd17's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1fe9a0c696a5000fb304ababea9f83af?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/280/sanderd17">Sanderd17</a><br/>
+<span class="score" title="1111 reputation points"><span class="">1.1k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="16 badges"><span class="silver">●</span><span class="badgecount">16</span></span><span title="37 badges"><span class="bronze">●</span><span class="badgecount">37</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Sanderd17 has 15 accepted answers">31%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-15084">
+<a name="15085"></a>
+<div class="comment" id="comment-15085">
+<div class="comment-score" id="post-15085-score"></div>
+<div class="comment-text"><p>Node/contour doesn't work in these cases (if it did I'd do that: I use it for malls, for example). old_name doesn't work. The building hasn't changed name, only its occupier changed (and fairly recently too). Operator is pretty close though! I'm not editing right now but I'll consider that option.</p></div>
+<div class="comment-info" id="comment-15085-info">
+<span class="comment-age">(14 Aug '12, 17:33)</span>
+<a class="comment-user userinfo" href="/users/2838/circeus">Circeus</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-15084">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-15084-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/15080/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="ueVfOwW7BOYxiFVejuCbF3jCAOAIMWBQ"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

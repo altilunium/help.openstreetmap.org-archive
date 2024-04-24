@@ -1,0 +1,214 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/85581/applying-local-changesets-to-osm">Applying local changesets to OSM</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/85581/up/" id="post-85581-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-85581-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/85581/down/" id="post-85581-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/85581/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p><strong>Context:</strong> I have a local version of the openstreetmap-website on a server for routing purposes. Every ~30min I go through a process of generating a changeset with osmosis, applying that changeset to an osm file, and updating the data for the router. </p>
+<p><strong>Question:</strong> What I'd like to do is automatically apply changes made on the server to the public version of OSM as well, is this possible?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap" href="/tags/openstreetmap/" rel="tag" title="see questions tagged 'openstreetmap'">openstreetmap</a>
+<a class="post-tag tag-link-changeset" href="/tags/changeset/" rel="tag" title="see questions tagged 'changeset'">changeset</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-routing" href="/tags/routing/" rel="tag" title="see questions tagged 'routing'">routing</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>07 Sep '22, 18:48</strong>
+</p>
+<img alt="GeorgeValleyeats's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1a5c982dc8825ee7594f38a8876576b3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/22202/georgevalleyeats">GeorgeValley...</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="GeorgeValleyeats has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/85581/">
+                edited
+                <strong>07 Sep '22, 18:50</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-85581">
+</div>
+<div class="comment-tools" id="comment-tools-85581">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-85581-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/85581/applying-local-changesets-to-osm?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/85581/applying-local-changesets-to-osm?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/85581/applying-local-changesets-to-osm?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/85581/applying-local-changesets-to-osm?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="85589"></a>
+<div class="answer accepted-answer" id="answer-container-85589">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/85589/up/" id="post-85589-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-85589-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/85589/down/" id="post-85589-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/85589/" rel="nofollow" title="GeorgeValleyeats has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Technically the problem is that both object ids and versions will have diverged between your data and OSM proper and will be out of sync.</p>
+<p>There is not really a good way to work around this even if you use the original diff uploads (from the editor you are using) to update your data. There have been attempts to do things along such lines in the "humanitarian" space, but a) these typically have been used in low-density data areas, and b) involve throwing away local data and replacing it with fresh data from osm.org after syncing. See <a href="https://github.com/posm/posm">https://github.com/posm/posm</a></p>
+<p>Legally if these are only changes made by you there wouldn't be an issue, if the data is added and changed by multiple legal entities it is highly problematic. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/85589/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Sep '22, 07:35</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/85589/">
+                edited
+                <strong>09 Sep '22, 07:36</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-85589">
+<a name="85590"></a>
+<div class="comment" id="comment-85590">
+<div class="comment-score" id="post-85590-score"></div>
+<div class="comment-text"><p>I was afraid that would be the answer, I did come across POSM in my research but I don't believe it will work for my purposes. Thanks for the answer.</p></div>
+<div class="comment-info" id="comment-85590-info">
+<span class="comment-age">(09 Sep '22, 13:28)</span>
+<a class="comment-user userinfo" href="/users/22202/georgevalleyeats">GeorgeValley...</a>
+</div>
+</div>
+<a name="85592"></a>
+<div class="comment" id="comment-85592">
+<div class="comment-score" id="post-85592-score"></div>
+<div class="comment-text"><p>Is there any reason that the edits can't be made to OSM directly?</p></div>
+<div class="comment-info" id="comment-85592-info">
+<span class="comment-age">(09 Sep '22, 15:24)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+<a name="85594"></a>
+<div class="comment" id="comment-85594">
+<div class="comment-score" id="post-85594-score"></div>
+<div class="comment-text"><p>The goal was to setup a local version of both OSM and OSRM.  Make changes locally which can be easily turned into change files with osmosis from the local postgres database.  Nothing would prevent me doing the changes to both local and proper, I just wanted to automate that process. As for why not use data directly from OSM, simply because I could not find a way to automatically get updated data every ~30 min.</p></div>
+<div class="comment-info" id="comment-85594-info">
+<span class="comment-age">(09 Sep '22, 17:15)</span>
+<a class="comment-user userinfo" href="/users/22202/georgevalleyeats">GeorgeValley...</a>
+</div>
+</div>
+<a name="85595"></a>
+<div class="comment" id="comment-85595">
+<div class="comment-score" id="post-85595-score"></div>
+<div class="comment-text"><p>That shouldn't really be an issue, though I have to say I've never kept an API database up to date from diffs (only osm2pgsql schema), but I would be slightly amazed if that isn't possible.</p></div>
+<div class="comment-info" id="comment-85595-info">
+<span class="comment-age">(09 Sep '22, 17:39)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+<a name="85596"></a>
+<div class="comment not_top_scorer" id="comment-85596">
+<div class="comment-score" id="post-85596-score"></div>
+<div class="comment-text"><p>I really don't care about the database being up to date, what I really want is the osm.pbf file to stay updated and receive changes ASAP. It might be possible to do with osmupdate with the two regions polylines I care about. But I think I tried that and there was some compatibility issue with OSRM but maybe I'm just miss remembering.</p></div>
+<div class="comment-info" id="comment-85596-info">
+<span class="comment-age">(09 Sep '22, 18:11)</span>
+<a class="comment-user userinfo" href="/users/22202/georgevalleyeats">GeorgeValley...</a>
+</div>
+</div>
+<a name="85597"></a>
+<div class="comment" id="comment-85597">
+<div class="comment-score" id="post-85597-score">1</div>
+<div class="comment-text"><p>Keeping a local planet file up to date is really simple see <a href="https://docs.osmcode.org/pyosmium/latest/tools_uptodate.html">https://docs.osmcode.org/pyosmium/latest/tools_uptodate.html</a></p></div>
+<div class="comment-info" id="comment-85597-info">
+<span class="comment-age">(09 Sep '22, 19:00)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+<a name="85598"></a>
+<div class="comment not_top_scorer" id="comment-85598">
+<div class="comment-score" id="post-85598-score"></div>
+<div class="comment-text"><p>Thanks for all your input, it's given me a lot of help. I'm pretty sure I know what to do now to get the result I was going for.</p></div>
+<div class="comment-info" id="comment-85598-info">
+<span class="comment-age">(09 Sep '22, 19:43)</span>
+<a class="comment-user userinfo" href="/users/22202/georgevalleyeats">GeorgeValley...</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-85589">
+<span class="comments-showing">
+            showing 5 of 7
+        </span>
+<a class="show-all-comments-link" href="#">show 2 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-85589-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/85581/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Kjvhxg9kKmtPz1JTHjvJqQtJeLa48WA7"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

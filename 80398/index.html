@@ -1,0 +1,170 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/80398/query-nodes-by-attributes-of-connected-ways">query nodes by attributes of connected ways</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80398/up/" id="post-80398-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80398-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/80398/down/" id="post-80398-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/80398/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm am trying to extract a set of nodes that represent signalized intersections with bike infrastructure leading into them. </p>
+<p>the trouble I have run into is that I don't think there is a way to query nodes according to the attributes of the ways that connect to them. </p>
+<p>Is that correct? If it is I can download the data and run the query as a join on the to and from OSM_ID's of the way in postgres. this will be fairly time consuming though so i wanted to first check and see whether anyone had a way to do this in overpass or overpass turbo. </p>
+<p>thanks for any and all suggestions. </p>
+<p>edit: I can query nodes and ways separately in overpass turbo using:</p>
+<p><code>node
+  [highway=traffic_signals]
+  ({{bbox}});
+out;
+way
+  [bicycle=designated]
+  ({{bbox}});
+out;</code></p>
+<p>but my goal is to return the subset of that query that is nodes connected to a line where bicycle=designated. </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 Jun '21, 13:09</strong>
+</p>
+<img alt="hughkelley's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/58c0088fb71bfa1bbce14bc4ce03249b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20301/hughkelley">hughkelley</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="hughkelley has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/80398/">
+                edited
+                <strong>03 Jun '21, 14:06</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80398">
+<a name="80399"></a>
+<div class="comment" id="comment-80399">
+<div class="comment-score" id="post-80399-score"></div>
+<div class="comment-text"><p>Post a link to an example.
+What code have you got at the moment?</p></div>
+<div class="comment-info" id="comment-80399-info">
+<span class="comment-age">(03 Jun '21, 13:48)</span>
+<a class="comment-user userinfo" href="/users/1532/davef">DaveF</a>
+</div>
+</div>
+<a name="80400"></a>
+<div class="comment" id="comment-80400">
+<div class="comment-score" id="post-80400-score"></div>
+<div class="comment-text"><p>edited to include example illustrating what is not useful to me. is the question not clear?</p></div>
+<div class="comment-info" id="comment-80400-info">
+<span class="comment-age">(03 Jun '21, 14:07)</span>
+<a class="comment-user userinfo" href="/users/20301/hughkelley">hughkelley</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-80398">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80398-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/80398/query-nodes-by-attributes-of-connected-ways?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/80398/query-nodes-by-attributes-of-connected-ways?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/80398/query-nodes-by-attributes-of-connected-ways?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/80398/query-nodes-by-attributes-of-connected-ways?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="80401"></a>
+<div class="answer accepted-answer" id="answer-container-80401">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80401/up/" id="post-80401-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80401-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/80401/down/" id="post-80401-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/80401/" rel="nofollow" title="hughkelley has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You need to <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Recurse_.28n.2C_w.2C_r.2C_bn.2C_bw.2C_br.29">recurse</a> down from the ways to find the appropriate child nodes.</p>
+<pre><code>[bbox:{{bbox}}];
+way[bicycle=designated];
+node(w)[highway=traffic_signals];
+out center;
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/80401/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Jun '21, 15:37</strong>
+</p>
+<img alt="DaveF's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c9c8b421ad22f51ddd62f23413717036?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1532/davef">DaveF</a><br/>
+<span class="score" title="3264 reputation points"><span class="">3.3k</span></span><span title="84 badges"><span class="badge1">●</span><span class="badgecount">84</span></span><span title="98 badges"><span class="silver">●</span><span class="badgecount">98</span></span><span title="133 badges"><span class="bronze">●</span><span class="badgecount">133</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="DaveF has 17 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80401">
+</div>
+<div class="comment-tools" id="comment-tools-80401">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80401-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/80398/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="ETlL2HtTyV1VlTfFIUuXljEOTd0CL25D"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

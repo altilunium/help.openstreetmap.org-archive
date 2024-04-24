@@ -1,0 +1,157 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/56086/service-timed-out">service timed out</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/56086/up/" id="post-56086-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-56086-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/56086/down/" id="post-56086-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/56086/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>We're receiving timeout errors this morning.  Is the nominatim service down?</p>
+<p>_call_geocoder
+    raise GeocoderTimedOut('Service timed out')
+GeocoderTimedOut: Service timed out</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>08 May '17, 16:24</strong>
+</p>
+<img alt="gadgroup's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2d84322421c1c1015b13fec5689ac625?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13678/gadgroup">gadgroup</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="gadgroup has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-56086">
+<a name="56088"></a>
+<div class="comment" id="comment-56088">
+<div class="comment-score" id="post-56088-score"></div>
+<div class="comment-text"><p>There seem to be sporadic problems at <a href="http://nominatim.openstreetmap.org">http://nominatim.openstreetmap.org</a>. Sometimes it is working, sometimes I'm receiving a 503 Service Unavailable.</p></div>
+<div class="comment-info" id="comment-56088-info">
+<span class="comment-age">(08 May '17, 16:46)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="56089"></a>
+<div class="comment" id="comment-56089">
+<div class="comment-score" id="post-56089-score"></div>
+<div class="comment-text"><p>I'm calling the service from a python program using the following...</p>
+<pre><code># Initialize the Geo Locator
+ geolocator = Nominatim()
+</code></pre>
+<p>Then sending a location.....</p>
+<p>My log file is reporting the following...</p>
+<p>_call_geocoder
+    raise GeocoderTimedOut('Service timed out')
+GeocoderTimedOut: Service timed out</p></div>
+<div class="comment-info" id="comment-56089-info">
+<span class="comment-age">(08 May '17, 16:53)</span>
+<a class="comment-user userinfo" href="/users/13678/gadgroup">gadgroup</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-56086">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-56086-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/56086/service-timed-out?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/56086/service-timed-out?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/56086/service-timed-out?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/56086/service-timed-out?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="56306"></a>
+<div class="answer" id="answer-container-56306">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/56306/up/" id="post-56306-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-56306-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/56306/down/" id="post-56306-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The server is again having trouble with users over-using the service. Remember that we are running on volunteer-run machines with limited resources. So when you are seeing <code>Service timed out</code> errors, you can help greatly by stopping your scripts for a while until admins have taken measures to get the traffic under control.</p>
+<p>Given that Python scripts are a significant contributor to the server issues, I'd like to remind everybody at this point that we have a <a href="https://operations.osmfoundation.org/policies/nominatim/">usage policy</a>. Among other things, you should be</p>
+<ul>
+<li>sending a user agent other than <code>Python-urllib</code> and</li>
+<li>limit your queries to 1 request per second.</li>
+</ul>
+<p>It would be greatly appreciated if you could take a minute and check that your script fulfills these requirements.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/56306/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>24 May '17, 22:53</strong>
+</p>
+<img alt="lonvia's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d888b712d85dee0aa304297f2dc697c7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2921/lonvia">lonvia</a><br/>
+<span class="score" title="6213 reputation points"><span class="">6.2k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="57 badges"><span class="silver">●</span><span class="badgecount">57</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="lonvia has 43 accepted answers">40%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-56306">
+</div>
+<div class="comment-tools" id="comment-tools-56306">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-56306-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/56086/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="y51h1mrc0TlmIdZRyHZzNoa7e2PFkdsI"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

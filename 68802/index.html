@@ -1,0 +1,137 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/68802/how-to-place-1-million-randomly-sized-squares-filled-with-nodes-without-overlapping-with-another-square-area">[closed] How to place 1 million randomly sized, squares filled with nodes without overlapping with another square area?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68802/up/" id="post-68802-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68802-score" title="current number of votes">
+    -2
+</div>
+<a class="ajax-command post-vote down" href="/vote/68802/down/" id="post-68802-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/68802/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Basically I want to place, non-overlapping randomly sized, square filled with nodes (a growing square spiral), which are added real-time so I can't predict how large a square will get, but the maximum square can hold 100 million (10,000 X 10,000) nodes. All nodes belonging inside this square have the same link to the original starting node.</p>
+<p>Right now I generate these random start coordinates where the square spiral begins to grow, to minimize overlaps with another growing bounding box arising from a totally new random seed coordinates that by some chance, happens to be close enough that the two boxes end up overlapping each other.</p>
+<pre><code>var memdb = require('memdb')
+var Osm = require('kappa-osm')
+
+var osm = Osm({
+  core: kappa('./db', { valueEncoding: 'json' }),
+  index: memdb(),
+  storage: function (name, cb) { cb(null, ram()) }
+})
+var i = 0;
+var startingPoints = [];
+while (i &lt; 1000000){
+  var node = {
+   type: 'node',
+   lat: (Math.random()*180-95).toFixed(7).toString(),
+   lon: (Math.random()*360-180).toFixed(7).toString(),
+   tags: { feature: 'randomID', level: '0' },
+   links: ["25235235@0"]
+   changeset: ''
+  }
+   osm.create(node, function (err, node) {
+    if (err) return console.error(err)
+      startingPoints.push(node);
+    })
+ ++i;
+}
+
+
+startingPoints.forEach(startCoordinates =&gt;{
+   fillSquareWithRandomLinkedNodes(startCoordinates, random(2, 1,000,000,000));
+})
+</code></pre>
+<p>basically <code>fillSquareWithRandomLinkedNodes</code> generates a random square area size and fills it completely with nodes all linked to provided <code>startCoordinates</code>.</p>
+<p>I'm afraid that if I generate 1,000,000 random start coordinates and grow a square spiral square for each coordinate with varying square area size, starting at each point in the clockwise direction, there will be overlapping square shaped spiral of nodes eventually. </p>
+<p>I do have some upper limits as to the maximum area of each square spiral, it should be able to store 100 million nodes.</p>
+<p>I am assuming there will be issues when more than one node occupies the same longitude and latitude. I've thought about using the <code>level</code> tag but that seems complicated.</p>
+<p>or is this overkill, will the overlaps somehow be automatically be handled when querying for all nodes within?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-javascript" href="/tags/javascript/" rel="tag" title="see questions tagged 'javascript'">javascript</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>15 Apr '19, 23:29</strong>
+</p>
+<img alt="studentofosm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/55d4ebd4a3adf8bf913b5d58b59028c7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16540/studentofosm">studentofosm</a><br/>
+<span class="score" title="9 reputation points">9</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="studentofosm has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/68802/">
+                closed
+                <strong>16 Apr '19, 08:34</strong>
+</a>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68802">
+<a name="68803"></a>
+<div class="comment" id="comment-68803">
+<div class="comment-score" id="post-68803-score"></div>
+<div class="comment-text"><p>How is this related to OSM? Looks like your question fits better on <a href="http://stackoverflow.com/">http://stackoverflow.com/</a> or <a href="http://gis.stackexchange.com/.">http://gis.stackexchange.com/.</a> Oh, it is already there: <a href="https://stackoverflow.com/questions/55697912/osm-how-to-place-1-million-randomly-sized-squares-filled-with-nodes-without-ov">https://stackoverflow.com/questions/55697912/osm-how-to-place-1-million-randomly-sized-squares-filled-with-nodes-without-ov</a></p></div>
+<div class="comment-info" id="comment-68803-info">
+<span class="comment-age">(16 Apr '19, 07:40)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="68841"></a>
+<div class="comment" id="comment-68841">
+<div class="comment-score" id="post-68841-score"></div>
+<div class="comment-text"><p>I posted it there for visibility but they link it to this thread which effectively kills my question</p></div>
+<div class="comment-info" id="comment-68841-info">
+<span class="comment-age">(18 Apr '19, 21:11)</span>
+<a class="comment-user userinfo" href="/users/16540/studentofosm">studentofosm</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-68802">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68802-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<div class="question-status" style="margin-bottom:15px">
+<h3>
+                The question has been closed for the following reason "Question is off-topic or not relevant" by
+                <a href="/users/104/frederik-ramm">Frederik Ramm</a>
+                 16 Apr '19, 08:34
+            </h3>
+</div>
+<form action="/questions/68802/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="k3GLoEaHCV3TdtGleMQMjNr5CI3l1pc7"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

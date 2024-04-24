@@ -1,0 +1,171 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/21330/extracting-features-that-are-inside-a-polygon-set-with-overpass-api">Extracting features that are inside a polygon set with overpass api</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/21330/up/" id="post-21330-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-21330-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/21330/down/" id="post-21330-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/21330/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I need to display school building. i have made the outer area of school and tagged it as amenity=school.
+there are some buildings inside the area, i need the data of the buildings. </p>
+<p>using overpass api's around clause i can get them but it also gives some buildings that are outside the school. i am trying to use the area or pivot clause, but the results are empty. the overpass query is </p>
+<pre><code>(way({{bbox}})['amenity'~'school|college|hospital|clinic'];node(w);)-&gt;.boundary;(way(area.boundary);node(w););out skel;
+</code></pre>
+<p>the <a href="http://overpass-turbo.eu/?Q=(way(%7B%7Bbbox%7D%7D)%5B'amenity'~'school%7Ccollege%7Chospital%7Cclinic'%5D%3Bnode(w)%3B%0A)-%3E.boundary%3B%0A%0A(way(area.boundary)%3Bnode(w)%3B)%3B%0A%0Aout%20skel%3B&amp;C=27.70645;85.32142;18&amp;R">test area</a></p>
+<p>it should be like <a href="http://overpass-turbo.eu/?q=KCDEgCDEg25vZGUoe3tiYm94fX0pWyduYW1lJ34nc2Nob29sJHxjxKBsZWdlJCddO8SDKcStxIHEg8SExIbEiMSKxIzEjsSQxJInYnVpbGRpbmfEmcSbxJ3En2zEo8SlxKdlfGdvdmVybsSXbnTEq8SwxK_Eg8SCxLPEh8SJxIvEjcSPxJHEk8SWZW5pdHnFhMScxJ7EoMWJbMSmxKh8cHVibGljX8S8xL7FgMWCxZfErsSwxZsgxIXFncS2xaDEucSTb2ZmxbfEmMSaxY7FkMWSxZTFlsSsxb_FmsSyIHdhecWexLfFocS6xJXEl8WqxYbEoMSixKTFr8WLxKpdW8W6xL_FgWfGlMSyxoPEiHfFmSDGtcaWxLLGmcabxoXEuMWixLvEvcatxb3EmsWrxYfFrsWwxYzGj8WRxZPFpcaTxLDFnMazxrXGtcaBxrrGnMaGxr7FpMWmxajGosWsxYjGpseHxbLFtMW2xbjGrMW8xYPGsMePKMa0xZjFmCAtPi5hxK3HqcaaKGFyb3VuZCDHsCA6IDUwxJLHpMauxKzGssepxK_Fmce4dCDEl3THsQ&amp;c=BslsvZzEPS&amp;R">this</a></p>
+<p>P.S. all the building have been tagged as building=school, which gives a shorter query. but i need to use the area clause because they might not be tagged properly in other places.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-school" href="/tags/school/" rel="tag" title="see questions tagged 'school'">school</a>
+<a class="post-tag tag-link-area" href="/tags/area/" rel="tag" title="see questions tagged 'area'">area</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>08 Apr '13, 19:35</strong>
+</p>
+<img alt="amritkarma's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/651103e616e49724bb139f1a3e0a1a39?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4902/amritkarma">amritkarma</a><br/>
+<span class="score" title="684 reputation points">684</span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="29 badges"><span class="silver">●</span><span class="badgecount">29</span></span><span title="41 badges"><span class="bronze">●</span><span class="badgecount">41</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="amritkarma has one accepted answer">11%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-21330">
+</div>
+<div class="comment-tools" id="comment-tools-21330">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-21330-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/21330/extracting-features-that-are-inside-a-polygon-set-with-overpass-api?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/21330/extracting-features-that-are-inside-a-polygon-set-with-overpass-api?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/21330/extracting-features-that-are-inside-a-polygon-set-with-overpass-api?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/21330/extracting-features-that-are-inside-a-polygon-set-with-overpass-api?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="21384"></a>
+<div class="answer accepted-answer" id="answer-container-21384">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/21384/up/" id="post-21384-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-21384-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/21384/down/" id="post-21384-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/21384/" rel="nofollow" title="amritkarma has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The areas in Overpass API are generated for ways with specific tags only, for example for ways with a name and "area=yes" or a name and any value of "landuse".</p>
+<p>I would recommend to retag way 142778170 with "amenity=school" and "area=yes" instead of "area=school". Then Overpass API would generate in the next run an area for that campus. This may take some hours, the timestamp "areas" in the meta tag of the returned data must become newer than your edit. Then you can select the buildings with</p>
+<pre><code>way[amenity=school]({{bbox}});
+node(w);is_in;
+area._[amenity=school];
+(
+  way(area)[building];
+  node(w);
+);
+out;
+</code></pre>
+<p>like in <a href="http://overpass-turbo.eu/?Q=way%5Bamenity%3Dschool%5D(%7B%7Bbbox%7D%7D)%3B%0Anode(w)%3Bis_in%3B%0Aarea._%5Bamenity%3Dschool%5D%3B%0A(%0A%20%20way(area)%5Bbuilding%5D%3B%0A%20%20node(w)%3B%0A)%3B%0Aout%3B%0A&amp;C=50.74598;7.05563;18">this</a> example.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/21384/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>11 Apr '13, 06:20</strong>
+</p>
+<img alt="Roland%20Olbricht's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fcfdb0825826fd13d2ff0d83d58819c6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3480/roland-olbricht">Roland Olbricht</a><br/>
+<span class="score" title="6666 reputation points"><span class="">6.7k</span></span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="64 badges"><span class="silver">●</span><span class="badgecount">64</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Roland Olbricht has 40 accepted answers">36%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-21384">
+<a name="21385"></a>
+<div class="comment" id="comment-21385">
+<div class="comment-score" id="post-21385-score"></div>
+<div class="comment-text"><p>does it work for amenity=college,hospital,clinic? it has been tagged as amenity = college</p></div>
+<div class="comment-info" id="comment-21385-info">
+<span class="comment-age">(11 Apr '13, 07:45)</span>
+<a class="comment-user userinfo" href="/users/4902/amritkarma">amritkarma</a>
+</div>
+</div>
+<a name="21393"></a>
+<div class="comment" id="comment-21393">
+<div class="comment-score" id="post-21393-score"></div>
+<div class="comment-text"><p>Looks like it works for hospitals and schools, but not for colleges and clinics. Is there any workaround for colleges and clinics.</p></div>
+<div class="comment-info" id="comment-21393-info">
+<span class="comment-age">(11 Apr '13, 09:12)</span>
+<a class="comment-user userinfo" href="/users/4902/amritkarma">amritkarma</a>
+</div>
+</div>
+<a name="21609"></a>
+<div class="comment" id="comment-21609">
+<div class="comment-score" id="post-21609-score"></div>
+<div class="comment-text"><p>Please try again. I have enlarged the scope of the areas, at least on overpass-api.de</p></div>
+<div class="comment-info" id="comment-21609-info">
+<span class="comment-age">(16 Apr '13, 20:43)</span>
+<a class="comment-user userinfo" href="/users/3480/roland-olbricht">Roland Olbricht</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-21384">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-21384-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/21330/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="20zufx8gLaGC0Jl5qKRLK2slypVjnBN3"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

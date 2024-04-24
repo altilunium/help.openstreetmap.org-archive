@@ -1,0 +1,191 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/77835/postgresql-config-parameter-when-using-osm2pgsql-append">PostgreSql .config parameter when using Osm2pgsql --append</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/77835/up/" id="post-77835-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-77835-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/77835/down/" id="post-77835-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/77835/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have already imported the OSM Planet to the database. And I want to update the database regularly. The update command I use is osm2pgsql --append -slim with 6GB cache. However, the update process is still too slow.</p>
+<p>Hardware: 32G memory, 1.7TB SSD.</p>
+<p>Database config:</p>
+<pre><code>shared_buffers = 2GB
+work_mem = 1000MB
+effective_io_concurrency = 2
+fsync = on
+synchronous_commit = off
+full_page_writes = off
+checkpoint_segments = 100
+checkpoint_completion_target = 0.9
+autovacuum = on
+effective_cache_size = 4GB
+maintenance_work_mem = 2GB
+max_worker_process = 12
+</code></pre>
+<p>On average it took 1 hour to process 6 hours worth of new OSM updates. (Screenshot is the log printed by the script openstreetmap-tiles-update-expire. Inside the script, it calls osm2pgsql --append -slim)
+<img alt="alt text" src="https://help.openstreetmap.org/upfiles/MicrosoftTeams-image_(2).png"/></p>
+<p>I remember when bulk loading OSM Planet to the database, a lot of articles suggest modifying postgresql.conf</p>
+<p>Such as: </p>
+<p>fsync = off (import only!)</p>
+<p>autovacuum = off (import only!)</p>
+<p>Since the database is keep updating, should I change the postgresql config settings back to these import settings to increase performance?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-mapping" href="/tags/mapping/" rel="tag" title="see questions tagged 'mapping'">mapping</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>02 Dec '20, 20:38</strong>
+</p>
+<img alt="Yingcai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/40e60a70ee29b8df762ecd6168503655?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/19356/yingcai">Yingcai</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Yingcai has no accepted answers">0%</span>
+</p>
+</img></div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/77835/">
+                edited
+                <strong>04 Dec '20, 14:41</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-77835">
+<a name="77837"></a>
+<div class="comment" id="comment-77837">
+<div class="comment-score" id="post-77837-score">1</div>
+<div class="comment-text"><p>Could you indicate what hardware this is running on and your original import parameters?</p></div>
+<div class="comment-info" id="comment-77837-info">
+<span class="comment-age">(03 Dec '20, 06:47)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+<a name="77844"></a>
+<div class="comment" id="comment-77844">
+<div class="comment-score" id="post-77844-score">1</div>
+<div class="comment-text"><p>(for completeness - that screenshot looks like output from openstreetmap-tiles-update-expire)</p></div>
+<div class="comment-info" id="comment-77844-info">
+<span class="comment-age">(03 Dec '20, 22:02)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="77851"></a>
+<div class="comment" id="comment-77851">
+<div class="comment-score" id="post-77851-score"></div>
+<div class="comment-text"><p>Thanks <a href="https://help.openstreetmap.org/users/2053/simonpoole">@simonPoole</a> and <a href="https://help.openstreetmap.org/users/387/someoneelse">@SomeoneElse</a>. The post has been updated.</p></div>
+<div class="comment-info" id="comment-77851-info">
+<span class="comment-age">(04 Dec '20, 14:42)</span>
+<a class="comment-user userinfo" href="/users/19356/yingcai">Yingcai</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-77835">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-77835-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/77835/postgresql-config-parameter-when-using-osm2pgsql-append?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/77835/postgresql-config-parameter-when-using-osm2pgsql-append?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/77835/postgresql-config-parameter-when-using-osm2pgsql-append?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/77835/postgresql-config-parameter-when-using-osm2pgsql-append?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="77839"></a>
+<div class="answer" id="answer-container-77839">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/77839/up/" id="post-77839-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-77839-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/77839/down/" id="post-77839-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I am not sure what screen shot is about, this doesn't look like osm2pgsql output!?</p>
+<p>There is some advice on how to tune your database for osm2pgsql in the osm2pgsql manual at <a href="https://osm2pgsql.org/doc/manual.html#tuning-the-postgresql-server">https://osm2pgsql.org/doc/manual.html#tuning-the-postgresql-server</a> .</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/77839/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Dec '20, 09:27</strong>
+</p>
+<img alt="Jochen%20Topf's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2d4dfcdcde73aa5e2ffa4a9b3a7cb51d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/112/jochen-topf">Jochen Topf</a><br/>
+<span class="score" title="5244 reputation points"><span class="">5.2k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="50 badges"><span class="silver">●</span><span class="badgecount">50</span></span><span title="74 badges"><span class="bronze">●</span><span class="badgecount">74</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jochen Topf has 32 accepted answers">31%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-77839">
+<a name="77853"></a>
+<div class="comment" id="comment-77853">
+<div class="comment-score" id="post-77853-score"></div>
+<div class="comment-text"><p>The screenshot is the log printed by the script openstreetmap-tiles-update-expire (mod_tile <a href="https://github.com/SomeoneElseOSM/mod_tile/tree/switch2osm">https://github.com/SomeoneElseOSM/mod_tile/tree/switch2osm</a> ). Inside the script, it calls osm2pgsql --append -slim</p></div>
+<div class="comment-info" id="comment-77853-info">
+<span class="comment-age">(04 Dec '20, 19:53)</span>
+<a class="comment-user userinfo" href="/users/19356/yingcai">Yingcai</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-77839">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-77839-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/77835/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="I2L3DzOF6vXd8Bgln48YG0bhbJHM7uBl"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

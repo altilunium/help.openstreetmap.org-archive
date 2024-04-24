@@ -1,0 +1,174 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/45914/extract-highway-with-name">extract highway with name</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/45914/up/" id="post-45914-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-45914-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/45914/down/" id="post-45914-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/45914/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hey all,</p>
+<p>What I want do is extract a piece of the roadsystem out of an osm file and put it in a csv.
+This should contain the lat lon for every node belong to that roadsystem, the node id, and the name of the road to where the node belongs.</p>
+<p>I did some searching on the net and found that I can use osmfilter and osmconvert to get the job done.
+I managed to get the nodeId, the lat and the lon into a csv using the next statements:</p>
+<pre><code>./osmfilter test.o5m --keep="highway=motorway =motorway_link =primary" --drop-ways --drop-relations &gt; highways.osm
+</code></pre>
+<p>to filter the osm file and</p>
+<pre><code>./osmconvert highways.osm --csv="@oname <a href="http://help.openstreetmap.org/users/260/idoneus">@id</a> <a href="http://help.openstreetmap.org/users/1350/longestaugust">@lon</a> <a href="http://help.openstreetmap.org/users/5110/latroc">@lat</a>" --csv-headline -o=test.csv
+</code></pre>
+<p>On the other hand I also need the names of the road for eacht node. Is there anwy way to do so?
+thanks</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-extraction" href="/tags/extraction/" rel="tag" title="see questions tagged 'extraction'">extraction</a>
+<a class="post-tag tag-link-osmconvert" href="/tags/osmconvert/" rel="tag" title="see questions tagged 'osmconvert'">osmconvert</a>
+<a class="post-tag tag-link-csv" href="/tags/csv/" rel="tag" title="see questions tagged 'csv'">csv</a>
+<a class="post-tag tag-link-osmfilter" href="/tags/osmfilter/" rel="tag" title="see questions tagged 'osmfilter'">osmfilter</a>
+<a class="post-tag tag-link-highway" href="/tags/highway/" rel="tag" title="see questions tagged 'highway'">highway</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>15 Oct '15, 14:01</strong>
+</p>
+<img alt="Jorne's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/86b47cdcfeb8e17e43b0aa2abc44d98a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11581/jorne">Jorne</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jorne has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-45914">
+<a name="45924"></a>
+<div class="comment" id="comment-45924">
+<div class="comment-score" id="post-45924-score">1</div>
+<div class="comment-text"><p>I have no experience with those tools, but since you drop the ways, I think you lost the name information. You should look for the ways fulfilling your criteria and then take the nodes of those ways. Nodes that are defining a road do not have the attributes you are looking for (name, highway=primary). Those tags are set on the ways.</p></div>
+<div class="comment-info" id="comment-45924-info">
+<span class="comment-age">(16 Oct '15, 06:23)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-45914">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-45914-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/45914/extract-highway-with-name?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/45914/extract-highway-with-name?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/45914/extract-highway-with-name?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/45914/extract-highway-with-name?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="46001"></a>
+<div class="answer" id="answer-container-46001">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/46001/up/" id="post-46001-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-46001-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/46001/down/" id="post-46001-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This is not something you will be able to solve without programming skills. You will need to write a little program in a language of your choice that can parse XML documents. Download the area of interest as XML file. You will notice that it consists of three sections - one with all the nodes, one with all the ways, and one with all the relations.</p>
+<p>Build your program so that it first reads the nodes, storing the latitude and longitude for each node found. Then, when your program arrives at the ways section, let it check whether the way is indeed a road (could also be a building or a power line or something), and when it is, have your program output the way's nodes together with the (previously recorded) node id.</p>
+<p>A very simple Perl program that does this might look like this</p>
+<pre><code>#!/usr/bin/perl
+while(&lt;&gt;) {
+  if (/&lt;node id="(\d+)" .*lat="([^"]+)" .*lon="([^"]+)"/) {
+    $loc{$1}="$2,$3";
+  } elsif(/&lt;tag k="(.*)" v="(.*)"/) {
+    $hwy = $2 if ($1 eq "highway");
+    $nam = $2 if ($1 eq "name");
+  } elsif(/&lt;nd ref="(\d+)"/) {
+    push(@nodes,$1);
+  } elsif(/&lt;\/way/) {
+    if (defined($hwy)) {
+      printf "%d,\"%s\",%s\n", $_, $nam, $loc{$_} foreach(@nodes);
+    }
+    undef $hwy, $nam, @nodes;
+  }
+}
+</code></pre>
+<p>Of course there's many ways in which this can be made more resilient and faster if you need to process large amounts of data.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/46001/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Oct '15, 22:56</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/46001/">
+                edited
+                <strong>19 Oct '15, 22:59</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-46001">
+</div>
+<div class="comment-tools" id="comment-tools-46001">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-46001-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/45914/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="R3B7CSu7EoupyhhWP6pQm8YezwhNrG4S"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

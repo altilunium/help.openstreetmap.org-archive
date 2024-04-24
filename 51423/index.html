@@ -1,0 +1,218 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/51423/reverse-geocode-to-full-address">Reverse geocode to full address</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/51423/up/" id="post-51423-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-51423-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/51423/down/" id="post-51423-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/51423/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Using Nominatim, I'm able to retrieve a full address from a reverse search. I click in the map, generating a lat/lon value for my click and it will bring back a full address, as such: </p>
+<p><code><a href="http://nominatim.openstreetmap.org/reverse.php?format=html&amp;lat=53.1072166918934&amp;lon=-2.3291015625&amp;zoom=">http://nominatim.openstreetmap.org/reverse.php?format=html&amp;lat=53.1072166918934&amp;lon=-2.3291015625&amp;zoom=</a></code></p>
+<p>If I query either raw OSM data (<a href="http://www.openstreetmap.org/api/0.6/way/25958840">HERE</a>) I'm only able to see the street name. Where is OSM getting the rest of the data from? Am I able to achieve a similar level of depth?</p>
+<p>I'm currently running a web server hosting <code>OSRM</code> and a C# application feeding in queries, but I'm only ever able to get a <code>street name</code> back instead of a full address...</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osrm" href="/tags/osrm/" rel="tag" title="see questions tagged 'osrm'">osrm</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-geocoding" href="/tags/geocoding/" rel="tag" title="see questions tagged 'geocoding'">geocoding</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>15 Aug '16, 14:54</strong>
+</p>
+<img alt="JamesGould's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a7cb490555f288a4bc1232439157dc1c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12518/jamesgould">JamesGould</a><br/>
+<span class="score" title="196 reputation points">196</span><span title="9 badges"><span class="badge1">●</span><span class="badgecount">9</span></span><span title="10 badges"><span class="silver">●</span><span class="badgecount">10</span></span><span title="20 badges"><span class="bronze">●</span><span class="badgecount">20</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="JamesGould has one accepted answer">33%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-51423">
+</div>
+<div class="comment-tools" id="comment-tools-51423">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-51423-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/51423/reverse-geocode-to-full-address?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/51423/reverse-geocode-to-full-address?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/51423/reverse-geocode-to-full-address?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/51423/reverse-geocode-to-full-address?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="51426"></a>
+<div class="answer" id="answer-container-51426">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/51426/up/" id="post-51426-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-51426-score" title="current number of votes">
+    6
+</div>
+<a class="ajax-command post-vote down" href="/vote/51426/down/" id="post-51426-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The answer is <a href="https://wiki.openstreetmap.org/wiki/Nominatim">Nominatim</a>.</p>
+<p>Nominatim builds an address hierarchy using information from the element's <a href="https://wiki.openstreetmap.org/wiki/Addresses">address tags</a> and <a href="https://wiki.openstreetmap.org/wiki/Relation:associatedStreet">associatedStreet relations</a>, <a href="https://wiki.openstreetmap.org/wiki/Key:place">places</a> in the element's proximity, <a href="https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dadministrative">administrative boundaries</a> enclosing the element and so on. Some of these steps are explained at the <a href="https://wiki.openstreetmap.org/wiki/Nominatim/Development_overview">development overview</a>.</p>
+<p>If you open your link and click on <em>details</em> you can <a href="https://nominatim.openstreetmap.org/details.php?place_id=65040303">see the address hierarchy</a> Nominatim has built and which other OSM elements were used to create this hierarchy.</p>
+<p>Also note that there are some other <a href="https://wiki.openstreetmap.org/wiki/Search_engines">geocoders for OSM</a>.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/51426/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>15 Aug '16, 16:48</strong>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="scai has 168 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/51426/">
+                edited
+                <strong>15 Aug '16, 19:04</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-51426">
+<a name="51433"></a>
+<div class="comment" id="comment-51433">
+<div class="comment-score" id="post-51433-score">1</div>
+<div class="comment-text"><p>I also thought that Nominatim included a few other sources than just pure OSM data (e.g. Tiger address data)</p></div>
+<div class="comment-info" id="comment-51433-info">
+<span class="comment-age">(16 Aug '16, 09:50)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+<a name="51434"></a>
+<div class="comment" id="comment-51434">
+<div class="comment-score" id="post-51434-score"></div>
+<div class="comment-text"><p>Yes, for the US Nominatim also uses Tiger address data as far as I know. Maybe similar additional data is used for some other countries. I still haven't found any good documentation for all this stuff.</p></div>
+<div class="comment-info" id="comment-51434-info">
+<span class="comment-age">(16 Aug '16, 09:53)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-51426">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-51426-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="69374"></a>
+<div class="answer" id="answer-container-69374">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/69374/up/" id="post-69374-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-69374-score" title="current number of votes">
+    -1
+</div>
+<a class="ajax-command post-vote down" href="/vote/69374/down/" id="post-69374-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<pre>SELECT string_agg( place,',') as place FROM (
+SELECT name AS PLACE, SUBSTRING(planet_osm_polygon.admin_level FROM '[0-9]{1,2}')::INT AS admin_level_int
+FROM
+planet_osm_polygon
+WHERE
+boundary = 'administrative' AND
+ST_Intersects('SRID=4326;POINT(78.44131 17.51671)'::geometry, way)
+ORDER BY admin_level_int desc
+) AS geocoder
+</pre>
+<p><br/>
+output: Ward 129 Suraram, Greater Hyderabad Municipal Corporation North Zone, Hyderabad, Medchal-Malkajgiri District, Telangana
+<br/>
+if you get mixed SRID geometries error
+change 'way' as ST_Transform(way,4326)</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/69374/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 May '19, 10:43</strong>
+</p>
+<img alt="Prasad%20Raju%20Vegesna's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c8232e813e7b56f3d5e3db75cf6ad7ac?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16724/prasad-raju-vegesna">Prasad Raju ...</a><br>
+<span class="score" title="0 reputation points">0</span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Prasad Raju Vegesna has no accepted answers">0%</span>
+</br></br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-69374">
+</div>
+<div class="comment-tools" id="comment-tools-69374">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-69374-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/51423/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="8r6sW3gPZUQzq25TRDZpb1lWXy5MegHX"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

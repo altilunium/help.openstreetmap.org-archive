@@ -1,0 +1,257 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/48063/help-with-3d-building">Help with 3D building.</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48063/up/" id="post-48063-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48063-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/48063/down/" id="post-48063-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/48063/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>I'm currently trying to add a simple 3D building called 'De La Warr Pavilion' here - <a href="http://www.openstreetmap.org/#map=19/50.83745/0.47171">http://www.openstreetmap.org/#map=19/50.83745/0.47171</a></p>
+<p>But it appears, at least on F4Map the ground floor is missing under the other building parts - <a href="http://demo.f4map.com/#lat=50.8374459&amp;lon=0.4714628&amp;zoom=20&amp;camera.theta=39.893&amp;camera.phi=-5.73">http://demo.f4map.com/#lat=50.8374459&amp;lon=0.4714628&amp;zoom=20&amp;camera.theta=39.893&amp;camera.phi=-5.73</a></p>
+<p>Am I doing something wrong, or is this a known bug?  Thanks in advance.</p>
+<p>Alex</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-building" href="/tags/building/" rel="tag" title="see questions tagged 'building'">building</a>
+<a class="post-tag tag-link-3d" href="/tags/3d/" rel="tag" title="see questions tagged '3d'">3d</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>11 Feb '16, 20:08</strong>
+</p>
+<img alt="Dr-Mx's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b60dfdd58818dd0080134dcecdf7756b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11973/dr-mx">Dr-Mx</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Dr-Mx has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48063">
+</div>
+<div class="comment-tools" id="comment-tools-48063">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48063-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/48063/help-with-3d-building?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/48063/help-with-3d-building?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/48063/help-with-3d-building?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/48063/help-with-3d-building?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="48080"></a>
+<div class="answer accepted-answer" id="answer-container-48080">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48080/up/" id="post-48080-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48080-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/48080/down/" id="post-48080-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/48080/" rel="nofollow" title="Dr-Mx has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p><a href="http://osm2world.org/">OSM2World</a> also doesn't draw the ground floor (tried with a local copy of the latest build). So I guess it's a tagging problem although I'm not sure why. It seems to be caused somehow by the other outlines having a "building:min_level" set.</p>
+<p>The <a href="https://wiki.openstreetmap.org/wiki/Simple_3D_buildings">simple 3D buildings</a> wiki page contains an interesting sentence that could be relevant here:</p>
+<blockquote>
+<p>Note that if a building=* contains at least one area tagged as building:part=*, the building outline is no longer considered for volume rendering.</p>
+</blockquote>
+<p>So it might be necessary to draw another outline with building:part=yes and building:levels=1 which overlaps with the parts having a "building:min_level" set. This seems to render correctly with at least OSM2World. The new way looks in JOSM like this:</p>
+<p><img alt="alt text" src="http://help.openstreetmap.org/upfiles/foo_osF0OM6.png"/></p>
+<p>However since I'm neither convinced that this is the correct solution (isn't there an easier one?) nor do I know whether the building really does look the way I "fixed" it I won't upload it.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/48080/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Feb '16, 16:50</strong>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="scai has 168 accepted answers">23%</span>
+</p>
+</img></div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/48080/">
+                edited
+                <strong>12 Feb '16, 16:51</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48080">
+<a name="48084"></a>
+<div class="comment" id="comment-48084">
+<div class="comment-score" id="post-48084-score"></div>
+<div class="comment-text"><p>Hmm, interesting. With that thinking I'll remove all the "building:min_level" tags and reset the "building:levels". This seems to render it correctly, albeit the buildings parts are all inside one another. Thanks you for your help.</p></div>
+<div class="comment-info" id="comment-48084-info">
+<span class="comment-age">(12 Feb '16, 20:39)</span>
+<a class="comment-user userinfo" href="/users/11973/dr-mx">Dr-Mx</a>
+</div>
+</div>
+<a name="48085"></a>
+<div class="comment" id="comment-48085">
+<div class="comment-score" id="post-48085-score"></div>
+<div class="comment-text"><p>Not sure if that's the correct approach either. Making the building parts stuck in each other although they don't in reality sounds wrong. But I'm not very experienced in 3D tagging.</p></div>
+<div class="comment-info" id="comment-48085-info">
+<span class="comment-age">(12 Feb '16, 20:58)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="48087"></a>
+<div class="comment" id="comment-48087">
+<div class="comment-score" id="post-48087-score"></div>
+<div class="comment-text"><p>Yeah, it's not the cleanest approach.  I haven't made any permanent changes yet, so I'll try a bit more experimentation given your advice.</p></div>
+<div class="comment-info" id="comment-48087-info">
+<span class="comment-age">(12 Feb '16, 23:42)</span>
+<a class="comment-user userinfo" href="/users/11973/dr-mx">Dr-Mx</a>
+</div>
+</div>
+<a name="48098"></a>
+<div class="comment" id="comment-48098">
+<div class="comment-score" id="post-48098-score"></div>
+<div class="comment-text"><p>As you say the building=yes isn't rendered if there is a building:part=yes above it, so I just lowered level 2 to ground level.  That was all I needed to do.  Cheers.</p></div>
+<div class="comment-info" id="comment-48098-info">
+<span class="comment-age">(13 Feb '16, 12:09)</span>
+<a class="comment-user userinfo" href="/users/11973/dr-mx">Dr-Mx</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-48080">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48080-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="48067"></a>
+<div class="answer" id="answer-container-48067">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48067/up/" id="post-48067-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48067-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/48067/down/" id="post-48067-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Alex, not a direct an answer but did you studied these pages ? <a href="http://wiki.openstreetmap.org/wiki/3D_tagging">http://wiki.openstreetmap.org/wiki/3D_tagging</a> </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/48067/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>11 Feb '16, 23:35</strong>
+</p>
+<img alt="Hendrikklaas's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/742e93034cd38ad243f7ab26f350b659?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3443/hendrikklaas">Hendrikklaas</a><br/>
+<span class="score" title="9286 reputation points"><span class="">9.3k</span></span><span title="207 badges"><span class="badge1">●</span><span class="badgecount">207</span></span><span title="238 badges"><span class="silver">●</span><span class="badgecount">238</span></span><span title="387 badges"><span class="bronze">●</span><span class="badgecount">387</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Hendrikklaas has 39 accepted answers">5%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48067">
+<a name="48076"></a>
+<div class="comment" id="comment-48076">
+<div class="comment-score" id="post-48076-score"></div>
+<div class="comment-text"><p>... or ask in the OSM 3D subforum. </p>
+<p><a href="http://forum.openstreetmap.org/viewforum.php?id=42">http://forum.openstreetmap.org/viewforum.php?id=42</a></p>
+<p>Normaly the developers of f4map are active there, too.</p></div>
+<div class="comment-info" id="comment-48076-info">
+<span class="comment-age">(12 Feb '16, 15:04)</span>
+<a class="comment-user userinfo" href="/users/99/stephan75">stephan75</a>
+</div>
+</div>
+<a name="48077"></a>
+<div class="comment" id="comment-48077">
+<div class="comment-score" id="post-48077-score"></div>
+<div class="comment-text"><p>It appears "This forum is not accepting new registrations."  But I'll keep checking back, thanks.</p></div>
+<div class="comment-info" id="comment-48077-info">
+<span class="comment-age">(12 Feb '16, 15:43)</span>
+<a class="comment-user userinfo" href="/users/11973/dr-mx">Dr-Mx</a>
+</div>
+</div>
+<a name="48079"></a>
+<div class="comment" id="comment-48079">
+<div class="comment-score" id="post-48079-score">2</div>
+<div class="comment-text"><p>Just login to the forum with your regular OSM account.</p></div>
+<div class="comment-info" id="comment-48079-info">
+<span class="comment-age">(12 Feb '16, 16:19)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-48067">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48067-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/48063/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="9BsovvW6JOy1mmAEdBXIJqLYXIrjqnS0"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

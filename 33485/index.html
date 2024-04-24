@@ -1,0 +1,310 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/33485/cut-labels-with-mapnik">Cut Labels with Mapnik</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/33485/up/" id="post-33485-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-33485-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/33485/down/" id="post-33485-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/33485/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm getting cut labels on my maps.  Same thing is happening on the main map here:</p>
+<p><a href="http://www.openstreetmap.org/#map=11/52.3303/-1.3774">http://www.openstreetmap.org/#map=11/52.3303/-1.3774</a></p>
+<p>(look between Coventry and Rugby)</p>
+<p>Anyone know how to fix them?</p>
+<p>I made a dynamic tileserver with Mapnik, renderd and Apache mod-tile.  Also made a static one with Mapnik and generate_tiles.py to make the tiles.  Same thing is happening in both cases.</p>
+<p>Did some research and discovered that the problem is caused by not having a buffer around the rendered tiles.  So I stated a buffer size in my main xml style file (osm.xml):</p>
+<p>&lt;Map background-color="#b5d0d0" buffer-size="128" srs="&amp;srs900913;" minimum-version="2.0.0"&gt;</p>
+<p>Did so for the dynamic and the static servers.  Made no difference.  Tried different sizes for the buffer: 256, 1024, made no difference.  I know osm.xml is being loaded because every time I edit it I change the background colour and I can see the new colour in newly rendered tiles.</p>
+<p>So Mapnik is reading osm.xml but apparently ignoring the buffer size.  Why so?</p>
+<p>Thank you.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-labels" href="/tags/labels/" rel="tag" title="see questions tagged 'labels'">labels</a>
+<a class="post-tag tag-link-osm.xml" href="/tags/osm.xml/" rel="tag" title="see questions tagged 'osm.xml'">osm.xml</a>
+<a class="post-tag tag-link-cut" href="/tags/cut/" rel="tag" title="see questions tagged 'cut'">cut</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>26 May '14, 18:12</strong>
+</p>
+<img alt="Charles%20Sweeney's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/11e6e819b91b4d177c249c5123d2fa15?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8924/charles-sweeney">Charles Sweeney</a><br/>
+<span class="score" title="101 reputation points">101</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="9 badges"><span class="bronze">●</span><span class="badgecount">9</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Charles Sweeney has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-33485">
+</div>
+<div class="comment-tools" id="comment-tools-33485">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-33485-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/33485/cut-labels-with-mapnik?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/33485/cut-labels-with-mapnik?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/33485/cut-labels-with-mapnik?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/33485/cut-labels-with-mapnik?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="33509"></a>
+<div class="answer answered-by-owner" id="answer-container-33509">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/33509/up/" id="post-33509-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-33509-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/33509/down/" id="post-33509-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Fixed it myself.  Not sure if it's the "correct" solution but it works very well for me and gets rid of all the cut labels.</p>
+<p>Used "avoid-edges" in the xml.</p>
+<p>On the dynamic server (Mapnik, renderd, mod_tile):</p>
+<p>Edited the main xml file /etc/mapnik-osm-data/osm.xml</p>
+<p>Added the "avoid-edges" parameter with a value of "true" to every instance of the &lt;ShieldSymbolizer&gt; tag (13 of them).  So for example, this line:</p>
+<p>&lt;ShieldSymbolizer size="10" fill="#fff" placement="line" file="&amp;symbols;/mot_shield[length].png" spacing="750" minimum-distance="30" fontset-name="bold-fonts"&gt;[ref]&lt;/ShieldSymbolizer&gt;</p>
+<p>...became:</p>
+<p>&lt;ShieldSymbolizer size="10" fill="#fff" avoid-edges="true" placement="line" file="&amp;symbols;/mot_shield[length].png" spacing="750" minimum-distance="30" fontset-name="bold-fonts"&gt;[ref]&lt;/ShieldSymbolizer&gt;</p>
+<p>After editing, stop and start renderd:</p>
+<p>/etc/init.d/renderd stop</p>
+<p>/etc/init.d/renderd start</p>
+<p>You can go to a new area of the map to see newly generated tiles to see the effect of the changes.  In my case on a test server I deleted ALL existing tiles, then went onto the map again, getting every tile fresh.</p>
+<p>The tiles are here (on my setup):</p>
+<p>/var/lib/mod_tile/default</p>
+<p>To delete all the tiles, delete the "default" directory:</p>
+<p>cd /var/lib/mod_tile/</p>
+<p>rm -fr default</p>
+<p>The "default" directory is automatically created again the next time a tile is rendered.</p>
+<p>I was delighted with the result.  My worry was that there would be more labels and pairs of labels where there was previously cut labels, but to my pleasant surprise there was the same number of labels as before but those that were previously cut had been moved slightly (within the edge of the tile) and displayed perfectly!</p>
+<p>Still had buffer-size="128" in the &lt;Map&gt; attribute, though not sure if that is necessary as it didn't appear to make any difference there.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/33509/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>27 May '14, 15:58</strong>
+</p>
+<img alt="Charles%20Sweeney's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/11e6e819b91b4d177c249c5123d2fa15?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8924/charles-sweeney">Charles Sweeney</a><br/>
+<span class="score" title="101 reputation points">101</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="9 badges"><span class="bronze">●</span><span class="badgecount">9</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Charles Sweeney has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-33509">
+<a name="33510"></a>
+<div class="comment" id="comment-33510">
+<div class="comment-score" id="post-33510-score"></div>
+<div class="comment-text"><p>similar solutions for the label cutting problem are discussed in this video <a href="http://stateofthemap.us/session/advanced-cartocss-tricks/,">http://stateofthemap.us/session/advanced-cartocss-tricks/,</a> but for CartoCss</p></div>
+<div class="comment-info" id="comment-33510-info">
+<span class="comment-age">(27 May '14, 17:17)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-33509">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-33509-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="55502"></a>
+<div class="answer" id="answer-container-55502">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/55502/up/" id="post-55502-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-55502-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/55502/down/" id="post-55502-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hi. I applied the solution above, but I am still having road labels being a little cut off. Why is this and can I fix it ?</p>
+<p><img alt="alt text" src="https://help.openstreetmap.org/upfiles/s3.png"/></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/55502/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Apr '17, 23:51</strong>
+</p>
+<img alt="Koles500's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f98ed179efe75af596090a497cefeb90?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/13229/koles500">Koles500</a><br/>
+<span class="score" title="68 reputation points">68</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Koles500 has no accepted answers">0%</span>
+</p>
+</img></div>
+</div>
+<div class="comments-container" id="comments-container-55502">
+<a name="55504"></a>
+<div class="comment" id="comment-55504">
+<div class="comment-score" id="post-55504-score"></div>
+<div class="comment-text"><p>The answer at <a href="https://help.openstreetmap.org/questions/54196/how-to-make-symbols-visible-on-a-lesser-zoom-level/54202">https://help.openstreetmap.org/questions/54196/how-to-make-symbols-visible-on-a-lesser-zoom-level/54202</a> suggests that you might have been using the old pre-carto style.  If you are, then there are two things that you're doing differently to "most people" (the other is running this on Windows).  My guess is that your problem here is related to something that you're doing differently - perhaps try a more recent map style, or the same style on differently-built version of Mapnik (for example <a href="https://switch2osm.org/manually-building-a-tile-server-16-04-2-lts/">https://switch2osm.org/manually-building-a-tile-server-16-04-2-lts/</a> just fetches from a repository so there's less to go wrong).</p></div>
+<div class="comment-info" id="comment-55504-info">
+<span class="comment-age">(07 Apr '17, 00:09)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="55522"></a>
+<div class="comment" id="comment-55522">
+<div class="comment-score" id="post-55522-score"></div>
+<div class="comment-text"><p>We have newest mapnik tools that I downloaded from SVN repository. I can try different style. Which one exactly do you suggest? Maybe this one : ? <a href="https://github.com/gravitystorm/openstreetmap-carto">https://github.com/gravitystorm/openstreetmap-carto</a></p></div>
+<div class="comment-info" id="comment-55522-info">
+<span class="comment-age">(07 Apr '17, 14:04)</span>
+<a class="comment-user userinfo" href="/users/13229/koles500">Koles500</a>
+</div>
+</div>
+<a name="55584"></a>
+<div class="comment" id="comment-55584">
+<div class="comment-score" id="post-55584-score"></div>
+<div class="comment-text"><p>I downloaded style from <a href="https://github.com/gravitystorm/openstreetmap-carto">https://github.com/gravitystorm/openstreetmap-carto</a> and compared it with my usual default.style file and they are exactly the same. I re-imported data and re-rendered tiles and the problem is still the same as shown above. Any ideas ?</p></div>
+<div class="comment-info" id="comment-55584-info">
+<span class="comment-age">(12 Apr '17, 15:53)</span>
+<a class="comment-user userinfo" href="/users/13229/koles500">Koles500</a>
+</div>
+</div>
+<a name="55585"></a>
+<div class="comment" id="comment-55585">
+<div class="comment-score" id="post-55585-score"></div>
+<div class="comment-text"><p>As mentioned elsewhere, the "default.style" file just determines what columns are imported, not what map style you get.  That file is usually called "mapnik.xml".  To take one example of how that is created see <a href="https://switch2osm.org/manually-building-a-tile-server-16-04-2-lts/">https://switch2osm.org/manually-building-a-tile-server-16-04-2-lts/</a> up to where it says "carto project.mml &gt; mapnik.xml".  In that example the "source" for the style is in the files referred to by "project.mml" and "carto" converts that into "mapnik.xml" which is something that Mapnik can understand (but most humans can't).</p>
+<p>To compare non-carto map styles you'd need to compare the mapnik.xml files, but that will be difficult because the file format is very difficult to understand.</p></div>
+<div class="comment-info" id="comment-55585-info">
+<span class="comment-age">(12 Apr '17, 16:36)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-55502">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-55502-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="55586"></a>
+<div class="answer" id="answer-container-55586">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/55586/up/" id="post-55586-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-55586-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/55586/down/" id="post-55586-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Finally, I fixed it!
+&lt;Map buffer-size="512"
+AND
+&lt;ShieldSymbolizer clip="false"
+instead of 
+&lt;ShieldSymbolizer avoid-edges="true"
+(all occurences) in osm.xml worked.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/55586/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Apr '17, 16:54</strong>
+</p>
+<img alt="Koles500's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f98ed179efe75af596090a497cefeb90?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13229/koles500">Koles500</a><br/>
+<span class="score" title="68 reputation points">68</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Koles500 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/55586/">
+                edited
+                <strong>12 Apr '17, 16:55</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-55586">
+</div>
+<div class="comment-tools" id="comment-tools-55586">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-55586-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/33485/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="tfe41Vy6B6V9ciiJ7mlCnTf8DdiCO44z"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

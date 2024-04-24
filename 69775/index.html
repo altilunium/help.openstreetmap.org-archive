@@ -1,0 +1,181 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/69775/first-time-install-permission-denied-for-relation-planet_osm_polygon">First Time Install - permission denied for relation planet_osm_polygon</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/69775/up/" id="post-69775-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-69775-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/69775/down/" id="post-69775-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/69775/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>First time install and I'm getting the error below when I try to run rendered as render account. </p>
+<p>My test box is smaller so I imported each US state one by one.   Not sure if this has an effect or not. </p>
+<pre><code>Mapnik LOG&gt; 2019-06-27 16:21:41: warning: unable to find face-name 'unifont Medium' in FontSet 'fontset-2'
+renderd[22208]: An error occurred while loading the map layer 'ajt': Postgis Plugin: ERROR:  permission denied for relation planet_osm_polygon
+in executeQuery Full sql was: 'SELECT ST_SRID("way") AS srid FROM planet_osm_polygon WHERE "way" IS NOT NULL LIMIT 1;'
+  encountered during parsing of layer 'landcover-low-zoom' in Layer at line 755 of '/home/renderaccount/src/openstreetmap-carto/mapnik.xml'
+renderd[22208]: An error occurred while loading the map layer 'ajt': Postgis Plugin: ERROR:  permission denied for relation planet_osm_polygon
+in executeQuery Full sql was: 'SELECT ST_SRID("way") AS srid FROM planet_osm_polygon WHERE "way" IS NOT NULL LIMIT 1;'
+  encountered during parsing of layer 'landcover-low-zoom' in Layer at line 755 of '/home/renderaccount/src/openstreetmap-carto/mapnik.xml'
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-installation" href="/tags/installation/" rel="tag" title="see questions tagged 'installation'">installation</a>
+<a class="post-tag tag-link-renderd" href="/tags/renderd/" rel="tag" title="see questions tagged 'renderd'">renderd</a>
+<a class="post-tag tag-link-newbie" href="/tags/newbie/" rel="tag" title="see questions tagged 'newbie'">newbie</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>27 Jun '19, 17:39</strong>
+</p>
+<img alt="chavenor1's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2f2802a91a7b23b9a654d5d1f3e4b917?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16846/chavenor1">chavenor1</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="chavenor1 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-69775">
+<a name="69776"></a>
+<div class="comment" id="comment-69776">
+<div class="comment-score" id="post-69776-score"></div>
+<div class="comment-text"><p>"permission denied for relation planet_osm_polygon" implies that the accounts used for part of the installation didn't match the account used for another part.  I'm guessing that you're following <a href="https://switch2osm.org/manually-building-a-tile-server-18-04-lts/">https://switch2osm.org/manually-building-a-tile-server-18-04-lts/</a> , perhaps recheck what accoun  you used for each part of that?  Maybe you did some things as root and therefore can't access them as a non-root user?</p></div>
+<div class="comment-info" id="comment-69776-info">
+<span class="comment-age">(27 Jun '19, 20:25)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="69777"></a>
+<div class="comment" id="comment-69777">
+<div class="comment-score" id="post-69777-score"></div>
+<div class="comment-text"><p>What account should be used through that guide?   Not sure it's clear if I should be root or renderaccount.   Should I delete and re-install?   Is rendered run by root or render account?</p></div>
+<div class="comment-info" id="comment-69777-info">
+<span class="comment-age">(27 Jun '19, 20:36)</span>
+<a class="comment-user userinfo" href="/users/16846/chavenor1">chavenor1</a>
+</div>
+</div>
+<a name="69778"></a>
+<div class="comment" id="comment-69778">
+<div class="comment-score" id="post-69778-score"></div>
+<div class="comment-text"><p>From memory, everything to be done as root has a "sudo" at the front, such as "sudo apt-get install ...".  If you type in the commands as written, everything will work.</p>
+<p>As written, the guide uses a Linux user account called "renderaccount" to run things like renderd from.  The postgres side of things is handled at "ALTER TABLE geometry_columns OWNER TO renderaccount;" and the Linux system side at "sudo useradd -m renderaccount".</p></div>
+<div class="comment-info" id="comment-69778-info">
+<span class="comment-age">(27 Jun '19, 21:02)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="69779"></a>
+<div class="comment" id="comment-69779">
+<div class="comment-score" id="post-69779-score">1</div>
+<div class="comment-text"><p>I'm usually logged in as root is that a problem?   Or should I make renderaccount part of the sudo group?   What account root or renderaccount or Postgres should this command be run at? </p>
+<p>osm2pgsql -d gis --create --slim -G --hstore --tag-transform-script ~/src/openstreetmap-carto/openstreetmap-carto.lua -C 1000 --number-processes 1 -S ~/src/openstreetmap-carto/openstreetmap-carto.style ~/data/delaware-latest.osm.pbf</p></div>
+<div class="comment-info" id="comment-69779-info">
+<span class="comment-age">(27 Jun '19, 21:09)</span>
+<a class="comment-user userinfo" href="/users/16846/chavenor1">chavenor1</a>
+</div>
+</div>
+<a name="69782"></a>
+<div class="comment" id="comment-69782">
+<div class="comment-score" id="post-69782-score"></div>
+<div class="comment-text"><p>You have a Postgres user issue, not a Linux user one: they are separate things.
+Running 'psql -l' will tell us who owns your gis database.</p></div>
+<div class="comment-info" id="comment-69782-info">
+<span class="comment-age">(29 Jun '19, 06:21)</span>
+<a class="comment-user userinfo" href="/users/5587/yvecai">yvecai</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-69775">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-69775-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/69775/first-time-install-permission-denied-for-relation-planet_osm_polygon?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/69775/first-time-install-permission-denied-for-relation-planet_osm_polygon?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/69775/first-time-install-permission-denied-for-relation-planet_osm_polygon?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/69775/first-time-install-permission-denied-for-relation-planet_osm_polygon?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="69790"></a>
+<div class="answer answered-by-owner" id="answer-container-69790">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/69790/up/" id="post-69790-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-69790-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/69790/down/" id="post-69790-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Re-loading the .osm.pbf files into the PostGIS DB while using the renderaccount fixed the issue. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/69790/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>29 Jun '19, 18:06</strong>
+</p>
+<img alt="chavenor1's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2f2802a91a7b23b9a654d5d1f3e4b917?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16846/chavenor1">chavenor1</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="chavenor1 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-69790">
+</div>
+<div class="comment-tools" id="comment-tools-69790">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-69790-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/69775/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="fZHMi24vTPhLH4jHGV4MtSF72oxeF6WR"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

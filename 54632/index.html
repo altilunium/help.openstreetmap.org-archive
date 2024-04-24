@@ -1,0 +1,291 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/54632/getting-administrative-boundaries-of-a-given-country-for-all-its-admin_level">Getting administrative boundaries of a given country for all its admin_level</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/54632/up/" id="post-54632-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-54632-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/54632/down/" id="post-54632-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/54632/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>I have found the website "OSM Boundaries Map 4.1" on <a href="https://wambachers-osm.website/boundaries/,">https://wambachers-osm.website/boundaries/,</a> it shows exactly what I would like to perfom with its exploring tree: for a given country I would like to get all the lower admin_levels and their administrative boundaries. So I tried to find the queries allowing me to get the boundaries for each admin_level of a given country. </p>
+<p>From levels 2 to 4 it's ok and quite simple, I came succesfully to the generic query:</p>
+<pre><code>rel[admin_level=(level number)]
+   [type=boundary]
+   [boundary=administrative]
+   [ (specific tag to identify the country, see below) ];
+out geom;
+
+--With the specific tags to identify the country (with XX=iso2 country code):
+admin_level=2 &gt; ["ISO3166-1"~"^XX"]
+admin_level=3 &gt; ["is_in:country"="XX"]
+admin_level=4 &gt; ["ISO3166-2"~"^XX"]
+</code></pre>
+<p>But after that I encounter two issues:
+ - I can't find a generic query effective for all the countries
+ - I can't link lower admin_level to its upper admin_level (or inversely)</p>
+<p>Indeed, from level 5 I can't find any generic query I could use in any country. Indeed the different countries in the world will have specific tags in their admin_levels or won't have tag at all identifying the country. For example admin_level=5 "Greater London" in England doesn't have any tag identifying the country or upper level identification. Admin_level=6 "London" has the following tag to identify "is_in:iso_3166_2"="GB-ENG", but admin_level=6 "Nord" in France has a different tag: "ISO3166-2", not the "is_in" tag. Last example, for all cities in France (admin_level=8), I can't find any tag linked to the country or at list the upper level.</p>
+<p>I found out that some levels has a "subarea" mentionned, but it's not in all levels. The only solution I have at the moment is to search all boundaries whose the "admin_center" is in the upper boundary, but it's very heavy to perform on all admin levels of all countries...</p>
+<p>Do you know how I can get all administrative boundaries of all admin_level of a given country? Thanks</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap" href="/tags/openstreetmap/" rel="tag" title="see questions tagged 'openstreetmap'">openstreetmap</a>
+<a class="post-tag tag-link-boundaries" href="/tags/boundaries/" rel="tag" title="see questions tagged 'boundaries'">boundaries</a>
+<a class="post-tag tag-link-overpass-ql" href="/tags/overpass-ql/" rel="tag" title="see questions tagged 'overpass-ql'">overpass-ql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>14 Feb '17, 18:07</strong>
+</p>
+<img alt="thomas_bilendi's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/dd59778562963735dafa722bbbb02158?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13342/thomas_bilendi">thomas_bilendi</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="thomas_bilendi has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/54632/">
+                edited
+                <strong>05 Jul '17, 08:19</strong>
+</a>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-54632">
+<a name="54656"></a>
+<div class="comment" id="comment-54656">
+<div class="comment-score" id="post-54656-score">1</div>
+<div class="comment-text"><p>crosspost: <a href="https://stackoverflow.com/questions/42257339/openstreetmap-getting-administrative-boundaries-of-a-given-country-for-all-its">https://stackoverflow.com/questions/42257339/openstreetmap-getting-administrative-boundaries-of-a-given-country-for-all-its</a></p></div>
+<div class="comment-info" id="comment-54656-info">
+<span class="comment-age">(15 Feb '17, 19:28)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="56830"></a>
+<div class="comment" id="comment-56830">
+<div class="comment-score" id="post-56830-score"></div>
+<div class="comment-text"><p>Have you solved this problem since then?</p></div>
+<div class="comment-info" id="comment-56830-info">
+<span class="comment-age">(01 Jul '17, 23:10)</span>
+<a class="comment-user userinfo" href="/users/13884/meglio">meglio</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-54632">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-54632-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/54632/getting-administrative-boundaries-of-a-given-country-for-all-its-admin_level?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/54632/getting-administrative-boundaries-of-a-given-country-for-all-its-admin_level?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/54632/getting-administrative-boundaries-of-a-given-country-for-all-its-admin_level?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/54632/getting-administrative-boundaries-of-a-given-country-for-all-its-admin_level?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="54633"></a>
+<div class="answer" id="answer-container-54633">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/54633/up/" id="post-54633-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-54633-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/54633/down/" id="post-54633-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Trying to do that with Overpass is probably not a good idea as you rely on structures that may or may not be there (even the admin_centre is not guaranteed to be set). Did you notice the wno-edv-service.de web site has a download option?</p>
+<p>I'd recommend loading the OSM data for your area of interest into a database with osm2pgsql (you can use a much reduced style file on import if you're only interested in administrative areas). After that, you can use the power of PostGIS to answer questions like "give me all admin boundaries that are inside this polygon" and so on. And you can easily export to GeoJSON or Shape files.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/54633/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>14 Feb '17, 18:29</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-54633">
+<a name="54646"></a>
+<div class="comment" id="comment-54646">
+<div class="comment-score" id="post-54646-score"></div>
+<div class="comment-text"><p>Hi Frederik,
+Yes I have seen the download section, but since this service is kindly provided by a private individual, it could stop at any moment. So this is why I wanted to be able to query myself directly osm data.</p>
+<p>Indeed, I could load the osm data for my area into my postgis db then query it, but this is a huge amount of data and that's why I try to find the query to download only admin_levels (I will have to download data every month). After that, as you said, I can use PostGIS and query the imported boundaries.</p></div>
+<div class="comment-info" id="comment-54646-info">
+<span class="comment-age">(15 Feb '17, 10:46)</span>
+<a class="comment-user userinfo" href="/users/13342/thomas_bilendi">thomas_bilendi</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-54633">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-54633-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="54634"></a>
+<div class="answer" id="answer-container-54634">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/54634/up/" id="post-54634-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-54634-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/54634/down/" id="post-54634-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>For a country where it works (i.e. Denmark) you can try <code>boundary=administrative &amp; type:relation in Danmark</code> in the Overpass Turbo wizard (replace "Danmark" with the name of your preferred country).</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/54634/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>14 Feb '17, 20:32</strong>
+</p>
+<img alt="Hjart's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/6edf3a421a450237beae62ba93582637?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3577/hjart">Hjart</a><br/>
+<span class="score" title="2961 reputation points"><span class="">3.0k</span></span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="26 badges"><span class="silver">●</span><span class="badgecount">26</span></span><span title="56 badges"><span class="bronze">●</span><span class="badgecount">56</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Hjart has 14 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-54634">
+<a name="54647"></a>
+<div class="comment" id="comment-54647">
+<div class="comment-score" id="post-54647-score"></div>
+<div class="comment-text"><p>Hi Hjart,
+Yes I can, but its not the same for every country, and even in Denmark some admin_levels (e.g. admin_level=7) don't have that country tag (specific example: rel(2190242). So what I try to find is how the admin_levels are linked to each other</p></div>
+<div class="comment-info" id="comment-54647-info">
+<span class="comment-age">(15 Feb '17, 10:53)</span>
+<a class="comment-user userinfo" href="/users/13342/thomas_bilendi">thomas_bilendi</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-54634">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-54634-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="84286"></a>
+<div class="answer" id="answer-container-84286">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/84286/up/" id="post-84286-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-84286-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/84286/down/" id="post-84286-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This website presents the boundaries hierarchically using admin_level: <a href="https://osm-boundaries.com"></a><a href="https://osm-boundaries.com">https://osm-boundaries.com</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/84286/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>27 Apr '22, 10:42</strong>
+</p>
+<img alt="pcgomes's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/61c58c3ad85157ecf983d3358a4a0903?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/21689/pcgomes">pcgomes</a><br/>
+<span class="score" title="1 reputation points">1</span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="pcgomes has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-84286">
+</div>
+<div class="comment-tools" id="comment-tools-84286">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-84286-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/54632/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="3bA0mcOT5Mrik2BXM6LkFJVTw1RKlszR"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

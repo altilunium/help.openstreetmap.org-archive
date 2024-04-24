@@ -1,0 +1,114 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/33533/has-anyone-successfully-loaded-osm-to-postgresql-with-osm2pgsql-on-windows-lately">Has anyone successfully loaded OSM to PostgreSQL with osm2pgsql on Windows lately?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/33533/up/" id="post-33533-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-33533-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/33533/down/" id="post-33533-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/33533/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I can't seem to find any clear and current documentation on the process and am stuck here:</p>
+<p>E:\GIS_Data\OSM&gt;osm2pgsql -v -U maugust -W -s --host localhost 4096 -S default.s
+tyle -d POSTGIS US-WEST-LATEST.OSM.BZ2
+osm2pgsql SVN version 0.69-21289M</p>
+<p>Password:
+Using projection SRS 900913 (Spherical Mercator)
+Setting up table: planet_osm_point
+NOTICE:  table "planet_osm_point" does not exist, skipping
+NOTICE:  table "planet_osm_point_tmp" does not exist, skipping
+PREPARE get_way (int4) AS SELECT AsText(way) FROM planet_osm_point WHERE osm_id
+= $1;
+ failed: ERROR:  function astext(geometry) does not exist
+LINE 1: PREPARE get_way (int4) AS SELECT AsText(way) FROM planet_osm...
+                                         ^
+HINT:  No function matches the given name and argument types. You might need to
+add explicit type casts.</p>
+<p>Error occurred, cleaning up</p>
+<p>I've read this <a href="http://forum.openstreetmap.org/viewtopic.php?id=16350">http://forum.openstreetmap.org/viewtopic.php?id=16350</a> which seems to indicate that some things in Post GIS 2.0+ are broken for windows? Are there any workarounds for this, and any further, renamed columns/fields, etc.? or are Windows users at PostGIS 2.0 simply unable to load OSM data with osm2pgsql?</p>
+<p>Thanks for any suggestions!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-pgsql" href="/tags/pgsql/" rel="tag" title="see questions tagged 'pgsql'">pgsql</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-database" href="/tags/database/" rel="tag" title="see questions tagged 'database'">database</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>28 May '14, 17:15</strong>
+</p>
+<img alt="aug_aug's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/61dfcaeba5e4f2391b670792231ac31f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8936/aug_aug">aug_aug</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="aug_aug has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-33533">
+<a name="33540"></a>
+<div class="comment" id="comment-33540">
+<div class="comment-score" id="post-33540-score"></div>
+<div class="comment-text"><p>So I made it past the above when I ran basically all of the tweaks here:</p>
+<p><a href="https://github.com/springmeyer/win-osm-workshop/blob/master/Tutorial.md#step-6-configure-the-osm-postgis-database">https://github.com/springmeyer/win-osm-workshop/blob/master/Tutorial.md#step-6-configure-the-osm-postgis-database</a></p>
+<p>...now my osm data appears to load into my PostGIS database however now I'm stuck at a "key (id) = xxx...duplicate key value violates unique constraint..." error - anyone have any ideas?</p></div>
+<div class="comment-info" id="comment-33540-info">
+<span class="comment-age">(28 May '14, 20:59)</span>
+<a class="comment-user userinfo" href="/users/8936/aug_aug">aug_aug</a>
+</div>
+</div>
+<a name="33543"></a>
+<div class="comment" id="comment-33543">
+<div class="comment-score" id="post-33543-score">1</div>
+<div class="comment-text"><p>I load stuff into PostgrSQL/PostGis on Windows all the time (both on XP SP3 and Windows 8.1). My main config is PostgreSQL 9.3 and PostGIS 2.x: you really need to give versions (and possibly dates) of all major components. Not sure that this help forum is place to solve what look like problems specific to your config.</p></div>
+<div class="comment-info" id="comment-33543-info">
+<span class="comment-age">(28 May '14, 21:48)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="33544"></a>
+<div class="comment" id="comment-33544">
+<div class="comment-score" id="post-33544-score"></div>
+<div class="comment-text"><p>In particular check this question: <a href="https://help.openstreetmap.org/questions/24070/failed-error-duplicate-key-value-violates-unique-constraint">https://help.openstreetmap.org/questions/24070/failed-error-duplicate-key-value-violates-unique-constraint</a></p></div>
+<div class="comment-info" id="comment-33544-info">
+<span class="comment-age">(28 May '14, 21:49)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-33533">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-33533-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/33533/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="iCeMikNAgzQDvo42xDqrjsBfAx48LAe5"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

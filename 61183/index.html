@@ -1,0 +1,115 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/61183/building-a-tileserver-postgis-errors">Building a Tileserver - PostGIS Errors</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/61183/up/" id="post-61183-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-61183-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/61183/down/" id="post-61183-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/61183/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hey there,
+I am working with this tutorial <a href="https://switch2osm.org/manually-building-a-tile-server-16-04-2-lts/">https://switch2osm.org/manually-building-a-tile-server-16-04-2-lts/</a> and get the following Errors after running "renderd -f -c /usr/local/etc/renderd.conf":</p>
+<pre><code> An error occurred while loading the map layer 'ajt': Postgis Plugin: ERROR:  relation "planet_osm_polygon" does not exist LINE 1: SELECT ST_SRID("way") AS srid FROM planet_osm_polygon WHERE ...
+
+in executeQuery Full sql was: 'SELECT ST_SRID("way") AS srid FROM planet_osm_polygon WHERE "way" IS NOT NULL LIMIT 1;'encountered during parsing of layer 'landcover-low-zoom' in Layer at line 618 of '/home/gsits/src/openstreetmap-carto/mapnik.xml'renderd[19152]: An error occurred while loading the map layer 'ajt': Postgis Plugin: ERROR:  relation "planet_osm_polygon" does not existLINE 1: SELECT ST_SRID("way") AS srid FROM planet_osm_polygon WHERE ...
+
+in executeQuery Full sql was: 'SELECT ST_SRID("way") AS srid FROM planet_osm_polygon WHERE "way" IS NOT NULL LIMIT 1;' encountered during parsing of layer 'landcover-low-zoom' in Layer at line 618 of '/home/gsits/src/openstreetmap-carto/mapnik.xml'
+</code></pre>
+<p>Any idea what that means and how to fix this? </p>
+<p>Thanks! </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap" href="/tags/openstreetmap/" rel="tag" title="see questions tagged 'openstreetmap'">openstreetmap</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+<a class="post-tag tag-link-tileserver" href="/tags/tileserver/" rel="tag" title="see questions tagged 'tileserver'">tileserver</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>14 Dec '17, 13:28</strong>
+</p>
+<img alt="Thal0n's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fd29f6ff9fde6417ba9cd2ebaa2d0568?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14545/thal0n">Thal0n</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Thal0n has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-61183">
+<a name="61184"></a>
+<div class="comment" id="comment-61184">
+<div class="comment-score" id="post-61184-score"></div>
+<div class="comment-text"><p>It looks as though you never imported any data.</p></div>
+<div class="comment-info" id="comment-61184-info">
+<span class="comment-age">(14 Dec '17, 13:40)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="61186"></a>
+<div class="comment" id="comment-61186">
+<div class="comment-score" id="post-61186-score"></div>
+<div class="comment-text"><p>When trying to insert the data into the database it says: 
+Setting up table: planet_osm_point
+Osm2pgsql failed due to ERROR: CREATE UNLOGGED TABLE planet_osm_point (osm_id int8,"access" text,"addr:housename" text,"addr:housenumber" text,"admin_level" text,"aerialway" text,"aeroway" text,"amenity" text,"barrier" text,"boundary" text,"building" text,"highway" text,"historic" text,"junction" text,"landuse" text,"layer" int4,"leisure" text,"lock" text,"man_made" text,"military" text,"name" text,"natural" text,"oneway" text,"place" text,"power" text,"railway" text,"ref" text,"religion" text,"shop" text,"tourism" text,"water" text,"waterway" text,"tags" hstore,way geometry(POINT,3857) ) WITH ( autovacuum_enabled = FALSE ) failed: ERROR:  type "hstore" does not exist
+LINE 1: ...tourism" text,"water" text,"waterway" text,"tags" hstore,way...</p></div>
+<div class="comment-info" id="comment-61186-info">
+<span class="comment-age">(14 Dec '17, 14:09)</span>
+<a class="comment-user userinfo" href="/users/14545/thal0n">Thal0n</a>
+</div>
+</div>
+<a name="61199"></a>
+<div class="comment" id="comment-61199">
+<div class="comment-score" id="post-61199-score">1</div>
+<div class="comment-text"><p>Did you run the line CREATE EXTENSION hstore;?</p></div>
+<div class="comment-info" id="comment-61199-info">
+<span class="comment-age">(15 Dec '17, 07:44)</span>
+<a class="comment-user userinfo" href="/users/2903/math_1985">Math_1985</a>
+</div>
+</div>
+<a name="61205"></a>
+<div class="comment" id="comment-61205">
+<div class="comment-score" id="post-61205-score"></div>
+<div class="comment-text"><p>What does "sudo apt list --installed | grep -i postgres" say?  </p>
+<p>I've seen similar problems on a 14.04 machine that had been upgraded from 12.04 to 14.04, and had ended up with two versions of postgres installed.  The initial error suggested that hstore was missing, but the actual issue was that I had a mixture of two postgres versions.  Completely removing postgres via "sudo apt-get --purge remove" with each of the installed packages and then reinstalling it worked for me (of course, this would only make sense to you if your problem is the same and you don't need that older version for something else).</p></div>
+<div class="comment-info" id="comment-61205-info">
+<span class="comment-age">(15 Dec '17, 13:14)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-61183">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-61183-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/61183/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="C203QxI1gp8TLL6k0B5nHdmeGf68IDZa"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

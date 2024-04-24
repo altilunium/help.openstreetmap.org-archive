@@ -1,0 +1,153 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/55432/convert-longlat-from-google-earth-to-openstreetmap">Convert Long/Lat from Google Earth to OpenStreetMap</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/55432/up/" id="post-55432-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-55432-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/55432/down/" id="post-55432-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/55432/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi Folks</p>
+<p>I'm trying to create a map based on a tutorial I found. The tutorial has a piece of code for the start point;</p>
+<p>// define point as a new LonLat object and transfom
+    point = new OpenLayers.LonLat(-4.225, 57.478);
+    point.transform("EPSG:4326", "EPSG:3857");</p>
+<p>I can follow what this code does but it centers the map in Scotland. I'm looking to center it in Dublin. In Google Earth the coordinates I want are 53.285756, -6.141998. But when I put that in, OpenStreetMap sends me to somewhere near the Seychelles. Can you help with how I can convert it correctly? I'm a beginners so apologies if I've not explained it correctly. Thanks.  </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap" href="/tags/openstreetmap/" rel="tag" title="see questions tagged 'openstreetmap'">openstreetmap</a>
+<a class="post-tag tag-link-coordinates" href="/tags/coordinates/" rel="tag" title="see questions tagged 'coordinates'">coordinates</a>
+<a class="post-tag tag-link-google_maps" href="/tags/google_maps/" rel="tag" title="see questions tagged 'google_maps'">google_maps</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>02 Apr '17, 11:24</strong>
+</p>
+<img alt="Shane_Ire's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/17488b314c589d0c511ccb92ab6de2be?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13552/shane_ire">Shane_Ire</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Shane_Ire has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-55432">
+<a name="55434"></a>
+<div class="comment" id="comment-55434">
+<div class="comment-score" id="post-55434-score">1</div>
+<div class="comment-text"><p>Perhaps you could explain a little more fully what it is you're trying to do when you say "create a map."</p>
+<p>Which program or website are you plugging the coordinates into?</p>
+<p>When I put 53.285756, -6.141998 into JOSM, the OSM editor program, it takes me to a golf course in Dublin, so the coordinates are reasonably accurate.</p>
+<p>Cheers</p>
+<p>Dave</p></div>
+<div class="comment-info" id="comment-55434-info">
+<span class="comment-age">(02 Apr '17, 11:42)</span>
+<a class="comment-user userinfo" href="/users/5016/alaskadave">AlaskaDave</a>
+</div>
+</div>
+<a name="55435"></a>
+<div class="comment" id="comment-55435">
+<div class="comment-score" id="post-55435-score"></div>
+<div class="comment-text"><p>Hi Dave</p>
+<p>I'm only just learning Web based GIS. So here are the details. I have GeoServer 2.8.2 hosted on a VM. It is also the webserver. I have a simple HTML page calling OpenLayers and a .js file.</p>
+<p>&lt;script src="http://www.openlayers.org/api/OpenLayers.js"&gt;&lt;/script&gt;
+  &lt;script type="text/JavaScript" src="map.js"&gt;&lt;/script&gt;</p>
+<p>In the .js file I am using OpenLayer and OSM;</p>
+<p>//create new map object
+    map = new OpenLayers.Map("mymap");</p>
+<pre><code>//create new OSM base layer
+osmlayer = new OpenLayers.Layer.OSM("Open Street Map");
+
+//create WMS layers
+</code></pre>
+<p>When I enter this code and open the page via <a href="http://localhost:8080/geoserver/www/index.html.">http://localhost:8080/geoserver/www/index.html.</a> It opens off the coast of Africa.</p>
+<p>// define point as a new LonLat object and transform
+    point = new OpenLayers.LonLat(53.285756, -6.141998);
+    //point.transform("EPSG:4326", "EPSG:3857");</p>
+<p>As I say, I'm new to this so might not be explaining it well.
+Thanks</p></div>
+<div class="comment-info" id="comment-55435-info">
+<span class="comment-age">(02 Apr '17, 12:08)</span>
+<a class="comment-user userinfo" href="/users/13552/shane_ire">Shane_Ire</a>
+</div>
+</div>
+<a name="55438"></a>
+<div class="comment" id="comment-55438">
+<div class="comment-score" id="post-55438-score">1</div>
+<div class="comment-text"><p>Thanks for the information.  This list is watched by many smart OSM folks who can possibly help and I'm sure you'll get some answers shortly. But I'm afraid I can't be of much help because I have no expertise in the area you're addressing.</p>
+<p>Best,</p>
+<p>Dave</p></div>
+<div class="comment-info" id="comment-55438-info">
+<span class="comment-age">(02 Apr '17, 12:15)</span>
+<a class="comment-user userinfo" href="/users/5016/alaskadave">AlaskaDave</a>
+</div>
+</div>
+<a name="55443"></a>
+<div class="comment" id="comment-55443">
+<div class="comment-score" id="post-55443-score"></div>
+<div class="comment-text"><p>Are you mixing up latitude and longitude? <code>OpenLayers.LonLat()</code> requires longitude first, then latitude (as the name of the function already indicates).</p></div>
+<div class="comment-info" id="comment-55443-info">
+<span class="comment-age">(02 Apr '17, 14:22)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="55444"></a>
+<div class="comment" id="comment-55444">
+<div class="comment-score" id="post-55444-score"></div>
+<div class="comment-text"><p>Thanks Dave, sorted it. Had to clear out Internet cache.</p></div>
+<div class="comment-info" id="comment-55444-info">
+<span class="comment-age">(02 Apr '17, 14:32)</span>
+<a class="comment-user userinfo" href="/users/13552/shane_ire">Shane_Ire</a>
+</div>
+</div>
+<a name="55451"></a>
+<div class="comment not_top_scorer" id="comment-55451">
+<div class="comment-score" id="post-55451-score"></div>
+<div class="comment-text"><p>For Info i cut and paste your coords in OSMs search box and got this 
+<a href="http://www.openstreetmap.org/search?query=53.285756%2C%20-6.141998#map=16/53.2858/-6.1420">http://www.openstreetmap.org/search?query=53.285756%2C%20-6.141998#map=16/53.2858/-6.1420</a></p></div>
+<div class="comment-info" id="comment-55451-info">
+<span class="comment-age">(02 Apr '17, 16:01)</span>
+<a class="comment-user userinfo" href="/users/644/andy-mackey">andy mackey</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-55432">
+<span class="comments-showing">
+            showing 5 of 6
+        </span>
+<a class="show-all-comments-link" href="#">show 1 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-55432-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/55432/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Zv9a8D8LOPuztmpw6yihp0hB38xhcClU"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

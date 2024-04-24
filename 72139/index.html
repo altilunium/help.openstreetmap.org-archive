@@ -1,0 +1,147 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/72139/highway-turn-restriction-and-relations">Highway turn restriction and relations</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/72139/up/" id="post-72139-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-72139-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/72139/down/" id="post-72139-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/72139/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Reference node ID 1349143672</p>
+<p>I was recently using the OSMAND app to navigate and it directed me to make an illegal U-Turn.  (I know it is illegal because my wife was stopped by the cops for doing it.  Nothing to do with OSM.)</p>
+<p>Anyway, I thought I would look at the OSM data and try to fix this.   The situation is where a dual carrigeway ends and becomes a two way road.  The restriction is that a U-Turn back to the other side of the dual carrigeway is prohibited.  There is currently a no_U_Turn restriction in the OSM data but I don't think that is correct.  No U Turn means one is not allowed to go back on the same path.  I think the restriction should be No_Left_Turn back to the other lane of the dual carrigeway.  </p>
+<p>I tried to make this change in JOSM, but the validator complained that this restriction needs to be part of a relation.  That is where I am stuck.  I find this business of relations to be quite difficult and have gotten into serious difficulty messing with them in the past, so I thought it best to seek some guidance on this occasion.</p>
+<p>Cheers.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-turn_restrictions" href="/tags/turn_restrictions/" rel="tag" title="see questions tagged 'turn_restrictions'">turn_restrictions</a>
+<a class="post-tag tag-link-relations" href="/tags/relations/" rel="tag" title="see questions tagged 'relations'">relations</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>17 Dec '19, 17:27</strong>
+</p>
+<img alt="dougcb68's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3ce1f997a6c008a7b6a34c380f5d54d3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17588/dougcb68">dougcb68</a><br/>
+<span class="score" title="101 reputation points">101</span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="7 badges"><span class="silver">●</span><span class="badgecount">7</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="dougcb68 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-72139">
+</div>
+<div class="comment-tools" id="comment-tools-72139">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-72139-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/72139/highway-turn-restriction-and-relations?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/72139/highway-turn-restriction-and-relations?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/72139/highway-turn-restriction-and-relations?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/72139/highway-turn-restriction-and-relations?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="72141"></a>
+<div class="answer accepted-answer" id="answer-container-72141">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/72141/up/" id="post-72141-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-72141-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/72141/down/" id="post-72141-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/72141/" rel="nofollow" title="dougcb68 has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p><a href="https://www.openstreetmap.org/relation/1650531#map=17/21.54260/-105.27883">This relation looks close</a> but needs the node where you can't turn back to the other side added as a "via" node - especially in this instance where it looks like the ways join at both ends (can you do a U-turn at the other end - that would need to be a second relation with a different via node and the from and to roles swapped).</p>
+<p>Edit: if the roadsign says no u turn then that is the restriction type to use. In practice no u turn or no left turn in this instance with the same from and to ways and via node should work the same for routing.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/72141/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>17 Dec '19, 17:54</strong>
+</p>
+<img alt="EdLoach's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f25a8392e12ed696b16554b3d08e4e2b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/339/edloach">EdLoach ♦</a><br/>
+<span class="score" title="19478 reputation points"><span class="">19.5k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="156 badges"><span class="silver">●</span><span class="badgecount">156</span></span><span title="280 badges"><span class="bronze">●</span><span class="badgecount">280</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="EdLoach has 93 accepted answers">22%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/72141/">
+                edited
+                <strong>17 Dec '19, 17:56</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-72141">
+<a name="72142"></a>
+<div class="comment" id="comment-72142">
+<div class="comment-score" id="post-72142-score"></div>
+<div class="comment-text"><p>Good!  That is what I was missing.  I didn't realize the node was also needed as "via" in the relationship.  This passed the validator.  Thanks.</p></div>
+<div class="comment-info" id="comment-72142-info">
+<span class="comment-age">(17 Dec '19, 18:27)</span>
+<a class="comment-user userinfo" href="/users/17588/dougcb68">dougcb68</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-72141">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-72141-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/72139/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="NXBzPfErUqGkTKKGKy4F4I8wvCBt4chv"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

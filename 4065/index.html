@@ -1,0 +1,211 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/4065/getting-specific-poi-data-and-keeping-them-up-to-date">Getting specific POI data - and keeping them up to date.</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/4065/up/" id="post-4065-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-4065-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/4065/down/" id="post-4065-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/4065/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   4
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>This is a follow-up to <a href="http://help.openstreetmap.org/questions/15/getting-point-of-interest-data-from-openstreetmap">another question</a> on this site, where someone asked about getting (specific) POIs from the OSM data. The suggested ideal method is to get a recent copy of the <a href="http://wiki.openstreetmap.org/wiki/Planet">Planet</a> file and use <a href="http://wiki.openstreetmap.org/wiki/Osmosis">osmosis</a> to extract the data you're interested in. </p>
+<p>I do heartily agree that this is the preferred way to go, especially since XAPI availability has been intermittent and performance has been slow to the point that it's no longer usable - although the <a href="http://wiki.openstreetmap.org/wiki/Xapi#Java_version_.28new.29--">new Java implementation</a> may alleviate this situation. </p>
+<p>One of the unique qualities of OpenStreetMap is its continuous updating by all those thousands of contributors around the globe. Ideally you would want to reflect that in your POI extract. My question is:</p>
+<p><strong>What is the workflow for keeping an up-to-date OSM-based POI database that performs well?</strong></p>
+<p>To make this a little more concrete, here's what I currently do: </p>
+<ul>
+<li>Get an initial planet file from OSM</li>
+<li>Extract the POIs that I want to be available using the osmosis <a href="http://wiki.openstreetmap.org/wiki/Osmosis/Detailed_Usage#--tag-filter_.28--tf.29">--tag-filter</a> option </li>
+<li>In the same operation, write the POIs to a PostGIS database using <a href="http://wiki.openstreetmap.org/wiki/Osmosis/Detailed_Usage#--write-pgsql_.28--wp.29">--write-pgsql</a></li>
+<li>Initialize a replication environment using <a href="http://wiki.openstreetmap.org/wiki/Osmosis/Detailed_Usage#--read-replication-interval-init_.28--rrii.29-">--read-replication-interval-init</a>, following the instructions on the wiki</li>
+<li>Set up periodical replication using osmosis <a href="http://wiki.openstreetmap.org/wiki/Osmosis/Detailed_Usage#--read-replication-interval_.28--rri.29">--rri</a> <a href="http://wiki.openstreetmap.org/wiki/Osmosis/Detailed_Usage#--write-pgsql-change_.28--wpc.29">--wpc</a> in <a href="http://en.wikipedia.org/wiki/Cron">crontab</a></li>
+</ul>
+<p>This works, but the database grows because the --rri task replicates all changes and not just the POIs I'm interested in. So derived questions are:</p>
+<ul>
+<li><strong>Is there a way to filter change streams in osmosis before writing them to an output stream?</strong></li>
+<li><strong>Is the workflow described a good way to approach this challenge?</strong></li>
+</ul>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-update" href="/tags/update/" rel="tag" title="see questions tagged 'update'">update</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+<a class="post-tag tag-link-poi" href="/tags/poi/" rel="tag" title="see questions tagged 'poi'">poi</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 Mar '11, 10:20</strong>
+</p>
+<img alt="mvexel's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/acea3c9fd5908d7ff09596d16b8724d8?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17/mvexel">mvexel</a><br/>
+<span class="score" title="762 reputation points">762</span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="15 badges"><span class="silver">●</span><span class="badgecount">15</span></span><span title="23 badges"><span class="bronze">●</span><span class="badgecount">23</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mvexel has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-4065">
+<a name="33330"></a>
+<div class="comment" id="comment-33330">
+<div class="comment-score" id="post-33330-score"></div>
+<div class="comment-text"><p>dear mvexel - very good outline of your needs. let us know if you have any success. please share with us all your insights and all your further needs.</p></div>
+<div class="comment-info" id="comment-33330-info">
+<span class="comment-age">(20 May '14, 21:17)</span>
+<a class="comment-user userinfo" href="/users/8644/say_hello_to_the_world">say_hello_to...</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-4065">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-4065-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/4065/getting-specific-poi-data-and-keeping-them-up-to-date?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/4065/getting-specific-poi-data-and-keeping-them-up-to-date?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/4065/getting-specific-poi-data-and-keeping-them-up-to-date?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/4065/getting-specific-poi-data-and-keeping-them-up-to-date?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="4076"></a>
+<div class="answer accepted-answer" id="answer-container-4076">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/4076/up/" id="post-4076-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-4076-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/4076/down/" id="post-4076-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/4076/" rel="nofollow" title="mvexel has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>There is currently no ready-made solution for what you want to do. If you are a programmer then the easiest way to accomplish what you want is to write a small parser for OSM/OSMChange files yourself (you will be able to re-use the code for both) and follow this logic:</p>
+<ul>
+<li>Get an initial planet file from OSM</li>
+<li>Extract the POIs that you want to be available using your own program and write to PostGIS</li>
+<li>Initialize a replication environment using <code>--read-replication-interval-init</code></li>
+<li>Periodically, retrieve updates and process them. </li>
+</ul>
+<p>The logic to apply when processing updates is:</p>
+<ul>
+<li>Change file contains node deletion - then delete the node on your side.</li>
+<li>Change file contains node creation - then check if the tags are of interest and create the node on your side if applicable.</li>
+<li>Change file contains node modification - check if the tags are of interest; if not, then delete the node in your local database if it is there (this means somebody has removed the tags of interest from the node); if the node has interesting tags, then update or create it on your side.</li>
+</ul>
+<p>You could of course also amend Osmosis to do what you want.</p>
+<p>This procedure has a disadvantage in that it is hard to cope with POIs that are modeled as ways in OSM (because you might theoretically receive an OsmChange file that says "way #1234 now has these tags" and you go "wow, I need that in my database", but you don't know about that way's geometry because you ignored it on import since it didn't have the right tags...)</p>
+<p>One way to avoid programming, but at the cost of more processing overhead, is this:</p>
+<ul>
+<li>Get an initial planet file from OSM</li>
+<li>Extract the POIs that you want to be available using the osmosis <code>--tag-filter</code> option; save to new file (e.g. <code>--write-pbf myfile.osm.pbf</code>)</li>
+<li>Import new file into some kind of database using whatever process you fancy (could also be osm2pgsql or imposm, both of which may be faster than osmosis)</li>
+<li>Initialize a replication environment using <code>--read-replication-interval-init</code></li>
+<li>Periodically call Osmosis to append an update to your local file <em>and immediately tag-filter the result in the same step</em> (i.e. <code>--rri --simc --read-pbf myfile.osm.pbf --ac --tag-filter ... --write-pbf myfile-new.osm.pbf</code>), then again make a full import of the resulting file into a database of your choice. Afterwards, rename <code>myfile-new.osm.pbf</code> to <code>myfile.osm.pbf</code> and use that as the basis onto which you apply the next update.</li>
+</ul>
+<p>This wastes resources by always doing a full import, but the import will always be "clean" and only contain the things you really want. Plus, it has the capacity to work with way-POIs as well. </p>
+<p>When using a local .osm.pbf file as your master database like in this example, it is advisable to use the <code>--compress=none</code> switch on <code>--write-pbf</code> which will speed up writing.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/4076/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Mar '11, 12:27</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/4076/">
+                edited
+                <strong>08 Apr '12, 19:03</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-4076">
+<a name="4136"></a>
+<div class="comment" id="comment-4136">
+<div class="comment-score" id="post-4136-score"></div>
+<div class="comment-text"><p>I wrote a <a href="https://docs.google.com/document/pub?id=1paaYsOakgJEYP380R70s4SGYq8ME3ASl-mweVi1DlQ4">tutorial</a> based on my own experiences and the second method you described.</p></div>
+<div class="comment-info" id="comment-4136-info">
+<span class="comment-age">(27 Mar '11, 20:28)</span>
+<a class="comment-user userinfo" href="/users/17/mvexel">mvexel</a>
+</div>
+</div>
+<a name="4207"></a>
+<div class="comment" id="comment-4207">
+<div class="comment-score" id="post-4207-score"></div>
+<div class="comment-text"><p>mvexel: Do you import the geometry of the ways? Just using <code>--tf accept-nodes man_made=surveillance</code> will remove the nodes of the ways.</p></div>
+<div class="comment-info" id="comment-4207-info">
+<span class="comment-age">(30 Mar '11, 15:33)</span>
+<a class="comment-user userinfo" href="/users/188/emj">emj</a>
+</div>
+</div>
+<a name="33337"></a>
+<div class="comment" id="comment-33337">
+<div class="comment-score" id="post-33337-score"></div>
+<div class="comment-text"><p>many  thanks for this answer..</p></div>
+<div class="comment-info" id="comment-33337-info">
+<span class="comment-age">(20 May '14, 22:53)</span>
+<a class="comment-user userinfo" href="/users/8644/say_hello_to_the_world">say_hello_to...</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-4076">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-4076-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/4065/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="2Ejhb5ma6VWGZYFvl9vXLSkHrLSCpJOI"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

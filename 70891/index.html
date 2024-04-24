@@ -1,0 +1,241 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/70891/postgis-plugin-fe_sendauth-no-password-supplied">Postgis Plugin: fe_sendauth: no password supplied</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/70891/up/" id="post-70891-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-70891-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/70891/down/" id="post-70891-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/70891/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>I am using the instructions found at <a href="https://switch2osm.org/manually-building-a-tile-server-18-04-lts/">https://switch2osm.org/manually-building-a-tile-server-18-04-lts/</a> to setup a OSM mapping server. If the ubuntu user matches the postgresql user ( i.e. renderaccount) everything works without any problems.</p>
+<p>However, I would like to get stuff to work where the ubuntu user is XXX and the postgresql user remains renderaccount. </p>
+<p>I can get past most issues by:</p>
+<ol>
+<li>
+<p>changing pg_hba.conf so:</p>
+<pre><code>local   all             all                                     peer
+</code></pre>
+<p>looks like:</p>
+<pre><code>local   all             all                                     md5
+</code></pre>
+</li>
+<li>
+<p>Setting the PGUSER environment variable to renderaccount</p>
+</li>
+<li>
+<p>adding <em>:</em>:gis:renderaccount:&lt;password&gt; to ~/.pgpass</p>
+</li>
+</ol>
+<p>However, when I am ready to startup the renderer by doing:</p>
+<p>renderd -f -c /usr/local/etc/renderd.conf</p>
+<p>I am presented with the errors:</p>
+<pre><code>renderd[47532]: An error occurred while loading the map layer 'ajt': Postgis Plugin: fe_sendauth: no password supplied
+Connection string: ' dbname=gis connect_timeout=4'
+  encountered during parsing of layer 'landcover-low-zoom' in Layer at line 765 of '/home/lander/src/openstreetmap-carto-de/osm.xml'
+renderd[47532]: An error occurred while loading the map layer 'ajt': Postgis Plugin: fe_sendauth: no password supplied
+Connection string: ' dbname=gis connect_timeout=4'
+  encountered during parsing of layer 'landcover-low-zoom' in Layer at line 765 of '/home/lander/src/openstreetmap-carto-de/osm.xml'
+renderd[47532]: An error occurred while loading the map layer 'ajt': Postgis Plugin: fe_sendauth: no password supplied
+Connection string: ' dbname=gis connect_timeout=4'
+  encountered during parsing of layer 'landcover-low-zoom' in Layer at line 765 of '/home/lander/src/openstreetmap-carto-de/osm.xml'
+renderd[47532]: An error occurred while loading the map layer 'ajt': Postgis Plugin: fe_sendauth: no password supplied
+Connection string: ' dbname=gis connect_timeout=4'
+  encountered during parsing of layer 'landcover-low-zoom' in Layer at line 765 of '/home/lander/src/openstreetmap-carto-de/osm.xml'
+</code></pre>
+<p>I am assuming what is going on is that it is trying to talk to the database using the renderaccount user, but because there is a password, it cannot and does not try to look at the .pgpass file.</p>
+<p>This seems to be an issue with postgis...</p>
+<p>What might I need to change so the rendering system can use the specific user I specify?</p>
+<p>Regards,
+Willie</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-renderd" href="/tags/renderd/" rel="tag" title="see questions tagged 'renderd'">renderd</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>23 Sep '19, 13:07</strong>
+</p>
+<img alt="Willie_H's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a9b35f68139efb13b1b91d5c7f012a1d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17213/willie_h">Willie_H</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Willie_H has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-70891">
+</div>
+<div class="comment-tools" id="comment-tools-70891">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-70891-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/70891/postgis-plugin-fe_sendauth-no-password-supplied?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/70891/postgis-plugin-fe_sendauth-no-password-supplied?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/70891/postgis-plugin-fe_sendauth-no-password-supplied?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/70891/postgis-plugin-fe_sendauth-no-password-supplied?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="70894"></a>
+<div class="answer accepted-answer" id="answer-container-70894">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/70894/up/" id="post-70894-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-70894-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/70894/down/" id="post-70894-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/70894/" rel="nofollow" title="Willie_H has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You might have to add the username and password to the XML style that is processed my mapnik/renderd, or if you prefer add it to the project.mml file before you execute the "carto" command to process that into an XML file. There's a "osm2pgsql" section near the start of the mml file that has database access information:</p>
+<pre><code>osm2pgsql: &amp;osm2pgsql
+    type: "postgis"
+    dbname: "gis"
+    key_field: ""
+    geometry_field: "way"
+    user: "renderaccount"
+    password: "password"
+    extent: "-20037508,-20037508,20037508,20037508"
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/70894/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>23 Sep '19, 15:30</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/70894/">
+                edited
+                <strong>23 Sep '19, 19:43</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-70894">
+<a name="70895"></a>
+<div class="comment" id="comment-70895">
+<div class="comment-score" id="post-70895-score"></div>
+<div class="comment-text"><p>This is what that section currently looks like in the project.mml I am using...</p>
+<pre><code>osm2pgsql: &amp;osm2pgsql
+    type: "postgis"
+    dbname: "gis"
+    key_field: ""
+    geometry_field: "way"
+    extent: "-20037508,-20037508,20037508,20037508"
+</code></pre>
+<p>where is this section documented? I am not certain what the keys should be.</p></div>
+<div class="comment-info" id="comment-70895-info">
+<span class="comment-age">(23 Sep '19, 15:48)</span>
+<a class="comment-user userinfo" href="/users/17213/willie_h">Willie_H</a>
+</div>
+</div>
+<a name="70896"></a>
+<div class="comment" id="comment-70896">
+<div class="comment-score" id="post-70896-score"></div>
+<div class="comment-text"><p>Ok. I was able to find the keys that one needed to use:</p>
+<pre><code>osm2pgsql: &amp;osm2pgsql
+    type: "postgis"
+    dbname: "gis"
+    key_field: ""
+    geometry_field: "way"
+    user: "renderaccount"
+    password: "password"
+    extent: "-20037508,-20037508,20037508,20037508"
+</code></pre>
+<p>If you wanted to add this to your answer to make it complete, I will mark it as the answer.</p></div>
+<div class="comment-info" id="comment-70896-info">
+<span class="comment-age">(23 Sep '19, 16:10)</span>
+<a class="comment-user userinfo" href="/users/17213/willie_h">Willie_H</a>
+</div>
+</div>
+<a name="70898"></a>
+<div class="comment" id="comment-70898">
+<div class="comment-score" id="post-70898-score"></div>
+<div class="comment-text"><p>sorry for being imprecise, and glad you found it.</p></div>
+<div class="comment-info" id="comment-70898-info">
+<span class="comment-age">(23 Sep '19, 19:43)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="70899"></a>
+<div class="comment" id="comment-70899">
+<div class="comment-score" id="post-70899-score"></div>
+<div class="comment-text"><p>Need one more detail. As it turns out, /etc/postgresql/10/main/pg_hba.conf needs to be edited as well to say:</p>
+<pre><code>local   all             all                                     trust
+</code></pre>
+<p>(Although, I am not quite sure why this is necessary and it may mean (checked at the moment) that the password entry in the osm2pgsql section is unnecessary.</p>
+<p>Can you add that to your answer as well?</p></div>
+<div class="comment-info" id="comment-70899-info">
+<span class="comment-age">(23 Sep '19, 20:48)</span>
+<a class="comment-user userinfo" href="/users/17213/willie_h">Willie_H</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-70894">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-70894-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/70891/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="b28cGcxGNGQSMOZANJK2aP6yBfmj7uyI"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

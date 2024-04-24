@@ -1,0 +1,208 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/20652/is-it-possible-to-setup-notifications-about-new-nodes-with-specific-tags">Is it possible to setup notifications about new nodes with specific tags?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/20652/up/" id="post-20652-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-20652-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/20652/down/" id="post-20652-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/20652/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   2
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>There is a problem with misusing name tag to map node types instead of <a href="http://en.wikipedia.org/wiki/Proper_noun">proper nouns</a>. Can I somehow setup a notification for new nodes with name=some_type ?</p>
+<p>Related:
+<a href="https://help.openstreetmap.org/questions/20647/how-to-find-a-bot-maintainer-to-suggest-additional-replace-conditions">How to find a bot maintainer to suggest additional replace conditions?</a></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-notification" href="/tags/notification/" rel="tag" title="see questions tagged 'notification'">notification</a>
+<a class="post-tag tag-link-name" href="/tags/name/" rel="tag" title="see questions tagged 'name'">name</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>12 Mar '13, 01:17</strong>
+</p>
+<img alt="int_ua's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1aaaf77e89ed1b496cefd433400ebf27?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4834/int_ua">int_ua</a><br/>
+<span class="score" title="275 reputation points">275</span><span title="9 badges"><span class="badge1">●</span><span class="badgecount">9</span></span><span title="12 badges"><span class="silver">●</span><span class="badgecount">12</span></span><span title="21 badges"><span class="bronze">●</span><span class="badgecount">21</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="int_ua has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-20652">
+</div>
+<div class="comment-tools" id="comment-tools-20652">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-20652-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/20652/is-it-possible-to-setup-notifications-about-new-nodes-with-specific-tags?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/20652/is-it-possible-to-setup-notifications-about-new-nodes-with-specific-tags?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/20652/is-it-possible-to-setup-notifications-about-new-nodes-with-specific-tags?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/20652/is-it-possible-to-setup-notifications-about-new-nodes-with-specific-tags?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="20662"></a>
+<div class="answer accepted-answer" id="answer-container-20662">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/20662/up/" id="post-20662-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-20662-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/20662/down/" id="post-20662-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/20662/" rel="nofollow" title="int_ua has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>That's a good idea to improve data quality.</p>
+<p>Please have a look at
+<a href="http://osm102.openstreetmap.fr/~zorglub/watch/">http://osm102.openstreetmap.fr/~zorglub/watch/</a></p>
+<p>Another approach would be to call from your browser once a day or more often a link like</p>
+<pre><code><a href="http://overpass-api.de/api/interpreter?data=[out:json];node[name=some_type];out;">http://overpass-api.de/api/interpreter?data=[out:json];node[name=some_type];out;</a>
+</code></pre>
+<p>It will list all nodes that exist with the given tag. For example</p>
+<pre><code><a href="http://overpass-api.de/api/interpreter?data=[out:json];node[name=highway];out;">http://overpass-api.de/api/interpreter?data=[out:json];node[name=highway];out;</a>
+</code></pre>
+<p>has two hits.</p>
+<p>As in your case most likely no legitimate case exists, you can work by hand through all found objects and correct their tags.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/20662/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Mar '13, 07:34</strong>
+</p>
+<img alt="Roland%20Olbricht's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fcfdb0825826fd13d2ff0d83d58819c6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3480/roland-olbricht">Roland Olbricht</a><br/>
+<span class="score" title="6666 reputation points"><span class="">6.7k</span></span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="64 badges"><span class="silver">●</span><span class="badgecount">64</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Roland Olbricht has 40 accepted answers">36%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/20662/">
+                edited
+                <strong>12 Mar '13, 09:46</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-20662">
+<a name="20677"></a>
+<div class="comment" id="comment-20677">
+<div class="comment-score" id="post-20677-score"></div>
+<div class="comment-text"><p>The Firefox addon <a href="//addons.mozilla.org/de/firefox/addon/update-scanner/">Update Scanner</a> may be useful for automatic scanning the overpass result page for changes. Be SURE to set the scan interval to daily or even weekly to avoid unnecessary load on the server. Maybe using <a href="//en.wikipedia.org/wiki/IFTTT">IFTTT</a> would be another option.</p></div>
+<div class="comment-info" id="comment-20677-info">
+<span class="comment-age">(12 Mar '13, 20:37)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-20662">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-20662-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="20663"></a>
+<div class="answer" id="answer-container-20663">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/20663/up/" id="post-20663-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-20663-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/20663/down/" id="post-20663-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>If you have a little Unix command line skills, it is easy to do:</p>
+<ul>
+<li>use Osmosis with the <code>--rri</code> task to download all changes since you last ran the program;</li>
+<li>run the result past the "oscgrep" program (<a href="http://svn.openstreetmap.org/applications/utils/filter/oscgrep/)">http://svn.openstreetmap.org/applications/utils/filter/oscgrep/)</a> using the flags <code>-a create -t node</code> to search only for new nodes, and the flag <code>-r 'k="name" v="Toilet"'</code> to find those where this tag has been used.</li>
+</ul>
+<p>Please do not use such a mechanism to indiscriminately "fix" things the world over; such editing would be subject to the <a href="wiki.openstreetmap.org/wiki/Mechanical_Edit_Policy">Mechanical Edit Policy</a> and you would have to achieve community consenus on whether your edits are desirable first.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/20663/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Mar '13, 07:42</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-20663">
+</div>
+<div class="comment-tools" id="comment-tools-20663">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-20663-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/20652/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="7ymPOryTZbz3yXPbqyGYtRf7MCt62ePZ"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

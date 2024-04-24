@@ -1,0 +1,95 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/43389/how-does-openstreetmap-queries-nominatim">How does OpenStreetMap queries Nominatim</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/43389/up/" id="post-43389-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-43389-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/43389/down/" id="post-43389-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/43389/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>When searching for "London Eye" on Open Street Map I get 3 results from Nominatim (1 attraction + 2 bus stops): <a href="http://www.openstreetmap.org/search?query=london%20eye&amp;xhr=1">OSM - London Eye</a>.</p>
+<p>When I do the same search on Nominatim I only get 2 results (2 bus stops): <a href="http://nominatim.openstreetmap.org/search.php?q=London+Eye&amp;viewbox=-101.78%2C54.06%2C101.78%2C-54.06">Nominatim - London Eye</a>. This is consistent with the results I get when I use the Nominatim API.</p>
+<p>Why are the results different? Shouldn't OSM be showing the same results as the Nominatim API?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap" href="/tags/openstreetmap/" rel="tag" title="see questions tagged 'openstreetmap'">openstreetmap</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-api" href="/tags/api/" rel="tag" title="see questions tagged 'api'">api</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 Jun '15, 22:44</strong>
+</p>
+<img alt="brunocostalopes's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b5ce394e21b680a20fa8747c026d2482?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11065/brunocostalopes">brunocostalopes</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="brunocostalopes has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-43389">
+<a name="43394"></a>
+<div class="comment" id="comment-43394">
+<div class="comment-score" id="post-43394-score"></div>
+<div class="comment-text"><p>Both have a "more results" button. However the order (i.e. importance) of the search results still differs.</p></div>
+<div class="comment-info" id="comment-43394-info">
+<span class="comment-age">(04 Jun '15, 07:25)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="43396"></a>
+<div class="comment" id="comment-43396">
+<div class="comment-score" id="post-43396-score"></div>
+<div class="comment-text"><p>I believe the "more results" is actually doing a new query. if you query the API directly you will only get 2 results.</p></div>
+<div class="comment-info" id="comment-43396-info">
+<span class="comment-age">(04 Jun '15, 08:11)</span>
+<a class="comment-user userinfo" href="/users/11065/brunocostalopes">brunocostalopes</a>
+</div>
+</div>
+<a name="43397"></a>
+<div class="comment" id="comment-43397">
+<div class="comment-score" id="post-43397-score"></div>
+<div class="comment-text"><p>Ok, after digging around a bit more, I now suspect that the OSM website is actually using the Mapquest servers, not sure if anyone can confirm that? That would explain the different results and I guess the question of why the Mapquest Nominatim Search Service does not match the OSM Nominatim is for a different forum.</p></div>
+<div class="comment-info" id="comment-43397-info">
+<span class="comment-age">(04 Jun '15, 10:12)</span>
+<a class="comment-user userinfo" href="/users/11065/brunocostalopes">brunocostalopes</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-43389">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-43389-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/43389/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="eVIgC5gh0G89UQOWhnRzeuhr5EhlLwrb"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

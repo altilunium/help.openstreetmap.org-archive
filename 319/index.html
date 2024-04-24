@@ -1,0 +1,295 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/319/how-should-trunk_link-primary_link-secondary_link-be-used-at-junctions">How should trunk_link, primary_link, secondary_link be used at junctions?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/319/up/" id="post-319-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-319-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/319/down/" id="post-319-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/319/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   2
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Should a <code>*_link</code> road be the same 'rank' as the most important road involved in the junction?<br/>
+Or should it try to indicate the type of road that it leads to?</p>
+<p>For example, if a <code>trunk</code> road has a one-way slip road off onto a <code>primary</code> road, then should that road be tagged as a "<code>trunk_link</code>", as it is a link <em>from</em> a <code>trunk</code> (and <code>trunk</code> road rules may still apply); or should it be a "<code>primary_link</code>", as it is a link <em>to</em> a <code>primary</code> road?</p>
+<p>And should the link be marked with the <code>ref</code> of the road that it leads to, or just left blank?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-roads" href="/tags/roads/" rel="tag" title="see questions tagged 'roads'">roads</a>
+<a class="post-tag tag-link-junction" href="/tags/junction/" rel="tag" title="see questions tagged 'junction'">junction</a>
+<a class="post-tag tag-link-tagging" href="/tags/tagging/" rel="tag" title="see questions tagged 'tagging'">tagging</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>19 Jul '10, 11:30</strong>
+</p>
+<img alt="GrahamS's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f61876d1f1d2de794259119cdd596316?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/98/grahams">GrahamS</a><br>
+<span class="score" title="3635 reputation points"><span class="">3.6k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="45 badges"><span class="silver">●</span><span class="badgecount">45</span></span><span title="54 badges"><span class="bronze">●</span><span class="badgecount">54</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="GrahamS has 7 accepted answers">28%</span>
+</br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-319">
+</div>
+<div class="comment-tools" id="comment-tools-319">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-319-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    4 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/319/how-should-trunk_link-primary_link-secondary_link-be-used-at-junctions?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/319/how-should-trunk_link-primary_link-secondary_link-be-used-at-junctions?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/319/how-should-trunk_link-primary_link-secondary_link-be-used-at-junctions?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/319/how-should-trunk_link-primary_link-secondary_link-be-used-at-junctions?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="326"></a>
+<div class="answer accepted-answer" id="answer-container-326">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/326/up/" id="post-326-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-326-score" title="current number of votes">
+    7
+</div>
+<a class="ajax-command post-vote down" href="/vote/326/down/" id="post-326-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/326/" rel="nofollow" title="GrahamS has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You should use the link type which reflects the set of rules that apply to that road. If the link is under motorway rules, use <code>highway=motorway_link</code>; if it's under trunk road rules (for your country) use <code>highway=trunk_link</code>, and so on. This is where the meaning in <code>*_link</code> highway types comes from. </p>
+<p>If there's no explicit designation for a link road, you can deduce the rules in place from clues like where the speed limit changes, any roadside markings, or any other roadsigns (such as No Stopping) signs. It may not always be the designation for the higher of the two roads it connects.</p>
+<p>The <code>ref=*</code> should be omitted unless the link road itself has a route reference.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/326/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Jul '10, 14:22</strong>
+</p>
+<img alt="Jonathan%20Bennett's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9fe361843971cf8b23dc93517f00b996?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6/jonathan-bennett">Jonathan Ben...</a><br/>
+<span class="score" title="8261 reputation points"><span class="">8.3k</span></span><span title="17 badges"><span class="badge1">●</span><span class="badgecount">17</span></span><span title="85 badges"><span class="silver">●</span><span class="badgecount">85</span></span><span title="108 badges"><span class="bronze">●</span><span class="badgecount">108</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jonathan Bennett has 21 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/326/">
+                edited
+                <strong>22 Sep '10, 23:43</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-326">
+<a name="335"></a>
+<div class="comment" id="comment-335">
+<div class="comment-score" id="post-335-score"></div>
+<div class="comment-text"><p>Thanks. Indicating the rules of the road makes sense to me. I guess the remaining vagueness is where the rules don't change. i.e. In the UK there is no real difference between a trunk and primary (as used by OSM) so I think in that situation we may have to fall back on what looks the best.</p></div>
+<div class="comment-info" id="comment-335-info">
+<span class="comment-age">(19 Jul '10, 20:44)</span>
+<a class="comment-user userinfo" href="/users/98/grahams">GrahamS</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-326">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-326-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="331"></a>
+<div class="answer" id="answer-container-331">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/331/up/" id="post-331-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-331-score" title="current number of votes">
+    6
+</div>
+<a class="ajax-command post-vote down" href="/vote/331/down/" id="post-331-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The link should always be tagged with the "higher" link road class. So a connection between a motorway and a trunks gets motorway_link etc. The reason is not only that it looks better, it also reflects reality in that the "higher" the road class the more restrictions regarding the type of traffic there usually are. And on and off ramps must obviously have the same kind of restrictions as the main road. There are no bicycles allowed on the motorway on-ramp because it leads to a motorway that doesn't allow bicycles.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/331/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Jul '10, 14:46</strong>
+</p>
+<img alt="Jochen%20Topf's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2d4dfcdcde73aa5e2ffa4a9b3a7cb51d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/112/jochen-topf">Jochen Topf</a><br/>
+<span class="score" title="5244 reputation points"><span class="">5.2k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="50 badges"><span class="silver">●</span><span class="badgecount">50</span></span><span title="74 badges"><span class="bronze">●</span><span class="badgecount">74</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jochen Topf has 32 accepted answers">31%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-331">
+</div>
+<div class="comment-tools" id="comment-tools-331">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-331-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="329"></a>
+<div class="answer" id="answer-container-329">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/329/up/" id="post-329-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-329-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/329/down/" id="post-329-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The rule has always been to use the highest classification - so a link road between a motorway and any other sort of road is motorway_link, a link road between a trunk road and anything that isn't a motorway is trunk_link and so on.</p>
+<p>I don't normally apply a ref or name to a link road, but some people do.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/329/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Jul '10, 14:35</strong>
+</p>
+<img alt="TomH's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/dee41dcf0aa0c08cf6b0eb935b7504b7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1/tomh">TomH ♦♦</a><br/>
+<span class="score" title="3325 reputation points"><span class="">3.3k</span></span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="39 badges"><span class="silver">●</span><span class="badgecount">39</span></span><span title="43 badges"><span class="bronze">●</span><span class="badgecount">43</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="TomH has 9 accepted answers">20%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-329">
+</div>
+<div class="comment-tools" id="comment-tools-329">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-329-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="320"></a>
+<div class="answer" id="answer-container-320">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/320/up/" id="post-320-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-320-score" title="current number of votes">
+    -1
+</div>
+<a class="ajax-command post-vote down" href="/vote/320/down/" id="post-320-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>There's no consensus on whether to use the higher or lower classification. I personally use the higher if it's a complicated interchange but the lower if it's a simple intersection bypass. Other people always use the lower or the higher. Since the type of link (other than motorway_link, which comes with restrictions) has no real-world meaning, the only consideration is how it looks when rendered, and different people have different preferences.</p>
+<p>In my opinion and experience, links should not be tagged with refs unless they actually carry a route. There's no benefit in adding the ref and the potential exists for confusion. But some countries may have a different default (I think Germany does include a ref; I'm not sure how they treat a link that splits for multiple roads).</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/320/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Jul '10, 11:52</strong>
+</p>
+<img alt="NE2's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0c334b9f230e39c1e73a2b0322a23fb3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/103/ne2">NE2</a><br/>
+<span class="score" title="1359 reputation points"><span class="">1.4k</span></span><span title="33 badges"><span class="badge1">●</span><span class="badgecount">33</span></span><span title="39 badges"><span class="silver">●</span><span class="badgecount">39</span></span><span title="54 badges"><span class="bronze">●</span><span class="badgecount">54</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="NE2 has one accepted answer">9%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-320">
+</div>
+<div class="comment-tools" id="comment-tools-320">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-320-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/319/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Iwz0hwZv5Dfrsi1fs3TrG3yD8eIVr0gD"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

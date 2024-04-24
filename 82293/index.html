@@ -1,0 +1,150 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/82293/cors-error-after-searching">Cors error after searching</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/82293/up/" id="post-82293-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-82293-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/82293/down/" id="post-82293-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/82293/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi all!</p>
+<p>We implemented OpenStreetMap.org and it works great, but we get a CORS error, see below, after searching.
+We added the below code to the htacces, but it does'nt seem to work. We just can't find the solution and hope someone can help us :-)</p>
+<p>ERROR
+Access to XMLHttpRequest at 'https://nominatim.openstreetmap.org/search?format=json&amp;q=President%20Allendelaan%202,%201064GW%20Amsterdam' from origin 'https://www.frituurvetrecyclehet.nl' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.</p>
+<p>HTACCESS
+&lt;ifmodule mod_headers.c=""&gt;
+    Header set Access-Control-Allow-Origin <a href="https://nominatim.openstreetmap.org">https://nominatim.openstreetmap.org</a>
+    Header set Access-Control-Allow-Credentials true
+&lt;/ifmodule&gt;</p>
+<p>Any help is appreciated!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-cors" href="/tags/cors/" rel="tag" title="see questions tagged 'cors'">cors</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Oct '21, 09:14</strong>
+</p>
+<img alt="Internetbureau%20Jun-E-Jay's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/38ff743726ef7be96a9c59cc5f469ce3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20933/internetbureau-jun-e-jay">Internetbure...</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Internetbureau Jun-E-Jay has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-82293">
+</div>
+<div class="comment-tools" id="comment-tools-82293">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-82293-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/82293/cors-error-after-searching?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/82293/cors-error-after-searching?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/82293/cors-error-after-searching?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/82293/cors-error-after-searching?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="82294"></a>
+<div class="answer" id="answer-container-82294">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/82294/up/" id="post-82294-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-82294-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/82294/down/" id="post-82294-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>When you see a CORS issue like that with nominatim.openstreetmap.org then the underlying issue is likely that you have been blocked for some reason. The site sends proper CORS headers with normal responses but it does not send them when returning a HTTP 403 or 429. Check your logs for HTTP errors.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/82294/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Oct '21, 09:51</strong>
+</p>
+<img alt="lonvia's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d888b712d85dee0aa304297f2dc697c7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2921/lonvia">lonvia</a><br/>
+<span class="score" title="6213 reputation points"><span class="">6.2k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="57 badges"><span class="silver">●</span><span class="badgecount">57</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="lonvia has 43 accepted answers">40%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-82294">
+<a name="82302"></a>
+<div class="comment" id="comment-82302">
+<div class="comment-score" id="post-82302-score"></div>
+<div class="comment-text"><p>Ah, thanks, but is there a way to check? We notice that we get 10 results without the error, and the 11th result gives the error. Any suggestion on how to fix this?</p></div>
+<div class="comment-info" id="comment-82302-info">
+<span class="comment-age">(22 Oct '21, 09:14)</span>
+<a class="comment-user userinfo" href="/users/20933/internetbureau-jun-e-jay">Internetbure...</a>
+</div>
+</div>
+<a name="82303"></a>
+<div class="comment" id="comment-82303">
+<div class="comment-score" id="post-82303-score">1</div>
+<div class="comment-text"><p>The simplest way to fix this is to respect the <a href="https://operations.osmfoundation.org/policies/nominatim/">Usage policy</a> of the service and make sure to not send more than 1req/s. If that is not enough for you you will need to run your own instance of Nominatim.</p></div>
+<div class="comment-info" id="comment-82303-info">
+<span class="comment-age">(22 Oct '21, 10:29)</span>
+<a class="comment-user userinfo" href="/users/2921/lonvia">lonvia</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-82294">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-82294-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/82293/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="uqKFgi96wWcedVF880oBSiuMsWi97c5B"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

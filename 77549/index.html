@@ -1,0 +1,223 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/77549/duplicate-key-value-violates-unique-constraint-current_ways_pkey">duplicate key value violates unique constraint "current_ways_pkey"</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/77549/up/" id="post-77549-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-77549-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/77549/down/" id="post-77549-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/77549/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi im getting this error when i try to insert my osm data into my postgres database.</p>
+<pre><code>SEVERE: Thread for task 1-read-xml failed
+org.openstreetmap.osmosis.core.OsmosisRuntimeException: Unable to load current ways.
+</code></pre>
+<p>and</p>
+<pre><code>ERROR: duplicate key value violates unique constraint "current_ways_pkey"
+  Detail: Key (id)=(197) already exists.
+</code></pre>
+<p>The command im using is:</p>
+<pre><code>osmosis --read-xml file="/home/ubuntu/osmosis/bin/mergedeuroad.osm" --write-apidb host="localhost" database="openstreetmap" user="xxx" password="xxx" validateSchemaVersion="no"
+</code></pre>
+<p>any solutions to solve this?</p>
+<p>ERROR LOG:</p>
+<pre><code>INFO: Pipeline executing, waiting for completion.
+Nov 14, 2020 7:46:41 PM org.openstreetmap.osmosis.core.pipeline.common.ActiveTaskManager waitForCompletion
+SEVERE: Thread for task 1-read-xml failed
+org.openstreetmap.osmosis.core.OsmosisRuntimeException: Unable to load current ways.
+        at org.openstreetmap.osmosis.apidb.v0_6.ApidbWriter.populateCurrentWays(ApidbWriter.java:1035)
+        at org.openstreetmap.osmosis.apidb.v0_6.ApidbWriter.populateCurrentTables(ApidbWriter.java:1108)
+        at org.openstreetmap.osmosis.apidb.v0_6.ApidbWriter.complete(ApidbWriter.java:1141)
+        at org.openstreetmap.osmosis.xml.v0_6.XmlReader.run(XmlReader.java:92)
+        at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "current_ways_pkey"
+  Detail: Key (id)=(197) already exists.
+        at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2510)
+        at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2245)
+        at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:311)
+        at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+        at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+        at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:159)
+        at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:148)
+        at org.openstreetmap.osmosis.apidb.v0_6.ApidbWriter.populateCurrentWays(ApidbWriter.java:1032)
+        ... 4 more
+
+Nov 14, 2020 7:46:41 PM org.openstreetmap.osmosis.core.Osmosis main
+SEVERE: Execution aborted.
+org.openstreetmap.osmosis.core.OsmosisRuntimeException: One or more tasks failed.
+        at org.openstreetmap.osmosis.core.pipeline.common.Pipeline.waitForCompletion(Pipeline.java:146)
+        at org.openstreetmap.osmosis.core.Osmosis.run(Osmosis.java:92)
+        at org.openstreetmap.osmosis.core.Osmosis.main(Osmosis.java:37)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.launchStandard(Launcher.java:321)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:234)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:406)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:347)
+        at org.codehaus.classworlds.Launcher.main(Launcher.java:47)
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>14 Nov '20, 20:09</strong>
+</p>
+<img alt="shafi-as's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/87f23f2f0056b2d7d6ed1760463ea1c0?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19256/shafi-as">shafi-as</a><br/>
+<span class="score" title="10 reputation points">10</span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="7 badges"><span class="silver">●</span><span class="badgecount">7</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="shafi-as has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/77549/">
+                edited
+                <strong>16 Nov '20, 10:48</strong>
+</a>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-77549">
+<a name="77550"></a>
+<div class="comment" id="comment-77550">
+<div class="comment-score" id="post-77550-score"></div>
+<div class="comment-text"><ol>
+<li>Please explain how the file "mergedeuroad.osm" has been created, or upload it to a place where we can see. </li>
+<li>Are you really, really sure that you want to create a database in the API DB format? Because if you just want to be able to run queries on the road network, osm2pgsql would be a much better choice for importing than osmosis.</li>
+</ol></div>
+<div class="comment-info" id="comment-77550-info">
+<span class="comment-age">(14 Nov '20, 21:37)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="77551"></a>
+<div class="comment" id="comment-77551">
+<div class="comment-score" id="post-77551-score"></div>
+<div class="comment-text"><p>1) the merged osm was created, using osmfilter, it was originally a geofabrik Europe file. i filtered it to only to have highways, once filtered it was merged with a file containing rails and seaways for certain countries in Europe created on josm. </p>
+<p>2) i chose APIDB as it was on the guide i was following to create a private osm server. im trying to view that road rail and seaway data on josm. will osm2pgql work the same for intupting data into josm? also im more familiar with the osmosis commands.</p></div>
+<div class="comment-info" id="comment-77551-info">
+<span class="comment-age">(14 Nov '20, 22:54)</span>
+<a class="comment-user userinfo" href="/users/19256/shafi-as">shafi-as</a>
+</div>
+</div>
+<a name="77552"></a>
+<div class="comment" id="comment-77552">
+<div class="comment-score" id="post-77552-score">1</div>
+<div class="comment-text"><p>If you want to set up your own OSM server then APIDB is indeed what you need. If you have created new objects with OSM then these will likely have negative IDs and therefore cannot be loaded into an APIDB. If you have created the objects with JOSM by downloading data from OSM, you have likely created duplicates accidentally. Note that a way can have a highway and a railway tag at the same time: <a href="https://www.openstreetmap.org/way/281583600">https://www.openstreetmap.org/way/281583600</a></p></div>
+<div class="comment-info" id="comment-77552-info">
+<span class="comment-age">(15 Nov '20, 01:39)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="77558"></a>
+<div class="comment" id="comment-77558">
+<div class="comment-score" id="post-77558-score"></div>
+<div class="comment-text"><p>ive loaded both files in separately before the merge in to the database successfully. but when they are emerged its when the duplicate key error im getting. so i think i can rule out the negative IDs being an issue. is there any osmosis command to filter out or view duplicates. or any ways to go around the duplicate error</p></div>
+<div class="comment-info" id="comment-77558-info">
+<span class="comment-age">(15 Nov '20, 15:38)</span>
+<a class="comment-user userinfo" href="/users/19256/shafi-as">shafi-as</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-77549">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-77549-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/77549/duplicate-key-value-violates-unique-constraint-current_ways_pkey?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/77549/duplicate-key-value-violates-unique-constraint-current_ways_pkey?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/77549/duplicate-key-value-violates-unique-constraint-current_ways_pkey?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/77549/duplicate-key-value-violates-unique-constraint-current_ways_pkey?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="77568"></a>
+<div class="answer answered-by-owner" id="answer-container-77568">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/77568/up/" id="post-77568-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-77568-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/77568/down/" id="post-77568-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>As fredrerik mentioned it may be that two tags such as railway and highway have the same ID, as one one my osm was custom made this was the case for me. To over come this, i opened the file on notepad++ and searched for the the duplicate id and gave it and unrealistic number that wouldn't be used again. this will work for ways. if it is a duplicate node node problem, once you change the node you then make sure you search for the references of that duplicate node and change them aswell. this is a wacky fix but it worked for me.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/77568/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>16 Nov '20, 10:37</strong>
+</p>
+<img alt="shafi-as's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/87f23f2f0056b2d7d6ed1760463ea1c0?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19256/shafi-as">shafi-as</a><br/>
+<span class="score" title="10 reputation points">10</span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="7 badges"><span class="silver">●</span><span class="badgecount">7</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="shafi-as has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-77568">
+</div>
+<div class="comment-tools" id="comment-tools-77568">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-77568-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/77549/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="wO2HN8Pnbod9i4r6IUJSebvnqbaEu45t"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,203 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/1069/how-to-calculate-the-size-of-a-map-tile-on-the-ground">How to calculate the size of a map tile on the ground?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1069/up/" id="post-1069-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1069-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/1069/down/" id="post-1069-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/1069/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm creating a web interface where users click on a map to denote a point of interest. My application then returns all items in a database that lie within a specified distance of that point. I'm only concerned with UK (I mention this in case there's a good approximation available) and primarily working with zoom=9.</p>
+<p>AIUI, each tile covers a certain angle of latitude and longitude rather than distances over the ground. Thanks to the information in <a>this wiki article</a>, I can calculate the distance between the top-left corners of adjacent tiles (and hence derive the distance over the ground for any tile), but that seems rather messy.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-tile" href="/tags/tile/" rel="tag" title="see questions tagged 'tile'">tile</a>
+<a class="post-tag tag-link-scale" href="/tags/scale/" rel="tag" title="see questions tagged 'scale'">scale</a>
+<a class="post-tag tag-link-coordinates" href="/tags/coordinates/" rel="tag" title="see questions tagged 'coordinates'">coordinates</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>08 Oct '10, 14:12</strong>
+</p>
+<img alt="Pajaholic's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bf42e40b9124f3b9d818f35f11613554?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/247/pajaholic">Pajaholic</a><br/>
+<span class="score" title="61 reputation points">61</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Pajaholic has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1069">
+</div>
+<div class="comment-tools" id="comment-tools-1069">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1069-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/1069/how-to-calculate-the-size-of-a-map-tile-on-the-ground?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/1069/how-to-calculate-the-size-of-a-map-tile-on-the-ground?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/1069/how-to-calculate-the-size-of-a-map-tile-on-the-ground?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/1069/how-to-calculate-the-size-of-a-map-tile-on-the-ground?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="1078"></a>
+<div class="answer" id="answer-container-1078">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1078/up/" id="post-1078-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1078-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/1078/down/" id="post-1078-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>If you are happy with an approximation then think about this:</p>
+<ul>
+<li>At zoom level 9, your world has 2^9 by 2^9 tiles (that's 512x512 tiles). </li>
+<li>The Earth's circumference is roughly 40,000 kilometres.</li>
+</ul>
+<p>Thus:</p>
+<ul>
+<li>For the y axis, you have 20,000 km from North Pole to South Pole, divided by 512, that's roughly 39 km for the height per tile. (The 512x512 tiles don't exactly stretch all the way to the poles, only to the 85° line, but we can ignore that for this approximation.) This tile height is the same everywhere.</li>
+<li>For the x axis it is not quite so easy because the number of kilometres used by the 512 tiles is different depending on where you are - 40,000 km at the Equator, 25,000 at the latitude of the Scilly Isles, and 20,000 at the latitude of Unst. So it's fair to use 22,500 as an approximation for the UK; divide that by 512 and you end up at a tile width of roughly 44km.</li>
+</ul>
+<p>Or very roughly: A zoom level 9 tile in the UK has 40x40km. (Double the width/height when you decrement the zoom level, halve the width/height when you increment.)</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/1078/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Oct '10, 19:56</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/1078/">
+                edited
+                <strong>11 Oct '10, 08:59</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1078">
+</div>
+<div class="comment-tools" id="comment-tools-1078">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1078-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="30744"></a>
+<div class="answer" id="answer-container-30744">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/30744/up/" id="post-30744-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-30744-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/30744/down/" id="post-30744-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can calculate it yourself, based on <a href="http://wiki.openstreetmap.org/wiki/Slippy_map_tilenames#Resolution_and_Scale">this wiki page</a>:</p>
+<pre><code>resolution = 156543.034 meters/pixel * cos(latitude) / (2 ^ zoomlevel)
+</code></pre>
+<p>The resolution means how many meters per pixel you get. If you want to know how many pixels per meter, just use the inverse. That is:</p>
+<pre><code>pixels = 1/resolution * distance
+</code></pre>
+<hr/>
+<p>And if you want to calculate the scale (to write it on the map for printing it):</p>
+<pre><code>scale = 1 : (dpi * 39.37 in/m * resolution)
+</code></pre>
+<p>The scale means, how many cm in reality is 1 cm on the paper (or on the screen).</p>
+<p>So if you have a screen with 96 dpi, you get that one pixel is 1.1943 meters. And you get a scale of 1 : 4 231 which means that 1 cm on your screen is 42.3 m in reality.</p>
+<p>If you have a printer which prints 300 dpi … (now do the calculations yourself).</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/30744/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>14 Feb '14, 12:10</strong>
+</p>
+<img alt="erik's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/793c9f0cfb9f3cc6001d73f127644c67?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5517/erik">erik</a><br/>
+<span class="score" title="558 reputation points">558</span><span title="15 badges"><span class="badge1">●</span><span class="badgecount">15</span></span><span title="22 badges"><span class="silver">●</span><span class="badgecount">22</span></span><span title="34 badges"><span class="bronze">●</span><span class="badgecount">34</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="erik has one accepted answer">9%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-30744">
+</div>
+<div class="comment-tools" id="comment-tools-30744">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-30744-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/1069/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="kQkSUWYHByzYVXKdWPtnha3dlVO33QP1"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

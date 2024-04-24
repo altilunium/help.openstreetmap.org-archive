@@ -1,0 +1,271 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/64507/extracting-data-from-planetosmbz2-file-using-osmosis">Extracting data from planet.osm.bz2 file using Osmosis ?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/64507/up/" id="post-64507-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-64507-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/64507/down/" id="post-64507-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/64507/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi everybody,</p>
+<p>I am trying to extract only african roads data from a planet.osm.bz2 2013 file. I used Osmosis and, with the coordinates found on openstreetmap, entered :</p>
+<p>osmosis --read-xml file="planet.osm.bz2" --bounding-box top=37.58 left=-18.11 bottom=-35.46 right=54.14 --write-xml file="africaroads.osm"</p>
+<p>Here is what I get :</p>
+<p>C:\Users\Users\Documents\osm test&gt;osmosis --read-xml file="planet.osm.bz2" --bou
+nding-box top=37.58 left=-18.11 bottom=-35.46 right=54.14 --write-xml file="afri
+caroads.osm"
+juil. 03, 2018 3:54:47 PM org.openstreetmap.osmosis.core.Osmosis run
+INFOS: Osmosis Version 0.46
+juil. 03, 2018 3:54:47 PM org.openstreetmap.osmosis.core.Osmosis run
+INFOS: Preparing pipeline.
+juil. 03, 2018 3:54:47 PM org.openstreetmap.osmosis.core.Osmosis run
+INFOS: Launching pipeline execution.
+juil. 03, 2018 3:54:47 PM org.openstreetmap.osmosis.core.Osmosis run
+INFOS: Pipeline executing, waiting for completion.
+juil. 03, 2018 3:54:48 PM org.openstreetmap.osmosis.core.pipeline.common.ActiveT
+askManager waitForCompletion
+GRAVE: Thread for task 1-read-xml failed
+org.openstreetmap.osmosis.core.OsmosisRuntimeException: Unable to parse xml file
+ planet.osm.bz2.  publicId=(null), systemId=(null), lineNumber=3959, columnNumbe
+r=127.
+        at org.openstreetmap.osmosis.xml.v0_6.XmlReader.run(XmlReader.java:100)
+        at java.lang.Thread.run(Unknown Source)
+Caused by: org.xml.sax.SAXParseException; lineNumber: 3959; columnNumber: 127; X
+ML document structures must start and end within the same entity.
+        at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Un
+known Source)
+        at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)</p>
+<pre><code>    at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+    at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+    at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+    at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+    at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.endEntity(Unkno
+</code></pre>
+<p>wn Source)
+        at org.apache.xerces.impl.XMLDocumentScannerImpl.endEntity(Unknown Sourc
+e)
+        at org.apache.xerces.impl.XMLEntityManager.endEntity(Unknown Source)
+        at org.apache.xerces.impl.XMLEntityScanner.load(Unknown Source)
+        at org.apache.xerces.impl.XMLEntityScanner.skipSpaces(Unknown Source)
+        at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanAttribute(U
+nknown Source)
+        at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanStartElemen
+t(Unknown Source)
+        at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContent
+Dispatcher.dispatch(Unknown Source)
+        at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Un
+known Source)
+        at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+        at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+        at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+        at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+        at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Sour
+ce)
+        at org.apache.xerces.jaxp.SAXParserImpl.parse(Unknown Source)
+        at javax.xml.parsers.SAXParser.parse(Unknown Source)
+        at org.openstreetmap.osmosis.xml.v0_6.XmlReader.run(XmlReader.java:90)
+        ... 1 more</p>
+<p>juil. 03, 2018 3:54:48 PM org.openstreetmap.osmosis.core.Osmosis main
+GRAVE: Execution aborted.
+org.openstreetmap.osmosis.core.OsmosisRuntimeException: One or more tasks failed
+.
+        at org.openstreetmap.osmosis.core.pipeline.common.Pipeline.waitForComple
+tion(Pipeline.java:146)
+        at org.openstreetmap.osmosis.core.Osmosis.run(Osmosis.java:92)
+        at org.openstreetmap.osmosis.core.Osmosis.main(Osmosis.java:37)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+        at java.lang.reflect.Method.invoke(Unknown Source)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.launchStandard(Laun
+cher.java:330)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.jav
+a:238)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(La
+uncher.java:415)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:
+356)
+        at org.codehaus.classworlds.Launcher.main(Launcher.java:47)</p>
+<p>Do you have any idea how I can fix this ? thanks in advance</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap" href="/tags/openstreetmap/" rel="tag" title="see questions tagged 'openstreetmap'">openstreetmap</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 Jul '18, 15:05</strong>
+</p>
+<img alt="Clementbat's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7bc1f6bf924207c7d04c9fd282e250a5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15336/clementbat">Clementbat</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Clementbat has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-64507">
+<a name="64600"></a>
+<div class="comment" id="comment-64600">
+<div class="comment-score" id="post-64600-score"></div>
+<div class="comment-text"><p>I'd actually start from an extract of Africa from e.g. <a href="http://download.geofabrik.de/africa.html">Geofabrik</a>.</p></div>
+<div class="comment-info" id="comment-64600-info">
+<span class="comment-age">(09 Jul '18, 11:31)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-64507">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-64507-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/64507/extracting-data-from-planetosmbz2-file-using-osmosis?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/64507/extracting-data-from-planetosmbz2-file-using-osmosis?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/64507/extracting-data-from-planetosmbz2-file-using-osmosis?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/64507/extracting-data-from-planetosmbz2-file-using-osmosis?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="65045"></a>
+<div class="answer" id="answer-container-65045">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/65045/up/" id="post-65045-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-65045-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/65045/down/" id="post-65045-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hello,</p>
+<p>Given that osmosis is failing out of the gate, and that the error message seems to indicate a difficulty parsing the xml, I guess that the error has to do with the --read-xml portion.  Try adding the compressionMethod option to the --read-xml statement.  So for a .bz2 file it would be --read-xml -compressionMethod=bzip2</p>
+<p>See if that helps, and good luck!</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/65045/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>31 Jul '18, 22:51</strong>
+</p>
+<img alt="egarnica's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0a1767df93ea1e4b0ee7d17b40f8645f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15412/egarnica">egarnica</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="egarnica has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/65045/">
+                edited
+                <strong>31 Jul '18, 22:55</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-65045">
+</div>
+<div class="comment-tools" id="comment-tools-65045">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-65045-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="65108"></a>
+<div class="answer" id="answer-container-65108">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/65108/up/" id="post-65108-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-65108-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/65108/down/" id="post-65108-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>These days I tend to use osmium-tool instead of osmosis. And I would recommend to use the pbf file instead of the xml one in any case.</p>
+<p>A comparable commandline would thus look like this:
+osmium extract -b -18.11-35.46 54.14 37.58  planet.osm.pbf -o africaroads.pbf -v</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/65108/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Aug '18, 15:18</strong>
+</p>
+<img alt="giggls's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ed4b275dcccc85019201630e7cf0e3b6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1957/giggls">giggls</a><br/>
+<span class="score" title="126 reputation points">126</span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="giggls has 2 accepted answers">50%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-65108">
+</div>
+<div class="comment-tools" id="comment-tools-65108">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-65108-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/64507/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="CsQ5Ca7EL3ZuYjMIJloUhLB7UHqkUMrx"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

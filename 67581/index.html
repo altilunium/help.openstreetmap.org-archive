@@ -1,0 +1,143 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/67581/run-mod_tile-without-backend-database">Run mod_tile without backend database?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/67581/up/" id="post-67581-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-67581-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/67581/down/" id="post-67581-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/67581/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>If you have all the tiles rendered using render_list the way you want them and you don't need to update them regularly, is it possible to host a server that just has the .meta files?</p>
+<p>Or if perhaps you are going to load balance, you really only need one server to have the database to rerender everything, on all the other servers couldn't you just host the rendered tiles and use rsync on a cronjob to keep them all updated?</p>
+<p>What would I do if that is possible? In the Apache configuration it gives the sock location:</p>
+<pre><code>LoadTileConfigFile /usr/local/etc/renderd.conf
+ModTileRenderdSocketName /var/run/renderd/renderd.sock
+</code></pre>
+<p>So you would assume you have to run the renderd process:</p>
+<pre><code>renderd -f -c /usr/local/etc/renderd.conf
+</code></pre>
+<p>But if you try running that without the Postgres server, it doesn't work.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-renderd" href="/tags/renderd/" rel="tag" title="see questions tagged 'renderd'">renderd</a>
+<a class="post-tag tag-link-mod_tile" href="/tags/mod_tile/" rel="tag" title="see questions tagged 'mod_tile'">mod_tile</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>14 Jan '19, 18:45</strong>
+</p>
+<img alt="ajhalls's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/93573f3d1be0b4baf9865075d0540781?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16159/ajhalls">ajhalls</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ajhalls has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/67581/">
+                edited
+                <strong>14 Jan '19, 18:46</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-67581">
+</div>
+<div class="comment-tools" id="comment-tools-67581">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-67581-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/67581/run-mod_tile-without-backend-database?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/67581/run-mod_tile-without-backend-database?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/67581/run-mod_tile-without-backend-database?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/67581/run-mod_tile-without-backend-database?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="67585"></a>
+<div class="answer" id="answer-container-67585">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/67585/up/" id="post-67585-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-67585-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/67585/down/" id="post-67585-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It is possible. You don't need renderd; mod_tile will attempt to connect to renderd only when it thinks a tile needs to be rendered. </p>
+<p>mod_tile will attempt to render a tile if (a) it is considered outdated, or (b) it is missing. If this happens and renderd is not available, mod_tile will serve (a) the old tile, (b) a 404 error.</p>
+<p>You can ensure that mod_tile never considers a tile outdated by creating an empty file named "planet-import-complete" in /var/lib/mod_tile that has a time stamp older than your oldest tile.</p>
+<p>You cannot keep mod_tile from attempting to render non-existing tiles on demand, but with renderd not available this should fail quickly.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/67585/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>14 Jan '19, 22:02</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-67585">
+</div>
+<div class="comment-tools" id="comment-tools-67585">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-67585-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/67581/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="m9IMlWcs67OPfh1B3shjxzzKEGyVhix0"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,184 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/78731/how-to-remove-inappropriate-road-from-gps-satnav-programs">How to remove inappropriate road from GPS / SATNAV programs.</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/78731/up/" id="post-78731-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-78731-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/78731/down/" id="post-78731-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/78731/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>As many road users no longer read maps and rely on satnav they are now using a road which is not the direct route, it is single track, the road principally serves 2 local farms and as a result is frequently blocked by very large tractor / trailer units (or the units are travelling very fast!), the road is only 3 metres wide and has several chicane corners and is not the best route. Delivery drivers (and plant machinery deliveries) and building contractors and are beginning to use the road and thus the situation is getting worse. There is a perfectly good road to the village which is wider (2 vehicles can pass each other!).
+I am completely new to this but am wondering if somebody can help me change the satnav routing to use the main road.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-satnav" href="/tags/satnav/" rel="tag" title="see questions tagged 'satnav'">satnav</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>08 Feb '21, 17:20</strong>
+</p>
+<img alt="Rikds's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7369a90e4bfdce38765dcff246618c00?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19701/rikds">Rikds</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Rikds has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-78731">
+</div>
+<div class="comment-tools" id="comment-tools-78731">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-78731-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/78731/how-to-remove-inappropriate-road-from-gps-satnav-programs?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/78731/how-to-remove-inappropriate-road-from-gps-satnav-programs?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/78731/how-to-remove-inappropriate-road-from-gps-satnav-programs?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/78731/how-to-remove-inappropriate-road-from-gps-satnav-programs?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="78733"></a>
+<div class="answer" id="answer-container-78733">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/78733/up/" id="post-78733-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-78733-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/78733/down/" id="post-78733-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>How routing engines interpret OSM's data is up to them.</p>
+<p>There are tags for <a href="https://wiki.openstreetmap.org/wiki/Key:width#Width_of_streets">width</a> and more widely supported tags for number of <a href="https://wiki.openstreetmap.org/wiki/Lanes">lanes</a>. These could be used by routers to adjust their route weighting, but I'm not sure if any actually do. Mapping any <a href="https://wiki.openstreetmap.org/wiki/Tag:highway%3Dpassing_place">passing places</a> that exist might similarly act as a bit of a warning to data consumers (or users, if rendered) although they too may be completely ignored. There is also a recently approved tag for signposted <a href="https://wiki.openstreetmap.org/wiki/Key:hazard">hazards</a> on roads that may be relevant to some of the tight corners you mention, but as it was approved less than two months ago I'd expect few people, if any, are interpreting these tags yet.  </p>
+<p>If the road is actually a service road or farm track that has been mis-tagged then feel free to <a href="https://wiki.openstreetmap.org/wiki/Highway_tagging_samples/out_of_town">re-classify</a> it according to it's actual status, but please do not introduce inaccuracies just because they are convenient for a particular purpose (the same goes for the main road into town). </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/78733/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Feb '21, 21:07</strong>
+</p>
+<img alt="InsertUser's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ec8a0cf213f9797ad1c1ae2c28c2332d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4426/insertuser">InsertUser</a><br/>
+<span class="score" title="11005 reputation points"><span class="">11.0k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="69 badges"><span class="silver">●</span><span class="badgecount">69</span></span><span title="185 badges"><span class="bronze">●</span><span class="badgecount">185</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="InsertUser has 73 accepted answers">19%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-78733">
+</div>
+<div class="comment-tools" id="comment-tools-78733">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-78733-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="78736"></a>
+<div class="answer" id="answer-container-78736">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/78736/up/" id="post-78736-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-78736-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/78736/down/" id="post-78736-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Well, there is nothing you can do to force satnavs to use a specific route. But you can help satnavs making the best decision by providing all the necessary information to them. In particular tag the two roads with the appropriate values for highway classification, speed limits, number of lanes, stop signs, surface, smoothness, access rights, width etc. You can find information on all on those in our <a href="https://wiki.openstreetmap.org/wiki/Highways">Wiki</a>. Use the search function there. </p>
+<p>That will not change the routing of the rather simple satnavs but the more intelligent ones will finally generate the most appropriate routes.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/78736/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Feb '21, 21:38</strong>
+</p>
+<img alt="TZorn's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ddebc8d5f4e0458413eacf65e36561a9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10133/tzorn">TZorn</a><br/>
+<span class="score" title="12350 reputation points"><span class="">12.3k</span></span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="64 badges"><span class="silver">●</span><span class="badgecount">64</span></span><span title="225 badges"><span class="bronze">●</span><span class="badgecount">225</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="TZorn has 63 accepted answers">15%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-78736">
+<a name="78737"></a>
+<div class="comment" id="comment-78737">
+<div class="comment-score" id="post-78737-score"></div>
+<div class="comment-text"><p>If they are using OpenStreetMap as a source.</p>
+<p>Which probably most are not.</p></div>
+<div class="comment-info" id="comment-78737-info">
+<span class="comment-age">(08 Feb '21, 21:42)</span>
+<a class="comment-user userinfo" href="/users/10973/maxerickson">maxerickson</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-78736">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-78736-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/78731/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="qILLU8HRWcxbDCg9jI3oTpx7FBXYvQlt"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

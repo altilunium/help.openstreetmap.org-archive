@@ -1,0 +1,118 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/49633/converting-shapefile-with-line-layer-point-layer-to-a-routable-osm-file">Converting shapefile with line layer &amp; point layer to a routable .osm file</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/49633/up/" id="post-49633-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-49633-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/49633/down/" id="post-49633-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/49633/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm working on a project involving historical data, which I'm wanting to turn into an .osm XML file as a routable network (e.g. using OSRM) and for rendering (using Mapnik/CartoCSS). The data will <strong>not</strong> be added into OSM.</p>
+<p>My aim is to convert the Shapefiles into .osm format, and be routable, so that I then get the benefits of the OSM toolsets.</p>
+<p>I'm very familiar with OSM and its ecosystem, being a long-time contributor and user. What I'm not so familiar is the GIS world, where a Shapefile (in my case from ArcGIS) has to contain ways and nodes as separate layers.</p>
+<p>The main problem I'm having is making the network actually topographically routable.</p>
+<p><strong>Can anyone suggest a workflow which would enable the two layers containing lines and junction points to be merged into a single .osm file where the points become nodes actually as properties of the ways?</strong></p>
+<p>Currently I am:</p>
+<ul>
+<li>Taking the Shapefiles from ArcGIS; there are two shapefiles, one with the lines (for the ways) and one for connected junctions</li>
+<li>Using <a href="https://sourceforge.net/p/vectormap2garmin/wiki/ogr2osm/">ogr2osm.py</a> to convert from *.shp to .osm (in WGS84)</li>
+<li>Then using Osmosis to transform the tags to OSM standards (e.g. <code>waterway=river</code>)</li>
+<li>Then using Osmosis to merge the layers, using <code>osmosis --rx Edges.osm --sort --rx Junctions.osm --sort --merge --wx merged.osm</code></li>
+<li>Building with OSRM as a proof of routability</li>
+<li>Rendering in Mapnik as a proof of data presence. This does confirm that the network is all present and in the right projection.</li>
+</ul>
+<p>The routability partly works - stretches of route do route, but where there are junctions, the routability stops.</p>
+<p>My clear hunch is that the .osm data contains all the ways and nodes but that the ways themselves do not reference the nodes.</p>
+<p><strong>Is there some adjustment or different toolchain I could use the merge the two layers properly rather than treat them as two sets of items in the one .osm file?</strong> I'm trying to avoid having to pick through and modify XML directly, which will not fun.</p>
+<p>Any pointers would be appreciated.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-shapefiles" href="/tags/shapefiles/" rel="tag" title="see questions tagged 'shapefiles'">shapefiles</a>
+<a class="post-tag tag-link-merging" href="/tags/merging/" rel="tag" title="see questions tagged 'merging'">merging</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>09 May '16, 12:42</strong>
+</p>
+<img alt="fooquency's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/354d4e3cc1b448abb29eb4f1bbac395c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11977/fooquency">fooquency</a><br/>
+<span class="score" title="76 reputation points">76</span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="6 badges"><span class="silver">●</span><span class="badgecount">6</span></span><span title="10 badges"><span class="bronze">●</span><span class="badgecount">10</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="fooquency has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/49633/">
+                edited
+                <strong>09 May '16, 13:48</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-49633">
+<a name="49637"></a>
+<div class="comment" id="comment-49637">
+<div class="comment-score" id="post-49637-score"></div>
+<div class="comment-text"><p>Can you elaborate on the role of the "points" shape file. Since the "lines" file will already contain geometries for each road, and could be turned into a routable file by unrolling these geometries into OSM ways and nodes, what purpose does the "points" file have?</p></div>
+<div class="comment-info" id="comment-49637-info">
+<span class="comment-age">(09 May '16, 16:14)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="49639"></a>
+<div class="comment" id="comment-49639">
+<div class="comment-score" id="post-49639-score"></div>
+<div class="comment-text"><p>The points file was created to have the actual junctions in, as distinct from places where the lines simply cross over (e.g. a bridge). However, I will check on whether this is actually needed. I think we previously tried just the lines file and that didn't give us a properly-routable network.</p></div>
+<div class="comment-info" id="comment-49639-info">
+<span class="comment-age">(09 May '16, 16:27)</span>
+<a class="comment-user userinfo" href="/users/11977/fooquency">fooquency</a>
+</div>
+</div>
+<a name="49649"></a>
+<div class="comment" id="comment-49649">
+<div class="comment-score" id="post-49649-score"></div>
+<div class="comment-text"><p>Seems this has worked. Thanks again, Frederik. Turns out the main issue was that I'd chosen highway=motorway in the Osmosis tag conversion, resulting in lots of implied one ways in the router.</p></div>
+<div class="comment-info" id="comment-49649-info">
+<span class="comment-age">(10 May '16, 19:33)</span>
+<a class="comment-user userinfo" href="/users/11977/fooquency">fooquency</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-49633">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-49633-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/49633/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="ZbKFYWNCVnW7NZIFYLaNIgBmIgSLnFfS"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

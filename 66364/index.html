@@ -1,0 +1,289 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/66364/unable-to-import-north-america-latestosm-pbf">Unable to import north-america-latest.osm pbf</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66364/up/" id="post-66364-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66364-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/66364/down/" id="post-66364-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/66364/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>We have a problem importing north-america-latest.osm to out map server VM which is 6 vCPU, 16 GB RAM and 550 GB storage.
+We tried to import Texas pbf, it works fine.
+And when we used these two different commands and in both case, the import failed with the coredump.</p>
+<pre><code>osm2pgsql --slim -d gis -C 4000 /mapdata/north-america-latest.osm.pbf
+osm2pgsql --slim -d gis –C 1200 –number-processes 3 /tmp/north-america-latest.osm.pbf
+
+HINT: In a moment you should be able to reconnect to the database and repeat your command.
+terminate called after throwing an instance of 'std::runtime_error'
+what(): CREATE INDEX planet_osm_ways_nodes ON planet_osm_ways USING gin (nodes) WITH (FASTUPDATE=OFF) ;
+failed: server closed the connection unexpectedly
+This probably means the server terminated abnormally
+before or while processing the request.
+Aborted (core dumped)
+</code></pre>
+<p>Then we tried to increase the "-C | --cache num" value to 12000 and 14000. Then in both cases, the import failed at the same step as below:</p>
+<pre><code>bash-4.1$ osm2pgsql -d gis --slim -C 12000 /mapdata/north-america-latest.osm.pbf
+osm2pgsql SVN version 0.88.2-dev (64 bit id space)
+
+Using built-in tag processing pipeline
+Using projection SRS 900913 (Spherical Mercator)
+Setting up table: planet_osm_point
+Setting up table: planet_osm_line
+Setting up table: planet_osm_polygon
+Setting up table: planet_osm_roads
+Allocating memory for dense node cache
+Allocating dense node cache in one big chunk
+Allocating memory for sparse node cache
+Sharing dense sparse
+Node-cache: cache=12000MB, maxblocks=1536000*8192, allocation method=11
+Mid: pgsql, scale=100 cache=12000
+Setting up table: planet_osm_nodes
+Setting up table: planet_osm_ways
+Setting up table: planet_osm_rels
+
+Reading in file: /mapdata/north-america-latest.osm.pbf
+Processing: Node(870095k 259.3k/s) Way(61241k 14.44k/s) Relation(509320 68.81/s)
+Standard exception processing relation id=6244046: TopologyException: side location conflict at -8427146.1899999995 5064220.8799999999
+Processing: Node(870095k 259.3k/s) Way(61241k 14.44k/s) Relation(566160 71.63/s) parse time: 15501s
+Node stats: total(870095450), max(4515939386) in 3356s
+Way stats: total(61241977), max(455153763) in 4240s
+Relation stats: total(566169), max(6729780) in 7905s
+Committing transaction for planet_osm_point
+Committing transaction for planet_osm_line
+Committing transaction for planet_osm_polygon
+Committing transaction for planet_osm_roads
+Setting up table: planet_osm_nodes
+Setting up table: planet_osm_ways
+Setting up table: planet_osm_rels
+Using built-in tag processing pipeline
+
+Going over pending ways...
+33693166 ways are pending
+
+Using 1 helper-processes
+Finished processing 33693166 ways in 20391 sec
+
+33693166 Pending ways took 20391s at a rate of 1652.35/s
+Committing transaction for planet_osm_point
+Committing transaction for planet_osm_line
+Committing transaction for planet_osm_polygon
+Committing transaction for planet_osm_roads
+
+Going over pending relations...
+0 relations are pending
+
+Using 1 helper-processes
+Finished processing 0 relations in 0 sec
+
+Committing transaction for planet_osm_point
+WARNING: there is no transaction in progress
+Committing transaction for planet_osm_line
+WARNING: there is no transaction in progress
+Committing transaction for planet_osm_polygon
+WARNING: there is no transaction in progress
+Committing transaction for planet_osm_roads
+WARNING: there is no transaction in progress
+Stopping table: planet_osm_nodes
+Stopping table: planet_osm_ways
+Building index on table: planet_osm_ways
+Stopped table: planet_osm_nodes in 0s
+Stopping table: planet_osm_rels
+Building index on table: planet_osm_rels
+Sorting data and creating indexes for planet_osm_polygon
+Sorting data and creating indexes for planet_osm_point
+Sorting data and creating indexes for planet_osm_line
+Sorting data and creating indexes for planet_osm_roads
+Stopped table: planet_osm_rels in 28s
+Killed
+</code></pre>
+<p>We checked the postgresql.conf, and we have the setting as below:</p>
+<pre><code>shared_buffers = 256MB
+work_mem = 512MB
+maintenance_work_mem = 16GB
+checkpoint_segments = 100
+checkpoint_timeout = 10min
+checkpoint_completion_target = 0.9
+effective_cache_size = 24GB
+</code></pre>
+<p>Any suggestion on how to fix this issue?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Oct '18, 23:30</strong>
+</p>
+<img alt="xming0819's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3b38e65d7347fe2ca02780c442a9e993?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15802/xming0819">xming0819</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="xming0819 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/66364/">
+                edited
+                <strong>17 Oct '18, 07:47</strong>
+</a>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66364">
+</div>
+<div class="comment-tools" id="comment-tools-66364">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66364-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/66364/unable-to-import-north-america-latestosm-pbf?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/66364/unable-to-import-north-america-latestosm-pbf?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/66364/unable-to-import-north-america-latestosm-pbf?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/66364/unable-to-import-north-america-latestosm-pbf?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="66367"></a>
+<div class="answer" id="answer-container-66367">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66367/up/" id="post-66367-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66367-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/66367/down/" id="post-66367-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The first message ("server closed the connection unexpectedly") means that your PostgreSQL server process has died. You might find more information in the postgresql.log or the kernel log ("dmesg" command). The second message ("Killed") likely points to an out-of-memory issue in osm2pgsql; the "dmesg" command might also shed some light on this. </p>
+<p>Your VM does not have enough RAM. Increase the RAM if possible. If not, reduce <code>maintenance_work_mem</code> to 1 GB or even further. Set <code>--number-processes</code> to 1 since every parallel process consumes additional memory. Create a swap partition or swap file on your VM. All these steps will make the import much slower but at least you have a chance of it completing.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/66367/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>17 Oct '18, 08:13</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66367">
+</div>
+<div class="comment-tools" id="comment-tools-66367">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66367-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="66404"></a>
+<div class="answer" id="answer-container-66404">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66404/up/" id="post-66404-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66404-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/66404/down/" id="post-66404-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>If your virtual machine is using SSD, then, as Frederik also recommended, simply increase your virtual machine's swap space by 16GB or so. It should hardly affect import speed with SSD. </p>
+<p>I have successfully imported North America with that on a 16GB RAM laptop... just note you should leave out the -C cache option as well. Just leave osm2pgsql figure out its own optimal settings, it does an acceptable job.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/66404/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>20 Oct '18, 22:50</strong>
+</p>
+<img alt="mboeringa's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/dc8a1ef54d3e25744ee52d1ad1459a81?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9580/mboeringa">mboeringa</a><br/>
+<span class="score" title="1542 reputation points"><span class="">1.5k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="15 badges"><span class="silver">●</span><span class="badgecount">15</span></span><span title="27 badges"><span class="bronze">●</span><span class="badgecount">27</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mboeringa has 4 accepted answers">9%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/66404/">
+                edited
+                <strong>20 Oct '18, 22:52</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66404">
+</div>
+<div class="comment-tools" id="comment-tools-66404">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66404-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/66364/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="qPYqBk0tR1JH1PReoCGKfdKNwPFpKVby"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

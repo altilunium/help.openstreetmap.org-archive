@@ -1,0 +1,156 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/53876/when-should-i-add-a-relation-to-tag">When should I add a relation to tag?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/53876/up/" id="post-53876-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-53876-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/53876/down/" id="post-53876-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/53876/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>When adding tags that apply to the whole object (mostly wikipedia/data, but there are others), should I create a relation and add the tag to the relation, or should I add the tag to every way that's part of the object.</p>
+<p>For example the <a href="http://www.openstreetmap.org/way/114618483">White Cliffs of Dover</a> has several ways. Some have a different set of tags than others, though. Some have different (specific) names, though they're all <a href="https://commons.wikimedia.org/wiki/File:White_Cliffs_of_Dover_map.png">part</a> of the Cliffs of Dover. Should we have a relation with name=White Cliffs of Dover, wikidata=Q754785, operator=National Trust, etc?</p>
+<p>What about streets? I see there's <a href="http://wiki.openstreetmap.org/wiki/Relation:street">relation:street</a> so I think I'll go ahead and use that.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-split" href="/tags/split/" rel="tag" title="see questions tagged 'split'">split</a>
+<a class="post-tag tag-link-relations" href="/tags/relations/" rel="tag" title="see questions tagged 'relations'">relations</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>05 Jan '17, 17:11</strong>
+</p>
+<img alt="mdejean's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/5833f68b9cfce6017187678c495b6fc8?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13145/mdejean">mdejean</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mdejean has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-53876">
+</div>
+<div class="comment-tools" id="comment-tools-53876">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-53876-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/53876/when-should-i-add-a-relation-to-tag?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/53876/when-should-i-add-a-relation-to-tag?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/53876/when-should-i-add-a-relation-to-tag?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/53876/when-should-i-add-a-relation-to-tag?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="53881"></a>
+<div class="answer accepted-answer" id="answer-container-53881">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/53881/up/" id="post-53881-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-53881-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/53881/down/" id="post-53881-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/53881/" rel="nofollow" title="mdejean has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Relation tags do not cascade down to their member elements. If you create three ways and you don't name them, but instead put them in a relation which does have a name tag, virtually nothing (renderer, router, analysis tool, whatever) will understand what you mean.</p>
+<p>As the <code>relation:street</code> page says: "Note that this relation is not established and unsupported by some applications." Translation: it's been made up by someone to whose sense of data consistency it appeals, but no-one else uses it.</p>
+<p>Relations are used for a few distinct purposes, such as route relations (buses, bike routes, etc.), multipolygons, and so on. For everything else, there is nothing wrong with having two adjacent objects which have the same tags.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/53881/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>05 Jan '17, 20:06</strong>
+</p>
+<img alt="Richard's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/08324717c25d6067fa4ff23ef37d455f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5/richard">Richard ♦</a><br/>
+<span class="score" title="30902 reputation points"><span class="">30.9k</span></span><span title="44 badges"><span class="badge1">●</span><span class="badgecount">44</span></span><span title="279 badges"><span class="silver">●</span><span class="badgecount">279</span></span><span title="412 badges"><span class="bronze">●</span><span class="badgecount">412</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Richard has 98 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/53881/">
+                edited
+                <strong>05 Jan '17, 20:07</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-53881">
+<a name="53885"></a>
+<div class="comment" id="comment-53885">
+<div class="comment-score" id="post-53885-score">1</div>
+<div class="comment-text"><p>So the cliffs in the White Cliffs of Dover should each have name=White Cliffs of Dover, alt_name=Shakespeare Cliffs, Langdon Cliffs, etc., wikidata=Q754785?</p>
+<p>Is there a way to select all of the ways with the same name to add a tag?</p></div>
+<div class="comment-info" id="comment-53885-info">
+<span class="comment-age">(05 Jan '17, 20:36)</span>
+<a class="comment-user userinfo" href="/users/13145/mdejean">mdejean</a>
+</div>
+</div>
+<a name="53889"></a>
+<div class="comment" id="comment-53889">
+<div class="comment-score" id="post-53889-score">1</div>
+<div class="comment-text"><p>There is no way to select multiple objects in the iD editor, you can do so in JOSM</p></div>
+<div class="comment-info" id="comment-53889-info">
+<span class="comment-age">(06 Jan '17, 08:02)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-53881">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-53881-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/53876/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="mo84vdxk7EM7rmgOaHhUzeX5qD5D2YuM"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

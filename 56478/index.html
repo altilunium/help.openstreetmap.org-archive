@@ -1,0 +1,148 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/56478/missing-styles-for-usrlocalsharemapsstyle">Missing styles for /usr/local/share/maps/style</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/56478/up/" id="post-56478-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-56478-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/56478/down/" id="post-56478-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/56478/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have been following this link to install on my centos 7 <a href="http://qiita.com/nkmrtkhd/items/642ae1b8a996cc46d85c.">http://qiita.com/nkmrtkhd/items/642ae1b8a996cc46d85c.</a>
+First I cant unzip this unzip ~/ne_10m_populated_places_simple.zip  and also the rest of the folder does not exist.
+Coming to this steps
+    cd ne_10m_populated_places_simple
+    unzip ~/ne_10m_populated_places_simple.zip 
+    cd ..
+    unzip ~/master.zip 
+    unzip ~/simplified-land-polygons-complete-3857.zip 
+    unzip ~/land-polygons-split-3857.zip
+    mkdir osm-bright-master/shp
+    mv land-polygons-split-3857 osm-bright-master/shp/
+    mv simplified-land-polygons-complete-3857 osm-bright-master/shp/
+    mv ne_10m_populated_places_simple osm-bright-master/shp/</p>
+<pre><code>cd osm-bright-master/shp/land-polygons-split-3857
+shapeindex land_polygons.shp
+cd ../simplified-land-polygons-complete-3857/
+shapeindex simplified_land_polygons.shp
+cd ../..
+
+vi osm-bright/osm-bright.osm2pgsql.mml
+
+cp ~/configure.py .
+./make.py
+cd ../OSMBright/
+carto project.mml &gt; OSMBright.xml
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-style" href="/tags/style/" rel="tag" title="see questions tagged 'style'">style</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>06 Jun '17, 20:24</strong>
+</p>
+<img alt="newbie14's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/26750873415fcbe30ebf2fdeab499d99?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13794/newbie14">newbie14</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="9 badges"><span class="badge1">●</span><span class="badgecount">9</span></span><span title="9 badges"><span class="silver">●</span><span class="badgecount">9</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="newbie14 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-56478">
+</div>
+<div class="comment-tools" id="comment-tools-56478">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-56478-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/56478/missing-styles-for-usrlocalsharemapsstyle?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/56478/missing-styles-for-usrlocalsharemapsstyle?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/56478/missing-styles-for-usrlocalsharemapsstyle?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/56478/missing-styles-for-usrlocalsharemapsstyle?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="56482"></a>
+<div class="answer" id="answer-container-56482">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/56482/up/" id="post-56482-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-56482-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/56482/down/" id="post-56482-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>What I suspect has happened is that the layout of the Natural Earth website has changed since osmbright was packaged.  When I wrote <a href="https://wiki.openstreetmap.org/wiki/User:SomeoneElse/Ubuntu_1604_tileserver_load#Natural_Earth_Data">these instructions</a> I modified the "get-shapefiles.sh" script so that it worked with the new layout of that site.</p>
+<p>You can either figure out what is missing manually (by looking at the script and seeing what it is trying to do), or try my version linked above.  I'm not 100% sure what natural earth data osm-bright needs, though.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/56482/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Jun '17, 21:06</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-56482">
+</div>
+<div class="comment-tools" id="comment-tools-56482">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-56482-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/56478/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="PGYAaAjHxc0jNf1kc9MHbWjuQtXE3oxS"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,238 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/8064/how-to-see-bridges-using-mkgmap">How to see bridges using mkgmap</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/8064/up/" id="post-8064-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-8064-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/8064/down/" id="post-8064-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/8064/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>hello,</p>
+<p>I'm building a map using josm, and use mkgmap to converted it for my garmin 60csx.</p>
+<p>But as I live in Africa, I need to see bridges, fuel stations and telecom antennas at low zoom.. They are very good points to understand  were we are.</p>
+<p>On Tracks4africa maps, bridges are represented as POI and not as segment.. It works well. Maybe it is possible to convert all "bridges lines" into points using mkgmap? Or maybe there is a way using styles and TYP to see them better ? I'm particularly interested to see bridges on tracks sections ! To see if we can cross the river !</p>
+<p>Thanks for your help and sorry for my English.. I don't practice a lot..</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-mkgmap" href="/tags/mkgmap/" rel="tag" title="see questions tagged 'mkgmap'">mkgmap</a>
+<a class="post-tag tag-link-bridge" href="/tags/bridge/" rel="tag" title="see questions tagged 'bridge'">bridge</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Sep '11, 14:10</strong>
+</p>
+<img alt="iero's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3e6d868fd890902785b2fc4cd31d49f7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2114/iero">iero</a><br/>
+<span class="score" title="20 reputation points">20</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="iero has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/8064/">
+                edited
+                <strong>21 Sep '11, 14:13</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-8064">
+</div>
+<div class="comment-tools" id="comment-tools-8064">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-8064-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/8064/how-to-see-bridges-using-mkgmap?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/8064/how-to-see-bridges-using-mkgmap?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/8064/how-to-see-bridges-using-mkgmap?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/8064/how-to-see-bridges-using-mkgmap?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="8067"></a>
+<div class="answer" id="answer-container-8067">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/8067/up/" id="post-8067-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-8067-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/8067/down/" id="post-8067-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>A quick-and-dirty solution is to make bridges display as something else.  If you're not creating routable maps, then an entry such as:</p>
+<p>bridge=yes [0x29 resolution 17]</p>
+<p>near the top of the "lines" file would work.  "0x29" is Garmin-ese for a power line, and it displays as a nice obvious narrow line.</p>
+<p>If you are creating routable maps this might break routing though (since you can't normally drive along power lines!) so maybe another code would make more sense - maybe "0x01" (used for motorways) if there are few motorways where you're creating a map?  The best thing to do is to experiment and see, I suspect.<br/>
+</p>
+<p>Make sure that your "bridge=yes" is near the top of the lines file, otherwise some other tag's representation may be used instead.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/8067/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Sep '11, 16:02</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-8067">
+<a name="8069"></a>
+<div class="comment" id="comment-8069">
+<div class="comment-score" id="post-8069-score">1</div>
+<div class="comment-text"><p>Thanks for your answer, I'll try that, it's a good idea !</p>
+<p>There are no motorway at all in the country. Biggest roads can be considered as "primary", so i'll try with motorway section, and maybe change related TYP section</p>
+<p>I'll keep you informed about the result !</p></div>
+<div class="comment-info" id="comment-8069-info">
+<span class="comment-age">(21 Sep '11, 16:12)</span>
+<a class="comment-user userinfo" href="/users/2114/iero">iero</a>
+</div>
+</div>
+<a name="8073"></a>
+<div class="comment" id="comment-8073">
+<div class="comment-score" id="post-8073-score"></div>
+<div class="comment-text"><p>Actually - one thing that I forgot about - if you're relying on bicycle routing, maybe "motorway" isn't the best choice, so I'd definitely experiment with different settings.</p></div>
+<div class="comment-info" id="comment-8073-info">
+<span class="comment-age">(21 Sep '11, 22:33)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="8075"></a>
+<div class="comment" id="comment-8075">
+<div class="comment-score" id="post-8075-score"></div>
+<div class="comment-text"><p>It works, thanks</p></div>
+<div class="comment-info" id="comment-8075-info">
+<span class="comment-age">(21 Sep '11, 23:00)</span>
+<a class="comment-user userinfo" href="/users/2114/iero">iero</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-8067">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-8067-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="8070"></a>
+<div class="answer" id="answer-container-8070">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/8070/up/" id="post-8070-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-8070-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/8070/down/" id="post-8070-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can use something like this</p>
+<p>(bridge=yes | bridge=true | bridge=viaduct)  [0x2b resolution 24 continue with_actions]</p>
+<p>(tunnel=yes | tunnel=true | tunnel=1)  [0x2a resolution 24 continue with_actions]</p>
+<p>You need to put it before the highway rules. I recommend to use a typ file to make 0x2b visible, see for an example <a href="http://www.cferrero.net/maps/guide_to_TYPs.html">http://www.cferrero.net/maps/guide_to_TYPs.html</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/8070/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Sep '11, 17:34</strong>
+</p>
+<img alt="ligfietser's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0f5ffc3756c4662b9dfad80b7665ac6c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1077/ligfietser">ligfietser</a><br/>
+<span class="score" title="2894 reputation points"><span class="">2.9k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="27 badges"><span class="silver">●</span><span class="badgecount">27</span></span><span title="57 badges"><span class="bronze">●</span><span class="badgecount">57</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ligfietser has 8 accepted answers">11%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/8070/">
+                edited
+                <strong>21 Sep '11, 17:35</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-8070">
+<a name="8076"></a>
+<div class="comment" id="comment-8076">
+<div class="comment-score" id="post-8076-score"></div>
+<div class="comment-text"><p>I'll try, but I need to add a TYP file, and for the moment, I try to understand styles.. 
+Thanks for the answer, I learned the "continue with_actions" that I didn't know.</p></div>
+<div class="comment-info" id="comment-8076-info">
+<span class="comment-age">(21 Sep '11, 23:01)</span>
+<a class="comment-user userinfo" href="/users/2114/iero">iero</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-8070">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-8070-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/8064/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="DM5RKvHdjsb0tD0LoqM8lF7YqL5JZTZ0"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

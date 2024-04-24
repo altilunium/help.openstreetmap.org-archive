@@ -1,0 +1,238 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/63360/httpbtileosmorg-for-https">http://b.tile.osm.org/ for https</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/63360/up/" id="post-63360-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-63360-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/63360/down/" id="post-63360-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/63360/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi
+I've noticed that https sites using <a href="http://b.tile.osm.org/">http://b.tile.osm.org/</a> lose the green padlock for pages that include OSM maps.
+On Firefox, they show the black padlock+alert sign, and the message "<strong>Warning: Connection is Not Secure</strong>"
+Wouldn't it be a good idea to move <a href="http://b.tile.osm.org/">http://b.tile.osm.org/</a>  to <a href="https://b.tile.osm.org/">https://b.tile.osm.org/</a> ?
+Or is there an alternative ?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-padlock" href="/tags/padlock/" rel="tag" title="see questions tagged 'padlock'">padlock</a>
+<a class="post-tag tag-link-tiles" href="/tags/tiles/" rel="tag" title="see questions tagged 'tiles'">tiles</a>
+<a class="post-tag tag-link-security" href="/tags/security/" rel="tag" title="see questions tagged 'security'">security</a>
+<a class="post-tag tag-link-https" href="/tags/https/" rel="tag" title="see questions tagged 'https'">https</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>07 May '18, 10:58</strong>
+</p>
+<img alt="trevoh's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c4098d5b6efd50677c532c14e2cbcbff?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15089/trevoh">trevoh</a><br/>
+<span class="score" title="9 reputation points">9</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="trevoh has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-63360">
+</div>
+<div class="comment-tools" id="comment-tools-63360">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-63360-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/63360/httpbtileosmorg-for-https?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/63360/httpbtileosmorg-for-https?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/63360/httpbtileosmorg-for-https?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/63360/httpbtileosmorg-for-https?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="63363"></a>
+<div class="answer" id="answer-container-63363">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/63363/up/" id="post-63363-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-63363-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/63363/down/" id="post-63363-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Stripping http from the source?</p>
+<p>src='//b.tile.osm.org'</p>
+<p>Let the browser determine the connection type.</p>
+<h1>Edit</h1>
+<p>You'll have to host the JS files yourself to make the change. There are some tile providers that use SSL.</p>
+<p>https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png</p>
+<p>ESRI: <a href="https://esri.github.io/esri-leaflet/examples/basemap-with-labels.html">https://esri.github.io/esri-leaflet/examples/basemap-with-labels.html</a></p>
+<p>MapQuest: <a href="https://otile2-s.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png">https://otile2-s.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/63363/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>07 May '18, 14:25</strong>
+</p>
+<img alt="gfitz's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7dc2ca85ad0fdecfb5c66a390b83180a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14985/gfitz">gfitz</a><br/>
+<span class="score" title="46 reputation points">46</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="gfitz has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/63363/">
+                edited
+                <strong>14 May '18, 00:24</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-63363">
+<a name="63365"></a>
+<div class="comment" id="comment-63365">
+<div class="comment-score" id="post-63365-score"></div>
+<div class="comment-text"><p>Two reactions to gfitz</p>
+<ol>
+<li>Can't change the source when tiles are called by an external program such as 
+<a href="https://cdnjs.cloudflare.com/ajax/libs/openlayers/2.11/lib/OpenLayers.js">https://cdnjs.cloudflare.com/ajax/libs/openlayers/2.11/lib/OpenLayers.js</a>
+not directly by website.</li>
+</ol>
+<p>And 2 Can anyone at osm do anything to get a valid certificate ? Which would be the best solution :)</p></div>
+<div class="comment-info" id="comment-63365-info">
+<span class="comment-age">(07 May '18, 14:38)</span>
+<a class="comment-user userinfo" href="/users/15089/trevoh">trevoh</a>
+</div>
+</div>
+<a name="63367"></a>
+<div class="comment" id="comment-63367">
+<div class="comment-score" id="post-63367-score"></div>
+<div class="comment-text"><p>Check the second edit</p></div>
+<div class="comment-info" id="comment-63367-info">
+<span class="comment-age">(07 May '18, 15:20)</span>
+<a class="comment-user userinfo" href="/users/14985/gfitz">gfitz</a>
+</div>
+</div>
+<a name="63369"></a>
+<div class="comment" id="comment-63369">
+<div class="comment-score" id="post-63369-score">2</div>
+<div class="comment-text"><p>https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png makes the difference. It shows the green padlock, whereas
+http://{s}.tile.osm.org/{z}/{x}/{y}.png  produces the insecure connection warning.
+Thanks</p></div>
+<div class="comment-info" id="comment-63369-info">
+<span class="comment-age">(07 May '18, 15:59)</span>
+<a class="comment-user userinfo" href="/users/15089/trevoh">trevoh</a>
+</div>
+</div>
+<a name="63370"></a>
+<div class="comment" id="comment-63370">
+<div class="comment-score" id="post-63370-score"></div>
+<div class="comment-text"><p>You are welcome. Please mark as solved if it helped</p></div>
+<div class="comment-info" id="comment-63370-info">
+<span class="comment-age">(07 May '18, 16:09)</span>
+<a class="comment-user userinfo" href="/users/14985/gfitz">gfitz</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-63363">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-63363-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="63447"></a>
+<div class="answer" id="answer-container-63447">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/63447/up/" id="post-63447-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-63447-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/63447/down/" id="post-63447-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p><a href="osm.org">osm.org</a> points to the same place as <a href="openstreetmap.org">openstreetmap.org</a> - it's always just been a shortcut to it.  The certificates on those sites is for "(something).openstreetmap.org". If you have a look at the https certificate associated with a random tile such as "<a href="https://a.tile.osm.org/9/253/166.png">https://a.tile.osm.org/9/253/166.png</a>" you'll see that it is for "<a href="http://tile.openstreetmap.org">tile.openstreetmap.org</a>".  Clearly this "doesn't match", so you end up with the browser warning.</p>
+<p>Back when OpenStreetMap served http tiles no error would occur, though you'd get the same tiles as if you'd asked for <a href="http://b.tile.openstreetmap.org/.">http://b.tile.openstreetmap.org/.</a>  Now the same tiles are served, but over https, and the certificate doesn't match.  </p>
+<p>The question, of course, is why is anything referring to <a href="http://b.tile.osm.org/">http://b.tile.osm.org/</a> in the first place?  Presumably someone's defined a tile layer (in e.g. LeafLet or OpenLayers) using that, and it needs to be changed from "<a href="http://osm.org">osm.org</a>" to "<a href="http://openstreetmap.org">openstreetmap.org</a>".  If you can let people know where you're getting this error they may be able to investigate further.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/63447/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>13 May '18, 20:57</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-63447">
+</div>
+<div class="comment-tools" id="comment-tools-63447">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-63447-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/63360/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="onieV49sOkLanbAH2NVVY48MD9JFlr1F"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

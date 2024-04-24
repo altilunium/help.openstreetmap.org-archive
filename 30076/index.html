@@ -1,0 +1,277 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/30076/setting-up-osm-windows-server-2008-r2-os">Setting up OSM Windows Server 2008 R2 (OS)</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/30076/up/" id="post-30076-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-30076-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/30076/down/" id="post-30076-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/30076/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello List,</p>
+<p>I have installed PostGRES 9.2 and PostGIS on windows server OS and I am having issues using the import tools to import OSM data to PostGRES.<br/>
+</p>
+<p>Just to start, I do not have an option of running any flavor of linux at all, virtual or not.<br/>
+</p>
+<p>I wanted to use osm2pgsql to import the pbf files of the whole planet into the PostGRES database, but the program keeps crashing in slim mode '--slim'.</p>
+<p>When I switch to osmosis, I just can't get it to setup correctly at all.  When I call the program from the .bat file, it say C:\program isn't a valid path, which it isn't.  So I moved the program to the root and placed it in c:\osmosis\bin.  I still cannot get the osmosis to work.</p>
+<p>Are there database tuning options I need to set in PostGRES?<br/>
+Are there additional commands I need to set on the import of osm2pgsql to help with the program crashing?
+Is there a setup guide for windows for osmosis?</p>
+<p>Thank you</p>
+<p>A</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-postgres" href="/tags/postgres/" rel="tag" title="see questions tagged 'postgres'">postgres</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>22 Jan '14, 13:31</strong>
+</p>
+<img alt="Fisherman12i's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1df0b0daef7049f4aa8561e4c29fd7de?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8200/fisherman12i">Fisherman12i</a><br>
+<span class="score" title="16 reputation points">16</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Fisherman12i has no accepted answers">0%</span>
+</br></br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-30076">
+<a name="30077"></a>
+<div class="comment" id="comment-30077">
+<div class="comment-score" id="post-30077-score">1</div>
+<div class="comment-text"><p>Can you please post the crash log os osm2pgsql?</p></div>
+<div class="comment-info" id="comment-30077-info">
+<span class="comment-age">(22 Jan '14, 13:34)</span>
+<a class="comment-user userinfo" href="/users/4984/iii">iii</a>
+</div>
+</div>
+<a name="30078"></a>
+<div class="comment" id="comment-30078">
+<div class="comment-score" id="post-30078-score"></div>
+<div class="comment-text"><p>where is the crash report located?</p></div>
+<div class="comment-info" id="comment-30078-info">
+<span class="comment-age">(22 Jan '14, 13:39)</span>
+<a class="comment-user userinfo" href="/users/8200/fisherman12i">Fisherman12i</a>
+</div>
+</div>
+<a name="30081"></a>
+<div class="comment" id="comment-30081">
+<div class="comment-score" id="post-30081-score">1</div>
+<div class="comment-text"><p>When iii says "post the crash log", he means "post it to a text sharing site like Pastebin and post the URL here".</p></div>
+<div class="comment-info" id="comment-30081-info">
+<span class="comment-age">(22 Jan '14, 13:50)</span>
+<a class="comment-user userinfo" href="/users/6/jonathan-bennett">Jonathan Ben...</a>
+</div>
+</div>
+<a name="30084"></a>
+<div class="comment" id="comment-30084">
+<div class="comment-score" id="post-30084-score"></div>
+<div class="comment-text"><p>I was asking where the log file lives on the system so I can post it.  I looked in the osm2pgsql folders and didn't find it.  So i was wondering if it's placed in the appdata folders etc...  To be clear on the crashing, the process crashed on windows server, so there might not be a log file.</p></div>
+<div class="comment-info" id="comment-30084-info">
+<span class="comment-age">(22 Jan '14, 14:10)</span>
+<a class="comment-user userinfo" href="/users/8200/fisherman12i">Fisherman12i</a>
+</div>
+</div>
+<a name="30092"></a>
+<div class="comment" id="comment-30092">
+<div class="comment-score" id="post-30092-score">1</div>
+<div class="comment-text"><p>Unless anyone has tried this on W2K8R2 (which I doubt) it's quite possible that no-one knows where the log's going to end up.  It's also possible (given that it's Windows) that the program might be failing because it can't open a logfile (or any other output file).  To try and work around that, try installing away from root and away from "program files" etc. (which it sounds like your're doing) and run from a command prompt so that you can see any errors written to stdout.</p>
+<p>You say that it's "crashing", but what error message do you see that tells you that?</p></div>
+<div class="comment-info" id="comment-30092-info">
+<span class="comment-age">(22 Jan '14, 15:45)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="30095"></a>
+<div class="comment not_top_scorer" id="comment-30095">
+<div class="comment-score" id="post-30095-score"></div>
+<div class="comment-text"><p>Not an answer, but may contain some hints - it might be worth trying to hunt down video / slides for <a href="http://lanyrd.com/2013/sotm/scpkgp/">this SOTM presentation</a>?</p></div>
+<div class="comment-info" id="comment-30095-info">
+<span class="comment-age">(22 Jan '14, 16:06)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="30151"></a>
+<div class="comment not_top_scorer" id="comment-30151">
+<div class="comment-score" id="post-30151-score"></div>
+<div class="comment-text"><p>Crash log is here: <a href="http://pastebin.com/RZLa8cgE">http://pastebin.com/RZLa8cgE</a></p></div>
+<div class="comment-info" id="comment-30151-info">
+<span class="comment-age">(23 Jan '14, 13:53)</span>
+<a class="comment-user userinfo" href="/users/8200/fisherman12i">Fisherman12i</a>
+</div>
+</div>
+<a name="30152"></a>
+<div class="comment not_top_scorer" id="comment-30152">
+<div class="comment-score" id="post-30152-score"></div>
+<div class="comment-text"><p>That's not a log from osm2pgsql as such, just Windows saying that it failed.  Try running from a command prompt to see if you can get anything more meaningful out of it.</p></div>
+<div class="comment-info" id="comment-30152-info">
+<span class="comment-age">(23 Jan '14, 14:05)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="30153"></a>
+<div class="comment not_top_scorer" id="comment-30153">
+<div class="comment-score" id="post-30153-score"></div>
+<div class="comment-text"><p>No error message was spit out from osm2pgsql</p></div>
+<div class="comment-info" id="comment-30153-info">
+<span class="comment-age">(23 Jan '14, 14:39)</span>
+<a class="comment-user userinfo" href="/users/8200/fisherman12i">Fisherman12i</a>
+</div>
+</div>
+<a name="30154"></a>
+<div class="comment not_top_scorer" id="comment-30154">
+<div class="comment-score" id="post-30154-score"></div>
+<div class="comment-text"><p>So what is the actual problem? Can you please provide us the command line you use to invoke the import?</p></div>
+<div class="comment-info" id="comment-30154-info">
+<span class="comment-age">(23 Jan '14, 15:11)</span>
+<a class="comment-user userinfo" href="/users/4984/iii">iii</a>
+</div>
+</div>
+<a name="30155"></a>
+<div class="comment not_top_scorer" id="comment-30155">
+<div class="comment-score" id="post-30155-score"></div>
+<div class="comment-text"><p>Normally postgres log files are put in the data subdirectory of the postgres installation. I generally install postgres in a location with no spaces in directory names. You may wish to change the degree of logging for postgres, which you can do through an option in PgAdmin 3.</p>
+<p>However, before doing any of these things, it is important to know which version of each piece of software you are using and basic info about the configuration of your box (amount of RAM..).</p>
+<p>Try importing Liechtenstein, if it works come back here, else read the docs more closely.</p></div>
+<div class="comment-info" id="comment-30155-info">
+<span class="comment-age">(23 Jan '14, 15:12)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="30156"></a>
+<div class="comment not_top_scorer" id="comment-30156">
+<div class="comment-score" id="post-30156-score"></div>
+<div class="comment-text"><p>OK, so I was wrong - <a href="https://github.com/openstreetmap/osm2pgsql/issues/117">at least one other person</a> uses osm2pgsl on Windows :-)</p></div>
+<div class="comment-info" id="comment-30156-info">
+<span class="comment-age">(23 Jan '14, 15:17)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-30076">
+<span class="comments-showing">
+            showing 5 of 12
+        </span>
+<a class="show-all-comments-link" href="#">show 7 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-30076-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/30076/setting-up-osm-windows-server-2008-r2-os?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/30076/setting-up-osm-windows-server-2008-r2-os?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/30076/setting-up-osm-windows-server-2008-r2-os?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/30076/setting-up-osm-windows-server-2008-r2-os?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="30179"></a>
+<div class="answer" id="answer-container-30179">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/30179/up/" id="post-30179-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-30179-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/30179/down/" id="post-30179-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I was able to setup PostgreSQL (APIDB and PostGIS) loaded PostgreSQL (APIDB) it with the full planet file, and set it up to be updated from the hourly diffs. Using <strong>Windows Professional 7</strong> x64. Not Windows Server 2008R2, but not too different...</p>
+<p>To be able to run osmosis, the PATH variable must contain the directory for the <strong>Java runtime</strong> (JRE). In my case it is "C:\Program Files (x86)\Java\jre7\bin" (was able to run it using the 64-bit JRE, but this is another history). It'll be different for you, likely.</p>
+<p>The command I used to load the planet file was:</p>
+<pre><code>osmosis -v --fast-read-xml file=[location of planet file] --buffer bufferCapacity=100000 --log-progress --write-apidb host=[server] database=[database] user=[user] password=[password]
+</code></pre>
+<p>Most likely you'll want to change the --fast-read-xml to --read-pbf. That "xml" speaks for itself, it was done when the main form of the planet file was XML...</p>
+<p>Also, you may try to add a --tee and the appropriate command to save it to the PostGIS database <em>at the same time</em>.</p>
+<p>If you try to load the full planet file, osmosis (and very likely osmtopgsql as well) will fail with an <strong>PostgreSQL error</strong> stating that it cannot process transactions with more than 2^32 commands in it. For this problem the only workaround I found was to (temporarily!) disable transaction support of osmosis, altering its source code directly. More details about the changes can be found <a href="http://addictedtoosm.wordpress.com/2013/01/03/carga-do-planet-osm-possivel/">here</a> (Note: In portuguese)</p>
+<p>As far as I could find, this is a limitation of PostgreSQL, and may be fixed in the future. It arose about September/2012 when the planet file grew too large.</p>
+<p>For updating from the hourly diffs, I use the following osmosis command:</p>
+<pre><code>osmosis -v --rri workingDirectory=[path_of_osmosis_work_dir] --write-apidb-change host=[your_server] password=[password] database=[database] user=[user] validateSchemaVersion=yes allowIncorrectSchemaVersion=no populateCurrentTables=yes
+</code></pre>
+<p>In this case you also can use --tee to save changes to PostGIS at the same time.</p>
+<p>Anyway, the process took (i7 3770, 32GB RAM, PostgreSQL 9.2 64-bit, tables and index spread over 6 tablespaces on 7 physical disks) <strong>about 1.5 weeks</strong>.</p>
+<p>Make sure you have plenty of free disk space (the APIDB is now 1.5TB, PostGIS probably will grow to about 800GB). The temp files also grow very large, I prefer to unpack the planet file before loading it.</p>
+<p>Please contact me again if your trouble persists.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/30179/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>24 Jan '14, 12:59</strong>
+</p>
+<img alt="MCPicoli's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/94b019f273c04cd88bc1c8dd0a8f2161?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4231/mcpicoli">MCPicoli</a><br>
+<span class="score" title="2172 reputation points"><span class="">2.2k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="30 badges"><span class="silver">●</span><span class="badgecount">30</span></span><span title="47 badges"><span class="bronze">●</span><span class="badgecount">47</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="MCPicoli has 10 accepted answers">24%</span>
+</br></p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/30179/">
+                edited
+                <strong>24 Jan '14, 15:21</strong>
+</a>
+</p>
+<img alt="iii's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/49a7d0e0408e9cf2f698faac0f4d837a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4984/iii">iii</a><br/>
+<span class="score" title="4892 reputation points"><span class="">4.9k</span></span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="40 badges"><span class="silver">●</span><span class="badgecount">40</span></span><span title="82 badges"><span class="bronze">●</span><span class="badgecount">82</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-30179">
+</div>
+<div class="comment-tools" id="comment-tools-30179">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-30179-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/30076/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="cZlOgBV4GE54hX4EuydEPj36DHaSAN5L"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

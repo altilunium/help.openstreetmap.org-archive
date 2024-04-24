@@ -1,0 +1,148 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/70803/full-planet-import-shortest-time">Full Planet Import Shortest Time</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/70803/up/" id="post-70803-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-70803-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/70803/down/" id="post-70803-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/70803/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Considering I can spin up any EC2 Instance (even the strongest ones) and tweaking the configuration for maximum import speed,
+What's the shortest time for a full planet import using <code>osm2pgsql</code> tool?</p>
+<p>is there a bash script that fires <code>osm2pgsql</code> with dynamic values based on the current machine that is running it?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-planet" href="/tags/planet/" rel="tag" title="see questions tagged 'planet'">planet</a>
+<a class="post-tag tag-link-import" href="/tags/import/" rel="tag" title="see questions tagged 'import'">import</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Sep '19, 14:14</strong>
+</p>
+<img alt="LiorM's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/47110f56c594a7515b757d9975b9a8c6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16446/liorm">LiorM</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="8 badges"><span class="bronze">●</span><span class="badgecount">8</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="LiorM has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-70803">
+</div>
+<div class="comment-tools" id="comment-tools-70803">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-70803-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/70803/full-planet-import-shortest-time?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/70803/full-planet-import-shortest-time?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/70803/full-planet-import-shortest-time?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/70803/full-planet-import-shortest-time?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="70804"></a>
+<div class="answer" id="answer-container-70804">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/70804/up/" id="post-70804-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-70804-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/70804/down/" id="post-70804-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>On a 64 GB RAM machine with fast NVMe disks you will typically achieve a full planet import (with slim mode and flatnodes) in about 14 hours. This is for old-fashioned "real" hardware. In the cloud, if RAM is not an issue at all and if you do not need updates, then the fastest imports are probably those run without <code>--slim</code>. My guess (based on smaller extracts) is that this could cut import times down to about 6 hours, but you'll need something like 512 GB of RAM (and still need fast disks). Using <code>--slim --drop</code> on a lesser-RAM machine will also be faster than 14 hours at the expense of updatability. If you have tons of RAM and need updates, then importing to a RAM disk database might be worth a try.</p>
+<p>I am not aware of a script that auto-adapts values.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/70804/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>16 Sep '19, 14:40</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-70804">
+<a name="70805"></a>
+<div class="comment" id="comment-70805">
+<div class="comment-score" id="post-70805-score"></div>
+<div class="comment-text"><p>Can you share the <code>osm2pgsql</code> config so it will run in ~6 hours?
+Plus - whats the CPU / RAM prerequisites to achieve that?</p>
+<p>No need for updates.</p></div>
+<div class="comment-info" id="comment-70805-info">
+<span class="comment-age">(16 Sep '19, 14:49)</span>
+<a class="comment-user userinfo" href="/users/16446/liorm">LiorM</a>
+</div>
+</div>
+<a name="70806"></a>
+<div class="comment" id="comment-70806">
+<div class="comment-score" id="post-70806-score"></div>
+<div class="comment-text"><p>As I said, the 6 hours is a guess of mine; because of the high memory requirements I haven't run osm2pgsql on a planet file without --slim recently. I think if you have 512 GB of RAM and 4-8 cores you should be fine. The exact command line arguments depend on which map style you'll be using etc. but it would likely be something like:</p>
+<p>osm2pgsql -d gis --hstore planet-latest.osm.pbf</p>
+<p>some styles will expect you to use a special style file, a LUA transforms file, and perhaps recommend the <code>-G</code> option for building proper multipolygons, all of which have the potential of slowing things down a little. If you need LUA transforms, then building osm2gpsql with "luajit" can recover some of the time used for LUA processing. I'm not 100% sure about the <code>--cache</code> parameter, it used to be irrelevant for non-slim mode but you'll have to see. Do report back your results!</p></div>
+<div class="comment-info" id="comment-70806-info">
+<span class="comment-age">(16 Sep '19, 16:45)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-70804">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-70804-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/70803/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="l1D8Tx84C3FOiILPCFuPanbsKUpFhsjZ"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

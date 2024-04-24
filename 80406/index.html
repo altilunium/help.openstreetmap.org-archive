@@ -1,0 +1,140 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/80406/extract-all-cities-with-lat-lon-coords-from-slovakia">Extract all cities with lat lon coords from Slovakia</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80406/up/" id="post-80406-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80406-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/80406/down/" id="post-80406-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/80406/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I need to extract all cities with lat lon coords from Slovakia OSM.</p>
+<p>This is how I imported OSM file downloaded from Geofabrik:</p>
+<pre><code>osm2pgsql --slim --username postgres --database gis --hstore slovakia-latest.osm
+psql -U postgres -d gis
+CREATE EXTENSION hstore;
+</code></pre>
+<p>Import went without errors.</p>
+<p>What SELECT query should be to see 3 tables (city, latitude, longitude)?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-city" href="/tags/city/" rel="tag" title="see questions tagged 'city'">city</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 Jun '21, 18:10</strong>
+</p>
+<img alt="akulin's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1aeb86ca63b3378f4f80751ca910ec2e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20307/akulin">akulin</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="akulin has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80406">
+</div>
+<div class="comment-tools" id="comment-tools-80406">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80406-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/80406/extract-all-cities-with-lat-lon-coords-from-slovakia?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/80406/extract-all-cities-with-lat-lon-coords-from-slovakia?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/80406/extract-all-cities-with-lat-lon-coords-from-slovakia?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/80406/extract-all-cities-with-lat-lon-coords-from-slovakia?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="81845"></a>
+<div class="answer answered-by-owner" id="answer-container-81845">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/81845/up/" id="post-81845-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-81845-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/81845/down/" id="post-81845-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<pre><code>SELECT name, st_astext(st_transform(way, 4326)) FROM planet_osm_point WHERE place='city' OR place='town' ORDER BY name;
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/81845/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Sep '21, 16:04</strong>
+</p>
+<img alt="akulin's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1aeb86ca63b3378f4f80751ca910ec2e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20307/akulin">akulin</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="akulin has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/81845/">
+                edited
+                <strong>22 Sep '21, 11:35</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-81845">
+</div>
+<div class="comment-tools" id="comment-tools-81845">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-81845-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/80406/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="9O8utDBIMZyqviSH9k8pLi5n3BEYCtui"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

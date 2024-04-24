@@ -1,0 +1,100 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/44235/osm2pgsqls-import-with-nominatim-is-terminated-unexpectedly">osm2pgsql's import with Nominatim is terminated unexpectedly.</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44235/up/" id="post-44235-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44235-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/44235/down/" id="post-44235-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/44235/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi guys!
+I try to upload a large pbf file(Netherland) from Geofabrik into Nominatim db (with small area import works fine). What I'm doing:</p>
+<p>1)Start this script: ./utils/setup.php --osm-file maps/netherlands-latest.osm.pbf --all --osm2pgsql-cache 6000 2&gt;&amp;1 | tee /opt/Nominatim/setup.log</p>
+<p>2) I'm waiting until proceess terminates unexpectedly. here pg_log file: <a href="http://pastebin.com/auzWXxbP">http://pastebin.com/auzWXxbP</a>
+Also I get errors in setup.log</p>
+<blockquote>
+<p>CREATE INDEX planet_osm_ways_nodes ON
+planet_osm_ways USING gin (nodes) 
+WITH (FASTUPDATE=OFF);  failed: server
+closed the connection unexpectedly
+        This probably means the server terminated abnormally
+        before or while processing the request.</p>
+<p>Error occurred, cleaning up ERROR:
+Error executing external command:
+/opt/Nominatim/osm2pgsql/osm2pgsql
+-lsc -O gazetteer --hstore -C 6000 -P 5432 -d nominatim
+/opt/Nominatim/maps/netherlands-latest.osm.pbf
+Error executing external command:
+/opt/Nominatim/osm2pgsql/osm2pgsql
+-lsc -O gazetteer --hstore -C 6000 -P 5432 -d nominatim
+/opt/Nominatim/maps/netherlands-latest.osm.pbf
+~</p>
+</blockquote>
+<p>What am I doing wrong? is that hardware issue (mem 8Gb) or something else? Any ideas will be appreciated. </p>
+<p><strong>Update:</strong>
+pg_log: <a href="http://pastebin.com/CGSAchit">http://pastebin.com/CGSAchit</a> it is crashed on "Failed process was running: CREATE INDEX planet_osm_ways_nodes ON planet_osm_ways USING gin (nodes)  WITH (FASTUPDATE=OFF);" and I don't know what's going wrong with it.  </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-linux" href="/tags/linux/" rel="tag" title="see questions tagged 'linux'">linux</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>17 Jul '15, 10:34</strong>
+</p>
+<img alt="Silentium's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c14774eb4c4f7361a4e908fa59d9827d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11135/silentium">Silentium</a><br/>
+<span class="score" title="9 reputation points">9</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Silentium has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/44235/">
+                edited
+                <strong>17 Jul '15, 13:03</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44235">
+</div>
+<div class="comment-tools" id="comment-tools-44235">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44235-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/44235/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="WcQ8T2XgORcDsAZTD41Z8qMw3zJ5oeKu"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,190 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/68759/how-to-retrieve-geotile-from-osm">How to retrieve geotile from OSM ?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68759/up/" id="post-68759-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68759-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/68759/down/" id="post-68759-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/68759/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am using Cesium, and I would like to make a 3d city representation.</p>
+<p>I would like to retrieve a .json of the current location I am from OpenStreetMap. I have the position and the altitude of where I am.</p>
+<p>The problem is that I do not understand/can't find from which url source I can retrieve buildings ID and their relative height for a defined tileset position in openstreetmap</p>
+<p>I found a lot of exemple on internet and lib that do this, but I need to do it from source, and I do not quite know how.</p>
+<p>Basically, how does for exemple this : <a href="https://osmbuildings.org/">https://osmbuildings.org/</a> get the data from</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-building" href="/tags/building/" rel="tag" title="see questions tagged 'building'">building</a>
+<a class="post-tag tag-link-tiles" href="/tags/tiles/" rel="tag" title="see questions tagged 'tiles'">tiles</a>
+<a class="post-tag tag-link-geocoding" href="/tags/geocoding/" rel="tag" title="see questions tagged 'geocoding'">geocoding</a>
+<a class="post-tag tag-link-3d" href="/tags/3d/" rel="tag" title="see questions tagged '3d'">3d</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>11 Apr '19, 10:03</strong>
+</p>
+<img alt="Popolee's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f5b0c2461f5b2cabf3bc0708903e90e6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16526/popolee">Popolee</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Popolee has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/68759/">
+                edited
+                <strong>11 Apr '19, 10:25</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68759">
+</div>
+<div class="comment-tools" id="comment-tools-68759">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68759-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/68759/how-to-retrieve-geotile-from-osm?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/68759/how-to-retrieve-geotile-from-osm?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/68759/how-to-retrieve-geotile-from-osm?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/68759/how-to-retrieve-geotile-from-osm?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="68782"></a>
+<div class="answer" id="answer-container-68782">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68782/up/" id="post-68782-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68782-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/68782/down/" id="post-68782-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Generally speaking, openstreetmap.org itself only provides raw data. This is done as bulk downloads of the entire planet and as very small on demand extracts for editing purposes. There is some capacity for larger extracts on openstreetmap.org, but availability is <a href="https://wiki.openstreetmap.org/wiki/Databases_and_data_access_APIs#Sources_of_OSM_Data">dependant on server load</a>. Regularly updated extracts for countries/cities are available <a href="https://wiki.openstreetmap.org/wiki/Planet.osm#Country_and_area_extracts">via other sites</a>. I believe, <a href="https://download.bbbike.org/osm/">bbbike.org</a>'s service supports geojson, if that is what you require. </p>
+<p>Unfortunately, for the larger part of your question I can't offer much help. OpenStreetMap has it's own data format that stores what 3D information it has as tags on the relevant objects. The most common scheme for this seems to be <a href="https://wiki.openstreetmap.org/wiki/Simple_3D_buildings">Simple 3D Buildings</a>. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/68782/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>13 Apr '19, 14:52</strong>
+</p>
+<img alt="InsertUser's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ec8a0cf213f9797ad1c1ae2c28c2332d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4426/insertuser">InsertUser</a><br/>
+<span class="score" title="11005 reputation points"><span class="">11.0k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="69 badges"><span class="silver">●</span><span class="badgecount">69</span></span><span title="185 badges"><span class="bronze">●</span><span class="badgecount">185</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="InsertUser has 73 accepted answers">19%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68782">
+</div>
+<div class="comment-tools" id="comment-tools-68782">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68782-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="76723"></a>
+<div class="answer" id="answer-container-76723">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/76723/up/" id="post-76723-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-76723-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/76723/down/" id="post-76723-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>(Copied from <a href="https://stackoverflow.com/a/55749711/1391631">my StackOverflow answer</a> to the same question.)</p>
+<p>OSM has the data that's necessary to set up such a service, but the various providers use different formats as there's not really a clear standard yet (unlike with 2D raster and, arguably, vector maps). For use with Cesium, you probably want <a href="https://github.com/AnalyticalGraphicsInc/3d-tiles">Cesium 3D Tiles</a>.</p>
+<p>Cesium is offering their own building layer based on OSM data, called <a href="https://cesium.com/content/cesium-osm-buildings/">Cesium OSM Buildings</a> (no relationship with OSM Buildings), on their Cesium Ion platform. It does not fully support the OSM data model at this point, but the Cesium integration is obviously well done.</p>
+<p>I'm not sure what <a href="https://osmbuildings.org/">OSM Buildings</a> is currently using, but it does not seem to be the same as Cesium's 3D Tiles. <a href="https://github.com/OSMBuildings/OSMBuildings/blob/master/docs/server.md">Some older info on GitHub</a> mentions using GeoJSON, but looking at the network traffic, it now seems to be using <a href="https://docs.mapbox.com/vector-tiles/specification/">Mapbox Vector tiles</a>, which is not a format specialized for 3D data, but rather a general-purpose solution for transmitting OSM data (and other data sources) as tiled vector maps. On <a href="https://osmbuildings.org/data/">osmbuildings.org/data</a>, they mention that they are willing to provide data in other formats for commercial customers, though, if that's an option for you.</p>
+<p>Finally, some people have experimented with providing OSM for Cesium using open source software (see e.g. the <a href="https://github.com/kiselev-dv/osm-cesium-3d-tiles">osm-cesium-3d-tiles</a> and <a href="https://github.com/stirringhalo/osm2cesium">osm2cesium</a> repos). This might be a starting point for setting up your own service if you're willing to go down that path, but it's definitely not a complete and polished solution at this point.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/76723/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>20 Sep '20, 16:36</strong>
+</p>
+<img alt="Tordanik's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0626be5f46f32fce501353e8a5ec399c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14/tordanik">Tordanik</a><br/>
+<span class="score" title="11998 reputation points"><span class="">12.0k</span></span><span title="15 badges"><span class="badge1">●</span><span class="badgecount">15</span></span><span title="106 badges"><span class="silver">●</span><span class="badgecount">106</span></span><span title="147 badges"><span class="bronze">●</span><span class="badgecount">147</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Tordanik has 58 accepted answers">35%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-76723">
+</div>
+<div class="comment-tools" id="comment-tools-76723">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-76723-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/68759/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="fx2y4KIS8JbpBgT8DMZ0fHKN5jx7Liy3"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

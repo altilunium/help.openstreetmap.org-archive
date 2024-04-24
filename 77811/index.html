@@ -1,0 +1,144 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/77811/can-we-use-a-single-postrges-db-to-serve-several-osm-services">can we use a single postrges DB to serve several OSM services?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/77811/up/" id="post-77811-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-77811-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/77811/down/" id="post-77811-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/77811/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi All, </p>
+<p>First post here. I would like to start by thanking the fantastic OSM community. I started getting interested in GIS relatively recently, and I must say that I have a lot of fun doing geospatial analysis so far. This is mostly permitted thanks to your awesome work!</p>
+<p>Please be forgiving if my question is a bit naive, but I would love to hear your thoughts on the following.
+I am working on a project that relies extensively on various geospatial services, I am therefore considering setting up my own instance of OSM with the following services</p>
+<ul>
+<li>geocoding and reverse geocoding</li>
+<li>POIs retrieval</li>
+<li>routing</li>
+</ul>
+<p>I am able to find docker images for each service, which is great, but as far as I understood, each service is independent of the others. For example, if I want to set up those services for Luxembourg, I would need to do three different data ingestions into three different containers running each their own database. </p>
+<p>What I would ideally like to achieve is to have a single Postgres DB that can be used by each service. I did a bit of googling but, to my surprise, this didn't seem to be a very common use-case. So now I am wondering if this is actually doable? If yes, any pointers to the relevant resources will be highly appreciated :) </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-services" href="/tags/services/" rel="tag" title="see questions tagged 'services'">services</a>
+<a class="post-tag tag-link-docker" href="/tags/docker/" rel="tag" title="see questions tagged 'docker'">docker</a>
+<a class="post-tag tag-link-server" href="/tags/server/" rel="tag" title="see questions tagged 'server'">server</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>30 Nov '20, 17:14</strong>
+</p>
+<img alt="fatgere's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/6502c95828abba0ec99e7a13d550e962?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19351/fatgere">fatgere</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="fatgere has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-77811">
+</div>
+<div class="comment-tools" id="comment-tools-77811">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-77811-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/77811/can-we-use-a-single-postrges-db-to-serve-several-osm-services?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/77811/can-we-use-a-single-postrges-db-to-serve-several-osm-services?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/77811/can-we-use-a-single-postrges-db-to-serve-several-osm-services?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/77811/can-we-use-a-single-postrges-db-to-serve-several-osm-services?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="77813"></a>
+<div class="answer" id="answer-container-77813">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/77813/up/" id="post-77813-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-77813-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/77813/down/" id="post-77813-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>No. There is some <a href="https://github.com/openstreetmap/osm2pgsql/issues/1311#issuecomment-733707688">work related to a single database for geocoding and rendering</a> that could help, but most routing engines don't use a general purpose database but instead run something specialized.</p>
+<p>Where a general purpose database like PostgreSQL is used there are a wide assortment of schemas to put the data into, and </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/77813/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Nov '20, 18:04</strong>
+</p>
+<img alt="pnorman's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/5634c46072077e10f5b7c0da9b4bbb62?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/290/pnorman">pnorman</a><br/>
+<span class="score" title="2352 reputation points"><span class="">2.4k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="21 badges"><span class="silver">●</span><span class="badgecount">21</span></span><span title="40 badges"><span class="bronze">●</span><span class="badgecount">40</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="pnorman has 9 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-77813">
+<a name="77817"></a>
+<div class="comment" id="comment-77817">
+<div class="comment-score" id="post-77817-score"></div>
+<div class="comment-text"><p>Thanks <a href="https://help.openstreetmap.org/users/290/pnorman">@pnorman</a> for your reply. Really helpful to know that this is actually not possible. I think your reply got cut at some points, would be interested to read the last part though :)</p></div>
+<div class="comment-info" id="comment-77817-info">
+<span class="comment-age">(30 Nov '20, 19:21)</span>
+<a class="comment-user userinfo" href="/users/19351/fatgere">fatgere</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-77813">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-77813-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/77811/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="tHFVtc2YLGfbBBDCyEBgLbKAYQR2GFaP"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

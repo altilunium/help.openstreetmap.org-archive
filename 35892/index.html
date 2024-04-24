@@ -1,0 +1,97 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/35892/how-to-let-tile-server-rebuild-all-tiles-of-a-given-area">How to let tile server rebuild all tiles of a given area?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/35892/up/" id="post-35892-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-35892-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/35892/down/" id="post-35892-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/35892/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>If I need to dirty all tiles of a given zoomlevel and area, how do I do that? Is there a way to find out the URLs of the tiles currently displayed, to then append /dirty to them?</p>
+<p>e.g. <a href="http://www.openstreetmap.org/#map=16/44.2611/15.2978">http://www.openstreetmap.org/#map=16/44.2611/15.2978</a></p>
+<p>I know that it rerenders them after some period of time after beeing last accessed. But in the map posted above it has rendered one of the tiles one half and cut of the parking sign and the restaurant.</p>
+<p>Edit:
+Now it has rerendere the faulty tile automatically. But the questions remains.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-zoomlevel" href="/tags/zoomlevel/" rel="tag" title="see questions tagged 'zoomlevel'">zoomlevel</a>
+<a class="post-tag tag-link-tiles" href="/tags/tiles/" rel="tag" title="see questions tagged 'tiles'">tiles</a>
+<a class="post-tag tag-link-dirty" href="/tags/dirty/" rel="tag" title="see questions tagged 'dirty'">dirty</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Aug '14, 16:38</strong>
+</p>
+<img alt="Linutux's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0b590312e396aae3377e31b3a3291d1e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9450/linutux">Linutux</a><br/>
+<span class="score" title="76 reputation points">76</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Linutux has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/35892/">
+                edited
+                <strong>16 Aug '14, 18:47</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-35892">
+<a name="35902"></a>
+<div class="comment" id="comment-35902">
+<div class="comment-score" id="post-35902-score"></div>
+<div class="comment-text"><p>I don't have a ready solution, but here are the <a href="https://wiki.openstreetmap.org/wiki/Tile_expire_methods">manual instructions</a> to trigger renderd.</p></div>
+<div class="comment-info" id="comment-35902-info">
+<span class="comment-age">(16 Aug '14, 22:27)</span>
+<a class="comment-user userinfo" href="/users/4984/iii">iii</a>
+</div>
+</div>
+<a name="35911"></a>
+<div class="comment" id="comment-35911">
+<div class="comment-score" id="post-35911-score"></div>
+<div class="comment-text"><p>As a bit of background, it might be worth looking at <a href="https://help.openstreetmap.org/questions/178/how-often-does-the-main-mapnik-map-get-updated">this previous question</a>, which explains how the rerendering process works.  One exception to the "normally updates within a few minutes" conclusion of the main answer there is after the "standard" stylesheet has changed, as all tiles are effectively out of date.  IF you look at <a href="http://help.openstreetmap.org/questions/527/how-can-i-make-sense-of-muninopenstreetmaporg/528">this other previous answer</a> it explains a bit about this - and the second link from that answer is to a munin graph showing the <a href="http://munin.openstreetmap.org/openstreetmap/yevaud.openstreetmap/renderd_queue.html">queue of tiles to be rendered</a>.</p>
+<p>What this means is that if you spot an area that's out of date it might be because a stylesheet update has just happened (the project for that is <a href="https://github.com/gravitystorm/openstreetmap-carto">here</a>; after a release is made there it is usually taken live on osm.org by the admins shortly afterwards).</p></div>
+<div class="comment-info" id="comment-35911-info">
+<span class="comment-age">(17 Aug '14, 10:44)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-35892">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-35892-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/35892/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="oIEnoCIZRuP7cj3mP2KITY7e76faHzkG"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,248 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/73208/reading-of-osm-database-parameters">Reading of OSM database parameters</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/73208/up/" id="post-73208-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-73208-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/73208/down/" id="post-73208-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/73208/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi all,
+two days ago I asked the question entitled: "Data of routes characteristics (nodes, orientation) of a pedestrian walking path". I had no answers, but only a comment, useful and I thanks, but I would like to better formulate the question. I need to know the direction (orientation towards the north) of a straight road, of which you know the street, between two known addresses (e.g. address with house number). I need to know the value with the best possible accuracy. I would like to ask if it is possible to know the value of the direction, that I suppose is stored,  by asking a question to the OSM database without calculating the value through the coordinates of the two points after reading them on the display. As you know it's difficult to position the points on the display very well and this can cause errors
+Thank you very much</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-database" href="/tags/database/" rel="tag" title="see questions tagged 'database'">database</a>
+<a class="post-tag tag-link-display" href="/tags/display/" rel="tag" title="see questions tagged 'display'">display</a>
+<a class="post-tag tag-link-orientation" href="/tags/orientation/" rel="tag" title="see questions tagged 'orientation'">orientation</a>
+<a class="post-tag tag-link-road" href="/tags/road/" rel="tag" title="see questions tagged 'road'">road</a>
+<a class="post-tag tag-link-accuracy" href="/tags/accuracy/" rel="tag" title="see questions tagged 'accuracy'">accuracy</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>23 Feb '20, 20:51</strong>
+</p>
+<img alt="SergioV's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0b7b93f8f715fa9978fda52959b494ae?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17934/sergiov">SergioV</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SergioV has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-73208">
+</div>
+<div class="comment-tools" id="comment-tools-73208">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-73208-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/73208/reading-of-osm-database-parameters?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/73208/reading-of-osm-database-parameters?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/73208/reading-of-osm-database-parameters?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/73208/reading-of-osm-database-parameters?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="73209"></a>
+<div class="answer" id="answer-container-73209">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/73209/up/" id="post-73209-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-73209-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/73209/down/" id="post-73209-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Assuming that:</p>
+<ul>
+<li>you have two addresses with house numbers</li>
+<li>OpenStreetMap knows these addresses i.e. Nominatim can actually geocode them to the correct location</li>
+<li>the road between the two addresses is straight</li>
+</ul>
+<p>Then the steps required would be the following:</p>
+<ul>
+<li>geocode location 1 (resulting in lat1, lon1)</li>
+<li>geocode location 2 (resulting in lat2, lon2)</li>
+<li>calculate bearing (or heading) angle betwen lat1,lon1 and lat2,lon2 using a suitable formula (e.g. <a href="https://www.igismap.com/formula-to-find-bearing-or-heading-angle-between-two-points-latitude-longitude/)">https://www.igismap.com/formula-to-find-bearing-or-heading-angle-between-two-points-latitude-longitude/)</a></li>
+</ul>
+<p>This will yield precise results independent of display. However, it will give you the angle between the two address points which is not necessarily the angle of the street. If you want to be super precise, you will need to identify the street (possibly through an additional geocoding request) and retrieve its geometry, then drop the perpendicular from each of the address points to the street geometry, and use the resulting points that lie on the street for the angle calculation. This will be harder if for any reason the street should consist of multiple parts in OSM.</p>
+<p>There is no web service that would do this work for you.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/73209/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>23 Feb '20, 21:00</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-73209">
+</div>
+<div class="comment-tools" id="comment-tools-73209">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-73209-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="73223"></a>
+<div class="answer" id="answer-container-73223">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/73223/up/" id="post-73223-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-73223-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/73223/down/" id="post-73223-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>In the OSM database, ways (which are used to model streets among others) are mostly a list of nodes. Only the node have coordinates. See the OSM wiki for more details about the OSM.database model.</p>
+<p>So no, the direction of the ways is not stored. And they are usually not straight if composed of more than two nodes.</p>
+<p>I guess that routers (like graphhopper, OSRM, etc, see the other question) will provide the direction of each segment of a calculated route between two points. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/73223/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>24 Feb '20, 23:24</strong>
+</p>
+<img alt="H_mlet's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9434692e9afccaf03af5acf20b3a3279?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13231/h_mlet">H_mlet</a><br/>
+<span class="score" title="5443 reputation points"><span class="">5.4k</span></span><span title="17 badges"><span class="silver">●</span><span class="badgecount">17</span></span><span title="81 badges"><span class="bronze">●</span><span class="badgecount">81</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="H_mlet has 40 accepted answers">13%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-73223">
+</div>
+<div class="comment-tools" id="comment-tools-73223">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-73223-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="73224"></a>
+<div class="answer answered-by-owner" id="answer-container-73224">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/73224/up/" id="post-73224-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-73224-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/73224/down/" id="post-73224-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Thanks for the answers. So if I need to know the direction of a stretch of road accurately I have to measure the coordinates of two points belonging to the stretch of road very accurately. I can't read the coordinates of the points on the display where the OSM is represented because it's not an accurate method, unless I zoom in on the map presentation</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/73224/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Feb '20, 00:03</strong>
+</p>
+<img alt="SergioV's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0b7b93f8f715fa9978fda52959b494ae?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17934/sergiov">SergioV</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SergioV has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-73224">
+<a name="73225"></a>
+<div class="comment" id="comment-73225">
+<div class="comment-score" id="post-73225-score"></div>
+<div class="comment-text"><p>Yes. Drawing a map always incurs a loss of precision. Just how big that loss is depends on many factors, including resolution and zoom level, but also the particular map style and parameters used for drawing (for example, some maps might simplify geometries before drawing). To get best results you would first have to retrieve the data behind the map, e.g. through services like Nominatim or Overpass, and then base your computation on that.</p></div>
+<div class="comment-info" id="comment-73225-info">
+<span class="comment-age">(25 Feb '20, 00:09)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-73224">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-73224-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/73208/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="uwprxo4GHwkJG1u5XtcOJAh8LdHKMnLk"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

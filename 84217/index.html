@@ -1,0 +1,152 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/84217/error-message-no-default-pipes-are-available-as-input-for-task-3-tee">Error message : "No default pipes are available as input for task 3-tee"</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/84217/up/" id="post-84217-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-84217-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/84217/down/" id="post-84217-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/84217/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello, all,</p>
+<p>Extracting data from the latest europe geofabrik pbf is a lengthy process. I want to extract 2 kinds of data, i.e. speed camera's and some brand's fuel stations. So to avoid spending too much time in the process, I am looking for the correct way to do so using osmosis. Could someone help me out on this ? I would think my command line should look something like</p>
+<pre><code>"$OSMOSIS" --read-pbf $DATAIDIR/europe-latest.osm.pbf --write-xml outPipe.1="allxml" --tee 3 --read-xml inPipe.1="allxml" --node-key-value keyValueList="highway.speed_camera" --write-xml $DATAODIR/radars.osm --read-xml inPipe.2="allxml" --node-key-value keyValueList="amenity.fuel" --write-xml outPipe.2="nafte" --read-xml inPipe.2="nafte" --tf accept-nodes brand=DATS%s24 --write-xml $DATAODIR/DATS24.osm
+</code></pre>
+<p>but I get an error "org.openstreetmap.osmosis.core.OsmosisRuntimeException: No default pipes are available as input for task 3-tee."</p>
+<p>In short, I don't arrive at the point of understanding the correct usage of the pipes and of the --tee argument.</p>
+<p>Could someone please explain, because despite the detailed osmosis 0.47 usage manual, I don't get at any better result than the one above. Thanks a lot in advance !</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-pipes" href="/tags/pipes/" rel="tag" title="see questions tagged 'pipes'">pipes</a>
+<a class="post-tag tag-link-tee" href="/tags/tee/" rel="tag" title="see questions tagged 'tee'">tee</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>19 Apr '22, 15:29</strong>
+</p>
+<img alt="sudolea's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bff07f8a6b3cbf4c2bfff3330a775bc4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/21650/sudolea">sudolea</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="sudolea has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-84217">
+</div>
+<div class="comment-tools" id="comment-tools-84217">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-84217-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/84217/error-message-no-default-pipes-are-available-as-input-for-task-3-tee?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/84217/error-message-no-default-pipes-are-available-as-input-for-task-3-tee?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/84217/error-message-no-default-pipes-are-available-as-input-for-task-3-tee?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/84217/error-message-no-default-pipes-are-available-as-input-for-task-3-tee?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="84218"></a>
+<div class="answer" id="answer-container-84218">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/84218/up/" id="post-84218-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-84218-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/84218/down/" id="post-84218-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>In general, if you can use <code>osmium</code> instead of <code>osmosis</code>, things will work faster. Your command line does not work because your first <code>--write-xml</code> already consumes the data stream created by <code>--read-pbf</code> and hence no data stream remains to feed into the <code>--tee</code>. I think if you drop the first <code>--write-xml</code> and <em>all</em> <code>--read-xml</code>s things might work. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/84218/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Apr '22, 15:47</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-84218">
+<a name="84221"></a>
+<div class="comment" id="comment-84221">
+<div class="comment-score" id="post-84221-score"></div>
+<div class="comment-text"><p>Yes ! This works indeed. Thank you so much ! So my final command line reads :</p>
+<p><code>"$OSMOSIS" --read-pbf $DATAIDIR/europe-latest.osm.pbf --tee 2 --node-key-value keyValueList="highway.speed_camera" --write-xml $DATAODIR/radars.osm --node-key-value keyValueList="amenity.fuel" --tf accept-nodes brand=DATS%s24 --write-xml $DATAODIR/DATS24.osm</code></p>
+<p>Being unfamiliar with the osmium utility you suggest, and not immediately seeing the parallel osmium command I'd need to compare speeds, could I ask you how my osmosis command would (more or less) read in osmium ?</p>
+<p>In the meantime, my "mental picture", with regard to osmosis' tee argument, is :
+<strong>whenever there is <em>any</em> write option, the <em>next</em> argument is the start of tee's next pipe</strong>
+I don't think I'm far off, am I ?</p></div>
+<div class="comment-info" id="comment-84221-info">
+<span class="comment-age">(19 Apr '22, 16:52)</span>
+<a class="comment-user userinfo" href="/users/21650/sudolea">sudolea</a>
+</div>
+</div>
+<a name="84222"></a>
+<div class="comment" id="comment-84222">
+<div class="comment-score" id="post-84222-score">1</div>
+<div class="comment-text"><p>Your logic regarding osmosis is almost correct, replace "any write option" with "any option that consumes a stream and doesn't output one again". With osmium, you would probably require several runs since you cannot AND-combine expressions, but since only the first run would consume the large Europe file and every subsequent run would only work on a small intermediate file, that should still go quite fast. See <a href="https://docs.osmcode.org/osmium/latest/osmium-tags-filter.html">https://docs.osmcode.org/osmium/latest/osmium-tags-filter.html</a></p></div>
+<div class="comment-info" id="comment-84222-info">
+<span class="comment-age">(19 Apr '22, 17:51)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-84218">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-84218-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/84217/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="wx1jsT3p6RlbAwcKW7hLeqPw83JSiH8c"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

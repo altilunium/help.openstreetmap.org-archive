@@ -1,0 +1,98 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/20286/mod_tile-build-on-rhel5">mod_tile build on RHEL5</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/20286/up/" id="post-20286-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-20286-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/20286/down/" id="post-20286-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/20286/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am trying to build mod_tile on my RHEL5 Tile Server. Attempting to modify these instructions: <a href="http://en.flossmanuals.net/openstreetmap/setting-up-your-own-tile-server/">http://en.flossmanuals.net/openstreetmap/setting-up-your-own-tile-server/</a> for RHEL5, and installing Mapnik from these instructions: <a href="http://svn.osgeo.org/osgeo/foss4g/benchmarking/wms/2010/mapnik/scripts/install_mapnik_rhel_5.5.sh">http://svn.osgeo.org/osgeo/foss4g/benchmarking/wms/2010/mapnik/scripts/install_mapnik_rhel_5.5.sh</a> I finally have created a static image with mapnik0.7.3. However now I am trying to build mod_tile, with:</p>
+<p>./autogen.sh \
+--with-libmapnik=/opt/mapnik/mapnik-seven/lib64 \
+--with-boost=no \
+--with-apxs=/opt/mapnik/bin/apxs \
+--with-boost-libdir=/opt/mapnik/lib</p>
+<p>./configure \
+--with-libmapnik=/opt/mapnik/mapnik-seven/lib64 \
+--with-boost=no \
+--with-apxs=/opt/mapnik/bin/apxs \
+--with-boost-libdir=/opt/mapnik/lib</p>
+<p>Now when I issue 'make' I get this mess:</p>
+<p>make  all-recursive
+make[1]: Entering directory <code>/opt/mapnik/src/mod_tile'
+Making all in iniparser3.0b
+make[2]: Entering directory</code>/opt/mapnik/src/mod_tile/iniparser3.0b'
+if  --tag=CC --mode=compile gcc -std=gnu99 -DHAVE_CONFIG_H -I. -I. -I..     -O3 -MT iniparser.lo -MD -MP -MF ".deps/iniparser.Tpo" -c -o iniparser.lo <code>test -f 'src/iniparser.c' || echo './'</code>src/iniparser.c; \
+        then mv -f ".deps/iniparser.Tpo" ".deps/iniparser.Plo"; else rm -f ".deps/iniparser.Tpo"; exit 1; fi
+/bin/sh: --tag=CC: command not found
+make[2]: <strong><em> [iniparser.lo] Error 1
+make[2]: Leaving directory <code>/opt/mapnik/src/mod_tile/iniparser3.0b'
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory</code>/opt/mapnik/src/mod_tile'
+make: </em></strong> [all] Error 2</p>
+<p>I am at my wit's end. I am a linux newbie so don't assume I know or did anything ;-)</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-mod_tile" href="/tags/mod_tile/" rel="tag" title="see questions tagged 'mod_tile'">mod_tile</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+<a class="post-tag tag-link-tileserver" href="/tags/tileserver/" rel="tag" title="see questions tagged 'tileserver'">tileserver</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 Feb '13, 22:11</strong>
+</p>
+<img alt="maw269's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fbb15843641ffaf1c2259cc7ebb4735c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/233/maw269">maw269</a><br/>
+<span class="score" title="115 reputation points">115</span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="7 badges"><span class="silver">●</span><span class="badgecount">7</span></span><span title="14 badges"><span class="bronze">●</span><span class="badgecount">14</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="maw269 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/20286/">
+                edited
+                <strong>25 Feb '13, 22:12</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-20286">
+</div>
+<div class="comment-tools" id="comment-tools-20286">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-20286-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/20286/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="oj8CyEhc8CExKCMyDIPvhQdgdVM5BTvL"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

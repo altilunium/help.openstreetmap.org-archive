@@ -1,0 +1,180 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/77011/solved-osmosis-not-writing-file-for-me-windows-10">[Solved] osmosis not writing file for me - Windows 10</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/77011/up/" id="post-77011-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-77011-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/77011/down/" id="post-77011-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/77011/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I apologise for such a silly question as I realise I must be doing something really silly.  All help will be greatly appreciated.</p>
+<p>The command </p>
+<pre><code>osmosis --read-xml "C:\Users\John\Desktop\Test.osm" --write-xml "C:\Users\John\Desktop\fred.osm"
+</code></pre>
+<p>does not write fred.osm.  osmosis runs and I get:</p>
+<p><em>C:\Users\John\Desktop&gt;osmosis --read-xml "C:\Users\John\Desktop\Test.osm" --write-xml "C:\Users\John\Desktop\fred.osm"
+C:\Users\John\Desktop&gt;"C:\Program Files (x86)\Osmosis\bin\osmosis.bat"Oct 08, 2020 4:58:36 PM &gt; org.openstreetmap.osmosis.core.Osmosis run
+INFO: Osmosis Version 0.48.3
+Oct 08, 2020 4:58:36 PM org.openstreetmap.osmosis.core.Osmosis run
+INFO: Preparing pipeline.
+Oct 08, 2020 4:58:36 PM org.openstreetmap.osmosis.core.Osmosis run
+INFO: Launching pipeline execution.
+Oct 08, 2020 4:58:36 PM org.openstreetmap.osmosis.core.Osmosis run
+INFO: Pipeline executing, waiting for completion.
+Oct 08, 2020 4:58:36 PM org.openstreetmap.osmosis.core.Osmosis run
+INFO: Pipeline complete.
+Oct 08, 2020 4:58:36 PM org.openstreetmap.osmosis.core.Osmosis run
+INFO: Total execution time: 786 milliseconds.</em></p>
+<p>Setup.</p>
+<ol>
+<li>I copied osmosis to C:\Program Files (x86)\osmosis.</li>
+<li>Test.osm is on the desktop.</li>
+<li>I have Java 8 Update 261 and Java Update 261 (64 bit) installed</li>
+<li>I started a CMD window and entered <code>osmosis --read-xml "C:\Users\John\Desktop\Test.osm" --write-xml "C:\Users\John\Desktop\fred.osm"</code></li>
+<li>I tried without paths as <code>osmosis --read-xml Test.osm --write-xml fred.osm</code> but it did not write</li>
+<li>
+<p>Test.osm contains</p>
+<p>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;osm version="0.6" generator="ANW"&gt;
+&lt;bounds minlat="49.7667486" minlon="-8.1628456" maxlat="60.8081270" maxlon="1.7604432"/&gt;
+&lt;node id="1152921504610000001" lat="57.1496060" lon="-2.0969160" user="nobody" uid="1" visible="true" version="1" changeset="1" timestamp="2013-01-25T01:21:31Z"&gt;
+&lt;tag k="amenity" v="postal_code"/&gt;
+&lt;tag k="name" v="AB10 1AB"/&gt;
+&lt;/node&gt;
+&lt;node id="1152921504610000002" lat="57.1487070" lon="-2.0978060" user="nobody" uid="1" visible="true" version="1" changeset="1" timestamp="2013-01-25T01:21:31Z"&gt;
+&lt;tag k="amenity" v="postal_code"/&gt;
+&lt;tag k="name" v="AB10 1AF"/&gt;
+&lt;/node&gt;
+&lt;/osm&gt;</p>
+</li>
+</ol>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-windows" href="/tags/windows/" rel="tag" title="see questions tagged 'windows'">windows</a>
+<a class="post-tag tag-link-10" href="/tags/10/" rel="tag" title="see questions tagged '10'">10</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>08 Oct '20, 18:14</strong>
+</p>
+<img alt="John-Ha's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a99494537d2727b5ac2d5e58ddd6793b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19090/john-ha">John-Ha</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="John-Ha has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/77011/">
+                edited
+                <strong>08 Oct '20, 20:39</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-77011">
+</div>
+<div class="comment-tools" id="comment-tools-77011">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-77011-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/77011/solved-osmosis-not-writing-file-for-me-windows-10?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/77011/solved-osmosis-not-writing-file-for-me-windows-10?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/77011/solved-osmosis-not-writing-file-for-me-windows-10?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/77011/solved-osmosis-not-writing-file-for-me-windows-10?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="77013"></a>
+<div class="answer answered-by-owner" id="answer-container-77013">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/77013/up/" id="post-77013-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-77013-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/77013/down/" id="post-77013-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I am getting there. It is a paths problem.</p>
+<ol>
+<li>Place the osmosis folder on the desktop</li>
+<li>Place test.osm in the osmosis\bin folder along with osmosis.bat</li>
+<li>Create a shortcut for osmosis.bat. r-click &gt; Properties.  Add C:\Windows\System32\cmd.exe /k in Target so it reads C:\Windows\System32\cmd.exe /k  C:\Users\John\Desktop\Osmosis\bin\osmosis.bat </li>
+<li>click the shortcut to run osmosis</li>
+<li>type osmosis --read-xml file=Test.osm --write-xml file=fred.osm</li>
+</ol>
+<p>osmosis runs and fred.osm is written to \bin.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/77013/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Oct '20, 19:27</strong>
+</p>
+<img alt="John-Ha's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a99494537d2727b5ac2d5e58ddd6793b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19090/john-ha">John-Ha</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="John-Ha has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-77013">
+</div>
+<div class="comment-tools" id="comment-tools-77013">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-77013-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/77011/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="ed2uWOLd1ybHzYSxMFijaLt2Rf1EcTtu"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,113 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/68751/adding-new-node-shift-d-wipes-map-on-josm">Adding new node (Shift-D) wipes map on JOSM</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68751/up/" id="post-68751-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68751-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/68751/down/" id="post-68751-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/68751/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,
+When I try to add a new node using coordinates (Shift-D command), the rest of the data on the map disappears.</p>
+<p>The data doesn't seem to be deleted because the file still has the same amount of nodes and ways. </p>
+<p>This seems to be an interface or display thing? I haven't been able to find any post about it. </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-node" href="/tags/node/" rel="tag" title="see questions tagged 'node'">node</a>
+<a class="post-tag tag-link-josm" href="/tags/josm/" rel="tag" title="see questions tagged 'josm'">josm</a>
+<a class="post-tag tag-link-shift-d" href="/tags/shift-d/" rel="tag" title="see questions tagged 'shift-d'">shift-d</a>
+<a class="post-tag tag-link-wipe" href="/tags/wipe/" rel="tag" title="see questions tagged 'wipe'">wipe</a>
+<a class="post-tag tag-link-map" href="/tags/map/" rel="tag" title="see questions tagged 'map'">map</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>10 Apr '19, 19:09</strong>
+</p>
+<img alt="ymtopcu's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8386ef7c51e0af20ceed80c7af0a9a31?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16524/ymtopcu">ymtopcu</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ymtopcu has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68751">
+<a name="68755"></a>
+<div class="comment" id="comment-68755">
+<div class="comment-score" id="post-68755-score"></div>
+<div class="comment-text"><p>Which JOSM version? I don't experience this issue with the latest josm-tested (14945). Maybe Shift-D toggles your layer visibility?</p></div>
+<div class="comment-info" id="comment-68755-info">
+<span class="comment-age">(11 Apr '19, 08:54)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="68758"></a>
+<div class="comment" id="comment-68758">
+<div class="comment-score" id="post-68758-score">2</div>
+<div class="comment-text"><p>To rule out the obvious: Are you sure you are adding the point at the correct coordinate and it is not just JOSM recentering the view on the new point's location away from the previously downloaded data? If you scroll out, does the other data re-appear somewhere?</p></div>
+<div class="comment-info" id="comment-68758-info">
+<span class="comment-age">(11 Apr '19, 09:36)</span>
+<a class="comment-user userinfo" href="/users/10133/tzorn">TZorn</a>
+</div>
+</div>
+<a name="68762"></a>
+<div class="comment" id="comment-68762">
+<div class="comment-score" id="post-68762-score"></div>
+<div class="comment-text"><p>Thank you very much for your replies.</p>
+<p>I've been playing around with different layers to see if adding a node on a new layer would make it so the rest of the map is still visible. Unfortunately no: the rest of the map still disappears, even if the new node I am adding is on a layer entirely by itself. </p>
+<p>Its interesting you ask if other data is visible. When I zoom out, oddly enough, just one random node is visible but the rest of the map is not (so I end up seeing this one random node from the old map, along with the new one I am trying to add) </p>
+<p>This one random node was one I added some time ago: its position is accurate to where the new node I am trying to add would be. </p>
+<p>The camera does recenter when I add a node of course, but when I zoom out, I only see this one particular node remaining from the map. The rest of it is missing. </p>
+<p>I am using version 14824</p></div>
+<div class="comment-info" id="comment-68762-info">
+<span class="comment-age">(11 Apr '19, 17:27)</span>
+<a class="comment-user userinfo" href="/users/16524/ymtopcu">ymtopcu</a>
+</div>
+</div>
+<a name="68764"></a>
+<div class="comment" id="comment-68764">
+<div class="comment-score" id="post-68764-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/16524/ymtopcu">@ymtopcu</a>: Please try zooming in on that random old node. When you're zoomed out far enough, even several square kilometers' worth of map data will shrink into a single point and look exactly like a single node.</p>
+<p>If that doesn't help, press Ctrl+A to select all elements no matter where they are. (Only works in the current layer though!) What is the result of that?</p></div>
+<div class="comment-info" id="comment-68764-info">
+<span class="comment-age">(11 Apr '19, 19:16)</span>
+<a class="comment-user userinfo" href="/users/14/tordanik">Tordanik</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-68751">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68751-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/68751/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="8f5Aqs06uSeA2Ty021KIlgBldT0RuDuI"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

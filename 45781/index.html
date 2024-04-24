@@ -1,0 +1,241 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/45781/power-lines-minor_line-threshold">Power lines: minor_line threshold ?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/45781/up/" id="post-45781-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-45781-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/45781/down/" id="post-45781-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/45781/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello, there.</p>
+<p>I have a question about mapping power lines: here, in France, electricity transport and distribution is mainly parted between RTE, for <em>Réseau de Transport d'Électricité</em> — Electricity transport network —, and ErDF, for <em>Électricité réseau et Distribution de France</em> — Electricity network and distribution of France. The first manages of 63 kV and higher voltage lines, mainly on towers, while the second manages 20 kV and lower lines, mainly on poles — there is no standard voltage between 20 kV and 63 kV here — and, as their names say, the first is responsible of transport, while the other one is responsible of distribution.</p>
+<p>Do I correctly interpret the wiki, when I assume this parting between line voltages and societies essentially reflects the parting between <code>power=line</code> and <code>power=minor_line</code>, and therefore that I should then map ErDF/20kV-and-lower-voltage lines as <code>minor_line</code>, and RTE/63kV-and-higher-voltage lines as <code>line</code>?</p>
+<p>Awaiting your answers,</p>
+<p>Regards.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-line" href="/tags/line/" rel="tag" title="see questions tagged 'line'">line</a>
+<a class="post-tag tag-link-minor_line" href="/tags/minor_line/" rel="tag" title="see questions tagged 'minor_line'">minor_line</a>
+<a class="post-tag tag-link-power" href="/tags/power/" rel="tag" title="see questions tagged 'power'">power</a>
+<a class="post-tag tag-link-france" href="/tags/france/" rel="tag" title="see questions tagged 'france'">france</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>07 Oct '15, 15:04</strong>
+</p>
+<img alt="Penegal's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/03b6014ac927da400a55374bbbe5152a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11353/penegal">Penegal</a><br/>
+<span class="score" title="631 reputation points">631</span><span title="31 badges"><span class="badge1">●</span><span class="badgecount">31</span></span><span title="35 badges"><span class="silver">●</span><span class="badgecount">35</span></span><span title="47 badges"><span class="bronze">●</span><span class="badgecount">47</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Penegal has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-45781">
+</div>
+<div class="comment-tools" id="comment-tools-45781">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-45781-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/45781/power-lines-minor_line-threshold?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/45781/power-lines-minor_line-threshold?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/45781/power-lines-minor_line-threshold?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/45781/power-lines-minor_line-threshold?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="45800"></a>
+<div class="answer" id="answer-container-45800">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/45800/up/" id="post-45800-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-45800-score" title="current number of votes">
+    6
+</div>
+<a class="ajax-command post-vote down" href="/vote/45800/down/" id="post-45800-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>In general my view is that the choice of <code>minor_line</code> vs. <code>line</code> should not be directly termined by the voltage of the line. Instead the choice should be based on the general visibility of the line in the general landscape. </p>
+<p>Lines supported on pylons or very tall towers will be visible over long distances and can be useful navigation markers. Lines supported on poles close to the ground are only useful for local orientation. In general this difference will follow voltage, but there are exceptions. For instance in Britain there are still a number of 33kV and 66kV lines supported on pylons which are considerably smaller than those of the main distribution network. Sometimes low voltage lines are placed on pylons to cross rivers and gorges.</p>
+<p>The main issue is a practical one: what can a relatively naive mapper conveniently use as a tag. Discerning the voltage requires somewhat arcane knowledge, and this information is conveniently supported by its own tag. So for me the deciding factor is the overall visibility of the line in the landscape (say immediately obvious from over 200m away).</p>
+<p>The absolutely clinching factor for me, was a mapping need which arose earlier this year after the Nepal earthquake. After a US helicopter crashed with the loss of several rescuers' lives, there was a <a href="https://lists.openstreetmap.org/pipermail/hot/2015-May/009128.html">fear that unmapped power lines</a> represented a significant danger to rescue workers. Helicopter pilots have no interest in the voltage of a power line: merely whether it is a significant aerial hazard, and that entirely depends on the height of the supports. Thus an entirely different use-case (hazard maps) would use similar criteria to my own (navigation in the landscape), which broadly corresponds to the height above ground of the highest wires on the power line, and nothing directly corresponding to voltage.</p>
+<p>Lastly, in general it is not a good practice to use one tag as a proxy for another (see place &amp; population): it is effectively tagging the same thing twice.</p>
+<p><strong>Summary</strong>: Use height of line off the ground to assign lines to <code>power=line</code> or <code>power=minor_line</code>. If possible add voltage and/or the tags which enable a 'power mapper' to assign voltage. This was we get both information relevant to the grid network <strong>and</strong> information relevant for other use cases.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/45800/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Oct '15, 10:05</strong>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br/>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SK53 has 121 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-45800">
+<a name="45802"></a>
+<div class="comment" id="comment-45802">
+<div class="comment-score" id="post-45802-score"></div>
+<div class="comment-text"><p>Okay, I got your meaning, but what about when a minor line uses towers to cross valleys or long gaps? Should I tag it <code>power=line</code> only on this section?</p></div>
+<div class="comment-info" id="comment-45802-info">
+<span class="comment-age">(08 Oct '15, 12:45)</span>
+<a class="comment-user userinfo" href="/users/11353/penegal">Penegal</a>
+</div>
+</div>
+<a name="45809"></a>
+<div class="comment" id="comment-45809">
+<div class="comment-score" id="post-45809-score"></div>
+<div class="comment-text"><p>Yeah, good question. I'm not really sure (and the one case I did it I think I left the line as minor line), but give the additional reasoning from the helicopter hazard case I think power=line is best. Possibly some additional tag indicating it's a valley/river/gorge crossing may help.</p></div>
+<div class="comment-info" id="comment-45809-info">
+<span class="comment-age">(08 Oct '15, 14:12)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="45814"></a>
+<div class="comment" id="comment-45814">
+<div class="comment-score" id="post-45814-score"></div>
+<div class="comment-text"><p>Or giving the height of the towers? This way, the power line modelling will remain whole and the aerial danger could still be noticed if seeked.</p></div>
+<div class="comment-info" id="comment-45814-info">
+<span class="comment-age">(09 Oct '15, 10:45)</span>
+<a class="comment-user userinfo" href="/users/11353/penegal">Penegal</a>
+</div>
+</div>
+<a name="45875"></a>
+<div class="comment" id="comment-45875">
+<div class="comment-score" id="post-45875-score"></div>
+<div class="comment-text"><p>Well, as I saw different points of view, even between pages of the wiki, I raised the topic on the tagging ML, to see if I can get a consensus. I'm inclined to use the main type of support (poles/towers) of the line to know how to model it, but I'll first see if I can get a consensus and correct the wiki accordingly, if possible.</p></div>
+<div class="comment-info" id="comment-45875-info">
+<span class="comment-age">(14 Oct '15, 08:26)</span>
+<a class="comment-user userinfo" href="/users/11353/penegal">Penegal</a>
+</div>
+</div>
+<a name="45876"></a>
+<div class="comment" id="comment-45876">
+<div class="comment-score" id="post-45876-score"></div>
+<div class="comment-text"><p><a href="http://help.openstreetmap.org/users/11353/penegal">@Penegal</a>, perhaps more useful would be to look how lines were originally mapped <em>before</em> the current wiki description was written. I know I always find the way this area is rendered annoying <a href="http://www.openstreetmap.org/#map=15/52.9236/-0.9574">http://www.openstreetmap.org/#map=15/52.9236/-0.9574</a> (two parallel lines on pylons).</p></div>
+<div class="comment-info" id="comment-45876-info">
+<span class="comment-age">(14 Oct '15, 09:40)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="45881"></a>
+<div class="comment not_top_scorer" id="comment-45881">
+<div class="comment-score" id="post-45881-score"></div>
+<div class="comment-text"><p><a href="http://help.openstreetmap.org/users/647/sk53">@SK53</a> ♦ Wow, this is weird, indeed, having the towers rendered but not the line. I don't see what you're getting at speaking of <em>before the wiki desc</em>, but, IMHO, the two lines should be mapped as <code>power=line</code>, as they seem to be quite obvious, even for miles.</p></div>
+<div class="comment-info" id="comment-45881-info">
+<span class="comment-age">(14 Oct '15, 16:27)</span>
+<a class="comment-user userinfo" href="/users/11353/penegal">Penegal</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-45800">
+<span class="comments-showing">
+            showing 5 of 6
+        </span>
+<a class="show-all-comments-link" href="#">show 1 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-45800-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="45790"></a>
+<div class="answer" id="answer-container-45790">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/45790/up/" id="post-45790-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-45790-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/45790/down/" id="post-45790-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>From my point of view, 20 kV and below should be tagged power=minor_line. </p>
+<p>These tag is very useful for the authors of map rendering stylesheets because they can easily differ between important (high voltage, high towers) and less important (lower towers/poles, lower voltage) power lines and render important power lines on lower zoom levels because these are good visible landmarks.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/45790/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>07 Oct '15, 17:13</strong>
+</p>
+<img alt="Nakaner's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d2a3b905e2632430b47dd9b8de3d8ba0?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8569/nakaner">Nakaner</a><br/>
+<span class="score" title="610 reputation points">610</span><span title="8 badges"><span class="silver">●</span><span class="badgecount">8</span></span><span title="13 badges"><span class="bronze">●</span><span class="badgecount">13</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Nakaner has 3 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-45790">
+</div>
+<div class="comment-tools" id="comment-tools-45790">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-45790-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/45781/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="PUJJBombwAjGuTIoJnmZ8YMcnvwHly40"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

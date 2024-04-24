@@ -1,0 +1,262 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/80141/overpass-turbo-how-to-exclude-tags-that-contain-a-string">Overpass Turbo: How to EXCLUDE tags that contain a string</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80141/up/" id="post-80141-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80141-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/80141/down/" id="post-80141-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/80141/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>So you can go <strong>:</strong> to only include tags that have a certain string: name:foo (only places with foo anywhere in the name will show up), but I'm wondering if you can do the opposite, I want to EXCLUDE tags if they contain a certain word (I want every tag that does NOT contain the word foo in the example above).</p>
+<p>I'm sure there must be a way, there's <strong>=</strong> and <strong>!=</strong>, so I'm sure they'll be some equivalent for contains, but it certainly isn't <strong><em>!:</em></strong> and I cannot find it in documentation.</p>
+<p>Thanks in advance for your help,
+Steven.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-contains" href="/tags/contains/" rel="tag" title="see questions tagged 'contains'">contains</a>
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>12 May '21, 22:53</strong>
+</p>
+<img alt="AutisticRabbit's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/267550caa57a75fd02212654848033f2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20211/autisticrabbit">AutisticRabbit</a><br/>
+<span class="score" title="46 reputation points">46</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="AutisticRabbit has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80141">
+<a name="80147"></a>
+<div class="comment" id="comment-80147">
+<div class="comment-score" id="post-80147-score"></div>
+<div class="comment-text"><p>Can you provide an example illustrating what you want?</p></div>
+<div class="comment-info" id="comment-80147-info">
+<span class="comment-age">(13 May '21, 00:45)</span>
+<a class="comment-user userinfo" href="/users/10973/maxerickson">maxerickson</a>
+</div>
+</div>
+<a name="80149"></a>
+<div class="comment" id="comment-80149">
+<div class="comment-score" id="post-80149-score"></div>
+<div class="comment-text"><p>I'm intrigued/confused by your first sentence. Do you have a working example to clarify what you mean?</p></div>
+<div class="comment-info" id="comment-80149-info">
+<span class="comment-age">(13 May '21, 02:39)</span>
+<a class="comment-user userinfo" href="/users/1532/davef">DaveF</a>
+</div>
+</div>
+<a name="80154"></a>
+<div class="comment" id="comment-80154">
+<div class="comment-score" id="post-80154-score"></div>
+<div class="comment-text"><p>Yes sorry, so I am wanting to see all the churches of a specific denomination, but the denomination field isn't always filled in, so I will need to do some manual filtering. I thought a way to narrow down the list though would be to exclude results that mention a denomination in it's name, so for example if it was Trinity Evangelist Church, I want to exclude all names that contain the word Evangelist.</p>
+<p><a href="https://help.openstreetmap.org/users/1532/davef"></a><a href="https://help.openstreetmap.org/users/1532/davef">@DaveF</a> Sorry what I was meaning by the first sentence is that I can do the opposite, I know how to ONLY find churches that have the word Evangelist in the name, but I don't know how to EXCLUDE churches that have the word Evangelist from the results.</p>
+<p>Sorry for the confusion.</p></div>
+<div class="comment-info" id="comment-80154-info">
+<span class="comment-age">(13 May '21, 09:29)</span>
+<a class="comment-user userinfo" href="/users/20211/autisticrabbit">AutisticRabbit</a>
+</div>
+</div>
+<a name="80161"></a>
+<div class="comment" id="comment-80161">
+<div class="comment-score" id="post-80161-score">1</div>
+<div class="comment-text"><p>Try with the operator "!~" which searches for values <em>not</em> matching a regular expression (<a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Value_matches_regular_expression_.28.7E.2C_.21.7E.29);">https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Value_matches_regular_expression_.28.7E.2C_.21.7E.29);</a> please notice that not having the tag is considered a non match, thus it's shown in the result. If you want to avoid that, just add the filter ["name"]; Example: node["amenity"="place_of_worship"]["name"]["name"!~"Evangelist"](area.searchArea);</p></div>
+<div class="comment-info" id="comment-80161-info">
+<span class="comment-age">(13 May '21, 13:02)</span>
+<a class="comment-user userinfo" href="/users/6765/marcor">MarcoR</a>
+</div>
+</div>
+<a name="80162"></a>
+<div class="comment" id="comment-80162">
+<div class="comment-score" id="post-80162-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/6765/marcor">@MarcoR</a> Yes that worked! Thank you. If you post that as an answer, I will mark it as correct.</p></div>
+<div class="comment-info" id="comment-80162-info">
+<span class="comment-age">(13 May '21, 13:27)</span>
+<a class="comment-user userinfo" href="/users/20211/autisticrabbit">AutisticRabbit</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-80141">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80141-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/80141/overpass-turbo-how-to-exclude-tags-that-contain-a-string?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/80141/overpass-turbo-how-to-exclude-tags-that-contain-a-string?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/80141/overpass-turbo-how-to-exclude-tags-that-contain-a-string?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/80141/overpass-turbo-how-to-exclude-tags-that-contain-a-string?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="80170"></a>
+<div class="answer accepted-answer" id="answer-container-80170">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80170/up/" id="post-80170-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80170-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/80170/down/" id="post-80170-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/80170/" rel="nofollow" title="AutisticRabbit has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<blockquote>
+<p>I know how to ONLY find churches that
+have the word Evangelist in the name,
+but I don't know how to EXCLUDE
+churches that have the word Evangelist
+from the results.</p>
+</blockquote>
+<p>Try with the <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Value_matches_regular_expression_.28.7E.2C_.21.7E.29">operator "!~"</a> which searches for values not matching a regular expression.</p>
+<p>Please note that not having the tag is considered a non match, thus it's shown in the result. If you want to avoid that, just add the filter ["name"].</p>
+<p>Example:</p>
+<pre><code>[out:json][timeout:25];
+
+  nwr["amenity"="place_of_worship"]["name"]["name"!~"Evangelist"]({{bbox}});
+
+out body;
+&gt;;
+out skel qt;
+</code></pre>
+<p>Another way to obtain the same result is to use the <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Difference">difference</a>:</p>
+<pre><code>[out:json][timeout:25];
+
+(
+  nwr["amenity"="place_of_worship"]["name"]({{bbox}});
+-
+  nwr["amenity"="place_of_worship"]["name"~"Evangelist"]({{bbox}});
+  );
+out body;
+&gt;;
+out skel qt;
+</code></pre>
+<p>The former should run faster but I think it depends on the area you are running it in.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/80170/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>13 May '21, 18:47</strong>
+</p>
+<img alt="MarcoR's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9c8957ccf79025bf749665ebec2bdfa2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6765/marcor">MarcoR</a><br/>
+<span class="score" title="687 reputation points">687</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="8 badges"><span class="silver">●</span><span class="badgecount">8</span></span><span title="20 badges"><span class="bronze">●</span><span class="badgecount">20</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="MarcoR has 5 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80170">
+</div>
+<div class="comment-tools" id="comment-tools-80170">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80170-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="80185"></a>
+<div class="answer" id="answer-container-80185">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80185/up/" id="post-80185-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80185-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/80185/down/" id="post-80185-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Although MarcoR's former example is the preferable solution the 'difference' example, when it's the only option, can be improved slightly by passing the first call to a variable. In this example I display all edits for the last day except my own. (You'll need to add your own username)</p>
+<pre><code>   (
+    nwr(newer:'{{date:24Hour}}')({{bbox}})-&gt;.Data;
+    -
+    nwr.Data(user:Joe_B);
+   );
+   out meta geom({{bbox}});
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/80185/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>14 May '21, 16:30</strong>
+</p>
+<img alt="DaveF's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c9c8b421ad22f51ddd62f23413717036?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1532/davef">DaveF</a><br/>
+<span class="score" title="3264 reputation points"><span class="">3.3k</span></span><span title="84 badges"><span class="badge1">●</span><span class="badgecount">84</span></span><span title="98 badges"><span class="silver">●</span><span class="badgecount">98</span></span><span title="133 badges"><span class="bronze">●</span><span class="badgecount">133</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="DaveF has 17 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80185">
+</div>
+<div class="comment-tools" id="comment-tools-80185">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80185-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/80141/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="As8HToyG1RMfWiL4FQyjKgOJOPkFqABI"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

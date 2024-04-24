@@ -1,0 +1,257 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/64107/can-i-render-high-zoom-tiles-by-render_list-command">Can I render high Zoom tiles by render_list command ?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/64107/up/" id="post-64107-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-64107-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/64107/down/" id="post-64107-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/64107/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello 
+I am refering this 
+<a href="https://wiki.openstreetmap.org/wiki/User:SomeoneElse/Ubuntu_1804_tileserver_load#An_example_site">https://wiki.openstreetmap.org/wiki/User:SomeoneElse/Ubuntu_1804_tileserver_load#An_example_site</a>
+for zoom upto 10 , i need to do bellow
+ render_list -n 1 -s /var/run/renderd/renderd.sock -z 0 -Z 10 -m ajt  -a</p>
+<p>now </p>
+<p>if i do bellow, will it render zoom level upto 18  , i actually tryed but dont think it work, it always does upto 9
+ render_list -n 1 -s /var/run/renderd/renderd.sock -z 0 -Z 18 -m ajt  -a</p>
+<p>Please let me know </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-rendering" href="/tags/rendering/" rel="tag" title="see questions tagged 'rendering'">rendering</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>08 Jun '18, 18:08</strong>
+</p>
+<img alt="fosiul's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7bb2a94f867841b58214be09992831d3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15162/fosiul">fosiul</a><br/>
+<span class="score" title="96 reputation points">96</span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="14 badges"><span class="silver">●</span><span class="badgecount">14</span></span><span title="19 badges"><span class="bronze">●</span><span class="badgecount">19</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="fosiul has one accepted answer">50%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-64107">
+</div>
+<div class="comment-tools" id="comment-tools-64107">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-64107-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/64107/can-i-render-high-zoom-tiles-by-render_list-command?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/64107/can-i-render-high-zoom-tiles-by-render_list-command?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/64107/can-i-render-high-zoom-tiles-by-render_list-command?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/64107/can-i-render-high-zoom-tiles-by-render_list-command?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="64113"></a>
+<div class="answer accepted-answer" id="answer-container-64113">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/64113/up/" id="post-64113-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-64113-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/64113/down/" id="post-64113-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/64113/" rel="nofollow" title="fosiul has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It wouldn't be practical to use "<code>render_list</code>" to try and render all tiles worldwide up to zoom level 18, for the reasons described <a href="https://wiki.openstreetmap.org/wiki/Tile_disk_usage">here</a>.  Most tiles at that zoom level are just sea; there's no point in pre-rendering them.  Assuming that you actually have an area that you are interested in I'd suggesting using <a href="https://github.com/alx77/render_list_geo.pl"><code></code></a><code><a href="https://github.com/alx77/render_list_geo.pl">https://github.com/alx77/render_list_geo.pl</a></code> to pre-render tiles in that area.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/64113/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Jun '18, 00:11</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-64113">
+<a name="64115"></a>
+<div class="comment" id="comment-64115">
+<div class="comment-score" id="post-64115-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/387/someoneelse">@SomeoneElse</a>,
+Thanks, basically I am interested in 3 Country for now , UK,Spain and Bangladesh. 
+my understanding is, if i can render all tiles with zoom 18 before hand , it will speed up the user experinece when they will use our map,  system will not need to render the tile on demand, 
+is that a right assumption ? 
+what i see is, when i browse somes tiles of  some new area it takes bit time to come but next time when i try to view those area it comes very fast .</p>
+<p>Please let  me know.</p>
+<p>Thanks</p></div>
+<div class="comment-info" id="comment-64115-info">
+<span class="comment-age">(09 Jun '18, 01:02)</span>
+<a class="comment-user userinfo" href="/users/15162/fosiul">fosiul</a>
+</div>
+</div>
+<a name="64153"></a>
+<div class="comment" id="comment-64153">
+<div class="comment-score" id="post-64153-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/387/someoneelse"></a><a href="https://help.openstreetmap.org/users/387/someoneelse">@SomeoneElse</a>,</p>
+<p>after I ran render with  "render_list -n 1 -s /var/run/renderd/renderd.sock -z 0 -Z 11 -m ajt -a" 
+now lower tiles in one country (Bangladesh ) is not showing .</p>
+<p>I can see Rendering happening when i try to browse the map but on Screen is totally white. 
+Ref:<a href="https://ibb.co/cwUyso">https://ibb.co/cwUyso</a>
+however some higher zoom map are showing although not fully visible.
+<a href="https://ibb.co/bQaeXo">https://ibb.co/bQaeXo</a>
+and map for UK is fine.</p>
+<p>Please let me know what could be wrong ? I am forcing rendering with Zoom 10 again to see if that helps</p>
+<p>but Please put some light on this</p>
+<p>Thanks</p></div>
+<div class="comment-info" id="comment-64153-info">
+<span class="comment-age">(11 Jun '18, 09:17)</span>
+<a class="comment-user userinfo" href="/users/15162/fosiul">fosiul</a>
+</div>
+</div>
+<a name="64154"></a>
+<div class="comment" id="comment-64154">
+<div class="comment-score" id="post-64154-score">1</div>
+<div class="comment-text"><p>Is there definitely data from UK,Spain and Bangladesh in your rendering database?  <a href="https://www.openstreetmap.org/way/75134987">https://www.openstreetmap.org/way/75134987</a> is a tertiary road in Bangladesh, so:</p>
+<pre><code>psql gis
+SELECT tags FROM planet_osm_ways WHERE (id = 75134987);
+</code></pre>
+<p>should return something.  If it doesn't maybe you loaded Bangladesh first, and then replaced it with the UK?  You'll need to combine it all the data together to load it in the rendering database.</p></div>
+<div class="comment-info" id="comment-64154-info">
+<span class="comment-age">(11 Jun '18, 09:32)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="64158"></a>
+<div class="comment" id="comment-64158">
+<div class="comment-score" id="post-64158-score"></div>
+<div class="comment-text"><p>Hi 
+Yes, Currently I only loaded Bangladsh and UK.  ( I have not loaded the spain yet)
+UK map does not have any problem, but Bangladesh map, it was fine, but after Rendering with  11, now low zoom map not comming at all, but some high zoom map comming but they not complete ...</p>
+<p>Your Sql provie bellow out put so does it mean Bangaldesh Data got removed ?  then how i am seeing some Map with high zoom ? ( may be comming from cache ? ) </p>
+<p>postgres@opentile2:~$ psql gis
+psql (9.5.12)
+Type "help" for help.</p>
+<p>gis=# SELECT tags FROM planet_osm_ways WHERE (id = 75134987);
+ tags</p>
+<p></p><hr/>
+<p>(0 rows)</p>
+<p>Also intially i did this </p>
+<p>osm2pgsql -d gis --create --slim  -G --hstore --tag-transform-script src/openstreetmap-carto/openstreetmap-carto.lua -C 2500 --number-processes 1 -S src/openstreetmap-carto/openstreetmap-carto.style data/bangladesh-latest.osm.pbf</p>
+<p>then last week in inserted UK data 
+osm2pgsql -d gis --create --slim  -G --hstore --tag-transform-script src/openstreetmap-carto/openstreetmap-carto.lua -C 2500 --number-processes 1 -S src/openstreetmap-carto/openstreetmap-carto.style data/great-britain-latest.osm.pbf</p>
+<p>so how do i combine both country ?</p><p></p></div>
+<div class="comment-info" id="comment-64158-info">
+<span class="comment-age">(11 Jun '18, 11:43)</span>
+<a class="comment-user userinfo" href="/users/15162/fosiul">fosiul</a>
+</div>
+</div>
+<a name="64159"></a>
+<div class="comment" id="comment-64159">
+<div class="comment-score" id="post-64159-score">1</div>
+<div class="comment-text"><blockquote>
+<p>so how do i combine both country ?</p>
+</blockquote>
+<p>osmosis is one way to do it, osmium probably another.  Have a look on this help site and elsewhere for osmosis examples.</p></div>
+<div class="comment-info" id="comment-64159-info">
+<span class="comment-age">(11 Jun '18, 12:42)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="64160"></a>
+<div class="comment not_top_scorer" id="comment-64160">
+<div class="comment-score" id="post-64160-score"></div>
+<div class="comment-text"><p>ok let me have a look now  however, </p>
+<p>Can i use --append  ?
+ref : <a href="https://gis.stackexchange.com/questions/50745/merging-osm-files-with-osmosis-and-import-to-postgres-with-osm2pgsql">https://gis.stackexchange.com/questions/50745/merging-osm-files-with-osmosis-and-import-to-postgres-with-osm2pgsql</a></p>
+<p>or do you prefer to use osmosis ? </p>
+<p>also what I dont understand is, when I am go through the map of Dhaka, i see bellow log 
+why its trying to render if database does not have any information ?
+or its nothing to do with Rendering and having data into database ? </p>
+<p>ing render cmd(3 ajt 19/393731/226371) with protocol version 2 to fd 20
+Jun 11 12:42:17 opentile2 renderd[1804]: DEBUG: Sending render cmd(3 ajt 19/393730/226370) with protocol version 2 to fd 19
+Jun 11 12:42:17 opentile2 renderd[1804]: DEBUG: Connection 1, fd 20 closed, now 4 left
+Jun 11 12:42:17 opentile2 renderd[1804]: DEBUG: Connection 3, fd 23 closed, now 3 left
+Jun 11 12:42:17 opentile2 renderd[1804]: DEBUG: Connection 0, fd 19 closed, now 2 left
+Jun 11 12:42:17 opentile2 renderd[1804]: DEBUG: Connection 1, fd 22 closed, now 1 left
+Jun 11 12:42:17 opentile2 renderd[1804]: DEBUG: Connection 0, fd 21 closed, now 0 left</p></div>
+<div class="comment-info" id="comment-64160-info">
+<span class="comment-age">(11 Jun '18, 12:45)</span>
+<a class="comment-user userinfo" href="/users/15162/fosiul">fosiul</a>
+</div>
+</div>
+<a name="64190"></a>
+<div class="comment not_top_scorer" id="comment-64190">
+<div class="comment-score" id="post-64190-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/387/someoneelse">@SomeOneElse</a>,</p>
+<p>After I completed insert by using  "--append" , i started to render tiles with bellow by forcing to render</p>
+<p>sudo  render_list -n 4 -s /var/run/renderd/renderd.sock -z 1 -Z 10 -f  -m ajt  -a</p>
+<p>now what is worried me is, I had bangladesh Tiles in past , then while i try to insert UK map, bagnaldesh map got removed but what about those tiles which was creted in past ? </p>
+<p>by using -f , will it remove those old tiles for bangladesh and will re created again ? </p>
+<p>or it will keep the old tiles and will create new  one ? </p>
+<p>do you think it can cause problem ? </p>
+<p>Please let me know</p></div>
+<div class="comment-info" id="comment-64190-info">
+<span class="comment-age">(13 Jun '18, 01:32)</span>
+<a class="comment-user userinfo" href="/users/15162/fosiul">fosiul</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-64113">
+<span class="comments-showing">
+            showing 5 of 7
+        </span>
+<a class="show-all-comments-link" href="#">show 2 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-64113-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/64107/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="TVB25vXU7dmuqNvscVbwwaioMDlRaDKH"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

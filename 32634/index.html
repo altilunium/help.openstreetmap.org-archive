@@ -1,0 +1,176 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/32634/move-a-tag">move a tag</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/32634/up/" id="post-32634-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-32634-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/32634/down/" id="post-32634-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/32634/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I've want to move a traffic light by dragging( is in the wrong position).
+But in Potlatch and ID, it drags the road away with. 
+How exactly can I move the tag alone?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-move" href="/tags/move/" rel="tag" title="see questions tagged 'move'">move</a>
+<a class="post-tag tag-link-tags" href="/tags/tags/" rel="tag" title="see questions tagged 'tags'">tags</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 Apr '14, 14:21</strong>
+</p>
+<img alt="Bummibaer's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/13c853bf8740f6310151023d9ca5e3a7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8731/bummibaer">Bummibaer</a><br/>
+<span class="score" title="6 reputation points">6</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Bummibaer has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-32634">
+</div>
+<div class="comment-tools" id="comment-tools-32634">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-32634-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/32634/move-a-tag?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/32634/move-a-tag?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/32634/move-a-tag?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/32634/move-a-tag?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="32635"></a>
+<div class="answer accepted-answer" id="answer-container-32635">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/32635/up/" id="post-32635-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-32635-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/32635/down/" id="post-32635-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/32635/" rel="nofollow" title="Bummibaer has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It seems as if the node of traffic light in question is actually part of the road. The simple way to fix your problem is to create a new node and add the tags from the original one to the new one (and remove them from the old node). Doing it this way has the disadvantage of losing the history of the old node.</p>
+<p>JOSM has a dedicated "detach" node function that does it the "proper" way, you can emulate this in iD by:</p>
+<ul>
+<li>adding a node on both sides of the traffic light on the way</li>
+<li>spliting and unjoining the way at both new nodes</li>
+<li>moving the three node way you now have out of the way and joining the original way again </li>
+<li>removing the end points from the three node way, leaving you with the traffic light node </li>
+</ul>
+<p>I wouldn't :-)</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/32635/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Apr '14, 14:46</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-32635">
+<a name="32636"></a>
+<div class="comment" id="comment-32636">
+<div class="comment-score" id="post-32636-score">1</div>
+<div class="comment-text"><p>Hi thanks!
+I will try it.</p></div>
+<div class="comment-info" id="comment-32636-info">
+<span class="comment-age">(25 Apr '14, 14:47)</span>
+<a class="comment-user userinfo" href="/users/8731/bummibaer">Bummibaer</a>
+</div>
+</div>
+<a name="32637"></a>
+<div class="comment" id="comment-32637">
+<div class="comment-score" id="post-32637-score">4</div>
+<div class="comment-text"><p>Note you should check if what you want to do is actually compatible with <a href="http://wiki.openstreetmap.org/wiki/Tag:highway=traffic_signals">http://wiki.openstreetmap.org/wiki/Tag:highway=traffic_signals</a> which in general assumes that the signal is mapped on the actual way.</p></div>
+<div class="comment-info" id="comment-32637-info">
+<span class="comment-age">(25 Apr '14, 15:05)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+<a name="32638"></a>
+<div class="comment" id="comment-32638">
+<div class="comment-score" id="post-32638-score">1</div>
+<div class="comment-text"><p>In OSM we usually prefer to map the signal's effect (which is to stop traffic, and implies placing it on a way's node) rather than the physical object (of which there can be many for a single stop location).</p>
+<p>The reason for this (appart from avoiding too micro a mapping) is that it would be very hard for routing engines to use the traffic signal information if it wasn't placed on the way being routed.</p>
+<p>I wouldn't move the traffic signal off the way unless you understand very well what you're doing.</p></div>
+<div class="comment-info" id="comment-32638-info">
+<span class="comment-age">(25 Apr '14, 15:58)</span>
+<a class="comment-user userinfo" href="/users/867/vincent-de-phily">Vincent de P... ♦</a>
+</div>
+</div>
+<a name="32639"></a>
+<div class="comment" id="comment-32639">
+<div class="comment-score" id="post-32639-score"></div>
+<div class="comment-text"><p>I have to strongly agree with vincent-de-phily on this: Don't remove the tag from the highway! One of the main "rendering" (i.e. users) of OSM data are routing engines which use this information to determine the best route. By adding highway=stop, highway=give_way and highway=traffic_signal tags to appropriate nodes on highways routing engines can make a better decisions on a good route.</p>
+<p>See also: <a href="http://wiki.openstreetmap.org/wiki/Tag:highway%3Dtraffic_signals#Complex_intersections">http://wiki.openstreetmap.org/wiki/Tag:highway%3Dtraffic_signals#Complex_intersections</a></p>
+<p>If you must, add a separate node in the actual physical location for a map image renderer.</p></div>
+<div class="comment-info" id="comment-32639-info">
+<span class="comment-age">(25 Apr '14, 17:04)</span>
+<a class="comment-user userinfo" href="/users/5918/n76">n76</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-32635">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-32635-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/32634/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="3TybKQzKcnzc5C1jzYjVFBtYDXiWsQ4z"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

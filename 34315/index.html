@@ -1,0 +1,163 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/34315/issue-importing-tiger-data-into-nominatim">Issue importing tiger data into nominatim</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/34315/up/" id="post-34315-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-34315-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/34315/down/" id="post-34315-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/34315/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>I've imported openstreet data successfully, and now I'm importing the tiger2013 edges files into nominatim, all seems to go well when running the script but querying the local nominatim gives no results while the public server does.</p>
+<p>EDIT:</p>
+<p>tail of /var/log/prosgres
+im getting close - its looks like an issue with function get_partition</p>
+<hr/>
+<p>UTC ERROR:  function get_partition(geometry, unknown) does not exist at character 8</p>
+<p>UTC HINT:  No function matches the given name and argument types. You might need to add explicit type casts</p>
+<p>UTC QUERY:  SELECT get_partition(place_centroid, 'us')</p>
+<hr/>
+<p>how do i fix this?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-tiger" href="/tags/tiger/" rel="tag" title="see questions tagged 'tiger'">tiger</a>
+<a class="post-tag tag-link-import" href="/tags/import/" rel="tag" title="see questions tagged 'import'">import</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-edges" href="/tags/edges/" rel="tag" title="see questions tagged 'edges'">edges</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 Jun '14, 13:59</strong>
+</p>
+<img alt="Rob's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/54c570b1b5dcb86c33708fccc198bdbb?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9097/rob">Rob</a><br/>
+<span class="score" title="15 reputation points">15</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Rob has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/34315/">
+                edited
+                <strong>26 Jun '14, 14:40</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-34315">
+</div>
+<div class="comment-tools" id="comment-tools-34315">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-34315-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/34315/issue-importing-tiger-data-into-nominatim?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/34315/issue-importing-tiger-data-into-nominatim?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/34315/issue-importing-tiger-data-into-nominatim?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/34315/issue-importing-tiger-data-into-nominatim?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="34355"></a>
+<div class="answer accepted-answer" id="answer-container-34355">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/34355/up/" id="post-34355-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-34355-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/34355/down/" id="post-34355-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/34355/" rel="nofollow" title="Rob has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It looks like an incompatibility was introduced when some of the functions where updated.
+I've committed something that should fix the problem although I've not completely tested it yet.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/34355/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>26 Jun '14, 17:13</strong>
+</p>
+<img alt="twain's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bda08a105bb6a4a606d47c1b27187fac?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4/twain">twain</a><br/>
+<span class="score" title="2381 reputation points"><span class="">2.4k</span></span><span title="25 badges"><span class="silver">●</span><span class="badgecount">25</span></span><span title="38 badges"><span class="bronze">●</span><span class="badgecount">38</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="twain has 15 accepted answers">40%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-34355">
+<a name="34356"></a>
+<div class="comment" id="comment-34356">
+<div class="comment-score" id="post-34356-score"></div>
+<div class="comment-text"><p>Thanks for the response, I've pulled the latest version and now the error is slightly different:</p>
+<p></p><hr/>
+<p>UTC ERROR:  function tigger_create_interpolation(geometry, unknown, unknown, unknown, unknown, unknown, unknown) does not exist at character 8</p>
+<p>UTC HINT:  No function matches the given name and argument types. You might need to add explicit type casts.</p>
+<hr/>
+<p>EDIT:</p>
+<p>when i ran the tigger_create_interpolation function manually i got errors about postgis  .so files </p>
+<p>i found a fix &gt; <a href="http://gis.stackexchange.com/questions/97871/postgis-2-1-error-after-update">http://gis.stackexchange.com/questions/97871/postgis-2-1-error-after-update</a></p>
+<p>its rolling along importing now! :)</p><p></p></div>
+<div class="comment-info" id="comment-34356-info">
+<span class="comment-age">(26 Jun '14, 17:32)</span>
+<a class="comment-user userinfo" href="/users/9097/rob">Rob</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-34355">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-34355-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/34315/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="LhtCPOb2u08EtOhLt775q4ShnLZuGxqh"/>
+<div style="clear:both">
+</div>
+</form>
+</hr></div>
+</div>
+</div>

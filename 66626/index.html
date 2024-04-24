@@ -1,0 +1,77 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/66626/osm2pgsql-out-of-memory-on-update">osm2pgsql out of memory on update</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66626/up/" id="post-66626-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66626-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/66626/down/" id="post-66626-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/66626/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,
+I've successfully imported the whole planet and the rendering works (slowly, but that's another problem).
+I've tried to update using the openstreetmap-tile-update-expire script, but it keep using all the RAM available and been killed, despite the fact that I'm using flag-nodes and that I tried to limitate the RAM usage with the -C option.
+I have 32Gb of RAM + the same in SWAP, so it doesn't make any sense to me. I've tried the -C option with only 8gb and the same append, it seems this option is not working as I expected.</p>
+<p>The exact command used:</p>
+<pre><code>osm2pgsql -a --slim -G --hstore --hstore-match-only -S /path/to/my/script --flat-nodes /path/to/flat_nodes.bin -e13-20  -d gis -C 8000 -o "$EXPIRY_FILE.$$" $CHANGE_FILE
+</code></pre>
+<p>I've watched it working while monitoring the RAM usage, it's working fine at the beginning but as it progress, it's using more and more RAM, probably a memory leak somewhere but I can't find where and why...
+The RAM usage inscrease until it reaches the maximum, then after "Left to process: 6221" the process was killed.</p>
+<p>Does someone have any idea of what's appening?</p>
+<p>Thanks.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-update" href="/tags/update/" rel="tag" title="see questions tagged 'update'">update</a>
+<a class="post-tag tag-link-ram" href="/tags/ram/" rel="tag" title="see questions tagged 'ram'">ram</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-memory" href="/tags/memory/" rel="tag" title="see questions tagged 'memory'">memory</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>02 Nov '18, 09:33</strong>
+</p>
+<img alt="voharunado's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/32a7da9bf999cc0ea4f6befea00edd8d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15375/voharunado">voharunado</a><br/>
+<span class="score" title="66 reputation points">66</span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="10 badges"><span class="bronze">●</span><span class="badgecount">10</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="voharunado has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66626">
+</div>
+<div class="comment-tools" id="comment-tools-66626">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66626-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/66626/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="VSxBfbywSAtvvAqcJUG48O8OyydGUIXX"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

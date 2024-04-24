@@ -1,0 +1,168 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/79750/fixed-objectiframe-in-firefox-shows-entire-map-in-world-view-instead-of-loading-correct-map-tiles">[fixed] object/iframe in firefox shows entire map in world view instead of loading correct map tiles</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/79750/up/" id="post-79750-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-79750-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/79750/down/" id="post-79750-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/79750/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi!</p>
+<p>On a website I built, I'm running into a weird issue using several iframes from OSM. I only see the world view, not the actual coordinates. It works in Chrome. And it used to work on Firefoy. It happens in Firefox, 78.9.0 esr on Debian, but also confirmed on Windows.</p>
+<p>Using the following code:</p>
+<pre><code> object loading="lazy" width="450" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" data="https://www.openstreetmap.org/export/embed.html?bbox=9.50119972229004,51.325060678316106,9.513173103332521,51.32918373770352&amp;amp;layer=mapnik&amp;amp;marker=51.327118902266484,9.50718641281128"&gt;&lt;/object&gt;
+</code></pre>
+<p>or the following code:</p>
+<pre><code>iframe loading="lazy" width="450" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=9.50119972229004,51.325060678316106,9.513173103332521,51.32918373770352&amp;amp;layer=mapnik&amp;amp;marker=51.327118902266484,9.50718641281128"&gt;&lt;/iframe&gt;
+</code></pre>
+<p>(Note that I removed the first "&lt;" from the code above only because the code editor here didn't like it. It's not a typo that I have in my code.)</p>
+<p>It actually happens to all the maps that I included in the page, regardless if I show them on the actual web server or if I run the website locally and regardless of the inclusion method.</p>
+<p>Now, what's even weirder, extremely weird, is that when I throttle the speed using Firefox' developer tab to something smaller or equal to "regular 3G", the correct map tiles get loaded and shown.</p>
+<p>But, on my mobile phone I also use Firefox, and there I have the same issue, I see only the world view, not the correct map tiles. Regardless if I use my home WiFi or a 3G connection.</p>
+<p>I saw that the tiles get loaded from fastly CDN, and I wonder if that might have something to do with my issue. Maybe.. Firefox has a weird DNS cache and caches my request in a strange way?</p>
+<p>In the past I saw this behavior:</p>
+<ul>
+<li>on Chrome/Chromium using iframe instead of object</li>
+<li>on Chromium/FF making mistakes in the coordinates</li>
+</ul>
+<p>But in this case, it seems like it works on Chromium, and there is no mistake in the coordinates. This happens to all the maps I included on the page, 7 small maps.</p>
+<p><strong>UPDATE</strong> see my last answer for analysis of the issue and workaround. The issue is not with OSM, but it seems to be a FF bug.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-firefox" href="/tags/firefox/" rel="tag" title="see questions tagged 'firefox'">firefox</a>
+<a class="post-tag tag-link-worldview" href="/tags/worldview/" rel="tag" title="see questions tagged 'worldview'">worldview</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>19 Apr '21, 20:45</strong>
+</p>
+<img alt="ulrikeu's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8c43417385b2b0325c06f0f70b6868b9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20082/ulrikeu">ulrikeu</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ulrikeu has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/79750/">
+                edited
+                <strong>20 Apr '21, 11:56</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-79750">
+<a name="79761"></a>
+<div class="comment" id="comment-79761">
+<div class="comment-score" id="post-79761-score"></div>
+<div class="comment-text"><p>Ok, I'm investigating this a bit further. My maps are hidden in the DOM by default. When I copy the same code to another file then it seems to work just fine. So I'm currently suspecting something related to the hidden item.</p></div>
+<div class="comment-info" id="comment-79761-info">
+<span class="comment-age">(20 Apr '21, 11:13)</span>
+<a class="comment-user userinfo" href="/users/20082/ulrikeu">ulrikeu</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-79750">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-79750-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/79750/fixed-objectiframe-in-firefox-shows-entire-map-in-world-view-instead-of-loading-correct-map-tiles?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/79750/fixed-objectiframe-in-firefox-shows-entire-map-in-world-view-instead-of-loading-correct-map-tiles?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/79750/fixed-objectiframe-in-firefox-shows-entire-map-in-world-view-instead-of-loading-correct-map-tiles?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/79750/fixed-objectiframe-in-firefox-shows-entire-map-in-world-view-instead-of-loading-correct-map-tiles?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="79765"></a>
+<div class="answer answered-by-owner" id="answer-container-79765">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/79765/up/" id="post-79765-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-79765-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/79765/down/" id="post-79765-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>In the setup I have, people click on some link and then they see a detailed map, which is by default set to "display:none" via CSS. Because of this, Firefox can apparently not correctly load the tiles. This is some sort of bug that I have no power to investigate better. But I found a workaround for my issue. Instead of using "display:none" in CSS or "hide()" with jQuery, I now use two classes which "transform:translateX(some-value-outside-viewport)" the map detail, so that it's not visible on the screen. And now the maps get loaded correctly, either using "object" or "iframe". I use "object", because otherwise we run into exactly the same bug on Chrome.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/79765/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>20 Apr '21, 11:44</strong>
+</p>
+<img alt="ulrikeu's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8c43417385b2b0325c06f0f70b6868b9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20082/ulrikeu">ulrikeu</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ulrikeu has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/79765/">
+                edited
+                <strong>20 Apr '21, 11:56</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-79765">
+</div>
+<div class="comment-tools" id="comment-tools-79765">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-79765-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/79750/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="tFn352xcR5scHFizxWVnb39Y36U7U106"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

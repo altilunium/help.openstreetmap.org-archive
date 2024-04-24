@@ -1,0 +1,117 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/46014/routing-automatic-cities-city-district-indexing-not-for-navigation-dont-need-turns-road-numbers">routing - automatic cities &amp; city district indexing (not for navigation - don't need turns, road numbers...)</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/46014/up/" id="post-46014-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-46014-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/46014/down/" id="post-46014-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/46014/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello comunity,
+I'm develpoing kinda "hitchike" app (feel like hitchike but phone instead of table) where I need some "chekpoints" - not road turns, but maybe road number change cities (~center), or some city districts.
+Is there some library, github repo for this? cause on wiki- routing  <a href="https://wiki.openstreetmap.org/wiki/Routing">https://wiki.openstreetmap.org/wiki/Routing</a> I've not found anything satisfactory for this task.
+Or what's th closest existing solution for my problem.</p>
+<p>Thanks Robert.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-directions" href="/tags/directions/" rel="tag" title="see questions tagged 'directions'">directions</a>
+<a class="post-tag tag-link-routing" href="/tags/routing/" rel="tag" title="see questions tagged 'routing'">routing</a>
+</div>
+<div class="post-controls" id="question-controls">
+<div class="community-wiki">
+        This question is marked "community wiki".
+        
+    </div>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>20 Oct '15, 10:46</strong>
+</p>
+<img alt="roberto68's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f23db16638eb2c204d3e51f5d18528fa?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11599/roberto68">roberto68</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="roberto68 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/46014/">
+                edited
+                <strong>20 Oct '15, 13:45</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-46014">
+<a name="46015"></a>
+<div class="comment" id="comment-46015">
+<div class="comment-score" id="post-46015-score">1</div>
+<div class="comment-text"><p>What are "road number change cities"? Why can't you just insert checkpoints every x kilometers? Can you give us more details about your problem and your goal?</p></div>
+<div class="comment-info" id="comment-46015-info">
+<span class="comment-age">(20 Oct '15, 11:39)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="46024"></a>
+<div class="comment" id="comment-46024">
+<div class="comment-score" id="post-46024-score"></div>
+<div class="comment-text"><p>well and do not care about kilometers - there can be no city/town for e.g 20km or also 3 towns. I need to automaticaly pair the the Hhiker with the driver: the hiker eneters where is his destination (or opt point) and it can be only part of the driver routes. 90% want actually get to some town or city. I need route to consist of "chekcpoints" whether town/city or maybe road crossing. and server'd go thorough that JSON array and automatically pair dirver - hiker when that route is matching. note I'm doing this in NodeJS (javascript)</p></div>
+<div class="comment-info" id="comment-46024-info">
+<span class="comment-age">(20 Oct '15, 13:53)</span>
+<a class="comment-user userinfo" href="/users/11599/roberto68">roberto68</a>
+</div>
+</div>
+<a name="46033"></a>
+<div class="comment" id="comment-46033">
+<div class="comment-score" id="post-46033-score"></div>
+<div class="comment-text"><p>so the hiker specifies a town, you translate that to lat/lon. Around this lan/lon you create a circle (of e.g. 3 km) and see whether that circle intersects with the route of the driver ? A bit similar to POIs along the route ?</p></div>
+<div class="comment-info" id="comment-46033-info">
+<span class="comment-age">(21 Oct '15, 06:38)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+<a name="46036"></a>
+<div class="comment" id="comment-46036">
+<div class="comment-score" id="post-46036-score"></div>
+<div class="comment-text"><p>thanks understand. how can I check if that hiker location intersects with driver the route - do you know some good source code example for that?</p></div>
+<div class="comment-info" id="comment-46036-info">
+<span class="comment-age">(21 Oct '15, 08:38)</span>
+<a class="comment-user userinfo" href="/users/11599/roberto68">roberto68</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-46014">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-46014-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/46014/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="qRsXwWGauMiimu4ImMcGt61xISevPOne"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

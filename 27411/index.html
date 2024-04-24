@@ -1,0 +1,275 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/27411/reading-in-planet-file-aborted-core-dump">Reading in Planet File - Aborted Core Dump</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/27411/up/" id="post-27411-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-27411-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/27411/down/" id="post-27411-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/27411/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Am trying to import a planet file (have done this many times before) however my last 4 attempts (with different planet files) result in the following error.</p>
+<pre><code>Reading in file: planet-latest.osm.pbf
+Processing: Node(2041920k 189.9k/s) Way(199297k 3.39k/s) Relation(47930 14.42/s)osm2pgsql: PolygonBuilder.cpp:261: geos::geomgraph::EdgeRing* geos::operation::overlay::PolygonBuilder::findShell(std::vector&lt;geos::operation::overlay::MinimalEdgeRing*&gt;*): Assertion `shellCount &lt;= 1' failed
+</code></pre>
+<p>Any help would be much appreciated</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>22 Oct '13, 17:05</strong>
+</p>
+<img alt="daveyp1234's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/69ac40fbb114bc39ef46a1abafb25059?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7644/daveyp1234">daveyp1234</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="daveyp1234 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/27411/">
+                edited
+                <strong>22 Oct '13, 17:43</strong>
+</a>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-27411">
+<a name="27562"></a>
+<div class="comment" id="comment-27562">
+<div class="comment-score" id="post-27562-score"></div>
+<div class="comment-text"><p>Were you able to resolve this issue? I am having similar trouble. </p>
+<p>processing way (1213k) at 0.25k/s (done 0 of 1)osm2pgsql: PolygonBuilder.cpp:261: geos::geomgraph::EdgeRing<em> geos::operation::overlay::PolygonBuilder::findShell(std::vector&lt;geos::operation::overlay::minimaledgering*&gt;</em>): Assertion `shellCount &lt;= 1' failed.
+Aborted (core dumped)</p>
+<p>I am able to import small ammounts of data (Great Britian) but when I attempt to import other data such as europe or the planet I get the above error. </p>
+<p>I have checked the version of geos that i am using, it is 3.4.2. </p>
+<p>Any help would be appreciated.</p></div>
+<div class="comment-info" id="comment-27562-info">
+<span class="comment-age">(28 Oct '13, 11:26)</span>
+<a class="comment-user userinfo" href="/users/7680/george1372">George1372</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-27411">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-27411-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/27411/reading-in-planet-file-aborted-core-dump?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/27411/reading-in-planet-file-aborted-core-dump?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/27411/reading-in-planet-file-aborted-core-dump?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/27411/reading-in-planet-file-aborted-core-dump?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="27433"></a>
+<div class="answer" id="answer-container-27433">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/27433/up/" id="post-27433-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-27433-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/27433/down/" id="post-27433-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The planet-131017.osm.pbf (available as planet-latest.osm.pbf for awhile) was incomplete. Please try another release.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/27433/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>23 Oct '13, 09:39</strong>
+</p>
+<img alt="Firefishy's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e79628d44a15e95c607f8c5007d0ccd2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/48/firefishy">Firefishy ♦♦</a><br/>
+<span class="score" title="1296 reputation points"><span class="">1.3k</span></span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="36 badges"><span class="silver">●</span><span class="badgecount">36</span></span><span title="52 badges"><span class="bronze">●</span><span class="badgecount">52</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Firefishy has 14 accepted answers">29%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-27433">
+<a name="27444"></a>
+<div class="comment" id="comment-27444">
+<div class="comment-score" id="post-27444-score">1</div>
+<div class="comment-text"><p>Thanks, am already in the process of reading a file from 130814....I think the last 3 or 4 planet files (up to 131017) must have been incomplete as have tried a couple of those but got the same error.</p></div>
+<div class="comment-info" id="comment-27444-info">
+<span class="comment-age">(23 Oct '13, 15:50)</span>
+<a class="comment-user userinfo" href="/users/7644/daveyp1234">daveyp1234</a>
+</div>
+</div>
+<a name="27485"></a>
+<div class="comment" id="comment-27485">
+<div class="comment-score" id="post-27485-score">1</div>
+<div class="comment-text"><p>Have now tried with planet file 130814 and three others.  Same result same error.</p></div>
+<div class="comment-info" id="comment-27485-info">
+<span class="comment-age">(25 Oct '13, 08:20)</span>
+<a class="comment-user userinfo" href="/users/7644/daveyp1234">daveyp1234</a>
+</div>
+</div>
+<a name="27487"></a>
+<div class="comment" id="comment-27487">
+<div class="comment-score" id="post-27487-score">1</div>
+<div class="comment-text"><p>Importing planet dumps are extremely taxing on any system, you may want to do a prime95 burnin-test to check the machine for hardware faults. Download mprime here: <a href="http://www.mersenne.org/freesoft/">http://www.mersenne.org/freesoft/</a> and follow the test described here: <a href="https://wiki.archlinux.org/index.php/Stress_Test#Mprime_.28Prime95_for_Windows_and_MacOS.29">https://wiki.archlinux.org/index.php/Stress_Test#Mprime_.28Prime95_for_Windows_and_MacOS.29</a></p></div>
+<div class="comment-info" id="comment-27487-info">
+<span class="comment-age">(25 Oct '13, 10:22)</span>
+<a class="comment-user userinfo" href="/users/48/firefishy">Firefishy ♦♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-27433">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-27433-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="29000"></a>
+<div class="answer answered-by-owner" id="answer-container-29000">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/29000/up/" id="post-29000-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-29000-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/29000/down/" id="post-29000-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>After several attempts over even more weeks finally managed to resolve the issue by using osm2pgsql 0.81 (version on github is 0.85).  Have tried the this twice to confirm the resolution.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/29000/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Dec '13, 07:57</strong>
+</p>
+<img alt="daveyp1234's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/69ac40fbb114bc39ef46a1abafb25059?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7644/daveyp1234">daveyp1234</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="daveyp1234 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-29000">
+</div>
+<div class="comment-tools" id="comment-tools-29000">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-29000-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="27503"></a>
+<div class="answer" id="answer-container-27503">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/27503/up/" id="post-27503-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-27503-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/27503/down/" id="post-27503-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Assuming your hardware checks out, you may want to check your geos version as that's where the error message is arising from. <code>geos-config --version</code> will tell you what version. 3.3 has fixed some bugs present in 3.2</p>
+<p>You can also open a ticket on the issue tracker at <a href="https://github.com/openstreetmap/osm2pgsql/issues">https://github.com/openstreetmap/osm2pgsql/issues</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/27503/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>26 Oct '13, 04:37</strong>
+</p>
+<img alt="pnorman's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/5634c46072077e10f5b7c0da9b4bbb62?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/290/pnorman">pnorman</a><br/>
+<span class="score" title="2352 reputation points"><span class="">2.4k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="21 badges"><span class="silver">●</span><span class="badgecount">21</span></span><span title="40 badges"><span class="bronze">●</span><span class="badgecount">40</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="pnorman has 9 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-27503">
+</div>
+<div class="comment-tools" id="comment-tools-27503">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-27503-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/27411/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="85x8wsTupb4wP8a0TnGHymwn80cJ88M9"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,92 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/51843/need-some-clarification-for-the-osm2pgsql-multi-backend-documentation">Need some clarification for the osm2pgsql multi-backend documentation.</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/51843/up/" id="post-51843-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-51843-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/51843/down/" id="post-51843-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/51843/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I was reading the osm2pgsql documentation on github for info on loading a custom lua script but I am confused on some of the instructions.</p>
+<p>In the file <a href="https://github.com/openstreetmap/osm2pgsql/blob/master/docs/lua.md">osm2pgsql/docs/lua.md</a>, under the "How To" section, it gives as an example:</p>
+<p>osm2pgsql -S your.style --tag-transform-script your.lua --hstore-all extract.osm.pbf</p>
+<p>These five questions pertain to the example above:</p>
+<ol>
+<li>Is the multi-backend used to create postgres tables directly or is it more for filtering out unwanted metadata from osm when importing a pbf?</li>
+<li>What are the different file formats that can be passed to the "-S" option? .style? .json? others?</li>
+<li>When loading in custom styles, is the option "--hstore-all" required?  Can we use one of the other hstore options instead?</li>
+<li>If we already have a database loaded, will osm2pgsql build the newly styled tables by reading from the database or does it always read from pbf file.</li>
+<li>Using --append, and assuming the new table names in the style file are different from what already exists in the database, does osm2pgsql just create the new tables alongside the preexisting ones?</li>
+</ol>
+<p>The last question is in regards to header in the <a href="https://github.com/openstreetmap/osm2pgsql/blob/master/multi.style.json">osm2pgsql/multi.style.json</a> file:</p>
+<p><code>-- This is an example Lua transform for a multi style
+-- It is not intended for use directly with --tag-transform-script but 
+-- for use from multi.style.json</code></p>
+<p>What is meant by "not intended for"?  Is it because the format of the style is json?</p>
+<p>Thanks,</p>
+<p>Will</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>31 Aug '16, 15:25</strong>
+</p>
+<img alt="placebo10's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/487645f035e9b2f095acf7510b32ce89?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12270/placebo10">placebo10</a><br/>
+<span class="score" title="71 reputation points">71</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="placebo10 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/51843/">
+                edited
+                <strong>31 Aug '16, 15:32</strong>
+</a>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-51843">
+</div>
+<div class="comment-tools" id="comment-tools-51843">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-51843-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/51843/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="lCkB5e9JUvx9fLboztOxAGpd8ysWdzVk"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

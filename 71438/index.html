@@ -1,0 +1,156 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/71438/routing-differences-on-esplanades">Routing differences on esplanades</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/71438/up/" id="post-71438-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-71438-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/71438/down/" id="post-71438-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/71438/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I wonder why <a href="https://www.openstreetmap.org/directions?engine=graphhopper_foot&amp;route=59.31228%2C18.10198%3B59.31238%2C18.10180#map=18/59.31302/18.10295">this routing</a> along an esplanade (<em>highway=pedestrian, area=yes</em>) goes all the way around the edges of the area, while <a href="https://www.openstreetmap.org/directions?engine=graphhopper_foot&amp;route=43.69434%2C7.25981%3B43.69427%2C7.26033#map=19/43.69437/7.26004">this routing</a> along another esplanade (<em>highway=pedestrian, area=yes</em>) doesn't do so.</p>
+<p>What I'm really trying to achieve is to improve the first mentioned routing (in the worst case it routes a 5 m walk into a 1.82 km walk around the edges of the area), while sticking to best mapping practices (I'm aware of the difficulties associated with routing through open areas).</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-routing" href="/tags/routing/" rel="tag" title="see questions tagged 'routing'">routing</a>
+<a class="post-tag tag-link-area" href="/tags/area/" rel="tag" title="see questions tagged 'area'">area</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 Nov '19, 20:52</strong>
+</p>
+<img alt="Henrik's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9e27711b40b77771caa643f74d9a1d5b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17394/henrik">Henrik</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Henrik has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/71438/">
+                edited
+                <strong>03 Nov '19, 21:04</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-71438">
+</div>
+<div class="comment-tools" id="comment-tools-71438">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-71438-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/71438/routing-differences-on-esplanades?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/71438/routing-differences-on-esplanades?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/71438/routing-differences-on-esplanades?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/71438/routing-differences-on-esplanades?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="71444"></a>
+<div class="answer accepted-answer" id="answer-container-71444">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/71444/up/" id="post-71444-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-71444-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/71444/down/" id="post-71444-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/71444/" rel="nofollow" title="Henrik has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>My guess for an explanation: </p>
+<p>In the first case the pedestrian area is mapped as a polygon (highway=pedestrian + area=yes) and this is understood by the routers as a routable way. Since they cannot route over an area they take the edges instead as an approximation. </p>
+<p>In the second case the pedestrian area is mapped as a multipolygon and the routers don't accept that as a routable way and completely ignore it. Instead they route over the adjacent cycleway. It's <a href="https://www.openstreetmap.org/directions?engine=graphhopper_foot&amp;route=43.69160%2C7.24875%3B43.69156%2C7.24917#map=19/43.69143/7.24944">better visible a bit to the west</a>.</p>
+<p>You cannot do much about the problem in the first case. Routers would have to introduce routing over areas. Some mappers map virtual paths over such area but this is generally frowned upon and would require a lot of virtual paths here connecting all the entering paths.</p>
+<p>But the problem is a bit academic. A more realistic routing question would be <a href="https://www.openstreetmap.org/directions?engine=graphhopper_foot&amp;route=59.31191%2C18.10117%3B59.31375%2C18.10404">solved quite ok</a> in my opinion. Of course the turn-by-turn instructions don't really fit to the situation on the ground.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/71444/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Nov '19, 11:03</strong>
+</p>
+<img alt="TZorn's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ddebc8d5f4e0458413eacf65e36561a9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10133/tzorn">TZorn</a><br/>
+<span class="score" title="12350 reputation points"><span class="">12.3k</span></span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="64 badges"><span class="silver">●</span><span class="badgecount">64</span></span><span title="225 badges"><span class="bronze">●</span><span class="badgecount">225</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="TZorn has 63 accepted answers">15%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-71444">
+<a name="71449"></a>
+<div class="comment" id="comment-71449">
+<div class="comment-score" id="post-71449-score"></div>
+<div class="comment-text"><p>Thanks, I think that you're probably right! Not sure that I agree that the problem is academic though. For example, my use case is to determine the which location (out of a given set of locations) that is closest (walking distance) to a user. If the user's location is on an unfortunate side of the pedestrian area polygon, this calculation becomes very wrong.</p></div>
+<div class="comment-info" id="comment-71449-info">
+<span class="comment-age">(04 Nov '19, 14:40)</span>
+<a class="comment-user userinfo" href="/users/17394/henrik">Henrik</a>
+</div>
+</div>
+<a name="71453"></a>
+<div class="comment" id="comment-71453">
+<div class="comment-score" id="post-71453-score"></div>
+<div class="comment-text"><p>Would setting the area to pedestrian=yes instead of having it unset which i believe these both are. give the routers a chance work.</p></div>
+<div class="comment-info" id="comment-71453-info">
+<span class="comment-age">(04 Nov '19, 19:12)</span>
+<a class="comment-user userinfo" href="/users/644/andy-mackey">andy mackey</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-71444">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-71444-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/71438/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="KiNlkylQwI5FZ8w9HDeeI5g6xjztosMU"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

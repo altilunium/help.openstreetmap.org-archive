@@ -1,0 +1,167 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/12409/how-to-overhaul-the-xslt-processor-to-give-back-better-results-on-a-xml-file">[closed] how to overhaul the xslt-processor to give back better results on a xml-file?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/12409/up/" id="post-12409-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-12409-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/12409/down/" id="post-12409-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/12409/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>For doing some tests with xslt i want to run a request to find out certain entity - let us take for example the restaurants. we want to find out all the restaurants in the area.</p>
+<p>now we can run that directly on the  bz2 compressed file, that we downloaded - for example if we use the following code:</p>
+<pre><code>bzcat germany.osm.bz2 | xsltproc restaurants.xslt - &gt; restaurants,csv
+</code></pre>
+<p>well i splitted the file with xml_split -which is a great perl-module from CPAN.</p>
+<p><strong>The problem:</strong> with the  following xslt-processor  i get only bad results - the parsed files werent not parsed enough i only get a minor set of informations when i run the code on a xml-file. see the xslt-processor - and below - a litte data-chunk out of the file i run and parse if you want to check it - just get the little dataset - note it is a splitted  file </p>
+<p>here you can get it: <a href="https://rapidshare.com/#!download|643p12|2523227518|germany-001.xml|100000">https://rapidshare.com/#!download|643p12|2523227518|germany-001.xml|100000</a></p>
+<p><strong>Note:</strong> see therefore the important lines: <code>xmlns:xml_split="http://xmltwig.com/xml_split"</code>and this one here: </p>
+<p><strong>Note:</strong> here we have a much more little-file which is very very small - compared with the one that is mentioned above. <a href="https://rapidshare.com/files/2447253717/germany-081.xml">https://rapidshare.com/files/2447253717/germany-081.xml</a>
+Here we have the xslt-processor that has difficulties with gathering theinformation - the xslt-procssor should be reengineerd a bit. well i tried seferal things ... but at the moment i got stuck some how...: </p>
+<p>Some musings regarding the overhaul of the code: well at least it looks like the code needs an overhaul. hmmm - i should consider changing the code to make it clearer and avoid errors. Well above all: i think i should make useage of XPaths like select="tag/<a href="/users/260/idoneus"><a href="/users/260/idoneus">@id</a></a>" and tag[<a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim">@k</a></a></a></a></a></a></a></a></a></a></a>='country']/<a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski">@v</a></a></a></a></a></a></a></a></a></a></a>.
+But above all - i  really think that i should consider refactoring this code to make better use of template. What do you think.. </p>
+<p>Below i show you the code that runs against the two files - mainly against this one here: <a href="https://rapidshare.com/files/2447253717/germany-081.xml">https://rapidshare.com/files/2447253717/germany-081.xml</a></p>
+
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+<pre><code>&lt;xsl:output method="text" encoding="utf-8" /&gt;
+&lt;xsl:template match="/"&gt;
+    &lt;xsl:apply-templates /&gt;
+&lt;/xsl:template&gt;
+&lt;xsl:template match="osm"&gt;
+    &lt;xsl:apply-templates /&gt;
+&lt;/xsl:template&gt;
+&lt;xsl:template match="node[tag[<a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim">@k</a></a></a></a></a></a></a></a></a></a></a>='amenity' and <a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski">@v</a></a></a></a></a></a></a></a></a></a></a>='restaurant']]"&gt;
+    &lt;xsl:value-of select="./<a href="/users/260/idoneus"><a href="/users/260/idoneus">@id</a></a>"/&gt;
+    &lt;xsl:text&gt;&amp;#x09;&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="./@lat"/&gt;
+    &lt;xsl:text&gt;&amp;#x09;&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="./<a href="/users/1350/longestaugust">@lon</a>"/&gt;
+    &lt;xsl:text&gt;&amp;#x09;&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="./tag[<a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim">@k</a></a></a></a></a></a></a></a></a></a></a> = 'cuisine']/<a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski">@v</a></a></a></a></a></a></a></a></a></a></a>"/&gt;
+    &lt;xsl:text&gt;&amp;#x09;&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="./tag[<a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim">@k</a></a></a></a></a></a></a></a></a></a></a> = 'name']/<a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski">@v</a></a></a></a></a></a></a></a></a></a></a>"/&gt;
+    &lt;xsl:text&gt;&amp;#x09;&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="./tag[<a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim">@k</a></a></a></a></a></a></a></a></a></a></a> = 'wheelchair']/<a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski">@v</a></a></a></a></a></a></a></a></a></a></a>"/&gt;
+    &lt;xsl:text&gt;&amp;#x09;&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="./tag[<a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim">@k</a></a></a></a></a></a></a></a></a></a></a> = 'website']/<a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski">@v</a></a></a></a></a></a></a></a></a></a></a>"/&gt;
+    &lt;xsl:text&gt;&amp;#x09;&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="./tag[<a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim">@k</a></a></a></a></a></a></a></a></a></a></a> = 'addr:country']/<a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski">@v</a></a></a></a></a></a></a></a></a></a></a>"/&gt;
+    &lt;xsl:text&gt;&amp;#x09;&lt;/xsl:text&gt;
+&lt;xsl:value-of select="./tag[<a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim">@k</a></a></a></a></a></a></a></a></a></a></a> = 'addr:city']/<a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski">@v</a></a></a></a></a></a></a></a></a></a></a>"/&gt;
+&lt;xsl:text&gt;&amp;#x09;&lt;/xsl:text&gt;        
+    &lt;xsl:value-of select="./tag[<a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim">@k</a></a></a></a></a></a></a></a></a></a></a> = 'addr:street']/<a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski">@v</a></a></a></a></a></a></a></a></a></a></a>"/&gt;
+    &lt;xsl:text&gt;&amp;#x09;&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="./tag[<a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim">@k</a></a></a></a></a></a></a></a></a></a></a> = 'addr:housenumber']/<a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski">@v</a></a></a></a></a></a></a></a></a></a></a>"/&gt;
+    &lt;xsl:text&gt;&amp;#x0A;&lt;/xsl:text&gt;
+&lt;/xsl:template&gt;
+
+&lt;!-- all non-restaurant nodes --&gt;
+&lt;xsl:template match="node[tag[<a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim">@k</a></a></a></a></a></a></a></a></a></a></a>='amenity' and <a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski">@v</a></a></a></a></a></a></a></a></a></a></a>!='restaurant']]" /&gt;
+</code></pre>
+&lt;/xsl:stylesheet&gt;
+
+<p>how to rework the xslt in order to work smooothly? </p>
+<p>and here below we have a data-chunk out of the xml-file that we have parsed: see it</p>
+<pre><code>&lt;node id="52768810" lat="48.2044749" lon="11.3249434" version="7" changeset="9490517" user="wheelmap_visitor" uid="290680" timestamp="2011-10-07T20:24:46Z"&gt;
+    &lt;tag k="addr:city" v="Olching" /&gt;
+    &lt;tag k="addr:country" v="DE" /&gt;
+    &lt;tag k="addr:housenumber" v="72" /&gt;
+    &lt;tag k="addr:postcode" v="82140" /&gt;
+    &lt;tag k="addr:street" v="Hauptstraße" /&gt;
+    &lt;tag k="amenity" v="restaurant" /&gt;
+    &lt;tag k="cuisine" v="mexican" /&gt;
+    &lt;tag k="email" v="info@cantina-olching.de" /&gt;
+    &lt;tag k="name" v="La Cantina" /&gt;
+    &lt;tag k="opening_hours" v="Mo-Su 17:00-01:00" /&gt;
+    &lt;tag k="phone" v="+49 (8142) 444393" /&gt;
+    &lt;tag k="website" v="http://www.cantina-olching.com/" /&gt;
+    &lt;tag k="wheelchair" v="no" /&gt;
+&lt;/node&gt;
+</code></pre>
+<p>see the results - note there are missing some parts - unfortunatly..
+<strong>Question:</strong> How can we rearrange and reengineer the code so that it procudes better results on the above mentioned files: </p>
+<p>By the way:here you can get it:</p>
+<p><a href="https://rapidshare.com/#!download|643p12|2523227518|germany-001.xml|100000">https://rapidshare.com/#!download|643p12|2523227518|germany-001.xml|100000</a></p>
+<p><a href="https://rapidshare.com/files/2447253717/germany-081.xml">https://rapidshare.com/files/2447253717/germany-081.xml</a></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-xml" href="/tags/xml/" rel="tag" title="see questions tagged 'xml'">xml</a>
+<a class="post-tag tag-link-xslt" href="/tags/xslt/" rel="tag" title="see questions tagged 'xslt'">xslt</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>28 Apr '12, 18:24</strong>
+</p>
+<img alt="tagtheworld's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/600fc90e36ff81dfaba666708cf91dc5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3389/tagtheworld">tagtheworld</a><br/>
+<span class="score" title="0 reputation points">0</span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="8 badges"><span class="silver">●</span><span class="badgecount">8</span></span><span title="9 badges"><span class="bronze">●</span><span class="badgecount">9</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="tagtheworld has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/12409/">
+                closed
+                <strong>28 Apr '12, 19:44</strong>
+</a>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-12409">
+<a name="12410"></a>
+<div class="comment" id="comment-12410">
+<div class="comment-score" id="post-12410-score"></div>
+<div class="comment-text"><p>help.osm.org is not the best place to ask questions about xslt or other general problems not related to gis. You may find other sites that have more xslt experts than osm, like <a href="http://stackoverflow.com/">http://stackoverflow.com/</a></p></div>
+<div class="comment-info" id="comment-12410-info">
+<span class="comment-age">(28 Apr '12, 19:27)</span>
+<a class="comment-user userinfo" href="/users/131/gnonthgol">Gnonthgol ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-12409">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-12409-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<div class="question-status" style="margin-bottom:15px">
+<h3>
+                The question has been closed for the following reason "Question is off-topic or not relevant - This is not an XSLT help forum." by
+                <a href="/users/104/frederik-ramm">Frederik Ramm</a>
+                 28 Apr '12, 19:44
+            </h3>
+</div>
+<form action="/questions/12409/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="5vnfyhcNNrz4UuuL96IHeRl3pEWxqaGz"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

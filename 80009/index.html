@@ -1,0 +1,92 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/80009/how-to-query-for-adjacent-admin-boundaries">How to query for adjacent admin boundaries?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80009/up/" id="post-80009-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80009-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/80009/down/" id="post-80009-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/80009/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>After hours of internet sleuthing and more-error-than-trials on overpassturbo, I admit defeat and ask for help. Here's the thing: I'd like to..</p>
+<ol>
+<li>take a given coordinate as input</li>
+<li>get its corresponding administrative boundary (admin_level=6) node</li>
+<li>to (2), give me all <strong>adjacent</strong> (as in: bordering on) admin boundaries</li>
+</ol>
+<p>Any idea how this could be accomplished? I found the <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Language_Guide#.22around.22_-_finding_something_near_something_else">"around" clause</a> but couldn't get it to work either.</p>
+<p>Any help is greatly appreciated!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>05 May '21, 15:34</strong>
+</p>
+<img alt="supyall's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7679b0922bf0f46b00874d27922b96d9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20171/supyall">supyall</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="supyall has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80009">
+<a name="80010"></a>
+<div class="comment" id="comment-80010">
+<div class="comment-score" id="post-80010-score">1</div>
+<div class="comment-text"><ol>
+<li>Check out the 'is_in' command. 3. admin_level boundaries should be all relations so 'recurse' back up from your found boundary to the ways it's attached to &amp; search those ways to see if it has any other associated relations.</li>
+</ol></div>
+<div class="comment-info" id="comment-80010-info">
+<span class="comment-age">(05 May '21, 16:20)</span>
+<a class="comment-user userinfo" href="/users/1532/davef">DaveF</a>
+</div>
+</div>
+<a name="80020"></a>
+<div class="comment" id="comment-80020">
+<div class="comment-score" id="post-80020-score"></div>
+<div class="comment-text"><p>Thanks for the tip, but I'm a bloody noob on the whole OSM thing. Would you (are anyone else watching) be willing to write some example code (overpass would be best for testing purpose) on this?</p></div>
+<div class="comment-info" id="comment-80020-info">
+<span class="comment-age">(06 May '21, 08:58)</span>
+<a class="comment-user userinfo" href="/users/20171/supyall">supyall</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-80009">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80009-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/80009/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="E2GFiGSm44F3OhhsoH7bzYZwBMIrguYN"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

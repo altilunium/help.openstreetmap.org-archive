@@ -1,0 +1,199 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/84408/jsondecodeerror-when-convert-query-result-in-jupyter-notebook-python">JSONDecodeError when convert query result in jupyter notebook (python)</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/84408/up/" id="post-84408-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-84408-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/84408/down/" id="post-84408-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/84408/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>I'm using python (jupyter notebook) to get data of hospitals in Bali area, Indonesia. Here is my code and query:</p>
+<pre><code>import pandas as pd
+import requests
+import json
+overpass_api = "http://overpass-api.de/api/interpreter"
+
+query_hospital = """
+[out:json];
+{{geocodeArea:'Provinsi Bali'}}-&gt;.searchArea;
+node[amenity='hospital'](area.searchArea);
+out;
+"""
+
+response_hospital = requests.get(overpass_api, params={'data':query_hospital})
+</code></pre>
+<p>but when I run the next code,</p>
+<pre><code>data_hospital = response_hospital.json()
+</code></pre>
+<p>it returns error <code>JSONDecodeError: Expecting value: line 1 column 1 (char 0)</code></p>
+<p>the query works well in <a href="https://overpass-turbo.eu/">Overpass Turbo</a> but when I put in notebook, it returns error.</p>
+<p>Thanks for the help.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-python" href="/tags/python/" rel="tag" title="see questions tagged 'python'">python</a>
+<a class="post-tag tag-link-query" href="/tags/query/" rel="tag" title="see questions tagged 'query'">query</a>
+<a class="post-tag tag-link-json" href="/tags/json/" rel="tag" title="see questions tagged 'json'">json</a>
+<a class="post-tag tag-link-jupyter" href="/tags/jupyter/" rel="tag" title="see questions tagged 'jupyter'">jupyter</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>08 May '22, 15:05</strong>
+</p>
+<img alt="salmiah-ls's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/95960c4ea8f9bf17c54226dc5c596bfe?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/21737/salmiah-ls">salmiah-ls</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="salmiah-ls has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/84408/">
+                edited
+                <strong>09 May '22, 23:43</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-84408">
+<a name="84413"></a>
+<div class="comment" id="comment-84413">
+<div class="comment-score" id="post-84413-score"></div>
+<div class="comment-text"><p>check the status code of the query, it's returning 400. The <code>.text</code> says: <code>Error: line 2: parse error: Unknown type "{"</code>, <code>Error: line 2: parse error: An empty query is not allowed</code> and <code>Error: line 2: parse error: ';' expected - '{' found.</code></p></div>
+<div class="comment-info" id="comment-84413-info">
+<span class="comment-age">(08 May '22, 20:31)</span>
+<a class="comment-user userinfo" href="/users/15564/marcos-dione">Marcos Dione</a>
+</div>
+</div>
+<a name="84414"></a>
+<div class="comment" id="comment-84414">
+<div class="comment-score" id="post-84414-score"></div>
+<div class="comment-text"><p>yes, I have the same thought. looks like python can't parse that double curly braces {{ }}.</p>
+<p>I wonder if there is way to modify the query in OSM so it can return the same result but without that double curly braces.</p></div>
+<div class="comment-info" id="comment-84414-info">
+<span class="comment-age">(09 May '22, 05:53)</span>
+<a class="comment-user userinfo" href="/users/21737/salmiah-ls">salmiah-ls</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-84408">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-84408-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/84408/jsondecodeerror-when-convert-query-result-in-jupyter-notebook-python?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/84408/jsondecodeerror-when-convert-query-result-in-jupyter-notebook-python?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/84408/jsondecodeerror-when-convert-query-result-in-jupyter-notebook-python?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/84408/jsondecodeerror-when-convert-query-result-in-jupyter-notebook-python?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="84422"></a>
+<div class="answer answered-by-owner" id="answer-container-84422">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/84422/up/" id="post-84422-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-84422-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/84422/down/" id="post-84422-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I've found the solution.</p>
+<p>I modify the query so I doesn't include the double curly braces {{ }} anymore, which seems python can't parse.
+Here is my new query:</p>
+<pre><code>query_hospital = """
+[out:json];
+area[name=Bali];
+node[amenity='hospital'](area);
+out;
+"""
+</code></pre>
+<p>or if we use area name in local language:</p>
+<pre><code>query_hospital = """
+[out:json];
+area['name:id'='Provinsi Bali'];
+node[amenity='hospital'](area);
+out;
+"""
+</code></pre>
+<p>the query returns same result and python can parse it now.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/84422/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 May '22, 23:41</strong>
+</p>
+<img alt="salmiah-ls's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/95960c4ea8f9bf17c54226dc5c596bfe?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/21737/salmiah-ls">salmiah-ls</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="salmiah-ls has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/84422/">
+                edited
+                <strong>09 May '22, 23:57</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-84422">
+</div>
+<div class="comment-tools" id="comment-tools-84422">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-84422-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/84408/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="G9Ohbjn7xCKrhE1OuPQPdsqnrgJYnHHG"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

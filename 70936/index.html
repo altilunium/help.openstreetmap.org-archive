@@ -1,0 +1,138 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/70936/element-id-generation-and-details">Element ID generation and details</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/70936/up/" id="post-70936-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-70936-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/70936/down/" id="post-70936-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/70936/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>As we know each element has element ID assigned to it.
+On what basis 64 bit element ID's are assigned. Does element IDs have any structure.
+Where can i find more details about Element ID generation and its structure.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-identifier" href="/tags/identifier/" rel="tag" title="see questions tagged 'identifier'">identifier</a>
+<a class="post-tag tag-link-id" href="/tags/id/" rel="tag" title="see questions tagged 'id'">id</a>
+<a class="post-tag tag-link-structure" href="/tags/structure/" rel="tag" title="see questions tagged 'structure'">structure</a>
+<a class="post-tag tag-link-element" href="/tags/element/" rel="tag" title="see questions tagged 'element'">element</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>27 Sep '19, 06:48</strong>
+</p>
+<img alt="Amruthesha's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3a9e601ec47c2494edc45f8c0e90a0aa?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17240/amruthesha">Amruthesha</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Amruthesha has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-70936">
+</div>
+<div class="comment-tools" id="comment-tools-70936">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-70936-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/70936/element-id-generation-and-details?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/70936/element-id-generation-and-details?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/70936/element-id-generation-and-details?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/70936/element-id-generation-and-details?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="70939"></a>
+<div class="answer accepted-answer" id="answer-container-70939">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/70939/up/" id="post-70939-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-70939-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/70939/down/" id="post-70939-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/70939/" rel="nofollow" title="Amruthesha has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The element IDs (node, way, relation IDs) are assigned by the PostgreSQL database on the central OpenStreetMap server. The API code merely tells the database to "save" a new object with an ID of NULL (e.g. for a new node, the relevant code line is <a href="https://github.com/openstreetmap/openstreetmap-website/blob/master/app/models/node.rb#L270)">https://github.com/openstreetmap/openstreetmap-website/blob/master/app/models/node.rb#L270)</a> and then the database assigns a new ID based on a PostgreSQL "sequence" (cf. <a href="https://github.com/openstreetmap/openstreetmap-website/blob/master/db/structure.sql#L1470).">https://github.com/openstreetmap/openstreetmap-website/blob/master/db/structure.sql#L1470).</a></p>
+<p>These IDs have no structure or meaning altogether. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/70939/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>27 Sep '19, 07:33</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/70939/">
+                edited
+                <strong>27 Sep '19, 07:34</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-70939">
+</div>
+<div class="comment-tools" id="comment-tools-70939">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-70939-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/70936/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="XH7TqXVlwDfH8SMyXok82BJUDQFp1kAl"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

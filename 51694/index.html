@@ -1,0 +1,71 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/51694/what-osm2pgsql-and-osmosis-exactly-do-when-import-data-into-postgis-database">What osm2pgsql and osmosis exactly do when import data into postgis database?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/51694/up/" id="post-51694-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-51694-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/51694/down/" id="post-51694-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/51694/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have set up the rails port on ubuntu14.04, and then I build my local tile server under the instruction of "<a href="https://switch2osm.org/serving-tiles/manually-building-a-tile-server-14-04/">Manually building a tile server (14.04)</a>". And I have changed the OSM map to my local tile server. The nominatim is still use the <a href="http://nominatim.openstreetmap.org/">http://nominatim.openstreetmap.org/</a></p>
+<p>I have dowmloaded the beijing_china.osm.pbf data file from the <a href="https://mapzen.com/data/metro-extracts/metro/beijing_china/">Metro Extracts</a>, then i  use osm2pgsql to import data into the tile server database,such as "<strong>osm2pgsql --slim -d gis -C 1600 --number-processes 3 /usr/local/share/maps/planet/beijing_china.osm.pbf</strong>", and i use osmosis to import data into the rails port database,such as "<strong>./osmosis-latest/bin/osmosis --read-pbf /home/osm/planet/beijing_china.osm.pbf --write-apidb host="localhost" database="openstreetmap" user="osm" password="buaanlp" validateSchemaVersion="no"</strong>". What confuse me is that the table structure in this two database is quite different, then how could it use the same data file to import data?</p>
+<p>The table structure in the rails port database and in the tile server database can be showed as blow.</p>
+<p>rails port database</p>
+<p><img alt="alt text" src="http://help.openstreetmap.org/upfiles/osmdb.png"/></p>
+<p>tile server database</p>
+<p><img alt="alt text" src="http://help.openstreetmap.org/upfiles/R2K9W`PLHG7280]80}0E2E6.png"/></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>24 Aug '16, 10:31</strong>
+</p>
+<img alt="yuyy's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3522efac952d508cf251cd2590e68ca5?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/12524/yuyy">yuyy</a><br/>
+<span class="score" title="236 reputation points">236</span><span title="22 badges"><span class="badge1">●</span><span class="badgecount">22</span></span><span title="24 badges"><span class="silver">●</span><span class="badgecount">24</span></span><span title="31 badges"><span class="bronze">●</span><span class="badgecount">31</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="yuyy has one accepted answer">20%</span>
+</p>
+</img></div>
+</div>
+<div class="comments-container" id="comments-container-51694">
+</div>
+<div class="comment-tools" id="comment-tools-51694">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-51694-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/51694/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="45VTl6ZJiA39Q080CcS17tM2Jj140DAr"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

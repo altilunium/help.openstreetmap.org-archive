@@ -1,0 +1,164 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/15948/problem-importing-planet-file-into-nominatim">Problem importing Planet file into Nominatim</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/15948/up/" id="post-15948-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-15948-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/15948/down/" id="post-15948-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/15948/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>After a gruesome night installing PostgreSQL 9.1, PostGIS 2 and Nominatim 2 on CentOS 6.3 using the instructions <a href="http://wiki.openstreetmap.org/wiki/Nominatim/Installation">here</a>, I am finally at the stage of importing a US planet file.</p>
+<p><strong>Problem:</strong> In <code>~/Nominatim/utils</code>, When I attempt to run <code>./setup.php --osm-file us-northeast.osm.pbf --all</code>, the output I get ends with: </p>
+<pre><code> ["type"]=&gt;
+      string(2) "-&gt;"
+      ["args"]=&gt;
+      array(2) {
+        [0]=&gt;
+        array(9) {
+          ["phptype"]=&gt;
+          string(5) "pgsql"
+          ["dbsyntax"]=&gt;
+          string(5) "pgsql"
+          ["username"]=&gt;
+          string(0) ""
+          ["password"]=&gt;
+          bool(false)
+          ["protocol"]=&gt;
+          string(3) "tcp"
+          ["hostspec"]=&gt;
+          string(0) ""
+          ["port"]=&gt;
+          bool(false)
+          ["socket"]=&gt;
+          bool(false)
+          ["database"]=&gt;
+          string(9) "nominatim"
+        }
+        [1]=&gt;
+        bool(false)
+      }
+    }
+    [5]=&gt;
+    array(6) {
+      ["file"]=&gt;
+      string(35) "/home/myusername/Nominatim/lib/db.php"
+      ["line"]=&gt;
+      int(7)
+      ["function"]=&gt;
+      string(7) "connect"
+      ["class"]=&gt;
+      string(2) "DB"
+      ["type"]=&gt;
+      string(2) "::"
+      ["args"]=&gt;
+      array(2) {
+        [0]=&gt;
+        string(19) "pgsql://@/nominatim"
+        [1]=&gt;
+        bool(false)
+      }
+    }
+    [6]=&gt;
+    array(4) {
+      ["file"]=&gt;
+      string(40) "/home/myusername/Nominatim/utils/setup.php"
+      ["line"]=&gt;
+      int(118)
+      ["function"]=&gt;
+      string(5) "getDB"
+      ["args"]=&gt;
+      array(0) {
+      }
+    }
+  }
+  ["callback"]=&gt;
+  NULL
+}
+DB Error: connect failed
+</code></pre>
+<p>Any idea what went wrong? Do I need to create any database before doing this? Is it supposed to connect without a username and password as shown above?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap" href="/tags/openstreetmap/" rel="tag" title="see questions tagged 'openstreetmap'">openstreetmap</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>10 Sep '12, 17:56</strong>
+</p>
+<img alt="nyxynyx's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9a7101fe3ba50e621e91ee1edf9d27bb?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4478/nyxynyx">nyxynyx</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="nyxynyx has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/15948/">
+                edited
+                <strong>11 Sep '12, 02:19</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-15948">
+<a name="15974"></a>
+<div class="comment" id="comment-15974">
+<div class="comment-score" id="post-15974-score">1</div>
+<div class="comment-text"><p>If you cannot see a helpful answer here maybe your question is to specific for an FAQ.</p>
+<p>In this case you can try again on one of the OSM mailing lists ( <a href="http://wiki.openstreetmap.org/wiki/Mailing_lists">http://wiki.openstreetmap.org/wiki/Mailing_lists</a> ) or the OSM forum.</p></div>
+<div class="comment-info" id="comment-15974-info">
+<span class="comment-age">(11 Sep '12, 16:52)</span>
+<a class="comment-user userinfo" href="/users/99/stephan75">stephan75</a>
+</div>
+</div>
+<a name="16001"></a>
+<div class="comment" id="comment-16001">
+<div class="comment-score" id="post-16001-score"></div>
+<div class="comment-text"><p>I have posted both to the geocoder mailing list and the OSM forum.</p></div>
+<div class="comment-info" id="comment-16001-info">
+<span class="comment-age">(12 Sep '12, 13:41)</span>
+<a class="comment-user userinfo" href="/users/4478/nyxynyx">nyxynyx</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-15948">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-15948-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/15948/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="0dBoi5DaPcPEXld34GooccS8IWVJ63t7"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

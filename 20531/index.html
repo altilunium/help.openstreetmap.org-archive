@@ -1,0 +1,185 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/20531/overpass-ql-nodes-and-ways-in-area">Overpass QL: Nodes and ways in area</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/20531/up/" id="post-20531-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-20531-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/20531/down/" id="post-20531-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/20531/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I want to get nodes and ways (amenity~fastfood|restaurant) for a specific area. I tried with a boundingbox, which works well, but when i change the query to use area, i only get the the first query results in the union (nodes). If i put the way-query first, i only get ways.</p>
+<p>The QL i have so far:
+</p><pre><code>
+[out:json];
+area
+  ["boundary"="administrative"]
+  ["name"="Calw"];
+out body qt;
+(
+  node
+    (area)
+    ["amenity"~"fast_food|restaurant"];
+  way
+    (area)
+    ["amenity"~"fast_food|restaurant"];
+);
+out body qt;
+&gt;;
+out skel qt;
+</code></pre>
+link:<a href="http://goo.gl/ZcFj1">Link to overpass-turbo with query running</a><p></p>
+<p>Any help to get the ways and nodes in one run?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-overpass-ql" href="/tags/overpass-ql/" rel="tag" title="see questions tagged 'overpass-ql'">overpass-ql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>06 Mar '13, 14:58</strong>
+</p>
+<img alt="dooley's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9c75aa423b0ee7b79376646a662c0688?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5761/dooley">dooley</a><br/>
+<span class="score" title="61 reputation points">61</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="dooley has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/20531/">
+                edited
+                <strong>17 Jan '16, 19:38</strong>
+</a>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-20531">
+</div>
+<div class="comment-tools" id="comment-tools-20531">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-20531-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/20531/overpass-ql-nodes-and-ways-in-area?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/20531/overpass-ql-nodes-and-ways-in-area?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/20531/overpass-ql-nodes-and-ways-in-area?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/20531/overpass-ql-nodes-and-ways-in-area?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="20549"></a>
+<div class="answer accepted-answer" id="answer-container-20549">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/20549/up/" id="post-20549-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-20549-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/20549/down/" id="post-20549-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/20549/" rel="nofollow" title="dooley has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You need to store the query result in a dedicated variable and to use it from there:</p>
+<pre><code>
+[out:json];
+area
+  ["boundary"="administrative"]
+  ["name"="Calw"]-&gt;.a;          // Redirect result to ".a"
+out body qt;
+(
+  node
+    (area.a)                    // Use result from ".a"
+    ["amenity"~"fast_food|restaurant"];
+  way
+    (area.a)                    // Use again result from ".a"
+    ["amenity"~"fast_food|restaurant"];
+);
+out body qt;
+&gt;;
+out skel qt;
+</code></pre>
+<p>Without the variable, the result of the area query is overwritten by the "node(area)..." statement. Thus the next statement doesn't find any area to recurse from.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/20549/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>07 Mar '13, 08:19</strong>
+</p>
+<img alt="Roland%20Olbricht's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fcfdb0825826fd13d2ff0d83d58819c6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3480/roland-olbricht">Roland Olbricht</a><br/>
+<span class="score" title="6666 reputation points"><span class="">6.7k</span></span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="64 badges"><span class="silver">●</span><span class="badgecount">64</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Roland Olbricht has 40 accepted answers">36%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-20549">
+<a name="20551"></a>
+<div class="comment" id="comment-20551">
+<div class="comment-score" id="post-20551-score">1</div>
+<div class="comment-text"><p>Thank you, works fine :-)</p></div>
+<div class="comment-info" id="comment-20551-info">
+<span class="comment-age">(07 Mar '13, 08:28)</span>
+<a class="comment-user userinfo" href="/users/5761/dooley">dooley</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-20549">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-20549-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/20531/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="is1YKZpukTt1uSyfBtphrSJbfzOW6uRh"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

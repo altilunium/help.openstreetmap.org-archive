@@ -1,0 +1,200 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/34301/how-can-i-start-tilemill-that-it-will-be-centered-on-specified-area-and-zoomed-in">How can I start TileMill that it will be centered on specified area and zoomed in?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/34301/up/" id="post-34301-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-34301-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/34301/down/" id="post-34301-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/34301/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am loading and testing very small area. But currently started TileMill is not centering on area with data, it displays map of the entire world. As it generates tiles it takes some time to reach area that I wanted to see.</p>
+<p>Is there some way to provide parameters from program or edit some config file that I would not need to pan through entire world looking for this 5km x 5km area that is rendered?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-tilemill" href="/tags/tilemill/" rel="tag" title="see questions tagged 'tilemill'">tilemill</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 Jun '14, 06:42</strong>
+</p>
+<img alt="Bulwersator's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fd2f7303e92334ed1eef75268aed7611?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7196/bulwersator">Bulwersator</a><br/>
+<span class="score" title="468 reputation points">468</span><span title="12 badges"><span class="badge1">●</span><span class="badgecount">12</span></span><span title="16 badges"><span class="silver">●</span><span class="badgecount">16</span></span><span title="25 badges"><span class="bronze">●</span><span class="badgecount">25</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Bulwersator has one accepted answer">14%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/34301/">
+                edited
+                <strong>25 Jun '14, 06:42</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-34301">
+</div>
+<div class="comment-tools" id="comment-tools-34301">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-34301-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/34301/how-can-i-start-tilemill-that-it-will-be-centered-on-specified-area-and-zoomed-in?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/34301/how-can-i-start-tilemill-that-it-will-be-centered-on-specified-area-and-zoomed-in?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/34301/how-can-i-start-tilemill-that-it-will-be-centered-on-specified-area-and-zoomed-in?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/34301/how-can-i-start-tilemill-that-it-will-be-centered-on-specified-area-and-zoomed-in?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="34302"></a>
+<div class="answer accepted-answer" id="answer-container-34302">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/34302/up/" id="post-34302-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-34302-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/34302/down/" id="post-34302-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/34302/" rel="nofollow" title="Bulwersator has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>There's a "project.mml" file that controls your layers; it is a JSON file that has, usually right at the beginning, a section like</p>
+<pre><code>"center": [
+  -77.036,
+  38.9013,
+  12
+],
+</code></pre>
+<p>change these values to the coordinates and zoom level you require, and you'll be fine.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/34302/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Jun '14, 07:02</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-34302">
+<a name="34303"></a>
+<div class="comment" id="comment-34303">
+<div class="comment-score" id="post-34303-score">1</div>
+<div class="comment-text"><p>Is it possible to override it? This file is tracked by repository so I would prefer to not modify it - see <a href="https://github.com/gravitystorm/openstreetmap-carto/blob/master/project.mml">https://github.com/gravitystorm/openstreetmap-carto/blob/master/project.mml</a></p></div>
+<div class="comment-info" id="comment-34303-info">
+<span class="comment-age">(25 Jun '14, 07:34)</span>
+<a class="comment-user userinfo" href="/users/7196/bulwersator">Bulwersator</a>
+</div>
+</div>
+<a name="34305"></a>
+<div class="comment" id="comment-34305">
+<div class="comment-score" id="post-34305-score">3</div>
+<div class="comment-text"><p>Not that I'm aware of, but I find it pretty annoying too. If I knew how to write the plugins for Tilemill I'd create a bookmarks plugin, since every time I start work on openstreetmap-carto I spend minutes trying to pan and zoom to where I want to work.</p></div>
+<div class="comment-info" id="comment-34305-info">
+<span class="comment-age">(25 Jun '14, 08:48)</span>
+<a class="comment-user userinfo" href="/users/3/andy-allan">Andy Allan</a>
+</div>
+</div>
+<a name="34464"></a>
+<div class="comment" id="comment-34464">
+<div class="comment-score" id="post-34464-score"></div>
+<div class="comment-text"><p>My search failed to find relevant ticket so I reported it as <a href="https://github.com/mapbox/tilemill/issues/2358">https://github.com/mapbox/tilemill/issues/2358</a></p>
+<p>Not that I expect implementation.</p></div>
+<div class="comment-info" id="comment-34464-info">
+<span class="comment-age">(30 Jun '14, 12:00)</span>
+<a class="comment-user userinfo" href="/users/7196/bulwersator">Bulwersator</a>
+</div>
+</div>
+<a name="34466"></a>
+<div class="comment" id="comment-34466">
+<div class="comment-score" id="post-34466-score">3</div>
+<div class="comment-text"><p>You could try to work around this by stashing your "private" coordinates with Git.</p>
+<p>See: <a href="http://git-scm.com/book/en/Git-Tools-Stashing">Git - Stashing</a></p></div>
+<div class="comment-info" id="comment-34466-info">
+<span class="comment-age">(30 Jun '14, 12:18)</span>
+<a class="comment-user userinfo" href="/users/2933/cartinus">cartinus</a>
+</div>
+</div>
+<a name="34474"></a>
+<div class="comment not_top_scorer" id="comment-34474">
+<div class="comment-score" id="post-34474-score"></div>
+<div class="comment-text"><p>I will also try exporting from command line - see <a href="https://www.mapbox.com/tilemill/docs/manual/exporting/">https://www.mapbox.com/tilemill/docs/manual/exporting/</a></p></div>
+<div class="comment-info" id="comment-34474-info">
+<span class="comment-age">(30 Jun '14, 16:25)</span>
+<a class="comment-user userinfo" href="/users/7196/bulwersator">Bulwersator</a>
+</div>
+</div>
+<a name="34476"></a>
+<div class="comment" id="comment-34476">
+<div class="comment-score" id="post-34476-score">1</div>
+<div class="comment-text"><p>This is one of the reasons I wrote the (tiny, hackish) Sputnik, so that map views could be bookmarkable: <a href="https://github.com/systemed/sputnik">https://github.com/systemed/sputnik</a></p></div>
+<div class="comment-info" id="comment-34476-info">
+<span class="comment-age">(30 Jun '14, 21:50)</span>
+<a class="comment-user userinfo" href="/users/5/richard">Richard ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-34302">
+<span class="comments-showing">
+            showing 5 of 6
+        </span>
+<a class="show-all-comments-link" href="#">show 1 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-34302-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/34301/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="bpMsY1ISmRI3RNSpBP5EGxlVPN3sasfA"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

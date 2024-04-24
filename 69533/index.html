@@ -1,0 +1,127 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/69533/can-i-export-only-needed-coordinates-from-a-certain-area">Can I export only needed coordinates from a certain area?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/69533/up/" id="post-69533-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-69533-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/69533/down/" id="post-69533-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/69533/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello OpenStreetMap users,</p>
+<p>I am working with a simulation program and would like to add all supermarkets in a city as GIS nodes on my map. I read I can get all coordinates for supermarkets using openstreetmap. However, when I click on export it exports all points and nodes from a selected area. This area can only be a certain part of the city, otherwise it would be too big and it is impossible to download. Looks like the only option I would have it to find every supermarket by hand, download coordinates for all buildings in the area and then select the ones I want by hand.
+Is that really the only option I have or is there any easier way how to select just the buildings I need and download an osm file with just the information I need?</p>
+<p>Any help would be appreciated :)
+KR</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-export" href="/tags/export/" rel="tag" title="see questions tagged 'export'">export</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>07 Jun '19, 14:13</strong>
+</p>
+<img alt="barborapetrovic's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/890083efa8b7e40c7d0c513c524a0f35?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16767/barborapetrovic">barborapetrovic</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="barborapetrovic has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-69533">
+</div>
+<div class="comment-tools" id="comment-tools-69533">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-69533-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/69533/can-i-export-only-needed-coordinates-from-a-certain-area?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/69533/can-i-export-only-needed-coordinates-from-a-certain-area?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/69533/can-i-export-only-needed-coordinates-from-a-certain-area?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/69533/can-i-export-only-needed-coordinates-from-a-certain-area?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="69535"></a>
+<div class="answer" id="answer-container-69535">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/69535/up/" id="post-69535-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-69535-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/69535/down/" id="post-69535-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>A frequently used tool for partical extracts from OSM is "Overpass Turbo" and you will find many examples for data extraction with it here, or on the OSM wiki. Some objects like supermarkets will sometimes be mapped as a point and sometimes as a polygon, in which case you might want to retrieve the centre of the polygon; Overpass can do that too.</p>
+<p>A more flexible approach is loading the OSM data for the region of interest into a PostGIS database on your local machine, then you can make even more complex queries, but it requires setting up the database whereas Overpass is already available.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/69535/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>07 Jun '19, 14:30</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-69535">
+</div>
+<div class="comment-tools" id="comment-tools-69535">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-69535-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/69533/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="lXWhXf8egdTgHxPc4T1HpqCWfW75WQ2i"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

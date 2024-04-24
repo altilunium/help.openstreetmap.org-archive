@@ -1,0 +1,287 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/47614/whats-the-best-way-of-searching-for-misplaced-semicolons-in-osm-data">What's the best way of searching for misplaced semicolons in OSM data?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/47614/up/" id="post-47614-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-47614-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/47614/down/" id="post-47614-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/47614/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Normally the answer is "taginfo", but (as you'd expect) that does explicit processing of semicolons.  If I search for <a href="http://taginfo.openstreetmap.org.uk/search?q=bar%3Bcafe%3Btoilets#values">http://taginfo.openstreetmap.org.uk/search?q=bar%3Bcafe%3Btoilets#values</a> I get the <a href="http://www.openstreetmap.org/way/234822100/history">one expected value</a> back, but I'm not aware of a way of searching for any values (or keys for that matter) containing multiple semicolons.</p>
+<p>In postgres (with a "normal" rendering database) I can do:</p>
+<pre><code>gis=# SELECT amenity FROM planet_osm_polygon WHERE (amenity LIKE '%;%;%');
+                  amenity
+-------------------------------------------
+ bar;cafe;toilets
+ private_hire_cars;coach_hire;minibus_hire
+(2 rows)
+</code></pre>
+<p>but obviously that requires a local database and doesn't search for semicolons in keys - presumably there's a way to search the "<code>tags</code>" array in "<code>planet_osm_ways</code>"?  Obviously for "<code>planet_osm_polygon</code>" I'd also need to look at "<code>planet_osm_point</code>" and "<code>planet_osm_line</code>", and for "<code>planet_osm_ways</code>" I'd need to look at "<code>planet_osm_nodes</code>" too (ignoring relations for now).</p>
+<p>Maybe there's a way of doing it with Overpass?</p>
+<p>EDIT: This was prompted by this <a href="https://lists.openstreetmap.org/pipermail/tagging/2016-January/028057.html">taginfo</a> discussion, as well as the related <a href="https://github.com/openstreetmap/iD/issues/2896">iD issue</a> and someone "correcting" name_X tags in Ireland (the link to which I've lost).</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-taginfo" href="/tags/taginfo/" rel="tag" title="see questions tagged 'taginfo'">taginfo</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Jan '16, 14:32</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/47614/">
+                edited
+                <strong>21 Jan '16, 14:38</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-47614">
+<a name="47616"></a>
+<div class="comment" id="comment-47616">
+<div class="comment-score" id="post-47616-score">1</div>
+<div class="comment-text"><p><a href="http://www.openstreetmap.org/changeset/36573638">This</a> is probably the name_X correction you had in mind.</p></div>
+<div class="comment-info" id="comment-47616-info">
+<span class="comment-age">(21 Jan '16, 15:17)</span>
+<a class="comment-user userinfo" href="/users/867/vincent-de-phily">Vincent de P... ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-47614">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-47614-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/47614/whats-the-best-way-of-searching-for-misplaced-semicolons-in-osm-data?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/47614/whats-the-best-way-of-searching-for-misplaced-semicolons-in-osm-data?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/47614/whats-the-best-way-of-searching-for-misplaced-semicolons-in-osm-data?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/47614/whats-the-best-way-of-searching-for-misplaced-semicolons-in-osm-data?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="47617"></a>
+<div class="answer" id="answer-container-47617">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/47617/up/" id="post-47617-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-47617-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/47617/down/" id="post-47617-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>If you have an osm2pgsql/hstore database and want to operate on the keys, you have to explode the hstore into regular rows with the <code>each</code> operator before then applying a normal query, like so:</p>
+<pre><code>gis=# SELECT osm_id, key
+FROM
+  (SELECT osm_id,(each(tags)).key as key FROM planet_osm_point) sub 
+WHERE key like '%;%;%';
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/47617/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Jan '16, 15:25</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-47617">
+<a name="47619"></a>
+<div class="comment" id="comment-47619">
+<div class="comment-score" id="post-47619-score"></div>
+<div class="comment-text"><p>No hstore here currently (and no "tags" column on planet_osm_point, though there is one on e.g. planet_osm_nodes) - will have to try it after reload.</p></div>
+<div class="comment-info" id="comment-47619-info">
+<span class="comment-age">(21 Jan '16, 19:13)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-47617">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-47617-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="47621"></a>
+<div class="answer" id="answer-container-47621">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/47621/up/" id="post-47621-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-47621-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/47621/down/" id="post-47621-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Overpass does indeed have regex search for keys: <a href="http://overpass-turbo.eu/s/dTS">http://overpass-turbo.eu/s/dTS</a></p>
+<pre><code>way[~";"~"."];
+out geom;
+</code></pre>
+<p>(<code>~"."</code> will match any value, some value match is required when matching a key)</p>
+<p>In a similar way, you can also query for nodes or relations with at least one semicolon.</p>
+<p>Edit: To check for values with at least 2 semicolons, the following regular expression might come in handy: <code>".+;(.+;)+.+"</code> - use it either for keys or values.</p>
+<pre><code>[bbox:{{bbox}}];
+way[~"."~".+;(.+;)+.+"];
+out geom;
+</code></pre>
+<p>In any case it is recommended to also specify a suitable key like e.g. amenity, otherwise tags like opening_hours will produce quite a lot of hits.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/47621/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Jan '16, 21:33</strong>
+</p>
+<img alt="maxerickson's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c860445e868ebb21da141635a4aa7b06?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10973/maxerickson">maxerickson</a><br/>
+<span class="score" title="12700 reputation points"><span class="">12.7k</span></span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="83 badges"><span class="silver">●</span><span class="badgecount">83</span></span><span title="176 badges"><span class="bronze">●</span><span class="badgecount">176</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="maxerickson has 93 accepted answers">32%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/47621/">
+                edited
+                <strong>22 Jan '16, 08:50</strong>
+</a>
+</p>
+<img alt="mmd's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/264d84ab05b942224b05960903eba7a7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8708/mmd">mmd</a><br/>
+<span class="score" title="5682 reputation points"><span class="">5.7k</span></span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="53 badges"><span class="silver">●</span><span class="badgecount">53</span></span><span title="88 badges"><span class="bronze">●</span><span class="badgecount">88</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-47621">
+</div>
+<div class="comment-tools" id="comment-tools-47621">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-47621-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="47623"></a>
+<div class="answer" id="answer-container-47623">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/47623/up/" id="post-47623-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-47623-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/47623/down/" id="post-47623-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Taginfo doesn't have a way to do searches like that (mostly for performance reasons), but you can <a href="https://taginfo.openstreetmap.org/download">download</a> the taginfo database and do the query yourself. The database is in Sqlite format and quite big, but once you have it, usage is simple and reasonably fast if you know SQL:</p>
+<pre><code>sqlite&gt; select count(*) from tags where value like '%;%;%';
+205966
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/47623/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Jan '16, 07:09</strong>
+</p>
+<img alt="Jochen%20Topf's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2d4dfcdcde73aa5e2ffa4a9b3a7cb51d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/112/jochen-topf">Jochen Topf</a><br/>
+<span class="score" title="5244 reputation points"><span class="">5.2k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="50 badges"><span class="silver">●</span><span class="badgecount">50</span></span><span title="74 badges"><span class="bronze">●</span><span class="badgecount">74</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jochen Topf has 32 accepted answers">31%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-47623">
+</div>
+<div class="comment-tools" id="comment-tools-47623">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-47623-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/47614/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="pVT0LPsAL0H6DSr4pm5NSW0jViKCyPwA"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

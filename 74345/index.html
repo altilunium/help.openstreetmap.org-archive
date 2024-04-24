@@ -1,0 +1,225 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/74345/is-there-still-a-lighting-map-somewhere-out-there">Is there still a lighting map somewhere out there?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/74345/up/" id="post-74345-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-74345-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/74345/down/" id="post-74345-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/74345/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I only just now realized that ITO World have <a href="https://www.itoworld.com/ito-map-announcement/">discontinued their map services</a> last year. I had frequently used their "Highway Lighting" visualization of lit and unlit highways in the past. A similar service from <a href="https://www.geog.uni-heidelberg.de/gis/online.html">University of Heidelberg</a> has also not been maintained for a long time.</p>
+<p>Is there some map out there that shows me which highways are tagged with a lit=yes, lit=no or no lit=* at all? Or how could I get Overpass Turbo to do that? I'm not really familiar with visualization options (different colors etc) there.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-lit" href="/tags/lit/" rel="tag" title="see questions tagged 'lit'">lit</a>
+<a class="post-tag tag-link-visualization" href="/tags/visualization/" rel="tag" title="see questions tagged 'visualization'">visualization</a>
+<a class="post-tag tag-link-lighting" href="/tags/lighting/" rel="tag" title="see questions tagged 'lighting'">lighting</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>23 Apr '20, 10:43</strong>
+</p>
+<img alt="TZorn's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ddebc8d5f4e0458413eacf65e36561a9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10133/tzorn">TZorn</a><br/>
+<span class="score" title="12350 reputation points"><span class="">12.3k</span></span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="64 badges"><span class="silver">●</span><span class="badgecount">64</span></span><span title="225 badges"><span class="bronze">●</span><span class="badgecount">225</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="TZorn has 63 accepted answers">15%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/74345/">
+                edited
+                <strong>23 Apr '20, 20:52</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-74345">
+<a name="74347"></a>
+<div class="comment" id="comment-74347">
+<div class="comment-score" id="post-74347-score">3</div>
+<div class="comment-text"><p>I won't put this as an answer because I think you mean online slippy map specifically, but OsmAnd has the option to show lighting as an optional 'detail'. It places a yellow 'halo' on streets marked as lit, a orange ones around ones marked as unlit and leaves untagged streets halo free. The update frequency might be a little slow for your purposes (unless you have a live subscription).</p></div>
+<div class="comment-info" id="comment-74347-info">
+<span class="comment-age">(23 Apr '20, 20:39)</span>
+<a class="comment-user userinfo" href="/users/4426/insertuser">InsertUser</a>
+</div>
+</div>
+<a name="74349"></a>
+<div class="comment" id="comment-74349">
+<div class="comment-score" id="post-74349-score"></div>
+<div class="comment-text"><p>Yes, you are right. I am looking for an online slippy map. But thanks anyway. I'll give it a shot if I don't find any better solution.</p></div>
+<div class="comment-info" id="comment-74349-info">
+<span class="comment-age">(23 Apr '20, 20:51)</span>
+<a class="comment-user userinfo" href="/users/10133/tzorn">TZorn</a>
+</div>
+</div>
+<a name="77201"></a>
+<div class="comment" id="comment-77201">
+<div class="comment-score" id="post-77201-score"></div>
+<div class="comment-text"><p>Don’t know if you’ll see this, but I’ve been adding lighting simply as individual nodes (highway=streetlamp) for street lamps, so if you were to visualize a city with the suggestion given below, it wouldn’t work that well for some places. Just to keep in mind! :-)</p></div>
+<div class="comment-info" id="comment-77201-info">
+<span class="comment-age">(23 Oct '20, 14:03)</span>
+<a class="comment-user userinfo" href="/users/18989/ianvg">IanVG</a>
+</div>
+</div>
+<a name="77216"></a>
+<div class="comment" id="comment-77216">
+<div class="comment-score" id="post-77216-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/18989/ianvg">@IanVG</a>: Yes, below code does not pick up street lamps on nodes but that could be easily added. For data consumers (e.g. calculate a route trying to only use lit streets) it's easier to evaluate the <code>lit=*</code> tag on the ways. Therefore I would always recommend tagging that as well when you tag individual street lamps.</p></div>
+<div class="comment-info" id="comment-77216-info">
+<span class="comment-age">(24 Oct '20, 17:51)</span>
+<a class="comment-user userinfo" href="/users/10133/tzorn">TZorn</a>
+</div>
+</div>
+<a name="77392"></a>
+<div class="comment" id="comment-77392">
+<div class="comment-score" id="post-77392-score"></div>
+<div class="comment-text"><p>I've updated the query to also look for street lamp nodes.</p></div>
+<div class="comment-info" id="comment-77392-info">
+<span class="comment-age">(04 Nov '20, 11:04)</span>
+<a class="comment-user userinfo" href="/users/10133/tzorn">TZorn</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-74345">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-74345-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/74345/is-there-still-a-lighting-map-somewhere-out-there?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/74345/is-there-still-a-lighting-map-somewhere-out-there?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/74345/is-there-still-a-lighting-map-somewhere-out-there?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/74345/is-there-still-a-lighting-map-somewhere-out-there?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="74357"></a>
+<div class="answer answered-by-owner" id="answer-container-74357">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/74357/up/" id="post-74357-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-74357-score" title="current number of votes">
+    6
+</div>
+<a class="ajax-command post-vote down" href="/vote/74357/down/" id="post-74357-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>OK, so I sat down and tried to get into the depths of Overpass Turbo style sheets. Not that difficult once you find out what to do in general. <em>(While the language guide is very extensive I always find it lacking some practical examples, but that is another story.)</em></p>
+<p>This already does the job quite well for me. I might add more differentiation or filters later.</p>
+<pre><code>[out:json][timeout:25];
+// gather results
+(
+  way[highway]({{bbox}});
+  node[highway=street_lamp]({{bbox}});
+)
+;
+// print results
+out body;
+&gt;;
+out skel qt;
+
+{{style:
+/* lamps */
+node {symbol-size:5; color:orange;fill-color: yellow}
+
+/* default for highways */
+way[highway] {color:darkcyan; width:3; opacity:0.3; }
+
+/* highways with lit tag */
+way[lit] {color:orange; width:10; opacity:0.5; }
+
+/* highways with specific lit tag */
+way[lit=no] {color:black; opacity:0.5;}
+  way[lit=yes] {color:yellow; opacity:0.5;}
+}}
+</code></pre>
+<p>Would there be a way of getting rid of the circles that OT draws when the objects are small? i don't really need them and they are quite distracting.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/74357/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>24 Apr '20, 13:52</strong>
+</p>
+<img alt="TZorn's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ddebc8d5f4e0458413eacf65e36561a9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10133/tzorn">TZorn</a><br/>
+<span class="score" title="12350 reputation points"><span class="">12.3k</span></span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="64 badges"><span class="silver">●</span><span class="badgecount">64</span></span><span title="225 badges"><span class="bronze">●</span><span class="badgecount">225</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="TZorn has 63 accepted answers">15%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/74357/">
+                edited
+                <strong>04 Nov '20, 11:03</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-74357">
+<a name="74359"></a>
+<div class="comment" id="comment-74359">
+<div class="comment-score" id="post-74359-score">2</div>
+<div class="comment-text"><p>you can find a setting under "Settings -&gt; Map -&gt; "Do not show small objects as POIs". Note that this is my translation of the Dutch text I see.</p></div>
+<div class="comment-info" id="comment-74359-info">
+<span class="comment-age">(25 Apr '20, 10:45)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-74357">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-74357-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/74345/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="rQCgBgiSlebIezKSIIGssF5Q7fV3k4Qk"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

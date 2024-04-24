@@ -1,0 +1,166 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/54315/water-on-aqueduct-not-rendered-in-mapnik">Water on aqueduct not rendered in Mapnik</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/54315/up/" id="post-54315-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-54315-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/54315/down/" id="post-54315-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/54315/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>The Pont-canal du Sart <a href="http://www.openstreetmap.org/#map=18/50.49353/4.13718">http://www.openstreetmap.org/#map=18/50.49353/4.13718</a> is a wide bridge for ships travelling the Belgian Canal du Centre. </p>
+<p>The waterway object alone is rendered only very narrow (the width tag is being ignored) and it would not include the cycleways on both sides, hence I've added an area tagged man_made=bridge and layer=1, and there's a (smaller) natural=water area covering the canal surface, also tagged with layer=1 because this is recommended for objects ans ways on the bridge. </p>
+<p>However, Mapnik would not render the water area, even not when I make its layer=2. </p>
+<p>What should I do? Change the tagging? I think it is correct as it is, and I actually do not fancy adopting tagging to compensate for flaws in rendering. So if no one has an idea how to change tags in a senseful and correct way I would like to leave it as it is. </p>
+<p>Can Mapnik be changed? Can I submit a bug report somewhere?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-aqueduct" href="/tags/aqueduct/" rel="tag" title="see questions tagged 'aqueduct'">aqueduct</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>26 Jan '17, 18:39</strong>
+</p>
+<img alt="DerGuteDiktator's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/5f5d99b38973b2f5f0a322f6695ff1d8?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13212/dergutediktator">DerGuteDiktator</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="DerGuteDiktator has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-54315">
+</div>
+<div class="comment-tools" id="comment-tools-54315">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-54315-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/54315/water-on-aqueduct-not-rendered-in-mapnik?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/54315/water-on-aqueduct-not-rendered-in-mapnik?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/54315/water-on-aqueduct-not-rendered-in-mapnik?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/54315/water-on-aqueduct-not-rendered-in-mapnik?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="54322"></a>
+<div class="answer" id="answer-container-54322">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/54322/up/" id="post-54322-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-54322-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/54322/down/" id="post-54322-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hallo,</p>
+<p>you should never change the tagging to obtain a particular result in 1 renderer, see <a href="https://wiki.openstreetmap.org/wiki/Tagging_for_the_renderer">Tagging for the Renderer</a></p>
+<p>You can log a bug report for the default carto-css style on <a href="https://github.com/gravitystorm/openstreetmap-carto">their github page</a>. </p>
+<p>Note that they (the carto-css developers) use Mapnik as a technology, so the problem you see in in the use of the technology, not in the technology itself. With Mapnik you can make many different maps, a few  can be found on osm.org, but many more exist.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/54322/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>27 Jan '17, 06:17</strong>
+</p>
+<img alt="escada's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/813a136afe7d4c95fd5bccdd78705e0e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5390/escada">escada</a><br/>
+<span class="score" title="19043 reputation points"><span class="">19.0k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="166 badges"><span class="silver">●</span><span class="badgecount">166</span></span><span title="302 badges"><span class="bronze">●</span><span class="badgecount">302</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="escada has 97 accepted answers">21%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/54322/">
+                edited
+                <strong>27 Jan '17, 13:45</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-54322">
+<a name="54326"></a>
+<div class="comment" id="comment-54326">
+<div class="comment-score" id="post-54326-score">1</div>
+<div class="comment-text"><p>Thanks, I said that I'd only change the tags if there would be an alternative that is inherently just as correct, not tag it wrong just to fit the rendering result. </p>
+<p>I didn't know that this is only due to the style and not of Mapnik, though, so thanks for the explanation!</p>
+<p>You have posted the same link twice, albeit with different labels. Do you mean this page? <a href="https://github.com/mapbox/carto/issues">https://github.com/mapbox/carto/issues</a></p></div>
+<div class="comment-info" id="comment-54326-info">
+<span class="comment-age">(27 Jan '17, 10:20)</span>
+<a class="comment-user userinfo" href="/users/13212/dergutediktator">DerGuteDiktator</a>
+</div>
+</div>
+<a name="54333"></a>
+<div class="comment" id="comment-54333">
+<div class="comment-score" id="post-54333-score"></div>
+<div class="comment-text"><p>No, that's yet another style. I've updated the link above. It's under "gravitystorm"</p></div>
+<div class="comment-info" id="comment-54333-info">
+<span class="comment-age">(27 Jan '17, 13:44)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+<a name="54334"></a>
+<div class="comment" id="comment-54334">
+<div class="comment-score" id="post-54334-score"></div>
+<div class="comment-text"><p>it won't update, the github link is <a href="https://github.com/gravitystorm/openstreetmap-carto">https://github.com/gravitystorm/openstreetmap-carto</a></p></div>
+<div class="comment-info" id="comment-54334-info">
+<span class="comment-age">(27 Jan '17, 13:45)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-54322">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-54322-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/54315/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="eVANvW1TFdYAASE3KszrTvX531UfNI2D"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,91 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/12698/contours-not-displaying-on-local-mapnik-rendering">Contours not displaying on local mapnik rendering</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/12698/up/" id="post-12698-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-12698-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/12698/down/" id="post-12698-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/12698/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have a Ubuntu 11.10 VM running the <a href="http://wiki.openstreetmap.org/wiki/Ubuntu_tile_server">Ubuntu Tile Server</a> as described on the wiki. I've imported the Geofabrik Oxfordshire extract and the usual OSM data is rendering well. I cannot, however, get any contour lines to display. </p>
+<p>I have followed the wiki'd instructions covering the <a href="http://wiki.openstreetmap.org/wiki/Contours#The_PostGIS_approach">PostGIS Approach</a>, using the import script provided to add the following files to my database:</p>
+<ul>
+<li><a href="http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/Eurasia/N51E115.hgt.zip">http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/Eurasia/N51E115.hgt.zip</a></li>
+<li><a href="http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/Eurasia/N51E117.hgt.zip">http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/Eurasia/N51E117.hgt.zip</a></li>
+<li><a href="http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/Eurasia/N51E118.hgt.zip">http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/Eurasia/N51E118.hgt.zip</a></li>
+<li><a href="http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/Eurasia/N50E115.hgt.zip">http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/Eurasia/N50E115.hgt.zip</a></li>
+<li><a href="http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/Eurasia/N50E116.hgt.zip">http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/Eurasia/N50E116.hgt.zip</a></li>
+<li><a href="http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/Eurasia/N50E117.hgt.zip">http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/Eurasia/N50E117.hgt.zip</a></li>
+<li><a href="http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/Eurasia/N52E115.hgt.zip">http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/Eurasia/N52E115.hgt.zip</a></li>
+<li><a href="http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/Eurasia/N52E116.hgt.zip">http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/Eurasia/N52E116.hgt.zip</a></li>
+<li><a href="http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/Eurasia/N52E117.hgt.zip">http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/Eurasia/N52E117.hgt.zip</a></li>
+</ul>
+<p>These files, I imagined, would correspond my existing OSM data.</p>
+<p>To <em>/etc/mapnik-osm-data/osm.xml</em> I have added the line:</p>
+<p><em>&amp;layer-contours;</em></p>
+<p>To <em>/etc/mapnik-osm-data/inc/layers.xml.inc</em> I have added the line:</p>
+<p><em>!ENTITY layer-contours SYSTEM "layer-contours.xml.inc</em></p>
+<p>(note, I've removed some tags as the formatting was making my line disappear. This line is formatted the same as the others)</p>
+<p>The file <em>/etc/mapnik-osm-data/inc/layer-contours.xml.inc</em> is as <a href="http://pastebin.com/w74iKZ7W">pasted here</a></p>
+<p>I restarted renderd and got the same permissions error as described <a href="http://lists.openstreetmap.org/pipermail/dev/2010-November/021045.html">here</a>. Since granting the gis user select on geometry_columns the error has been removed, but I still cannot see any contours.</p>
+<p>I have connected to the database remotely to verify that there is data in the contours table.</p>
+<p>I've not done anything with extents here - are they required? Anything else I'm missing?</p>
+<p>Help greatly appreciated.</p>
+<p>Thanks, Joseph</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-rendering" href="/tags/rendering/" rel="tag" title="see questions tagged 'rendering'">rendering</a>
+<a class="post-tag tag-link-contours" href="/tags/contours/" rel="tag" title="see questions tagged 'contours'">contours</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+<a class="post-tag tag-link-ubuntu" href="/tags/ubuntu/" rel="tag" title="see questions tagged 'ubuntu'">ubuntu</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>13 May '12, 19:11</strong>
+</p>
+<img alt="IknowJoseph's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/50ac30a0553308fb00e6ac3126224239?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/101/iknowjoseph">IknowJoseph</a><br/>
+<span class="score" title="226 reputation points">226</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="IknowJoseph has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-12698">
+</div>
+<div class="comment-tools" id="comment-tools-12698">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-12698-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/12698/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="WISuwztVOiCo7r0RhLaJS4r8Sf4AbRDH"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

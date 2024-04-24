@@ -1,0 +1,147 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/78266/reverse-geocoding-osm-nodes-to-get-their-address-and-contributing-back-to-the-node">Reverse geocoding OSM nodes to get their address and contributing back to the node</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/78266/up/" id="post-78266-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-78266-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/78266/down/" id="post-78266-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/78266/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>I would like to extract nodes from OpenStreetMap, but I noticed most of them are just lat lon pairs.</p>
+<p>I would like to reverse geocode them, possibly with Nominatim.</p>
+<p>Is there an API way to contrib back the reverse geocoded node data to the node?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-latlon" href="/tags/latlon/" rel="tag" title="see questions tagged 'latlon'">latlon</a>
+<a class="post-tag tag-link-nodes" href="/tags/nodes/" rel="tag" title="see questions tagged 'nodes'">nodes</a>
+<a class="post-tag tag-link-reversegeocoding" href="/tags/reversegeocoding/" rel="tag" title="see questions tagged 'reversegeocoding'">reversegeocoding</a>
+<a class="post-tag tag-link-geocoding" href="/tags/geocoding/" rel="tag" title="see questions tagged 'geocoding'">geocoding</a>
+<a class="post-tag tag-link-api" href="/tags/api/" rel="tag" title="see questions tagged 'api'">api</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>07 Jan '21, 17:44</strong>
+</p>
+<img alt="giorgio79's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a10be9347637087d655e00a6e9d3655d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19508/giorgio79">giorgio79</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="giorgio79 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-78266">
+</div>
+<div class="comment-tools" id="comment-tools-78266">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-78266-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/78266/reverse-geocoding-osm-nodes-to-get-their-address-and-contributing-back-to-the-node?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/78266/reverse-geocoding-osm-nodes-to-get-their-address-and-contributing-back-to-the-node?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/78266/reverse-geocoding-osm-nodes-to-get-their-address-and-contributing-back-to-the-node?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/78266/reverse-geocoding-osm-nodes-to-get-their-address-and-contributing-back-to-the-node?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="78267"></a>
+<div class="answer" id="answer-container-78267">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/78267/up/" id="post-78267-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-78267-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/78267/down/" id="post-78267-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>That would be very bad. Don't do it. Nominatim will sometimes make "best guesses" when doing reverse geocoding, and these guesses must not be used to generate statements about reality and load them into the database. Also, if Nominatim is able to reverse geocode something that is good enough for us, we don't need that information replicated thousands of times with every node! </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/78267/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>07 Jan '21, 18:14</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-78267">
+<a name="78268"></a>
+<div class="comment" id="comment-78268">
+<div class="comment-score" id="post-78268-score"></div>
+<div class="comment-text"><p>I guess we can reverse your answer, and ask why reverse geocode a node thousand of times when you can have the address in it once, and reject geocoding if address data exists. If address is a best guess, then it could be indicated.</p></div>
+<div class="comment-info" id="comment-78268-info">
+<span class="comment-age">(07 Jan '21, 18:22)</span>
+<a class="comment-user userinfo" href="/users/19508/giorgio79">giorgio79</a>
+</div>
+</div>
+<a name="78269"></a>
+<div class="comment" id="comment-78269">
+<div class="comment-score" id="post-78269-score">1</div>
+<div class="comment-text"><p>Without admin boundaries Nominatim makes guesses based on distance which of the surrounding towns and postcode an address belongs to. There's many small flaws like if a road crosses state boundaries a house can get assigned to the wrong state. Such guessed data has no value to be added permanently.</p></div>
+<div class="comment-info" id="comment-78269-info">
+<span class="comment-age">(07 Jan '21, 21:28)</span>
+<a class="comment-user userinfo" href="/users/150/mtmail">mtmail</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-78267">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-78267-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/78266/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="gOjJnUSaU6N7kG0KB3wXg9WYGzDhpMlA"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

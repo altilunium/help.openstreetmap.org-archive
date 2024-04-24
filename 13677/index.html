@@ -1,0 +1,190 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/13677/naming-garmin-roadtrip-maps-something-other-than-osm-map">Naming Garmin (RoadTrip) maps something other than "OSM Map"</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/13677/up/" id="post-13677-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-13677-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/13677/down/" id="post-13677-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/13677/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have been experimenting with generating Garmin maps with mkgmap, and then converting them to Garmin's Mac-platform ".gmapi" format for using them in RoadTrip, by using "Gmapi Builder.app". This works great, except for one thing. The maps are always named "OSM Map", and that means that I can only install one at a time — they seem to overwrite each other. Now, mkgmap has gazillion switches for setting various names and identifiers on maps. Which one of all these is it that I need to change?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-mkgmap" href="/tags/mkgmap/" rel="tag" title="see questions tagged 'mkgmap'">mkgmap</a>
+<a class="post-tag tag-link-garmin" href="/tags/garmin/" rel="tag" title="see questions tagged 'garmin'">garmin</a>
+<a class="post-tag tag-link-gmapi" href="/tags/gmapi/" rel="tag" title="see questions tagged 'gmapi'">gmapi</a>
+<a class="post-tag tag-link-roadtrip" href="/tags/roadtrip/" rel="tag" title="see questions tagged 'roadtrip'">roadtrip</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Jun '12, 09:08</strong>
+</p>
+<img alt="turepalsson's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/80abc4597de5aeb507c5a7ccd4ccee7a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3893/turepalsson">turepalsson</a><br/>
+<span class="score" title="836 reputation points">836</span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="16 badges"><span class="silver">●</span><span class="badgecount">16</span></span><span title="25 badges"><span class="bronze">●</span><span class="badgecount">25</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="turepalsson has 3 accepted answers">25%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-13677">
+</div>
+<div class="comment-tools" id="comment-tools-13677">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-13677-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/13677/naming-garmin-roadtrip-maps-something-other-than-osm-map?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/13677/naming-garmin-roadtrip-maps-something-other-than-osm-map?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/13677/naming-garmin-roadtrip-maps-something-other-than-osm-map?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/13677/naming-garmin-roadtrip-maps-something-other-than-osm-map?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="13690"></a>
+<div class="answer answered-by-owner" id="answer-container-13690">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/13690/up/" id="post-13690-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-13690-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/13690/down/" id="post-13690-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>--family-name and --area-name did not make much apparent difference. Eventually, I concluded that --series-name seems to be the critical
+one.</p>
+<p>Here is what my workflow looks like:</p>
+<p>I start with a bunch of .osm.pbf files, let's say rhone-alpes.osm.pbf and ile-de-france.osm.pbf. I run 'splitter' on each one of these, each
+in a "clean" directory, giving each a unique --mapid. So, r-a might
+get 19710001 and i-d-f gets 19720001. This results in a set of tile
+.osm.pbf files named 19710001.osm.pbf, 19710002.osm.pbf and so on for
+r-a, and 19720001, 19720002, etc for i-d-f.</p>
+<p>I then run mkgmap once for each directory. I set the family ID to 1971 for r-a, 1972 for i-d-f. The family name, series name and area name
+are all set to the basename of the .osm.pbf file it started with. This
+gives me (in each directory) files named osmmap.tdb and osmmap.img.</p>
+<p>Finally, i open each osmmap.tdb file in Gmapi builder and hit
+"convert". This gives me rhone-alpes.gmapi and ile-de-france.gmapi.
+These can be installed by double-clicking them, and display fine in
+Road Trip and Base Camp. The only remaining problem is that I can only
+see one of them at a time. Is it possible to have maps that are
+installed separately, but display at the same time in e.g. RoadTrip?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/13690/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Jun '12, 14:30</strong>
+</p>
+<img alt="turepalsson's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/80abc4597de5aeb507c5a7ccd4ccee7a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3893/turepalsson">turepalsson</a><br/>
+<span class="score" title="836 reputation points">836</span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="16 badges"><span class="silver">●</span><span class="badgecount">16</span></span><span title="25 badges"><span class="bronze">●</span><span class="badgecount">25</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="turepalsson has 3 accepted answers">25%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-13690">
+</div>
+<div class="comment-tools" id="comment-tools-13690">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-13690-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="13679"></a>
+<div class="answer" id="answer-container-13679">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/13679/up/" id="post-13679-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-13679-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/13679/down/" id="post-13679-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p><em>--family-name</em> and perhaps <em>--area-name</em> will let you set display names of maps differently.</p>
+<p>More importantly, you need to set <em>--product-id</em> to a different value for every map, otherwise your garmin device will only see one of the *.img files.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/13679/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Jun '12, 09:54</strong>
+</p>
+<img alt="Vincent%20de%20Phily's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d20f86db9a6f03cb070e9fbaaf0b7228?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/867/vincent-de-phily">Vincent de P... ♦</a><br/>
+<span class="score" title="17304 reputation points"><span class="">17.3k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="152 badges"><span class="silver">●</span><span class="badgecount">152</span></span><span title="249 badges"><span class="bronze">●</span><span class="badgecount">249</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Vincent de Phily has 64 accepted answers">19%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-13679">
+</div>
+<div class="comment-tools" id="comment-tools-13679">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-13679-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/13677/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="6PSCdWdpWbpR37RdERBMyxCZ1yWp0uh1"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

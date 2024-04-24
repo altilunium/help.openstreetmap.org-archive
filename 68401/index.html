@@ -1,0 +1,186 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/68401/osmtracker-cant-download-tiles-because-its-blocked-by-openstreetmaporg">osmtracker can't download tiles because it's blocked by openstreetmap.org</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68401/up/" id="post-68401-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68401-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/68401/down/" id="post-68401-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/68401/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Around 2 March 2019, OSMtracker for Android stopped displaying background maps, as <a href="https://github.com/labexp/osmtracker-android/issues/194">reported by various users on Github</a>.</p>
+<p>One user explains that the problem is caused by openstreetmap.org blocking tile download requests with the agent string "osmdroid".  This can be verified as follows:</p>
+<pre><code>$ wget <a href="https://b.tile.openstreetmap.org/12/1206/1539.png">https://b.tile.openstreetmap.org/12/1206/1539.png</a>
+2019-03-17 13:20:31 (7.90 KB/s) - ‘1539.png’ saved [40312/40312]
+
+$ wget -U zzzzzzzz <a href="https://b.tile.openstreetmap.org/12/1206/1540.png">https://b.tile.openstreetmap.org/12/1206/1540.png</a>
+2019-03-17 13:20:58 (7.89 KB/s) - ‘1539.png.1’ saved [40312/40312]
+
+$ wget -U osmdroid <a href="https://b.tile.openstreetmap.org/12/1206/1540.png">https://b.tile.openstreetmap.org/12/1206/1540.png</a>
+2019-03-17 13:21:17 ERROR 403: Forbidden.
+</code></pre>
+<p>Can this be fixed?  (Either by unblocking osmdroid on the server, or by changing the user agent string used by OSMtracker)?</p>
+<p>EDIT: Ok, SomeoneElse's answer led me to more information. The server <a href="https://github.com/openstreetmap/chef/commit/bb8fbb886ef77d0e23f675966342c10d1d603e00">block was on purpose</a> because the server is overwhelmed by requests naming user-agent "osmdroid".  This is contrary to policy.  The policy is that apps are supposed to set their own user-agent.  However, the policy wasn't enforced for many years, allowing apps like osmtracker to work fine despite violating the policy, until now.  More threads about it: <a href="https://github.com/openstreetmap/operations/issues/281">1</a> <a href="https://github.com/osmdroid/osmdroid/issues/1288">2</a> <a href="https://github.com/osmdroid/osmdroid/issues/1286">3</a>.  So it looks like we need an OSMtracker app developer to fix it...the remaining question is simply how to make that happen?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osmtracker" href="/tags/osmtracker/" rel="tag" title="see questions tagged 'osmtracker'">osmtracker</a>
+<a class="post-tag tag-link-osmdroid" href="/tags/osmdroid/" rel="tag" title="see questions tagged 'osmdroid'">osmdroid</a>
+<a class="post-tag tag-link-denied" href="/tags/denied/" rel="tag" title="see questions tagged 'denied'">denied</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>17 Mar '19, 12:23</strong>
+</p>
+<img alt="Krubo's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/6ad28c56201340399ec9c944dca247c0?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15871/krubo">Krubo</a><br/>
+<span class="score" title="116 reputation points">116</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="8 badges"><span class="bronze">●</span><span class="badgecount">8</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Krubo has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/68401/">
+                edited
+                <strong>17 Mar '19, 17:29</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68401">
+<a name="68870"></a>
+<div class="comment" id="comment-68870">
+<div class="comment-score" id="post-68870-score"></div>
+<div class="comment-text"><p>Thanks for this information. I have submitted a <a href="https://github.com/labexp/osmtracker-android/pull/203">Pull Request</a> that fix the problem. I hope this could get into the app soon. </p></div>
+<div class="comment-info" id="comment-68870-info">
+<span class="comment-age">(21 Apr '19, 17:35)</span>
+<a class="comment-user userinfo" href="/users/13047/elotrojames">elotrojames</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-68401">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68401-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/68401/osmtracker-cant-download-tiles-because-its-blocked-by-openstreetmaporg?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/68401/osmtracker-cant-download-tiles-because-its-blocked-by-openstreetmaporg?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/68401/osmtracker-cant-download-tiles-because-its-blocked-by-openstreetmaporg?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/68401/osmtracker-cant-download-tiles-because-its-blocked-by-openstreetmaporg?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="68402"></a>
+<div class="answer" id="answer-container-68402">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68402/up/" id="post-68402-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68402-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/68402/down/" id="post-68402-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Looks like a bug in the app to me (actually, it looks like they aren't following the tile usage policy).  I've commented on the github issue in the osmtracker repository.</p>
+<p>Edit following extra info in question:</p>
+<blockquote>
+<p>So it looks like we need an OSMtracker app developer to fix it...the remaining question is 
+simply how to make that happen?</p>
+</blockquote>
+<p><a href="https://github.com/osmdroid/osmdroid/issues/1286">This</a> github issue has contributions from an OSM server admin, a developer of the library and the developer of the app.  All of these people are likely volunteers.  OSMtracker is a free app and Osmdroid is a free library.  Why, exactly, should the people involved drop everything to resolve your problem?  I'm sure it'll get resolved as soon as the people involved can fit it in to their real-world schedules.</p>
+<p>For the avoidance of doubt - OSM data is free (subject to licence), but its servers are not.  Neither Osmdroid nor OSMtracker are OSM "products" - both are developed by third parties and are entirely unrelated to OpenStreetMap itself, except that they try and make use of OSM's servers for free.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/68402/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>17 Mar '19, 12:51</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/68402/">
+                edited
+                <strong>18 Mar '19, 18:40</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68402">
+<a name="68456"></a>
+<div class="comment" id="comment-68456">
+<div class="comment-score" id="post-68456-score">1</div>
+<div class="comment-text"><p>I don't mean to sound demanding; I'm just a volunteer too, using osmtracker to contribute to the main map. I assume you're a volunteer as well.  I appreciate that a lot of skilled volunteer work is going into that <a href="https://github.com/osmdroid/osmdroid/issues/1286">osmdroid issue</a>.  I hope the downstream <a href="https://github.com/labexp/osmtracker-android/issues/194">osmtracker issue</a> will get solved afterwards.</p></div>
+<div class="comment-info" id="comment-68456-info">
+<span class="comment-age">(21 Mar '19, 19:25)</span>
+<a class="comment-user userinfo" href="/users/15871/krubo">Krubo</a>
+</div>
+</div>
+<a name="68457"></a>
+<div class="comment" id="comment-68457">
+<div class="comment-score" id="post-68457-score">1</div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/15871/krubo">@Krubo</a> being a volunteer gives you no additional rights to ask or tell other people how they should spend their spare time. If it is important to you then, then the ways to "make it happen" are: a) do it yourself; or b) pay someone to do it for you.</p></div>
+<div class="comment-info" id="comment-68457-info">
+<span class="comment-age">(22 Mar '19, 11:33)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-68402">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68402-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/68401/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="7SN9gWpdsWlISUPft7PxZWo44nVAbf4X"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

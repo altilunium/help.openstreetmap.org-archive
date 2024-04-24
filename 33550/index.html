@@ -1,0 +1,124 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/33550/bus-route-attribute-and-relation-data-lost-in-qgis">bus route attribute and relation data lost in QGIS</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/33550/up/" id="post-33550-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-33550-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/33550/down/" id="post-33550-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/33550/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am currently trying to obtain bus routes in the shapefile data format. I have downloaded raw osm data for Nottingham from the Geofabrik website. I then queried for the bus route relations using osmosis (type=bus, route=bus). I can see the relations for the route data, with the bus number for each route in JOSM. However, after exporting to QGIS, all attribute data is lost. I can physically see the polyline segments that make up each route, but I have no information on what bus route number it belongs to. Is there a way to retain the reference tag/relation once its has been opened in GIS? </p>
+<p>Thank you. Any help would be greatly appreciated.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-qgis" href="/tags/qgis/" rel="tag" title="see questions tagged 'qgis'">qgis</a>
+<a class="post-tag tag-link-bus" href="/tags/bus/" rel="tag" title="see questions tagged 'bus'">bus</a>
+<a class="post-tag tag-link-busroute" href="/tags/busroute/" rel="tag" title="see questions tagged 'busroute'">busroute</a>
+<a class="post-tag tag-link-relations" href="/tags/relations/" rel="tag" title="see questions tagged 'relations'">relations</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>29 May '14, 09:55</strong>
+</p>
+<img alt="fm144's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/33adffb1a0bb2191168299357a9a15ef?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8943/fm144">fm144</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="fm144 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/33550/">
+                edited
+                <strong>29 May '14, 14:49</strong>
+</a>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-33550">
+<a name="33551"></a>
+<div class="comment" id="comment-33551">
+<div class="comment-score" id="post-33551-score">1</div>
+<div class="comment-text"><p>How are you pulling data into QGIS? Are you aware of route_master relations for some Nottingham bus routes? (e.g., Indigo).</p></div>
+<div class="comment-info" id="comment-33551-info">
+<span class="comment-age">(29 May '14, 10:08)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="33553"></a>
+<div class="comment" id="comment-33553">
+<div class="comment-score" id="post-33553-score"></div>
+<div class="comment-text"><p>I have tried different data formats, GeoJSON, GPX, importing the OSM file etc. When I open the attribute table, the fields for each object display NULL.</p></div>
+<div class="comment-info" id="comment-33553-info">
+<span class="comment-age">(29 May '14, 11:03)</span>
+<a class="comment-user userinfo" href="/users/8943/fm144">fm144</a>
+</div>
+</div>
+<a name="33555"></a>
+<div class="comment" id="comment-33555">
+<div class="comment-score" id="post-33555-score">1</div>
+<div class="comment-text"><p>I suspect that this is down to how you are filtering the data with Osmosis not anything to do with QGIS</p></div>
+<div class="comment-info" id="comment-33555-info">
+<span class="comment-age">(29 May '14, 16:41)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="33616"></a>
+<div class="comment" id="comment-33616">
+<div class="comment-score" id="post-33616-score"></div>
+<div class="comment-text"><p>I can see the attributes and route information from the osmosis filtered data when the osm file is opened in JOSM. The filtering appears to have worked fine, I just can't get the attributes in the shape file.</p></div>
+<div class="comment-info" id="comment-33616-info">
+<span class="comment-age">(02 Jun '14, 09:52)</span>
+<a class="comment-user userinfo" href="/users/8943/fm144">fm144</a>
+</div>
+</div>
+<a name="33630"></a>
+<div class="comment" id="comment-33630">
+<div class="comment-score" id="post-33630-score">2</div>
+<div class="comment-text"><p>You are still not giving enough info to answer the question. How do you go from an OSM file to JSON or gpx? Which versions of Osmosis, QGIS etc are you using? How many nodes &amp; ways are present in your filtered OSM file? Which platform are you running on (Windows, Max, Linux etc.)? There are just too many potential places where the problem could arise. Lastly I just wouldnt try to get the data this way: I'd push the OSM extract into PostGIS with osm2pgsql &amp; pull that data into QGIS. It's fast &amp; it works.</p></div>
+<div class="comment-info" id="comment-33630-info">
+<span class="comment-age">(02 Jun '14, 15:18)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-33550">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-33550-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/33550/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Ua33ByyailYiTn5HPePLpP6uzrXnki2q"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

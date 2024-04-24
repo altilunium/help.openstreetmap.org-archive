@@ -1,0 +1,182 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/48244/does-anyone-know-of-a-maperative-ruleset-that-renders-sidewalks">Does anyone know of a Maperative ruleset that renders sidewalks?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48244/up/" id="post-48244-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48244-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/48244/down/" id="post-48244-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/48244/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm looking for a way of rendering highway=*, sidewalk=left/right/both using Maperative.  We have quite a few villages on "main" roads that do/don't have sidewalks and I would like to render a map so I can check where they have been added etc.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-sidewalk" href="/tags/sidewalk/" rel="tag" title="see questions tagged 'sidewalk'">sidewalk</a>
+<a class="post-tag tag-link-maperative" href="/tags/maperative/" rel="tag" title="see questions tagged 'maperative'">maperative</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>20 Feb '16, 20:54</strong>
+</p>
+<img alt="dud1's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2ecce75f34e449d0ced44bf7aa6d6e06?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3973/dud1">dud1</a><br/>
+<span class="score" title="401 reputation points">401</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="dud1 has 3 accepted answers">30%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48244">
+</div>
+<div class="comment-tools" id="comment-tools-48244">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48244-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/48244/does-anyone-know-of-a-maperative-ruleset-that-renders-sidewalks?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/48244/does-anyone-know-of-a-maperative-ruleset-that-renders-sidewalks?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/48244/does-anyone-know-of-a-maperative-ruleset-that-renders-sidewalks?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/48244/does-anyone-know-of-a-maperative-ruleset-that-renders-sidewalks?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="48291"></a>
+<div class="answer" id="answer-container-48291">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48291/up/" id="post-48291-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48291-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/48291/down/" id="post-48291-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I haven't tried in Maperitive, but I have created experimental sidewalk rendering rules in CartoCSS. The basic idea is to have additional rules for left &amp; right sidewalks (with sidewalk=both triggering both rules) which have the effect of adding an additional casing to a standard highway.</p>
+<p>Typically rendering tools such as Maperitive and Mapnik use the Painter's Algorithm to show casings on roads. First you draw a broader line in the colour of the casing &amp; then a narrower line on top in the colour of the fill of the highway. For sidewalks the initial casing should represent the absence of sidewalks. Each rule needs a suitable <a href="http://maperitive.net/docs/Properties/LineOffset.html">line-offset</a>.</p>
+<p>In summary the basic rules are:</p>
+<ul>
+<li>Initial casing, say 10 pixels in light grey</li>
+<li>Left sidewalk say 6 pixels in black offset 2 pixels to left (sidewalk=both or sidewalk=left)</li>
+<li>Right sidewalk say 6 pixels in black offset 2 pixels to right</li>
+<li>Fill, 6 pixels in white.</li>
+</ul>
+<p>This ought to give a 10 pixel width line with 2 pixel casing on either side, with sidewalks shown in black, and absent sidewalks in grey. You will have to experiment with  the precise details of line widths, colours and offsets for various zoom levels.</p>
+<p>In my experiments I found that for residential roads I preferred to only show those which lack a pavement (using a red casing to highlight that these might be dangerous). The total number of rules gets very large when combined with other CartoCSS rules.</p>
+<p>One other example of sidewalk rendering is described by Tom Change in his <a href="http://tomchance.org/2014/07/15/bringing-pedestrian-maps-to-crystal-palace/">blog</a>.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/48291/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Feb '16, 13:40</strong>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br/>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SK53 has 121 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48291">
+</div>
+<div class="comment-tools" id="comment-tools-48291">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48291-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="48267"></a>
+<div class="answer" id="answer-container-48267">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48267/up/" id="post-48267-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48267-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/48267/down/" id="post-48267-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I can't help you about Maperitive, but if your goal is to check for completeness of sidewalk tagging, maybe this map by ITO World could be good enough: <a href="http://product.itoworld.com/map/126">http://product.itoworld.com/map/126</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/48267/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Feb '16, 11:38</strong>
+</p>
+<img alt="Alecs01's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b75c397321b010a8a70f44ab78e7bb44?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7863/alecs01">Alecs01</a><br/>
+<span class="score" title="1371 reputation points"><span class="">1.4k</span></span><span title="13 badges"><span class="silver">●</span><span class="badgecount">13</span></span><span title="23 badges"><span class="bronze">●</span><span class="badgecount">23</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Alecs01 has 6 accepted answers">25%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48267">
+</div>
+<div class="comment-tools" id="comment-tools-48267">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48267-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/48244/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="q5UsGtf6P3PExz9p4qcROMmlT6wfidQ8"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

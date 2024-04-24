@@ -1,0 +1,128 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/20714/how-to-getuse-transport-layer-of-osm">How to get/use transport layer of OSM?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/20714/up/" id="post-20714-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-20714-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/20714/down/" id="post-20714-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/20714/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi, I'm a newbie here and recently I started tu read about osmdroid for develop an android app using OSM but  I need to use the transpor layer of my country for obtain routes (subway routes) and I don't know if it's possible to do that. I'd like to get the info about the coordinates,etc. of the subway routes.</p>
+<p>Thanks in advance ;)</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-android" href="/tags/android/" rel="tag" title="see questions tagged 'android'">android</a>
+<a class="post-tag tag-link-public-transport" href="/tags/public-transport/" rel="tag" title="see questions tagged 'public-transport'">public-transport</a>
+<a class="post-tag tag-link-transport-route-view" href="/tags/transport-route-view/" rel="tag" title="see questions tagged 'transport-route-view'">transport-route-view</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>14 Mar '13, 19:04</strong>
+</p>
+<img alt="Haunterck's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/47cff4dbddd9dd5ec4bb5bab78cdabf4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5829/haunterck">Haunterck</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Haunterck has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-20714">
+</div>
+<div class="comment-tools" id="comment-tools-20714">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-20714-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/20714/how-to-getuse-transport-layer-of-osm?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/20714/how-to-getuse-transport-layer-of-osm?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/20714/how-to-getuse-transport-layer-of-osm?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/20714/how-to-getuse-transport-layer-of-osm?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="20719"></a>
+<div class="answer" id="answer-container-20719">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/20719/up/" id="post-20719-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-20719-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/20719/down/" id="post-20719-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>From your description I conclude that you are actually interested in the transport <em>data</em> and not the transport <em>layer</em>. The transport layer is just one possible <em>representation</em> of the data and contains only a subset of the original information. You will have a hard time getting things like coordinates, station names etc. from a rendered image.</p>
+<p>To obtain the actual <em>data</em> you can either get <a href="https://wiki.openstreetmap.org/wiki/Planet.osm">the whole planet</a> or a specific <a href="https://wiki.openstreetmap.org/wiki/Planet.osm#Country_and_area_extracts">extract</a> which seems better suited for your case. Another possibility is to download only the data relevant for your specific purpose by using the <a href="https://wiki.openstreetmap.org/wiki/Overpass_API">Overpass API</a>. The big advantage is that you have to retrieve and process way less data than with a full extract.</p>
+<p>OSM's data currently consists of three different <a href="https://wiki.openstreetmap.org/wiki/Elements">element types</a>: <em>nodes</em>, <em>ways</em> and <em>relations</em>. These elements have additional <a href="https://wiki.openstreetmap.org/wiki/Tags">tags</a> used to describe them. The elements and tags you are interested in are described in our wiki and particularly consist of <a href="http://wiki.openstreetmap.org/wiki/Relation:route#Public_transport_routes">route relations</a> and <a href="https://wiki.openstreetmap.org/wiki/Public_transport">public transport tags</a>.</p>
+<p>To extract these specific objects from the data you can either use <a href="https://wiki.openstreetmap.org/wiki/Osmosis">osmosis</a>/<a href="https://wiki.openstreetmap.org/wiki/Osmfilter">osmfilter</a> when having the full planet or an extract, or directly pass your filter to the previously mentioned Overpass API.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/20719/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>15 Mar '13, 08:10</strong>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="scai has 168 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-20719">
+</div>
+<div class="comment-tools" id="comment-tools-20719">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-20719-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/20714/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="XkiWg7j8ussrs16mElAZdQsZeu4laxTT"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

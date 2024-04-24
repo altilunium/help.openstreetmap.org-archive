@@ -1,0 +1,159 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/52206/getting-a-list-of-roads-in-a-neighborhood">Getting a list of roads in a neighborhood.</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/52206/up/" id="post-52206-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-52206-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/52206/down/" id="post-52206-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/52206/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'd like to get a to-do list for all the roads in a neighborhood and go one by one. How can i list all the roads in a specified area if they were not Tagged as being part of that neighborhood? Going through 1 by 1 and tagging them seems counter productive because if i'm there, i might as well just finish all the edits.</p>
+<p>Thanks for any help!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-roads" href="/tags/roads/" rel="tag" title="see questions tagged 'roads'">roads</a>
+<a class="post-tag tag-link-neighborhood." href="/tags/neighborhood./" rel="tag" title="see questions tagged 'neighborhood.'">neighborhood.</a>
+<a class="post-tag tag-link-updates" href="/tags/updates/" rel="tag" title="see questions tagged 'updates'">updates</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>23 Sep '16, 19:44</strong>
+</p>
+<img alt="tuliotroche's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b986d0956f9a1ecce7ae7e6226c60b09?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12807/tuliotroche">tuliotroche</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="tuliotroche has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-52206">
+<a name="52215"></a>
+<div class="comment" id="comment-52215">
+<div class="comment-score" id="post-52215-score">2</div>
+<div class="comment-text"><p>This query somewhat confuses me, assuming your want add the neighbourhood name to each road. Why would tags be added to individual roads showing which neighbourhood they are in?
+Surely a boundary polygon is more sensible and also meets all needs or is this a way to define portions of some places when the boundary is unknown to the mapper and has not been mapped yet.
+What tags would be used.....is_in or addr tags?</p></div>
+<div class="comment-info" id="comment-52215-info">
+<span class="comment-age">(24 Sep '16, 14:48)</span>
+<a class="comment-user userinfo" href="/users/7380/nevw">nevw</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-52206">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-52206-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/52206/getting-a-list-of-roads-in-a-neighborhood?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/52206/getting-a-list-of-roads-in-a-neighborhood?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/52206/getting-a-list-of-roads-in-a-neighborhood?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/52206/getting-a-list-of-roads-in-a-neighborhood?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="52209"></a>
+<div class="answer accepted-answer" id="answer-container-52209">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/52209/up/" id="post-52209-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-52209-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/52209/down/" id="post-52209-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/52209/" rel="nofollow" title="tuliotroche has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This type of problem is best tackled using Overpass/Overpass-Turbo.</p>
+<p>If your neighbourhood is mapped as a polygon then you can use this as an area for constraining the query. Otherwise use around with, say, a value of 500-1000 metres. You'll probably get some false positives, but remember that unless the neighbourhood is precisely defined people living there will have rather different perspectives of what it includes. Therefore tagging individual roads is unlikely to meet OSM's repeatably observable criterion.</p>
+<p>Suitable example queries of this type are shown on the OSM <a href="http://wiki.openstreetmap.org/wiki/Overpass_API/Language_Guide#Special_clauses:_around_and_poly">wiki</a>.</p>
+<p>You can arrange for the output to be produced ia csv format. Here's <a href="http://overpass-turbo.eu/s/ixO">an example</a> for Overpass-turbo.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/52209/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>24 Sep '16, 10:19</strong>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br/>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SK53 has 121 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-52209">
+<a name="52214"></a>
+<div class="comment" id="comment-52214">
+<div class="comment-score" id="post-52214-score">3</div>
+<div class="comment-text"><p>I took your example, and where Bingham was, put in my neighborhoods name. Out popped all the streets. THANK YOU A TON. I guess i have a lot of work ahead of me :)</p></div>
+<div class="comment-info" id="comment-52214-info">
+<span class="comment-age">(24 Sep '16, 12:24)</span>
+<a class="comment-user userinfo" href="/users/12807/tuliotroche">tuliotroche</a>
+</div>
+</div>
+<a name="52216"></a>
+<div class="comment" id="comment-52216">
+<div class="comment-score" id="post-52216-score"></div>
+<div class="comment-text"><p>You probably need to dedup names to make it look better!</p></div>
+<div class="comment-info" id="comment-52216-info">
+<span class="comment-age">(24 Sep '16, 17:56)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-52209">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-52209-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/52206/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="8KMQ0fRXRnlwX11oK6IlONoptkLatLyd"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

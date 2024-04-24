@@ -1,0 +1,210 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/80768/overpass-api-on-custom-osm-postgres-database-exported-as-xml">Overpass-API on custom osm postgres database exported as XML</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80768/up/" id="post-80768-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80768-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/80768/down/" id="post-80768-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/80768/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi everyone,</p>
+<p>I have an experimental osm postgres database and website api set according to</p>
+<p><a href="https://github.com/openstreetmap/openstreetmap-website">https://github.com/openstreetmap/openstreetmap-website</a></p>
+<p>Is there any way I can set the overpass-API to read my own osm postgres db?</p>
+<p>Issue:
+<a href="https://github.com/drolbr/Overpass-API/issues/624">https://github.com/drolbr/Overpass-API/issues/624</a></p>
+<p>The contributor implies that I need to export my database in OSM XML format, is there any instructions on how to achieve that?</p>
+<p>Thanks in advance!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpassapi" href="/tags/overpassapi/" rel="tag" title="see questions tagged 'overpassapi'">overpassapi</a>
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-xml" href="/tags/xml/" rel="tag" title="see questions tagged 'xml'">xml</a>
+<a class="post-tag tag-link-database" href="/tags/database/" rel="tag" title="see questions tagged 'database'">database</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>29 Jun '21, 09:32</strong>
+</p>
+<img alt="ubill88's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1dd7a49e703fd6a8b30ff44b262ed7ab?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20432/ubill88">ubill88</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ubill88 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80768">
+</div>
+<div class="comment-tools" id="comment-tools-80768">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80768-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/80768/overpass-api-on-custom-osm-postgres-database-exported-as-xml?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/80768/overpass-api-on-custom-osm-postgres-database-exported-as-xml?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/80768/overpass-api-on-custom-osm-postgres-database-exported-as-xml?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/80768/overpass-api-on-custom-osm-postgres-database-exported-as-xml?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="80769"></a>
+<div class="answer" id="answer-container-80769">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80769/up/" id="post-80769-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80769-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/80769/down/" id="post-80769-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You haven't said why you have your own database. If you have your own database because you have non-OSM data in it, then yes, exporting that data in OSM XML and importing into Overpass is the way to go. You would typically use the "osmosis" command line tool with a combination of the <code>--read-apidb</code> and <code>--write-xml</code> flags. See <a href="https://wiki.openstreetmap.org/wiki/Osmosis/Detailed_Usage_0.48">https://wiki.openstreetmap.org/wiki/Osmosis/Detailed_Usage_0.48</a> for details. </p>
+<p>If you have your own database but it has standard OSM data in it, then of course this makes no sense at all and you would simply feed Overpass OSM data downloaded from any of the usual sources!</p>
+<p>Also, consider if you really need Overpass. It might be possible to run any queries that you are interested in on your existing API database with some SQL cleverness, which would save you the - potentially long-running - export-import step.</p>
+<p>If your own database is very big and the osmosis export step takes too long, you might consider a special tool to convert an API database dump created with <code>pg_dump</code> into an XML representation: <a href="https://github.com/zerebubuth/planet-dump-ng">https://github.com/zerebubuth/planet-dump-ng</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/80769/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>29 Jun '21, 09:43</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/80769/">
+                edited
+                <strong>29 Jun '21, 09:49</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80769">
+<a name="80777"></a>
+<div class="comment" id="comment-80777">
+<div class="comment-score" id="post-80777-score"></div>
+<div class="comment-text"><p>Hi <a href="https://help.openstreetmap.org/users/104/frederik-ramm">@Frederik Ramm</a> ♦ thanks for your reply,
+I have my own postgres database with standard OSM data in it.
+There are some custom keys and values stored in my experimental region so I'm trying to create my own Overpass API.
+According to your reply, I just need to feed Overpass my own OSM data. I'm actually stuck in this part.
+According to the installation guide:
+<a href="https://overpass-api.de/no_frills.html">https://overpass-api.de/no_frills.html</a>
+bin/download_clone.sh --source=<a href="https://dev.overpass-api.de/api_drolbr/">https://dev.overpass-api.de/api_drolbr/</a> --db-dir="db/" --meta=no
+My question is actually here, how to feed my local osm postgres database to Overpass API?
+Thank you very much!</p></div>
+<div class="comment-info" id="comment-80777-info">
+<span class="comment-age">(30 Jun '21, 04:16)</span>
+<a class="comment-user userinfo" href="/users/20432/ubill88">ubill88</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-80769">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80769-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="84050"></a>
+<div class="answer" id="answer-container-84050">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/84050/up/" id="post-84050-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-84050-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/84050/down/" id="post-84050-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hello <a href="https://help.openstreetmap.org/users/20432/ubill88">@ubill88</a>,
+I was wondering if you managed to do this ? I am also looking to do something like this. It would be great if you can share the solution.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/84050/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>31 Mar '22, 13:19</strong>
+</p>
+<img alt="Allhad's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/900ddf3c47916230b7cabb3ba07a1371?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/21579/allhad">Allhad</a><br/>
+<span class="score" title="1 reputation points">1</span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Allhad has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-84050">
+</div>
+<div class="comment-tools" id="comment-tools-84050">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-84050-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/80768/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="tDCmr425tpMRA71bbkjRcUZ2NLaSF65Q"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

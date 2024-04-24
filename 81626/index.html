@@ -1,0 +1,438 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/81626/get-lat-long-of-pois-from-overpass">Get lat-long of POIs from Overpass?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/81626/up/" id="post-81626-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-81626-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/81626/down/" id="post-81626-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/81626/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi</p>
+<p>TLDR, I think my question below has possibly been answered <a href="https://help.openstreetmap.org/questions/34080/using-r-to-get-lat-and-lon-from-osm_ids-without-assistance-of-external-software-eg-qgis">here</a> but it's too technical for me to understand.</p>
+<p>I would like to get the lat-long of some POIs in csv format so I can compare them with a published dataset using Excel (that's all I can manage!)</p>
+<p>I get the following result with Overpass Turbo: </p>
+<pre><code>"elements": [
+
+{
+  "type": "node",
+  "id": 7841169184,
+  "lat": 52.5786297,
+  "lon": -0.2276290,
+  "tags": {
+    "addr:city": "Peterborough",
+    "addr:postcode": "PE1 5EH",
+    "addr:street": "Padholme Road",
+    "amenity": "place_of_worship",
+    "denomination": "sunni",
+    "religion": "muslim"
+  }
+
+    }, 
+{
+  "type": "way",
+  "id": 236058204,
+  "nodes": [
+    2441318658,
+    5934211602,
+    5934211603,
+    2441318882,
+    2441318621,
+    2441318773,
+    2441318658
+  ],
+  "tags": {
+    "addr:city": "Peterborough",
+    "addr:housenumber": "116",
+    "addr:postcode": "PE3 6DD",
+    "addr:street": "Midland Road",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "denomination": "sunni",
+    "name": "Madina Madrassa &amp; Spiritual Centre",
+    "religion": "muslim"
+  }
+},
+</code></pre>
+<p>[continues]</p>
+<p>Can I efficiently identify the lat-long of the area, either interpolating the centre of the area or using (say) the first-listed node?</p>
+<p>Can I force Overpass to output a csv file with one line per POI, rather than the line-separated text above?</p>
+<p>Is it even possible for someone who uses iD for map editing, and Excel for database editing, to do this?</p>
+<p>Many thanks.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-location" href="/tags/location/" rel="tag" title="see questions tagged 'location'">location</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>05 Sep '21, 15:34</strong>
+</p>
+<img alt="eteb3's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/4f273f48fd8756729fc15f4fcf4aae2b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15711/eteb3">eteb3</a><br/>
+<span class="score" title="295 reputation points">295</span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="15 badges"><span class="silver">●</span><span class="badgecount">15</span></span><span title="24 badges"><span class="bronze">●</span><span class="badgecount">24</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="eteb3 has one accepted answer">6%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/81626/">
+                edited
+                <strong>05 Sep '21, 15:36</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-81626">
+</div>
+<div class="comment-tools" id="comment-tools-81626">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-81626-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    4 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/81626/get-lat-long-of-pois-from-overpass?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/81626/get-lat-long-of-pois-from-overpass?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/81626/get-lat-long-of-pois-from-overpass?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/81626/get-lat-long-of-pois-from-overpass?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="81638"></a>
+<div class="answer" id="answer-container-81638">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/81638/up/" id="post-81638-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-81638-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/81638/down/" id="post-81638-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Further to AlaskaDave's post:</p>
+<p>"By default all fields are separated by a tab character ("\t")." So isn't required.</p>
+<p>If you wish to use another character, such as a comma, pipe etc., the column header display argument (false/true) has to be included: </p>
+<pre><code>[out:csv(::id,::lat,::lon,"name"; true; ",")]
+
+[out:csv(::id,::lat,::lon,"name"; false; "|")]
+</code></pre>
+<p><a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#CSV_output_mode">https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#CSV_output_mode</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/81638/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Sep '21, 14:53</strong>
+</p>
+<img alt="DaveF's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c9c8b421ad22f51ddd62f23413717036?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1532/davef">DaveF</a><br/>
+<span class="score" title="3264 reputation points"><span class="">3.3k</span></span><span title="84 badges"><span class="badge1">●</span><span class="badgecount">84</span></span><span title="98 badges"><span class="silver">●</span><span class="badgecount">98</span></span><span title="133 badges"><span class="bronze">●</span><span class="badgecount">133</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="DaveF has 17 accepted answers">16%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/81638/">
+                edited
+                <strong>06 Sep '21, 14:57</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-81638">
+</div>
+<div class="comment-tools" id="comment-tools-81638">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-81638-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="81627"></a>
+<div class="answer" id="answer-container-81627">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/81627/up/" id="post-81627-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-81627-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/81627/down/" id="post-81627-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<blockquote>
+<p>Can I force Overpass to output a csv file with one line per POI, rather than the line-separated text above? </p>
+</blockquote>
+<p>Yes, you can. Here's a query I used to find trees I had tagged in Chiang Mai </p>
+<p><strong>You must put an escaped tab character, "\t", as the last argument). Also, note that all tags you wish returned must be enclosed in quotes.</strong></p>
+<p>[out:csv(::id,::lat,::lon,"species","species:en","species:th",
+"name:en",<strong>"\t"</strong>)][timeout:25];</p>
+<p>{{geocodeArea:"Thailand"}}-&gt;.searchArea;</p>
+<p>(</p>
+<p>node["natural"="tree"](user:"AlaskaDave")(area.searchArea);</p>
+<p>);</p>
+<p>out qt;</p>
+<p>The output is a nice CSV file with latitude/longitude coordinates in separate columns on each line of the output file. I merely select all the output, copy it, and save it as a CSV file. You can then open it in Excel.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/81627/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>05 Sep '21, 21:01</strong>
+</p>
+<img alt="AlaskaDave's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/04dddf6f5ffde333747d385af3ce5829?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5016/alaskadave">AlaskaDave</a><br/>
+<span class="score" title="5415 reputation points"><span class="">5.4k</span></span><span title="76 badges"><span class="badge1">●</span><span class="badgecount">76</span></span><span title="107 badges"><span class="silver">●</span><span class="badgecount">107</span></span><span title="164 badges"><span class="bronze">●</span><span class="badgecount">164</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="AlaskaDave has 17 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-81627">
+<a name="81629"></a>
+<div class="comment" id="comment-81629">
+<div class="comment-score" id="post-81629-score"></div>
+<div class="comment-text"><p>Fantabulous - works perfectly. Thank you!</p></div>
+<div class="comment-info" id="comment-81629-info">
+<span class="comment-age">(05 Sep '21, 22:04)</span>
+<a class="comment-user userinfo" href="/users/15711/eteb3">eteb3</a>
+</div>
+</div>
+<a name="81636"></a>
+<div class="comment" id="comment-81636">
+<div class="comment-score" id="post-81636-score"></div>
+<div class="comment-text"><p>What does the tab do? I'm struggling to see any difference.</p></div>
+<div class="comment-info" id="comment-81636-info">
+<span class="comment-age">(06 Sep '21, 13:07)</span>
+<a class="comment-user userinfo" href="/users/1532/davef">DaveF</a>
+</div>
+</div>
+<a name="81639"></a>
+<div class="comment" id="comment-81639">
+<div class="comment-score" id="post-81639-score"></div>
+<div class="comment-text"><p>Re: the tab character</p>
+<p>I cannot find the material I used in my example in the Wiki. IIRC, the "/t" argument forced the delimiter characters in the output file to be tabs. However, I noticed that the Overpass Turbo Wizard has changed a lot since I used that query — it's much more powerful now and allows the use of wildcards for key values, for example. </p>
+<p>Perhaps that requirement has changed too?</p>
+<p>I'm not an Overpass Query expert, far from it. I use the Overpass Turbo Wizard for almost all of my queries. I got the main part of the above query from a friend who knows how to use the standard Overpass better than me.</p></div>
+<div class="comment-info" id="comment-81639-info">
+<span class="comment-age">(06 Sep '21, 14:55)</span>
+<a class="comment-user userinfo" href="/users/5016/alaskadave">AlaskaDave</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-81627">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-81627-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="81651"></a>
+<div class="answer" id="answer-container-81651">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/81651/up/" id="post-81651-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-81651-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/81651/down/" id="post-81651-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Use</p>
+<pre><code>out center;
+</code></pre>
+<p>instead of</p>
+<p><code>out qt;</code></p>
+<p><a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#out">https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#out</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/81651/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Sep '21, 20:07</strong>
+</p>
+<img alt="DaveF's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c9c8b421ad22f51ddd62f23413717036?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1532/davef">DaveF</a><br/>
+<span class="score" title="3264 reputation points"><span class="">3.3k</span></span><span title="84 badges"><span class="badge1">●</span><span class="badgecount">84</span></span><span title="98 badges"><span class="silver">●</span><span class="badgecount">98</span></span><span title="133 badges"><span class="bronze">●</span><span class="badgecount">133</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="DaveF has 17 accepted answers">16%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/81651/">
+                edited
+                <strong>06 Sep '21, 20:12</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-81651">
+<a name="81654"></a>
+<div class="comment" id="comment-81654">
+<div class="comment-score" id="post-81654-score">1</div>
+<div class="comment-text"><p>Thank you very much.</p>
+<p>Do you know if there's an "Overpass QL for Dummies" page somewhere? I'm reading the wiki and documentation as I come across it, but it's stupendously (meant literally) technical. Maybe there's something like baby-food for a beginner?</p></div>
+<div class="comment-info" id="comment-81654-info">
+<span class="comment-age">(06 Sep '21, 20:58)</span>
+<a class="comment-user userinfo" href="/users/15711/eteb3">eteb3</a>
+</div>
+</div>
+<a name="81659"></a>
+<div class="comment" id="comment-81659">
+<div class="comment-score" id="post-81659-score">1</div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/15711/eteb3">@eteb3</a>: I agree — the standard Overpass API is incredibly opaque for non-programmers. I always use the Overpass Turbo Wizard. It's simpler and although one can't do everything the API can do with it, the barrier to entry is very low. </p>
+<p><a href="http://overpass-turbo.eu/">http://overpass-turbo.eu/</a></p></div>
+<div class="comment-info" id="comment-81659-info">
+<span class="comment-age">(06 Sep '21, 23:12)</span>
+<a class="comment-user userinfo" href="/users/5016/alaskadave">AlaskaDave</a>
+</div>
+</div>
+<a name="81660"></a>
+<div class="comment" id="comment-81660">
+<div class="comment-score" id="post-81660-score">2</div>
+<div class="comment-text"><p>You're correct about the wiki reference pages. You have to understand OP fully to be able to decipher the OP wiki! An inline example or two wouldn't go amiss. Unfortunately that's always the case when the people who wrote the code also write the euphemistically named 'help' pages.</p>
+<p>There's <a href="https://dev.overpass-api.de/blog/index.html,">https://dev.overpass-api.de/blog/index.html,</a> but the weird chapter names also makes it hard to follow. Plus it's not google searchable.</p>
+<p>This one's a bit better <a href="https://dev.overpass-api.de/overpass-doc/en/index.html">https://dev.overpass-api.de/overpass-doc/en/index.html</a></p>
+<p>This one is the nearest to a tutorial &amp; probably the bes tplace to start
+<a href="https://osm-queries.ldodds.com/">https://osm-queries.ldodds.com/</a></p>
+<p>Plus there's Stack Exchange family of sites to search for previously asked questions, but again, I've found you need to know a bit about the subject to ascertain the usefulness of the responses.</p></div>
+<div class="comment-info" id="comment-81660-info">
+<span class="comment-age">(06 Sep '21, 23:40)</span>
+<a class="comment-user userinfo" href="/users/1532/davef">DaveF</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-81651">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-81651-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="81645"></a>
+<div class="answer answered-by-owner" id="answer-container-81645">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/81645/up/" id="post-81645-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-81645-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/81645/down/" id="post-81645-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This is all great on the csv output. </p>
+<p>Could I flag here (or maybe I should ask again separately) the part of the question about getting the lat-lon of an area? Overpass will give me those for a node, but not otherwise. I only need it approximately - so lat-lon of a single node in the area or relation would be fine.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/81645/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Sep '21, 17:54</strong>
+</p>
+<img alt="eteb3's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/4f273f48fd8756729fc15f4fcf4aae2b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15711/eteb3">eteb3</a><br/>
+<span class="score" title="295 reputation points">295</span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="15 badges"><span class="silver">●</span><span class="badgecount">15</span></span><span title="24 badges"><span class="bronze">●</span><span class="badgecount">24</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="eteb3 has one accepted answer">6%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/81645/">
+                edited
+                <strong>06 Sep '21, 17:56</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-81645">
+</div>
+<div class="comment-tools" id="comment-tools-81645">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-81645-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/81626/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="wLTAJH4JMWP925LSQTAfqjeG3SogxObb"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

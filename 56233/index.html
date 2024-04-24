@@ -1,0 +1,139 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/56233/osm-data-cant-update-in-centos-7">[closed] OSM data cant update in centOS 7</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/56233/up/" id="post-56233-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-56233-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/56233/down/" id="post-56233-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/56233/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>We setup osm database server in centos 7. </p>
+<p>But we cant update data in that server. Below query is running long time while trigger update. (I thing reading data is very slow or cant read)</p>
+<pre><code>COPY planet_osm_polygon (osm_id,access,addr:housename,addr:housenumber,addr:interpolation,admin_level,aerialway,aeroway,amenity,area,barrier,bicycle,brand,bridge,boundary,building,
+construction,covered,culvert,cutting,denomination,disused,embankment,foot,generator:source,harbour,highway,historic,horse,intermittent,junction,landuse,layer,
+leisure,lock,man_made,military,motorcar,name,natural,office,oneway,operator,place,population,power,power_source,public_transport,railway,ref,religion,
+route,service,shop,sport,surface,toll,tourism,tower:type,tracktype,tunnel,water,waterway,wetland,width,wood,z_order,way_area,tags,way) FROM STDIN)
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-tiles" href="/tags/tiles/" rel="tag" title="see questions tagged 'tiles'">tiles</a>
+<a class="post-tag tag-link-slow" href="/tags/slow/" rel="tag" title="see questions tagged 'slow'">slow</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-update" href="/tags/update/" rel="tag" title="see questions tagged 'update'">update</a>
+<a class="post-tag tag-link-centos" href="/tags/centos/" rel="tag" title="see questions tagged 'centos'">centos</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>19 May '17, 08:23</strong>
+</p>
+<img alt="Rajavelu_M's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1ffa52ca3632b5a0cf02b51459b7529b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11165/rajavelu_m">Rajavelu_M</a><br/>
+<span class="score" title="253 reputation points">253</span><span title="45 badges"><span class="badge1">●</span><span class="badgecount">45</span></span><span title="48 badges"><span class="silver">●</span><span class="badgecount">48</span></span><span title="58 badges"><span class="bronze">●</span><span class="badgecount">58</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Rajavelu_M has one accepted answer">33%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/56233/">
+                closed
+                <strong>20 Jun '17, 07:42</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-56233">
+<a name="56235"></a>
+<div class="comment" id="comment-56235">
+<div class="comment-score" id="post-56235-score"></div>
+<div class="comment-text"><p>You need to provide more detail on what you are actually doing, including </p>
+<ul>
+<li>
+<p>hardware configuration that you are using</p>
+</li>
+<li>
+<p>how much OSM data you imported country? region? the planet?</p>
+</li>
+<li>
+<p>are you on the initial import or are you trying to update already imported data?</p>
+</li>
+</ul></div>
+<div class="comment-info" id="comment-56235-info">
+<span class="comment-age">(19 May '17, 08:49)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+<a name="56236"></a>
+<div class="comment" id="comment-56236">
+<div class="comment-score" id="post-56236-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/2053/simonpoole">@SimonPoole</a>: Thanks for your interest.
+My system config are: 32 core CPU, 128GB RAM &amp; 2TB HD in centos 7.
+Already imported OSM data for whole country. This issue occurring while update only.</p></div>
+<div class="comment-info" id="comment-56236-info">
+<span class="comment-age">(19 May '17, 09:07)</span>
+<a class="comment-user userinfo" href="/users/11165/rajavelu_m">Rajavelu_M</a>
+</div>
+</div>
+<a name="56237"></a>
+<div class="comment" id="comment-56237">
+<div class="comment-score" id="post-56237-score"></div>
+<div class="comment-text"><p>"OSM data for whole country" - is this Vatican City, Monaco or maybe the US?</p></div>
+<div class="comment-info" id="comment-56237-info">
+<span class="comment-age">(19 May '17, 09:12)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="56238"></a>
+<div class="comment" id="comment-56238">
+<div class="comment-score" id="post-56238-score"></div>
+<div class="comment-text"><p>Sorry, its for whole planet.</p></div>
+<div class="comment-info" id="comment-56238-info">
+<span class="comment-age">(19 May '17, 09:18)</span>
+<a class="comment-user userinfo" href="/users/11165/rajavelu_m">Rajavelu_M</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-56233">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-56233-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<div class="question-status" style="margin-bottom:15px">
+<h3>
+                The question has been closed for the following reason "Problem is not reproducible or outdated" by
+                <a href="/users/11165/rajavelu_m">Rajavelu_M</a>
+                 20 Jun '17, 07:42
+            </h3>
+</div>
+<form action="/questions/56233/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="VumTryBZGJwlb0yvyWbMvYPlF7JYeezE"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

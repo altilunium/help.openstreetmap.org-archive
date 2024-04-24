@@ -1,0 +1,180 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/58846/get-all-motorway_junciton-including-the-roadname">Get all motorway_junciton including the roadname</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/58846/up/" id="post-58846-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-58846-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/58846/down/" id="post-58846-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/58846/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>I would like to get all motorway junctions with their roadnames. At the moment, I'm using this:</p>
+<pre><code>[timeout:3600][maxsize:1073741824][bbox:{{bbox}}];
+way[highway~"^(motorway)$"];
+node(w)[highway=motorway_junction];
+(._;&gt;;);
+out meta;
+</code></pre>
+<p>Which works, but it gives me the following output:</p>
+<pre><code>{
+  "type": "Feature",
+  "properties": {
+    "<a href="https://help.openstreetmap.org/users/260/idoneus">@id</a>": "node/9200769",
+    "highway": "motorway_junction",
+    "name": "Kreuz Rostock",
+    "ref": "9",
+    "@timestamp": "2015-04-09T06:46:01Z",
+    "@version": "10",
+    "@changeset": "30082198",
+    "<a href="https://help.openstreetmap.org/users/6901/user">@user</a>": "da-sch",
+    "@uid": "200139"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      12.1994746,
+      54.0327681
+    ]
+  },
+  "id": "node/9200769"
+</code></pre>
+<p>I can't find any information, which says, on which road this junciton is. I do not mean the destination road. In my example it would be the road(highway) "A20". For testing i'm using overpass turbo.</p>
+<p>Could somebody please help me?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-api" href="/tags/api/" rel="tag" title="see questions tagged 'api'">api</a>
+<a class="post-tag tag-link-name" href="/tags/name/" rel="tag" title="see questions tagged 'name'">name</a>
+<a class="post-tag tag-link-road" href="/tags/road/" rel="tag" title="see questions tagged 'road'">road</a>
+<a class="post-tag tag-link-highway" href="/tags/highway/" rel="tag" title="see questions tagged 'highway'">highway</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>28 Aug '17, 12:22</strong>
+</p>
+<img alt="_supersonic's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fdc1128d8c973d21ccae9fc5bf612091?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14128/_supersonic">_supersonic</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="_supersonic has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-58846">
+<a name="58847"></a>
+<div class="comment" id="comment-58847">
+<div class="comment-score" id="post-58847-score"></div>
+<div class="comment-text"><p>Are you asking about the data model, or about the overpass syntax?</p>
+<p>As to data model, "A 20" is the value of the <code>destination:ref=*</code> tag on the highway=motorway_link road that <a href="https://www.openstreetmap.org/node/9200769">node 9200769</a> is part of.  I don't know the overpass syntax for requesting that information.</p></div>
+<div class="comment-info" id="comment-58847-info">
+<span class="comment-age">(28 Aug '17, 12:55)</span>
+<a class="comment-user userinfo" href="/users/13665/dsh4">dsh4</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-58846">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-58846-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/58846/get-all-motorway_junciton-including-the-roadname?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/58846/get-all-motorway_junciton-including-the-roadname?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/58846/get-all-motorway_junciton-including-the-roadname?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/58846/get-all-motorway_junciton-including-the-roadname?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="58849"></a>
+<div class="answer" id="answer-container-58849">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/58849/up/" id="post-58849-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-58849-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/58849/down/" id="post-58849-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The <code>node(w)</code> here means you are only fetching <code>motorway_junction</code> nodes that are part of a <code>highway=motorway</code> (or <code>motorway_link</code>; this is subtlety different than <em>all</em> <code>motorway_junction</code> nodes).</p>
+<pre><code>way[highway~"^(motorway)$"];
+node(w)[highway=motorway_junction];
+</code></pre>
+<p>I think there is no way to get Overpass to amend the nodes with information from the parent ways, but you can at least return the ways as part of your Overpass query and then use the node ids to find information about parent ways:</p>
+<pre><code>[timeout:3600][maxsize:1073741824][bbox:{{bbox}}];
+(
+way[highway~"^(motorway)$"];
+node(w)[highway=motorway_junction];
+);
+out meta;
+</code></pre>
+<p>Overpass Turbo might warn that this query is broken because it doesn't return the full geometries of the ways, but if I understand correctly you don't care about the way geometry, so just ignore the warning.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/58849/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>28 Aug '17, 13:57</strong>
+</p>
+<img alt="maxerickson's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c860445e868ebb21da141635a4aa7b06?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10973/maxerickson">maxerickson</a><br/>
+<span class="score" title="12700 reputation points"><span class="">12.7k</span></span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="83 badges"><span class="silver">●</span><span class="badgecount">83</span></span><span title="176 badges"><span class="bronze">●</span><span class="badgecount">176</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="maxerickson has 93 accepted answers">32%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-58849">
+</div>
+<div class="comment-tools" id="comment-tools-58849">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-58849-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/58846/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="2eE9koto7P4RSEWLf8WQebwyPvMaPk4R"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

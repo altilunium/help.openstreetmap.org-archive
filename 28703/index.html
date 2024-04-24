@@ -1,0 +1,231 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/28703/building-split-in-three-added-address-to-one-adjacent-building-shows-same-number">Building split in three, added address to one, adjacent building shows same number</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/28703/up/" id="post-28703-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-28703-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/28703/down/" id="post-28703-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/28703/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>in trying to add my employer's office to OSM, I split the large building that contains the office into three using JOSM's utils2 plugin. I added the address including housenumber to the middle building and also added a point tagged with company information. Now OSM shows two buildings with the same housenumber. Even giving that second building its own housenumber does make the correct number show up.</p>
+<p>Here's a map link: <a href="http://www.openstreetmap.org/way/56002419#map=19/48.13039/11.61799">http://www.openstreetmap.org/way/56002419#map=19/48.13039/11.61799</a>
+This is the adjacent building with the wrong number, it should be 62. The 64 to the right is correct and that is the number I originally created.</p>
+<p>Thanks for any help,</p>
+<p>Sebastian</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-building" href="/tags/building/" rel="tag" title="see questions tagged 'building'">building</a>
+<a class="post-tag tag-link-relation" href="/tags/relation/" rel="tag" title="see questions tagged 'relation'">relation</a>
+<a class="post-tag tag-link-split" href="/tags/split/" rel="tag" title="see questions tagged 'split'">split</a>
+<a class="post-tag tag-link-housenumbering" href="/tags/housenumbering/" rel="tag" title="see questions tagged 'housenumbering'">housenumbering</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>02 Dec '13, 19:56</strong>
+</p>
+<img alt="Unic-com's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/71bd4f4322c93e7fdcf3681da540fed6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7934/unic-com">Unic-com</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Unic-com has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/28703/">
+                edited
+                <strong>03 Dec '13, 12:48</strong>
+</a>
+</p>
+<img alt="nevw's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e5674dd96938593e0af5130dfffe0f90?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7380/nevw">nevw</a><br/>
+<span class="score" title="9843 reputation points"><span class="">9.8k</span></span><span title="26 badges"><span class="badge1">●</span><span class="badgecount">26</span></span><span title="90 badges"><span class="silver">●</span><span class="badgecount">90</span></span><span title="178 badges"><span class="bronze">●</span><span class="badgecount">178</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-28703">
+<a name="28729"></a>
+<div class="comment" id="comment-28729">
+<div class="comment-score" id="post-28729-score"></div>
+<div class="comment-text"><p>This is really odd. I "dirtied" the tile to force re-rendering, and the 64 disappeared, but so did the building! I wonder if something in the rendering chain changed?</p></div>
+<div class="comment-info" id="comment-28729-info">
+<span class="comment-age">(03 Dec '13, 17:14)</span>
+<a class="comment-user userinfo" href="/users/595/neuhausr">neuhausr</a>
+</div>
+</div>
+<a name="28731"></a>
+<div class="comment" id="comment-28731">
+<div class="comment-score" id="post-28731-score"></div>
+<div class="comment-text"><p>I would guess that these objects did not make to the renderers db for some reason. After a version change of these objects the buildings should reappear (hopefully)</p></div>
+<div class="comment-info" id="comment-28731-info">
+<span class="comment-age">(03 Dec '13, 17:27)</span>
+<a class="comment-user userinfo" href="/users/268/rm87">RM87</a>
+</div>
+</div>
+<a name="28745"></a>
+<div class="comment" id="comment-28745">
+<div class="comment-score" id="post-28745-score"></div>
+<div class="comment-text"><p>Well, the rendering hasn't changed so far (well, I didn't see the intermediate stage that neuhausr mentioned, what I mean is that the rendering is back in the state I saw it). I've seen what was meant by RM87's answer below, but the number 64 still gets rendered for all the three buildings that were previously members of the old relation. I don't understand what RM87 means by version change, can this be triggered somehow?</p></div>
+<div class="comment-info" id="comment-28745-info">
+<span class="comment-age">(03 Dec '13, 22:37)</span>
+<a class="comment-user userinfo" href="/users/7934/unic-com">Unic-com</a>
+</div>
+</div>
+<a name="28794"></a>
+<div class="comment" id="comment-28794">
+<div class="comment-score" id="post-28794-score"></div>
+<div class="comment-text"><p>Now something probably similar to the state described by neuhausr can be seen. At the smallest zoom level, the building seems to be cut off, at two levels smaller and above they don't appear at all. Could someone(TM) do something please? Thanks ...</p></div>
+<div class="comment-info" id="comment-28794-info">
+<span class="comment-age">(05 Dec '13, 00:45)</span>
+<a class="comment-user userinfo" href="/users/7934/unic-com">Unic-com</a>
+</div>
+</div>
+<a name="28795"></a>
+<div class="comment" id="comment-28795">
+<div class="comment-score" id="post-28795-score">2</div>
+<div class="comment-text"><p>I think it is all correct too and that the map tiles are still awaiting rendering for whatever reason.<br/>
+<a href="https://help.openstreetmap.org/questions/178/how-often-does-the-main-mapnik-map-get-updated">https://help.openstreetmap.org/questions/178/how-often-does-the-main-mapnik-map-get-updated</a></p>
+<p>A search for 62 Berg-am-Laim-Straße, München or 64 Berg-am-Laim-Straße, München will find the correct location.</p></div>
+<div class="comment-info" id="comment-28795-info">
+<span class="comment-age">(05 Dec '13, 02:08)</span>
+<a class="comment-user userinfo" href="/users/7380/nevw">nevw</a>
+</div>
+</div>
+<a name="28888"></a>
+<div class="comment not_top_scorer" id="comment-28888">
+<div class="comment-score" id="post-28888-score"></div>
+<div class="comment-text"><p>It looks fine now. I see that nevw has made changes – is it correct that you more or less "touched" the existing objects but did not really change anything? Anyway, thanks and as this is my first use of the OSM help system I'm wondering about the "award points" feature. It seems that RM87's answer was right all along and I've just upvoted it. I see that I can also "award points" but don't know if I should and how many points are usually awarded. Also I've clicked the "great comment" icon next to nevw's answer but don't know if this the right kind of response and/or whether to "award points".</p></div>
+<div class="comment-info" id="comment-28888-info">
+<span class="comment-age">(07 Dec '13, 21:07)</span>
+<a class="comment-user userinfo" href="/users/7934/unic-com">Unic-com</a>
+</div>
+</div>
+<a name="28900"></a>
+<div class="comment not_top_scorer" id="comment-28900">
+<div class="comment-score" id="post-28900-score"></div>
+<div class="comment-text"><p>I wrote the previous comment before I noticed that nevw had already sent me a message. He basically tried to trigger rerendering by adding extra nodes. I've now deleted these nodes and it still looks fine on all zoom levels. Great.</p></div>
+<div class="comment-info" id="comment-28900-info">
+<span class="comment-age">(08 Dec '13, 00:22)</span>
+<a class="comment-user userinfo" href="/users/7934/unic-com">Unic-com</a>
+</div>
+</div>
+<a name="28902"></a>
+<div class="comment not_top_scorer" id="comment-28902">
+<div class="comment-score" id="post-28902-score"></div>
+<div class="comment-text"><p>I can't figure out how to close a question, or indeed how to send a user a personal message. I'll stop trying for now.</p></div>
+<div class="comment-info" id="comment-28902-info">
+<span class="comment-age">(08 Dec '13, 00:40)</span>
+<a class="comment-user userinfo" href="/users/7934/unic-com">Unic-com</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-28703">
+<span class="comments-showing">
+            showing 5 of 8
+        </span>
+<a class="show-all-comments-link" href="#">show 3 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-28703-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/28703/building-split-in-three-added-address-to-one-adjacent-building-shows-same-number?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/28703/building-split-in-three-added-address-to-one-adjacent-building-shows-same-number?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/28703/building-split-in-three-added-address-to-one-adjacent-building-shows-same-number?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/28703/building-split-in-three-added-address-to-one-adjacent-building-shows-same-number?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="28726"></a>
+<div class="answer accepted-answer" id="answer-container-28726">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/28726/up/" id="post-28726-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-28726-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/28726/down/" id="post-28726-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/28726/" rel="nofollow" title="Unic-com has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>There was one unnecessary <a href="http://www.openstreetmap.org/relation/1319742">multipolygon relation</a> that had that building as single outer member. After you split the building in three the relation bonded these three buildings into one in some strange way. </p>
+<p>It should appear normal soon.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/28726/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Dec '13, 16:56</strong>
+</p>
+<img alt="RM87's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f7f8127223bd00c9e8f569ce2e9ddf22?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/268/rm87">RM87</a><br>
+<span class="score" title="3346 reputation points"><span class="">3.3k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="37 badges"><span class="silver">●</span><span class="badgecount">37</span></span><span title="53 badges"><span class="bronze">●</span><span class="badgecount">53</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="RM87 has 20 accepted answers">22%</span>
+</br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-28726">
+<a name="28901"></a>
+<div class="comment" id="comment-28901">
+<div class="comment-score" id="post-28901-score">1</div>
+<div class="comment-text"><p>As far as I can see, this was the key observation that would have solved everything immediately if OSM had not suddenly decided to act strangely with regard to rerendering. I'll see if I can close this question now. Thanks.</p></div>
+<div class="comment-info" id="comment-28901-info">
+<span class="comment-age">(08 Dec '13, 00:27)</span>
+<a class="comment-user userinfo" href="/users/7934/unic-com">Unic-com</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-28726">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-28726-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/28703/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="JHw09cvqZiT6BYyxmPHigFDt9azzE3J8"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

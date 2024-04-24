@@ -1,0 +1,95 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/64489/geocoderserviceerror-geopy-nominatim-in-local-server">GeocoderServiceError Geopy Nominatim in Local Server</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/64489/up/" id="post-64489-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-64489-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/64489/down/" id="post-64489-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/64489/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I did my own OpenStreetMap local server(to avoid the online limits) with Nominatim and it's working ok through the webpage(localhost/nominatim). But when I try to collect geocodes (same that works well on the webpage) and after some number of requests the server shows this error:</p>
+<pre><code>Traceback (most recent call last):
+
+  File "&lt;ipython-input-65-1a4379f0657b&gt;", line 4, in &lt;module&gt;
+    print (nom.geocode(row['location']))
+
+  File "/Users/murianribeiro/anaconda3/lib/python3.6/site-packages/geopy/geocoders/osm.py", line 236, in geocode
+    self._call_geocoder(url, timeout=timeout), exactly_one
+
+  File "/Users/murianribeiro/anaconda3/lib/python3.6/site-packages/geopy/geocoders/base.py", line 288, in _call_geocoder
+    raise GeocoderServiceError(message)
+
+GeocoderServiceError: HTTP Error 500: Internal Server Error
+</code></pre>
+<p>I tried to put timeout in my code, but I am still facing the same problem.</p>
+<p>My actual code is more or less like this:</p>
+<pre><code>from geopy.geocoders import Nominatim
+nom = Nominatim(domain='192.168.1.214/nominatim', scheme='http', timeout=3) #tried with different timeouts
+df1["Coordinates"]=df1["location"].apply(nom.geocode)
+</code></pre>
+<p>Someone know how to solve this?</p>
+<p>Thanks ;)</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-geopy" href="/tags/geopy/" rel="tag" title="see questions tagged 'geopy'">geopy</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>02 Jul '18, 23:07</strong>
+</p>
+<img alt="MurianRibeiro's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/743a6b18621cbd268e6d8a7963571f4f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15332/murianribeiro">MurianRibeiro</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="MurianRibeiro has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-64489">
+<a name="64490"></a>
+<div class="comment" id="comment-64490">
+<div class="comment-score" id="post-64490-score"></div>
+<div class="comment-text"><p><code>Internal Server Error</code> doesn't look python related. On your server check the logfile, likely <code>/var/log/apache2/error.log</code></p></div>
+<div class="comment-info" id="comment-64490-info">
+<span class="comment-age">(02 Jul '18, 23:27)</span>
+<a class="comment-user userinfo" href="/users/150/mtmail">mtmail</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-64489">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-64489-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/64489/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="uM8kWNaXXjXQ8Slrp8QmXWuFzAgClHvZ"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

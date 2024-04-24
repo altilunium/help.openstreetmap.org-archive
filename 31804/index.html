@@ -1,0 +1,173 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/31804/problems-reverting-changeset">Problems reverting changeset</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/31804/up/" id="post-31804-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-31804-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/31804/down/" id="post-31804-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/31804/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>As a continuation of <a href="https://help.openstreetmap.org/questions/31732/oops-inadvertently-deleted-a-way-need-help-restoring">this question</a> I would like to revert changeset <a href="http://www.openstreetmap.org/changeset/21219686">21219686</a>. But I am having trouble doing this with two different methods.</p>
+<ol>
+<li>
+<p>JOSM reverter plugin - the connection times out.</p>
+</li>
+<li>
+<p>Perl script - I get the following error:</p>
+<p></p><pre>me@server ~/revert $ perl revert.pl 21219686
+Use of uninitialized value $current_cs_or_comment in pattern match (m//) at revert.pl line 45.
+Use of uninitialized value $comment in string eq at revert.pl line 52.
+PUT changeset/create
+[[deleted line with HTML tags which don't show up nicely in help.openstreetmap.org editor]]<p></p>
+<p>GET <a href="http://api06.dev.openstreetmap.org/api/0.6/changeset/21219686/download...">http://api06.dev.openstreetmap.org/api/0.6/changeset/21219686/download...</a> 404 Not Found (0b)
+changeset 21219686 cannot be retrieved: 404 Not Found</p></pre><p></p>
+</li>
+</ol>
+<p>Can anyone help with this? Or just go ahead and do the revert for us?</p>
+<p>Thanks</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-changeset" href="/tags/changeset/" rel="tag" title="see questions tagged 'changeset'">changeset</a>
+<a class="post-tag tag-link-revert" href="/tags/revert/" rel="tag" title="see questions tagged 'revert'">revert</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>23 Mar '14, 21:06</strong>
+</p>
+<img alt="eric22's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ed0b2a6757c7515c4f9c529b2eb08ae3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5206/eric22">eric22</a><br/>
+<span class="score" title="401 reputation points">401</span><span title="11 badges"><span class="badge1">●</span><span class="badgecount">11</span></span><span title="13 badges"><span class="silver">●</span><span class="badgecount">13</span></span><span title="22 badges"><span class="bronze">●</span><span class="badgecount">22</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="eric22 has 2 accepted answers">50%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-31804">
+</div>
+<div class="comment-tools" id="comment-tools-31804">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-31804-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/31804/problems-reverting-changeset?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/31804/problems-reverting-changeset?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/31804/problems-reverting-changeset?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/31804/problems-reverting-changeset?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="31805"></a>
+<div class="answer accepted-answer" id="answer-container-31805">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/31805/up/" id="post-31805-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-31805-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/31805/down/" id="post-31805-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/31805/" rel="nofollow" title="eric22 has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You need to add a changeset comment when calling the Perl code. For example:</p>
+<pre><code>perl revert.pl 21219686 "Reverting damage in changeset 21219686"
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/31805/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>23 Mar '14, 21:58</strong>
+</p>
+<img alt="Richard's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/08324717c25d6067fa4ff23ef37d455f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5/richard">Richard ♦</a><br/>
+<span class="score" title="30902 reputation points"><span class="">30.9k</span></span><span title="44 badges"><span class="badge1">●</span><span class="badgecount">44</span></span><span title="279 badges"><span class="silver">●</span><span class="badgecount">279</span></span><span title="412 badges"><span class="bronze">●</span><span class="badgecount">412</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Richard has 98 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-31805">
+<a name="31806"></a>
+<div class="comment" id="comment-31806">
+<div class="comment-score" id="post-31806-score"></div>
+<div class="comment-text"><p>That gets rid of the two "Use of..." errors at the top, but not the 404...</p>
+<p>Interestingly, when I set "dryrun=0" in the config file and run again, the 404 error disappears, but instead I get "cannot create changeset: 401 Authorization Required". I wonder if this indicates my name/PW are wrong in the config file. But I've checked pretty closely, I really think they're correct.</p></div>
+<div class="comment-info" id="comment-31806-info">
+<span class="comment-age">(23 Mar '14, 22:09)</span>
+<a class="comment-user userinfo" href="/users/5206/eric22">eric22</a>
+</div>
+</div>
+<a name="31820"></a>
+<div class="comment" id="comment-31820">
+<div class="comment-score" id="post-31820-score">3</div>
+<div class="comment-text"><p>Yes, that's because you're pointing at a test instance on OSM's development server (api06.dev.openstreetmap.org). You need to change this to the URL of the main OSM API. This is documented in the README at <a href="http://svn.openstreetmap.org/applications/utils/revert/README">http://svn.openstreetmap.org/applications/utils/revert/README</a> .</p></div>
+<div class="comment-info" id="comment-31820-info">
+<span class="comment-age">(24 Mar '14, 07:47)</span>
+<a class="comment-user userinfo" href="/users/5/richard">Richard ♦</a>
+</div>
+</div>
+<a name="31858"></a>
+<div class="comment" id="comment-31858">
+<div class="comment-score" id="post-31858-score">1</div>
+<div class="comment-text"><p>Richard: Thanks for putting me on the right track. I figured it out :)</p></div>
+<div class="comment-info" id="comment-31858-info">
+<span class="comment-age">(24 Mar '14, 21:09)</span>
+<a class="comment-user userinfo" href="/users/5206/eric22">eric22</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-31805">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-31805-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/31804/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="YTLvR31HJpD3Y6A5dD2ujLleEHJGMMui"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

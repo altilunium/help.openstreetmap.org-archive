@@ -1,0 +1,205 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/87188/how-to-get-the-list-of-addresses-or-street-names-by-city">How to get the list of addresses or street names by city?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/87188/up/" id="post-87188-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-87188-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/87188/down/" id="post-87188-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/87188/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi everyone, 
+I am trying a way to get a valid address or street name using the name city/zipcode. I am trying to use the OneStreetMap API to get this information. To be clear, I will present an example of what I am trying to achieve:
+Selecting a city from my select box, like Milano, I would like to receive (by API) the list of the addresses or street names that Milano has.</p>
+<p>Thank you in advance
+Achille</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap" href="/tags/openstreetmap/" rel="tag" title="see questions tagged 'openstreetmap'">openstreetmap</a>
+<a class="post-tag tag-link-city" href="/tags/city/" rel="tag" title="see questions tagged 'city'">city</a>
+<a class="post-tag tag-link-api" href="/tags/api/" rel="tag" title="see questions tagged 'api'">api</a>
+<a class="post-tag tag-link-street" href="/tags/street/" rel="tag" title="see questions tagged 'street'">street</a>
+<a class="post-tag tag-link-address" href="/tags/address/" rel="tag" title="see questions tagged 'address'">address</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>29 Apr '23, 13:13</strong>
+</p>
+<img alt="Aki87's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/25ef16609c6769a05247bce8664a735b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/22967/aki87">Aki87</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Aki87 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-87188">
+</div>
+<div class="comment-tools" id="comment-tools-87188">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-87188-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/87188/how-to-get-the-list-of-addresses-or-street-names-by-city?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/87188/how-to-get-the-list-of-addresses-or-street-names-by-city?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/87188/how-to-get-the-list-of-addresses-or-street-names-by-city?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/87188/how-to-get-the-list-of-addresses-or-street-names-by-city?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="87190"></a>
+<div class="answer accepted-answer" id="answer-container-87190">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/87190/up/" id="post-87190-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-87190-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/87190/down/" id="post-87190-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/87190/" rel="nofollow" title="Aki87 has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The <a href="https://wiki.openstreetmap.org/wiki/Overpass_API">Overpass API</a> would be your best bet for this (note usage policy). </p>
+<p>An example query giving a csv of all streets and paths in Milano with names (adapted from <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#CSV_output_mode">the documentation</a>):</p>
+<pre><code>[out:csv(::id,::type,"highway","name")];
+{{geocodeArea:Milano}}-&gt;.searchArea;
+ ( 
+    way["highway"]["name"](area.searchArea);    
+  );
+out;
+out count;
+</code></pre>
+<p>See example live in Overpass Turbo <a href="https://overpass-turbo.eu/s/1up6">here</a>.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/87190/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Apr '23, 17:00</strong>
+</p>
+<img alt="InsertUser's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ec8a0cf213f9797ad1c1ae2c28c2332d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4426/insertuser">InsertUser</a><br/>
+<span class="score" title="11005 reputation points"><span class="">11.0k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="69 badges"><span class="silver">●</span><span class="badgecount">69</span></span><span title="185 badges"><span class="bronze">●</span><span class="badgecount">185</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="InsertUser has 73 accepted answers">19%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-87190">
+<a name="87193"></a>
+<div class="comment" id="comment-87193">
+<div class="comment-score" id="post-87193-score"></div>
+<div class="comment-text"><p>Hi, 
+thank you so much to help me. 
+Just another question, I am using the API in this way:
+<a href="https://nominatim.openstreetmap.org/search?X-Requested-With=overpass-ide&amp;format=json&amp;q=Milano.">https://nominatim.openstreetmap.org/search?X-Requested-With=overpass-ide&amp;format=json&amp;q=Milano.</a></p>
+<p>I am not getting the same result in the example <a href="https://overpass-turbo.eu/">here</a></p>
+<p>Maybe I am not using the API in the correct way. How I can integrate the API in my backend code. </p>
+<p>Thank you in advance.
+Achille</p></div>
+<div class="comment-info" id="comment-87193-info">
+<span class="comment-age">(30 Apr '23, 19:01)</span>
+<a class="comment-user userinfo" href="/users/22967/aki87">Aki87</a>
+</div>
+</div>
+<a name="87211"></a>
+<div class="comment" id="comment-87211">
+<div class="comment-score" id="post-87211-score"></div>
+<div class="comment-text"><p>To be clear, I would like to integrate the API in my app and to show the list of the streen name or addresses.</p>
+<p>Is it possible with actual API? I have read the documentation, but maybe I did not catch this case or for me it is little bit difficult to understand. </p>
+<p>However, may you help me?</p>
+<p>Regards,
+Achille</p></div>
+<div class="comment-info" id="comment-87211-info">
+<span class="comment-age">(02 May '23, 08:20)</span>
+<a class="comment-user userinfo" href="/users/22967/aki87">Aki87</a>
+</div>
+</div>
+<a name="87212"></a>
+<div class="comment" id="comment-87212">
+<div class="comment-score" id="post-87212-score"></div>
+<div class="comment-text"><p>Technical details aside, I would like to draw your attention to Nominatim Usage Policy.</p>
+<p>Conducting bulk geocoding is discouraged, and it is preferable for you to run your own version of Nominatim if you want to implement this in your app.</p></div>
+<div class="comment-info" id="comment-87212-info">
+<span class="comment-age">(02 May '23, 14:55)</span>
+<a class="comment-user userinfo" href="/users/13074/bxl-forever">bxl-forever</a>
+</div>
+</div>
+<a name="87213"></a>
+<div class="comment" id="comment-87213">
+<div class="comment-score" id="post-87213-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/22967/aki87"></a><a href="https://help.openstreetmap.org/users/22967/aki87">@Aki87</a> The example I gave is for Overpass as you asked about a list of streets, the link you have provided is to Nominatim which is a different service. </p>
+<ul>
+<li>Overpass API is documented <a href="https://wiki.openstreetmap.org/wiki/Overpass_API">here</a>.</li>
+<li>Nominatim is documented <a href="https://wiki.openstreetmap.org/wiki/Nominatim">here</a>.</li>
+</ul>
+<p>If what you actually want is a Geocoding service like Nominatim then you can see a list of options <a href="https://wiki.openstreetmap.org/wiki/Geocoding">here</a>.</p></div>
+<div class="comment-info" id="comment-87213-info">
+<span class="comment-age">(02 May '23, 15:32)</span>
+<a class="comment-user userinfo" href="/users/4426/insertuser">InsertUser</a>
+</div>
+</div>
+<a name="88077"></a>
+<div class="comment" id="comment-88077">
+<div class="comment-score" id="post-88077-score"></div>
+<div class="comment-text"><p>how to get the same result by zip code/postal code, instead Milano</p>
+<p>For example zip code=80131. Is a Napoli location from Italy</p></div>
+<div class="comment-info" id="comment-88077-info">
+<span class="comment-age">(23 Dec '23, 17:30)</span>
+<a class="comment-user userinfo" href="/users/19583/salvatore">salvatore</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-87190">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-87190-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/87188/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="C6BU4SKyn2CYqkzP57tVzFyQ7Ywxggzg"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

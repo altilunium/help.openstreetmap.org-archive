@@ -1,0 +1,142 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/49019/tirex-default-tile-expiration">Tirex default tile expiration</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/49019/up/" id="post-49019-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-49019-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/49019/down/" id="post-49019-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/49019/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I just passed a tirex-batch job to my tirex-master without passing the expiration argument.
+I just took a brief look into the tirex source but couldn't find anything regarding the default tile expiration time.
+So how does tirex handle this case? Is there a fixed/default tile lifespan for batch rendered tiles, or does tirex check the database for changes and decides wheter to rerender the tiles at each time a new request comes in?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-tirex" href="/tags/tirex/" rel="tag" title="see questions tagged 'tirex'">tirex</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>04 Apr '16, 16:36</strong>
+</p>
+<img alt="ltsstar's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1d65bc251f62664c2af0a1b6cd0f2170?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11110/ltsstar">ltsstar</a><br/>
+<span class="score" title="66 reputation points">66</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ltsstar has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-49019">
+</div>
+<div class="comment-tools" id="comment-tools-49019">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-49019-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/49019/tirex-default-tile-expiration?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/49019/tirex-default-tile-expiration?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/49019/tirex-default-tile-expiration?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/49019/tirex-default-tile-expiration?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="49021"></a>
+<div class="answer accepted-answer" id="answer-container-49021">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/49021/up/" id="post-49021-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-49021-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/49021/down/" id="post-49021-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/49021/" rel="nofollow" title="ltsstar has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This is a misunderstanding. The tirex-batch "expire" option,</p>
+<pre><code>   -e, --expire=TIME
+           Expire time (seconds since epoch) for jobs. If it starts with '+',
+           number of seconds added to current time.
+</code></pre>
+<p>specifies at what time a job should be removed from the queue if it hasn't been executed yet. It has nothing to do with the lifetime of a tile on disk. The default expire time is "never".</p>
+<p>How long a tile is kept on disk is not something that Tirex decides; Tirex renders tiles when told so, full stop. Whether or not Tirex is told to render a tile, in a standard tileserver setup, is controlled by mod_tile, the Apache module responsible for delivering tiles. In a normal setup, a tile that is older than the last full planet import will be considered "old" and queued for re-rendering; in the absence of a file indicating the time of the last planet import, a tile older than 3 days will be considered "old". This is hard-coded here: <a href="https://github.com/openstreetmap/mod_tile/blob/6b9611aaf763f4f776d1fd363433aac7e25cb34b/src/store_file.c#L41">https://github.com/openstreetmap/mod_tile/blob/6b9611aaf763f4f776d1fd363433aac7e25cb34b/src/store_file.c#L41</a></p>
+<p>There are various ways to handle tile expiry. One option is setting the "last full import" timestamp to something last year, and then using the "dirty tile list" that osm2pgsql can produce to change the timestamp of every tile that needs re-rendering to 1970-01-01. This will then cause mod_tile to trigger a re-render if such a tile is reuquested. Alternatively, the re-render can be triggered immediately from the osm2pgsql output, but that would mean that even tiles that are rarely ever looked at but change often, would also be computed often. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/49021/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Apr '16, 18:11</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-49021">
+<a name="49023"></a>
+<div class="comment" id="comment-49023">
+<div class="comment-score" id="post-49023-score">1</div>
+<div class="comment-text"><p>excellent answer.</p></div>
+<div class="comment-info" id="comment-49023-info">
+<span class="comment-age">(04 Apr '16, 18:29)</span>
+<a class="comment-user userinfo" href="/users/11110/ltsstar">ltsstar</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-49021">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-49021-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/49019/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="v7gn4GvKjUJpVHX7t5v8vSsJPADwWwGa"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

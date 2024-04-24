@@ -1,0 +1,195 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/74027/places-not-found-cant-use-reverse-geocoding-api">Places not found, can't use reverse geocoding API</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/74027/up/" id="post-74027-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-74027-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/74027/down/" id="post-74027-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/74027/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi !</p>
+<p>I've tried to setup my own Nominatim reverse geocoding server and I've come into some issues. I've resolved some of them myselves but I'm stuck at the API fetching in reverse geocoding. Apparently, the database is incomplete because it throws me an error at my root access (localhost/) and reverse geocoding isn't working as it's throwing that the place couldn't be found.</p>
+<p>I've poked around the databse and places hasn't been found in the tables. Here is the logs :</p>
+<pre><code>root@ns39147:/home/nominatim-docker# curl "http://localhost:7070/"
+</code></pre>
+<p>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;style&gt;
+        em { font-weight: bold; font-family: monospace; color: #e00404; background-color: #ffeaea; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    </p><h1>Internal Server Error</h1><p></p>
+<pre><code>    &lt;p&gt;Nominatim has encountered an internal error while accessing the database.
+       This may happen because the database is broken or because of a bug in
+       the software.&lt;/p&gt;
+
+
+
+&lt;h3&gt;Details&lt;/h3&gt;
+
+Database query failed
+
+&lt;p&gt;
+    If you feel this error is incorrect feel file an issue on
+    &lt;a href="https://github.com/openstreetmap/Nominatim/issues"&gt;Github&lt;/a&gt;.
+
+    Please include the error message above and the URL you used.
+&lt;/p&gt;
+</code></pre>
+<p>&lt;/body&gt;
+&lt;/html&gt;</p>
+<pre><code>postgres=# \c nominatim
+You are now connected to database "nominatim" as user "postgres".
+nominatim=# \dt
+               List of relations
+ Schema |       Name        | Type  |   Owner
+--------+-------------------+-------+-----------
+ public | country_name      | table | nominatim
+ public | country_osm_grid  | table | nominatim
+ public | gb_postcode       | table | nominatim
+ public | place_boundingbox | table | nominatim
+ public | spatial_ref_sys   | table | nominatim
+ public | us_postcode       | table | nominatim
+(6 rows)
+</code></pre>
+<p>For info I'm using <a href="https://github.com/mediagis/nominatim-docker">nominatim-docker from mediagis</a> 3.4 which uses postgres 11 and postgis 2.5. The OSM files I've used are from geofabrik : Nord-pas-de-calais (a region of France), Monaco, and Finland. All don't work.</p>
+<p>My question is : what am I missing to get the reverse geocoding API to work ?</p>
+<p>Thanks for your help :)</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-api" href="/tags/api/" rel="tag" title="see questions tagged 'api'">api</a>
+<a class="post-tag tag-link-reversegeocoding" href="/tags/reversegeocoding/" rel="tag" title="see questions tagged 'reversegeocoding'">reversegeocoding</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-geocoding" href="/tags/geocoding/" rel="tag" title="see questions tagged 'geocoding'">geocoding</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>06 Apr '20, 13:48</strong>
+</p>
+<img alt="Nominageek's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b592d323e79d66fcd8f66c5ab17f62ea?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18155/nominageek">Nominageek</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Nominageek has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-74027">
+<a name="74029"></a>
+<div class="comment" id="comment-74029">
+<div class="comment-score" id="post-74029-score">1</div>
+<div class="comment-text"><p>I can't help you solve the issue but I can tell you that a \dt on a proper Nominatim database will yield hundreds of tables, most importantly among them a table called <code>placex</code> which contains most OSM data. This means something has not worked during your data import process.</p></div>
+<div class="comment-info" id="comment-74029-info">
+<span class="comment-age">(06 Apr '20, 14:10)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="74030"></a>
+<div class="comment" id="comment-74030">
+<div class="comment-score" id="post-74030-score"></div>
+<div class="comment-text"><p>Thanks for the info ! I hope I'll be able to solve this issue</p></div>
+<div class="comment-info" id="comment-74030-info">
+<span class="comment-age">(06 Apr '20, 14:19)</span>
+<a class="comment-user userinfo" href="/users/18155/nominageek">Nominageek</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-74027">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-74027-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/74027/places-not-found-cant-use-reverse-geocoding-api?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/74027/places-not-found-cant-use-reverse-geocoding-api?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/74027/places-not-found-cant-use-reverse-geocoding-api?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/74027/places-not-found-cant-use-reverse-geocoding-api?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="74075"></a>
+<div class="answer accepted-answer" id="answer-container-74075">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/74075/up/" id="post-74075-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-74075-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/74075/down/" id="post-74075-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/74075/" rel="nofollow" title="Nominageek has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This was resolved in <a href="https://github.com/mediagis/nominatim-docker/issues/110">https://github.com/mediagis/nominatim-docker/issues/110</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/74075/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Apr '20, 15:17</strong>
+</p>
+<img alt="mtmail's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/96aad1e1801b7ea36fba50687924c935?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/150/mtmail">mtmail</a><br/>
+<span class="score" title="4757 reputation points"><span class="">4.8k</span></span><span title="15 badges"><span class="silver">●</span><span class="badgecount">15</span></span><span title="74 badges"><span class="bronze">●</span><span class="badgecount">74</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mtmail has 50 accepted answers">27%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-74075">
+</div>
+<div class="comment-tools" id="comment-tools-74075">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-74075-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/74027/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="8jvVSSs0QW5wB4FxSh4KeAohVSHiWG9j"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

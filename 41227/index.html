@@ -1,0 +1,280 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/41227/easy-solution-for-lack-of-time-tag-in-gpx-or-found-no-good-gpx-points-in-input-data">[closed] Easy solution for lack of time tag in GPX or "Found no good GPX points in input data"</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/41227/up/" id="post-41227-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-41227-score" title="current number of votes">
+    -1
+</div>
+<a class="ajax-command post-vote down" href="/vote/41227/down/" id="post-41227-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/41227/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>So I also ran into this universal problem, as Garmin doesn't provide &lt;time&gt; in GPX, nor does GPSBabel, or most things.  The GPX track I had that worked was from my old Palm Pilot device over a decade ago.</p>
+<p>So I looked at it.  </p>
+<p>Turns out OpenStreetMap doesn't even use the time stamp!!!  Every time in the working file was "1989-12-30T23:59:59Z", no difference, OSM was happy with it; it demands it, then ignores it, how dumb.  *rollseyes</p>
+<p>So after all the silly searching and scripts and GPS babel complex command lines, I simply did a search/replace and voilà, working GPX files that previously were erroneously rejected for time tag errors.</p>
+<p>Simply open the GPX in Wordpad/Notepad/any text editor and find: <code>/ele&gt;</code></p>
+<p>Replace all with: <code>/ele&gt;&lt;time&gt;1989-12-30T23:59:59Z&lt;/time&gt;</code></p>
+<p>Edit sorry, this editor has issues with brackets, remove space between <code>&lt;</code> and time or /time.</p>
+<p>Done.  Now it'll happily take the GPX file from GPS.  Hopefully future folks with this issue can search out this solution readily.  </p>
+<p>PS:  Since the time data isn't used for anything, this should obviously be fixed, few folks have the tenacity to continue contributing when such roadblocks are presented.  </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-gpx" href="/tags/gpx/" rel="tag" title="see questions tagged 'gpx'">gpx</a>
+<a class="post-tag tag-link-timestamps" href="/tags/timestamps/" rel="tag" title="see questions tagged 'timestamps'">timestamps</a>
+<a class="post-tag tag-link-good" href="/tags/good/" rel="tag" title="see questions tagged 'good'">good</a>
+<a class="post-tag tag-link-tag" href="/tags/tag/" rel="tag" title="see questions tagged 'tag'">tag</a>
+<a class="post-tag tag-link-time" href="/tags/time/" rel="tag" title="see questions tagged 'time'">time</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>22 Feb '15, 04:23</strong>
+</p>
+<img alt="RJFerret's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/afb98f6daf8f6fc1be2696777fa9108b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10539/rjferret">RJFerret</a><br/>
+<span class="score" title="24 reputation points">24</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="RJFerret has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/41227/">
+                edited
+                <strong>22 Feb '15, 23:40</strong>
+</a>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-41227">
+<a name="41228"></a>
+<div class="comment" id="comment-41228">
+<div class="comment-score" id="post-41228-score"></div>
+<div class="comment-text"><p>Wow! Good work.</p>
+<p>If I'm reading  your post correctly, time stamps actually <strong>are</strong> required but they do not need to be incremented. Adding the same time value on all points will work.</p>
+<p>I have used GPSBabel to add timestamps to old GPX files before and it is a powerful program but I agree, its command line switches frustrate me every time. </p>
+<p>Cheers</p></div>
+<div class="comment-info" id="comment-41228-info">
+<span class="comment-age">(22 Feb '15, 09:09)</span>
+<a class="comment-user userinfo" href="/users/5016/alaskadave">AlaskaDave</a>
+</div>
+</div>
+<a name="41236"></a>
+<div class="comment" id="comment-41236">
+<div class="comment-score" id="post-41236-score">1</div>
+<div class="comment-text"><p>your search and replace does not close the time tag - which will be invalid XML. (Upd: has been fixed, see below)</p></div>
+<div class="comment-info" id="comment-41236-info">
+<span class="comment-age">(22 Feb '15, 13:32)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+<a name="41237"></a>
+<div class="comment" id="comment-41237">
+<div class="comment-score" id="post-41237-score"></div>
+<div class="comment-text"><p>Garmin DOES provide <code>&lt;time&gt;</code> in GPX. Please use the "active track" and not saved tracks! As others said: correct time stamps are useful.</p>
+<p>Yes, the OSM track upload accepts all gpx files which have at least one trackpoint with a timestamp.</p></div>
+<div class="comment-info" id="comment-41237-info">
+<span class="comment-age">(22 Feb '15, 13:33)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+<a name="41238"></a>
+<div class="comment" id="comment-41238">
+<div class="comment-score" id="post-41238-score"></div>
+<div class="comment-text"><p>see <a href="https://help.openstreetmap.org/questions/24550/found-no-good-gpx-points-in-the-input-data">https://help.openstreetmap.org/questions/24550/found-no-good-gpx-points-in-the-input-data</a> or <a href="https://help.openstreetmap.org/questions/35688/found-no-good-gpx-points-in-the-input-data">https://help.openstreetmap.org/questions/35688/found-no-good-gpx-points-in-the-input-data</a></p></div>
+<div class="comment-info" id="comment-41238-info">
+<span class="comment-age">(22 Feb '15, 13:37)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+<a name="41249"></a>
+<div class="comment not_top_scorer" id="comment-41249">
+<div class="comment-score" id="post-41249-score"></div>
+<div class="comment-text"><p>Edited to fix the /time issue, thanks, I fought with it for a while when originally posting, it's because this editor drops stuff in brackets even with code stuff.</p></div>
+<div class="comment-info" id="comment-41249-info">
+<span class="comment-age">(22 Feb '15, 22:51)</span>
+<a class="comment-user userinfo" href="/users/10539/rjferret">RJFerret</a>
+</div>
+</div>
+<a name="41252"></a>
+<div class="comment" id="comment-41252">
+<div class="comment-score" id="post-41252-score">2</div>
+<div class="comment-text"><p><a href="http://help.openstreetmap.org/users/10539/rjferret">@RjFerret</a>: ah, yes, but only in the preview (it is a bit fucked up...). A correctly working Markdown preview is <a href="http://daringfireball.net/projects/markdown/dingus">dingus</a>. I have removed the spaces for you.</p></div>
+<div class="comment-info" id="comment-41252-info">
+<span class="comment-age">(22 Feb '15, 23:42)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+<a name="41254"></a>
+<div class="comment not_top_scorer" id="comment-41254">
+<div class="comment-score" id="post-41254-score"></div>
+<div class="comment-text"><p>I have used the fake timestamps only on my own data that has been stripped of those stamps by some other application, for example, Google Earth.</p></div>
+<div class="comment-info" id="comment-41254-info">
+<span class="comment-age">(23 Feb '15, 00:01)</span>
+<a class="comment-user userinfo" href="/users/5016/alaskadave">AlaskaDave</a>
+</div>
+</div>
+<a name="41259"></a>
+<div class="comment not_top_scorer" id="comment-41259">
+<div class="comment-score" id="post-41259-score"></div>
+<div class="comment-text"><p>Thank you!</p></div>
+<div class="comment-info" id="comment-41259-info">
+<span class="comment-age">(23 Feb '15, 02:56)</span>
+<a class="comment-user userinfo" href="/users/10539/rjferret">RJFerret</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-41227">
+<span class="comments-showing">
+            showing 5 of 8
+        </span>
+<a class="show-all-comments-link" href="#">show 3 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-41227-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<div class="question-status" style="margin-bottom:15px">
+<h3>
+                The question has been closed for the following reason "Duplicate Question (see links in my comment)  and not a question (see  https://help.openstreetmap.org/faq/ )" by
+                <a href="/users/5179/aseerel4c26">aseerel4c26</a>
+                 22 Feb '15, 13:38
+            </h3>
+</div>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/41227/easy-solution-for-lack-of-time-tag-in-gpx-or-found-no-good-gpx-points-in-input-data?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/41227/easy-solution-for-lack-of-time-tag-in-gpx-or-found-no-good-gpx-points-in-input-data?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/41227/easy-solution-for-lack-of-time-tag-in-gpx-or-found-no-good-gpx-points-in-input-data?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/41227/easy-solution-for-lack-of-time-tag-in-gpx-or-found-no-good-gpx-points-in-input-data?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="41233"></a>
+<div class="answer" id="answer-container-41233">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/41233/up/" id="post-41233-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-41233-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/41233/down/" id="post-41233-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>When downloading GPS traces in JOSM you can then filter by date/time, so accurate timestamps are clearly more useful (say for example where a junction has changed and you want to ignore older traces).</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/41233/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Feb '15, 09:53</strong>
+</p>
+<img alt="EdLoach's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f25a8392e12ed696b16554b3d08e4e2b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/339/edloach">EdLoach ♦</a><br/>
+<span class="score" title="19478 reputation points"><span class="">19.5k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="156 badges"><span class="silver">●</span><span class="badgecount">156</span></span><span title="280 badges"><span class="bronze">●</span><span class="badgecount">280</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="EdLoach has 93 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-41233">
+</div>
+<div class="comment-tools" id="comment-tools-41233">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-41233-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="41229"></a>
+<div class="answer" id="answer-container-41229">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/41229/up/" id="post-41229-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-41229-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/41229/down/" id="post-41229-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Timestamps are a witness that the track was surveyed rather than traced from a copyrighted source. It was more important when GPXes were our main source of info before Bing became a legal usable source.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/41229/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Feb '15, 09:09</strong>
+</p>
+<img alt="andy%20mackey's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/efa7ca36d4499200879223dc5ad5ecac?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/644/andy-mackey">andy mackey</a><br/>
+<span class="score" title="13238 reputation points"><span class="">13.2k</span></span><span title="87 badges"><span class="badge1">●</span><span class="badgecount">87</span></span><span title="143 badges"><span class="silver">●</span><span class="badgecount">143</span></span><span title="285 badges"><span class="bronze">●</span><span class="badgecount">285</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="andy mackey has 37 accepted answers">4%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-41229">
+</div>
+<div class="comment-tools" id="comment-tools-41229">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-41229-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/41227/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="aJpDPOjooMXSIQVKCXPxpbwwBHvhLznS"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,247 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/11102/example-postgres-queries-for-osm">Example POSTGRES queries for OSM</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/11102/up/" id="post-11102-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-11102-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/11102/down/" id="post-11102-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/11102/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>I recently installed postgres and loaded some osm data in it.
+I'm trying to do some queries (for example getting all street names, street numbers, etc ..).
+Can anyone help me with some documentation about postgres query with osm ? i'm looking for any tutorial
+able to get me started on how to query the database </p>
+<p>Thanks for you help</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap" href="/tags/openstreetmap/" rel="tag" title="see questions tagged 'openstreetmap'">openstreetmap</a>
+<a class="post-tag tag-link-query" href="/tags/query/" rel="tag" title="see questions tagged 'query'">query</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>10 Mar '12, 17:53</strong>
+</p>
+<img alt="Hyboga's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/4278fe3108aabc288262dfe7aae8e377?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3036/hyboga">Hyboga</a><br/>
+<span class="score" title="45 reputation points">45</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Hyboga has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-11102">
+<a name="11107"></a>
+<div class="comment" id="comment-11107">
+<div class="comment-score" id="post-11107-score"></div>
+<div class="comment-text"><p>There are many different ways to load osm data into a postgres database all depending on how you want to get the data out again. Can you tell us how you imported the data and possibly what you want with the database in the end.</p></div>
+<div class="comment-info" id="comment-11107-info">
+<span class="comment-age">(10 Mar '12, 23:43)</span>
+<a class="comment-user userinfo" href="/users/131/gnonthgol">Gnonthgol ♦</a>
+</div>
+</div>
+<a name="11121"></a>
+<div class="comment" id="comment-11121">
+<div class="comment-score" id="post-11121-score"></div>
+<div class="comment-text"><p>Hello Gnonthgol,</p>
+<p>I loaded osm data using osm2psql, in the end i would like those data as lists (csv or else) so i can import them somewhere else.</p></div>
+<div class="comment-info" id="comment-11121-info">
+<span class="comment-age">(11 Mar '12, 13:31)</span>
+<a class="comment-user userinfo" href="/users/3036/hyboga">Hyboga</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-11102">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-11102-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/11102/example-postgres-queries-for-osm?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/11102/example-postgres-queries-for-osm?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/11102/example-postgres-queries-for-osm?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/11102/example-postgres-queries-for-osm?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="11264"></a>
+<div class="answer" id="answer-container-11264">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/11264/up/" id="post-11264-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-11264-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/11264/down/" id="post-11264-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Here is the schema of Osm2pgsql:</p>
+<p><a href="http://wiki.openstreetmap.org/wiki/Osm2pgsql/schema">http://wiki.openstreetmap.org/wiki/Osm2pgsql/schema</a></p>
+<p>it contains one example and documentation of the table structure.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/11264/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>16 Mar '12, 22:58</strong>
+</p>
+<img alt="TheOddOne2's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ec2962c6ef6aab7940982ed25f2ca544?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2640/theoddone2">TheOddOne2</a><br/>
+<span class="score" title="685 reputation points">685</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="6 badges"><span class="silver">●</span><span class="badgecount">6</span></span><span title="21 badges"><span class="bronze">●</span><span class="badgecount">21</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="TheOddOne2 has one accepted answer">3%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-11264">
+</div>
+<div class="comment-tools" id="comment-tools-11264">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-11264-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="11126"></a>
+<div class="answer" id="answer-container-11126">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/11126/up/" id="post-11126-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-11126-score" title="current number of votes">
+    -1
+</div>
+<a class="ajax-command post-vote down" href="/vote/11126/down/" id="post-11126-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>osm2pgsql stores the data in several tables according to the style you used when you imported. The geometries is stored in postgis format. For a description on how to work with the geometries read the <a href="http://www.postgis.org/documentation/manual-1.5/">postgis manual</a>. If you are unfemilear with sql there are a lot of resources out there on the internet.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/11126/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>11 Mar '12, 17:42</strong>
+</p>
+<img alt="Gnonthgol's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/44a4438f0146dfd898e24c221fd28b58?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/131/gnonthgol">Gnonthgol ♦</a><br/>
+<span class="score" title="13750 reputation points"><span class="">13.8k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="103 badges"><span class="silver">●</span><span class="badgecount">103</span></span><span title="198 badges"><span class="bronze">●</span><span class="badgecount">198</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Gnonthgol has 57 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-11126">
+</div>
+<div class="comment-tools" id="comment-tools-11126">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-11126-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="11211"></a>
+<div class="answer" id="answer-container-11211">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/11211/up/" id="post-11211-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-11211-score" title="current number of votes">
+    -1
+</div>
+<a class="ajax-command post-vote down" href="/vote/11211/down/" id="post-11211-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can find lots of example queries in mapnik stylesheets: <a href="https://trac.openstreetmap.org/browser/applications/rendering/mapnik/osm.xml">https://trac.openstreetmap.org/browser/applications/rendering/mapnik/osm.xml</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/11211/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>15 Mar '12, 09:25</strong>
+</p>
+<img alt="emj's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/dd3858f5f89f5a6b738f9dbe59824440?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/188/emj">emj</a><br/>
+<span class="score" title="2024 reputation points"><span class="">2.0k</span></span><span title="12 badges"><span class="badge1">●</span><span class="badgecount">12</span></span><span title="35 badges"><span class="silver">●</span><span class="badgecount">35</span></span><span title="47 badges"><span class="bronze">●</span><span class="badgecount">47</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="emj has 11 accepted answers">15%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-11211">
+</div>
+<div class="comment-tools" id="comment-tools-11211">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-11211-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/11102/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="bb1j1OohIMG1vbqqprEpsyFQS70I51dN"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

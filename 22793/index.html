@@ -1,0 +1,190 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/22793/adding-postcodes-from-kml">Adding postcodes from KML</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/22793/up/" id="post-22793-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-22793-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/22793/down/" id="post-22793-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/22793/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>im trying to add all postal codes of spain from a KML file. Every postcode is a placemark with name, coordinates and a postcode, there is an example of an addres. </p>
+<pre><code>&lt; Placemark&gt;
+   &lt; styleUrl&gt;#default&lt; /styleUrl&gt;
+   &lt; name&gt;&lt; ![CDATA[PostCode]]&gt;&lt; /name&gt;
+   &lt; Point&gt;
+      &lt; coordinates&gt;-3.6666,40.4291&lt; /coordinates&gt;
+   &lt; /Point&gt;
+&lt; /Placemark&gt;
+</code></pre>
+<p>(apologize about extra space at the beginning of each tag, is just for showing it)</p>
+<p>My problem is that i cant find the tag for postcode or address, i made some test with &lt; address&gt;, &lt; postcode&gt; or &lt; addr:postcode&gt;(this tag is the same used in Potlatch 2) but never appear when i load the file with Potlatch. </p>
+<p>what tag should i use to add this field?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-postalcode" href="/tags/postalcode/" rel="tag" title="see questions tagged 'postalcode'">postalcode</a>
+<a class="post-tag tag-link-zip-code" href="/tags/zip-code/" rel="tag" title="see questions tagged 'zip-code'">zip-code</a>
+<a class="post-tag tag-link-kml" href="/tags/kml/" rel="tag" title="see questions tagged 'kml'">kml</a>
+<a class="post-tag tag-link-postcode" href="/tags/postcode/" rel="tag" title="see questions tagged 'postcode'">postcode</a>
+<a class="post-tag tag-link-address" href="/tags/address/" rel="tag" title="see questions tagged 'address'">address</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>27 May '13, 12:24</strong>
+</p>
+<img alt="dremel's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8d14d8bb6bbba9c87b27580820bf6b75?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6496/dremel">dremel</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="dremel has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-22793">
+</div>
+<div class="comment-tools" id="comment-tools-22793">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-22793-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/22793/adding-postcodes-from-kml?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/22793/adding-postcodes-from-kml?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/22793/adding-postcodes-from-kml?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/22793/adding-postcodes-from-kml?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="22795"></a>
+<div class="answer" id="answer-container-22795">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/22795/up/" id="post-22795-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-22795-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/22795/down/" id="post-22795-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Firstly you don't state the source of your data. It is important that external data loaded into OSM is both compatible with the OdBL licence (sorry for tautology) <strong>and</strong> that the import itself is carried out according to the <a href="http://wiki.openstreetmap.org/wiki/Import/Guidelines">established guidelines</a>.</p>
+<p>Secondly, centroids for postal areas are not a useful object to map in OSM. They are not capable of being verified on the ground, and are much more useful when attached to other objects. For instance in Britain it is usually necessary to attach postal codes to individual buildings because of the granularity of the data. (In some cases all buildings on a road share a postcode so the street can also be tagged with addr:postcode). In many european countries most postcodes will be closely associated with communes, and thus can be added to a place=* tag. Making the centroids available outside OSM will meet 99.9999% of use cases which might be envisaged for holding this data in OSM.</p>
+<p>Lastly, Potlatch is designed to discourage uploading of data. Things like KML and GPS traces are incorporated to assist a manual editing process, and as such no tag or other information is directly available in the editor.</p>
+<p>It is possible to import this kind of data into OSM, but first it is important to check that you have fully covered my first two points. Importing data also requires a good degree of familiarity with OSM tools: the first requirement of performing an import is that the importer is capable of reverting it without damaging other contributions.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/22795/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>27 May '13, 13:12</strong>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br/>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SK53 has 121 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-22795">
+</div>
+<div class="comment-tools" id="comment-tools-22795">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-22795-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="22794"></a>
+<div class="answer" id="answer-container-22794">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/22794/up/" id="post-22794-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-22794-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/22794/down/" id="post-22794-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Please explain what you want to do. Do you want to add postal codes to OpenStreetMap? In that case, please be aware that such data imports have to abide by certain rules - most importantly, you have to make sure that the data is legally usable for OSM, and you have to discuss your plans beforehand. Type "import" in the search box above and read some of the answers.</p>
+<p>Also, the data you seem to have is point coordinates, whereas OSM usually records post code areas (i.e. polygons).</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/22794/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>27 May '13, 13:09</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-22794">
+</div>
+<div class="comment-tools" id="comment-tools-22794">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-22794-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/22793/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="MUCp3RpAWX3s5p6wz8mcGIxu7OD2awOT"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

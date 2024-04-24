@@ -1,0 +1,145 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/11357/rendering-imagesmaps-from-postgresqlpostgis-database">Rendering images/maps from Postgresql/PostGIS Database</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/11357/up/" id="post-11357-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-11357-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/11357/down/" id="post-11357-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/11357/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi everyone!</p>
+<p>I convert .osm - data into pgsql-database.</p>
+<p>When I try to render images from these databases/tables.</p>
+<p>I use Python version 2.7.2 with Mapnik-2.0.1rc0.</p>
+<p>My .py:</p>
+<hr/>
+<pre><code>#!/usr/bin/python
+
+import mapnik
+from mapnik import Layer, PostGIS
+from datetime import datetime, timedelta
+import sys, os
+
+def render_image(start_time,end_time):
+
+    ll = (30.708,-27.414,32.179,-25.652)
+    prj = mapnik.Projection("+proj=latlong +datum=WGS84")
+    c0 = prj.forward(mapnik.Coord(ll[0],ll[1]))
+    c1 = prj.forward(mapnik.Coord(ll[2],ll[3]))
+
+z = 3
+imgx = 336 * z
+imgy = 450 * z
+
+m = mapnik.Map(imgx,imgy)
+#mapnik.load_map(m,"some_kind_of_stylesheet.xml")
+
+db_params = dict(
+  dbname = 'gis',
+  user = 'Hein',
+  password = '1234',
+  host = 'localhost',
+  port = 5432,
+  estimate_extent = False,
+  extent = "3390650.221286806, -3163145.87245787, 3609898.596229789, -2956043.104540316"
+)
+
+lyr = Layer('points',"+init=epsg:900913")
+###db_params['table'] = '(planet_osm_line,planet_osm_point,planet_osm_polygon,planet_osm_roads)'
+db_params['table'] = 'planet_osm_point'
+lyr.datasource = PostGIS(**db_params)
+lyr.styles.append('points')
+m.layers.append(lyr)
+
+if hasattr(mapnik,'mapnik_version') and mapnik.mapnik_version() &gt;= 800:
+    bbox = mapnik.Box2d(c0.x,c0.y,c1.x,c1.y)
+else:
+    bbox = mapnik.Envelope(c0.x,c0.y,c1.x,c1.y)
+m.zoom_to_box(bbox)
+im = mapnik.Image(imgx,imgy)
+mapnik.render(m, im)
+view = im.view(0,0,imgx,imgy) # x,y,width,height
+view.save("map.png",'png')
+
+if __name__ == "__main__":
+    cur_time = datetime(2010,8,10,0,0,0)
+    end_time = datetime(2010,12,6,23,59,59)
+    delta = timedelta(minutes=+30)
+    while cur_time &lt; end_time:
+        render_image(cur_time.isoformat(), (cur_time+delta).isoformat())
+        cur_time = cur_time + delta
+</code></pre>
+<hr/>
+<p>I got this file from example-code and modified it.
+But there are some lines, where I don't know, what they mean and if they are useful.</p>
+<p>What kind of XML-stylesheet must I use? Where can I get sample XML-code, that I can use?</p>
+<p>I would be very happy if anyone could help me.
+Thank you!</p>
+<p>Greets,
+Matze</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-python" href="/tags/python/" rel="tag" title="see questions tagged 'python'">python</a>
+<a class="post-tag tag-link-rendering" href="/tags/rendering/" rel="tag" title="see questions tagged 'rendering'">rendering</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>20 Mar '12, 12:52</strong>
+</p>
+<img alt="MHein's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/cc0198a02af3c41ad04b61e028c3b126?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3139/mhein">MHein</a><br/>
+<span class="score" title="141 reputation points">141</span><span title="11 badges"><span class="badge1">●</span><span class="badgecount">11</span></span><span title="11 badges"><span class="silver">●</span><span class="badgecount">11</span></span><span title="16 badges"><span class="bronze">●</span><span class="badgecount">16</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="MHein has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/11357/">
+                edited
+                <strong>20 Mar '12, 13:03</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-11357">
+</div>
+<div class="comment-tools" id="comment-tools-11357">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-11357-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/11357/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="d9UCNie1RoIA4sHG48Z0r6Pvqsoteygv"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

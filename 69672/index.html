@@ -1,0 +1,139 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/69672/reverse-geocode-different-result-between-public-osm-database-and-local-database">Reverse geocode different result between public osm database and local database</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/69672/up/" id="post-69672-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-69672-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/69672/down/" id="post-69672-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/69672/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have a problem with the result of reverse geocoding. I have created a local instance of openstreet with an Italy OSM database downloaded from geofabrik. The local instance daily updates the database. When I search an address with public request:</p>
+<p><a href="https://nominatim.openstreetmap.org/reverse?format=xml&amp;lat=41.9189&amp;lon=12.52001&amp;zoom=18&amp;accept-language=it">https://nominatim.openstreetmap.org/reverse?format=xml&amp;lat=41.9189&amp;lon=12.52001&amp;zoom=18&amp;accept-language=it</a></p>
+<p>The result of road is: "Viale Ventuno Aprile"</p>
+<p>But when I call my local instance with the same request the result of road is different. Why?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-geocode" href="/tags/geocode/" rel="tag" title="see questions tagged 'geocode'">geocode</a>
+<a class="post-tag tag-link-local" href="/tags/local/" rel="tag" title="see questions tagged 'local'">local</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>19 Jun '19, 13:03</strong>
+</p>
+<img alt="Matteo's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/140f75303f0de1e13abf0713e9c5b2f1?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16814/matteo">Matteo</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Matteo has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-69672">
+<a name="69673"></a>
+<div class="comment" id="comment-69673">
+<div class="comment-score" id="post-69673-score"></div>
+<div class="comment-text"><p>Please show / explain the difference.</p></div>
+<div class="comment-info" id="comment-69673-info">
+<span class="comment-age">(19 Jun '19, 13:19)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="69674"></a>
+<div class="comment" id="comment-69674">
+<div class="comment-score" id="post-69674-score"></div>
+<div class="comment-text"><p>Online instance:</p>
+<p>&lt;reversegeocode timestamp="Wed, 19 Jun 19 13:52:27 +0000" attribution="Data © OpenStreetMap contributors, ODbL 1.0. &amp;lt;a href=" http:="" www.openstreetmap.org="" copyright""=""&gt;http://www.openstreetmap.org/copyright" querystring="format=xml&amp;lat=41.9189&amp;lon=12.52001&amp;zoom=18&amp;accept-language=it"&gt;
+&lt;result place_id="199361633" osm_type="relation" osm_id="5459681" ref="Q. V" lat="41.91649835" lon="12.5197118043497" boundingbox="41.9027733,41.930266,12.5013138,12.5325107"&gt;
+Quartiere V Nomentano, Viale Ventuno Aprile, San Lorenzo, Municipio Roma II, Roma, RM, LAZ, 00162, Italia
+&lt;/result&gt;
+&lt;addressparts&gt;
+&lt;address29&gt;Quartiere V Nomentano&lt;/address29&gt;
+&lt;road&gt;Viale Ventuno Aprile&lt;/road&gt;
+&lt;neighbourhood&gt;San Lorenzo&lt;/neighbourhood&gt;
+&lt;suburb&gt;Municipio Roma II&lt;/suburb&gt;
+&lt;city&gt;Roma&lt;/city&gt;
+&lt;county&gt;RM&lt;/county&gt;
+&lt;state&gt;LAZ&lt;/state&gt;
+&lt;postcode&gt;00162&lt;/postcode&gt;
+&lt;country&gt;Italia&lt;/country&gt;
+&lt;country_code&gt;it&lt;/country_code&gt;
+&lt;/addressparts&gt;
+&lt;/reversegeocode&gt;</p></div>
+<div class="comment-info" id="comment-69674-info">
+<span class="comment-age">(19 Jun '19, 14:53)</span>
+<a class="comment-user userinfo" href="/users/16814/matteo">Matteo</a>
+</div>
+</div>
+<a name="69675"></a>
+<div class="comment" id="comment-69675">
+<div class="comment-score" id="post-69675-score"></div>
+<div class="comment-text"><p>Local instance:</p>
+<p><a href="http://localhost/nominatim/reverse?format=xml&amp;lat=41.9189&amp;lon=12.52001&amp;zoom=18&amp;accept-language=it">http://localhost/nominatim/reverse?format=xml&amp;lat=41.9189&amp;lon=12.52001&amp;zoom=18&amp;accept-language=it</a></p>
+<p>&lt;reversegeocode timestamp="Wed, 19 Jun 19 13:53:40 +0000" attribution="Data © OpenStreetMap contributors, ODbL 1.0. &amp;lt;a href=" http:="" www.openstreetmap.org="" copyright""=""&gt;http://www.openstreetmap.org/copyright" querystring="format=xml&amp;lat=41.9189&amp;lon=12.52001&amp;zoom=18&amp;accept-language=it"&gt;
+&lt;result place_id="7767144" osm_type="relation" osm_id="5459681" ref="Q. V" lat="41.91649835" lon="12.5197118043497" boundingbox="41.9027733,41.930266,12.5013138,12.5325107"&gt;
+Quartiere V Nomentano, Via Antonio Gallonio, San Lorenzo, Municipio Roma II, Roma, RM, LAZ, 00162, Italia
+&lt;/result&gt;
+&lt;addressparts&gt;
+&lt;address29&gt;Quartiere V Nomentano&lt;/address29&gt;
+&lt;road&gt;Via Antonio Gallonio&lt;/road&gt;
+&lt;neighbourhood&gt;San Lorenzo&lt;/neighbourhood&gt;
+&lt;suburb&gt;Municipio Roma II&lt;/suburb&gt;
+&lt;city&gt;Roma&lt;/city&gt;
+&lt;county&gt;RM&lt;/county&gt;
+&lt;state&gt;LAZ&lt;/state&gt;
+&lt;postcode&gt;00162&lt;/postcode&gt;
+&lt;country&gt;Italia&lt;/country&gt;
+&lt;country_code&gt;it&lt;/country_code&gt;
+&lt;/addressparts&gt;
+&lt;/reversegeocode&gt;</p></div>
+<div class="comment-info" id="comment-69675-info">
+<span class="comment-age">(19 Jun '19, 14:54)</span>
+<a class="comment-user userinfo" href="/users/16814/matteo">Matteo</a>
+</div>
+</div>
+<a name="69676"></a>
+<div class="comment" id="comment-69676">
+<div class="comment-score" id="post-69676-score"></div>
+<div class="comment-text"><p>See the &lt;road&gt; tag</p></div>
+<div class="comment-info" id="comment-69676-info">
+<span class="comment-age">(19 Jun '19, 14:54)</span>
+<a class="comment-user userinfo" href="/users/16814/matteo">Matteo</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-69672">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-69672-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/69672/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="CzrBGqJ6SDKU4Zsqw34zRXjhqUKzlU86"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

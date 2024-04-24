@@ -1,0 +1,150 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/16968/naming-a-school-or-other-building">Naming a school (or other building)</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/16968/up/" id="post-16968-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-16968-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/16968/down/" id="post-16968-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/16968/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I recently added a school to OSM (via Potlatch2). I outlined the school property and named it "XYZ Elementary School". I outlined the school building and named it "XYZ Elementary School". I outlined a 2nd school building (the gym) and named it "XYZ Elementary School". And finally I know that there is a single point (a node?) for a school that I also added on the center of the building and named it "XYZ Elementary School" too. None of these were wrong to name, but at different zoom levels I got a whole bunch of overlapping text of the exact same redundant name.</p>
+<p>Now I know I can easily remove the name from the school gym building and I can also remove that single point school designation (a node?), but that still leaves both the building and the property with the same exact name. My question is mostly that of best practices:</p>
+<ul>
+<li>Is it a problem to redundantly name both the  property and the building? To me they  are both valid and should be labeled.</li>
+<li>Should one add a single point identifier (like that school node) to a  building if the building itself is
+   drawn out?</li>
+</ul>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-school" href="/tags/school/" rel="tag" title="see questions tagged 'school'">school</a>
+<a class="post-tag tag-link-name" href="/tags/name/" rel="tag" title="see questions tagged 'name'">name</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>17 Oct '12, 19:10</strong>
+</p>
+<img alt="gopanthers's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/228a09e620f374c61a25e546d76bc6a0?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3289/gopanthers">gopanthers</a><br/>
+<span class="score" title="366 reputation points">366</span><span title="14 badges"><span class="badge1">●</span><span class="badgecount">14</span></span><span title="15 badges"><span class="silver">●</span><span class="badgecount">15</span></span><span title="26 badges"><span class="bronze">●</span><span class="badgecount">26</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="gopanthers has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-16968">
+</div>
+<div class="comment-tools" id="comment-tools-16968">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-16968-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/16968/naming-a-school-or-other-building?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/16968/naming-a-school-or-other-building?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/16968/naming-a-school-or-other-building?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/16968/naming-a-school-or-other-building?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="16970"></a>
+<div class="answer accepted-answer" id="answer-container-16970">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/16970/up/" id="post-16970-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-16970-score" title="current number of votes">
+    9
+</div>
+<a class="ajax-command post-vote down" href="/vote/16970/down/" id="post-16970-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/16970/" rel="nofollow" title="gopanthers has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The usual practice is <a href="http://wiki.openstreetmap.org/wiki/One_feature,_one_OSM_element">one feature, one OSM element</a>.</p>
+<p>In your specific case you should add an <em>area</em> outlining the whole school territory and add <a href="http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dschool">amenity=school</a>, <em>name=</em>, <em><a href="http://wiki.openstreetmap.org/wiki/Key:addr">addr</a></em> and whatever you like. Tag each single building with <a href="http://wiki.openstreetmap.org/wiki/Key:building">building=school</a> (<em>building=yes</em> would also suffice) and remove the single school <em>node</em> as there is absolutely no need for it (see my first sentence).</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/16970/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>17 Oct '12, 19:22</strong>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="scai has 168 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-16970">
+<a name="16984"></a>
+<div class="comment" id="comment-16984">
+<div class="comment-score" id="post-16984-score">2</div>
+<div class="comment-text"><p>There is also a graphical example on the amenity=school page scai links above.</p></div>
+<div class="comment-info" id="comment-16984-info">
+<span class="comment-age">(17 Oct '12, 21:34)</span>
+<a class="comment-user userinfo" href="/users/339/edloach">EdLoach ♦</a>
+</div>
+</div>
+<a name="41637"></a>
+<div class="comment" id="comment-41637">
+<div class="comment-score" id="post-41637-score">1</div>
+<div class="comment-text"><p>Note that streets are one notable exception to the "one feature, one element" rule. One street often consists of multiple OSM ways, which have the same <code>name=</code> tag. However, this usage is probably for historic reasons.</p></div>
+<div class="comment-info" id="comment-41637-info">
+<span class="comment-age">(11 Mar '15, 11:48)</span>
+<a class="comment-user userinfo" href="/users/666/sleske">sleske</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-16970">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-16970-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/16968/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="u00OMsOtY8D0bLt6nePuSc4Cid5UPLVR"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

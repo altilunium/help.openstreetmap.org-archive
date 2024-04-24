@@ -1,0 +1,198 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/11496/openstreetmap-labs-do-we-have-a-testing-environment">Openstreetmap labs: Do we have a testing environment?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/11496/up/" id="post-11496-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-11496-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/11496/down/" id="post-11496-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/11496/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Because I do not have the resources to set up my own local mapping server (basically lack of time and technical expertise) I am looking for a testing environment in order to learn more by "hacking". I am the type of a man who is not able to install and set up complex software but is able to "exploit" currently working system by altering various settings needed to get desired result (usualy small tweaks).</p>
+<p>For instance I would like to learn how Mapnik stylesheets work with a sample set of OSM-like mapping data to be able to add rules for things that are new or still wait for their stylesheet rule. I found <a href="http://apis.dev.openstreetmap.org/">apis.dev.openstreetmap.org</a> page which looks like some testing sites. Can I use some of these for testing (import scripts, stylesheets etc.)? Do we have a kind of "labs" environment up? If not, are there any plans to have this?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-development" href="/tags/development/" rel="tag" title="see questions tagged 'development'">development</a>
+<a class="post-tag tag-link-test" href="/tags/test/" rel="tag" title="see questions tagged 'test'">test</a>
+<a class="post-tag tag-link-local" href="/tags/local/" rel="tag" title="see questions tagged 'local'">local</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+<a class="post-tag tag-link-server" href="/tags/server/" rel="tag" title="see questions tagged 'server'">server</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 Mar '12, 21:27</strong>
+</p>
+<img alt="Kozuch's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7d327873d48d28e563c9ad7259853c35?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/237/kozuch">Kozuch</a><br/>
+<span class="score" title="1720 reputation points"><span class="">1.7k</span></span><span title="58 badges"><span class="badge1">●</span><span class="badgecount">58</span></span><span title="72 badges"><span class="silver">●</span><span class="badgecount">72</span></span><span title="85 badges"><span class="bronze">●</span><span class="badgecount">85</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Kozuch has one accepted answer">8%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-11496">
+</div>
+<div class="comment-tools" id="comment-tools-11496">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-11496-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/11496/openstreetmap-labs-do-we-have-a-testing-environment?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/11496/openstreetmap-labs-do-we-have-a-testing-environment?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/11496/openstreetmap-labs-do-we-have-a-testing-environment?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/11496/openstreetmap-labs-do-we-have-a-testing-environment?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="11497"></a>
+<div class="answer" id="answer-container-11497">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/11497/up/" id="post-11497-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-11497-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/11497/down/" id="post-11497-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can use apis.dev.openstreetmap.org to run tests and experiments against the API, but there is no tile server connected to that so you won't see your changes on a map unless you make the map yourself! We don't have a ready-made Mapnik setup with database that you can use, but you can get an account on the "dev" server where the basic Mapnik software is already installed. You will still have to set up and populate your own database however, and install your own stylesheet. It is possible that another user of the dev server has already done that and that you can use their installation; a call-out on the "dev" mailing list might help.</p>
+<p>Note however that a typical osm2pgsql database does not include all features so a database set up by someone else might not actually meet your requirements if you want to write rules for things that aren't on the map yet. You might really have to create your own database with osm2pgsql - but at least on the dev server all the tools are already installed.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/11497/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Mar '12, 22:31</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-11497">
+<a name="11501"></a>
+<div class="comment" id="comment-11501">
+<div class="comment-score" id="post-11501-score"></div>
+<div class="comment-text"><p>Sorry for being all talk and no action, but it'd be nice if there was a ready-made VM somewhere with the usual tools installed. If I ever come around to making one, I'll let people know :)</p></div>
+<div class="comment-info" id="comment-11501-info">
+<span class="comment-age">(26 Mar '12, 10:49)</span>
+<a class="comment-user userinfo" href="/users/867/vincent-de-phily">Vincent de P... ♦</a>
+</div>
+</div>
+<a name="11543"></a>
+<div class="comment" id="comment-11543">
+<div class="comment-score" id="post-11543-score">4</div>
+<div class="comment-text"><p>There are Ubuntu packages for easy set up of the important tools. If your main operating system isn't Linux you can always install Ubuntu in a VM your self.</p>
+<p>To play with the rendering style-sheet you will need to install a rendering tool-chain, which is best described at <a href="http://switch2osm.org/serving-tiles/building-a-tile-server-from-packages/">http://switch2osm.org/serving-tiles/building-a-tile-server-from-packages/</a></p>
+<p>If you want to play with the Data-API e.g. to test import scripts, you can either use apis.dev.openstreetmap, or again use Ubuntu packages to set up the "rails_port" (The software running the website and API) wiki.osm.org/wiki/Rails_port</p></div>
+<div class="comment-info" id="comment-11543-info">
+<span class="comment-age">(28 Mar '12, 09:01)</span>
+<a class="comment-user userinfo" href="/users/65/apmon">apmon</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-11497">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-11497-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="11498"></a>
+<div class="answer" id="answer-container-11498">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/11498/up/" id="post-11498-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-11498-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/11498/down/" id="post-11498-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The OSMF does not have the funds to give any easy development environment to anyone. The dev.osm.org server is only for internal development.</p>
+<p>You should try to test with smaler extracts or even shape files. I have a working instance of the tile rendering framework on my smal laptop, but only with an extract and with performance ok for one user.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/11498/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Mar '12, 23:11</strong>
+</p>
+<img alt="Gnonthgol's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/44a4438f0146dfd898e24c221fd28b58?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/131/gnonthgol">Gnonthgol ♦</a><br/>
+<span class="score" title="13750 reputation points"><span class="">13.8k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="103 badges"><span class="silver">●</span><span class="badgecount">103</span></span><span title="198 badges"><span class="bronze">●</span><span class="badgecount">198</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Gnonthgol has 57 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-11498">
+</div>
+<div class="comment-tools" id="comment-tools-11498">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-11498-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/11496/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="BL9nxFfUCGzef2oeUqwVPapaC0GxhiD3"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,193 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/62317/longitude-and-latitude-of-a-relation">Longitude and latitude of a relation</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/62317/up/" id="post-62317-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-62317-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/62317/down/" id="post-62317-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/62317/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I‘m trying to understand how I can find the long/lat for a given relation. I would like to archive this based on a sql query. Would I need to create a new polygon based on the members polygon and the find the center of that polygon?</p>
+<p>Looking forward to any tips</p>
+<p>Thx!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>23 Feb '18, 15:07</strong>
+</p>
+<img alt="gabac's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b59231b2ea01633cc4c5936cd117dc84?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14792/gabac">gabac</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="gabac has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/62317/">
+                edited
+                <strong>23 Feb '18, 17:12</strong>
+</a>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-62317">
+</div>
+<div class="comment-tools" id="comment-tools-62317">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-62317-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/62317/longitude-and-latitude-of-a-relation?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/62317/longitude-and-latitude-of-a-relation?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/62317/longitude-and-latitude-of-a-relation?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/62317/longitude-and-latitude-of-a-relation?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="62319"></a>
+<div class="answer accepted-answer" id="answer-container-62319">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/62319/up/" id="post-62319-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-62319-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/62319/down/" id="post-62319-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/62319/" rel="nofollow" title="gabac has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Relations (not relationships) are simply lists of other OSM objects (potentially with an associated "role" attribute). The actual meaning/semantics of the relation are dependent on the "type" attribute of the relation.</p>
+<p>Examples:</p>
+<ul>
+<li>type=multipolygon - a list of elements building outer and inner rings of a potentially complex area-like object</li>
+<li>type=route - a list of ways and potentially other objects describing a linear connection between two locations (that is a bit simplified)</li>
+<li>type=restriction - three elements modelling a turn off from the "from" element that may be allowed or not</li>
+</ul>
+<p>For all of these it is possible to define a meaningful centroid, however how to exactly do so really depends. Now assuming what you are actually looking at is a multipolygon (or a boundary which for this purpose is essentially the same) and the geometry of the polygons have already been built (don't try to do this yourself, use a library) it is relatively easy because any database with support for spatial values will have built in functions for this. </p>
+<p>Unluckily you haven't given any details as to where you are retrieving the relations from in what format and where you intend to store them, so I have to stop here for now.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/62319/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>23 Feb '18, 17:11</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/62319/">
+                edited
+                <strong>23 Feb '18, 17:13</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-62319">
+<a name="62370"></a>
+<div class="comment" id="comment-62370">
+<div class="comment-score" id="post-62370-score"></div>
+<div class="comment-text"><p>What I did so far.</p>
+<p>I loaded a subsetdata of OSM data via osmosis into my postgres database.</p>
+<p>Now lets say we look into following relation (this is supposed to be a relation for a winter resort in Switzerland)</p>
+<p>SELECT * FROM relations WHERE id = 6720604</p>
+<p>or</p>
+<p>SELECT * FROM relation_members WHERE relation_id=6720604</p>
+<p>As you see no member_role attribute has been given.</p>
+<p>I'm aware that with. e.g. ST_Centroid you can let the DB calculate you the center.</p>
+<p>But how do I get a meaningful multi/polygon of the above relationship?</p>
+<p>Hope this explains my issue in more detail</p></div>
+<div class="comment-info" id="comment-62370-info">
+<span class="comment-age">(24 Feb '18, 14:31)</span>
+<a class="comment-user userinfo" href="/users/14792/gabac">gabac</a>
+</div>
+</div>
+<a name="62371"></a>
+<div class="comment" id="comment-62371">
+<div class="comment-score" id="post-62371-score">2</div>
+<div class="comment-text"><p>"But how do I get a meaningful multi/polygon of the above relationship?"</p>
+<p>You can't. You need to have a database in which the geometry of the OSM objects have actually been built. The most popular way to do this is to create a database in the osm2pgsql schema and import data to it (while osm2pgsql is mainly intended for rendering, the requirements overlap in this respect).</p></div>
+<div class="comment-info" id="comment-62371-info">
+<span class="comment-age">(24 Feb '18, 14:37)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+<a name="62372"></a>
+<div class="comment" id="comment-62372">
+<div class="comment-score" id="post-62372-score"></div>
+<div class="comment-text"><p>Oh ok I see. </p>
+<p>Then I’m now off to the task of understanding osm2psql as well :)</p>
+<p>Thx for your help</p></div>
+<div class="comment-info" id="comment-62372-info">
+<span class="comment-age">(24 Feb '18, 15:04)</span>
+<a class="comment-user userinfo" href="/users/14792/gabac">gabac</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-62319">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-62319-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/62317/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="E7SRtctaqlr1VA5ugCGlBsyEknjRGjxQ"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

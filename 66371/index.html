@@ -1,0 +1,96 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/66371/location-priority-real-location-versus-a-known-as-location">Location Priority: Real Location versus a Known-As Location</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66371/up/" id="post-66371-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66371-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/66371/down/" id="post-66371-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/66371/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have been experimenting with geolocation, and the geolocation API, and I ran into a strange issue that I have not been able to work around other than to use a different provider (Yandex in this case because it too does not require an API key). I was encoding about 60 named locations in the format "city state", such as "buffalo new york", and ran into a problem. For the places I was encoding, the few I verified appeared to be correct when referencing the first returned geolocation record except for a place called "Middleville, New York". Middleville, New York is a village in upstate New York, in the county of Herkimer with a ZIP code of 13406. However, the first record returned from the OpenStreetMaps.org web site and the geolocation is API is for a small place here on Long Island that is named "Middleville" but is really in Fort Solonga, NY with a ZIP code of 11768. If I were to send mail to Middleville, NY it would go to upstate New York not here on Long Island. </p>
+<p><em>My question is</em> why does OpenStreetMaps give priority to a non-postal location over and official postal location? When I check Google, Bing and Mapquest for Middleville, NY, the first record returned if the official postal location. When I go to OpenStreetMaps.org, the first location returned is the Fort Solonga location here on Long Island. Is there any way to alter the priority of the returned data when only the city and state are queried?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-geolocation" href="/tags/geolocation/" rel="tag" title="see questions tagged 'geolocation'">geolocation</a>
+<a class="post-tag tag-link-duplicate" href="/tags/duplicate/" rel="tag" title="see questions tagged 'duplicate'">duplicate</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>17 Oct '18, 15:27</strong>
+</p>
+<img alt="Aardvark's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1c872bd45ff7b3017cb34a3ba96edab5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15807/aardvark">Aardvark</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Aardvark has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/66371/">
+                edited
+                <strong>20 Oct '18, 18:43</strong>
+</a>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66371">
+<a name="66402"></a>
+<div class="comment" id="comment-66402">
+<div class="comment-score" id="post-66402-score">1</div>
+<div class="comment-text"><p>note that it is OpenStreetMap but not OpenStreetMap<em>s</em>! :-)</p></div>
+<div class="comment-info" id="comment-66402-info">
+<span class="comment-age">(20 Oct '18, 18:44)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+<a name="66430"></a>
+<div class="comment" id="comment-66430">
+<div class="comment-score" id="post-66430-score">1</div>
+<div class="comment-text"><p>I've asked the Nominatim dev for input on this, but please make your question title more descriptive of the actual question (result priority in Nominatim).</p>
+<p>Note that there is no prioritisation based on if the location has a post code added in OSM or not (that would also likely not make sense), but it could be expected that place=village would take precedence over a place=hamlet (that could have unexpected consequences though).</p></div>
+<div class="comment-info" id="comment-66430-info">
+<span class="comment-age">(23 Oct '18, 15:24)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-66371">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66371-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/66371/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="tcCcty5qWpuzq11KIKO5pttxiYGxdQ6b"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

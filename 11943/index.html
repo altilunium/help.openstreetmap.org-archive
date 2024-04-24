@@ -1,0 +1,154 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/11943/errors-in-osmium-installation">Errors in osmium installation</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/11943/up/" id="post-11943-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-11943-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/11943/down/" id="post-11943-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/11943/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am trying to get osmium examples running as per instructions (<a href="http://wiki.openstreetmap.org/wiki/Osmium/Quick_Start),">http://wiki.openstreetmap.org/wiki/Osmium/Quick_Start),</a> but compilation of the examples fails with errors:</p>
+<pre><code>g++ -g -Wall -Wextra -Wredundant-decls -Wdisabled-optimization -pedantic -Wctor-dtor-privacy -Wnon-virtual-dtor -Woverloaded-virtual -Wsign-promo -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -I../include -DOSMIUM_WITH_OUTPUT_OSM_XML -I/usr/include/libxml2 -o osmium_convert osmium_convert.cpp -L/usr/local/lib -lexpat -lpthread -lz -lprotobuf-lite -losmpbf -lxml2
+g++ -g -Wall -Wextra -Wredundant-decls -Wdisabled-optimization -pedantic -Wctor-dtor-privacy -Wnon-virtual-dtor -Woverloaded-virtual -Wsign-promo -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -I../include -o osmium_debug osmium_debug.cpp -L/usr/local/lib -lexpat -lpthread -lz -lprotobuf-lite -losmpbf
+g++ -g -Wall -Wextra -Wredundant-decls -Wdisabled-optimization -pedantic -Wctor-dtor-privacy -Wnon-virtual-dtor -Woverloaded-virtual -Wsign-promo -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -I../include -o osmium_store_and_debug osmium_store_and_debug.cpp -L/usr/local/lib -lexpat -lpthread -lz -lprotobuf-lite -losmpbf
+g++ -g -Wall -Wextra -Wredundant-decls -Wdisabled-optimization -pedantic -Wctor-dtor-privacy -Wnon-virtual-dtor -Woverloaded-virtual -Wsign-promo -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -I../include -o osmium_find_bbox osmium_find_bbox.cpp -L/usr/local/lib -lexpat -lpthread -lz -lprotobuf-lite -losmpbf
+g++ -g -Wall -Wextra -Wredundant-decls -Wdisabled-optimization -pedantic -Wctor-dtor-privacy -Wnon-virtual-dtor -Woverloaded-virtual -Wsign-promo -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -I../include -o osmium_progress osmium_progress.cpp -L/usr/local/lib -lexpat -lpthread -lz -lprotobuf-lite -losmpbf
+g++ -g -Wall -Wextra -Wredundant-decls -Wdisabled-optimization -pedantic -Wctor-dtor-privacy -Wnon-virtual-dtor -Woverloaded-virtual -Wsign-promo -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -I../include -o osmium_range_from_history osmium_range_from_history.cpp -L/usr/local/lib -lexpat -lpthread -lz -lprotobuf-lite -losmpbf
+g++ -g -Wall -Wextra -Wredundant-decls -Wdisabled-optimization -pedantic -Wctor-dtor-privacy -Wnon-virtual-dtor -Woverloaded-virtual -Wsign-promo -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -I../include -DOSMIUM_WITH_OUTPUT_OSM_XML -I/usr/include/libxml2 -o osmium_sizeof osmium_sizeof.cpp -L/usr/local/lib -lexpat -lpthread -lz -lprotobuf-lite -losmpbf -lxml2
+g++ -g -Wall -Wextra -Wredundant-decls -Wdisabled-optimization -pedantic -Wctor-dtor-privacy -Wnon-virtual-dtor -Woverloaded-virtual -Wsign-promo -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -I../include -o osmium_stats osmium_stats.cpp -L/usr/local/lib -lexpat -lpthread -lz -lprotobuf-lite -losmpbf -lsqlite3
+g++ -g -Wall -Wextra -Wredundant-decls -Wdisabled-optimization -pedantic -Wctor-dtor-privacy -Wnon-virtual-dtor -Woverloaded-virtual -Wsign-promo -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -I../include -o osmium_time osmium_time.cpp -L/usr/local/lib -lexpat -lpthread -lz -lprotobuf-lite -losmpbf
+make: gdal-config: Command not found
+make: gdal-config: Command not found
+g++ -g -Wall -Wextra -Wredundant-decls -Wdisabled-optimization -pedantic -Wctor-dtor-privacy -Wnon-virtual-dtor -Woverloaded-virtual -Wsign-promo -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -I../include -DOSMIUM_WITH_OGR  -o osmium_toogr osmium_toogr.cpp -L/usr/local/lib -lexpat -lpthread -lz -lprotobuf-lite -losmpbf 
+osmium_toogr.cpp:31:25: fatal error: ogrsf_frmts.h: No such file or directory
+compilation terminated.
+make: *** [osmium_toogr] Error 1
+</code></pre>
+<p>System is Ubuntu Oneiric (but I can switch to any other Debian or Ubuntu version if recommended). Is someone able to help me figure out what is going wrong?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osmium" href="/tags/osmium/" rel="tag" title="see questions tagged 'osmium'">osmium</a>
+<a class="post-tag tag-link-installation" href="/tags/installation/" rel="tag" title="see questions tagged 'installation'">installation</a>
+<a class="post-tag tag-link-linux" href="/tags/linux/" rel="tag" title="see questions tagged 'linux'">linux</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>12 Apr '12, 15:37</strong>
+</p>
+<img alt="g0ldfish's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8f930f94e9f607180db8da1cfcfc432e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3345/g0ldfish">g0ldfish</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="g0ldfish has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-11943">
+</div>
+<div class="comment-tools" id="comment-tools-11943">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-11943-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/11943/errors-in-osmium-installation?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/11943/errors-in-osmium-installation?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/11943/errors-in-osmium-installation?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/11943/errors-in-osmium-installation?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="11947"></a>
+<div class="answer" id="answer-container-11947">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/11947/up/" id="post-11947-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-11947-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/11947/down/" id="post-11947-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>As it says in the README you need gdal installed for OGR support:</p>
+<p>GDAL (for OGR support)
+    <a href="http://gdal.org/">http://gdal.org/</a>
+    Debian/Ubuntu: libgdal1-dev</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/11947/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Apr '12, 16:45</strong>
+</p>
+<img alt="Jochen%20Topf's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2d4dfcdcde73aa5e2ffa4a9b3a7cb51d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/112/jochen-topf">Jochen Topf</a><br/>
+<span class="score" title="5244 reputation points"><span class="">5.2k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="50 badges"><span class="silver">●</span><span class="badgecount">50</span></span><span title="74 badges"><span class="bronze">●</span><span class="badgecount">74</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jochen Topf has 32 accepted answers">31%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-11947">
+<a name="12059"></a>
+<div class="comment" id="comment-12059">
+<div class="comment-score" id="post-12059-score"></div>
+<div class="comment-text"><p>I actually found out last week (searching for "gdal-config: Command not found"), but my comment obviously had not been processed.</p>
+<p>May I add the package to debian/ubuntu example command on the wiki page about quick start?</p></div>
+<div class="comment-info" id="comment-12059-info">
+<span class="comment-age">(16 Apr '12, 13:16)</span>
+<a class="comment-user userinfo" href="/users/3345/g0ldfish">g0ldfish</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-11947">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-11947-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/11943/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="DD7yydGvC78TjQiR0CltrRJOnEtiADle"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

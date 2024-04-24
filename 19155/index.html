@@ -1,0 +1,189 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/19155/osm2pqsql-data-loading-issue">osm2pqsql data loading issue</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/19155/up/" id="post-19155-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-19155-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/19155/down/" id="post-19155-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/19155/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi All,</p>
+<p>I've tried to load planet-latest.osm.bz2 to postgresql DB using osm2pgsql tool. After unexpectable loading process interruption I reran osm2pgsql with --append flag, but got the following error:</p>
+<p>Using projection SRS 900913 (Spherical Mercator)
+Setting up table: planet_osm_point
+Problem reading geometry information for table planet_osm_point - does it exist?
+Error occurred, cleaning up</p>
+<p>Is there any way to continue loading process without data base rewriting?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>17 Jan '13, 11:04</strong>
+</p>
+<img alt="jurasv's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/23c04d8569cab5c5dbc443ea3a2c837e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5416/jurasv">jurasv</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="jurasv has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-19155">
+</div>
+<div class="comment-tools" id="comment-tools-19155">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-19155-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/19155/osm2pqsql-data-loading-issue?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/19155/osm2pqsql-data-loading-issue?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/19155/osm2pqsql-data-loading-issue?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/19155/osm2pqsql-data-loading-issue?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="19162"></a>
+<div class="answer" id="answer-container-19162">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/19162/up/" id="post-19162-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-19162-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/19162/down/" id="post-19162-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Is it possible that there's a permission problem? Can you log in to the database with the same database user ID you instructed Osmosis to use and then do</p>
+<pre><code>select * from geometry_columns;
+</code></pre>
+<p>or does that result in an error message?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/19162/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>17 Jan '13, 14:09</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-19162">
+<a name="19235"></a>
+<div class="comment" id="comment-19235">
+<div class="comment-score" id="post-19235-score"></div>
+<div class="comment-text"><p>My OSM planet database owner is postgres. I logged in to the DB with postgres user ID and ran sql script you sent me. The geometry_columns table is empty. Table planet_osm_point doesn't exist in the DB.</p></div>
+<div class="comment-info" id="comment-19235-info">
+<span class="comment-age">(21 Jan '13, 14:17)</span>
+<a class="comment-user userinfo" href="/users/5416/jurasv">jurasv</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-19162">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-19162-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="19236"></a>
+<div class="answer" id="answer-container-19236">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/19236/up/" id="post-19236-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-19236-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/19236/down/" id="post-19236-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Osm2pgsql uses transactions in the initial phase of data loading. If during that phase an error occurs and osm2pgsql fails, postgresql rolls back the transaction entirely, leaving no trace of the failed import in the database.</p>
+<p>Only once you reach the indexing phase is it possible (or desirable performance wise) to continue a failed import, although only by manually running all the steps osm2pgsql would run for you. In all other cases you have to or are better off starting the import from scratch. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/19236/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Jan '13, 15:57</strong>
+</p>
+<img alt="apmon's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/32c974c4ca8b246698c2b82c64924da5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/65/apmon">apmon</a><br/>
+<span class="score" title="6527 reputation points"><span class="">6.5k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="44 badges"><span class="silver">●</span><span class="badgecount">44</span></span><span title="56 badges"><span class="bronze">●</span><span class="badgecount">56</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="apmon has 9 accepted answers">20%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-19236">
+</div>
+<div class="comment-tools" id="comment-tools-19236">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-19236-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/19155/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="LB4Owi1FLCxFzsB08dxyo5ocggDlOYhm"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

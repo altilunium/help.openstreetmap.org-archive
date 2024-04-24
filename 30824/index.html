@@ -1,0 +1,135 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/30824/how-to-set-background-imagery-in-josm">How to set background imagery in JOSM</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/30824/up/" id="post-30824-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-30824-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/30824/down/" id="post-30824-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/30824/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I found <a href="http://geoproxy.s-hertogenbosch.nl/PWArcGIS1/rest/services/externvrij/luchtopname/MapServer?f=jsapi">this</a> imagery and I want to use it in JOSM, but I can't figure out how to do this. I've add <code>tms:<a href="http://geoproxy.s-hertogenbosch.nl/PWArcGIS1/rest/services/externvrij/luchtopname/MapServer/tile/{zoom}/{x}/{y}">http://geoproxy.s-hertogenbosch.nl/PWArcGIS1/rest/services/externvrij/luchtopname/MapServer/tile/{zoom}/{x}/{y}</a></code> to the TMS-settings, but all I got was grey tiles that say "data not yet available".</p>
+<p><a href="http://geoproxy.s-hertogenbosch.nl/PWArcGIS1/rest/services/externvrij/luchtopname/MapServer">Here is a page</a> with information that might be usefull for solving this problem.</p>
+<p>I guess the problem has something to do with offset and/or different zoom-levels.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-josm" href="/tags/josm/" rel="tag" title="see questions tagged 'josm'">josm</a>
+<a class="post-tag tag-link-imagery" href="/tags/imagery/" rel="tag" title="see questions tagged 'imagery'">imagery</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>18 Feb '14, 14:23</strong>
+</p>
+<img alt="de%20vries's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e6b568318790c50409e622ed23c9a211?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7062/de-vries">de vries</a><br/>
+<span class="score" title="221 reputation points">221</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="7 badges"><span class="silver">●</span><span class="badgecount">7</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="de vries has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-30824">
+</div>
+<div class="comment-tools" id="comment-tools-30824">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-30824-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/30824/how-to-set-background-imagery-in-josm?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/30824/how-to-set-background-imagery-in-josm?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/30824/how-to-set-background-imagery-in-josm?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/30824/how-to-set-background-imagery-in-josm?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="30826"></a>
+<div class="answer accepted-answer" id="answer-container-30826">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/30826/up/" id="post-30826-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-30826-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/30826/down/" id="post-30826-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/30826/" rel="nofollow" title="de vries has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This is what you have to do:</p>
+<ol>
+<li>Make absolutely sure that this imagery is a legal source for OSM. If there is any doubt, do not continue.</li>
+<li>Start JOSM, go to "Edit-&gt;Preferences" and select the WMS/TMS pane.</li>
+<li>Click the "+WMS" button on the lower right.</li>
+<li>Enter this URL (found behind the WMS link on your imagery page) into the box at the top: <a href="http://geoproxy.s-hertogenbosch.nl/pwarcgis1/services/externvrij/luchtopname/MapServer/WMSServer?request=GetCapabilities&amp;service=WMS">http://geoproxy.s-hertogenbosch.nl/pwarcgis1/services/externvrij/luchtopname/MapServer/WMSServer?request=GetCapabilities&amp;service=WMS</a></li>
+<li>Click "Get Layers", select one that's appropriate, and close the dialog with "OK".</li>
+</ol>
+<p>Your new layer should now be available as a background layer from the "Imagery" menu.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/30826/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>18 Feb '14, 16:07</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-30826">
+</div>
+<div class="comment-tools" id="comment-tools-30826">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-30826-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/30824/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Yh3MHpeer5MKL7FiwQEedW1ksuSb2C5I"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

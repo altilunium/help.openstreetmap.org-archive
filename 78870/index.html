@@ -1,0 +1,98 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/78870/overpass-turbo-query-for-castles-without-duplicated-nodes">Overpass turbo query for castles without duplicated nodes</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/78870/up/" id="post-78870-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-78870-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/78870/down/" id="post-78870-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/78870/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>I want to build a query that returns for a given bbox:</p>
+<ul>
+<li>List of POIs (one single node with coordinates) for all castles (historic=castle)</li>
+<li>Some castles are mapped multiple times, for example: castle Trifels (Germany), so these rules should be applied:</li>
+<li>If a single waypoint for historic=castle exists, this should be choosen</li>
+<li>If not waypoint exists, the center of a way or relation should be used</li>
+<li>Multiple mappings should be detected by a radius, as sometimes names are mapped different and thus a name can not be used as unique identifier.</li>
+</ul>
+<p>In case of Trifels, there exists a way and a relation, both named different. But there is no single waypoint (node) for the castle.</p>
+<p>Here is my code so far: <a href="https://overpass-turbo.eu/s/13Hp">https://overpass-turbo.eu/s/13Hp</a></p>
+<pre><code>[out:json];
+// Find all castles, for testing 
+nwr
+  [historic=castle][name~".*Trifels"]
+  ({{bbox}});
+map_to_area -&gt; .a;
+
+foreach.a-&gt;.elem(
+  // find areas already in .final near the curreent element
+  area.final(around.elem:200) -&gt; .deb;
+  // get the nodes in this area, if any
+  node(area.deb) -&gt; .deb2;
+
+  // if no nodes are in deb2, this is not a duplicate, so we can add it to .final
+  if(.deb2.count(nodes) == 0) {
+    (.elem; .final;) -&gt; .final;
+  }
+);
+
+.final out center; // .final contains areas, so we need center to get a single waypoint
+</code></pre>
+<p>But this returns both areas. It seems that someting is going wrong with the count. And this code is not complete, as it as no weighting for nodes vs. ways vs. realations. It's just first come, first serve.</p>
+<p>Can someone help me to understand how to build such a query?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+<a class="post-tag tag-link-overpass-ql" href="/tags/overpass-ql/" rel="tag" title="see questions tagged 'overpass-ql'">overpass-ql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Feb '21, 08:04</strong>
+</p>
+<img alt="cytrinox's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/97b633ea0f4a48b031df980a6eba8050?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19741/cytrinox">cytrinox</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="cytrinox has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-78870">
+</div>
+<div class="comment-tools" id="comment-tools-78870">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-78870-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/78870/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="3cd1fQZ4fmo58os30fIZ8qdlPzwQVEaP"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

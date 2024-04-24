@@ -1,0 +1,378 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/76287/openstreetmap-instance-is-unusable-with-latest-planet-but-works-with-last-year-pbf">OpenStreetMap instance is unusable with latest planet, but works with last year PBF</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/76287/up/" id="post-76287-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-76287-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/76287/down/" id="post-76287-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/76287/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm running a custom OpenStreetMap instance on my server, with both the standard openstreetmap-carto style and a custom style. The current version up and running in production uses a planet file from 2019-09-12.</p>
+<p>I now want to update the data from the latest planet file on my dev server.</p>
+<p>I have a script that will:</p>
+<ul>
+<li>download the latest file</li>
+<li>tune the database for the import</li>
+<li>drop and recreate the database</li>
+<li>import the PBF</li>
+<li>create the indexes</li>
+<li>tune the database for production use</li>
+</ul>
+<p>The server is a quad-core i7-6700 with 64 GB of RAM, a 1 To SSD (storing the database) and 8 TB of hard drives (storing the tiles).</p>
+<p>Here's the script code:</p>
+<pre><code># Define some values:
+PBF=~/data/planet-latest.osm.pbf
+THREADS=8
+CORES=4
+
+# Download latest PBF:
+wget <a href="https://planet.openstreetmap.org/pbf/planet-latest.osm.pbf">https://planet.openstreetmap.org/pbf/planet-latest.osm.pbf</a> -O $PBF
+
+# Drop the databse:
+sudo -u postgres dropdb osm
+
+# Recreate the databse:
+sudo mkdir -p /ssd/db/osm
+sudo chown postgres /ssd/db/osm
+sudo -u postgres psql -c "CREATE TABLESPACE osm_tablespace LOCATION '/ssd/db/osm';"
+sudo -u postgres createdb -E UTF8 -O myusername -D osm_tablespace osm
+
+# Setup PostGIS:
+sudo -u postgres psql osm -c "CREATE EXTENSION postgis;"
+sudo -u postgres psql osm -c "CREATE EXTENSION hstore;"
+sudo -u postgres psql osm -c "ALTER TABLE geography_columns OWNER TO myusername;"
+sudo -u postgres psql osm -c "ALTER TABLE geometry_columns OWNER TO myusername;"
+sudo -u postgres psql osm -c "ALTER TABLE raster_columns OWNER TO myusername;"
+sudo -u postgres psql osm -c "ALTER TABLE raster_overviews OWNER TO myusername;"
+sudo -u postgres psql osm -c "ALTER TABLE spatial_ref_sys OWNER TO myusername;"
+
+# Fine tune for import
+if [ ! -f /etc/postgresql/10/main/postgresql.conf.bak ]; then
+    sudo cp /etc/postgresql/10/main/postgresql.conf /etc/postgresql/10/main/postgresql.conf.bak
+fi
+
+sudo rm /etc/postgresql/10/main/postgresql.conf
+sudo cp /etc/postgresql/10/main/postgresql.conf.bak /etc/postgresql/10/main/postgresql.conf
+
+sudo tee -a /etc/postgresql/10/main/postgresql.conf &lt;&lt; EOF
+synchronous_commit = off        # /!\ Use these for OSM import only
+fsync = off                     # /!\ Use these for OSM import only
+random_page_cost = 1.1
+wal_buffers = 16MB
+effective_cache_size = 48GB
+maintenance_work_mem = 8GB
+shared_buffers = 16GB
+work_mem = 4GB
+autovacuum = on
+effective_io_concurrency = 200
+max_connections = 300
+checkpoint_completion_target = 0.7
+default_statistics_target = 100
+min_wal_size = 1GB
+max_wal_size = 4GB
+max_worker_processes = $THREADS
+max_parallel_workers_per_gather = $CORES
+max_parallel_workers = $THREADS
+EOF
+
+sudo service postgresql restart
+
+# Import the PBF:
+mkdir -p /ssd/flat-nodes
+
+osm2pgsql \
+    -d osm \
+    --create --slim --multi-geometry --hstore --drop \
+    --cache 20000 \
+    --number-processes 1 \
+    --tag-transform-script ~/src/map-styles/openstreetmap-carto/openstreetmap-carto.lua \
+    --style ~/src/map-styles/openstreetmap-carto/openstreetmap-carto.style \
+    --flat-nodes /ssd/flat-nodes/osm.cache \
+    "$PBF"
+
+# Create the indexes:
+cd ~/src/map-styles/openstreetmap-carto
+psql -d osm -f indexes.sql
+
+# Fine tune for production:
+sudo rm /etc/postgresql/10/main/postgresql.conf
+sudo cp /etc/postgresql/10/main/postgresql.conf.bak /etc/postgresql/10/main/postgresql.conf
+
+sudo tee -a /etc/postgresql/10/main/postgresql.conf &lt;&lt; EOF
+#synchronous_commit = off        # /!\ Use these for OSM import only
+#fsync = off                     # /!\ Use these for OSM import only
+random_page_cost = 1.1
+wal_buffers = 16MB
+effective_cache_size = 48GB
+maintenance_work_mem = 8GB
+shared_buffers = 16GB
+work_mem = 1GB
+autovacuum = on
+effective_io_concurrency = 200
+max_connections = 300
+checkpoint_completion_target = 0.7
+default_statistics_target = 100
+min_wal_size = 1GB
+max_wal_size = 4GB
+max_worker_processes = $THREADS
+max_parallel_workers_per_gather = $CORES
+max_parallel_workers = $THREADS
+EOF
+</code></pre>
+<p>I have already successfully used that script in the past. But if I run it now, my map becomes super slow (with both openstreetmap-carto style and mine), like if it was missing all the indexes. Running the script on the 2019-09-12 PBF results in a perfectly usable map.</p>
+<p>What could be wrong? Did the OSM database schema change since last year? Do I need to delete the flat-nodes files before importing again?</p>
+<p>Thanks in advance</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap-carto" href="/tags/openstreetmap-carto/" rel="tag" title="see questions tagged 'openstreetmap-carto'">openstreetmap-carto</a>
+<a class="post-tag tag-link-slow" href="/tags/slow/" rel="tag" title="see questions tagged 'slow'">slow</a>
+<a class="post-tag tag-link-renderd" href="/tags/renderd/" rel="tag" title="see questions tagged 'renderd'">renderd</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 Aug '20, 12:42</strong>
+</p>
+<img alt="timautin's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a711e0129f307399a857a6f9b4bfd0e3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15303/timautin">timautin</a><br/>
+<span class="score" title="151 reputation points">151</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="timautin has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-76287">
+<a name="76288"></a>
+<div class="comment" id="comment-76288">
+<div class="comment-score" id="post-76288-score"></div>
+<div class="comment-text"><p>Can you clarify what exactly is super slow. The script runs and completes within the expected time, and then the map tiles are slow? (Yes you should have deleted the node cache file but it would only slow down the import, not the tile serving.) Are you using renderd or tirex or ...? Did you clean old tiles from your tile cache or are they still there? Is there a planet-import-complete file in your tile directory?</p></div>
+<div class="comment-info" id="comment-76288-info">
+<span class="comment-age">(25 Aug '20, 12:48)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="76289"></a>
+<div class="comment" id="comment-76289">
+<div class="comment-score" id="post-76289-score"></div>
+<div class="comment-text"><p>Thanks for your comment. By slow I mean that generating my test tile takes 1-2 mn when it should takes 6-8 seconds. The import ran fine (in 24h). I'm using renderd and mapnik, and yes I deleted the old tiles. I have no planet-import-complete   in my mod_tile directory, what is that file? I don't think I ever had one, is this new?
+EDIT: creating the file and restarting Apache + renderd does not change anything.</p></div>
+<div class="comment-info" id="comment-76289-info">
+<span class="comment-age">(25 Aug '20, 12:54)</span>
+<a class="comment-user userinfo" href="/users/15303/timautin">timautin</a>
+</div>
+</div>
+<a name="76291"></a>
+<div class="comment" id="comment-76291">
+<div class="comment-score" id="post-76291-score"></div>
+<div class="comment-text"><p>The planet-import-complete file is not required, i was just asking to better understand your setup.</p></div>
+<div class="comment-info" id="comment-76291-info">
+<span class="comment-age">(25 Aug '20, 13:06)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-76287">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-76287-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/76287/openstreetmap-instance-is-unusable-with-latest-planet-but-works-with-last-year-pbf?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/76287/openstreetmap-instance-is-unusable-with-latest-planet-but-works-with-last-year-pbf?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/76287/openstreetmap-instance-is-unusable-with-latest-planet-but-works-with-last-year-pbf?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/76287/openstreetmap-instance-is-unusable-with-latest-planet-but-works-with-last-year-pbf?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="76351"></a>
+<div class="answer answered-by-owner" id="answer-container-76351">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/76351/up/" id="post-76351-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-76351-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/76351/down/" id="post-76351-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>As Jochen Topo suggested in comments, I simply ran out of disk space during the import. Making some room fixed the problem.</p>
+<p>It's a 960GB SSD, on which I only had 128 GB of data. So 832 GB of free disk space is no longer enough to create a planet OSM DB. Looks like we'll pretty soon need 2 TB SSDs.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/76351/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>29 Aug '20, 18:42</strong>
+</p>
+<img alt="timautin's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a711e0129f307399a857a6f9b4bfd0e3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15303/timautin">timautin</a><br/>
+<span class="score" title="151 reputation points">151</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="timautin has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-76351">
+</div>
+<div class="comment-tools" id="comment-tools-76351">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-76351-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="76290"></a>
+<div class="answer" id="answer-container-76290">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/76290/up/" id="post-76290-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-76290-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/76290/down/" id="post-76290-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>What you are seeing is the normal effect of having deleted your tile cache. Tiles on z0-8 can easily take minutes - tiles in very dense areas might take longer than 10 minutes even with fast disks (remember, it always computes 8x8 tiles at once). The fact that it was faster before was not due to your indexes, but due to the cache which you have deleted. </p>
+<p>Try rendering a tile on zoom 18, that should be relatively quick. Then use the appropriate render_list commands to pre-render your area of interest for zoom 0-12 (if the area is not the whole planet, perhaps look at <a href="https://github.com/alx77/render_list_geo.pl).">https://github.com/alx77/render_list_geo.pl).</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/76290/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Aug '20, 13:05</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-76290">
+<a name="76292"></a>
+<div class="comment" id="comment-76292">
+<div class="comment-score" id="post-76292-score"></div>
+<div class="comment-text"><p>Sorry I should have added more details: my test tile is a zoom 13 tile, that I use to check that everything works properly after each update. Usually my process is: delete the tile cache, recreate the DB (+ indexes), check that my test tile (13/4231/3002) is still generated in 6-8 secs, and then re-generate the cache. EDIT: an explain analyse shows that the indexes are correctly used. EDIT 2: I have no /ssd/flat-nodes/osm.cache file, is that normal? I don't have one either on the (working) production server.</p></div>
+<div class="comment-info" id="comment-76292-info">
+<span class="comment-age">(25 Aug '20, 13:08)</span>
+<a class="comment-user userinfo" href="/users/15303/timautin">timautin</a>
+</div>
+</div>
+<a name="76295"></a>
+<div class="comment" id="comment-76295">
+<div class="comment-score" id="post-76295-score"></div>
+<div class="comment-text"><p>Ok, I'm missing the planet_osm_polygon_way_idx index, that's very likely the problem (I'm creating it, il will take a while). Isn't it supposed to be created by osm2pgsql?</p></div>
+<div class="comment-info" id="comment-76295-info">
+<span class="comment-age">(25 Aug '20, 14:46)</span>
+<a class="comment-user userinfo" href="/users/15303/timautin">timautin</a>
+</div>
+</div>
+<a name="76296"></a>
+<div class="comment" id="comment-76296">
+<div class="comment-score" id="post-76296-score">1</div>
+<div class="comment-text"><p>Oh yes, not having that index will certainly slow down rendering a lot! And yes, it should be generated by osm2pgsql. Make sure you have the geometry indexes on the other tables as well.</p></div>
+<div class="comment-info" id="comment-76296-info">
+<span class="comment-age">(25 Aug '20, 15:37)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="76297"></a>
+<div class="comment" id="comment-76297">
+<div class="comment-score" id="post-76297-score"></div>
+<div class="comment-text"><p>Which version of osm2pgsql are you using?</p></div>
+<div class="comment-info" id="comment-76297-info">
+<span class="comment-age">(25 Aug '20, 15:50)</span>
+<a class="comment-user userinfo" href="/users/112/jochen-topf">Jochen Topf</a>
+</div>
+</div>
+<a name="76299"></a>
+<div class="comment" id="comment-76299">
+<div class="comment-score" id="post-76299-score">3</div>
+<div class="comment-text"><p>Older versions of osm2pgsql have a bug where no error is shown if index creation failes. So maybe you ran out of disk space or so and the index wasn't created, but no error was shown. The newest version of osm2pgsql doesn't have this bug any more.</p></div>
+<div class="comment-info" id="comment-76299-info">
+<span class="comment-age">(25 Aug '20, 16:48)</span>
+<a class="comment-user userinfo" href="/users/112/jochen-topf">Jochen Topf</a>
+</div>
+</div>
+<a name="76302"></a>
+<div class="comment not_top_scorer" id="comment-76302">
+<div class="comment-score" id="post-76302-score"></div>
+<div class="comment-text"><p>Thanks guys. Back after a few more investigations: creating the index myself does not solve the problem, and the created index is 25GB vs 37GB on the prod server. I'm thus restarting the whole import process with the osm2pgsql output saved in a file this time (by the way, don't osm2pgsql has a way to output its log to a file?), because on the previous import I didn't notice anything wrong and didn't keep the output. 
+The drive had 755GB available, which I thought was enough, isn't it? I'll make some room before restarting the import. 
+I'm using osm2pgsql v 0.96.0</p></div>
+<div class="comment-info" id="comment-76302-info">
+<span class="comment-age">(25 Aug '20, 18:20)</span>
+<a class="comment-user userinfo" href="/users/15303/timautin">timautin</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-76290">
+<span class="comments-showing">
+            showing 5 of 6
+        </span>
+<a class="show-all-comments-link" href="#">show 1 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-76290-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/76287/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="3WW7DRnkDi15KXGhkXokuRc9xkpa5NgH"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

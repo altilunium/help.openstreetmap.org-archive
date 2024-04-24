@@ -1,0 +1,289 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/50052/access-overpass-turbo-with-google-apps-script">Access Overpass Turbo with Google Apps Script?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/50052/up/" id="post-50052-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-50052-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/50052/down/" id="post-50052-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/50052/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I would like to use Google Apps Scripts to import data from an Overpass Turbo request into a Google sheet. The QL request is something like this:</p>
+<p>(
+  node
+    (user:"greenmtdave")
+    (6.960464727056788,79.86112117767334,6.9797191061459305,79.88375902175903);
+  way
+    (user:"greenmtdave")
+    (6.960464727056788,79.86112117767334,6.9797191061459305,79.88375902175903);
+  relation
+    (user:"greenmtdave")
+    (6.960464727056788,79.86112117767334,6.9797191061459305,79.88375902175903);
+  node._(changed:"2016-05-15T07:00:00Z","2016-06-6T07:01:00Z");
+);
+out count;</p>
+<p>Note the use of the "out count" option, which does not seem to work if using the QL request in HTTP, so I presume I need to use XML format, but I don't know if the Google Apps Scripts class URLFetchApp supports this. I'm not much of a coder, so I can't figure this out.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-google-apps-scripts" href="/tags/google-apps-scripts/" rel="tag" title="see questions tagged 'google-apps-scripts'">google-apps-scripts</a>
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>07 Jun '16, 03:17</strong>
+</p>
+<img alt="greenmtdave's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7c9362a68bf0ea0b0ab37aa46489271a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3227/greenmtdave">greenmtdave</a><br/>
+<span class="score" title="181 reputation points">181</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="greenmtdave has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-50052">
+<a name="50061"></a>
+<div class="comment" id="comment-50061">
+<div class="comment-score" id="post-50061-score">1</div>
+<div class="comment-text"><p>I believe you should fix your query before trying to automate it. <code>node._(changed:"2016-05-15T07:00:00Z","2016-06-6T07:01:00Z");</code> does not seem right, as there are no nodes in the inputset <code>._</code>. Right now, this last statement has no effect.</p>
+<p>If you get a response in overpass turbo, you should also get the same response via any other tool using HTTP. Whether that tool is able to parse the XML respnse, is beyond the scope of overpass api.</p></div>
+<div class="comment-info" id="comment-50061-info">
+<span class="comment-age">(07 Jun '16, 09:39)</span>
+<a class="comment-user userinfo" href="/users/8708/mmd">mmd</a>
+</div>
+</div>
+<a name="50090"></a>
+<div class="comment" id="comment-50090">
+<div class="comment-score" id="post-50090-score"></div>
+<div class="comment-text"><p>Thanks for your reply. I've studied the Overpass API/Overpass QL wiki page for many hours now, and I can't figure this out. I want to get a count of all of the objects that a user has contributed within a bounding box during a certain time period. I've tried placing the change filter in various positions in the code and none seem to work. The Wiki says the change filter doesn't take an input dataset? How can that be? and the example given "node._(changed:...)" seems to indicate that the default dataset is the input dataset? </p>
+<p>I am a newbie and I apologize for that. But the Wiki page only gives examples of single lines of code and only three complete examples of code, none of which show the usage of the change filter. A general Google search on this also comes up with nothing.</p></div>
+<div class="comment-info" id="comment-50090-info">
+<span class="comment-age">(08 Jun '16, 20:14)</span>
+<a class="comment-user userinfo" href="/users/3227/greenmtdave">greenmtdave</a>
+</div>
+</div>
+<a name="50141"></a>
+<div class="comment" id="comment-50141">
+<div class="comment-score" id="post-50141-score"></div>
+<div class="comment-text"><p>This is the QL script that seems to work:</p>
+<p>node(user:"greenmtdave")(6.72325,79.66323,7.95451,81.11206);
+node.<em>(changed:"2016-05-22T00:00:00Z","2016-06-10T00:00:00Z");
+(.</em>; &lt;;);
+out count;</p>
+<p>Now have to figure out how to get Google Apps Script to run it.</p></div>
+<div class="comment-info" id="comment-50141-info">
+<span class="comment-age">(10 Jun '16, 22:40)</span>
+<a class="comment-user userinfo" href="/users/3227/greenmtdave">greenmtdave</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-50052">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-50052-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/50052/access-overpass-turbo-with-google-apps-script?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/50052/access-overpass-turbo-with-google-apps-script?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/50052/access-overpass-turbo-with-google-apps-script?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/50052/access-overpass-turbo-with-google-apps-script?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="50291"></a>
+<div class="answer answered-by-owner" id="answer-container-50291">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/50291/up/" id="post-50291-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-50291-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/50291/down/" id="post-50291-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Just to wrap this up, I finally did figure out how to write a Google Apps Script to bring data from OSM into a spreadsheet. Could use some expert help to clean it up, do error checking, and make it more user friendly, so feel free to contact me at dwlitke@comcast.net if you are interested.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/50291/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>17 Jun '16, 21:13</strong>
+</p>
+<img alt="greenmtdave's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7c9362a68bf0ea0b0ab37aa46489271a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3227/greenmtdave">greenmtdave</a><br/>
+<span class="score" title="181 reputation points">181</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="greenmtdave has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-50291">
+<a name="50292"></a>
+<div class="comment" id="comment-50292">
+<div class="comment-score" id="post-50292-score"></div>
+<div class="comment-text"><p>Feel free to post it here. Or a link to GitHub or some other platform where you might host your script.</p></div>
+<div class="comment-info" id="comment-50292-info">
+<span class="comment-age">(17 Jun '16, 21:29)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="50293"></a>
+<div class="comment" id="comment-50293">
+<div class="comment-score" id="post-50293-score"></div>
+<div class="comment-text"><p>How do I post it here without exceeding the character count? I tried using the Code Sample button, but that did some strange things to the formatting.</p></div>
+<div class="comment-info" id="comment-50293-info">
+<span class="comment-age">(17 Jun '16, 21:38)</span>
+<a class="comment-user userinfo" href="/users/3227/greenmtdave">greenmtdave</a>
+</div>
+</div>
+<a name="50294"></a>
+<div class="comment" id="comment-50294">
+<div class="comment-score" id="post-50294-score"></div>
+<div class="comment-text"><p>just post in your answer text ("edit" link) and indent each code line by at least 4 spaces or 1 tab (a text editor helps). If you want to preview, use <a href="https://daringfireball.net/projects/markdown/dingus">https://daringfireball.net/projects/markdown/dingus</a> since our live preview here is insufficient. Or just past the code and someone else fill fix the formatting for you.</p></div>
+<div class="comment-info" id="comment-50294-info">
+<span class="comment-age">(18 Jun '16, 00:12)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-50291">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-50291-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="50295"></a>
+<div class="answer answered-by-owner" id="answer-container-50295">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/50295/up/" id="post-50295-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-50295-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/50295/down/" id="post-50295-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<pre><code>function startHere(){
+  // input variables
+  var OSMUserNameCol = "A";
+  var totalObjectsCol = "B";
+  var startRow = 2; 
+  var lastRow = 3;
+
+  var sheet = SpreadsheetApp.getActiveSheet();
+
+  // Fetch the range of cells
+  var dataRange1 = sheet.getRange(OSMUserNameCol + startRow + ":" + OSMUserNameCol + lastRow);
+  var dataRange2 = sheet.getRange(totalObjectsCol + startRow + ":" + totalObjectsCol + lastRow);
+
+  // Fetch values for each row in the Range.
+  var data1 = dataRange1.getValues();
+  var data2 = dataRange2.getValues();
+
+  for (var i = 0; i &lt; data1.length; ++i) {
+    var row1 = data1[i];
+    var row2 = data2[i];
+
+    //Build API request parameters
+    var rawXML = '&lt;osm-script&gt;'
+       +'&lt;query into="_" type="node"&gt;&lt;user into="_" name="' + row1 + '" type="node" uid=""/&gt;'
+       +'&lt;bbox-query e="81.11206" into="_" n="7.95451" s="6.72325" w="79.66323"/&gt;&lt;/query&gt;'
+       +'&lt;query into="_" type="node"&gt;&lt;item set="_"/&gt;&lt;changed into="_" since="2016-05-23T00:00:00Z" until="2016-06-12T00:00:00Z"/&gt;'
+       +'&lt;/query&gt;&lt;union into="_"&gt;&lt;item set="_"/&gt;&lt;recurse from="_" into="_" type="up"/&gt;&lt;/union&gt;'
+       +'&lt;print e="" from="_" geometry="skeleton" limit="" mode="count" n="" order="id" s="" w=""/&gt;'
+       +'&lt;/osm-script&gt;';
+    var url = 'http://overpass-api.de/api/interpreter';
+    var options =
+     {
+       "method" : "post",
+       "payload" : rawXML
+     };
+
+   //Fetch count data
+   var countData = UrlFetchApp.fetch(url, options).getContentText();
+   var total = countData.substring(countData.indexOf("count total=") + 13, countData.indexOf("nodes") - 2);
+   sheet.getRange(totalObjectsCol + (startRow + i)).setValue(total);
+   SpreadsheetApp.flush();
+  }
+}
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/50295/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>18 Jun '16, 00:26</strong>
+</p>
+<img alt="greenmtdave's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7c9362a68bf0ea0b0ab37aa46489271a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3227/greenmtdave">greenmtdave</a><br/>
+<span class="score" title="181 reputation points">181</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="greenmtdave has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-50295">
+</div>
+<div class="comment-tools" id="comment-tools-50295">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-50295-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/50052/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="PdIVVrPRiTXatFHaTRfCskxoMm6zv4nG"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,190 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/35632/how-to-implement-gpx-files-in-osm">how to implement gpx-files in OSM</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/35632/up/" id="post-35632-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-35632-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/35632/down/" id="post-35632-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/35632/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>If I implement a gpx track from a file of my harddisk to an OpenLayer it works great as long as the gpx file is in the same directory or in a directory down. I receive the map from the internet and the track from the harddisk can be seen.</p>
+<p>var GPXVariable_1 = new OpenLayers.Layer.Vector("Alpspitze", {</p>
+<pre><code>strategies: [new OpenLayers.Strategy.Fixed()], protocol: new OpenLayers.Protocol.HTTP({
+url:"Alpspitze.gpx", format: new OpenLayers.Format.GPX()
+        }),  // works
+</code></pre>
+<p>... url:"directory_x/Alpspitze.gpx"  // works</p>
+<p>If I try to implement a gpx file that is in a different directory structure, it doesn't work.</p>
+<p>... url:"../../directory_y/directory_z/Alpspitze.gpx"  // doesn't work</p>
+<p>What am I doing wrong? What is the correct syntax for the address?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-track" href="/tags/track/" rel="tag" title="see questions tagged 'track'">track</a>
+<a class="post-tag tag-link-openlayers" href="/tags/openlayers/" rel="tag" title="see questions tagged 'openlayers'">openlayers</a>
+<a class="post-tag tag-link-gpx" href="/tags/gpx/" rel="tag" title="see questions tagged 'gpx'">gpx</a>
+<a class="post-tag tag-link-url" href="/tags/url/" rel="tag" title="see questions tagged 'url'">url</a>
+</div>
+<div class="post-controls" id="question-controls">
+<div class="community-wiki">
+        This question is marked "community wiki".
+        
+    </div>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>07 Aug '14, 17:56</strong>
+</p>
+<img alt="flegar's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b979098350df4e6b584bdabdf353382f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9402/flegar">flegar</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="flegar has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-35632">
+</div>
+<div class="comment-tools" id="comment-tools-35632">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-35632-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/35632/how-to-implement-gpx-files-in-osm?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/35632/how-to-implement-gpx-files-in-osm?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/35632/how-to-implement-gpx-files-in-osm?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/35632/how-to-implement-gpx-files-in-osm?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="35641"></a>
+<div class="answer" id="answer-container-35641">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/35641/up/" id="post-35641-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-35641-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/35641/down/" id="post-35641-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Maybe it is a security mechanism of the browser to prevent JavaScript code to read your whole file system and independent on OpenLayers.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/35641/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Aug '14, 12:29</strong>
+</p>
+<img alt="MarkusHD's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9c2804a11ecb10bbf42653cfe9189e90?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8991/markushd">MarkusHD</a><br/>
+<span class="score" title="375 reputation points">375</span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="10 badges"><span class="bronze">●</span><span class="badgecount">10</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="MarkusHD has one accepted answer">12%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-35641">
+</div>
+<div class="comment-tools" id="comment-tools-35641">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-35641-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="35643"></a>
+<div class="answer answered-by-owner" id="answer-container-35643">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/35643/up/" id="post-35643-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-35643-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/35643/down/" id="post-35643-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>In the meantime, I've got an answer from a different forum.</p>
+<p>Unfortunatelly there ist a restriction that allows local documents having access to other local documents in the <strong>same directory and in subdirectories</strong>, but not directory listings. </p>
+<p>When I change the config:about (Firefox) <strong>security.fileuri.origin_policy</strong> to <strong>false</strong>, the track gets visible although it is implemented from a different file tree.</p>
+<p>Conclusion:
+Due to the security police of browsers I have to rearrange my directory.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/35643/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Aug '14, 12:46</strong>
+</p>
+<img alt="flegar's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b979098350df4e6b584bdabdf353382f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9402/flegar">flegar</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="flegar has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-35643">
+</div>
+<div class="comment-tools" id="comment-tools-35643">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-35643-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/35632/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="pKnnMKeDTHhXvkRGXyOyjSCscvFQmBGu"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

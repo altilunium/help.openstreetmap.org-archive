@@ -1,0 +1,168 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/79884/how-to-edit-a-local-pbf-and-update-the-source">How to edit a local pbf and update the source</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/79884/up/" id="post-79884-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-79884-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/79884/down/" id="post-79884-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/79884/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello all,</p>
+<p>I have a local OSRM server where I do some traffic simulations for studies, and I need to change some maxspeeds on the map.</p>
+<p>What I am trying to do:</p>
+<ul>
+<li>Download a pbf from geofrabrik</li>
+<li>use osmosis to cut a small chunk where I want to edit.
+ -</li>
+<li>
+<p>edit the chunk with JOSM  And now I am stucked on how I merge the edits with the original pbf. I tried use osmosis to calculate diff, but if I use:</p>
+<p>osmosis --read-xml file="sudeste-latest-osm_02.osm" --read-pbf file="sudeste-latest.osm.pbf" --derive-change --write-xml-change file="changeset.osc"</p>
+</li>
+</ul>
+<p>When I apply the diffs to the original "sudeste-latest" with:</p>
+<pre><code>osmosis --read-xml-change file="changeset.osc" --read-pbf file="sudeste-latest.osm.pbf" --apply-change --write-pbf file="sudeste-new.osm.pbf"
+</code></pre>
+<p>The output file contains only the chunk that I updated.</p>
+<p>If I calculated the diffs with: </p>
+<pre><code>osmosis --read-pbf file="sudeste-latest.osm.pbf" --read-xml file="sudeste-latest-osm_02.osm" --derive-change --write-xml-change file="changeset.osc"
+</code></pre>
+<p>When I apply the osc, none of my changes was applied. What I'm doing wrong?</p>
+<p>Thank you!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-josm" href="/tags/josm/" rel="tag" title="see questions tagged 'josm'">josm</a>
+<a class="post-tag tag-link-editing" href="/tags/editing/" rel="tag" title="see questions tagged 'editing'">editing</a>
+<a class="post-tag tag-link-pbf" href="/tags/pbf/" rel="tag" title="see questions tagged 'pbf'">pbf</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>27 Apr '21, 19:52</strong>
+</p>
+<img alt="rafaelricco's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/885f4de5adc4d79a25587b89ec81f43e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20128/rafaelricco">rafaelricco</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="rafaelricco has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/79884/">
+                edited
+                <strong>27 Apr '21, 19:54</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-79884">
+</div>
+<div class="comment-tools" id="comment-tools-79884">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-79884-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/79884/how-to-edit-a-local-pbf-and-update-the-source?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/79884/how-to-edit-a-local-pbf-and-update-the-source?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/79884/how-to-edit-a-local-pbf-and-update-the-source?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/79884/how-to-edit-a-local-pbf-and-update-the-source?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="79885"></a>
+<div class="answer" id="answer-container-79885">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/79885/up/" id="post-79885-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-79885-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/79885/down/" id="post-79885-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Osmosis doesn't understand the JOSM xml file.</p>
+<p>Osmium might work (I'm not sure): <a href="https://docs.osmcode.org/osmium/latest/osmium-apply-changes.html">https://docs.osmcode.org/osmium/latest/osmium-apply-changes.html</a></p>
+<p>If you create objects, you might also have to synthesize positive ids for them to satisfy the OSRM importer (I don't know if it supports negative ids or not).</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/79885/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>28 Apr '21, 03:08</strong>
+</p>
+<img alt="maxerickson's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c860445e868ebb21da141635a4aa7b06?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10973/maxerickson">maxerickson</a><br/>
+<span class="score" title="12700 reputation points"><span class="">12.7k</span></span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="83 badges"><span class="silver">●</span><span class="badgecount">83</span></span><span title="176 badges"><span class="bronze">●</span><span class="badgecount">176</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="maxerickson has 93 accepted answers">32%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-79885">
+<a name="79910"></a>
+<div class="comment" id="comment-79910">
+<div class="comment-score" id="post-79910-score"></div>
+<div class="comment-text"><p>Nice! I will give a try using Osmium!</p>
+<p>Apparently, if instead of derive changes from the bigger pbf, I use the edited chunk against the non-edited chunk:</p>
+<p>osmosis --read-xml file="sudeste-latest-osm_02_new.osm" --read-pbf file="sudeste-latest-osm_02_old.osm" --derive-change --write-xml-change file="changeset.osc"</p>
+<p>Them the changeset was applied to the original pbf, but Osmium seems to me to be more cleaner, let see!</p>
+<p>Thank you!</p></div>
+<div class="comment-info" id="comment-79910-info">
+<span class="comment-age">(28 Apr '21, 18:18)</span>
+<a class="comment-user userinfo" href="/users/20128/rafaelricco">rafaelricco</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-79885">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-79885-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/79884/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="9mmVWwHLxNeJARQvh9QWTh8n78YZmHCP"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

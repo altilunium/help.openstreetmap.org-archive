@@ -1,0 +1,177 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/59629/error-using-renderd">Error using renderd</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/59629/up/" id="post-59629-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-59629-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/59629/down/" id="post-59629-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/59629/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hey guys I was following <a href="https://switch2osm.org/manually-building-a-tile-server-16-04-2-lts/">this</a> guide to setup my own tile server.</p>
+<p>Today I finished my import of europe. After starting renderd I got the following messages: </p>
+<pre><code>renderd[19189]: Loading parameterization function for
+renderd[19189]: Loading parameterization function for renderd[19189]: Loading parameterization function for
+
+renderd[19189]: An error occurred while loading the map layer 'default': failed to parse image-filters: 'scale-hsla(0,1,0,1,0.6,0.95,0                                                                                                                                         ,1)' in style 'landcover-low-zoom-low-zoom' in Style at line 376 of '/opt/openstreetmap-carto/mapnik.xml'
+renderd[19189]: An error occurred while loading the map layer 'default': failed to parse image-filters: 'scale-hsla(0,1,0,1,0.6,0.95,0                                                                                                                                         ,1)' in style 'landcover-low-zoom-low-zoom' in Style at line 376 of '/opt/openstreetmap-carto/mapnik.xml'
+renderd[19189]: An error occurred while loading the map layer 'default': failed to parse image-filters: 'scale-hsla(0,1,0,1,0.6,0.95,0                                                                                                                                         ,1)' in style 'landcover-low-zoom-low-zoom' in Style at line 376 of '/opt/openstreetmap-carto/mapnik.xml'
+renderd[19189]: An error occurred while loading the map layer 'default': failed to parse image-filters: 'scale-hsla(0,1,0,1,0.6,0.95,0                                                                                                                                         ,1)' in style 'landcover-low-zoom-low-zoom' in Style at line 376 of '/opt/openstreetmap-carto/mapnik.xml'
+</code></pre>
+<p>If I hit my URL I get this messages: </p>
+<pre><code>renderd[19189]: DEBUG: Got incoming connection, fd 8, number 1
+renderd[19189]: DEBUG: Got incoming request with protocol version 2
+renderd[19189]: DEBUG: Got command RenderPrio fd(8) xml(default), z(0), x(0), y(0), mime(image/png), options()
+renderd[19189]: Received request for map layer 'default' which failed to load
+renderd[19189]: DEBUG: Sending render cmd(4 default 0/0/0) with protocol version 2 to fd 8
+renderd[19189]: DEBUG: Failed to read cmd on fd 8
+renderd[19189]: DEBUG: Connection 0, fd 8 closed, now 0 left
+</code></pre>
+<p>For now I have no Idea what the error could be. Or if the errors are related. Hopefully someone can help me here. </p>
+<p>Thanks in advance
+Dominic </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-rendering" href="/tags/rendering/" rel="tag" title="see questions tagged 'rendering'">rendering</a>
+<a class="post-tag tag-link-renderd" href="/tags/renderd/" rel="tag" title="see questions tagged 'renderd'">renderd</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+<a class="post-tag tag-link-mod_tile" href="/tags/mod_tile/" rel="tag" title="see questions tagged 'mod_tile'">mod_tile</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>14 Sep '17, 13:59</strong>
+</p>
+<img alt="Nevyen's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f2ff5fbe76b699a58bc64acd0ccb8cb6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14211/nevyen">Nevyen</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Nevyen has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-59629">
+<a name="59630"></a>
+<div class="comment" id="comment-59630">
+<div class="comment-score" id="post-59630-score"></div>
+<div class="comment-text"><p>Obviously "failed to parse image-filters" isn't "normal" - it suggests that mapnik is confused.  What OS and version are you using, and did mapnik come via "apt-get" or some other method?</p></div>
+<div class="comment-info" id="comment-59630-info">
+<span class="comment-age">(14 Sep '17, 14:23)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="59632"></a>
+<div class="comment" id="comment-59632">
+<div class="comment-score" id="post-59632-score"></div>
+<div class="comment-text"><p>OS is Debian 8. We installed Mapnik 2.2 via apt-get.</p></div>
+<div class="comment-info" id="comment-59632-info">
+<span class="comment-age">(14 Sep '17, 16:24)</span>
+<a class="comment-user userinfo" href="/users/14211/nevyen">Nevyen</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-59629">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-59629-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/59629/error-using-renderd?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/59629/error-using-renderd?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/59629/error-using-renderd?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/59629/error-using-renderd?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="59634"></a>
+<div class="answer" id="answer-container-59634">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/59634/up/" id="post-59634-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-59634-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/59634/down/" id="post-59634-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>If you're using Mapnik 2.2, you'll need to use a map style that supports it, or an old version of a current map style that supported Mapnik 2.2 at some time in the past.</p>
+<p>Back before various node.js stuff was fixed to work, the switch2osm instructions used to say something like:</p>
+<pre><code>git checkout `git rev-list -n 1 --before="2016-11-28 00:00" master`
+</code></pre>
+<p>that gets a version of the style from late November 2016, and I think that's the latest date that you don't need a bleeding edge carto for, and with a bit of luck it might work on Mapnik 2.2. Never tried it on Debian 8 myself, though.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/59634/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>14 Sep '17, 16:48</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-59634">
+<a name="59635"></a>
+<div class="comment" id="comment-59635">
+<div class="comment-score" id="post-59635-score"></div>
+<div class="comment-text"><p>I will check this out tomorrow when I have access to the server. Thanks for this hint.</p></div>
+<div class="comment-info" id="comment-59635-info">
+<span class="comment-age">(14 Sep '17, 16:51)</span>
+<a class="comment-user userinfo" href="/users/14211/nevyen">Nevyen</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-59634">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-59634-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/59629/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="zSXwLkcErRongaq2fWBOjoRAbOlH8AfU"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

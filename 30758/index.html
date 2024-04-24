@@ -1,0 +1,219 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/30758/how-can-i-create-an-osm-relation-area-if-it-doesnt-exist">How can I create an OSM Relation Area if it doesn't exist?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/30758/up/" id="post-30758-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-30758-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/30758/down/" id="post-30758-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/30758/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm working on a project where I need to collect the streets within cities (for various definitions of 'city'). I'm running into trouble when a city does not have an OSM Relation ID (I understand this as it does not have its Administrative Boundary mapped out, but I might be misunderstanding this as well).</p>
+<p>For example, <a href="http://nominatim.openstreetmap.org/details.php?place_id=97822449">Holyoke</a> has its area mapped out so it has an OSM Relation ID ... whereas <a href="http://nominatim.openstreetmap.org/details.php?place_id=497336">Tolland</a> does not have its area mapped out yet. For cities without the OSM Relation ID, I've been using <a href="http://extract.bbbike.org/">http://extract.bbbike.org/</a> to trace the city's border by hand, and then export that traced region to OSM file.</p>
+<p>That works well enough, but if I knew how to actually create the Relation IDs for city areas I could be helpful to OpenStreetMap while working through my project. I could generate the OSM Relation IDs by tracing the city's Administrative Boundary - I'm doing the tracing anyway ... it might as well be put to use.</p>
+<p>Can someone either point me to articles/videos that explain this, or explain how to edit OpenStreetMap (with iD, presumably) to add this data?</p>
+<p>It seems like I should 'Edit with iD', click the 'Area' button, map out the city's border to create a closed area (going with the assumption that it is a simple city border, not something like <a href="http://nominatim.openstreetmap.org/details.php?place_id=97418351">Austin</a>), and then ... ??? ... Do I set the feature type to 'Area', name it whatever the city's name is, and do something else to associate it with the actual city? When I navigate around a city that has an OSM Relation ID, I see that it is surrounded by an 'Administrative Boundary' feature type. It doesn't seem like I can create those, though.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-editing" href="/tags/editing/" rel="tag" title="see questions tagged 'editing'">editing</a>
+<a class="post-tag tag-link-admin_boundary" href="/tags/admin_boundary/" rel="tag" title="see questions tagged 'admin_boundary'">admin_boundary</a>
+<a class="post-tag tag-link-relations" href="/tags/relations/" rel="tag" title="see questions tagged 'relations'">relations</a>
+<a class="post-tag tag-link-city" href="/tags/city/" rel="tag" title="see questions tagged 'city'">city</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>15 Feb '14, 23:15</strong>
+</p>
+<img alt="JamesChevalier's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0ada7b97d85873855231744286452af4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7201/jameschevalier">JamesChevalier</a><br/>
+<span class="score" title="151 reputation points">151</span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="7 badges"><span class="silver">●</span><span class="badgecount">7</span></span><span title="13 badges"><span class="bronze">●</span><span class="badgecount">13</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="JamesChevalier has one accepted answer">25%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-30758">
+<a name="30759"></a>
+<div class="comment" id="comment-30759">
+<div class="comment-score" id="post-30759-score">1</div>
+<div class="comment-text"><p>A boundary is typically not mapped as an area, but as a relation. The relation contains a collection of (OSM) ways (not highways, roads) that form the  boundary. Those ways can be shared with neighboring cities, counties, etc. I created quite a few boundaries, but used JOSM, so I cannot help you on describing how it should be done in iD. I read a few statements about iD not really supporting relations, but maybe that has changed recently.</p></div>
+<div class="comment-info" id="comment-30759-info">
+<span class="comment-age">(16 Feb '14, 06:45)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+<a name="30766"></a>
+<div class="comment" id="comment-30766">
+<div class="comment-score" id="post-30766-score">1</div>
+<div class="comment-text"><p>I'm not particularly tied to iD - if you have the time to share your process with JOSM, I'm sure you'd be helping out a lot of would-be mappers.</p></div>
+<div class="comment-info" id="comment-30766-info">
+<span class="comment-age">(16 Feb '14, 14:31)</span>
+<a class="comment-user userinfo" href="/users/7201/jameschevalier">JamesChevalier</a>
+</div>
+</div>
+<a name="30842"></a>
+<div class="comment" id="comment-30842">
+<div class="comment-score" id="post-30842-score"></div>
+<div class="comment-text"><p>I manually create the boundary relation and set e.g. the attributes, name=xxx; type=boundary; boundary=administrative ; admin_level=9
+The members of the relations are way with attributes boundary=administrative; admin_level=9
+Note that is is also possible to have admin_level=8 here, it's typically the highest level that wins.
+All the ways get role outer. see e.g. <a href="http://www.openstreetmap.org/relation/3402541#map=13/51.0137/3.6307">http://www.openstreetmap.org/relation/3402541#map=13/51.0137/3.6307</a></p>
+<p>We use add a node with role admin_centre, other communities use the role label</p></div>
+<div class="comment-info" id="comment-30842-info">
+<span class="comment-age">(19 Feb '14, 16:22)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-30758">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-30758-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/30758/how-can-i-create-an-osm-relation-area-if-it-doesnt-exist?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/30758/how-can-i-create-an-osm-relation-area-if-it-doesnt-exist?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/30758/how-can-i-create-an-osm-relation-area-if-it-doesnt-exist?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/30758/how-can-i-create-an-osm-relation-area-if-it-doesnt-exist?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="31990"></a>
+<div class="answer" id="answer-container-31990">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/31990/up/" id="post-31990-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-31990-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/31990/down/" id="post-31990-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The short answer is probably, "Don't edit or create a boundary relation as a beginner."  That's not very encouraging though.  That short answer is also at odds with the over-arching OpenStreetMap theme that "anybody can improve the map."  True enough.<br/>
+</p>
+<p>A boundary relation can be a rather complex object in OpenStreetMap terms. I can't recommend that you struggle with creating that complex object, while simultaneously struggling with a new editor.  I don't know of a boundary relation tutorial. But let's try to point you in the right direction.<br/>
+</p>
+<p>Here is a <a href="http://wiki.openstreetmap.org/wiki/Relation:multipolygon">wiki page on multipolygon relations</a>.  A boundary relation is a type of multipolygon relation.  I wouldn't dive into a complex multipolygon as a first step.<br/>
+</p>
+<p>This is a tutorial on creating a simpler multipolygon relation, for a <a href="http://weait.com/courtyard">building with a courtyard</a>.  The courtyard tutorial creates a very simple multipolygon relation.  That probably makes a good first step on relations.<br/>
+</p>
+<p>Ideally, there would be another tutorial or two with increasing complexity.  I'm not aware of such tutorials at this time.  Perhaps I'll write one and add a link here later.<br/>
+</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/31990/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Mar '14, 02:22</strong>
+</p>
+<img alt="Richard%20Weait's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d90ea04df82d77f534659f08894dd889?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/66/richard-weait">Richard Weait</a><br>
+<span class="score" title="3044 reputation points"><span class="">3.0k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="34 badges"><span class="silver">●</span><span class="badgecount">34</span></span><span title="52 badges"><span class="bronze">●</span><span class="badgecount">52</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Richard Weait has 8 accepted answers">17%</span>
+</br></br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-31990">
+</div>
+<div class="comment-tools" id="comment-tools-31990">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-31990-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="30827"></a>
+<div class="answer answered-by-owner" id="answer-container-30827">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/30827/up/" id="post-30827-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-30827-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/30827/down/" id="post-30827-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I've been speaking to some people directly about this, as well, and the predominant suggestion is "don't".</p>
+<p>Most suggest that only those with a lot of experience with OSM editing (including creating and editing relations) create Administrative Boundaries. Additionally, there is a possibility that someone will import the town boundaries from some other data source. Administrative boundaries are mostly not visible on the ground, so the best source of this data is typically the government GIS department.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/30827/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>18 Feb '14, 16:45</strong>
+</p>
+<img alt="JamesChevalier's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0ada7b97d85873855231744286452af4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7201/jameschevalier">JamesChevalier</a><br>
+<span class="score" title="151 reputation points">151</span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="7 badges"><span class="silver">●</span><span class="badgecount">7</span></span><span title="13 badges"><span class="bronze">●</span><span class="badgecount">13</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="JamesChevalier has one accepted answer">25%</span>
+</br></br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-30827">
+</div>
+<div class="comment-tools" id="comment-tools-30827">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-30827-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/30758/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="dPYeYeFtcSzYJwQyjgb2fWHfP5U4lvOS"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

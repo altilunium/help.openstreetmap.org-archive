@@ -1,0 +1,106 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/53029/map-matching-optimal-density-of-points">Map matching - optimal density of points</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/53029/up/" id="post-53029-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-53029-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/53029/down/" id="post-53029-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/53029/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi All,</p>
+<p>I need to determine the optimal density of points for map matching. I already played with the OSRM's map matching API and it gives fine results, but in some cases I realized that the matching is incorrect and it was caused by sparse points. Now I want to find something like rules to get enough points, I think about rules like: "You need at least one point every 100m in the buit-up areas" ... It's clear that this depends on many factors like the accuracy of GPS coordinates, the road network in the particular area, etc. and it's clear that the more points the better, but more points mean more data traffic, more storage ... are there any general rules which should be followed?</p>
+<p>Thank you</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osrm" href="/tags/osrm/" rel="tag" title="see questions tagged 'osrm'">osrm</a>
+<a class="post-tag tag-link-matching" href="/tags/matching/" rel="tag" title="see questions tagged 'matching'">matching</a>
+<a class="post-tag tag-link-map" href="/tags/map/" rel="tag" title="see questions tagged 'map'">map</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>18 Nov '16, 15:23</strong>
+</p>
+<img alt="pksk88's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e7b6aab57b354bb4867304cd404610f5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12818/pksk88">pksk88</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="pksk88 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-53029">
+<a name="53037"></a>
+<div class="comment" id="comment-53037">
+<div class="comment-score" id="post-53037-score">1</div>
+<div class="comment-text"><p>a point every 100m ? that might work for straight roads in modern cities, but not for medieval towns or hiking paths.</p></div>
+<div class="comment-info" id="comment-53037-info">
+<span class="comment-age">(19 Nov '16, 15:44)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+<a name="53052"></a>
+<div class="comment" id="comment-53052">
+<div class="comment-score" id="post-53052-score"></div>
+<div class="comment-text"><p>Thank you for answer yes you'r probably right but did you tried that on real data or is it just a guess, if so what's the underlying assumption. I need to made this decision based on statics or theory :)</p></div>
+<div class="comment-info" id="comment-53052-info">
+<span class="comment-age">(21 Nov '16, 12:10)</span>
+<a class="comment-user userinfo" href="/users/12818/pksk88">pksk88</a>
+</div>
+</div>
+<a name="53053"></a>
+<div class="comment" id="comment-53053">
+<div class="comment-score" id="post-53053-score">1</div>
+<div class="comment-text"><p>Take a city of your choice. Generate random start and end points. Calculate a route between these points. Place a point every x meter along this route and see if your map matching algorithm returns the same route. Repeat for a different type of city. </p>
+<p>Map matching in cities with a planned street layout (e.g. the US) will be easier than for cities where the street layout developed over a long time (e.g. in most other parts of the world).</p>
+<p>Outside of towns you will need a much fewer point density of course.</p></div>
+<div class="comment-info" id="comment-53053-info">
+<span class="comment-age">(21 Nov '16, 12:18)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="53054"></a>
+<div class="comment" id="comment-53054">
+<div class="comment-score" id="post-53054-score"></div>
+<div class="comment-text"><p>Thank you scai, this was also one of my initial ideas, using some random sets of points connect them using routing and then just artificially play with different max time or distance to generate points, try to match them and see the error against the ground truth. I can also add some artificial noise to the GPS coordinates. In the simplest form this could be done easily but as you said, we need to consider the different density inside and outside towns, for different speed, etc. which should make this experiment a little bit complicated but anyway, this sounds as a methodologically correct solution.</p></div>
+<div class="comment-info" id="comment-53054-info">
+<span class="comment-age">(21 Nov '16, 12:33)</span>
+<a class="comment-user userinfo" href="/users/12818/pksk88">pksk88</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-53029">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-53029-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/53029/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="7ArqJDXkTtyv0z6TUmY3v7kjiQHyALKL"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

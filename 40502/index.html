@@ -1,0 +1,123 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/40502/shopcompany-names">shop/company names</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/40502/up/" id="post-40502-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-40502-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/40502/down/" id="post-40502-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/40502/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Am I discouraged to use short_name, or maybe name:simple in the example below:</p>
+<ul>
+<li>name=Syarikat Perkakasan Allplusplus Sdn Bhd (name:ms)</li>
+<li>name:en=Allplusplus Hardware Company Sdn Bhd (as seen on shop sign along with name:ms)</li>
+<li>name:simple=Allplusplus</li>
+<li>short_name=A++ (as seen on shop logo)</li>
+</ul>
+<p>I know there are longer names in other countries, so a shorter name seems logical to help renderers. short_name seems to be for initials abbreviations, so I thought why not use name:simple? Currently name:simple is probably only used for country names, but why?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-namesimple" href="/tags/namesimple/" rel="tag" title="see questions tagged 'namesimple'">namesimple</a>
+<a class="post-tag tag-link-name" href="/tags/name/" rel="tag" title="see questions tagged 'name'">name</a>
+<a class="post-tag tag-link-short_name" href="/tags/short_name/" rel="tag" title="see questions tagged 'short_name'">short_name</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Jan '15, 07:09</strong>
+</p>
+<img alt="raito's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/edf8bc160bbf7f47d6cbc6979120b2c7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9874/raito">raito</a><br/>
+<span class="score" title="302 reputation points">302</span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="9 badges"><span class="silver">●</span><span class="badgecount">9</span></span><span title="19 badges"><span class="bronze">●</span><span class="badgecount">19</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="raito has one accepted answer">50%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/40502/">
+                edited
+                <strong>21 Jan '15, 07:11</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-40502">
+<a name="40513"></a>
+<div class="comment" id="comment-40513">
+<div class="comment-score" id="post-40513-score">1</div>
+<div class="comment-text"><p>I looked at 2 cases of name:simple, France and Singapore. I don't understand why they use it, as it is exactly the same as name. Furthermore, there is no wiki page on name:simple. IMHO it's doubtful that e.g. Nominatim wil recognize the tag. 
+Maybe it's better to use loc_name, which is documented on the wiki ?</p></div>
+<div class="comment-info" id="comment-40513-info">
+<span class="comment-age">(21 Jan '15, 20:22)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+<a name="40515"></a>
+<div class="comment" id="comment-40515">
+<div class="comment-score" id="post-40515-score"></div>
+<div class="comment-text"><p>Yeah, the way name:simple is used right now doesn't seem to add anything new. But I think it could be made useful for helping renderers easily decide what text to render if the name is too long. I thought loc_name is for something completely different from the name, but I guess it can do.</p>
+<p>If I may add, how about using the official_name tag which was also meant to be used for countries?
+- name=Allplusplus
+- official_name=Syarikat Perkakasan Allplusplus Sdn Bhd
+- official_name:en=Allplusplus Hardware Company Sdn Bhd
+- short_name=A++</p></div>
+<div class="comment-info" id="comment-40515-info">
+<span class="comment-age">(22 Jan '15, 04:31)</span>
+<a class="comment-user userinfo" href="/users/9874/raito">raito</a>
+</div>
+</div>
+<a name="40520"></a>
+<div class="comment" id="comment-40520">
+<div class="comment-score" id="post-40520-score">1</div>
+<div class="comment-text"><p><em>short_name</em> is not just for initials, it can be used for any abbreviation. I don't see a need for another short/simple name key.</p></div>
+<div class="comment-info" id="comment-40520-info">
+<span class="comment-age">(22 Jan '15, 09:18)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="40538"></a>
+<div class="comment" id="comment-40538">
+<div class="comment-score" id="post-40538-score">2</div>
+<div class="comment-text"><p>alt_name is also an option.</p></div>
+<div class="comment-info" id="comment-40538-info">
+<span class="comment-age">(22 Jan '15, 17:15)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-40502">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-40502-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/40502/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="XBKb4Gbxg4cDFLVv3Z1GQ5JMgDhEZMtU"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

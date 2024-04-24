@@ -1,0 +1,137 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/30598/map-of-usa-with-big-dots-for-100-top-metros">Map of USA with big dots for 100 top metros</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/30598/up/" id="post-30598-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-30598-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/30598/down/" id="post-30598-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/30598/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I want to create a map of the USA that highlights the top 100 metro markets. I want four markets -- New York, Chicago, Washington and Seattle -- to be highlighted in one color and the other 96 markets to be highlighted in another color. This would be the source for the top 100 markets --<a href="http://en.wikipedia.org/wiki/List_of_Metropolitan_Statistical_Areas">http://en.wikipedia.org/wiki/List_of_Metropolitan_Statistical_Areas</a></p>
+<p>Any tips on how I can do this? Thanks for your help.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-metros" href="/tags/metros/" rel="tag" title="see questions tagged 'metros'">metros</a>
+<a class="post-tag tag-link-metromarkets" href="/tags/metromarkets/" rel="tag" title="see questions tagged 'metromarkets'">metromarkets</a>
+<a class="post-tag tag-link-top100" href="/tags/top100/" rel="tag" title="see questions tagged 'top100'">top100</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>10 Feb '14, 21:01</strong>
+</p>
+<img alt="TomGrubisich's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/44c986894481ffffc674d136d64639e9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8288/tomgrubisich">TomGrubisich</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="TomGrubisich has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-30598">
+</div>
+<div class="comment-tools" id="comment-tools-30598">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-30598-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/30598/map-of-usa-with-big-dots-for-100-top-metros?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/30598/map-of-usa-with-big-dots-for-100-top-metros?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/30598/map-of-usa-with-big-dots-for-100-top-metros?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/30598/map-of-usa-with-big-dots-for-100-top-metros?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="30603"></a>
+<div class="answer" id="answer-container-30603">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/30603/up/" id="post-30603-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-30603-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/30603/down/" id="post-30603-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Various methods are possible. You could use an OpenLayers or Leaflet map embedded in a web site (this will be zoomable and pannable) and save your 100 dots in a KML/GeoJSON file which you could create with any suitable editor (among others, Google Earth). Then instruct OpenLayers/Leaflet to display your file.</p>
+<p>There are platforms, e.g. Github, where you can simply drop in a GeoJSON file to have it shown as a map.</p>
+<p>If you'd rather have an image generated (and not some kind of web map), you'll probably not want to use OSM since it is a much too detailed data set - just create a KML file or Shape file or something with your markers in it, fire up a GIS editor like Quantum GIS, load a background GeoTIFF from somewhere, and put your dots on top. </p>
+<p>All these methods will require that you have coordinates for your dots, not just city or region names. If all you have is names, you need to run them through a geocoder first to get coordinates.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/30603/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>10 Feb '14, 22:36</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-30603">
+<a name="30608"></a>
+<div class="comment" id="comment-30608">
+<div class="comment-score" id="post-30608-score"></div>
+<div class="comment-text"><p>Also, all methods will require some scripting and/or programming.</p></div>
+<div class="comment-info" id="comment-30608-info">
+<span class="comment-age">(11 Feb '14, 00:13)</span>
+<a class="comment-user userinfo" href="/users/8178/jgpacker">jgpacker</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-30603">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-30603-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/30598/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="c3avmcueMWlBYh6vr5nlkJdQHl73gsQj"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

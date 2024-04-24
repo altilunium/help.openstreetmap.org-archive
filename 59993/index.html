@@ -1,0 +1,111 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/59993/search-for-public-transit-points-transit-lines-around-a-given-set-of-co-ordinates">Search for Public Transit Points &amp; transit lines around a given set of co-ordinates</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/59993/up/" id="post-59993-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-59993-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/59993/down/" id="post-59993-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/59993/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>Given a set of lat/long in Germany, I would like to search for all the Public Transportation Points in a 500m radius. Then, would like to fetch all the public transit lines that pass through that Public transit point.</p>
+<p>When I state Public Transportation Points, I mean stops where Buses, Trains/Subways &amp; Trams stop. Specifically, looking for nodes with the following tags:</p>
+<ul>
+<li>Bus: public_transport=stop_position + bus=yes.  </li>
+<li>Subway/Train: public_transport=stop_position + train=yes + railway=stop + name=*</li>
+<li>Tram: public_transport=stop_position + tram=yes + name=*</li>
+</ul>
+<p>On knowing the Points, I would then like to know all the Bus, Tram &amp; Subway lines that pass through these points.</p>
+<p>Is it feasible to fetch this sort of information with OSM?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-transit" href="/tags/transit/" rel="tag" title="see questions tagged 'transit'">transit</a>
+<a class="post-tag tag-link-public-transport" href="/tags/public-transport/" rel="tag" title="see questions tagged 'public-transport'">public-transport</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>06 Oct '17, 14:39</strong>
+</p>
+<img alt="urbanground's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/23e8dfc00665c15d1992486c171921db?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14291/urbanground">urbanground</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="urbanground has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/59993/">
+                edited
+                <strong>08 Oct '17, 15:59</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-59993">
+<a name="60007"></a>
+<div class="comment" id="comment-60007">
+<div class="comment-score" id="post-60007-score"></div>
+<div class="comment-text"><p>What is a "Public Transportation Points" supposed to be? A station/halt, a junction of multiple routes? ....</p></div>
+<div class="comment-info" id="comment-60007-info">
+<span class="comment-age">(08 Oct '17, 09:50)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+<a name="60013"></a>
+<div class="comment" id="comment-60013">
+<div class="comment-score" id="post-60013-score"></div>
+<div class="comment-text"><p>I am looking for Bus, Subway &amp; Trams. For bus, nodes with Tags: public_transport=stop_position + bus=yes. For Subway/Train: public_transport=stop_position + train=yes + railway=stop + name=<em>
+For Tram: public_transport=stop_position + tram=yes + name=</em></p></div>
+<div class="comment-info" id="comment-60013-info">
+<span class="comment-age">(08 Oct '17, 15:54)</span>
+<a class="comment-user userinfo" href="/users/14291/urbanground">urbanground</a>
+</div>
+</div>
+<a name="66102"></a>
+<div class="comment" id="comment-66102">
+<div class="comment-score" id="post-66102-score"></div>
+<div class="comment-text"><p>This would be very useful feature and quite easily done with existing code I assume. Now already manully one can click all public transportation (PT) stops around some POI and see eg. all the busses/trams/metros which stops there. With a pen and paper (or snapshot) then collect all those PT-lines. Now just the code optionally would automatically "click" all those PT-stops around some radius and return a list of stops and PT-lines. See also:
+<a href="https://help.openstreetmap.org/questions/45635/public-transport?">https://help.openstreetmap.org/questions/45635/public-transport?</a></p></div>
+<div class="comment-info" id="comment-66102-info">
+<span class="comment-age">(30 Sep '18, 12:35)</span>
+<a class="comment-user userinfo" href="/users/15730/zimon">zimon</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-59993">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-59993-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/59993/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="anUzSES6Zs96rpuPvtnSFqxpGn9TD26D"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

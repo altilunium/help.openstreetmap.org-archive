@@ -1,0 +1,155 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/67865/overpass-turbo-name-tag">overpass turbo name tag</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/67865/up/" id="post-67865-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-67865-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/67865/down/" id="post-67865-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/67865/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm trying to add just the names of parking lots to a names data set for our university. Using Overpass Turbo, I can extract a geojson file using the wizard by having it look for "amenity=parking and name=<em>" This identifies the parking lots I need and I run the Overpass query and export the resulting geojson file. When I import the geojson file into the dataset in Mapbox, it imports the parking lots as polygons, where each polygon has a tag "amenity=parking" and "name=</em>" However I'd like the parking lots to be represented only by its name in the center of the polygon. Is there a way to convert a polygon to a point in Mapbox or in the geojson file, or is there a way to have Overpass Turbo identify a lot, but only export it's name and location?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+<a class="post-tag tag-link-name" href="/tags/name/" rel="tag" title="see questions tagged 'name'">name</a>
+<a class="post-tag tag-link-geojson" href="/tags/geojson/" rel="tag" title="see questions tagged 'geojson'">geojson</a>
+<a class="post-tag tag-link-parking" href="/tags/parking/" rel="tag" title="see questions tagged 'parking'">parking</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>04 Feb '19, 19:35</strong>
+</p>
+<img alt="URcommunications's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/6f197a6bc17c8c55f68a1102707b7247?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6669/urcommunications">URcommunicat...</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="URcommunications has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-67865">
+</div>
+<div class="comment-tools" id="comment-tools-67865">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-67865-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/67865/overpass-turbo-name-tag?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/67865/overpass-turbo-name-tag?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/67865/overpass-turbo-name-tag?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/67865/overpass-turbo-name-tag?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="67869"></a>
+<div class="answer" id="answer-container-67869">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/67869/up/" id="post-67869-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-67869-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/67869/down/" id="post-67869-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This outputs the centre of each parking place. </p>
+<pre><code>[out:json][timeout:25];
+// gather results
+(
+  // query part for: “amenity=parking and name=*”
+  node["amenity"="parking"]["name"]({{bbox}});
+  way["amenity"="parking"]["name"]({{bbox}});
+  relation["amenity"="parking"]["name"]({{bbox}});
+);
+// print results
+out center;
+</code></pre>
+<p>Disclaimer - not tried importing it into mapbox, apologies if this is a red herring.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/67869/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Feb '19, 23:03</strong>
+</p>
+<img alt="andrewblack's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ba18d96cf193429ae1a16c30828ef58d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9571/andrewblack">andrewblack</a><br/>
+<span class="score" title="365 reputation points">365</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="14 badges"><span class="bronze">●</span><span class="badgecount">14</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="andrewblack has 4 accepted answers">57%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-67869">
+<a name="67882"></a>
+<div class="comment" id="comment-67882">
+<div class="comment-score" id="post-67882-score"></div>
+<div class="comment-text"><p>It worked perfectly! Thanks. Funny, I had generated almost exactly the same thing using the wizard but instead of "out center;" it had "out body;" That made all the difference. Thanks!</p></div>
+<div class="comment-info" id="comment-67882-info">
+<span class="comment-age">(05 Feb '19, 14:49)</span>
+<a class="comment-user userinfo" href="/users/6669/urcommunications">URcommunicat...</a>
+</div>
+</div>
+<a name="67946"></a>
+<div class="comment" id="comment-67946">
+<div class="comment-score" id="post-67946-score"></div>
+<div class="comment-text"><p>I generated this using the wizard then edited the bit at the botton. I often use "out center" a lot (UK readers note the spelling!).  E.g. if  I want to know where POIs are but am not interested in layout of the building.</p></div>
+<div class="comment-info" id="comment-67946-info">
+<span class="comment-age">(09 Feb '19, 11:02)</span>
+<a class="comment-user userinfo" href="/users/9571/andrewblack">andrewblack</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-67869">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-67869-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/67865/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="dKabkCoUTsMYPrlnqGRUahrsSqiS3Pi1"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,175 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/56020/osm-data-query-by-overpass-for-multiple-bbox">OSM data query by overpass for multiple bbox</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/56020/up/" id="post-56020-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-56020-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/56020/down/" id="post-56020-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/56020/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm trying to build a query to download data (for example parks) from different bbox (can't be substituted by nominatim) by overpass-turbo. Here my query but it doesn't work:</p>
+<pre><code> &lt;osm-script output="json" timeout="50"&gt;
+  &lt;!-- fetch area to search in --&gt;
+  &lt;union into="area"&gt;
+    &lt;bbox-query e="20" n="30" s="28" w="18"/&gt;
+    &lt;bbox-query e="30" n="40" s="38" w="28"/&gt;
+    &lt;bbox-query e="40" n="50" s="48" w="38"/&gt;
+  &lt;/union&gt;
+  &lt;!-- gather results --&gt;
+  &lt;union&gt;
+    &lt;!-- query part for: “leisure=park” --&gt;
+    &lt;query type="node"&gt;
+      &lt;has-kv k="leisure" v="park"/&gt;
+      &lt;area-query from="area"/&gt;
+    &lt;/query&gt;
+    &lt;query type="way"&gt;
+      &lt;has-kv k="leisure" v="park"/&gt;
+      &lt;area-query from="area"/&gt;
+    &lt;/query&gt;
+    &lt;query type="relation"&gt;
+      &lt;has-kv k="leisure" v="park"/&gt;
+      &lt;area-query from="area"/&gt;
+    &lt;/query&gt;
+  &lt;/union&gt;
+  &lt;!-- print results --&gt;
+  &lt;print from="area" geometry="skeleton" mode="body" order="id"/&gt;
+ &lt;!-- &lt;recurse type="down"/&gt; --&gt;
+  &lt;print from="area" geometry="skeleton" mode="skeleton" order="quadtile" /&gt;
+&lt;/osm-script&gt;
+</code></pre>
+<p>Please help to fix it. I can't find suitable solution in documentation on wiki and here in previous questions.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+<a class="post-tag tag-link-bbox" href="/tags/bbox/" rel="tag" title="see questions tagged 'bbox'">bbox</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-query" href="/tags/query/" rel="tag" title="see questions tagged 'query'">query</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 May '17, 14:29</strong>
+</p>
+<img alt="seevgenia's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/60ea91f0a29c6e6c7096e8f61e09c8f7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13664/seevgenia">seevgenia</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="seevgenia has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/56020/">
+                edited
+                <strong>03 May '17, 14:36</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-56020">
+</div>
+<div class="comment-tools" id="comment-tools-56020">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-56020-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/56020/osm-data-query-by-overpass-for-multiple-bbox?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/56020/osm-data-query-by-overpass-for-multiple-bbox?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/56020/osm-data-query-by-overpass-for-multiple-bbox?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/56020/osm-data-query-by-overpass-for-multiple-bbox?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="56024"></a>
+<div class="answer" id="answer-container-56024">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/56024/up/" id="post-56024-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-56024-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/56024/down/" id="post-56024-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>In the non XML query language you can pass a bbox to a filter:</p>
+<p><a href="http://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Bounding_box">http://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Bounding_box</a></p>
+<p>I don't know if there is an equivalent in the XML. In any case, a union of such queries should work for your query:</p>
+<pre><code>(
+node(50.6,7.0,50.8,7.3)[leisure=park];
+way(50.6,7.0,50.8,7.3)[leisure=park];
+rel(50.6,7.0,50.8,7.3)[leisure=park];
+node(51.6,7.0,51.8,7.3)[leisure=park];
+way(51.6,7.0,51.8,7.3)[leisure=park];
+rel(51.6,7.0,51.8,7.3)[leisure=park];
+);
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/56024/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 May '17, 17:04</strong>
+</p>
+<img alt="maxerickson's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c860445e868ebb21da141635a4aa7b06?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10973/maxerickson">maxerickson</a><br/>
+<span class="score" title="12700 reputation points"><span class="">12.7k</span></span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="83 badges"><span class="silver">●</span><span class="badgecount">83</span></span><span title="176 badges"><span class="bronze">●</span><span class="badgecount">176</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="maxerickson has 93 accepted answers">32%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-56024">
+</div>
+<div class="comment-tools" id="comment-tools-56024">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-56024-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/56020/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="dh6uD57pewUS073Uijyg9LvMNYhMl5px"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

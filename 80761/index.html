@@ -1,0 +1,100 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/80761/cycleway-attribute-data">Cycleway attribute data</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80761/up/" id="post-80761-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80761-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/80761/down/" id="post-80761-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/80761/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I downloaded the cycleway layer from Geofabrik as a shapefile and was using it in ArcGIS. </p>
+<p>On OSM I can see attributes like width, pavement type, etc.</p>
+<p>However, in ArcGIS attribute data table I see none of this. </p>
+<p>How can I access that attribute data for the cycleway layer?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-shapefile" href="/tags/shapefile/" rel="tag" title="see questions tagged 'shapefile'">shapefile</a>
+<a class="post-tag tag-link-arcgis" href="/tags/arcgis/" rel="tag" title="see questions tagged 'arcgis'">arcgis</a>
+<a class="post-tag tag-link-attributes" href="/tags/attributes/" rel="tag" title="see questions tagged 'attributes'">attributes</a>
+<a class="post-tag tag-link-geofabrik" href="/tags/geofabrik/" rel="tag" title="see questions tagged 'geofabrik'">geofabrik</a>
+<a class="post-tag tag-link-cycleway" href="/tags/cycleway/" rel="tag" title="see questions tagged 'cycleway'">cycleway</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>28 Jun '21, 15:12</strong>
+</p>
+<img alt="juradoN's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a06fb5e6e6895e4ebb15a9ebfdf5d3b9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20413/juradon">juradoN</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="juradoN has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80761">
+<a name="80765"></a>
+<div class="comment" id="comment-80765">
+<div class="comment-score" id="post-80765-score">1</div>
+<div class="comment-text"><p>Can you clarify exactly what you downloaded and from where? As far as I know, the data extracts from Geofabrik are arranged by geographic region and contain all of the OSM data for that region with all tags included. I can't find a cycling-specific extract on their site.</p></div>
+<div class="comment-info" id="comment-80765-info">
+<span class="comment-age">(28 Jun '21, 17:42)</span>
+<a class="comment-user userinfo" href="/users/8189/alester">alester</a>
+</div>
+</div>
+<a name="80766"></a>
+<div class="comment" id="comment-80766">
+<div class="comment-score" id="post-80766-score"></div>
+<div class="comment-text"><p>I downloaded washington-latest-free.shp.zip from Geofabrik (<a href="https://download.geofabrik.de/north-america/us/washington.html).">https://download.geofabrik.de/north-america/us/washington.html).</a> This is for the entire Washington State in U.S.
+And yes, I did get what looks to be all of the OSM data for that region. However, the roads layer that was within that file has different attributes than the fields/attributes you see when editing within OSM. For example, I can add a width in OSM when editing a cycleway. But in the shapefile attribute table in ArcGIS, I see no 'width' field. 
+So I'm curious, OSM obviously has attributes for certain cycleways (ex. width) but I can't see it in ArcGIS even after downloading the entire dataset. So where would I access these attributes?</p></div>
+<div class="comment-info" id="comment-80766-info">
+<span class="comment-age">(28 Jun '21, 18:06)</span>
+<a class="comment-user userinfo" href="/users/20413/juradon">juradoN</a>
+</div>
+</div>
+<a name="82808"></a>
+<div class="comment" id="comment-82808">
+<div class="comment-score" id="post-82808-score">1</div>
+<div class="comment-text"><p>Geofabrik shape files only contain a very small set of attributes present in OSM (at least in part because they sell services around more detailed extracts). You will find more details by using an OSM download (Pbf file for the area, and extracting the relevant details yourself) or through querying data via Overpass(-turbo).</p></div>
+<div class="comment-info" id="comment-82808-info">
+<span class="comment-age">(10 Dec '21, 22:40)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-80761">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80761-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/80761/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="OBKea9t7nQnK5h2m57xFcTlHnaVbrs3p"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

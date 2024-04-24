@@ -1,0 +1,245 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/4481/problem-using-gosmore-to-rebuild-a-pak-file-from-osm-data">Problem using gosmore to rebuild a .pak file from osm data</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/4481/up/" id="post-4481-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-4481-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/4481/down/" id="post-4481-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/4481/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm searching for an application or API that does routing. I only need the route and length/time of the route. After doing some research I had the impression gosmore is the appropriate one. I have downloaded and built it according to the wiki <a href="http://wiki.openstreetmap.org/wiki/Gosmore#Downloading_and_running"></a><a href="http://wiki.openstreetmap.org/wiki/Gosmore#Downloading_and_running"></a><a href="http://wiki.openstreetmap.org/wiki/Gosmore#Downloading_and_running">http://wiki.openstreetmap.org/wiki/Gosmore#Downloading_and_running</a>. I'm using ubuntu 10.04.2 but didn't take the ubuntu one because I want it to run it headless. </p>
+<p>First I tried a ready made .pak file to try gosmore out. But whatever QUERY_STRING I've provided, no route is found by gosmore. Then I tried to rebuild the pak file from a german osm data file. First it ended with a 3k sized .pak file. Then I recognized it needs somehow the elemstyles.xml. The next try was to do the rebuild in the source directory of gosmore where all these files are. But doing this </p>
+<pre><code>bzcat germany.osm.bz2 | ./gosmore rebuild
+</code></pre>
+<p>I get </p>
+<pre><code>488 for (pairs = 0; pairs &lt; PAIRS &amp;&amp; s2grp &lt; S2GROUP (0) + S2GROUPS; )
+489 for (pairs = 0; pairs &lt; PAIRS &amp;&amp; s2grp &lt; S2GROUP (0) + S2GROUPS; )
+490 for (pairs = 0; pairs &lt; PAIRS &amp;&amp; s2grp &lt; S2GROUP (0) + S2GROUPS; )
+491 for (ndType *ndItr = ndBase; ndItr &lt; ndBase + hashTable[bucketsMin1 + 1]; ndItr++)
+terminate called after throwing an instance of 'std::bad_alloc'
+ what():  std::bad_alloc
+Building gosmore.pak using style elemstyles.xml...
+</code></pre>
+<p>So now I'm not really sure to where head next. It is a situation like often that a lot of people seem to use it and are satisified and then there are a few where it doesn't and not much help to solve. Documentation is just not existent.</p>
+<p>Did I do something terribly wrong? Is there a better library for routing then gosmore? Any hints appreciated.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-gosmore" href="/tags/gosmore/" rel="tag" title="see questions tagged 'gosmore'">gosmore</a>
+<a class="post-tag tag-link-routing" href="/tags/routing/" rel="tag" title="see questions tagged 'routing'">routing</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>14 Apr '11, 12:42</strong>
+</p>
+<img alt="Norbert%20Hartl's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/69ffbfbb81efe94561dbc0d9d90d7d13?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1181/norbert-hartl">Norbert Hartl</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Norbert Hartl has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-4481">
+<a name="4489"></a>
+<div class="comment" id="comment-4489">
+<div class="comment-score" id="post-4489-score"></div>
+<div class="comment-text"><p>Ok, I got something back. Thanks, guys. The conversion of germany osm with gosmore rebuild ate happily 3GB of main memory. Before I only had a little bit more than 2GB free and thought it would be sufficient. So the thing (the error) in my question is due to memory limit. And with the self converted pak file I get routing information while I wasn't successful with the prebuilt paks.</p></div>
+<div class="comment-info" id="comment-4489-info">
+<span class="comment-age">(14 Apr '11, 13:53)</span>
+<a class="comment-user userinfo" href="/users/1181/norbert-hartl">Norbert Hartl</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-4481">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-4481-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/4481/problem-using-gosmore-to-rebuild-a-pak-file-from-osm-data?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/4481/problem-using-gosmore-to-rebuild-a-pak-file-from-osm-data?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/4481/problem-using-gosmore-to-rebuild-a-pak-file-from-osm-data?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/4481/problem-using-gosmore-to-rebuild-a-pak-file-from-osm-data?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="4482"></a>
+<div class="answer" id="answer-container-4482">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/4482/up/" id="post-4482-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-4482-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/4482/down/" id="post-4482-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This web site is not intended to be a bug tracking system. If you look at Gosmore's <a href="http://wiki.openstreetmap.org/wiki/Gosmore#Bugs">Wiki page</a> you will find a reference to the trac system where you can report problems.</p>
+<p>If I were to guess from the error message, I'd say maybe your machine has run out of memory. Did you monitor memory usage while running the program?</p>
+<p>I think gosmore is well suited for what you have in mind. There are other systems around that you could use just as well, for example <a href="http://wiki.openstreetmap.org/wiki/Routino">Routino</a> or <a href="http://wiki.openstreetmap.org/wiki/OSRM">OSRM</a>, both of which are AGPL licensed and support (only) headless operation.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/4482/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>14 Apr '11, 12:51</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-4482">
+<a name="4485"></a>
+<div class="comment" id="comment-4485">
+<div class="comment-score" id="post-4485-score"></div>
+<div class="comment-text"><p>Well, often a question looks like a ticket even if it isn't intended :) And it sometimes hard to ask the right things if you are really new to some technology. Thanks for the hint to monitor the memory. I was just assuming it can deal with low mem situation itself. I'm monitoring now</p></div>
+<div class="comment-info" id="comment-4485-info">
+<span class="comment-age">(14 Apr '11, 13:03)</span>
+<a class="comment-user userinfo" href="/users/1181/norbert-hartl">Norbert Hartl</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-4482">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-4482-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="4483"></a>
+<div class="answer" id="answer-container-4483">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/4483/up/" id="post-4483-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-4483-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/4483/down/" id="post-4483-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>My first guess is that you created an incompatible relations.tbl file. If you did, you can delete it and rebuild without it (it is not important for routing).</p>
+<p>You can also disable some of the code with the <code>ONLY_ROUTING</code> flag, e.g.</p>
+<pre><code>  make CFLAGS='-O2 -DRES_DIR=\"/usr/share/gosmore/\" -DHEADLESS -DONLY_ROUTING'
+</code></pre>
+<p>But it can be a completely unrelated bug.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/4483/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>14 Apr '11, 12:53</strong>
+</p>
+<img alt="Nic%20Roets's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d25927545eb18b4d577280081df5ce6b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/75/nic-roets">Nic Roets</a><br/>
+<span class="score" title="583 reputation points">583</span><span title="9 badges"><span class="badge1">●</span><span class="badgecount">9</span></span><span title="12 badges"><span class="silver">●</span><span class="badgecount">12</span></span><span title="19 badges"><span class="bronze">●</span><span class="badgecount">19</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Nic Roets has one accepted answer">6%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/4483/">
+                edited
+                <strong>14 Apr '11, 13:07</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-4483">
+<a name="4484"></a>
+<div class="comment" id="comment-4484">
+<div class="comment-score" id="post-4484-score"></div>
+<div class="comment-text"><p>I did not cerate a relations.tbl. I do not know what it is for. And the second line in the log says "Processing without relations table".</p></div>
+<div class="comment-info" id="comment-4484-info">
+<span class="comment-age">(14 Apr '11, 12:58)</span>
+<a class="comment-user userinfo" href="/users/1181/norbert-hartl">Norbert Hartl</a>
+</div>
+</div>
+<a name="4490"></a>
+<div class="comment" id="comment-4490">
+<div class="comment-score" id="post-4490-score"></div>
+<div class="comment-text"><p>I'm glad I came back so I found the second option for only routing. Nice now it works. It is just strange (well) that I get only time based information per leg and not distance. Where to ask this? :)</p></div>
+<div class="comment-info" id="comment-4490-info">
+<span class="comment-age">(14 Apr '11, 16:19)</span>
+<a class="comment-user userinfo" href="/users/1181/norbert-hartl">Norbert Hartl</a>
+</div>
+</div>
+<a name="4491"></a>
+<div class="comment" id="comment-4491">
+<div class="comment-score" id="post-4491-score"></div>
+<div class="comment-text"><p>Gosmore does not produce the distance because the values used internally are not particularly accurate. Approximating the distances from lat/long is quite easy e.g. using the equirectangular projection. Or you can use the YOURS php wrapper, some versions of which will also generate instructions.</p>
+<p>Note that the "time" values are not accurate for shortest route.</p></div>
+<div class="comment-info" id="comment-4491-info">
+<span class="comment-age">(14 Apr '11, 16:40)</span>
+<a class="comment-user userinfo" href="/users/75/nic-roets">Nic Roets</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-4483">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-4483-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/4481/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="cUP0RQ4EYmKkJnGRylYgBYAPWdSflf0E"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

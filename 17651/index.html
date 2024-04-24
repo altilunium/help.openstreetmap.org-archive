@@ -1,0 +1,136 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/17651/osmosis-warning-data-being-output-lacks-metadata">Osmosis warning "Data being output lacks metadata"</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/17651/up/" id="post-17651-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-17651-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/17651/down/" id="post-17651-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/17651/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Osmosis is giving me this warning message</p>
+<pre><code>"WARNING: Attention: Data being output lacks metadata. Please use omitmetadata=true"
+</code></pre>
+<p>I am using a <a href="http://wiki.openstreetmap.org/wiki/Osmosis/Detailed_Usage#--write-pbf_.28--wb.29">--write-pbf</a> output and I see I can specify 'omitmetadata=true' to stop it outputting version number, timestamp, user name, and user id,   but what is the cause of this warning?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>12 Nov '12, 00:48</strong>
+</p>
+<img alt="Harry%20Wood's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9e04333be840d50c6aa66fb112aad77c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/107/harry-wood">Harry Wood</a><br/>
+<span class="score" title="9489 reputation points"><span class="">9.5k</span></span><span title="25 badges"><span class="badge1">●</span><span class="badgecount">25</span></span><span title="88 badges"><span class="silver">●</span><span class="badgecount">88</span></span><span title="128 badges"><span class="bronze">●</span><span class="badgecount">128</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Harry Wood has 19 accepted answers">14%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-17651">
+</div>
+<div class="comment-tools" id="comment-tools-17651">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-17651-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/17651/osmosis-warning-data-being-output-lacks-metadata?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/17651/osmosis-warning-data-being-output-lacks-metadata?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/17651/osmosis-warning-data-being-output-lacks-metadata?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/17651/osmosis-warning-data-being-output-lacks-metadata?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="17653"></a>
+<div class="answer accepted-answer" id="answer-container-17653">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/17653/up/" id="post-17653-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-17653-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/17653/down/" id="post-17653-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/17653/" rel="nofollow" title="Harry Wood has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The cause of this warning is that some of your <em>input</em> data lacks metadata, and therefore the output data does, too. A clearer, but rather long, warning message would probably be: "WARNING! Some of your input data lacks metadata but you haven't specified omitmetadata=true which means that I am creating output partly with and partly without metadata! If you specified omitmetadata=true then at least my output would be consistent in not having any metadata."</p>
+<p>The reason that some of your input data lacks metadata is likely that you're using a planet file and there are still a couple objects in there that have last been edited by an anonymous user and therefore lack user information.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/17653/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Nov '12, 07:05</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/17653/">
+                edited
+                <strong>12 Nov '12, 07:06</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-17653">
+</div>
+<div class="comment-tools" id="comment-tools-17653">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-17653-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/17651/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="NjEkiH4mqPwBAPVojPKgQvDAaV6vmwSY"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

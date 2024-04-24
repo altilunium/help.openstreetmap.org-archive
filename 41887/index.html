@@ -1,0 +1,165 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/41887/error-permission-denied-for-relation-placex">ERROR:  permission denied for relation placex</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/41887/up/" id="post-41887-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-41887-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/41887/down/" id="post-41887-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/41887/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I imported planet data onto my CentOS machine, and when trying to use the Nominatim installation using curl:</p>
+<pre><code>curl 'http://localhost/nominatim/reverse?format=xml&amp;lat=-33.859728&amp;lon=151.227569&amp;zoom=18&amp;addressdetails=1&amp;debug=1'
+</code></pre>
+<p>I get a long debug message with the reoccuring:</p>
+<pre><code>ERROR:  permission denied for relation placex
+</code></pre>
+<p>During the installation process, I tried to alter role, and got a message saying that role "www-data_ does not exist:</p>
+<pre><code>bash-4.1$ psql -d nominatim -c 'ALTER USER "www-data" RENAME TO "apache"'
+ERROR:  role "www-data" does not exist
+</code></pre>
+<p>Could they be related? How do I solve the issue of permission for placex relation?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-relations" href="/tags/relations/" rel="tag" title="see questions tagged 'relations'">relations</a>
+<a class="post-tag tag-link-permission" href="/tags/permission/" rel="tag" title="see questions tagged 'permission'">permission</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>24 Mar '15, 18:53</strong>
+</p>
+<img alt="baekacaek's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/61de868d7785f30711497cecbdddf5f4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7476/baekacaek">baekacaek</a><br/>
+<span class="score" title="176 reputation points">176</span><span title="12 badges"><span class="badge1">●</span><span class="badgecount">12</span></span><span title="13 badges"><span class="silver">●</span><span class="badgecount">13</span></span><span title="17 badges"><span class="bronze">●</span><span class="badgecount">17</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="baekacaek has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-41887">
+</div>
+<div class="comment-tools" id="comment-tools-41887">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-41887-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/41887/error-permission-denied-for-relation-placex?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/41887/error-permission-denied-for-relation-placex?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/41887/error-permission-denied-for-relation-placex?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/41887/error-permission-denied-for-relation-placex?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="41894"></a>
+<div class="answer" id="answer-container-41894">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/41894/up/" id="post-41894-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-41894-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/41894/down/" id="post-41894-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Did you follow the instructions on <a href="http://wiki.openstreetmap.org/wiki/Nominatim/Installation,">http://wiki.openstreetmap.org/wiki/Nominatim/Installation,</a> namely where it says:</p>
+<pre><code>createuser -SDR www-data
+</code></pre>
+<p>?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/41894/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>24 Mar '15, 23:46</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-41894">
+<a name="41896"></a>
+<div class="comment" id="comment-41896">
+<div class="comment-score" id="post-41896-score"></div>
+<div class="comment-text"><p>Yes I made sure to run that command (because I forgot to at first).</p></div>
+<div class="comment-info" id="comment-41896-info">
+<span class="comment-age">(24 Mar '15, 23:59)</span>
+<a class="comment-user userinfo" href="/users/7476/baekacaek">baekacaek</a>
+</div>
+</div>
+<a name="41912"></a>
+<div class="comment" id="comment-41912">
+<div class="comment-score" id="post-41912-score"></div>
+<div class="comment-text"><p>Because the user didn't exist when the database was created all the grant commands will have failed.  You will need to go through and run them manually.  You can find them in tables.sql, an example would be:</p>
+<p>GRANT SELECT ON import_status TO "www-data" ;</p></div>
+<div class="comment-info" id="comment-41912-info">
+<span class="comment-age">(25 Mar '15, 13:37)</span>
+<a class="comment-user userinfo" href="/users/4/twain">twain</a>
+</div>
+</div>
+<a name="42156"></a>
+<div class="comment" id="comment-42156">
+<div class="comment-score" id="post-42156-score"></div>
+<div class="comment-text"><p>That could be the reason why. Could you guide me on how I could run it manually? I found the tables.sql file, but I'm not quite sure what I am supposed to do with it. Thanks</p></div>
+<div class="comment-info" id="comment-42156-info">
+<span class="comment-age">(06 Apr '15, 20:32)</span>
+<a class="comment-user userinfo" href="/users/7476/baekacaek">baekacaek</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-41894">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-41894-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/41887/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="12aV6I8lPGXhiJWBDp1BdEP3g0cTkQbW"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

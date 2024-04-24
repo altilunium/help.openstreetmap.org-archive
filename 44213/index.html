@@ -1,0 +1,187 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/44213/distance-matrix-api-and-plot-location">Distance matrix api and plot location</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44213/up/" id="post-44213-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44213-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/44213/down/" id="post-44213-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/44213/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi there,
+I am trying to find a way to map 100 addresses on the openstreetmap. I have list of 100 addresses on excel file and i want to locate them on openstreetmap. Is there API to get this done?</p>
+<p>Apart from this I want to calculate driving distance  between each of these locations and create a distance matrix of 100X100.</p>
+<p>Please advise me how this could be achieved?</p>
+<p>hanks,
+Ashnav</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-api" href="/tags/api/" rel="tag" title="see questions tagged 'api'">api</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Jul '15, 00:26</strong>
+</p>
+<img alt="Ashnav's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/09bd09f31c49d237d773a26f0dc3b88d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11235/ashnav">Ashnav</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Ashnav has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44213">
+</div>
+<div class="comment-tools" id="comment-tools-44213">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44213-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/44213/distance-matrix-api-and-plot-location?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/44213/distance-matrix-api-and-plot-location?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/44213/distance-matrix-api-and-plot-location?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/44213/distance-matrix-api-and-plot-location?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="44221"></a>
+<div class="answer" id="answer-container-44221">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44221/up/" id="post-44221-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44221-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/44221/down/" id="post-44221-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Please do not ask two questions in one.</p>
+<p>You can use umap: umap.openstreetmap.fr for your first task. You will need to geocode the addresses first if they do not already have coordinate associated with them. You can do the later with nominatim see: <a href="http://wiki.openstreetmap.org/wiki/Nominatim">http://wiki.openstreetmap.org/wiki/Nominatim</a></p>
+<p>OSRM has support for generating distance matrices see <a href="http://project-osrm.org/">http://project-osrm.org/</a> and <a href="https://github.com/Project-OSRM/osrm-backend/wiki/Server-api">https://github.com/Project-OSRM/osrm-backend/wiki/Server-api</a> </p>
+<p>Note: if you are using the public servers providing the above (instead of running them yourselve) you MUST conform to the respective acceptable use policies: <a href="http://wiki.openstreetmap.org/wiki/Acceptable_Use_Policy">http://wiki.openstreetmap.org/wiki/Acceptable_Use_Policy</a> and <a href="https://github.com/Project-OSRM/osrm-backend/wiki/Api-usage-policy">https://github.com/Project-OSRM/osrm-backend/wiki/Api-usage-policy</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/44221/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>16 Jul '15, 15:02</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/44221/">
+                edited
+                <strong>16 Jul '15, 15:03</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44221">
+</div>
+<div class="comment-tools" id="comment-tools-44221">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44221-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="44389"></a>
+<div class="answer" id="answer-container-44389">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44389/up/" id="post-44389-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44389-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/44389/down/" id="post-44389-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Cannot comment, still the second question was already asked and <a href="https://help.openstreetmap.org/questions/37861/distance-matrix-api">answered here</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/44389/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>23 Jul '15, 10:14</strong>
+</p>
+<img alt="peatar's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fec61c70a4cc98b1e84a5dfbde1e9a6e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10729/peatar">peatar</a><br/>
+<span class="score" title="351 reputation points">351</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="peatar has one accepted answer">8%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44389">
+</div>
+<div class="comment-tools" id="comment-tools-44389">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44389-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/44213/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="X8FZ4R3ZZy4AuflKldS8w9luuaS6JZ5D"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

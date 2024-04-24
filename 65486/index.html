@@ -1,0 +1,144 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/65486/missing-roads-with-osmosis">Missing roads with osmosis</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/65486/up/" id="post-65486-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-65486-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/65486/down/" id="post-65486-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/65486/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am currently trying to extract road networks from OpenStreetMap dumps downloaded on <a href="http://download.geofabrik.de/">Geofabrik</a>. I am using the following osmosis (version 0.45) command to extract roads:</p>
+<pre><code>osmosis \
+--rbf input.osm.pbf \
+--tf reject-relations \
+--tf accept-ways highway=motorway,motorway_link,trunk,trunk_link,primary,primary_link,secondary,secondary_link,tertiary,tertiary_link,unclassified,residential \
+--tf reject-ways highway=construction \
+--lp --wb output_roads.osm.pbf
+</code></pre>
+<p>This should return a file containing all car roads except service roads.</p>
+<p>However, some (and sometimes a lot of) roads are missing. I have tried this command on 3 input files:</p>
+<ul>
+<li>"Midi-Pyrénées" French region: the road network seems almost complete. The attribute table contains 72010 elements.</li>
+<li>all of France: a lot of roads are missing. The attribute table contains only 65803 elements (less than a single region). All types of highways are impacted: primary to residential. There is no any obvious pattern for the missing roads.</li>
+<li>all of Europe: almost all roads are missing. The attribute table contains 62092 elements (less than all of France...).</li>
+</ul>
+<p>I guess there is some limitation I am not aware of, either on the osmosis command or on the output file. What am I doing wrong here?</p>
+<p>This may be unrelated but I have tried using the <code>--used-node</code> option in order to reduce the size of the output files, but this always generates an error (<code>org.openstreetmap.osmosis.core.OsmosisRuntimeException: Unable to create object stream writing to temporary file null.</code>). I have no idea why.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-road" href="/tags/road/" rel="tag" title="see questions tagged 'road'">road</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Aug '18, 13:23</strong>
+</p>
+<img alt="ArMoraer's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/56d3ea5daee43229ad00fc628fe1b624?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15557/armoraer">ArMoraer</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ArMoraer has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-65486">
+</div>
+<div class="comment-tools" id="comment-tools-65486">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-65486-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/65486/missing-roads-with-osmosis?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/65486/missing-roads-with-osmosis?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/65486/missing-roads-with-osmosis?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/65486/missing-roads-with-osmosis?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="71731"></a>
+<div class="answer" id="answer-container-71731">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/71731/up/" id="post-71731-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-71731-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/71731/down/" id="post-71731-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hello,
+Im back to this post because I have exactly the same issue with osmosis...</p>
+<p>I looked at this post :
+<a href="https://gis.stackexchange.com/questions/293348/missing-roads-from-openstreetmap-data-with-osmosis">https://gis.stackexchange.com/questions/293348/missing-roads-from-openstreetmap-data-with-osmosis</a></p>
+<p>So its seems that there is a limitation to 65356 elements.</p>
+<p>Did you manage to download all the roads you wanted ? and if so, how ?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/71731/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Nov '19, 15:18</strong>
+</p>
+<img alt="Ludixx's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9c06fcfeddbfcb3c387af39e460cf56e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17467/ludixx">Ludixx</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Ludixx has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-71731">
+</div>
+<div class="comment-tools" id="comment-tools-71731">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-71731-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/65486/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="qEaovSQlFlF4PJt3jitWPcplchEZrSjU"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,271 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/76704/extracted-csv-only-contains-3-streets">Extracted csv only contains 3 streets</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/76704/up/" id="post-76704-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-76704-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/76704/down/" id="post-76704-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/76704/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm trying to extract the street name of a city from an osm file (converted from pbf) that I got from geofabrik. I used osmfilter and osmconvert for the extraction, using this command:</p>
+<pre><code>osmfilter indonesia-latest.osm --keep="addr:country= and addr:city=Bandung and addr:street=" --ignore-dependencies --drop-relations --drop-ways |osmconvert64 - --csv="<a href="https://help.openstreetmap.org/users/17706/onamediterraneancanggu">@oname</a> <a href="https://help.openstreetmap.org/users/260/idoneus">@id</a> <a href="https://help.openstreetmap.org/users/1350/longestaugust">@lon</a> <a href="https://help.openstreetmap.org/users/5110/latroc">@lat</a> addr:country addr:city addr:street" &gt; street.csv
+</code></pre>
+<p>this is the result:</p>
+<pre><code>"node   2756741420  107.6338734 -6.9156038  ID  Bandung Jalan Jenderal Ahmad Yani"
+"node   3809732416  107.6065560 -6.9319114  ID  Bandung Jalan Muhammad Toha"
+"node   6003232946  107.5775460 -6.9723688  ID  Bandung Jalan Sukamenak"
+</code></pre>
+<p>The problem is, those 3 streets are the only ones extracted in the csv.
+Is there something wrong with my command or is it the source data?
+Are there any alternative ways for extraction?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-extraction" href="/tags/extraction/" rel="tag" title="see questions tagged 'extraction'">extraction</a>
+<a class="post-tag tag-link-osmconvert" href="/tags/osmconvert/" rel="tag" title="see questions tagged 'osmconvert'">osmconvert</a>
+<a class="post-tag tag-link-csv" href="/tags/csv/" rel="tag" title="see questions tagged 'csv'">csv</a>
+<a class="post-tag tag-link-osmfilter" href="/tags/osmfilter/" rel="tag" title="see questions tagged 'osmfilter'">osmfilter</a>
+<a class="post-tag tag-link-streetnames" href="/tags/streetnames/" rel="tag" title="see questions tagged 'streetnames'">streetnames</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>19 Sep '20, 03:21</strong>
+</p>
+<img alt="ceeslt's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/71f61dbbe1a477635bed39e3a11cb8c2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18996/ceeslt">ceeslt</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ceeslt has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-76704">
+<a name="76708"></a>
+<div class="comment" id="comment-76708">
+<div class="comment-score" id="post-76708-score">2</div>
+<div class="comment-text"><p>What data are you hoping to obtain?  The OSM information for the street itself?  The OSM information for things which have an address on that street?  Something else?</p></div>
+<div class="comment-info" id="comment-76708-info">
+<span class="comment-age">(19 Sep '20, 12:12)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="77003"></a>
+<div class="comment" id="comment-77003">
+<div class="comment-score" id="post-77003-score">1</div>
+<div class="comment-text"><p>I was just looking for the names of the street. Sorry I missed your comment all this time.</p></div>
+<div class="comment-info" id="comment-77003-info">
+<span class="comment-age">(08 Oct '20, 10:36)</span>
+<a class="comment-user userinfo" href="/users/18996/ceeslt">ceeslt</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-76704">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-76704-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/76704/extracted-csv-only-contains-3-streets?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/76704/extracted-csv-only-contains-3-streets?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/76704/extracted-csv-only-contains-3-streets?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/76704/extracted-csv-only-contains-3-streets?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="76706"></a>
+<div class="answer" id="answer-container-76706">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/76706/up/" id="post-76706-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-76706-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/76706/down/" id="post-76706-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I know very little about osmosis, but from a data perspective:</p>
+<p>You appear to be searching for addresses rather than the names of the streets themselves. In most parts of the world OSM has far better coverage of street names than they do addresses. </p>
+<p>Street names are usually recorded as <code>name=*</code> on <a href="https://wiki.openstreetmap.org/wiki/Way">ways</a> representing the street. Streets, tracks and paths all have the same <code>highway</code> key in openstreetmap, see <a href="https://wiki.openstreetmap.org/wiki/Key:highway">this page</a> for a list of values. If your osm file covers more area than you are interested in you will need to get osmosis to only look within that subregion (I can't help with this except to direct you <a href="https://wiki.openstreetmap.org/wiki/Osmosis/Detailed_Usage_0.48#Area_Filtering_Tasks">here</a>). </p>
+<p>If you actually want the list of streets that have at least one address then you are being a little too restrictive in your query. The <code>addr:country=</code> tag is often omitted entirely as this can usually be inferred from the border. In regions with higher detail the addr:city field can also be left off for the same reason. If you follow this approach you should also look at ways and relations as whole buildings or properties may be tagged with addresses instead of just tagging a POI node within the area. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/76706/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Sep '20, 12:00</strong>
+</p>
+<img alt="InsertUser's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ec8a0cf213f9797ad1c1ae2c28c2332d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4426/insertuser">InsertUser</a><br/>
+<span class="score" title="11005 reputation points"><span class="">11.0k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="69 badges"><span class="silver">●</span><span class="badgecount">69</span></span><span title="185 badges"><span class="bronze">●</span><span class="badgecount">185</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="InsertUser has 73 accepted answers">19%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-76706">
+<a name="76913"></a>
+<div class="comment" id="comment-76913">
+<div class="comment-score" id="post-76913-score"></div>
+<div class="comment-text"><p>how do you call the name of the street? I tried </p>
+<p>osmfilter indonesia-latest.osm --keep="addr:city=Bandung and addr:street amd name= highway=*" |osmconvert64 - --csv="<a href="https://help.openstreetmap.org/users/260/idoneus">@id</a> <a href="https://help.openstreetmap.org/users/7928/namer-with-roombam">@name</a>" --csv-separator="|" &gt; streetlist.csv</p>
+<p>but it doesn't seem to work.
+(sorry, I'm new with these)</p></div>
+<div class="comment-info" id="comment-76913-info">
+<span class="comment-age">(01 Oct '20, 12:40)</span>
+<a class="comment-user userinfo" href="/users/18996/ceeslt">ceeslt</a>
+</div>
+</div>
+<a name="76916"></a>
+<div class="comment" id="comment-76916">
+<div class="comment-score" id="post-76916-score">2</div>
+<div class="comment-text"><p>You might benefit from looking at examples of the underlying data and considering whether your query would find them.</p>
+<p>Here are the details of a street (or rather a segment of a street) in Bandung:
+<a href="https://www.openstreetmap.org/way/319194433">https://www.openstreetmap.org/way/319194433</a></p>
+<p>If you look at the tags, you can see that it is mapped as highway=primary, and the name is in the "name=" field. There are no addr: tags, which is normal - we would expect addr: tags to apply to buildings and other things located on the street, not the street itself (like this hotel for example: <a href="https://www.openstreetmap.org/way/372063342#map=19/-6.92049/107.60480).">https://www.openstreetmap.org/way/372063342#map=19/-6.92049/107.60480).</a> So if you are looking for highway= objects, you should not have any addr: tags in the query. You would need to restrict the are to Bandung in a different way, but I don't know enough about the tools you are using to say how.</p></div>
+<div class="comment-info" id="comment-76916-info">
+<span class="comment-age">(01 Oct '20, 16:38)</span>
+<a class="comment-user userinfo" href="/users/14272/alan_gr">alan_gr</a>
+</div>
+</div>
+<a name="76955"></a>
+<div class="comment" id="comment-76955">
+<div class="comment-score" id="post-76955-score"></div>
+<div class="comment-text"><p>Thank you, now I can understand what I'm looking for data-wise, though since there doesn't seem to be a property that signifies the region(city, province, etc) of the street I'm still looking for ways to filter it.</p></div>
+<div class="comment-info" id="comment-76955-info">
+<span class="comment-age">(05 Oct '20, 04:38)</span>
+<a class="comment-user userinfo" href="/users/18996/ceeslt">ceeslt</a>
+</div>
+</div>
+<a name="76998"></a>
+<div class="comment" id="comment-76998">
+<div class="comment-score" id="post-76998-score"></div>
+<div class="comment-text"><p>Ok, I managed to slice the osm file to contain just the city I'm extracting so there's no need for the addr tag, but I still can't call the name tag. I've tried <a href="https://help.openstreetmap.org/users/7928/namer-with-roombam">@name</a>, name, name=*. and highway:name but still can't get anything.</p></div>
+<div class="comment-info" id="comment-76998-info">
+<span class="comment-age">(08 Oct '20, 02:15)</span>
+<a class="comment-user userinfo" href="/users/18996/ceeslt">ceeslt</a>
+</div>
+</div>
+<a name="76999"></a>
+<div class="comment" id="comment-76999">
+<div class="comment-score" id="post-76999-score"></div>
+<div class="comment-text"><p>I am not sure what you mean by "call the name tag". Do your mean you want to filter by name? I am not clear why, as I thought you wanted all names on highway= objects? When you say you can't get anything, do you mean that nothing is written to the csv file, or that the name tag is missing?</p></div>
+<div class="comment-info" id="comment-76999-info">
+<span class="comment-age">(08 Oct '20, 08:05)</span>
+<a class="comment-user userinfo" href="/users/14272/alan_gr">alan_gr</a>
+</div>
+</div>
+<a name="77001"></a>
+<div class="comment not_top_scorer" id="comment-77001">
+<div class="comment-score" id="post-77001-score"></div>
+<div class="comment-text"><p>Sorry for my wording, I meant extract the name tag of the streets to write in the csv output, to produce a list of street names. So far the things I've tried have only returned empty results.</p></div>
+<div class="comment-info" id="comment-77001-info">
+<span class="comment-age">(08 Oct '20, 08:29)</span>
+<a class="comment-user userinfo" href="/users/18996/ceeslt">ceeslt</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-76706">
+<span class="comments-showing">
+            showing 5 of 6
+        </span>
+<a class="show-all-comments-link" href="#">show 1 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-76706-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="77002"></a>
+<div class="answer answered-by-owner" id="answer-container-77002">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/77002/up/" id="post-77002-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-77002-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/77002/down/" id="post-77002-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Nevermind, I did it using</p>
+<p>osmfilter bandung.osm --keep="highway=*" |osmconvert64 - --csv="<a href="https://help.openstreetmap.org/users/260/idoneus">@id</a> name" --csv-separator="|" &gt; jalan.csv</p>
+<p>THanks for explaining how osm works!</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/77002/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Oct '20, 10:34</strong>
+</p>
+<img alt="ceeslt's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/71f61dbbe1a477635bed39e3a11cb8c2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18996/ceeslt">ceeslt</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ceeslt has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-77002">
+</div>
+<div class="comment-tools" id="comment-tools-77002">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-77002-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/76704/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="MeBDC40e3blo1R7CZOYj8AzX2TZ9h6Vj"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

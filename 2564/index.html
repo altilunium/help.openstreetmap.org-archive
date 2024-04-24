@@ -1,0 +1,209 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/2564/how-do-i-create-a-node-from-javascript">How do I create a node from javascript?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/2564/up/" id="post-2564-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-2564-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/2564/down/" id="post-2564-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/2564/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello community,</p>
+<p>I am trying to create POI nodes from javascript using AJAX requests (via a proxy) to talk to the API. My code to create a node looks like this:</p>
+<pre><code>function osmNode(action, data){
+
+    var url =  host + "api/node.php";
+
+    var params = new Object();
+    params["action"] = action;
+    params["changeset_id"] = changeSetId;
+    params["node_id"] = nodeId;
+    params["comment"] = commentId;
+    params["userName"] = userName;
+    params["userPassword"] = pwd;
+    params["data"] = data;
+
+    document.getElementById("saving").style.visibility = "visible";
+
+    $.ajax({
+
+        url: url,
+        type: "GET",
+        data: params,
+        success: function(reqCode){
+
+            var response = reqCode;
+            switch (action){
+                case "create":
+                    nodeId = trim(response);
+                case "move":
+                case "update":
+                case "delete":
+                    updateOSM();
+                    break;
+            }
+            document.getElementById("saving").style.visibility = "collapse";
+            return "0";
+        }
+    });
+}
+</code></pre>
+<p>I call this with an action of "create" and the following XML for the node:</p>
+<pre><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;osm version="0.6" generator="OpenStreetMap server"&gt; 
+&lt;node id="-1" changeset="8151" version="null" lat="51.97096" lon="7.70825"&gt;
+&lt;tag k="osmeditor:name" v="Foo"/&gt;
+&lt;tag k="osmeditor:note" v="Bar"/&gt;
+&lt;/node&gt;
+&lt;/osm&gt;
+</code></pre>
+<p>and it talks to my proxy which in turn talks to the API but instead of getting a new node ID back I get a message which reads:</p>
+<pre><code>&lt;/osm&gt;. Fatal error: String not started expecting ' or " at :1.
+</code></pre>
+<p>Do you know this error ? Can anyone help ?</p>
+<p>If you need to see the site, it is at <a href="http://www.uni-pages.de/projects/osm/index.php">http://www.uni-pages.de/projects/osm/index.php</a> and it is talking to the api06 test API.</p>
+<p>greets Christian</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-node" href="/tags/node/" rel="tag" title="see questions tagged 'node'">node</a>
+<a class="post-tag tag-link-create" href="/tags/create/" rel="tag" title="see questions tagged 'create'">create</a>
+<a class="post-tag tag-link-javascript" href="/tags/javascript/" rel="tag" title="see questions tagged 'javascript'">javascript</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>30 Jan '11, 16:36</strong>
+</p>
+<img alt="paule85's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/236087acc7b2c4efe8f9810f454b9ae1?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/768/paule85">paule85</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="paule85 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/2564/">
+                edited
+                <strong>02 Feb '11, 00:57</strong>
+</a>
+</p>
+<img alt="TomH's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/dee41dcf0aa0c08cf6b0eb935b7504b7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1/tomh">TomH ♦♦</a><br/>
+<span class="score" title="3325 reputation points"><span class="">3.3k</span></span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="39 badges"><span class="silver">●</span><span class="badgecount">39</span></span><span title="43 badges"><span class="bronze">●</span><span class="badgecount">43</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-2564">
+</div>
+<div class="comment-tools" id="comment-tools-2564">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-2564-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/2564/how-do-i-create-a-node-from-javascript?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/2564/how-do-i-create-a-node-from-javascript?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/2564/how-do-i-create-a-node-from-javascript?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/2564/how-do-i-create-a-node-from-javascript?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="2670"></a>
+<div class="answer" id="answer-container-2670">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/2670/up/" id="post-2670-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-2670-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/2670/down/" id="post-2670-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I have stepped through your javascript in Firebug and traced the network traffic from my browser to your proxy, and from your proxy to the dev server and the problem seems to be with your proxy script.</p>
+<p>Although the XML which leaves the browser looks like what you showed in the question, what arrives at the server looks like this:</p>
+<pre><code>&lt;?xml version=\'1.0\' encoding=\'UTF-8\'?&gt;
+&lt;osm version=\"0.6\" generator=\"OpenStreetMap server\"&gt; 
+&lt;node id=\"-1\" changeset=\"8151\" version=\"null\" lat=\"51.97096\" lon=\"7.70825\"&gt;
+&lt;tag k=\"osmeditor:name\" v=\"Foo\"/&gt;
+&lt;tag k=\"osmeditor:note\" v=\"Bar\"/&gt;
+&lt;/node&gt;
+&lt;/osm&gt;
+</code></pre>
+<p>As you can see, your proxy has escaped all the quotes. That causes the XML to fail to parse and the server to return this error:</p>
+<pre><code>Cannot parse valid node from xml string &lt;?xml version=\'1.0\' encoding=\'UTF-8\'?&gt;
+&lt;osm version=\"0.6\" generator=\"OpenStreetMap server\"&gt; 
+&lt;node id=\"-1\" changeset=\"8151\" version=\"null\" lat=\"51.97096\" lon=\"7.70825\"&gt;
+&lt;tag k=\"osmeditor:name\" v=\"Foo\"/&gt;
+&lt;tag k=\"osmeditor:note\" v=\"Bar\"/&gt;
+&lt;/node&gt;
+&lt;/osm&gt;. Fatal error: String not started expecting ' or " at :1.
+</code></pre>
+<p>Unfortunately it looks like your proxy only returns the last line of that to the browser, hence the confusing error message in the browser.</p>
+<p>I would also add that passing the XML as a URL parameter to the proxy is not really a good idea - it would be better to use POST and pass it in the body. Indeed as creating a node is not idempotent you should be using POST rather than GET for that request anyway.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/2670/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>02 Feb '11, 01:01</strong>
+</p>
+<img alt="TomH's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/dee41dcf0aa0c08cf6b0eb935b7504b7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1/tomh">TomH ♦♦</a><br/>
+<span class="score" title="3325 reputation points"><span class="">3.3k</span></span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="39 badges"><span class="silver">●</span><span class="badgecount">39</span></span><span title="43 badges"><span class="bronze">●</span><span class="badgecount">43</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="TomH has 9 accepted answers">20%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-2670">
+</div>
+<div class="comment-tools" id="comment-tools-2670">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-2670-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/2564/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="NOg9QC37oProFs6sedBHd6YWDR5Np2Sb"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

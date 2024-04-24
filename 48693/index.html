@@ -1,0 +1,236 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/48693/downloading-and-parsing-osm-graph-data">Downloading and parsing OSM graph data</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48693/up/" id="post-48693-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48693-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/48693/down/" id="post-48693-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/48693/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am a bit lost and I am hoping that someone will help me start and hopefully help others as well. My requirements are pretty straightforward. I want to download raw data for the:</p>
+<ul>
+<li>Latitude </li>
+<li>Longitude</li>
+<li>How are nodes connected in the graph</li>
+<li>Distance between the connected nodes</li>
+</ul>
+<p>For example:</p>
+<pre><code>nodeA  nodeB  Latitude Longitude Distance(meters)
+1566   1602   52.29323 -23.23252 125.256
+1661   1783   26.23452 -21.24152 261.45
+...
+</code></pre>
+<p>For this I understand that I first have to download a .osm file and then read the data with a parser. However, that just seems really vague to me. The documentation seems a bit confusing and not straightforward to me. </p>
+<p>So I wanna ask, how can I download the data mentioned above for a specific country or city ? (I want to download the data of Athens).</p>
+<p>Then the next question is what file format will those data be in ? and how will I extract the above information from that file ? </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-export" href="/tags/export/" rel="tag" title="see questions tagged 'export'">export</a>
+<a class="post-tag tag-link-extract" href="/tags/extract/" rel="tag" title="see questions tagged 'extract'">extract</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Mar '16, 02:42</strong>
+</p>
+<img alt="shiro900's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/029b463e5af8b5dc5d6094a7a4686c6a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12082/shiro900">shiro900</a><br/>
+<span class="score" title="54 reputation points">54</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="9 badges"><span class="bronze">●</span><span class="badgecount">9</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="shiro900 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48693">
+</div>
+<div class="comment-tools" id="comment-tools-48693">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48693-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/48693/downloading-and-parsing-osm-graph-data?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/48693/downloading-and-parsing-osm-graph-data?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/48693/downloading-and-parsing-osm-graph-data?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/48693/downloading-and-parsing-osm-graph-data?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="48694"></a>
+<div class="answer" id="answer-container-48694">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48694/up/" id="post-48694-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48694-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/48694/down/" id="post-48694-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can get city specific datasets e.g. at <a href="https://mapzen.com/data/metro-extracts/">mapzen</a>, e.g. <a href="https://s3.amazonaws.com/metro-extracts.mapzen.com/athens_greece.osm.bz2">OSM XML format for Athens</a>.</p>
+<p>There you have all the nodes of the city. Read about the <a href="http://wiki.openstreetmap.org/wiki/OSM_XML">OSM XML file format</a>.</p>
+<p>Write a script in your favourite programming language to parse this, extract the nodes that you need, calculate the distance and write out the list format (CSV, whatever) that you need.</p>
+<p>For geographical distance calculations, you need an appropriate geo library, e.g. <a href="https://github.com/OSGeo/proj.4/wiki">Proj</a>.
+I can’t help you with that, it’s over my head.</p>
+<p>Another approach might be feeding the data into a geo enabled database like <a href="http://www.postgis.net">PostGIS</a> und use its functions.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/48694/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>16 Mar '16, 03:50</strong>
+</p>
+<img alt="Hraban's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/5a39f1335b6eff433673ed987859fb24?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10273/hraban">Hraban</a><br/>
+<span class="score" title="186 reputation points">186</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="6 badges"><span class="silver">●</span><span class="badgecount">6</span></span><span title="10 badges"><span class="bronze">●</span><span class="badgecount">10</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Hraban has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/48694/">
+                edited
+                <strong>16 Mar '16, 03:50</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48694">
+<a name="48695"></a>
+<div class="comment" id="comment-48695">
+<div class="comment-score" id="post-48695-score"></div>
+<div class="comment-text"><p>For topology - whether nodes are connected by a line or not - you will have to evaluate the "way" objects as well. For distance in meters, use your favourite search engine to dig up the <em>Haversine Formula</em>.</p></div>
+<div class="comment-info" id="comment-48695-info">
+<span class="comment-age">(16 Mar '16, 06:40)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="48697"></a>
+<div class="comment" id="comment-48697">
+<div class="comment-score" id="post-48697-score"></div>
+<div class="comment-text"><p>@FrederikRamm I am just surprised that there is no official library or instructions with examples on how to do that.</p></div>
+<div class="comment-info" id="comment-48697-info">
+<span class="comment-age">(16 Mar '16, 06:57)</span>
+<a class="comment-user userinfo" href="/users/12082/shiro900">shiro900</a>
+</div>
+</div>
+<a name="48699"></a>
+<div class="comment" id="comment-48699">
+<div class="comment-score" id="post-48699-score">1</div>
+<div class="comment-text"><p>There's tons of open source routing engines (routino, osrm, graphhopper, osm2pgrouting, ...) where you can look at how it's done. Extracting a graph from OSM data is a very specific requirement that rarely occurs outside of routing engines. There's a couple good general OSM processing libraries (eg Osmium and its Javacript and Python bindings) but that only helps you with parsing, you'll still have to build the kind of graph you want yourself.</p></div>
+<div class="comment-info" id="comment-48699-info">
+<span class="comment-age">(16 Mar '16, 07:51)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="48709"></a>
+<div class="comment" id="comment-48709">
+<div class="comment-score" id="post-48709-score"></div>
+<div class="comment-text"><p>@FederikRamm I was trying to install <code>imposm</code> and I got <a href="https://github.com/omniscale/imposm-parser/issues/18">this</a> error which I posted on their github. Do you by any chance know what is happening ?</p></div>
+<div class="comment-info" id="comment-48709-info">
+<span class="comment-age">(16 Mar '16, 15:05)</span>
+<a class="comment-user userinfo" href="/users/12082/shiro900">shiro900</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-48694">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48694-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="56531"></a>
+<div class="answer" id="answer-container-56531">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/56531/up/" id="post-56531-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-56531-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/56531/down/" id="post-56531-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Sorry I'm little bit late, but you can use this software </p>
+<p><a href="https://github.com/rovaniemi/osm-graph-parser">https://github.com/rovaniemi/osm-graph-parser</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/56531/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Jun '17, 13:41</strong>
+</p>
+<img alt="vanhapanda's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/254b7f3976f5e610bd9d2bf9c2d08075?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13808/vanhapanda">vanhapanda</a><br/>
+<span class="score" title="1 reputation points">1</span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="vanhapanda has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-56531">
+</div>
+<div class="comment-tools" id="comment-tools-56531">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-56531-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/48693/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="I4xCZp6MYnK2KqgcrTWxrtQxPcifM5cU"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

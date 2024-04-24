@@ -1,0 +1,153 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/15633/postgres-db-sql-calls-resulting-in-inconsistent-results">Postgres DB SQL calls resulting in inconsistent results</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/15633/up/" id="post-15633-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-15633-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/15633/down/" id="post-15633-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/15633/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello OSM,</p>
+<p>As mentioned <a href="http://help.openstreetmap.org/questions/15496/sql-statement-to-get-all-of-the-xy-pairs-from-a-way">here</a>, I have an extract of a recent planet file created with Osmosis (with the command line arguement that keeps ways even if they extend outside the cut polygon). I dumped the extract into a Postgres database using the snapshot schema. I then have a Java program that calls the following two SQL statements in two nested loops to draw the data.</p>
+<pre><code>OUTER LOOP BEGIN
+     "SELECT nodes, id from public.ways LIMIT 1 OFFSET" + val
+     INNER LOOP BEGIN
+          "SELECT ST_X(geom) as x, ST_Y(geom) as y from public.nodes WHERE id=" + nodes[i] + "LIMIT 1"
+     INNER LOOP END
+     val++
+OUTER LOOP END
+</code></pre>
+<p>When I run this, if a node belonging to a given way is not found, my program fires off a message to the log and keeps chugging. I have noticed that these logs are showing up in a VERY inconsistent fashion. To demonstrate this, I took the outer loop of my program and clamped it to only loop 1000 times (IE draw 1000 ways) and ran the program twice, which should yield the same results. This is what I got...</p>
+<p><img alt="alt text" src="http://help.openstreetmap.org/upfiles/osmwtf.jpg"/></p>
+<p>Now please understand that I already know that:</p>
+<p>A. Planet files dumps take hours so SOME nodes will be missing unless you grab a daily build and use Osmosis to update your planet file...</p>
+<p>B. My extract included ways that crossed my cut polygon, for my needs I require the entire road system to be intact.</p>
+<p>But this is different, this is one isolated database and one program asking it for the same exact data, and I'm getting inconsistencies between runs which is driving me mad! I don't understand it at all. Do I need to order this data by the id in order to get consistent results? Is this a Postgres "thing" or should I be looking for some kind of illusive bug in my program (which is pretty strait-forward)? Any help would be vastly appreciated.</p>
+<p>Thanks, -Cody</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-postgres" href="/tags/postgres/" rel="tag" title="see questions tagged 'postgres'">postgres</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+<a class="post-tag tag-link-sql" href="/tags/sql/" rel="tag" title="see questions tagged 'sql'">sql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>29 Aug '12, 10:18</strong>
+</p>
+<img alt="Smartkid's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/aa9f28cc449a272dbd654e8edf660877?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/4007/smartkid">Smartkid</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Smartkid has no accepted answers">0%</span>
+</p>
+</img></div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/15633/">
+                edited
+                <strong>29 Aug '12, 10:27</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-15633">
+</div>
+<div class="comment-tools" id="comment-tools-15633">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-15633-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/15633/postgres-db-sql-calls-resulting-in-inconsistent-results?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/15633/postgres-db-sql-calls-resulting-in-inconsistent-results?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/15633/postgres-db-sql-calls-resulting-in-inconsistent-results?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/15633/postgres-db-sql-calls-resulting-in-inconsistent-results?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="15662"></a>
+<div class="answer answered-by-owner" id="answer-container-15662">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/15662/up/" id="post-15662-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-15662-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/15662/down/" id="post-15662-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I figured it out, for anyone who stumbles upon this in the future I'm going to break down the problem.</p>
+<p>I made a dumb noob mistake by writing a function that executed my SQL statement for me and returned a ResultSet which I then operated on in my main loop. Problem is this little line found in the JavaDocs on <a href="http://docs.oracle.com/javase/1.5.0/docs/api/java/sql/ResultSet.html">ResultSet</a>...</p>
+<pre><code>A ResultSet object is automatically closed when the Statement object that generated it is closed, re-executed, or used to retrieve the next result from a sequence of multiple results.
+</code></pre>
+<p>With that alone the problem becomes obvious, my function is closing - leaving the SQL statement object unreferenced and thus a target for garbage collection. Most of the time the garbage collection wasn't getting to the statement object in time to cause problems, but sometimes it was able to which resulted in my rs.getDouble statements throwing seemingly random SQL Exceptions, which registered in my program as a missing point (because with OSM we have to assume that some nodes are in fact missing). </p>
+<p>Case closed, hope this helps someone out there eventually... -Cody</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/15662/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>29 Aug '12, 20:32</strong>
+</p>
+<img alt="Smartkid's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/aa9f28cc449a272dbd654e8edf660877?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4007/smartkid">Smartkid</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Smartkid has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-15662">
+</div>
+<div class="comment-tools" id="comment-tools-15662">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-15662-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/15633/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="w1hOoPSRLYeddvcz04iT2xTrB0v9o8Gs"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

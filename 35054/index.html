@@ -1,0 +1,161 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/35054/island-still-not-appearing">Island still not appearing</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/35054/up/" id="post-35054-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-35054-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/35054/down/" id="post-35054-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/35054/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>On this tile set:  <a href="https://www.openstreetmap.org/#map=17/41.36570/-75.29994">https://www.openstreetmap.org/#map=17/41.36570/-75.29994</a></p>
+<p>There are 4 islands in this lake.  All are experiencing the same issue -- they do not appear on the standard rendering.  I'm trying to fix this -- focusing on Cairns Island in this example.</p>
+<p>When "map data" is enabled, you can clearly see the land mass that represents the island.  I've edited this according to the guidance I've seen here and on the wiki yet I cannot seem to get the land mass to appear on the rendering.  I was able to get the "label" to appear (separate from the marker label, which is why there are now two).</p>
+<p>Interestingly, the land mass for the island <em>does</em> appear on the Humanitarian layer, but none of the others.</p>
+<p>Can someone please point out what is wrong with the way this island is configured?  I'm very new to this, so please bear with me...</p>
+<p>Thanks</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-island" href="/tags/island/" rel="tag" title="see questions tagged 'island'">island</a>
+<a class="post-tag tag-link-land" href="/tags/land/" rel="tag" title="see questions tagged 'land'">land</a>
+<a class="post-tag tag-link-mass" href="/tags/mass/" rel="tag" title="see questions tagged 'mass'">mass</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Jul '14, 15:31</strong>
+</p>
+<img alt="robny's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/44529d273be75325f61bd2efdd55ef9a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9293/robny">robny</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="robny has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/35054/">
+                edited
+                <strong>21 Jul '14, 21:45</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-35054">
+</div>
+<div class="comment-tools" id="comment-tools-35054">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-35054-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/35054/island-still-not-appearing?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/35054/island-still-not-appearing?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/35054/island-still-not-appearing?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/35054/island-still-not-appearing?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="35056"></a>
+<div class="answer accepted-answer" id="answer-container-35056">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/35056/up/" id="post-35056-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-35056-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/35056/down/" id="post-35056-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/35056/" rel="nofollow" title="robny has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You might want to remove natural=water from the <a href="https://www.openstreetmap.org/way/44449351">outer way</a>. </p>
+<p>Edit: Sorry for brief answer. Was busy when I typed it. The multipolygon relation is defined as being a reservoir with holes, but with the extra tags on the outer way it is likely that this is <em>also</em> being seen as an area of water without holes, so rendering over the island in this case, depending perhaps on which features are rendered on which layers in particular renderings. Generally water will render on top of land I would think (oceans are handled differently).</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/35056/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Jul '14, 16:33</strong>
+</p>
+<img alt="EdLoach's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f25a8392e12ed696b16554b3d08e4e2b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/339/edloach">EdLoach ♦</a><br/>
+<span class="score" title="19478 reputation points"><span class="">19.5k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="156 badges"><span class="silver">●</span><span class="badgecount">156</span></span><span title="280 badges"><span class="bronze">●</span><span class="badgecount">280</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="EdLoach has 93 accepted answers">22%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/35056/">
+                edited
+                <strong>21 Jul '14, 16:36</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-35056">
+<a name="35066"></a>
+<div class="comment" id="comment-35066">
+<div class="comment-score" id="post-35066-score">1</div>
+<div class="comment-text"><p>Thank you for the quick reply.  This worked, although I still need to look more deeply into "why" it worked.  As you pointed out, I need to better understand the relationship between:</p>
+<p><a href="https://www.openstreetmap.org/way/44449351">https://www.openstreetmap.org/way/44449351</a>
+and:
+<a href="https://www.openstreetmap.org/relation/326780">https://www.openstreetmap.org/relation/326780</a></p>
+<p>Regardless, it seems to be rendering better now -- which is good for all.</p></div>
+<div class="comment-info" id="comment-35066-info">
+<span class="comment-age">(21 Jul '14, 19:36)</span>
+<a class="comment-user userinfo" href="/users/9293/robny">robny</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-35056">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-35056-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/35054/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="qAD3iMZReShY7Xq8cPDYBTcnoBrQGXwn"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

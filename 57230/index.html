@@ -1,0 +1,189 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/57230/how-to-extract-node-reference-values-within-a-way-from-osm-file">How to extract node reference values within a way from osm file</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/57230/up/" id="post-57230-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-57230-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/57230/down/" id="post-57230-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/57230/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>I need to have order of nodes within a way. For instance:</p>
+<pre><code>&lt;way id="10053349"&gt;
+&lt;nd ref="4534884733"/&gt;
+&lt;nd ref="4534884725"/&gt;
+&lt;nd ref="4534884748"/&gt;
+&lt;nd ref="82608659"/&gt;
+&lt;nd ref="82608658"/&gt;
+&lt;nd ref="639108039"/&gt;
+&lt;nd ref="3451083060"/&gt;
+&lt;nd ref="345553449"/&gt;
+&lt;nd ref="345553447"/&gt;
+&lt;nd ref="345553431"/&gt;
+&lt;nd ref="3451083057"/&gt;
+&lt;nd ref="345553432"/&gt;
+&lt;nd ref="345553433"/&gt;
+&lt;nd ref="345553434"/&gt;
+&lt;nd ref="345553435"/&gt;
+&lt;nd ref="3451083068"/&gt;
+&lt;nd ref="345553436"/&gt;
+&lt;nd ref="29564147"/&gt;
+&lt;nd ref="345553437"/&gt;
+&lt;nd ref="345553438"/&gt;
+&lt;nd ref="3451083079"/&gt;
+&lt;nd ref="345553439"/&gt;
+&lt;nd ref="3451083082"/&gt;
+&lt;nd ref="345553440"/&gt;
+&lt;nd ref="1326631485"/&gt;
+&lt;nd ref="82608663"/&gt;
+&lt;nd ref="82608662"/&gt;
+&lt;nd ref="4534884733"/&gt;
+&lt;tag k="addr:housenumber" v="21"/&gt;
+&lt;tag k="addr:street" v="Arcisstraße"/&gt;
+&lt;tag k="amenity" v="university"/&gt;
+&lt;tag k="building" v="yes"/&gt;
+&lt;tag k="name" v="1"/&gt;
+&lt;tag k="wheelchair" v="yes"/&gt;
+</code></pre>
+<p>&lt;/way&gt;</p>
+<p>I need to retrieve only a list like following from above code:</p>
+<p>4534884733
+4534884725
+4534884748
+82608659
+82608658
+639108039
+...</p>
+<p>I tried to use osmfilter and osmconvert, but could not find any command.
+Any suggestions? I need this for an application where the order of latitudes and longitudes is important.</p>
+<p>Thanks</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osmfilter" href="/tags/osmfilter/" rel="tag" title="see questions tagged 'osmfilter'">osmfilter</a>
+<a class="post-tag tag-link-osmconvert" href="/tags/osmconvert/" rel="tag" title="see questions tagged 'osmconvert'">osmconvert</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>22 Jul '17, 00:51</strong>
+</p>
+<img alt="omidrad's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/4b277923b00d40760b68fd056f14c76d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13968/omidrad">omidrad</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="omidrad has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-57230">
+</div>
+<div class="comment-tools" id="comment-tools-57230">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-57230-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/57230/how-to-extract-node-reference-values-within-a-way-from-osm-file?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/57230/how-to-extract-node-reference-values-within-a-way-from-osm-file?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/57230/how-to-extract-node-reference-values-within-a-way-from-osm-file?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/57230/how-to-extract-node-reference-values-within-a-way-from-osm-file?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="57231"></a>
+<div class="answer" id="answer-container-57231">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/57231/up/" id="post-57231-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-57231-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/57231/down/" id="post-57231-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Your question does not make a lot of sense for the following reasons:</p>
+<ul>
+<li>The order of nodes is significant for everyone who processes a way, not just for your application.</li>
+<li>You can trivially convert the list of node IDs into a textual form with a few lines of code in a scripting language of your choice (Perl: <code>cat myfile | perl -ne 'END { print join(" ", <a href="https://help.openstreetmap.org/users/4517/nidi"><a href="https://help.openstreetmap.org/users/4517/nidi">@nid</a></a>)."\n"; } push(<a href="https://help.openstreetmap.org/users/4517/nidi"><a href="https://help.openstreetmap.org/users/4517/nidi">@nid</a></a>,$1) if (/&lt;nd ref="(\d+)"/);'</code> or shell: <code>cat myfile | grep "&lt;nd ref"|cut -d\" -f2|xargs echo</code>) but is that really your question? The list of Node IDs is <em>not</em> a list of latitudes and longitudes.</li>
+</ul>
+<p>If you are hoping to extract a sequence of latitudes and longitudes for all nodes in a way, then the easiest way is to run your OSM XML file (which of course has to have the matching node data referenced by your ways) through the <code>osmium</code> command line tool, writing out an XML file with the osmium specific <code>locations_on_ways</code> option.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/57231/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Jul '17, 10:16</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-57231">
+<a name="57232"></a>
+<div class="comment" id="comment-57232">
+<div class="comment-score" id="post-57232-score"></div>
+<div class="comment-text"><p>Thanks a lot for the reply.</p>
+<p>Actually I have a csv file containing 3 columns : ID, lat and lon of a building footprint which I obtained using osmconvert. I have loaded this csv file into a list in my Java code.</p>
+<p>However, the order of the lats and lons are not sorted to form a correct polygon of the footprint. I wanted to have the correct sequence using the ref values of the way to sort the list in my Java code.</p></div>
+<div class="comment-info" id="comment-57232-info">
+<span class="comment-age">(22 Jul '17, 11:22)</span>
+<a class="comment-user userinfo" href="/users/13968/omidrad">omidrad</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-57231">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-57231-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/57230/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="jBRIrTH07hB5ngJtApkS0DyEWwOGd2kz"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,334 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/24114/mapping-graves-within-a-graveyard">Mapping graves within a graveyard?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/24114/up/" id="post-24114-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-24114-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/24114/down/" id="post-24114-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/24114/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   2
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi, I do a good deal of genealogy, and some volunteer photography for Findagrave.com.  While newer cemetaries have plot maps and administrative offices, I've been finding that the oldest graveyards in my area (Massachusetts) often have little or nothing to help find grave plots and stones.<br/>
+</p>
+<p>I'm thinking of mapping the stones in the Old Burial Ground in Arlington, Massachusetts because a) it's small and b) it's next to my church so I'm often there and c) I have a few cousins buried there. The point is to be able to find a grave, given a name (or partial name) and a graveyard -- and possibly, given a location in a cemetary, look up the grave (though that's often unknown in the oldest graveyards, if there's no legible stone).</p>
+<p>I haven't turned up any discussion on the forum on how to do this -- just discussion of markers outside graveyards, and a little abortive discussion on war memorials. Is this a reasonable use of OSM?  Is there a best way to do it?  Would it be better to just use OSM data, but create a seperate map?</p>
+<p>Just for reference, here's how the (vast) Mount Auburn cemetary has done it on Google Maps.  Try searching on Longfellow between 1886 and 2013, and click on Alice Mary: <a href="http://www.mountauburn.org/map/">http://www.mountauburn.org/map/</a></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-cemetary" href="/tags/cemetary/" rel="tag" title="see questions tagged 'cemetary'">cemetary</a>
+<a class="post-tag tag-link-gravestone" href="/tags/gravestone/" rel="tag" title="see questions tagged 'gravestone'">gravestone</a>
+<a class="post-tag tag-link-tombstone" href="/tags/tombstone/" rel="tag" title="see questions tagged 'tombstone'">tombstone</a>
+<a class="post-tag tag-link-graveyard" href="/tags/graveyard/" rel="tag" title="see questions tagged 'graveyard'">graveyard</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>08 Jul '13, 23:35</strong>
+</p>
+<img alt="PatriciaJH's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/625923ed30f3baba0fe3cfe2ae20d807?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6830/patriciajh">PatriciaJH</a><br>
+<span class="score" title="46 reputation points">46</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="PatriciaJH has no accepted answers">0%</span>
+</br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-24114">
+<a name="24119"></a>
+<div class="comment" id="comment-24119">
+<div class="comment-score" id="post-24119-score">3</div>
+<div class="comment-text"><p>Cartinus's and SK53's answers are a good start, but I couldn't find docs or examples of tagging the actual name and birth/death/burial dates of the person(s) in the tomb (which is necessary for a mountauburn-like map).</p>
+<p>Could only find a single instance of grave:name/birth/death/etc=* in taginfo, which looks good (except for graves with multiple people), but is as anecdotic as it gets. Any pointers to a more popular tagging scheme, or should we run along with that one ?</p></div>
+<div class="comment-info" id="comment-24119-info">
+<span class="comment-age">(09 Jul '13, 10:13)</span>
+<a class="comment-user userinfo" href="/users/867/vincent-de-phily">Vincent de P... ♦</a>
+</div>
+</div>
+<a name="24124"></a>
+<div class="comment" id="comment-24124">
+<div class="comment-score" id="post-24124-score">1</div>
+<div class="comment-text"><p><a href="/users/4975/vincent">@Vincent</a>
+Click on the Tombs link in my answer. You'll find a link to <a href="http://wiki.openstreetmap.org/wiki/JOSM/Plugins/Tomb_Plugin">the JOSM tomb plugin</a>. Which uses <a href="http://wiki.openstreetmap.org/wiki/Relation:person">a relation of type=person</a> to store the name, data of birth, etc.</p>
+<p>Note that I didn't invent this overly complex construction, somebody else did.</p></div>
+<div class="comment-info" id="comment-24124-info">
+<span class="comment-age">(09 Jul '13, 12:06)</span>
+<a class="comment-user userinfo" href="/users/2933/cartinus">cartinus</a>
+</div>
+</div>
+<a name="24131"></a>
+<div class="comment" id="comment-24131">
+<div class="comment-score" id="post-24131-score">1</div>
+<div class="comment-text"><p><a href="/users/2933/cartinus">@cartinus</a> thanks, wouldn't have tought that I'd need to lookup a josm plugin to get information about a tagging schema. I've updated the wiki to make things more discoverable.</p>
+<p>The person relation may seem a bit complicated, but it does solve problems with on-the-node tagging, and has significant usage numbers.</p></div>
+<div class="comment-info" id="comment-24131-info">
+<span class="comment-age">(09 Jul '13, 14:21)</span>
+<a class="comment-user userinfo" href="/users/867/vincent-de-phily">Vincent de P... ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-24114">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-24114-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    4 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/24114/mapping-graves-within-a-graveyard?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/24114/mapping-graves-within-a-graveyard?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/24114/mapping-graves-within-a-graveyard?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/24114/mapping-graves-within-a-graveyard?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="24116"></a>
+<div class="answer" id="answer-container-24116">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/24116/up/" id="post-24116-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-24116-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/24116/down/" id="post-24116-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It is certainly reasonable to put this data into Openstreetmap. Have a look at the tagging for <a href="http://wiki.openstreetmap.org/wiki/Tag:historic%3Dtomb">tombs</a>.</p>
+<p>It is however unlikely that the graves will ever be displayed on the default map. This doesn't mean you (or somebody else) can't make a map or application that works similar as the Mount Auburn one, but with OSM data and tools. The person to build this might get some good ideas for how <a href="http://wiki.openstreetmap.org/wiki/Overpass_API/Applications">Overpass Turbo and some other related applications</a> work</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/24116/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Jul '13, 00:19</strong>
+</p>
+<img alt="cartinus's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fed945e27bb98de054a867827550812e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2933/cartinus">cartinus</a><br/>
+<span class="score" title="7033 reputation points"><span class="">7.0k</span></span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="66 badges"><span class="silver">●</span><span class="badgecount">66</span></span><span title="105 badges"><span class="bronze">●</span><span class="badgecount">105</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="cartinus has 35 accepted answers">27%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/24116/">
+                edited
+                <strong>09 Jul '13, 00:19</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-24116">
+<a name="24132"></a>
+<div class="comment" id="comment-24132">
+<div class="comment-score" id="post-24132-score"></div>
+<div class="comment-text"><p>Just so it doesn't get missed: see also the <a href="http://wiki.openstreetmap.org/wiki/Relation:person">person relation</a> to tag who is buried at a particular site.</p></div>
+<div class="comment-info" id="comment-24132-info">
+<span class="comment-age">(09 Jul '13, 14:22)</span>
+<a class="comment-user userinfo" href="/users/867/vincent-de-phily">Vincent de P... ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-24116">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-24116-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="24118"></a>
+<div class="answer" id="answer-container-24118">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/24118/up/" id="post-24118-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-24118-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/24118/down/" id="post-24118-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>There are a couple of answers to questions on this site which may be relevant:</p>
+<ul>
+<li><a href="https://help.openstreetmap.org/questions/22017/how-do-i-tag-a-single-wayside-grave">How do I tag a single wayside grave?</a></li>
+<li><a href="https://help.openstreetmap.org/questions/5758/war-cemetery-maps">War Cemetery Maps</a></li>
+</ul>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/24118/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Jul '13, 09:00</strong>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br/>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SK53 has 121 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-24118">
+</div>
+<div class="comment-tools" id="comment-tools-24118">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-24118-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="24146"></a>
+<div class="answer" id="answer-container-24146">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/24146/up/" id="post-24146-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-24146-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/24146/down/" id="post-24146-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>There is a German wiki page about <a href="http://wiki.openstreetmap.org/wiki/Friedhofmapping">Friedhofmapping</a> (graveyard mapping). It suggests tagging them as </p>
+<pre><code>  cemetery = grave
+  + name = ...
+  + wikipedia:subject = ...
+</code></pre>
+<p>That of course is based on the assumption that we only map graves of famous people where we can rely on Wikipedia or Wikidata to supply the birth/death dates, family relationships and so on.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/24146/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Jul '13, 23:04</strong>
+</p>
+<img alt="Tordanik's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0626be5f46f32fce501353e8a5ec399c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14/tordanik">Tordanik</a><br/>
+<span class="score" title="11998 reputation points"><span class="">12.0k</span></span><span title="15 badges"><span class="badge1">●</span><span class="badgecount">15</span></span><span title="106 badges"><span class="silver">●</span><span class="badgecount">106</span></span><span title="147 badges"><span class="bronze">●</span><span class="badgecount">147</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Tordanik has 58 accepted answers">35%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-24146">
+</div>
+<div class="comment-tools" id="comment-tools-24146">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-24146-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="68406"></a>
+<div class="answer" id="answer-container-68406">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68406/up/" id="post-68406-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68406-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/68406/down/" id="post-68406-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>For an example of a good layout, but looks to be proprietary,
+<a href="http://emapping.bmcc.nsw.gov.au/connect/analyst/mobile/#/main?mapcfg=Cemetery">http://emapping.bmcc.nsw.gov.au/connect/analyst/mobile/#/main?mapcfg=Cemetery</a>
+has a good system, search works, display of where, everyone is shown</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/68406/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>18 Mar '19, 07:10</strong>
+</p>
+<img alt="Dave%20Rave's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/604345ab66497651786c6d0baa90a5ee?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/612/dave-rave">Dave Rave</a><br/>
+<span class="score" title="46 reputation points">46</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Dave Rave has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68406">
+</div>
+<div class="comment-tools" id="comment-tools-68406">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68406-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/24114/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Yh6irQxI0h5qlaKq2cF0oAMwzwcY9E3l"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

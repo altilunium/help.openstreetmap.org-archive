@@ -1,0 +1,205 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/56510/overpass-turbo-search-in-area-using-place">overpass turbo search in area using place=</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/56510/up/" id="post-56510-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-56510-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/56510/down/" id="post-56510-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/56510/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hey! I have problems, finding supermarkets in a district of a city, using area. I found an example (<a href="https://github.com/mapbox/mapping/wiki/Overpass-Guide)">https://github.com/mapbox/mapping/wiki/Overpass-Guide)</a> which gives me all mountain peaks in the dolomites and tried to adapt it to my needs. Problem is: I can find my desired city (Hamburg) with place=city, but i´m not able to find districts, using borough, suburb or quarter or whatever. I would be so glad, if somebody could help me out! I´m pretty new to this whole thing, and i just want to find supermarkets in districts of hamburg. Maybe ther is even a way better approach?
+This is my code so far:</p>
+<pre><code>*/
+[out:json];
+
+area
+  [place=city]
+  ["name"="Hamburg"];
+out body;
+// query part
+node
+  [shop=supermarket]
+  (area);
+out body;
+// outline
+relation
+  [place=city]
+  ["name"="Hamburg"];
+&gt;;
+out skel qt;
+</code></pre>
+<p>Thank you guys so much! Cheers</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-place" href="/tags/place/" rel="tag" title="see questions tagged 'place'">place</a>
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+<a class="post-tag tag-link-area" href="/tags/area/" rel="tag" title="see questions tagged 'area'">area</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>08 Jun '17, 08:46</strong>
+</p>
+<img alt="razer969's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/4c836c0daf4572c935757bee628e97f3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13805/razer969">razer969</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="razer969 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/56510/">
+                edited
+                <strong>08 Jun '17, 08:50</strong>
+</a>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-56510">
+</div>
+<div class="comment-tools" id="comment-tools-56510">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-56510-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/56510/overpass-turbo-search-in-area-using-place?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/56510/overpass-turbo-search-in-area-using-place?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/56510/overpass-turbo-search-in-area-using-place?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/56510/overpass-turbo-search-in-area-using-place?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="56511"></a>
+<div class="answer accepted-answer" id="answer-container-56511">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/56511/up/" id="post-56511-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-56511-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/56511/down/" id="post-56511-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/56511/" rel="nofollow" title="razer969 has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Try the <a href="http://overpass-turbo.eu/">Overpass Turbo</a> wizard, type "shop=supermarket in Hamburg" without the quotes in the wizard , zoom to see Hamburg on the map, build query and run query.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/56511/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Jun '17, 09:02</strong>
+</p>
+<img alt="nevw's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e5674dd96938593e0af5130dfffe0f90?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7380/nevw">nevw</a><br/>
+<span class="score" title="9843 reputation points"><span class="">9.8k</span></span><span title="26 badges"><span class="badge1">●</span><span class="badgecount">26</span></span><span title="90 badges"><span class="silver">●</span><span class="badgecount">90</span></span><span title="178 badges"><span class="bronze">●</span><span class="badgecount">178</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="nevw has 32 accepted answers">9%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/56511/">
+                edited
+                <strong>08 Jun '17, 09:07</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-56511">
+<a name="56512"></a>
+<div class="comment" id="comment-56512">
+<div class="comment-score" id="post-56512-score"></div>
+<div class="comment-text"><p>Hey nevw, thanks for the quick response first of all! Problem is: I want to query a search for a specific district in hamburg. The code I posted above does search for supermarkets in hamburg, but i want to specify that and search only in various districts. I tried using place=district, place=borough and so on (every entry i found in the wiki for place=) but it just doesn´t work. So any help on that end would be greatly appreciated!</p></div>
+<div class="comment-info" id="comment-56512-info">
+<span class="comment-age">(08 Jun '17, 09:11)</span>
+<a class="comment-user userinfo" href="/users/13805/razer969">razer969</a>
+</div>
+</div>
+<a name="56514"></a>
+<div class="comment" id="comment-56514">
+<div class="comment-score" id="post-56514-score">1</div>
+<div class="comment-text"><p>Can you name an example for such a district?</p></div>
+<div class="comment-info" id="comment-56514-info">
+<span class="comment-age">(08 Jun '17, 09:33)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="56515"></a>
+<div class="comment" id="comment-56515">
+<div class="comment-score" id="post-56515-score"></div>
+<div class="comment-text"><p>sorry, I don't know the area but this works fine and is suburb?  "shop=supermarket in Altona-Altstadt" <br/>
+I would expect that you could extract those listed here <a href="https://wambachers-osm.website/boundaries/">https://wambachers-osm.website/boundaries/</a></p></div>
+<div class="comment-info" id="comment-56515-info">
+<span class="comment-age">(08 Jun '17, 09:34)</span>
+<a class="comment-user userinfo" href="/users/7380/nevw">nevw</a>
+</div>
+</div>
+<a name="56581"></a>
+<div class="comment" id="comment-56581">
+<div class="comment-score" id="post-56581-score"></div>
+<div class="comment-text"><p>Thanks for the help! I solved the problem using part of the wizard´s code to specify the searching area like this:</p>
+<p>(area[admin_level=9]["name"="Eimsbüttel"][boundary=administrative]-&gt;.boundaryarea;)</p></div>
+<div class="comment-info" id="comment-56581-info">
+<span class="comment-age">(11 Jun '17, 17:44)</span>
+<a class="comment-user userinfo" href="/users/13805/razer969">razer969</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-56511">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-56511-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/56510/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="ZSffUerWg3MMwxXWlfsDllpU0qrFK2aY"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

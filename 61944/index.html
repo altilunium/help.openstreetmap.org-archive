@@ -1,0 +1,129 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/61944/osm2pgsql-foreign-keys">osm2pgsql foreign keys</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/61944/up/" id="post-61944-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-61944-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/61944/down/" id="post-61944-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/61944/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am building an application for a customer in which they will type the name of a place (i.e. the name column on planet_osm_polygon of a osm2pgsql imported database) and get a boundary. I was successful in setting up the system, and I've been able to optimize the planet_osm_polygon table for trigram searching (with pg_trgm). The system now works -- awesome!</p>
+<p>However, I'd like to "join" the tags column from the planet_osm_rels table by the osm_id provided in results from planet_osm_polygon. I understand that osm2pgsql does not provide any foreign key constraints. With that said, I'd like to know:</p>
+<p>If it possible for me to add this foreign key relationship myself?</p>
+<p>Any recommendations for re-approaching the problem are welcome.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-relation" href="/tags/relation/" rel="tag" title="see questions tagged 'relation'">relation</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 Feb '18, 15:09</strong>
+</p>
+<img alt="ethanhinson's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/03e2e09758441a64720603b8ad0bf9f9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14712/ethanhinson">ethanhinson</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ethanhinson has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-61944">
+</div>
+<div class="comment-tools" id="comment-tools-61944">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-61944-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/61944/osm2pgsql-foreign-keys?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/61944/osm2pgsql-foreign-keys?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/61944/osm2pgsql-foreign-keys?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/61944/osm2pgsql-foreign-keys?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="61950"></a>
+<div class="answer answered-by-owner" id="answer-container-61950">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/61950/up/" id="post-61950-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-61950-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/61950/down/" id="post-61950-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>There is no reasonable way to add foreign keys to this schema.</p>
+<p>The way to accomplish this is to make sure you use the --hstore-all option. This will create a new column on the polygon table (planet_osm_polygon in my case) which contains all the tags associated with that particular polygon.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/61950/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Feb '18, 17:40</strong>
+</p>
+<img alt="ethanhinson's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/03e2e09758441a64720603b8ad0bf9f9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14712/ethanhinson">ethanhinson</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ethanhinson has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-61950">
+</div>
+<div class="comment-tools" id="comment-tools-61950">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-61950-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/61944/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="rkCGHnsKJgBcAXthOyuTkGCnAKGbEgNj"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

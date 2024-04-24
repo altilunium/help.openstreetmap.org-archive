@@ -1,0 +1,201 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/44378/obtaining-unlabeled-road-data-layer">Obtaining unlabeled road data layer</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44378/up/" id="post-44378-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44378-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/44378/down/" id="post-44378-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/44378/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I've been downloading OSM unlabeled road image data through Mathematica and processing it so it only includes main roads.   </p>
+<p>For example, here's an image of Sao Paulo at zoom 13, pre and post segmentation. 
+<img alt="alt text" src="http://help.openstreetmap.org/upfiles/SaoPaulo.png"/>
+<img alt="alt text" src="http://help.openstreetmap.org/upfiles/saoPaulo-MainAndSecondaryRoads-15Km.png"/></p>
+<p>The results are ok, but I want to know how can I skip this segmentation effort. </p>
+<p>Is there a way to download only the road layer with Maperitive or other 3rd party application? </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-roads" href="/tags/roads/" rel="tag" title="see questions tagged 'roads'">roads</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>23 Jul '15, 01:16</strong>
+</p>
+<img alt="antonio_rt's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c6697bd1a5287052d4c9dc193f2dbc7f?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/11243/antonio_rt">antonio_rt</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="antonio_rt has no accepted answers">0%</span>
+</p>
+</img></div>
+</div>
+<div class="comments-container" id="comments-container-44378">
+</div>
+<div class="comment-tools" id="comment-tools-44378">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44378-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/44378/obtaining-unlabeled-road-data-layer?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/44378/obtaining-unlabeled-road-data-layer?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/44378/obtaining-unlabeled-road-data-layer?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/44378/obtaining-unlabeled-road-data-layer?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="44380"></a>
+<div class="answer" id="answer-container-44380">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44380/up/" id="post-44380-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44380-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/44380/down/" id="post-44380-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>In short, yes. The better approach will vary based on what you are trying to do. Here's a quick Overpass Turbo query that extracts some of the major road vectors:</p>
+<p><a href="http://overpass-turbo.eu/s/ayj">http://overpass-turbo.eu/s/ayj</a></p>
+<p>Perhaps the vector representation there is better suited to what you are doing than a rendering.</p>
+<p>(The Overpass api can return the data in a variety or formats, see <a href="http://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL">http://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL</a> for more)</p>
+<p>If you want to render a small to medium sized area, using something like Maperative with a <a href="http://wiki.openstreetmap.org/wiki/Planet.osm">country or regional extract</a> would be a reasonable idea.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/44380/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>23 Jul '15, 03:41</strong>
+</p>
+<img alt="maxerickson's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c860445e868ebb21da141635a4aa7b06?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/10973/maxerickson">maxerickson</a><br/>
+<span class="score" title="12700 reputation points"><span class="">12.7k</span></span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="83 badges"><span class="silver">●</span><span class="badgecount">83</span></span><span title="176 badges"><span class="bronze">●</span><span class="badgecount">176</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="maxerickson has 93 accepted answers">32%</span>
+</p>
+</img></div>
+</div>
+<div class="comments-container" id="comments-container-44380">
+<a name="44381"></a>
+<div class="comment" id="comment-44381">
+<div class="comment-score" id="post-44381-score"></div>
+<div class="comment-text"><p>Thanks, that overpass query would be ok if it were without text labels and coloring. I want an output like the one shown in the binary mask</p></div>
+<div class="comment-info" id="comment-44381-info">
+<span class="comment-age">(23 Jul '15, 04:56)</span>
+<a class="comment-user userinfo" href="/users/11243/antonio_rt">antonio_rt</a>
+</div>
+</div>
+<a name="44386"></a>
+<div class="comment" id="comment-44386">
+<div class="comment-score" id="post-44386-score"></div>
+<div class="comment-text"><p>The geojson from Overpass-Turbo can be processed anyway you like (or you can save GPX etc), e.g., with QGIS. Furthermore you can use MapCSS to style the data directly in Overpass-Turbo. It really depends what it is that you want to do.</p></div>
+<div class="comment-info" id="comment-44386-info">
+<span class="comment-age">(23 Jul '15, 09:38)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-44380">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44380-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="44383"></a>
+<div class="answer" id="answer-container-44383">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44383/up/" id="post-44383-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44383-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/44383/down/" id="post-44383-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Options:</p>
+<ol>
+<li>Download OSM extract for region of interest. Import into osm2pgsql. Use Kosmtik or Tilemill (not Tilemill 2 aka Mapbox Studio) to develop a map style (in MapCSS) that shows only (main) highways. Render image, done. </li>
+<li>Download OSM extract for region of interest. Use osmosis with the <code>--tag-filter</code> option, or use osmfilter, to extract just the highways from the file. Then load and render in Maperitive.</li>
+</ol>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/44383/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>23 Jul '15, 07:11</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44383">
+</div>
+<div class="comment-tools" id="comment-tools-44383">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44383-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/44378/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="aAVRbwXPYpzDWwPEVGvJ6F9kqWKyvtB5"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

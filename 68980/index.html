@@ -1,0 +1,161 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/68980/osm2pgsql-error-with-connection-to-database">osm2pgsql error with connection to database</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68980/up/" id="post-68980-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68980-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/68980/down/" id="post-68980-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/68980/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I've been following the instructions at <a href="https://switch2osm.org/manually-building-a-tile-server-18-04-lts/">Manually building a tile server (18.04 LTS)</a> but am stuck on the following step:</p>
+<p><em>The following command will insert the OpenStreetMap data you downloaded earlier into the database. This step is very disk I/O intensive; importing the full planet might take many hours, days or weeks depending on the hardware. For smaller extracts the import time is much faster accordingly, and you may need to experiment with different -C values to fit within your machine’s available memory.</em></p>
+<pre><code>osm2pgsql -d gis --create --slim  -G --hstore --tag-transform-script ~/src/openstreetmap-carto/openstreetmap-carto.lua -C 2500 --number-processes 1 -S ~/src/openstreetmap-carto/openstreetmap-carto.style ~/data/azerbaijan-latest.osm.pbf
+</code></pre>
+<p>However when I run it, I keep getting the following error:</p>
+<pre><code>osm2pgsql version 0.96.0 (64 bit id space)
+Allocating memory for dense node cache
+Allocating dense node cache in one big chunk
+Allocating memory for sparse node cache
+Sharing dense sparse
+Node-cache: cache=2500MB, maxblocks=40000*65536, allocation method=11
+Mid: pgsql, cache=2500
+DB writer thread failed due to ERROR: Connection to database failed: FATAL:  role "localuser" does not exist
+</code></pre>
+<p>I've gone through to ensure I've followed all the steps. I've also tried adding -U renderaccount -W options to set it run as the renderaccount, not the localuser account, but still no improvement.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-switch2osm" href="/tags/switch2osm/" rel="tag" title="see questions tagged 'switch2osm'">switch2osm</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-ubuntu" href="/tags/ubuntu/" rel="tag" title="see questions tagged 'ubuntu'">ubuntu</a>
+<a class="post-tag tag-link-tileserver" href="/tags/tileserver/" rel="tag" title="see questions tagged 'tileserver'">tileserver</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>27 Apr '19, 10:30</strong>
+</p>
+<img alt="breno-au's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9417cdf5fb49e5c18f617fdab020f203?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15805/breno-au">breno-au</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="breno-au has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68980">
+<a name="69197"></a>
+<div class="comment" id="comment-69197">
+<div class="comment-score" id="post-69197-score"></div>
+<div class="comment-text"><p>Thank you.</p></div>
+<div class="comment-info" id="comment-69197-info">
+<span class="comment-age">(15 May '19, 12:39)</span>
+<a class="comment-user userinfo" href="/users/15805/breno-au">breno-au</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-68980">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68980-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/68980/osm2pgsql-error-with-connection-to-database?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/68980/osm2pgsql-error-with-connection-to-database?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/68980/osm2pgsql-error-with-connection-to-database?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/68980/osm2pgsql-error-with-connection-to-database?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="68981"></a>
+<div class="answer" id="answer-container-68981">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68981/up/" id="post-68981-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68981-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/68981/down/" id="post-68981-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Looks like you are running it from a unix account localuser. You need to replace "renderaccount" with the account your mod_tile/renderd will run under (not necessarily your regular logon). See this bit on switch2osm:</p>
+<p>Now you need to create a postgis database. The defaults of various programs assume the database is called gis and we will use the same convention in this tutorial, although this is not necessary. Substitute your username for renderaccount where is is used below. This should be the username that will render maps with Mapnik.
+sudo -u postgres -i
+createuser renderaccount # answer yes for superuser (although this isn't strictly necessary)
+createdb -E UTF8 -O renderaccount gis</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/68981/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>27 Apr '19, 10:37</strong>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br/>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SK53 has 121 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68981">
+<a name="69210"></a>
+<div class="comment" id="comment-69210">
+<div class="comment-score" id="post-69210-score"></div>
+<div class="comment-text"><p>While mostly a description of how to solve a different problem, <a href="https://www.openstreetmap.org/user/SomeoneElse/diary/47027">https://www.openstreetmap.org/user/SomeoneElse/diary/47027</a> does describe what you need to have different map layers (or just one map layer) rendering from different databases not called "gis".</p></div>
+<div class="comment-info" id="comment-69210-info">
+<span class="comment-age">(16 May '19, 12:10)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-68981">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68981-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/68980/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="rC6Uej5fycRDEgHecOGOEY7qEJqknS6T"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

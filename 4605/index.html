@@ -1,0 +1,254 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/4605/how-to-implement-a-mapnik-sandbox-without-installing-anything">How to implement a Mapnik sandbox without installing anything?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/4605/up/" id="post-4605-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-4605-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/4605/down/" id="post-4605-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/4605/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Last couple of weeks I spent some time building fake counties, cities and suburbs in Nevada desert (where I figured it would not hurt anyone) just to see how they would render in Mapnik. (I am working on a problem of getting county, city and name rendered without having to drop a place=* node where I want to see the label and I have not found the solution yet, but that's a separate question.)</p>
+<p>It occurred to me that I many not be going the best way about it:<br/>
+ - I needlessly load the server with rerender requests<br/>
+ - I have to wait a fairly long time for rerenders, so I am limited in how many tagging scenario I can try<br/>
+ - even though I delete my objects afterwards, it is possible that Nominatim (or other indexers) will have time to pick them; and I don't think Nominatim is very good at deleting its objects in response to OSM deletions.</p>
+<p>Is there a safe way to play with OSM/Mapnik without installing any server components of my own? Is there an official Mapnik sandbox perhaps, and if not, how can I create one on the fly?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-qa" href="/tags/qa/" rel="tag" title="see questions tagged 'qa'">qa</a>
+<a class="post-tag tag-link-sandbox" href="/tags/sandbox/" rel="tag" title="see questions tagged 'sandbox'">sandbox</a>
+<a class="post-tag tag-link-testing" href="/tags/testing/" rel="tag" title="see questions tagged 'testing'">testing</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>18 Apr '11, 19:12</strong>
+</p>
+<img alt="ponzu's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c23c2891306229bb036de7ce63bb8c9b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/831/ponzu">ponzu</a><br>
+<span class="score" title="2104 reputation points"><span class="">2.1k</span></span><span title="49 badges"><span class="badge1">●</span><span class="badgecount">49</span></span><span title="64 badges"><span class="silver">●</span><span class="badgecount">64</span></span><span title="83 badges"><span class="bronze">●</span><span class="badgecount">83</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ponzu has no accepted answers">0%</span>
+</br></br></p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/4605/">
+                edited
+                <strong>20 Nov '13, 21:33</strong>
+</a>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span></br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-4605">
+<a name="4685"></a>
+<div class="comment" id="comment-4685">
+<div class="comment-score" id="post-4685-score"></div>
+<div class="comment-text"><p>Is there nothing else online to try rendering test objects in the context of the real OSM data? So far, having a Nevada test site is the best I can do. My only concern is potential impact on Nominatim. I am not clear on how long I can leave my fake cities, counties and other objects in the desert without risk of having them become part of the index.</p></div>
+<div class="comment-info" id="comment-4685-info">
+<span class="comment-age">(20 Apr '11, 22:56)</span>
+<a class="comment-user userinfo" href="/users/831/ponzu">ponzu</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-4605">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-4605-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/4605/how-to-implement-a-mapnik-sandbox-without-installing-anything?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/4605/how-to-implement-a-mapnik-sandbox-without-installing-anything?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/4605/how-to-implement-a-mapnik-sandbox-without-installing-anything?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/4605/how-to-implement-a-mapnik-sandbox-without-installing-anything?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="4610"></a>
+<div class="answer" id="answer-container-4610">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/4610/up/" id="post-4610-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-4610-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/4610/down/" id="post-4610-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>For producing your own tiles without installing big software frameworks have a look at </p>
+<p><a href="http://wiki.openstreetmap.org/wiki/Maps_on_a_Stick">Maps_on_a_Stick</a> or <a href="http://wiki.openstreetmap.org/wiki/OpenStreetMap-in-a-Box">OpenStreetMap-in-a-Box</a></p>
+<p>When you have detailed questions about one of this or other solutions, come over to the <a href="http://forum.osm.org">OSM forum</a> or the <a href="http://wiki.openstreetmap.org/wiki/Mailing_lists">OSM mailinglists</a>.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/4610/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>18 Apr '11, 20:36</strong>
+</p>
+<img alt="stephan75's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/245b73d4390c3408fe3c6da759b9897f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/99/stephan75">stephan75</a><br/>
+<span class="score" title="12642 reputation points"><span class="">12.6k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="56 badges"><span class="silver">●</span><span class="badgecount">56</span></span><span title="210 badges"><span class="bronze">●</span><span class="badgecount">210</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="stephan75 has 37 accepted answers">6%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-4610">
+<a name="4619"></a>
+<div class="comment" id="comment-4619">
+<div class="comment-score" id="post-4619-score"></div>
+<div class="comment-text"><p>Thanks, looks like one or both can fit the bill, although Maps On a Stick have a 219 Mb download. As far as osminabox, would "how do I get started?" be considered a detailed question?</p></div>
+<div class="comment-info" id="comment-4619-info">
+<span class="comment-age">(18 Apr '11, 22:39)</span>
+<a class="comment-user userinfo" href="/users/831/ponzu">ponzu</a>
+</div>
+</div>
+<a name="4620"></a>
+<div class="comment" id="comment-4620">
+<div class="comment-score" id="post-4620-score"></div>
+<div class="comment-text"><p>And the second question before I forget: the tiles I produce with these service would be Mapnik tiles, right? And if so, will they be using the master OSM stylesheet, a stylesheet that's specific to these services, or a stylesheet of my choosing?</p></div>
+<div class="comment-info" id="comment-4620-info">
+<span class="comment-age">(18 Apr '11, 22:40)</span>
+<a class="comment-user userinfo" href="/users/831/ponzu">ponzu</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-4610">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-4610-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="4688"></a>
+<div class="answer" id="answer-container-4688">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/4688/up/" id="post-4688-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-4688-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/4688/down/" id="post-4688-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Adding things to OSM which don't actually exist is vandalism. Please don't do it.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/4688/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>20 Apr '11, 23:11</strong>
+</p>
+<img alt="Vclaw's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/aa505c046b1c010e997a7849c6f3dbbe?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/62/vclaw">Vclaw</a><br/>
+<span class="score" title="9217 reputation points"><span class="">9.2k</span></span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="95 badges"><span class="silver">●</span><span class="badgecount">95</span></span><span title="141 badges"><span class="bronze">●</span><span class="badgecount">141</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Vclaw has 41 accepted answers">22%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/4688/">
+                edited
+                <strong>20 Apr '11, 23:11</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-4688">
+<a name="4689"></a>
+<div class="comment" id="comment-4689">
+<div class="comment-score" id="post-4689-score">1</div>
+<div class="comment-text"><p>Understood. Do you have anything you can recommend as an officially approved rendering sandbox? I am a fairly technical guy (not that I understand how OSM or Mapnik works), but I could not figure out how get started with stephan's advice above.</p></div>
+<div class="comment-info" id="comment-4689-info">
+<span class="comment-age">(20 Apr '11, 23:15)</span>
+<a class="comment-user userinfo" href="/users/831/ponzu">ponzu</a>
+</div>
+</div>
+<a name="4690"></a>
+<div class="comment" id="comment-4690">
+<div class="comment-score" id="post-4690-score">1</div>
+<div class="comment-text"><p>There is a dev API, which you can add things to without bothering anyone: <a href="http://api06.dev.openstreetmap.org">http://api06.dev.openstreetmap.org</a>
+Though I'm not sure if it will actually be rendered by anything.</p></div>
+<div class="comment-info" id="comment-4690-info">
+<span class="comment-age">(20 Apr '11, 23:22)</span>
+<a class="comment-user userinfo" href="/users/62/vclaw">Vclaw</a>
+</div>
+</div>
+<a name="4692"></a>
+<div class="comment" id="comment-4692">
+<div class="comment-score" id="post-4692-score"></div>
+<div class="comment-text"><p>Thanks, it looks promising, but I need to figure out a way to get my changes rendered. Is that (easily) doable? After all, I was looking for a Mapnik sandbox, not OSM sandbox. (Although it's good to know where it is in case I need it one day.)</p></div>
+<div class="comment-info" id="comment-4692-info">
+<span class="comment-age">(20 Apr '11, 23:51)</span>
+<a class="comment-user userinfo" href="/users/831/ponzu">ponzu</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-4688">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-4688-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/4605/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="J38gtKEG3kLeWQAhab7zE5HbYAAXZZ6K"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

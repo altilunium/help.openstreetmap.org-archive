@@ -1,0 +1,244 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/2/use-osmosis-postgis-schema-with-qgis">Use Osmosis PostGIS schema with QGIS</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/2/up/" id="post-2-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-2-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/2/down/" id="post-2-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/2/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>If you try to use the simple PostGIS schema for Osmosis with QGIS, it complains about not having the right kind of index column in the schema. Is there a different schema for Osmosis that will work, or some hacking that you can do to make it work?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-qgis" href="/tags/qgis/" rel="tag" title="see questions tagged 'qgis'">qgis</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>28 Jun '10, 14:35</strong>
+</p>
+<img alt="Jonathan%20Bennett's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9fe361843971cf8b23dc93517f00b996?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6/jonathan-bennett">Jonathan Ben...</a><br/>
+<span class="score" title="8261 reputation points"><span class="">8.3k</span></span><span title="17 badges"><span class="badge1">●</span><span class="badgecount">17</span></span><span title="85 badges"><span class="silver">●</span><span class="badgecount">85</span></span><span title="108 badges"><span class="bronze">●</span><span class="badgecount">108</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jonathan Bennett has 21 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-2">
+</div>
+<div class="comment-tools" id="comment-tools-2">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-2-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/2/use-osmosis-postgis-schema-with-qgis?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/2/use-osmosis-postgis-schema-with-qgis?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/2/use-osmosis-postgis-schema-with-qgis?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/2/use-osmosis-postgis-schema-with-qgis?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="3"></a>
+<div class="answer accepted-answer" id="answer-container-3">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/3/up/" id="post-3-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-3-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/3/down/" id="post-3-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/3/" rel="nofollow" title="Jonathan Bennett has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>From the hacking side of things, you can add a serial column.</p>
+<pre><code>alter table planet_osm_line add column "gid" serial;
+alter table planet_osm_point add column "gid" serial;
+alter table planet_osm_polygon add column "gid" serial;
+</code></pre>
+<p>There is the same problem with osm2pgsql database schema, where this hack needs to be repeated after every fresh import since the table is dropped. I don't know if it's the same with osmosis PostGIS schema</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/3/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Jul '10, 16:29</strong>
+</p>
+<img alt="Andy%20Allan's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c3743b1b368f5e209eb8aad30164acc4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3/andy-allan">Andy Allan</a><br/>
+<span class="score" title="12456 reputation points"><span class="">12.5k</span></span><span title="23 badges"><span class="badge1">●</span><span class="badgecount">23</span></span><span title="128 badges"><span class="silver">●</span><span class="badgecount">128</span></span><span title="153 badges"><span class="bronze">●</span><span class="badgecount">153</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Andy Allan has 46 accepted answers">28%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-3">
+</div>
+<div class="comment-tools" id="comment-tools-3">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-3-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="177"></a>
+<div class="answer" id="answer-container-177">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/177/up/" id="post-177-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-177-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/177/down/" id="post-177-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>QGIS and other programs need a column with a unique 32 bit integer ("int" or "int4" in PostgreSQL) for every table they access. The Osmosis simple database schema uses larger integers ("bigint" or "int8" in PostgreSQL), so QGIS can't use them.</p>
+<p>There are two ways to fix this: Either change the id columns from int8 to int4 in the simple database schema before importing or add an additional column to each table like this:</p>
+<pre><code>ALTER TABLE nodes ADD COLUMN gid SERIAL;
+</code></pre>
+<p>You might have to do this after every re-import of data if the table was dropped in between. Also you probably want to add an index to this column:</p>
+<pre><code>CREATE UNIQUE INDEX nodes_gid_idx ON nodes (gid);
+</code></pre>
+<p>Note that currently there are less than 2 billion nodes in the OSM database. This will change at some point. Then an int4 can't hold the id any more and we have to think about new solutions.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/177/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>14 Jul '10, 13:47</strong>
+</p>
+<img alt="Jochen%20Topf's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2d4dfcdcde73aa5e2ffa4a9b3a7cb51d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/112/jochen-topf">Jochen Topf</a><br/>
+<span class="score" title="5244 reputation points"><span class="">5.2k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="50 badges"><span class="silver">●</span><span class="badgecount">50</span></span><span title="74 badges"><span class="bronze">●</span><span class="badgecount">74</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jochen Topf has 32 accepted answers">31%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-177">
+</div>
+<div class="comment-tools" id="comment-tools-177">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-177-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="33"></a>
+<div class="answer" id="answer-container-33">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/33/up/" id="post-33-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-33-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/33/down/" id="post-33-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>A similar problem occurs with GeoDjango.</p>
+<p>The affected tables in the Osmosis simple schema are all tables without id:</p>
+<ul>
+<li>node_tags</li>
+<li>relation_members</li>
+<li>relation_tags</li>
+<li>way_nodes</li>
+<li>way_tags</li>
+</ul>
+<p>Adding a serial column as Andy Allan proposed helps, for example</p>
+<p><code>alter table node_tags add column "gid" serial;</code></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/33/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>10 Jul '10, 10:21</strong>
+</p>
+<img alt="emka's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/5c9aa062fed08c7962c88bd21cc62f93?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18/emka">emka</a><br/>
+<span class="score" title="95 reputation points">95</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="emka has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-33">
+</div>
+<div class="comment-tools" id="comment-tools-33">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-33-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/2/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="m7nUkWx1QfPfpoyvHEh7XeX1YgHqS4t2"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

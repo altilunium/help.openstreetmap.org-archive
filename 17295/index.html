@@ -1,0 +1,168 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/17295/check-for-very-near-nodes-next-to-junctions">Check for very near nodes next to junctions</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/17295/up/" id="post-17295-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-17295-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/17295/down/" id="post-17295-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/17295/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Is there something that verifies/validates/checks/tests for very near nodes next to junctions?</p>
+<p>For example, the picture below. See that we have a node that could be removed (or merged) to the node that is already being used at the junction.
+Visually it is very difficult to see those unnecessary nodes that could be removed.</p>
+<p>Are there any tools available that could warn us about this?</p>
+<p><img alt="http://i.imgur.com/bRyCV.png" src="http://i.imgur.com/bRyCV.png"/></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-test" href="/tags/test/" rel="tag" title="see questions tagged 'test'">test</a>
+<a class="post-tag tag-link-nodes" href="/tags/nodes/" rel="tag" title="see questions tagged 'nodes'">nodes</a>
+<a class="post-tag tag-link-validation" href="/tags/validation/" rel="tag" title="see questions tagged 'validation'">validation</a>
+<a class="post-tag tag-link-junction" href="/tags/junction/" rel="tag" title="see questions tagged 'junction'">junction</a>
+<a class="post-tag tag-link-check" href="/tags/check/" rel="tag" title="see questions tagged 'check'">check</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>30 Oct '12, 13:39</strong>
+</p>
+<img alt="naoliv's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c605758904cf00f577053e4e130f89a2?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/4861/naoliv">naoliv</a><br/>
+<span class="score" title="600 reputation points">600</span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="10 badges"><span class="silver">●</span><span class="badgecount">10</span></span><span title="19 badges"><span class="bronze">●</span><span class="badgecount">19</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="naoliv has 3 accepted answers">37%</span>
+</p>
+</img></div>
+</div>
+<div class="comments-container" id="comments-container-17295">
+</div>
+<div class="comment-tools" id="comment-tools-17295">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-17295-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/17295/check-for-very-near-nodes-next-to-junctions?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/17295/check-for-very-near-nodes-next-to-junctions?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/17295/check-for-very-near-nodes-next-to-junctions?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/17295/check-for-very-near-nodes-next-to-junctions?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="17299"></a>
+<div class="answer" id="answer-container-17299">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/17299/up/" id="post-17299-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-17299-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/17299/down/" id="post-17299-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The extra node there isn't causing any massive problem, so I guess the first thing to say is, this problem is low priority compared to some other problems we detect with automated checks.</p>
+<p>In particular "connectivity problems" are more severe. I mean for example if the way on the right hand side there actually stopped short of the junction at the extra node. Such problems are identified by <a href="http://wiki.openstreetmap.org/wiki/Keep_Right">Keep Right</a>, and also shown as fixable little tasks in the awesome new <a href="https://oegeo.wordpress.com/2012/10/29/new-maproulette-challenge-connectivity-bugs/">MapRoulette challenge</a>.</p>
+<p>But if this is just a case of one too many nodes, I don't think we have a tool to detect that. It's a problem we see a bit in the TIGER data. It's not just at junctions. We also see too many nodes forming fiddly bits on boundary ways (a larger class of problems where we might say we just need to do some 'simplifying' algorithm)  In a way I suppose it's a somewhat subjective choice, whether this node is unnecessary.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/17299/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Oct '12, 14:22</strong>
+</p>
+<img alt="Harry%20Wood's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9e04333be840d50c6aa66fb112aad77c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/107/harry-wood">Harry Wood</a><br/>
+<span class="score" title="9489 reputation points"><span class="">9.5k</span></span><span title="25 badges"><span class="badge1">●</span><span class="badgecount">25</span></span><span title="88 badges"><span class="silver">●</span><span class="badgecount">88</span></span><span title="128 badges"><span class="bronze">●</span><span class="badgecount">128</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Harry Wood has 19 accepted answers">14%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-17299">
+<a name="17301"></a>
+<div class="comment" id="comment-17301">
+<div class="comment-score" id="post-17301-score"></div>
+<div class="comment-text"><p>It's not that rare to find a way that has useless nodes (it's not specific to crossroads). Not worth hunting them down systematically, but fixing them as we go (like useless tags for example) is usefull. So checking that in the editor's before-upload validator may be the way to go ? Alas, everybody will have a different opinion on which treshold is "correct".</p></div>
+<div class="comment-info" id="comment-17301-info">
+<span class="comment-age">(30 Oct '12, 15:37)</span>
+<a class="comment-user userinfo" href="/users/867/vincent-de-phily">Vincent de P... ♦</a>
+</div>
+</div>
+<a name="17304"></a>
+<div class="comment" id="comment-17304">
+<div class="comment-score" id="post-17304-score"></div>
+<div class="comment-text"><p><a href="/users/1591/vincentpybis">@vincent</a>-de-phily exactly this. Suppose I am editing an area and I would like to also fix some low hanging fruits. It would be good to have a validator to point me where there are such very near nodes that could be merged/fixed.</p></div>
+<div class="comment-info" id="comment-17304-info">
+<span class="comment-age">(30 Oct '12, 16:46)</span>
+<a class="comment-user userinfo" href="/users/4861/naoliv">naoliv</a>
+</div>
+</div>
+<a name="17308"></a>
+<div class="comment" id="comment-17308">
+<div class="comment-score" id="post-17308-score"></div>
+<div class="comment-text"><p>turning off backgound image can help sometimes so set background to none.</p></div>
+<div class="comment-info" id="comment-17308-info">
+<span class="comment-age">(30 Oct '12, 17:08)</span>
+<a class="comment-user userinfo" href="/users/644/andy-mackey">andy mackey</a>
+</div>
+</div>
+<a name="17309"></a>
+<div class="comment" id="comment-17309">
+<div class="comment-score" id="post-17309-score"></div>
+<div class="comment-text"><p>Yes, it helps, but still not on higher density cities or with a far zoom.</p></div>
+<div class="comment-info" id="comment-17309-info">
+<span class="comment-age">(30 Oct '12, 17:17)</span>
+<a class="comment-user userinfo" href="/users/4861/naoliv">naoliv</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-17299">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-17299-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/17295/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="6fj5IkTYmVd5y5oxKgyOTNMkkdLDZHF0"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

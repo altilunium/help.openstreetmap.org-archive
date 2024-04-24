@@ -1,0 +1,186 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/75120/displaying-map-beyond-zoom-level-19">Displaying map beyond zoom level 19</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75120/up/" id="post-75120-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75120-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/75120/down/" id="post-75120-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/75120/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>For an XXL scale project (where I need sub-metric details for a small outdoor project, note that accuracy is not a big deal, I just want to draw and display small points, lines and polygons relative to each others), I'm searching for a background OSM-based map which displays beyond zoom level 19, I would say up to 24-26.</p>
+<p>Do you know some URL which serve tiles matching this format: <code>//{s}.tile.domain.org/{z}/{x}/{y}.png</code> for such large zoom levels?</p>
+<p>If no, I guess I have to build my own tilling service, but I don't want to reinvent the wheel.  <br/>
+Do you know some tools to quickly build my own web service based on OSM data?</p>
+<p>Thanks.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-zoomlevel" href="/tags/zoomlevel/" rel="tag" title="see questions tagged 'zoomlevel'">zoomlevel</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 Jun '20, 15:21</strong>
+</p>
+<img alt="s-k's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/93c67fbeb492e14f45072515ab416289?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18479/s-k">s-k</a><br>
+<span class="score" title="46 reputation points">46</span><span title="6 badges"><span class="badge1">●</span><span class="badgecount">6</span></span><span title="7 badges"><span class="silver">●</span><span class="badgecount">7</span></span><span title="10 badges"><span class="bronze">●</span><span class="badgecount">10</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="s-k has no accepted answers">0%</span>
+</br></p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/75120/">
+                edited
+                <strong>03 Jun '20, 15:28</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-75120">
+</div>
+<div class="comment-tools" id="comment-tools-75120">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75120-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/75120/displaying-map-beyond-zoom-level-19?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/75120/displaying-map-beyond-zoom-level-19?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/75120/displaying-map-beyond-zoom-level-19?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/75120/displaying-map-beyond-zoom-level-19?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="75125"></a>
+<div class="answer" id="answer-container-75125">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75125/up/" id="post-75125-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75125-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/75125/down/" id="post-75125-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>With regard to creating your own tiles, see <a href="https://wiki.openstreetmap.org/wiki/User:SomeoneElse/mod_tile_28">here</a> for displaying zoom levels up to 28.  A branch of a fork of mod_tile with that in it is <a href="https://github.com/SomeoneElseOSM/mod_tile/tree/zoom">here</a> - just use that in place of the normal one.  If that isn't enough, see <a href="https://github.com/openstreetmap/mod_tile/issues/118#issuecomment-384648654">here</a> for zoom levels up to 30.</p>
+<p>The tiles underneath <a href="https://map.atownsend.org.uk"></a><a href="https://map.atownsend.org.uk">https://map.atownsend.org.uk</a> cover Ireland and the UK at zoom levels up to 24.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/75125/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Jun '20, 17:17</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-75125">
+</div>
+<div class="comment-tools" id="comment-tools-75125">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75125-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="75124"></a>
+<div class="answer" id="answer-container-75124">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75124/up/" id="post-75124-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75124-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/75124/down/" id="post-75124-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>For your first question, I've never seen that. Sometimes it goes as far as 20 (maybe 21) but never seen more.</p>
+<p>For the second question, the reference is <a href="https://switch2osm.org/">switch2osm.org</a>. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/75124/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Jun '20, 17:02</strong>
+</p>
+<img alt="H_mlet's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9434692e9afccaf03af5acf20b3a3279?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13231/h_mlet">H_mlet</a><br/>
+<span class="score" title="5443 reputation points"><span class="">5.4k</span></span><span title="17 badges"><span class="silver">●</span><span class="badgecount">17</span></span><span title="81 badges"><span class="bronze">●</span><span class="badgecount">81</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="H_mlet has 40 accepted answers">13%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-75124">
+</div>
+<div class="comment-tools" id="comment-tools-75124">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75124-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/75120/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="OtOsjnpLJhVmeuyfrUCOqIoUopnqDCkl"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

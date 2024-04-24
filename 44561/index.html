@@ -1,0 +1,167 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/44561/nominatim-setup-file-showing-errors">Nominatim setup file showing errors</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44561/up/" id="post-44561-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44561-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/44561/down/" id="post-44561-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/44561/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>We are facing problem with the setup.php file. Can any one has any way to overcome this error ?</p>
+<pre><code>    /public_html/Nominatim]# ./utils/setup.php --osm-file india-latest.osm.pbf --all [--osm2pgsql-cache 18000] 2&gt;&amp;1 | tee setup.log 
+Warning: require_once(DB.php): failed to open stream: No such file or directory in /home/xxxxxxx/public_html/Nominatim/lib/db.php on line 2
+
+Fatal error: require_once(): Failed opening required 'DB.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/xxxxxxx/public_html/Nominatim/lib/db.php on line 2
+</code></pre>
+<p>--</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-setup.php" href="/tags/setup.php/" rel="tag" title="see questions tagged 'setup.php'">setup.php</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>31 Jul '15, 08:06</strong>
+</p>
+<img alt="arj123's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2463811d231d70c616bd07bdc0067395?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11245/arj123">arj123</a><br/>
+<span class="score" title="46 reputation points">46</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="arj123 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44561">
+</div>
+<div class="comment-tools" id="comment-tools-44561">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44561-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/44561/nominatim-setup-file-showing-errors?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/44561/nominatim-setup-file-showing-errors?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/44561/nominatim-setup-file-showing-errors?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/44561/nominatim-setup-file-showing-errors?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="44562"></a>
+<div class="answer accepted-answer" id="answer-container-44562">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44562/up/" id="post-44562-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44562-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/44562/down/" id="post-44562-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/44562/" rel="nofollow" title="arj123 has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It seems like you sure you are calling <code>setup.php</code> wrong.</p>
+<p><code>--osm2pgsql-cache</code> is an optional parameter. Either remove it completely or leave it there but remove the square brackets <code>[]</code>. They are <em>not</em> part of the parameter but indicate only that this parameter is optional.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/44562/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>31 Jul '15, 08:12</strong>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="scai has 168 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/44562/">
+                edited
+                <strong>31 Jul '15, 08:13</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44562">
+<a name="44564"></a>
+<div class="comment" id="comment-44564">
+<div class="comment-score" id="post-44564-score"></div>
+<div class="comment-text"><p>Thanks <a href="http://help.openstreetmap.org/users/158/scai"></a><a href="http://help.openstreetmap.org/users/158/scai">@scai</a>, so instead of ./utils/setup.php --osm-file &lt;your data="" file=""&gt; --all [--osm2pgsql-cache 24000] 2&gt;&amp;1 | tee setup.log      I have to use ./utils/setup.php --osm-file &lt;your data="" file=""&gt; --all --osm2pgsql-cache 24000 2&gt;&amp;1 | tee setup.log
+ ?</p></div>
+<div class="comment-info" id="comment-44564-info">
+<span class="comment-age">(31 Jul '15, 08:19)</span>
+<a class="comment-user userinfo" href="/users/11245/arj123">arj123</a>
+</div>
+</div>
+<a name="44565"></a>
+<div class="comment" id="comment-44565">
+<div class="comment-score" id="post-44565-score"></div>
+<div class="comment-text"><p>Yes, exactly :) Ideally you should adapt the size of the cache to your environment.</p></div>
+<div class="comment-info" id="comment-44565-info">
+<span class="comment-age">(31 Jul '15, 08:49)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="44566"></a>
+<div class="comment" id="comment-44566">
+<div class="comment-score" id="post-44566-score">1</div>
+<div class="comment-text"><p>thank you.</p></div>
+<div class="comment-info" id="comment-44566-info">
+<span class="comment-age">(31 Jul '15, 09:16)</span>
+<a class="comment-user userinfo" href="/users/11245/arj123">arj123</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-44562">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44562-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/44561/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="g3vjqKNNAXK8DQJHtrkWoNRamWp3u9YP"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

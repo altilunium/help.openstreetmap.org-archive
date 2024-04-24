@@ -1,0 +1,155 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/17263/misaligned-coordinates-android">misaligned coordinates android</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/17263/up/" id="post-17263-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-17263-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/17263/down/" id="post-17263-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/17263/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi
+I am making an android app which uses an OpenStreetMap. I have my own tile server which serves the street map.</p>
+<p>When I tell the app to centre on a specifc area on the map by passing in the coordinates as a GeoPoint, it centres somewhere around Africa when it should centre on Edinburgh.</p>
+<p>Here is the code:</p>
+<pre><code>// osm map view 
+MapView osmMap;
+
+@Override
+public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+
+    osmMap = (MapView) findViewById(R.id.mapview);
+    osmMap.setMultiTouchControls(true);
+
+    // Create custom map source pointing to Tile Server
+    XYTileSource myMapSource = new XYTileSource("myMap", null, 0, 16, 256, ".png", Constants.LOCAL_SERVER_URL);
+
+    // Set the source and default map coordinates/zoom
+    osmMap.setTileSource(myMapSource);
+
+    osmMap.getController().animateTo(new GeoPoint(55.95223359877632*1e6, -3.188550710678032*1e6));
+    osmMap.getController().setZoom(Constants.DEFAULT_ZOOM); 
+}
+</code></pre>
+<p>Anyone know how I can get the coorindates to align with the map correctly?</p>
+<p>Thanks</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap" href="/tags/openstreetmap/" rel="tag" title="see questions tagged 'openstreetmap'">openstreetmap</a>
+<a class="post-tag tag-link-android" href="/tags/android/" rel="tag" title="see questions tagged 'android'">android</a>
+<a class="post-tag tag-link-osmdroid" href="/tags/osmdroid/" rel="tag" title="see questions tagged 'osmdroid'">osmdroid</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>29 Oct '12, 15:07</strong>
+</p>
+<img alt="srose's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8f19a0a6b0afe902c224e03a8eb38ece?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4852/srose">srose</a><br/>
+<span class="score" title="161 reputation points">161</span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="10 badges"><span class="silver">●</span><span class="badgecount">10</span></span><span title="16 badges"><span class="bronze">●</span><span class="badgecount">16</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="srose has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-17263">
+</div>
+<div class="comment-tools" id="comment-tools-17263">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-17263-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/17263/misaligned-coordinates-android?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/17263/misaligned-coordinates-android?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/17263/misaligned-coordinates-android?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/17263/misaligned-coordinates-android?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="17291"></a>
+<div class="answer accepted-answer" id="answer-container-17291">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/17291/up/" id="post-17291-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-17291-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/17291/down/" id="post-17291-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/17291/" rel="nofollow" title="srose has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>If your map is centering off the african coast around here:
+<a href="http://www.openstreetmap.org/?mlat=0&amp;mlon=0&amp;zoom=4&amp;layers=M">http://www.openstreetmap.org/?mlat=0&amp;mlon=0&amp;zoom=4&amp;layers=M</a></p>
+<p>Then your coordinates are not working correctly.  that location is the 0,0 of lat/long.
+Do a thorough check on whether your GeoPoint is working properly</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/17291/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Oct '12, 09:34</strong>
+</p>
+<img alt="samlarsen1's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7ced9ba139adb4087bbe8935b2eab74d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1825/samlarsen1">samlarsen1</a><br/>
+<span class="score" title="124 reputation points">124</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="samlarsen1 has one accepted answer">50%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-17291">
+</div>
+<div class="comment-tools" id="comment-tools-17291">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-17291-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/17263/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="MTJX9TsMoxOF7jy6Kmqe8cFQzQRMDr7q"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

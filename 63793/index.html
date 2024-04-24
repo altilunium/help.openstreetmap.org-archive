@@ -1,0 +1,255 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/63793/a-reverse-geocoding-request">a reverse geocoding request</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/63793/up/" id="post-63793-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-63793-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/63793/down/" id="post-63793-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/63793/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Good afternoon!
+What types of address components can contain a response to a reverse geocoding request?
+A complete list of types is required.</p>
+<p>What other types besides these:
+house_number
+road
+village
+town
+city
+county
+postcode
+country
+country_code</p>
+<p>Thank you in advance!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-reversegeocoding" href="/tags/reversegeocoding/" rel="tag" title="see questions tagged 'reversegeocoding'">reversegeocoding</a>
+<a class="post-tag tag-link-reverse" href="/tags/reverse/" rel="tag" title="see questions tagged 'reverse'">reverse</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>28 May '18, 13:28</strong>
+</p>
+<img alt="Helen%20Kir's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/5269774c1e533a68b8ea2ce63efafb88?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15179/helen-kir">Helen Kir</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Helen Kir has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/63793/">
+                edited
+                <strong>28 May '18, 14:06</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-63793">
+</div>
+<div class="comment-tools" id="comment-tools-63793">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-63793-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/63793/a-reverse-geocoding-request?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/63793/a-reverse-geocoding-request?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/63793/a-reverse-geocoding-request?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/63793/a-reverse-geocoding-request?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="63796"></a>
+<div class="answer" id="answer-container-63796">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/63796/up/" id="post-63796-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-63796-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/63796/down/" id="post-63796-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The full list is in the <code>getClassTypes</code> method in <a href="https://github.com/openstreetmap/Nominatim/blob/master/lib/lib.php">https://github.com/openstreetmap/Nominatim/blob/master/lib/lib.php</a> - look for the <code>Label</code> keys.</p>
+<p>A better list is <a href="https://github.com/OpenCageData/address-formatting/blob/master/conf/components.yaml">https://github.com/OpenCageData/address-formatting/blob/master/conf/components.yaml</a> Anything not in this file you can treat as a name of a place, e.g. name of a restaurant, building name.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/63796/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>28 May '18, 14:07</strong>
+</p>
+<img alt="mtmail's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/96aad1e1801b7ea36fba50687924c935?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/150/mtmail">mtmail</a><br/>
+<span class="score" title="4757 reputation points"><span class="">4.8k</span></span><span title="15 badges"><span class="silver">●</span><span class="badgecount">15</span></span><span title="74 badges"><span class="bronze">●</span><span class="badgecount">74</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mtmail has 50 accepted answers">27%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/63796/">
+                edited
+                <strong>28 May '18, 16:34</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-63796">
+<a name="63798"></a>
+<div class="comment" id="comment-63798">
+<div class="comment-score" id="post-63798-score"></div>
+<div class="comment-text"><p>Thank you very much for such a prompt reply!</p>
+<p>Unfortunately, I can not see the document:
+<a href="https://github.com/openstreetmap/Nominatim/blob/master/lib/lib.php,">https://github.com/openstreetmap/Nominatim/blob/master/lib/lib.php,</a> since I do not have access to Github.</p>
+<p>How can I access?</p>
+<p>Maybe you also know,  how are the types of address components and administrative divisions request correlated?</p></div>
+<div class="comment-info" id="comment-63798-info">
+<span class="comment-age">(28 May '18, 14:44)</span>
+<a class="comment-user userinfo" href="/users/15179/helen-kir">Helen Kir</a>
+</div>
+</div>
+<a name="63799"></a>
+<div class="comment not_top_scorer" id="comment-63799">
+<div class="comment-score" id="post-63799-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/15179/helen-kir"></a><a href="https://help.openstreetmap.org/users/15179/helen-kir">@Helen Kir</a> Unfortunately you're going to struggle with OSM software more generally if you don't have access to github.  Is that a technical problem at your end that you can resolve, some sort of political issue, or something else?</p></div>
+<div class="comment-info" id="comment-63799-info">
+<span class="comment-age">(28 May '18, 14:51)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="63803"></a>
+<div class="comment not_top_scorer" id="comment-63803">
+<div class="comment-score" id="post-63803-score"></div>
+<div class="comment-text"><p>Our company only plans to use OSM for reverse geocoding.</p>
+<p>I have only read open information: <a href="https://wiki.openstreetmap.org/wiki/Nominatim">https://wiki.openstreetmap.org/wiki/Nominatim</a>
+I do not know about the obligatory access to the Github.</p>
+<p>We will need to generate separate address parameters from the geocoding response.</p></div>
+<div class="comment-info" id="comment-63803-info">
+<span class="comment-age">(28 May '18, 15:27)</span>
+<a class="comment-user userinfo" href="/users/15179/helen-kir">Helen Kir</a>
+</div>
+</div>
+<a name="63805"></a>
+<div class="comment" id="comment-63805">
+<div class="comment-score" id="post-63805-score">1</div>
+<div class="comment-text"><p>Just to make sure - have you seen <a href="https://operations.osmfoundation.org/policies/nominatim/">https://operations.osmfoundation.org/policies/nominatim/</a> ?</p></div>
+<div class="comment-info" id="comment-63805-info">
+<span class="comment-age">(28 May '18, 15:34)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="63807"></a>
+<div class="comment" id="comment-63807">
+<div class="comment-score" id="post-63807-score">1</div>
+<div class="comment-text"><p>Most likely we will install our own copy Nominatim.</p></div>
+<div class="comment-info" id="comment-63807-info">
+<span class="comment-age">(28 May '18, 15:54)</span>
+<a class="comment-user userinfo" href="/users/15179/helen-kir">Helen Kir</a>
+</div>
+</div>
+<a name="63808"></a>
+<div class="comment" id="comment-63808">
+<div class="comment-score" id="post-63808-score">2</div>
+<div class="comment-text"><p>You don't need a GitHub account to view the document. Just remove the trailing comma from the URL.</p></div>
+<div class="comment-info" id="comment-63808-info">
+<span class="comment-age">(28 May '18, 16:33)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="63809"></a>
+<div class="comment not_top_scorer" id="comment-63809">
+<div class="comment-score" id="post-63809-score"></div>
+<div class="comment-text"><p>thanks scai, I edited my answer and removed the comma</p></div>
+<div class="comment-info" id="comment-63809-info">
+<span class="comment-age">(28 May '18, 16:35)</span>
+<a class="comment-user userinfo" href="/users/150/mtmail">mtmail</a>
+</div>
+</div>
+<a name="63811"></a>
+<div class="comment not_top_scorer" id="comment-63811">
+<div class="comment-score" id="post-63811-score"></div>
+<div class="comment-text"><p>Oh, how simple, thanks!</p>
+<p>The local version of Nominatim allows you to refine the query using addressdetails = [0 | 1] (Include a breakdown of the address into elements)?</p></div>
+<div class="comment-info" id="comment-63811-info">
+<span class="comment-age">(28 May '18, 17:26)</span>
+<a class="comment-user userinfo" href="/users/15179/helen-kir">Helen Kir</a>
+</div>
+</div>
+<a name="63812"></a>
+<div class="comment" id="comment-63812">
+<div class="comment-score" id="post-63812-score">2</div>
+<div class="comment-text"><p>Yes, it will. Example: <a href="https://nominatim.openstreetmap.org/search.php?q=university%20ave,%20palo%20alto&amp;polygon_geojson=1&amp;viewbox=&amp;format=jsonv2&amp;addressdetails=1">https://nominatim.openstreetmap.org/search.php?q=university%20ave,%20palo%20alto&amp;polygon_geojson=1&amp;viewbox=&amp;format=jsonv2&amp;addressdetails=1</a></p></div>
+<div class="comment-info" id="comment-63812-info">
+<span class="comment-age">(28 May '18, 17:29)</span>
+<a class="comment-user userinfo" href="/users/150/mtmail">mtmail</a>
+</div>
+</div>
+<a name="63828"></a>
+<div class="comment not_top_scorer" id="comment-63828">
+<div class="comment-score" id="post-63828-score"></div>
+<div class="comment-text"><p>Thank you all for your help!</p></div>
+<div class="comment-info" id="comment-63828-info">
+<span class="comment-age">(29 May '18, 08:05)</span>
+<a class="comment-user userinfo" href="/users/15179/helen-kir">Helen Kir</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-63796">
+<span class="comments-showing">
+            showing 5 of 10
+        </span>
+<a class="show-all-comments-link" href="#">show 5 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-63796-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/63793/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="0ky6QIbLnRfcPwgSDVPSg2KMyoqp1RQd"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

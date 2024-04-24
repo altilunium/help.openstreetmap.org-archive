@@ -1,0 +1,213 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/81184/bus-route-is-not-visible-after-i-have-completed-it">Bus route is not visible after I have completed it.</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/81184/up/" id="post-81184-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-81184-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/81184/down/" id="post-81184-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/81184/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have finished adding a bus route in Biên Hòa on the in-browser editor of OSM, but the bus route is not shown in red, whereas the bus lines in nearby Hồ Chí Minh City are clearly visible.</p>
+<p>It doesn't show on the map, but browsing the <a href="https://www.openstreetmap.org/relation/13051180">relation</a> makes it visible in orange.  But the <a href="https://www.openstreetmap.org/relation/13051411">routemaster</a> isn't viewable at all.</p>
+<p>Can someone fix this?</p>
+<p>Regards.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-route" href="/tags/route/" rel="tag" title="see questions tagged 'route'">route</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>04 Aug '21, 03:32</strong>
+</p>
+<img alt="turtle-bienhoa's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/93255c756b969944b0b9bbf271a33813?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20590/turtle-bienhoa">turtle-bienhoa</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="turtle-bienhoa has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-81184">
+</div>
+<div class="comment-tools" id="comment-tools-81184">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-81184-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/81184/bus-route-is-not-visible-after-i-have-completed-it?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/81184/bus-route-is-not-visible-after-i-have-completed-it?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/81184/bus-route-is-not-visible-after-i-have-completed-it?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/81184/bus-route-is-not-visible-after-i-have-completed-it?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="81189"></a>
+<div class="answer" id="answer-container-81189">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/81189/up/" id="post-81189-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-81189-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/81189/down/" id="post-81189-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I'm not entirely sure this is the reason for the not rendering but the route modeling does not follow the defined scheme. </p>
+<p>In the relation you have added all the road segments which is fine. In PTV2 additionally to the road you can also add stops and platforms (have a look at the <a href="https://wiki.openstreetmap.org/wiki/Tag:route%3Dbus#Members">Wiki</a> again). Those need to get role names (e.g. <code>stop</code> or <code>platform</code>). In your relation you also added a building and a bus station to the route without assigning roles. That might have confused the renderer. </p>
+<p>Try correcting the role assignment and also <a href="https://wiki.openstreetmap.org/wiki/Tag:route%3Dbus#Order_of_members">the sequence</a>. You first have to add all stop positions and platforms, only then the road segments.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/81189/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Aug '21, 10:14</strong>
+</p>
+<img alt="TZorn's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ddebc8d5f4e0458413eacf65e36561a9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10133/tzorn">TZorn</a><br/>
+<span class="score" title="12350 reputation points"><span class="">12.3k</span></span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="64 badges"><span class="silver">●</span><span class="badgecount">64</span></span><span title="225 badges"><span class="bronze">●</span><span class="badgecount">225</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="TZorn has 63 accepted answers">15%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-81189">
+<a name="81191"></a>
+<div class="comment" id="comment-81191">
+<div class="comment-score" id="post-81191-score">1</div>
+<div class="comment-text"><p>Which renderer or layer are you referring to? As far as I know the standard layer does not display bus routes. The public transport layer does, but it updates much less frequently, so you may need to wait.</p>
+<p>The tagging of the master route looks odd (probably not affecting rendering though). You have route_master=1 instead of =bus, and I think route=bus is not needed.</p></div>
+<div class="comment-info" id="comment-81191-info">
+<span class="comment-age">(04 Aug '21, 10:42)</span>
+<a class="comment-user userinfo" href="/users/14272/alan_gr">alan_gr</a>
+</div>
+</div>
+<a name="81194"></a>
+<div class="comment" id="comment-81194">
+<div class="comment-score" id="post-81194-score"></div>
+<div class="comment-text"><p>In my experience the public transport map (layers=O) picks up changes quite fast (minutes). At least it did when I was heavily mapping bus routes one and a half years ago.</p></div>
+<div class="comment-info" id="comment-81194-info">
+<span class="comment-age">(04 Aug '21, 12:06)</span>
+<a class="comment-user userinfo" href="/users/10133/tzorn">TZorn</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-81189">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-81189-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="81199"></a>
+<div class="answer answered-by-owner" id="answer-container-81199">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/81199/up/" id="post-81199-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-81199-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/81199/down/" id="post-81199-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I have fixed the master route. I have added some bus stops along the way (the ones I know).</p>
+<p>If possible, can a veteran in creating bus routes fix this?</p>
+<p>Thank you.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/81199/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Aug '21, 15:46</strong>
+</p>
+<img alt="turtle-bienhoa's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/93255c756b969944b0b9bbf271a33813?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20590/turtle-bienhoa">turtle-bienhoa</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="turtle-bienhoa has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/81199/">
+                edited
+                <strong>04 Aug '21, 15:46</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-81199">
+<a name="81201"></a>
+<div class="comment" id="comment-81201">
+<div class="comment-score" id="post-81201-score"></div>
+<div class="comment-text"><p>Edit: It is showing now. Thanks a lot!</p></div>
+<div class="comment-info" id="comment-81201-info">
+<span class="comment-age">(04 Aug '21, 16:17)</span>
+<a class="comment-user userinfo" href="/users/20590/turtle-bienhoa">turtle-bienhoa</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-81199">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-81199-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/81184/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="qDuIOhh5SaHtz9pSXXNhQAiZZqpGesHB"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

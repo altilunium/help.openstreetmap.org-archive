@@ -1,0 +1,217 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/42991/varrunrenderd-deleted-on-reboot">/var/run/renderd/ deleted on reboot</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/42991/up/" id="post-42991-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-42991-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/42991/down/" id="post-42991-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/42991/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have everything working now on Ubuntu 15.04 w/ OSM bright, but on each reboot /var/run/renderd is automatically deleted and renderd fails to start as it can't find it's socket directory. I have to manually create this directory each reboot.</p>
+<p>Is there a way to do this in the service file? I attempted the following:</p>
+<pre><code>[Unit]
+Description=Rendering daemon for Openstreetmap tiles
+
+[Service]
+User=astump
+Type=forking
+ExecStart=sudo mkdir /var/run/renderd
+ExecStart=sudo chown -R astump /var/run/renderd
+ExecStart=/usr/local/bin/renderd -c /usr/local/etc/renderd.conf
+ExecStop=/bin/kill -s QUIT $MAINPID
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p>But it still fails to create the /var/run/renderd folder</p>
+<pre><code>astump@astump15:~$ sudo systemctl status renderd.service 
+● renderd.service - Rendering daemon for Openstreetmap tiles
+Loaded: loaded (/etc/systemd/system/renderd.service; enabled; vendor preset: enabled)
+Active: failed (Result: exit-code) since Sat 2015-05-09 08:26:33 CDT; 1min 46s ago
+Process: 6368 ExecStart=/usr/local/bin/renderd -c /usr/local/etc/renderd.conf (code=exited,     status=3)
+May 09 08:26:33 astump15 renderd[6368]: config renderd(0): Active
+May 09 08:26:33 astump15 renderd[6368]: config renderd(0): unix socketname=/var/run/renderd
+/renderd.sock
+May 09 08:26:33 astump15 renderd[6368]: config renderd(0): num_threads=4
+May 09 08:26:33 astump15 renderd[6368]: config renderd(0): tile_dir=/var/lib/mod_tile
+May 09 08:26:33 astump15 renderd[6368]: config renderd(0): stats_file=/var/run/renderd/renderd.stats
+May 09 08:26:33 astump15 renderd[6368]: config map 0:   name(default) file(/usr/local/share/maps/style/OSMBright/OSMBright.xml) uri(/osm_tiles/) htcp() host(localhost)
+May 09 08:26:33 astump15 systemd[1]: renderd.service: control process exited, code=exited status=3
+May 09 08:26:33 astump15 systemd[1]: Failed to start Rendering daemon for Openstreetmap tiles.
+May 09 08:26:33 astump15 systemd[1]: Unit renderd.service entered failed state.
+May 09 08:26:33 astump15 systemd[1]: renderd.service failed.
+
+astump@astump15:~$ la /var/run/renderd
+ls: cannot access /var/run/renderd: No such file or directory
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-renderd" href="/tags/renderd/" rel="tag" title="see questions tagged 'renderd'">renderd</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-ubuntu" href="/tags/ubuntu/" rel="tag" title="see questions tagged 'ubuntu'">ubuntu</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>09 May '15, 14:32</strong>
+</p>
+<img alt="f00dl3a's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1afe4bf83008befdcf7bdf5c6abfa195?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9650/f00dl3a">f00dl3a</a><br/>
+<span class="score" title="171 reputation points">171</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="13 badges"><span class="bronze">●</span><span class="badgecount">13</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="f00dl3a has one accepted answer">25%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-42991">
+</div>
+<div class="comment-tools" id="comment-tools-42991">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-42991-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/42991/varrunrenderd-deleted-on-reboot?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/42991/varrunrenderd-deleted-on-reboot?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/42991/varrunrenderd-deleted-on-reboot?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/42991/varrunrenderd-deleted-on-reboot?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="42997"></a>
+<div class="answer answered-by-owner" id="answer-container-42997">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/42997/up/" id="post-42997-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-42997-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/42997/down/" id="post-42997-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>... another question I answered on my own!</p>
+<p>Typo in the tmpfiles.d/renderd.conf file - fixed it and it's working.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/42997/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 May '15, 19:18</strong>
+</p>
+<img alt="f00dl3a's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1afe4bf83008befdcf7bdf5c6abfa195?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9650/f00dl3a">f00dl3a</a><br/>
+<span class="score" title="171 reputation points">171</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="13 badges"><span class="bronze">●</span><span class="badgecount">13</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="f00dl3a has one accepted answer">25%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-42997">
+</div>
+<div class="comment-tools" id="comment-tools-42997">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-42997-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="42992"></a>
+<div class="answer" id="answer-container-42992">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/42992/up/" id="post-42992-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-42992-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/42992/down/" id="post-42992-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Here's how I do it with upstart: <a href="http://blog.systemed.net/post/6">http://blog.systemed.net/post/6</a>. You may be able to adapt it to systemd. (Domain name similarity coincidental!)</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/42992/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 May '15, 15:21</strong>
+</p>
+<img alt="Richard's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/08324717c25d6067fa4ff23ef37d455f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5/richard">Richard ♦</a><br/>
+<span class="score" title="30902 reputation points"><span class="">30.9k</span></span><span title="44 badges"><span class="badge1">●</span><span class="badgecount">44</span></span><span title="279 badges"><span class="silver">●</span><span class="badgecount">279</span></span><span title="412 badges"><span class="bronze">●</span><span class="badgecount">412</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Richard has 98 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/42992/">
+                edited
+                <strong>09 May '15, 15:21</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-42992">
+</div>
+<div class="comment-tools" id="comment-tools-42992">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-42992-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/42991/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="svwu70nc7FPudSW7A99AYZFN1ccRdGcs"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

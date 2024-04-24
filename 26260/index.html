@@ -1,0 +1,187 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/26260/import-single-track-entry-as-poi">Import single track entry as POI</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/26260/up/" id="post-26260-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-26260-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/26260/down/" id="post-26260-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/26260/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have a gpx file with a single point, I'd like to import to OSM as a POI</p>
+<p>The file from my app looks like (from GPSLogger)</p>
+<p><code>
+&lt;trk&gt;
+&lt;trkseg&gt;
+&lt;trkpt lat="-XX.XXX" lon="XXX.XXXXXX"&gt;
+&lt;ele&gt;99.0&lt;/ele&gt;
+&lt;speed&gt;0.0&lt;/speed&gt;
+&lt;hdop&gt;30.0&lt;/hdop&gt;
+&lt;src&gt;gps&lt;/src&gt;
+&lt;sat&gt;6&lt;/sat&gt;
+&lt;time&gt;2013-09-10T18:52:02Z&lt;/time&gt;
+&lt;/trkpt&gt;
+</code></p>
+<p>When I load this gpx file into OSM it takes me to the point, but there is no marker there. </p>
+<p>How can I modify the file to be a POI? does gpsbabel support this ?</p>
+<p>I've tried 
+</p><pre>$&gt;gpsbabel -i gpx  -f infile.gpx -x transform,rte=wpt -o gpx -F route.gpx
+</pre><p></p>
+<p>but this doesn't seem to help </p>
+<p>My goal is to log tree locations , along with notes on their species, so I would go to the site, mark the tree, then hit "log single location", the app then saves a gpx, I can convert all of these files at one go after the fact if necessary.</p>
+<p>Cheers,
+Tim</p>
+<p>NOTE: I edited to fix my previously broken gpsbabel command line and attempted to fix to display xml correctly</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-gpx" href="/tags/gpx/" rel="tag" title="see questions tagged 'gpx'">gpx</a>
+<a class="post-tag tag-link-poi" href="/tags/poi/" rel="tag" title="see questions tagged 'poi'">poi</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>11 Sep '13, 00:47</strong>
+</p>
+<img alt="iondiode's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/55f24a02ed681bc622c509f0e4a3d9ab?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7350/iondiode">iondiode</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="iondiode has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/26260/">
+                edited
+                <strong>11 Sep '13, 02:52</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-26260">
+<a name="26261"></a>
+<div class="comment" id="comment-26261">
+<div class="comment-score" id="post-26261-score"></div>
+<div class="comment-text"><p>meta: you can insert XML  here.  Indent the code with one tab (4 spaces would also work). Use a advanced (not notepad) text editor to easily indent. See <a href="/questions/25095/whats-wrong-with-my-pseudo-waypoint-fake-trackpoint-gpx-file-expected-state-trackpoint-got-state-unknown-xml-parser">that other question</a> for example. Note that the preview feature is showing a wrong preview.</p></div>
+<div class="comment-info" id="comment-26261-info">
+<span class="comment-age">(11 Sep '13, 01:10)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+<a name="26285"></a>
+<div class="comment" id="comment-26285">
+<div class="comment-score" id="post-26285-score"></div>
+<div class="comment-text"><p>It would clarify to others if you could explain what you mean by "load this gpx file into OSM" and "drops a waypoint in OSM". How/where?</p></div>
+<div class="comment-info" id="comment-26285-info">
+<span class="comment-age">(11 Sep '13, 13:52)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-26260">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-26260-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/26260/import-single-track-entry-as-poi?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/26260/import-single-track-entry-as-poi?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/26260/import-single-track-entry-as-poi?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/26260/import-single-track-entry-as-poi?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="26262"></a>
+<div class="answer answered-by-owner" id="answer-container-26262">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/26262/up/" id="post-26262-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-26262-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/26262/down/" id="post-26262-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>arg! I hate answering my own question, but I think this was just an issue with my gpsbabel command</p>
+<pre>$&gt;gpsbabel -i gpx  -f infile.gpx -x transform,trk=wpt -o gpx -F route.gpx
+</pre>
+<p>drops a waypoint in OSM, which makes sense "transform my track into a list of waypoints" not the "rte" as I didn't have one.</p>
+<p>Sorry to bother</p>
+<p>Cheers,
+Tim</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/26262/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>11 Sep '13, 02:56</strong>
+</p>
+<img alt="iondiode's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/55f24a02ed681bc622c509f0e4a3d9ab?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7350/iondiode">iondiode</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="iondiode has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-26262">
+<a name="26282"></a>
+<div class="comment" id="comment-26282">
+<div class="comment-score" id="post-26282-score">1</div>
+<div class="comment-text"><p>To upload a .gpx to OSM it used to have to have at least one valid trackpoint in it (regardless of how many valid waypoints it had).  Has that changed?</p></div>
+<div class="comment-info" id="comment-26282-info">
+<span class="comment-age">(11 Sep '13, 13:08)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-26262">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-26262-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/26260/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="R2Pcx3thLvI5v0D5wExT2Q98RdQDXkck"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,277 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/82847/extract-elements-within-city-bounding-box">Extract elements within city bounding box</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/82847/up/" id="post-82847-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-82847-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/82847/down/" id="post-82847-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/82847/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Given a city name, I'm trying to extract all nodes and ways that are located inside this city.
+But instead of a polygon shaped region, I want all elements inside the bounding box that surrounds this polygon shaped city region.</p>
+<p>I checked out Osmium-tool, but it only provides two functionalities:</p>
+<ul>
+<li><code>tags-filter</code>: extract data filtered by tags (i.e. city name)</li>
+<li><code>extract</code>: extract data given bounding box coordinates</li>
+</ul>
+<p>The first only returns the data inside the polygon shaped region and the second requires bounding box coordinates.</p>
+<p>So is there a lib or a tool to extract that data or at least finds bounding box coordinates for a given city?</p>
+<p>Thanks in advance!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-filter" href="/tags/filter/" rel="tag" title="see questions tagged 'filter'">filter</a>
+<a class="post-tag tag-link-osmium" href="/tags/osmium/" rel="tag" title="see questions tagged 'osmium'">osmium</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Dec '21, 10:32</strong>
+</p>
+<img alt="PoRouS's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/4404ad9bdd18f47ae5bd0f0551047e19?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/21173/porous">PoRouS</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="PoRouS has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-82847">
+</div>
+<div class="comment-tools" id="comment-tools-82847">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-82847-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/82847/extract-elements-within-city-bounding-box?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/82847/extract-elements-within-city-bounding-box?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/82847/extract-elements-within-city-bounding-box?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/82847/extract-elements-within-city-bounding-box?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="82851"></a>
+<div class="answer" id="answer-container-82851">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/82851/up/" id="post-82851-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-82851-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/82851/down/" id="post-82851-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Determining a bounding box for a polygon is kind of trivial. If you have the polygon in any kind of textual representation it should only take minutes in your favorite scripting language to determine the required values. </p>
+<p>So the problem is more finding the polygon data for the specific city, in many countries you should be able to get that from OSM itself, in other places you might need to use 3rd party sources or simply draw a bounding box yourself.  </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/82851/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>16 Dec '21, 18:48</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-82851">
+<a name="82854"></a>
+<div class="comment" id="comment-82854">
+<div class="comment-score" id="post-82854-score"></div>
+<div class="comment-text"><p><code>osmium fileinfo</code> will also give you the bounding box of an OSM file. So if you have a relation for your city, Osmium can help you.</p></div>
+<div class="comment-info" id="comment-82854-info">
+<span class="comment-age">(16 Dec '21, 18:55)</span>
+<a class="comment-user userinfo" href="/users/112/jochen-topf">Jochen Topf</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-82851">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-82851-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="82866"></a>
+<div class="answer answered-by-owner" id="answer-container-82866">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/82866/up/" id="post-82866-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-82866-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/82866/down/" id="post-82866-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Thank you both for the very fast answers!</p>
+<p><a href="https://help.openstreetmap.org/users/2053/simonpoole"><a href="https://help.openstreetmap.org/users/2053/simonpoole">@SimonPoole</a></a> Yes, given the coordinates of the polygon nodes would make it easy to calculate a bounding box. But osmium tags-filter just filters and extracts the nodes into a file, so I don't have direct access to the coordinates, only afterwards. I was hoping that there is a functionality that handles that for me.</p>
+<p><a href="https://help.openstreetmap.org/users/112/jochen-topf"><a href="https://help.openstreetmap.org/users/112/jochen-topf">@Jochen Topf</a></a> If I filter the country map for the city relation, then the bounding box of the resulting OSM file still contains the values of the whole country and not that of the extracted relation.</p>
+<p>So probably I can solve it that way:<br/>
+ - use libosmium to filter the data for the relation of the city<br/>
+ - extract all nodes of that relation<br/>
+ - determine min and max longitude and latitude coordinates to determine city bounding box<br/>
+ - use osmium-tool to extract the data within this bounding box</p>
+<p>But unfortunately, I'm struggling to access the nodes of a relation in libosmium. I hope you can give me a hint.<br/>
+I'm trying to use the following handler for that, but I'm stuck here:</p>
+<pre><code>class NamesHandler : public osmium::handler::Handler {
+public:
+static void relation(const osmium::Relation&amp; relation)
+{
+    osmium::TagsFilter filter { false };
+    filter.add_rule(true, "name", "Friedrichshafen");
+    if (!osmium::tags::match_any_of(relation.tags(), filter))
+        return;
+
+    for (const auto&amp; member : relation.members()) {
+        const auto&amp; object = member.get_object();
+        if (!object.is_compatible_to(osmium::item_type::node))
+            continue;
+
+        // TODO: convert osmium::OSMObject to osmium::Node to access the location function
+    }
+}
+};
+
+int main()
+{
+    NamesHandler names_handler;
+    osmium::io::Reader reader { "input.pbf", osmium::osm_entity_bits::relation };
+    osmium::apply(reader, names_handler);
+</code></pre>
+<p>}</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/82866/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>17 Dec '21, 11:04</strong>
+</p>
+<img alt="PoRouS's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/4404ad9bdd18f47ae5bd0f0551047e19?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/21173/porous">PoRouS</a><br>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="PoRouS has no accepted answers">0%</span>
+</br></br></p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/82866/">
+                edited
+                <strong>17 Dec '21, 12:37</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-82866">
+<a name="82867"></a>
+<div class="comment" id="comment-82867">
+<div class="comment-score" id="post-82867-score"></div>
+<div class="comment-text"><p>You can use <code>osmium getid -r</code> to get everything belonging to a relation out of an OSM file. You can use a link like <a href="https://www.openstreetmap.org/api/0.6/relation/65606/full">https://www.openstreetmap.org/api/0.6/relation/65606/full</a> (here for the London relation) to get that data from the API. There are so many different ways of doing these things depening on what exactly you want to do that this goes beyond what can be answered here in a simple way.</p></div>
+<div class="comment-info" id="comment-82867-info">
+<span class="comment-age">(17 Dec '21, 12:57)</span>
+<a class="comment-user userinfo" href="/users/112/jochen-topf">Jochen Topf</a>
+</div>
+</div>
+<a name="82878"></a>
+<div class="comment" id="comment-82878">
+<div class="comment-score" id="post-82878-score"></div>
+<div class="comment-text"><p>Thanks again for the hint. </p>
+<p>I found another way using libosmium to find the nodes for a specified relation.
+My code is based on this example: <a href="https://github.com/osmcode/libosmium/blob/master/examples/osmium_area_test.cpp">https://github.com/osmcode/libosmium/blob/master/examples/osmium_area_test.cpp</a></p>
+<p>I adapted the area callback to the following to gather the bounding box:</p>
+<pre><code>static void area(const osmium::Area&amp; area)
+{
+    double lonMin = 180;
+    double lonMax = -180;
+    double latMin = 90;
+    double latMax = -90;
+    for (auto oit = area.cbegin&lt;osmium::OuterRing&gt;(); oit != area.cend&lt;osmium::OuterRing&gt;(); ++oit) {
+        const osmium::NodeRefList&amp; nodes = *oit;
+        for (const auto&amp; node : nodes) {
+            lonMin = std::min(lonMin, node.lon());
+            lonMax = std::max(lonMax, node.lon());
+            latMin = std::min(latMin, node.lat());
+            latMax = std::max(latMax, node.lat());
+        }
+    }
+
+    std::cout &lt;&lt; "Bounding box:\n";
+    std::cout &lt;&lt; "(" &lt;&lt; lonMin &lt;&lt; "," &lt;&lt; latMin &lt;&lt; "," &lt;&lt; lonMax &lt;&lt; "," &lt;&lt; latMax &lt;&lt; ")\n";
+}
+</code></pre>
+<p>For the germany map this query takes pretty long, so I reduced the map beforehand with osmium-tool by filtering out relations that I need:</p>
+<pre><code>osmium tags-filter germany-latest.osm.pbf wr/boundary=administrative -o germany_filtered.pbf --overwrite
+</code></pre></div>
+<div class="comment-info" id="comment-82878-info">
+<span class="comment-age">(20 Dec '21, 09:33)</span>
+<a class="comment-user userinfo" href="/users/21173/porous">PoRouS</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-82866">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-82866-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/82847/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="CdAAIvwLIsYwk4uE6P8bfW7gzFsW5W1X"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

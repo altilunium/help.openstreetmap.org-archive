@@ -1,0 +1,133 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/12346/speeding-up-osmosis">Speeding up Osmosis</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/12346/up/" id="post-12346-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-12346-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/12346/down/" id="post-12346-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/12346/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have a 8G RAM and trying to split the Planet OSM files to multiple continents, countries and regions.  It took more than 1 day to split the Planet OSM to continent based OSM files.
+To split the continent OSM bz2 files further to smaller countries is taking more time. For example, the split of Asia osm bz2 file has been running since 2 days. The max heap value set to JVM is 5G.
+Any suggestions to speed up Osmosis?</p>
+<p>Thanks</p>
+<p>Kris</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-increase" href="/tags/increase/" rel="tag" title="see questions tagged 'increase'">increase</a>
+<a class="post-tag tag-link-performance" href="/tags/performance/" rel="tag" title="see questions tagged 'performance'">performance</a>
+<a class="post-tag tag-link-slow" href="/tags/slow/" rel="tag" title="see questions tagged 'slow'">slow</a>
+<a class="post-tag tag-link-split" href="/tags/split/" rel="tag" title="see questions tagged 'split'">split</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 Apr '12, 08:41</strong>
+</p>
+<img alt="kris's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/382f63907e37a769341f345c01d8e8df?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3404/kris">kris</a><br/>
+<span class="score" title="46 reputation points">46</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="kris has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-12346">
+</div>
+<div class="comment-tools" id="comment-tools-12346">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-12346-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/12346/speeding-up-osmosis?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/12346/speeding-up-osmosis?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/12346/speeding-up-osmosis?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/12346/speeding-up-osmosis?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="12347"></a>
+<div class="answer" id="answer-container-12347">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/12347/up/" id="post-12347-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-12347-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/12347/down/" id="post-12347-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Never use bz2 with osmosis, it's a performance killer. Use pbf files if you can, and for your intermediate products (i.e. if the only reason you're making asia.osm.pbf is that you want to further split it in a second step) add the <code>compress=none</code> flag to <code>--write-pbf</code> (don't worry, the resulting file will only be twice the size, not ten times). </p>
+<p>If you cannot use pbf files, at least use gz instead of bz2; if you really really have to use bz2, use an external program (<code>bzcat planet.osm.bz2 | osmosis --read-xml -</code>).</p>
+<p>Generously use <code>--buffer bufferCapacity=12000</code>, and if you have two disks in your system, try to read from one while writing to the other. </p>
+<p>The fastest way to split a planet file into components is to use Peter Koerner's <a href="https://github.com/MaZderMind/osm-history-splitter">OSM history splitter</a> instead of Osmosis.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/12347/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Apr '12, 08:48</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-12347">
+</div>
+<div class="comment-tools" id="comment-tools-12347">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-12347-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/12346/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="PMdWk2sIEoa5vMFXnLc9TrBvHgpNkNen"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

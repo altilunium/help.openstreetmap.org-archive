@@ -1,0 +1,244 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/1087/can-i-download-only-a-subset-of-data-in-josm">Can I download only a subset of data in JOSM?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1087/up/" id="post-1087-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1087-score" title="current number of votes">
+    6
+</div>
+<a class="ajax-command post-vote down" href="/vote/1087/down/" id="post-1087-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/1087/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   2
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Is there any way to filter the data <em>before</em> it is downloaded into JOSM? Suppose, for example, I wanted to see all the power lines in the state of Vermont. I can't download the entire state and then use the filters in JOSM because it's too much data to work with. But if I could download only the ways with the tag <code>"power=line"</code>, the amount of data would be very much smaller and they could easily be worked with. But I don't see any way to do this. Thanks.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-josm" href="/tags/josm/" rel="tag" title="see questions tagged 'josm'">josm</a>
+<a class="post-tag tag-link-filtering" href="/tags/filtering/" rel="tag" title="see questions tagged 'filtering'">filtering</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>09 Oct '10, 16:09</strong>
+</p>
+<img alt="OceanVortex's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a5ad728cbc8ae89b774c8c61fbeb20f9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/293/oceanvortex">OceanVortex</a><br/>
+<span class="score" title="156 reputation points">156</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="8 badges"><span class="bronze">●</span><span class="badgecount">8</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="OceanVortex has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1087">
+</div>
+<div class="comment-tools" id="comment-tools-1087">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1087-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/1087/can-i-download-only-a-subset-of-data-in-josm?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/1087/can-i-download-only-a-subset-of-data-in-josm?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/1087/can-i-download-only-a-subset-of-data-in-josm?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/1087/can-i-download-only-a-subset-of-data-in-josm?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="1097"></a>
+<div class="answer" id="answer-container-1097">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1097/up/" id="post-1097-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1097-score" title="current number of votes">
+    9
+</div>
+<a class="ajax-command post-vote down" href="/vote/1097/down/" id="post-1097-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Be very careful when working with filtered data in an offline editor because you will not be able to see whether other objects share some of the data you have downloaded. Here are some of the problems that might arise:</p>
+<ul>
+<li>You have downloaded only power lines. You move a power line according to an aerial image. You accidentally move a power pole into a house, or a river, or a road, which you hadn't downloaded and so you didn't notice.</li>
+<li>You have downloaded only railways. You simplify a railway line by deleting some of the nodes, unaware that one of the nodes is indeed a level crossing shared by a footway which you haven't downloaded. Your upload will fail.</li>
+<li>You have downloaded only roads. You move one highway's nodes about to improve the geometry, not seeing that one node was actually also used by an administrative boundary running across the road; your upload will work but you have created an ugly dent in the boundary.</li>
+</ul>
+<p>At the very least, when using filtered data, have a fully rendered OSM map displayed in the background so you are alerted to potential trouble spots.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/1097/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Oct '10, 18:36</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/1097/">
+                edited
+                <strong>11 Oct '10, 08:46</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1097">
+<a name="1100"></a>
+<div class="comment" id="comment-1100">
+<div class="comment-score" id="post-1100-score">1</div>
+<div class="comment-text"><p>Thanks, these are very good caveats to be aware of.</p></div>
+<div class="comment-info" id="comment-1100-info">
+<span class="comment-age">(09 Oct '10, 20:19)</span>
+<a class="comment-user userinfo" href="/users/293/oceanvortex">OceanVortex</a>
+</div>
+</div>
+<a name="9699"></a>
+<div class="comment" id="comment-9699">
+<div class="comment-score" id="post-9699-score">1</div>
+<div class="comment-text"><p>Does JOSM provide any level of protection against some of these potential problems? If not, maybe something could be implemented.</p></div>
+<div class="comment-info" id="comment-9699-info">
+<span class="comment-age">(30 Dec '11, 10:02)</span>
+<a class="comment-user userinfo" href="/users/237/kozuch">Kozuch</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-1097">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1097-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="1093"></a>
+<div class="answer" id="answer-container-1093">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1093/up/" id="post-1093-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1093-score" title="current number of votes">
+    8
+</div>
+<a class="ajax-command post-vote down" href="/vote/1093/down/" id="post-1093-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Take a look at <a href="http://wiki.openstreetmap.org/wiki/Xapi">XApi</a>. It is an eXtended API that allows you to filter the downloads. You can open the url in josm by selecting File-&gt;Open Location...</p>
+<p>You can for example use <a href="http://www.informationfreeway.org/api/0.6/way[bbox=11.54,48.14,11.543,48.145][power=line]">http://www.informationfreeway.org/api/0.6/way[bbox=11.54,48.14,11.543,48.145][power=line]</a>.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/1093/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Oct '10, 17:54</strong>
+</p>
+<img alt="Gnonthgol's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/44a4438f0146dfd898e24c221fd28b58?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/131/gnonthgol">Gnonthgol ♦</a><br/>
+<span class="score" title="13750 reputation points"><span class="">13.8k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="103 badges"><span class="silver">●</span><span class="badgecount">103</span></span><span title="198 badges"><span class="bronze">●</span><span class="badgecount">198</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Gnonthgol has 57 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1093">
+<a name="1101"></a>
+<div class="comment" id="comment-1101">
+<div class="comment-score" id="post-1101-score">2</div>
+<div class="comment-text"><p>Thanks, that's exactly what I needed.</p></div>
+<div class="comment-info" id="comment-1101-info">
+<span class="comment-age">(09 Oct '10, 20:21)</span>
+<a class="comment-user userinfo" href="/users/293/oceanvortex">OceanVortex</a>
+</div>
+</div>
+<a name="71477"></a>
+<div class="comment" id="comment-71477">
+<div class="comment-score" id="post-71477-score"></div>
+<div class="comment-text"><p>Is XApi still the recommended solution to download only a subset of data from OSM and avoid being overwhelmed, or is there a better way?</p></div>
+<div class="comment-info" id="comment-71477-info">
+<span class="comment-age">(05 Nov '19, 23:44)</span>
+<a class="comment-user userinfo" href="/users/3711/shohreh">Shohreh</a>
+</div>
+</div>
+<a name="71478"></a>
+<div class="comment" id="comment-71478">
+<div class="comment-score" id="post-71478-score">2</div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/3711/shohreh">@Shohreh</a>: You can export data from Overpass Turbo into JOSM.
+JOSM also has methods to download from Overpass itself, as well as Sophox.
+As fas as I can see XAPI is no longer supported by default.
+I assume Overpass is the preferred method nowadays.</p></div>
+<div class="comment-info" id="comment-71478-info">
+<span class="comment-age">(06 Nov '19, 04:12)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+<a name="71479"></a>
+<div class="comment" id="comment-71479">
+<div class="comment-score" id="post-71479-score"></div>
+<div class="comment-text"><p>Thank you. I'll check if there are any traps/drawbacks when downloading just a subset through Overpass Turbo.</p></div>
+<div class="comment-info" id="comment-71479-info">
+<span class="comment-age">(06 Nov '19, 10:15)</span>
+<a class="comment-user userinfo" href="/users/3711/shohreh">Shohreh</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-1093">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1093-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/1087/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="wxHJlFuOQ1U31gKk9mmaSDRkf4gRgVhq"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

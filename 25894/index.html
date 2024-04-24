@@ -1,0 +1,114 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/25894/how-can-i-fix-osmosis-stopping-with-task-type-write-srtm-doesnt-exist">How can I fix Osmosis stopping with "Task type write-srtm doesn't exist"?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/25894/up/" id="post-25894-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-25894-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/25894/down/" id="post-25894-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/25894/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>I am using your osmosis-srtm-plugin for my project, but I have encounter some problem, I download the Osmosis from <a href="http://wiki.openstreetmap.org/wiki/Osmosis,">http://wiki.openstreetmap.org/wiki/Osmosis,</a> and put osmosis-srtm-plugin in lib/default, and run the command 
+osmosis.bat --read-xml map.osm --write-srtm srvBase=<a href="http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/">http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/</a> srvSubDirs=North_America;South_America --write-xml test.osm followed <a href="http://code.google.com/p/osmosis-srtm-plugin/wiki/Examples.">http://code.google.com/p/osmosis-srtm-plugin/wiki/Examples.</a></p>
+<p>However, the result is:
+Aug 28, 2013 3:49:16 AM org.openstreetmap.osmosis.core.Osmosis run
+INFO: Osmosis Version 0.43.1
+Aug 28, 2013 3:49:16 AM org.openstreetmap.osmosis.core.Osmosis run
+INFO: Preparing pipeline.
+Aug 28, 2013 3:49:16 AM org.openstreetmap.osmosis.core.Osmosis main
+SEVERE: Execution aborted.
+org.openstreetmap.osmosis.core.OsmosisRuntimeException: Task type write-srtm doesn't exist.
+    at org.openstreetmap.osmosis.core.pipeline.common.TaskManagerFactoryRegister.getInstance(TaskManagerFactoryRegister.java:60)
+    at org.openstreetmap.osmosis.core.pipeline.common.Pipeline.buildTasks(Pipeline.java:50)
+    at org.openstreetmap.osmosis.core.pipeline.common.Pipeline.prepare(Pipeline.java:112)
+    at org.openstreetmap.osmosis.core.Osmosis.run(Osmosis.java:86)
+    at org.openstreetmap.osmosis.core.Osmosis.main(Osmosis.java:37)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+    at java.lang.reflect.Method.invoke(Method.java:597)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchStandard(Launcher.java:329)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:239)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:409)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:352)
+    at org.codehaus.classworlds.Launcher.main(Launcher.java:47)
+-bash: South_America: command not found </p>
+<p>Could you please help me with that? Thank you very much.</p>
+<p>Best</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-development" href="/tags/development/" rel="tag" title="see questions tagged 'development'">development</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+<a class="post-tag tag-link-osmosis-srtm-plugin" href="/tags/osmosis-srtm-plugin/" rel="tag" title="see questions tagged 'osmosis-srtm-plugin'">osmosis-srtm-plugin</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>28 Aug '13, 12:13</strong>
+</p>
+<img alt="usunyu's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2ef9d4ae850eea19bb3da21dd50a031a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7243/usunyu">usunyu</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="usunyu has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/25894/">
+                edited
+                <strong>28 Aug '13, 15:55</strong>
+</a>
+</p>
+<img alt="MagicFab's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0c12497903c6f3b2dd9f4d87deb127de?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/138/magicfab">MagicFab</a><br/>
+<span class="score" title="935 reputation points">935</span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="16 badges"><span class="silver">●</span><span class="badgecount">16</span></span><span title="22 badges"><span class="bronze">●</span><span class="badgecount">22</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-25894">
+<a name="25905"></a>
+<div class="comment" id="comment-25905">
+<div class="comment-score" id="post-25905-score"></div>
+<div class="comment-text"><p>If you want SRTM there are many easier ways to get it, and its best managed in a PostGIS db anyway. For instance, just load SRTM &amp; OSM nodes and then using PostGis queries to assign elevation data to your nodes.</p>
+<p>I would not be surprised if this plugin is no longer compatible with Osmosis.</p></div>
+<div class="comment-info" id="comment-25905-info">
+<span class="comment-age">(28 Aug '13, 19:39)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-25894">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-25894-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/25894/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="jFTksRpN6cyV7caPDsk7pFwsBqR7ihBl"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

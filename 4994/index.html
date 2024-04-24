@@ -1,0 +1,250 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/4994/how-long-does-it-take-to-extract-a-city-from-the-osm-globe">How long does it take to extract a city from the OSM globe?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/4994/up/" id="post-4994-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-4994-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/4994/down/" id="post-4994-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/4994/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I just downloaded the OSM globe, and am testing out running an extract using the demonstration <a href="http://wiki.openstreetmap.org/wiki/Osmosis#Extracting_bounding_boxes">code</a> and osmosis:</p>
+<pre><code> bzcat downloaded.osm.bz2 | osmosis\
+  --read-xml enableDateParsing=no file=-\
+  --bounding-box top=49.5138 left=10.9351 bottom=49.3866 right=11.201 --write-xml file=-\
+  | bzip2 &gt; extracted.osm.bz2
+</code></pre>
+<p>Roughly, how long does it take to get this extract? I'm using a computer with four 2.6 GHz cores, and 4 GB of ram and using Ubuntu 10.10. I'm curious whether this should take 4 hours or 4 days...</p>
+<p>This the output from my terminal:</p>
+<pre><code>user@computer:~/Downloads$  bzcat downloaded.osm.bz2 | osmosis\
+&gt;   --read-xml enableDateParsing=no file=-\
+&gt;   --bounding-box top=49.5138 left=10.9351 bottom=49.3866 right=11.201 --write-xml file=-\
+&gt;   | bzip2 &gt; extracted.osm.bz2
+May 4, 2011 11:36:20 AM org.openstreetmap.osmosis.core.Osmosis run
+INFO: Osmosis Version 0.34
+log4j:WARN No appenders could be found for logger (org.java.plugin.ObjectFactory).
+log4j:WARN Please initialize the log4j system properly.
+May 4, 2011 11:36:21 AM org.openstreetmap.osmosis.core.Osmosis run
+INFO: Preparing pipeline.
+May 4, 2011 11:36:21 AM org.openstreetmap.osmosis.core.Osmosis run
+INFO: Launching pipeline execution.
+May 4, 2011 11:36:21 AM org.openstreetmap.osmosis.core.Osmosis run
+INFO: Pipeline executing, waiting for completion.
+</code></pre>
+<p>It is now 13.37, and nothing else has appeared in the terminal. I'm not in a rush - I just want to check that this is a reasonable amount of time to wait, or whether there is something I have done incorrectly. I'm completely new to running queries on data-sets of this size, and osmosis in general. Thanks!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-extract" href="/tags/extract/" rel="tag" title="see questions tagged 'extract'">extract</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>04 May '11, 18:28</strong>
+</p>
+<img alt="celenius's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/eb61b8ace91c7e390160ce80bb8ee13b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1316/celenius">celenius</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="celenius has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/4994/">
+                edited
+                <strong>04 May '11, 18:38</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-4994">
+</div>
+<div class="comment-tools" id="comment-tools-4994">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-4994-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/4994/how-long-does-it-take-to-extract-a-city-from-the-osm-globe?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/4994/how-long-does-it-take-to-extract-a-city-from-the-osm-globe?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/4994/how-long-does-it-take-to-extract-a-city-from-the-osm-globe?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/4994/how-long-does-it-take-to-extract-a-city-from-the-osm-globe?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="4995"></a>
+<div class="answer" id="answer-container-4995">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/4995/up/" id="post-4995-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-4995-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/4995/down/" id="post-4995-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I can't tell you for sure, but I would expect it to take hours rather than days.</p>
+<p>However, there are two potential ways of speeding things up.</p>
+<p>1) Use the binary format <a href="http://planet.openstreetmap.org/pbf-experimental/">.osm.pbf</a> instead of the xml encoded version of the planet file. It is much more efficient to parse.</p>
+<p>2) If you only need a city, you probably don't want to start off with the whole planet. There are <a href="http://wiki.openstreetmap.org/wiki/Planet#Downloading">country sized extracts of the planet</a> available that are much more manageable. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/4995/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 May '11, 18:44</strong>
+</p>
+<img alt="apmon's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/32c974c4ca8b246698c2b82c64924da5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/65/apmon">apmon</a><br/>
+<span class="score" title="6527 reputation points"><span class="">6.5k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="44 badges"><span class="silver">●</span><span class="badgecount">44</span></span><span title="56 badges"><span class="bronze">●</span><span class="badgecount">56</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="apmon has 9 accepted answers">20%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-4995">
+<a name="4996"></a>
+<div class="comment" id="comment-4996">
+<div class="comment-score" id="post-4996-score"></div>
+<div class="comment-text"><p><a href="/users/65/apmon"></a><a href="/users/65/apmon">@apmon</a> Can I just download the .osm.pbf format, and run the query in the same way if I change the file name? I did look for country level extracts to use after the test city runs, however I want data for singapore, and did not see any regional extracts.</p></div>
+<div class="comment-info" id="comment-4996-info">
+<span class="comment-age">(04 May '11, 18:47)</span>
+<a class="comment-user userinfo" href="/users/1316/celenius">celenius</a>
+</div>
+</div>
+<a name="4997"></a>
+<div class="comment" id="comment-4997">
+<div class="comment-score" id="post-4997-score">1</div>
+<div class="comment-text"><p><a href="http://downloads.cloudmade.com/asia/south-eastern_asia/singapore#downloads_breadcrumbs">http://downloads.cloudmade.com/asia/south-eastern_asia/singapore#downloads_breadcrumbs</a></p>
+<p><a href="http://download.geofabrik.de/osm/asia.osm.pbf">http://download.geofabrik.de/osm/asia.osm.pbf</a></p>
+<p>Otherwise, yes you should be able to run the command the same way. Although you will presumably have to replace the --read-xml with something like --read-pbf</p></div>
+<div class="comment-info" id="comment-4997-info">
+<span class="comment-age">(05 May '11, 01:00)</span>
+<a class="comment-user userinfo" href="/users/65/apmon">apmon</a>
+</div>
+</div>
+<a name="5002"></a>
+<div class="comment" id="comment-5002">
+<div class="comment-score" id="post-5002-score"></div>
+<div class="comment-text"><p>Thanks for the links - I previously looked at cloudmade and geofabrik and they are missing a lot of information. I'll try the <code>--read-pbf</code></p></div>
+<div class="comment-info" id="comment-5002-info">
+<span class="comment-age">(05 May '11, 15:45)</span>
+<a class="comment-user userinfo" href="/users/1316/celenius">celenius</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-4995">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-4995-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="5011"></a>
+<div class="answer" id="answer-container-5011">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/5011/up/" id="post-5011-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-5011-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/5011/down/" id="post-5011-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can also use bboxSplit, which is much faster than osmosis.</p>
+<pre><code>wget <a href="http://svn.openstreetmap.org/applications/rendering/gosmore/bboxSplit.cpp">http://svn.openstreetmap.org/applications/rendering/gosmore/bboxSplit.cpp</a>
+g++ -O2 bboxSplit.cpp -o bboxSplit
+</code></pre>
+<p>To run it:</p>
+<pre><code>bzcat planet-latest.osm.bz2 |  ./bboxSplit \
+  -85.05113   73.12500    9.44906  180.00000 gzip someRegion.osm.gz \
+  ...
+</code></pre>
+<p>The 4 values are minlat, minlon maxlat and maxlon. If a node is in the
+bbox it is included in someRegion. If a way refers to 1 or more nodes
+in the bbox it is included in someRegion. If a relation refers to 1 or
+more node or way that has already been included in someRegion then
+that relation is also include in someRegion. I think osmosis follows
+the same rules.</p>
+<p>If you don't want to compress the output, change gzip to cat.</p>
+<p>You can have as many regions as you like. (I've tested up to 200)</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/5011/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 May '11, 10:01</strong>
+</p>
+<img alt="Nic%20Roets's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d25927545eb18b4d577280081df5ce6b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/75/nic-roets">Nic Roets</a><br/>
+<span class="score" title="583 reputation points">583</span><span title="9 badges"><span class="badge1">●</span><span class="badgecount">9</span></span><span title="12 badges"><span class="silver">●</span><span class="badgecount">12</span></span><span title="19 badges"><span class="bronze">●</span><span class="badgecount">19</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Nic Roets has one accepted answer">6%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-5011">
+</div>
+<div class="comment-tools" id="comment-tools-5011">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-5011-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/4994/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="iA9Arm6dpGbECT235X74RqjFWuoAuVvA"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

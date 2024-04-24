@@ -1,0 +1,161 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/69627/osm2pgsql-builds-ways-table-but-not-line-table">osm2pgsql builds ways table but not line table</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/69627/up/" id="post-69627-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-69627-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/69627/down/" id="post-69627-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/69627/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm trying to import xml data from an overpass query into postgres. Using the latest windows build on appveyor, "osm2pgsql -c -d postgis_25_sample -U postgres -H localhost -P 5432 -S default.style "myData.osm" -W -s" completes successfully. While it builds the osm_nodes, osm_point, and osm_ways tables correctly, the osm_line table is empty.</p>
+<p>The data looks something like this: <a href="https://paste.ee/p/iUUdg">https://paste.ee/p/iUUdg</a>
+Is something wrong with the data or is it something else?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>15 Jun '19, 02:48</strong>
+</p>
+<img alt="shinyburger's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/5e4011adcdb356367cb9fc693994422e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16797/shinyburger">shinyburger</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="shinyburger has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/69627/">
+                edited
+                <strong>15 Jun '19, 02:59</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-69627">
+<a name="69628"></a>
+<div class="comment" id="comment-69628">
+<div class="comment-score" id="post-69628-score"></div>
+<div class="comment-text"><p>Does your data actually contain anything that would be imported in to osm_line? For example non-closed ways that are not part of a MP?</p></div>
+<div class="comment-info" id="comment-69628-info">
+<span class="comment-age">(15 Jun '19, 11:26)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+<a name="69637"></a>
+<div class="comment" id="comment-69637">
+<div class="comment-score" id="post-69637-score"></div>
+<div class="comment-text"><p>Yes. I'm sure. The polygon table is empty as well.</p></div>
+<div class="comment-info" id="comment-69637-info">
+<span class="comment-age">(17 Jun '19, 02:06)</span>
+<a class="comment-user userinfo" href="/users/16797/shinyburger">shinyburger</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-69627">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-69627-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/69627/osm2pgsql-builds-ways-table-but-not-line-table?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/69627/osm2pgsql-builds-ways-table-but-not-line-table?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/69627/osm2pgsql-builds-ways-table-but-not-line-table?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/69627/osm2pgsql-builds-ways-table-but-not-line-table?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="69652"></a>
+<div class="answer accepted-answer" id="answer-container-69652">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/69652/up/" id="post-69652-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-69652-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/69652/down/" id="post-69652-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/69652/" rel="nofollow" title="shinyburger has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Your data is not NWR (Nodes, Ways, Relations) ordered, I don't believe you will get any kind of consistent results without doing that (I'm actually surprised that it imports at all).</p>
+<p>PS: I discussed this with the osm2pgsql maintainers, and to be exact: osm2pgsql doesn't require overall nwr ordering, but it does require nodes referenced by ways to be before the ways that reference them (in practical terms this naturally doesn't really make a difference).</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/69652/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>18 Jun '19, 14:17</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/69652/">
+                edited
+                <strong>19 Jun '19, 08:48</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-69652">
+</div>
+<div class="comment-tools" id="comment-tools-69652">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-69652-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/69627/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="YhC4i6FCs3atqqPExgwW3pBPCNfjCIU0"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

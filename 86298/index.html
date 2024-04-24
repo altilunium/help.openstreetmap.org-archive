@@ -1,0 +1,308 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/86298/memorial-queries-with-other-conditions">Memorial queries with other conditions</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/86298/up/" id="post-86298-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-86298-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/86298/down/" id="post-86298-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/86298/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello, perhaps a simple question as I'm new to the coding here:</p>
+<p>I'm looking to build a query to search for memorials/monuments that contains a term like "synagoge" or "ehemalige Synagoge" (Case insesitive search) 
+So not an actual Synagoge itself, but a memorial to a former 'synagoge' that may be in the title, or the inscription of the plaque. 
+Looking for a query to run in overpass that will allow me to only search monuments/memorials by adding a keyword (in this case looking for monuments to former synagogues in Germany)</p>
+<p>Would like to apply this query to a number of texts for descriptions/inscriptions of memorials in Germany.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-memorials" href="/tags/memorials/" rel="tag" title="see questions tagged 'memorials'">memorials</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 Dec '22, 21:20</strong>
+</p>
+<img alt="shaughi's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3c5725d189f1abc0bf3d5a98e4176c94?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/22498/shaughi">shaughi</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="shaughi has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-86298">
+</div>
+<div class="comment-tools" id="comment-tools-86298">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-86298-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/86298/memorial-queries-with-other-conditions?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/86298/memorial-queries-with-other-conditions?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/86298/memorial-queries-with-other-conditions?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/86298/memorial-queries-with-other-conditions?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="86300"></a>
+<div class="answer" id="answer-container-86300">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/86300/up/" id="post-86300-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-86300-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/86300/down/" id="post-86300-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>As a starter I tried the following overpass query:</p>
+<pre><code>[out:json][timeout:25];
+// fetch area “Berlin” to search in
+{{geocodeArea:Berlin}}-&gt;.searchArea;
+// gather results
+(
+ node["historic"="memorial"]["description"~"synagoge",i](area.searchArea);
+ way["historic"="memorial"]["description"~"synagoge",i](area.searchArea);
+ relation["historic"="memorial"]["description"~"synagoge",i](area.searchArea);
+);
+// print results
+out body;
+&gt;;
+out skel qt;
+</code></pre>
+<p>see: <a href="http://overpass-turbo.eu/s/1oFM">http://overpass-turbo.eu/s/1oFM</a></p>
+<p>Now this query relies on the word "Synagoge" (case insensitive) being used in the description tag, so it won't find an object where there is no "Synagoge in the description tag.</p>
+<p>So I tried a second query, this time checking for the inscription tag finding some more places:</p>
+<pre><code>[out:json][timeout:25];
+// fetch area “Berlin” to search in
+{{geocodeArea:Berlin}}-&gt;.searchArea;
+// gather results
+(
+node["historic"="memorial"]["inscription"~"synagoge",i](area.searchArea);
+way["historic"="memorial"]["inscription"~"synagoge",i](area.searchArea);
+relation["historic"="memorial"]["inscription"~"synagoge",i](area.searchArea);
+);
+// print results
+out body;
+&gt;;
+out skel qt;
+</code></pre>
+<p>see: <a href="http://overpass-turbo.eu/s/1oFP">http://overpass-turbo.eu/s/1oFP</a></p>
+<p>Edit: Ok, found a way to combine those two searches, a UNION in Overpass QL (maybe there is a better way but this works) - so searching for objects that are tagged as historic=memorial and have the word Synagoge (case insensitive) either in description or inscription (or in both):</p>
+<pre><code>[out:json][timeout:25];
+// fetch area “Berlin” to search in
+{{geocodeArea:Berlin}}-&gt;.searchArea;
+// gather results
+(
+node["historic"="memorial"]["description"~"synagoge",i](area.searchArea);
+node["historic"="memorial"]["inscription"~"synagoge",i](area.searchArea);
+way["historic"="memorial"]["description"~"synagoge",i](area.searchArea);
+way["historic"="memorial"]["inscription"~"synagoge",i](area.searchArea);
+relation["historic"="memorial"]["description"~"synagoge",i](area.searchArea);
+relation["historic"="memorial"]["inscription"~"synagoge",i](area.searchArea);
+);
+// print results
+out body;
+&gt;;
+out skel qt;
+</code></pre>
+<p>see: <a href="https://overpass-turbo.eu/s/1oFU">https://overpass-turbo.eu/s/1oFU</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/86300/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>05 Dec '22, 09:22</strong>
+</p>
+<img alt="Spiekerooger's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e06ed329df6032df14b5639de4d64782?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17439/spiekerooger">Spiekerooger</a><br/>
+<span class="score" title="3148 reputation points"><span class="">3.1k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="23 badges"><span class="silver">●</span><span class="badgecount">23</span></span><span title="56 badges"><span class="bronze">●</span><span class="badgecount">56</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Spiekerooger has 18 accepted answers">16%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/86300/">
+                edited
+                <strong>05 Dec '22, 09:47</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-86300">
+</div>
+<div class="comment-tools" id="comment-tools-86300">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-86300-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="86302"></a>
+<div class="answer answered-by-owner" id="answer-container-86302">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/86302/up/" id="post-86302-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-86302-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/86302/down/" id="post-86302-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Thanks! I think this does it. The only addition would be to search the name as some are listed very simply. Wiesbaden, for example produces this result</p>
+<pre><code>[out:json][timeout:25];
+</code></pre>
+<p>// fetch area “Wiesbaden” to search in
+{{geocodeArea:Wiesbaden}}-&gt;.searchArea;
+// gather results
+(
+  node["historic"="memorial"]<a href="area.searchArea">"description"~"synagoge",i</a>;
+  node["historic"="memorial"]<a href="area.searchArea">"inscription"~"synagoge",i</a>;
+  node["historic"="memorial"]<a href="area.searchArea">"name"~"synagoge",i</a>;
+  way["historic"="memorial"]<a href="area.searchArea">"description"~"synagoge",i</a>;
+  way["historic"="memorial"]<a href="area.searchArea">"inscription"~"synagoge",i</a>;
+  way["historic"="memorial"]<a href="area.searchArea">"name"~"synagoge",i</a>;
+  relation["historic"="memorial"]<a href="area.searchArea">"description"~"synagoge",i</a>;
+  relation["historic"="memorial"]<a href="area.searchArea">"inscription"~"synagoge",i</a>;
+  relation["historic"="memorial"]<a href="area.searchArea">"name"~"synagoge",i</a>;
+);
+// print results
+out body;</p>
+<blockquote>
+<p>;
+out skel qt;</p>
+</blockquote>
+<p><a href="https://overpass-turbo.eu/s/1oGj">https://overpass-turbo.eu/s/1oGj</a></p>
+<p><em>Or is the name search not the right way to go here</em>? 
+When I try to change the geocodeArea to a larger region, like Berlin or Hessen, I get a time out error. 
+Ultimately, I'd like to run this query for the entire country of Germany. </p>
+<p>Thanks again for the help!</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/86302/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>05 Dec '22, 11:59</strong>
+</p>
+<img alt="shaughi's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3c5725d189f1abc0bf3d5a98e4176c94?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/22498/shaughi">shaughi</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="shaughi has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-86302">
+</div>
+<div class="comment-tools" id="comment-tools-86302">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-86302-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="86303"></a>
+<div class="answer answered-by-owner" id="answer-container-86303">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/86303/up/" id="post-86303-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-86303-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/86303/down/" id="post-86303-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Note: Increased the timeout and was able to query larger area. ! Let me know if the name search is the right way to go, but it appear to work!</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/86303/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>05 Dec '22, 12:13</strong>
+</p>
+<img alt="shaughi's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3c5725d189f1abc0bf3d5a98e4176c94?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/22498/shaughi">shaughi</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="shaughi has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-86303">
+</div>
+<div class="comment-tools" id="comment-tools-86303">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-86303-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/86298/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="dZJFGV1BD8LTJVokcJNzJsa8qHh9LKyj"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

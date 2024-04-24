@@ -1,0 +1,249 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/70014/generating-osm-png-tiles-for-offline-use">Generating OSM png tiles for offline use</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/70014/up/" id="post-70014-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-70014-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/70014/down/" id="post-70014-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/70014/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm very new and very confused about how to accomplish a seemingly simple task: generate my own OSM .png tiles for offline use. Since I want to be able to have a huge amount of tiles, I don't want to load the server by downloading tiles directly from <code>tile.openstreetmap.org</code>.</p>
+<p>I was using <a href="https://wiki.openstreetmap.org/wiki/Creating_your_own_tiles#Creating_tiles_using_Mapnik_and_generate_tiles.py">Creating your own tiles</a>, but learned that this method is outdated with the new styling method: <a href="https://github.com/openstreetmap/mapnik-stylesheets/issues/15">mapnik-stylesheets issue #15</a></p>
+<p>Since this is all new to me, I'm quite confused at the sheer number of methods and tools I've seen recommended to download, format, and render OSM tiles. As far as my progress, here are the steps I have taken:</p>
+<ol>
+<li>Created a Postgres database named <code>gis</code>, enabling the <code>postgis</code> and <code>hstore</code> extensions</li>
+<li>Downloaded <code>arizona-latest.osm.pbf</code> from <a href="https://download.geofabrik.de/north-america.html">https://download.geofabrik.de/north-america.html</a></li>
+<li>Used <code>osm2pgsql</code> to import <code>arizona-latest.osm.pbf</code> into the Postgres database <code>gis</code>: <code>osm2pgsql -G --hstore --style openstreetmap-carto.style --tag-transform-script openstreetmap-carto.lua -d gis --slim --flat-nodes /home/user/nodes.cache --cache 5000 /home/user/downloads/arizona-latest.osm.pbf</code></li>
+<li>Generated shapefiles using <code>scripts/get-shapefiles.py</code> in the <code>openstreetmap-carto</code> directory</li>
+<li>Created <code>osm.xml</code> by running <code>carto project.mml &gt; osm.xml</code></li>
+<li>Successfully generated an image using <code>generate_image.py</code> from the outdated <code>mapnik-stylesheets</code> with warnings about failing to understand the new <code>carto</code> xml format.</li>
+<li>Failed to generate tiles using <code>generate_tiles.py</code> from the outdated <code>mapnik-stylesheets</code> with the same errors from <code>generate_image.py</code>.</li>
+</ol>
+<p>I'm at a loss at where to go from here with my current understanding of how this all works. If anyone can point me in the right direction, I'd greatly appreciate it.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-carto" href="/tags/carto/" rel="tag" title="see questions tagged 'carto'">carto</a>
+<a class="post-tag tag-link-tiles" href="/tags/tiles/" rel="tag" title="see questions tagged 'tiles'">tiles</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+<a class="post-tag tag-link-generate_tiles" href="/tags/generate_tiles/" rel="tag" title="see questions tagged 'generate_tiles'">generate_tiles</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>13 Jul '19, 00:23</strong>
+</p>
+<img alt="Karmic%20Creditor's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/705ee46fd6a481b68447d9311e9c0647?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16912/karmic-creditor">Karmic Creditor</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Karmic Creditor has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-70014">
+</div>
+<div class="comment-tools" id="comment-tools-70014">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-70014-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/70014/generating-osm-png-tiles-for-offline-use?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/70014/generating-osm-png-tiles-for-offline-use?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/70014/generating-osm-png-tiles-for-offline-use?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/70014/generating-osm-png-tiles-for-offline-use?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="70015"></a>
+<div class="answer accepted-answer" id="answer-container-70015">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/70015/up/" id="post-70015-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-70015-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/70015/down/" id="post-70015-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/70015/" rel="nofollow" title="Karmic Creditor has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>What I'd suggest is:</p>
+<ul>
+<li>Set up a tile server as per <a href="https://switch2osm.org/manually-building-a-tile-server-18-04-lts/">the switch2osm guide</a>.</li>
+<li>Follow <a href="https://wiki.openstreetmap.org/wiki/User:SomeoneElse/Ubuntu_1804_tileserver_load#Force_Rendering_Tiles">this diary entry</a> to generate tiles.</li>
+</ul>
+<p>The problem with generate_tiles.py is that it'll complain about unused font definitions in the stylesheet.</p>
+<p>Edit:  As noted below this will generate metatiles, not .png tiles, which probably isn't the best route here.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/70015/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>13 Jul '19, 00:41</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/70015/">
+                edited
+                <strong>13 Jul '19, 11:09</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-70015">
+<a name="70016"></a>
+<div class="comment" id="comment-70016">
+<div class="comment-score" id="post-70016-score">1</div>
+<div class="comment-text"><p>I did have to edit the <code>osm.xml</code> to remove all fonts except <code>Deja Vu Sans</code> because of the complaining. The errors/warnings I get when running the scripts are similar to <code>attribute 'maximum-scale-denominator' with value '100000' at line 0</code>, which, if I understand correctly, is because of the new styles used by OSM. I will try your method and report back.</p></div>
+<div class="comment-info" id="comment-70016-info">
+<span class="comment-age">(13 Jul '19, 00:58)</span>
+<a class="comment-user userinfo" href="/users/16912/karmic-creditor">Karmic Creditor</a>
+</div>
+</div>
+<a name="70020"></a>
+<div class="comment" id="comment-70020">
+<div class="comment-score" id="post-70020-score">1</div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/387/someoneelse">@SomeoneElse</a></p>
+<p>The method you suggested works great. One thing I'm curious about is the diary entry you mentioned. When calling <code>render_list</code>, it seems to create <code>.meta</code> files. Does this produce <code>.png</code> files somewhere I'm not looking?</p></div>
+<div class="comment-info" id="comment-70020-info">
+<span class="comment-age">(13 Jul '19, 06:01)</span>
+<a class="comment-user userinfo" href="/users/16912/karmic-creditor">Karmic Creditor</a>
+</div>
+</div>
+<a name="70033"></a>
+<div class="comment" id="comment-70033">
+<div class="comment-score" id="post-70033-score">2</div>
+<div class="comment-text"><p>.meta files are containers that contain 64 PNG files each. To extract .png from .meta, either run mod_tile in your Apache web server and run lots and lots of "wget" or "curl" commands against your own web server, or use <a href="https://github.com/geofabrik/meta2tile">https://github.com/geofabrik/meta2tile</a> to go from meta to png without mod_tile/Apache.</p></div>
+<div class="comment-info" id="comment-70033-info">
+<span class="comment-age">(13 Jul '19, 10:01)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="70035"></a>
+<div class="comment" id="comment-70035">
+<div class="comment-score" id="post-70035-score">1</div>
+<div class="comment-text"><p>It sounds like you're nearly there - just one comment about "I did have to edit the osm.xml to remove all fonts except Deja Vu Sans because of the complaining":</p>
+<p>You might find it easier to edit the stylesheet (the thing you run "carto" on) rather than editing the generated .xml directly.  If you can find out what's causing the problem you can probably edit it out in one place in a .mss file rather than many from the generated .xml.</p></div>
+<div class="comment-info" id="comment-70035-info">
+<span class="comment-age">(13 Jul '19, 11:15)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="70041"></a>
+<div class="comment" id="comment-70041">
+<div class="comment-score" id="post-70041-score"></div>
+<div class="comment-text"><p>Thank you two for the help. I will use meta2tile when the render_list completes</p></div>
+<div class="comment-info" id="comment-70041-info">
+<span class="comment-age">(13 Jul '19, 12:14)</span>
+<a class="comment-user userinfo" href="/users/16912/karmic-creditor">Karmic Creditor</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-70015">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-70015-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="79278"></a>
+<div class="answer" id="answer-container-79278">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/79278/up/" id="post-79278-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-79278-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/79278/down/" id="post-79278-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>(Two years later) You could also use my beefed up version of <a href="https://github.com/StyXman/osm-tile-tools/"><code>generate_tiles.py</code></a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/79278/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>15 Mar '21, 20:38</strong>
+</p>
+<img alt="Marcos%20Dione's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e4587465b2b1b94834e5e625b80a29dd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15564/marcos-dione">Marcos Dione</a><br/>
+<span class="score" title="71 reputation points">71</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Marcos Dione has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-79278">
+</div>
+<div class="comment-tools" id="comment-tools-79278">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-79278-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/70014/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="BL7iFEFLgq6OPa8wOPBgq8iYVFOCZ8U9"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

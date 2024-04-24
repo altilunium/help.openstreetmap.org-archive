@@ -1,0 +1,89 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/46941/nominatim-no-results">Nominatim, no results</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/46941/up/" id="post-46941-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-46941-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/46941/down/" id="post-46941-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/46941/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>I followed the instructions here to install nominatim: <a href="http://wiki.openstreetmap.org/wiki/Nominatim/Installation">http://wiki.openstreetmap.org/wiki/Nominatim/Installation</a></p>
+<p>But no matter the query, search.php always displays "No search results found".</p>
+<p>I used a Luxembourg extract (osm file). I have some Luxembourgish rows in the "place" table (this table has 76175 rows).
+The "placex" table has only 32388 rows. Its "street" and "country_code" columns only contain empty values.</p>
+<p>When I run the sql query:</p>
+<pre><code>"SELECT distinct calculated_country_code street FROM placex"
+</code></pre>
+<p>I get only two rows:</p>
+<pre><code>us
+ca
+</code></pre>
+<p>(I would expect a row with the "lu" country code, but no, it doesn't appear)</p>
+<p>Any idea what step could have gone wrong?</p>
+<p>A query like <a href="http://127.0.0.1:8080/nominatim/search.php?q=luxembourg">http://127.0.0.1:8080/nominatim/search.php?q=luxembourg</a> for example, gives no result, which is strange since I should have all the data from Luxembourg.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-results" href="/tags/results/" rel="tag" title="see questions tagged 'results'">results</a>
+<a class="post-tag tag-link-placex" href="/tags/placex/" rel="tag" title="see questions tagged 'placex'">placex</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 Dec '15, 01:55</strong>
+</p>
+<img alt="unecordesvp's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1e8df0cb397241565f3e8197bd312e57?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11736/unecordesvp">unecordesvp</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="unecordesvp has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/46941/">
+                edited
+                <strong>05 Dec '15, 00:10</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-46941">
+</div>
+<div class="comment-tools" id="comment-tools-46941">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-46941-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/46941/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="hilAL5trDWhFZdGY3X5jIFg50PaeknC9"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

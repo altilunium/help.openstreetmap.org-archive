@@ -1,0 +1,157 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/71660/query-locations-by-type-export">Query locations by type, export?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/71660/up/" id="post-71660-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-71660-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/71660/down/" id="post-71660-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/71660/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi! Is there a way to query malls within a certain geographic area, and export a list, perhaps as a CSV?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-filter" href="/tags/filter/" rel="tag" title="see questions tagged 'filter'">filter</a>
+<a class="post-tag tag-link-query" href="/tags/query/" rel="tag" title="see questions tagged 'query'">query</a>
+<a class="post-tag tag-link-csv" href="/tags/csv/" rel="tag" title="see questions tagged 'csv'">csv</a>
+<a class="post-tag tag-link-export" href="/tags/export/" rel="tag" title="see questions tagged 'export'">export</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>15 Nov '19, 22:23</strong>
+</p>
+<img alt="NickMoreau's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/edd82d90e8c1e9037f6b86c3bbfe7d56?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4358/nickmoreau">NickMoreau</a><br/>
+<span class="score" title="51 reputation points">51</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="NickMoreau has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-71660">
+</div>
+<div class="comment-tools" id="comment-tools-71660">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-71660-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/71660/query-locations-by-type-export?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/71660/query-locations-by-type-export?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/71660/query-locations-by-type-export?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/71660/query-locations-by-type-export?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="71661"></a>
+<div class="answer" id="answer-container-71661">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/71661/up/" id="post-71661-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-71661-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/71661/down/" id="post-71661-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Overpass-API is good for this type of query. <a href="http://overpass-turbo.eu/s/O8x">Here's a quick example</a> using Overpass Turbo to select the area of the query:</p>
+<pre><code>[out:csv(name,::lat,::lon)][bbox:{{bbox}}];
+nwr[shop=mall];
+out center;
+</code></pre>
+<p>It may be necessary to add more tags to really find all malls, depending on how they are tagged in the area of interest. This can be done by replacing the <code>nwr[shop=mall];</code> line with a union. For example, this query also returns areas tagged as commercial landuse:</p>
+<pre><code>[out:csv(name,::lat,::lon)][bbox:{{bbox}}];
+(
+  nwr[shop=mall];
+  nwr[landuse=commercial];
+);
+out center;
+</code></pre>
+<p>You may also want to add additional tags to the <code>csv()</code> block. Each one will show up as a column in the result.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/71661/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>15 Nov '19, 23:28</strong>
+</p>
+<img alt="maxerickson's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c860445e868ebb21da141635a4aa7b06?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10973/maxerickson">maxerickson</a><br/>
+<span class="score" title="12700 reputation points"><span class="">12.7k</span></span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="83 badges"><span class="silver">●</span><span class="badgecount">83</span></span><span title="176 badges"><span class="bronze">●</span><span class="badgecount">176</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="maxerickson has 93 accepted answers">32%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-71661">
+<a name="71667"></a>
+<div class="comment" id="comment-71667">
+<div class="comment-score" id="post-71667-score"></div>
+<div class="comment-text"><p>Wonderful, thank you! I'll try this out.</p>
+<p>I have minimal coding experience -- enough to understand and modify your code, but not enough to start from scratch -- so I'm extremely grateful for your help.</p></div>
+<div class="comment-info" id="comment-71667-info">
+<span class="comment-age">(16 Nov '19, 13:00)</span>
+<a class="comment-user userinfo" href="/users/4358/nickmoreau">NickMoreau</a>
+</div>
+</div>
+<a name="71668"></a>
+<div class="comment" id="comment-71668">
+<div class="comment-score" id="post-71668-score"></div>
+<div class="comment-text"><p>For a beginner the wizard on the Overpass Turbo does a good job. Open the wizard, fill in what you are looking for, "mall" in your case, and   klick create query. Then run it.</p></div>
+<div class="comment-info" id="comment-71668-info">
+<span class="comment-age">(16 Nov '19, 13:19)</span>
+<a class="comment-user userinfo" href="/users/10133/tzorn">TZorn</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-71661">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-71661-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/71660/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="RPQJPem70JGpZBBqHQsLQ4wy8Pzrhzvu"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

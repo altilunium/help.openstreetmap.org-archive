@@ -1,0 +1,140 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/49363/nik2img-gives-bad-allocation-when-producing-high-res-pngs">Nik2img gives "bad allocation" when producing high res pngs</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/49363/up/" id="post-49363-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-49363-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/49363/down/" id="post-49363-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/49363/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello Community,
+I am having problems using Nik2Img.
+We want to produce high resolution geo-referenced PNGs, which works pretty well,
+until a certain Bounding Box size or "zoom level" is reached. Probably at resulting pngs bigger 
+than 50 Megabytes. </p>
+<p>Output:
+D:\osm\mapnik\nik2img&gt;D:\osm\mapnik\nik2img\nik2img.py D:\osm\mapnik\osm.xml D:\
+Tiles\Mstb_2500.png --srs 21781 --bbox 8.15516 47.48854 8.30227 47.55949 --world
+-file wld --dimensions 17600 12800
+Traceback (most recent call last):
+  File "D:\osm\mapnik\nik2img\nik2img.py", line 238, in &lt;module&gt;
+    main()
+  File "D:\osm\mapnik\nik2img\nik2img.py", line 232, in main
+    nik_map.open()
+  File "D:\osm\mapnik\nik2img\mapnik_utils\composer.py", line 218, in open
+    self.render()
+  File "D:\osm\mapnik\nik2img\mapnik_utils\composer.py", line 327, in render
+    renderer = super(ComposeDebug,self).render()
+  File "D:\osm\mapnik\nik2img\mapnik_utils\composer.py", line 210, in render
+    renderer.render_file()
+  File "D:\osm\mapnik\nik2img\mapnik_utils\renderer.py", line 247, in render_fil
+e
+    self.local_render_wrapper(self.m, self.image, self.format)
+  File "D:\osm\mapnik\nik2img\mapnik_utils\renderer.py", line 131, in local_rend
+er_wrapper
+    self.render_to_file(<em>args)
+  File "D:\osm\mapnik\nik2img\mapnik_utils\renderer.py", line 199, in render_to_
+file
+    mapnik.render_to_file(</em>args)
+RuntimeError: bad allocation</p>
+<p>Any idea, how we can resolve this issue?
+We wanted to go this route instead of "generate_tiles.py" to later let our GIS-frontend
+tileseed the big rasters...</p>
+<p>Thx for any advice.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+<a class="post-tag tag-link-nik2img" href="/tags/nik2img/" rel="tag" title="see questions tagged 'nik2img'">nik2img</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>22 Apr '16, 14:05</strong>
+</p>
+<img alt="do4sch's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1d567ce59a77746f6234fe343a508488?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12214/do4sch">do4sch</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="do4sch has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-49363">
+<a name="49364"></a>
+<div class="comment" id="comment-49364">
+<div class="comment-score" id="post-49364-score"></div>
+<div class="comment-text"><p>we figured, that at about 12000x12000 pixels (depending on bounding box size) it throws this error.
+Anyone knows, if theres a "pixel-size-limit" with Nik2Img?
+We would need to create very large rasters to cover big scales...</p></div>
+<div class="comment-info" id="comment-49364-info">
+<span class="comment-age">(22 Apr '16, 14:32)</span>
+<a class="comment-user userinfo" href="/users/12214/do4sch">do4sch</a>
+</div>
+</div>
+<a name="49365"></a>
+<div class="comment" id="comment-49365">
+<div class="comment-score" id="post-49365-score">1</div>
+<div class="comment-text"><p>This really looks like a software issue which is best raised on the relevant issue tracker.</p></div>
+<div class="comment-info" id="comment-49365-info">
+<span class="comment-age">(22 Apr '16, 16:01)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="49381"></a>
+<div class="comment" id="comment-49381">
+<div class="comment-score" id="post-49381-score"></div>
+<div class="comment-text"><p>You could try if nik4 gives you the same problems - nik4 can do everything nik2img can do but the invocation is a bit different. Having said that, generating giant GeoTIFFs and then splitting them in tiles seems like an unnecessary complication to me; being able to render small tiles is something that makes things easier, not harder...</p></div>
+<div class="comment-info" id="comment-49381-info">
+<span class="comment-age">(23 Apr '16, 19:57)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="49427"></a>
+<div class="comment" id="comment-49427">
+<div class="comment-score" id="post-49427-score"></div>
+<div class="comment-text"><p>Thank you Frederik for your hint to Nik4...
+I was able to render Tiles of big bounding boxes with Nik4 successfully,
+even in a "custom" projection.
+Why does altering the projection in the mapnik-xml has no influence?
+Do scripts like Nik2Img and Nik4 override the projection set in osm.xml?</p></div>
+<div class="comment-info" id="comment-49427-info">
+<span class="comment-age">(26 Apr '16, 09:02)</span>
+<a class="comment-user userinfo" href="/users/12214/do4sch">do4sch</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-49363">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-49363-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/49363/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="0SEf16DOzkqdBAB8j9sgOag1CmzeOgaB"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

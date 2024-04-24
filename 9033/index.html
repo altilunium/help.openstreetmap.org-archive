@@ -1,0 +1,177 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/9033/how-to-render-maps-using-kml-file-in-openstreetmaps">How to render Maps using KML file in OpenStreetMaps</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/9033/up/" id="post-9033-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-9033-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/9033/down/" id="post-9033-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/9033/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>I have downloaded a Shape file from <a href="http://naturalearthdata.com">naturalearthdata.com</a> and converted this shape file to KML file using QGIS tool.</p>
+<p>I want to render my maps using OSM API and this KML file.and vary the color for each of the state from the KML file</p>
+<p>Can any one guide me to achieve this functionality?</p>
+<p>Thank you !!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-kml" href="/tags/kml/" rel="tag" title="see questions tagged 'kml'">kml</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Nov '11, 13:21</strong>
+</p>
+<img alt="VenuGopal's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c330e0454ebc0cf055159a5962e4f6ed?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2302/venugopal">VenuGopal</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="9 badges"><span class="silver">●</span><span class="badgecount">9</span></span><span title="9 badges"><span class="bronze">●</span><span class="badgecount">9</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="VenuGopal has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-9033">
+</div>
+<div class="comment-tools" id="comment-tools-9033">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-9033-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/9033/how-to-render-maps-using-kml-file-in-openstreetmaps?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/9033/how-to-render-maps-using-kml-file-in-openstreetmaps?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/9033/how-to-render-maps-using-kml-file-in-openstreetmaps?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/9033/how-to-render-maps-using-kml-file-in-openstreetmaps?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="9040"></a>
+<div class="answer" id="answer-container-9040">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/9040/up/" id="post-9040-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-9040-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/9040/down/" id="post-9040-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The "OpenStreetMap API" generally refers to the API for editing software. That's something different from what you're after.  You can display KML as an overlay on a slippy map (which may be showing OpenStreetMap as a baselayer)  Some information about doing that is linked from <a href="http://wiki.openstreetmap.org/wiki/KML">the KML page on the wiki</a>.</p>
+<p>However you <em>may</em> have a problem that the KML file you have created is gigantic and will fail to load in the browser (I dont know if that will be a problem, it's just a hunch based on your description)  A sensible sanity check might be to try loading it with google earth first of all, before trying a web overlay.</p>
+<p>"color for each of the states" could be achieved within the KML definitions. Perhaps QGIS doesn't give you that flexibility with its KML output (anyone know?). You may be able to achieve this by fiddling with the XML file by hand.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/9040/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>16 Nov '11, 16:19</strong>
+</p>
+<img alt="Harry%20Wood's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9e04333be840d50c6aa66fb112aad77c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/107/harry-wood">Harry Wood</a><br/>
+<span class="score" title="9489 reputation points"><span class="">9.5k</span></span><span title="25 badges"><span class="badge1">●</span><span class="badgecount">25</span></span><span title="88 badges"><span class="silver">●</span><span class="badgecount">88</span></span><span title="128 badges"><span class="bronze">●</span><span class="badgecount">128</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Harry Wood has 19 accepted answers">14%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-9040">
+<a name="9065"></a>
+<div class="comment" id="comment-9065">
+<div class="comment-score" id="post-9065-score"></div>
+<div class="comment-text"><p>Hi Harry,
+Thanks a lot for your reply,I am able to load the data from KML file as an overlay.
+However the polygons defined in the KML file,has a color and I am not getting any color updated over them,I am always getting a default color loaded on to them.</p>
+<p>I am not sure How can we make a change,so that it would change the color for that polygon.</p>
+<p>Please let me know if you come across this scenario like this.</p></div>
+<div class="comment-info" id="comment-9065-info">
+<span class="comment-age">(17 Nov '11, 09:51)</span>
+<a class="comment-user userinfo" href="/users/2302/venugopal">VenuGopal</a>
+</div>
+</div>
+<a name="9071"></a>
+<div class="comment" id="comment-9071">
+<div class="comment-score" id="post-9071-score"></div>
+<div class="comment-text"><p>Have you tried editing the KML file directly?</p></div>
+<div class="comment-info" id="comment-9071-info">
+<span class="comment-age">(17 Nov '11, 11:40)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="9073"></a>
+<div class="comment" id="comment-9073">
+<div class="comment-score" id="post-9073-score"></div>
+<div class="comment-text"><p>Yes,I tried that and modified the KML file as below
+I kept like this under PlaceMark element and also,I tried with fill and outlibne elements.Still noluck  :(
+&lt;style&gt;
+&lt;polystyle&gt;
+&lt;color&gt;44ff0000&lt;/color&gt;
+&lt;/polystyle&gt;
+&lt;/style&gt;</p>
+<p>Even editing the KML file that did not solved my problem and I gone through few of the forums and they suggested that KML file might have been cached and they want to append "?123" at the end of the KML file URL in Javascript.</p>
+<p>I tried that as well,still no luck</p>
+<p>Please let me know if you come across any situation</p></div>
+<div class="comment-info" id="comment-9073-info">
+<span class="comment-age">(17 Nov '11, 12:29)</span>
+<a class="comment-user userinfo" href="/users/2302/venugopal">VenuGopal</a>
+</div>
+</div>
+<a name="9105"></a>
+<div class="comment" id="comment-9105">
+<div class="comment-score" id="post-9105-score"></div>
+<div class="comment-text"><p>Interesting thing is ,when I loaded the KML file in the QGis Tool,I am able to see the color for that state,but when I am using with OSM API,I always see the default color(Orange)</p></div>
+<div class="comment-info" id="comment-9105-info">
+<span class="comment-age">(18 Nov '11, 11:30)</span>
+<a class="comment-user userinfo" href="/users/2302/venugopal">VenuGopal</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-9040">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-9040-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/9033/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="n6lEleMcx10Ionjh4xuCwMa78pF0LE2D"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

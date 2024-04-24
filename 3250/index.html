@@ -1,0 +1,168 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/3250/osmlib-ruby-export-kml-polygons">OsmLib Ruby Export KML Polygons</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/3250/up/" id="post-3250-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-3250-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/3250/down/" id="post-3250-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/3250/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have been trying to figure out, is it possible to produce KML polygons from OSM areas with the OSMLib ruby? I have already made quite a few modifications to the ruby source to fit my needs, but I still can't get this part to work..</p>
+<p>In the osmlib-base-0.1.4/lib folder, in objects.rb, I added:  ** Updated code below</p>
+<pre><code>        if (tags['area'] == 'yes' &amp;&amp; is_closed?)
+          polygon 
+        else
+          linestring
+        end
+</code></pre>
+<p>Replacing what was previously just:</p>
+<pre><code>    def geometry
+        linestring
+    end
+</code></pre>
+<p>That didn't seem to do the trick (there is already some geometry polygon code in the KML output, but obviously not enough! I don't know much at all about Ruby (this project is the first time I have used ruby at all!). Anyone have some tips/want to help implement this? I am sure this could get implemented properly and would be of use to people.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osmlib" href="/tags/osmlib/" rel="tag" title="see questions tagged 'osmlib'">osmlib</a>
+<a class="post-tag tag-link-kml" href="/tags/kml/" rel="tag" title="see questions tagged 'kml'">kml</a>
+<a class="post-tag tag-link-ruby" href="/tags/ruby/" rel="tag" title="see questions tagged 'ruby'">ruby</a>
+<a class="post-tag tag-link-area" href="/tags/area/" rel="tag" title="see questions tagged 'area'">area</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>22 Feb '11, 06:35</strong>
+</p>
+<img alt="wbski's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3a5c89275037ff2627640835b33e9483?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/493/wbski">wbski</a><br/>
+<span class="score" title="146 reputation points">146</span><span title="6 badges"><span class="badge1">●</span><span class="badgecount">6</span></span><span title="9 badges"><span class="silver">●</span><span class="badgecount">9</span></span><span title="14 badges"><span class="bronze">●</span><span class="badgecount">14</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="wbski has one accepted answer">50%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/3250/">
+                edited
+                <strong>22 Feb '11, 16:03</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-3250">
+</div>
+<div class="comment-tools" id="comment-tools-3250">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-3250-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/3250/osmlib-ruby-export-kml-polygons?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/3250/osmlib-ruby-export-kml-polygons?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/3250/osmlib-ruby-export-kml-polygons?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/3250/osmlib-ruby-export-kml-polygons?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="3256"></a>
+<div class="answer" id="answer-container-3256">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/3256/up/" id="post-3256-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-3256-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/3256/down/" id="post-3256-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Firstly, your approach will mistakenly put many objects in the polygon category, e.g. a highway roundabout; these are not, as your code seems to assume, tagged "area=no". To do this right you would have to look at the specific tags (i.e. closed way tagged as forest =&gt; polygon; closed way tagged as fence =&gt; linestring etc.)</p>
+<p>Secondly, are you sure that the areas you hope to see on output are closed ways at all - or are they maybe multipolygon relation, in which case you would need a totally different approach?</p>
+<p>You might want to look at <a href="http://blog.jochentopf.com/2011-01-05-osmium.html">Osmium/Osmjs</a>, by the same author, a program that lets you execute arbitrary Javascript code for OSM objects (you would still have to write the KML output part though). This program has good support for multipolygons.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/3256/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Feb '11, 07:40</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-3256">
+<a name="3258"></a>
+<div class="comment" id="comment-3258">
+<div class="comment-score" id="post-3258-score"></div>
+<div class="comment-text"><p>... thirdly, you need to refactor your code, since even if the if condition matches, the function will return the results of the last computation, which as written above is always linestring.</p></div>
+<div class="comment-info" id="comment-3258-info">
+<span class="comment-age">(22 Feb '11, 09:47)</span>
+<a class="comment-user userinfo" href="/users/3/andy-allan">Andy Allan</a>
+</div>
+</div>
+<a name="3276"></a>
+<div class="comment" id="comment-3276">
+<div class="comment-score" id="post-3276-score"></div>
+<div class="comment-text"><p>I see what you mean Frederik about not handling all the polygons properly.. However, in my application (ski runs), determining the areas is pretty simple, I will change tagging to area==yes. Anyways, I can tweak the logic to select forests etc later. I changed my code above, but still not working.. </p>
+<p>Now getting: geo_ruby/simple_features/polygon.rb:17:in <code>send': undefined method</code>points' for #&lt;array:0x1022a3840&gt; (NoMethodError)</p>
+<p>Its a mystery to me..</p></div>
+<div class="comment-info" id="comment-3276-info">
+<span class="comment-age">(22 Feb '11, 16:05)</span>
+<a class="comment-user userinfo" href="/users/493/wbski">wbski</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-3256">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-3256-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/3250/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="6F3O4K8bqZHZSNUYZyI3LmPmoFoVkq5P"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

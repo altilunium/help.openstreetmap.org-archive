@@ -1,0 +1,225 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/46064/nomintaim-is-returning-html-when-asking-for-json-in-php">Nomintaim is returning HTML when asking for JSON in PHP</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/46064/up/" id="post-46064-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-46064-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/46064/down/" id="post-46064-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/46064/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>The same URL through webbrowser returns JSON perfectly defined. When trying to acess through a PHP script (file_get_content or curl) I get the response in HTML when using "format=json" in the URL. I am working with Spanish data and response is correct but not in the format I am requesting it.</p>
+<p>This happens both, with a nominatim installed locally and with the public server from nominatim.openstreetmap.org. I tried this one to check if it was a problem of my installation. The response with the same parameters are identical in both servers. </p>
+<p>I reviewed the documentation and it mentioned in wiki that the public webservice is open but that it is necessary to define correctly the referer or the agent so that it answers correctly. I make sure of copying agent header from the webbrowser request headers but it goes the same. I got a warning before that about not being able to find agent header in log.php from Nominatim, but after adding it no error is present anymore. However I still get not JSON response from scruipts. Anyway, I am not sure if headers could be the problem.</p>
+<p>Anyone knows which is the correct header configuration to get the json response from PHP? Or do I have to change any configuration in my server to get json responses from scripts?</p>
+<p><strong>Web Browser headers (firebug)</strong></p>
+<p>Request:</p>
+<ul>
+<li>GET /nominatim/search.php?q=CALLE+POZO+SANTA+CATALINA+3+Ciudad+Real&amp;format=json&amp;addressdetails=1</li>
+<li>HTTP/1.1 Host: local.ip </li>
+<li>User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 </li>
+<li>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,<em>/</em>;q=0.8</li>
+<li>Accept-Language: es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3</li>
+<li>Accept-Encoding: gzip, deflate </li>
+<li>Cookie: PHPSESSID=guebk1lc2vu0ihaoedflmjhof1</li>
+<li>Connection: keep-alive</li>
+</ul>
+<p>Also tried with nominatim.openstreetmap.org as host and same behaviour.</p>
+<p>Response:</p>
+<ul>
+<li>HTTP/1.1 200 OK Date: Wed, 28 Oct 2015 09:01:40 GMT </li>
+<li>Server: Apache/2.2.22 (Debian) </li>
+<li>X-Powered-By: PHP/5.4.4-14+deb7u14</li>
+<li>Access-Control-Allow-Origin: *</li>
+<li>access-control-allow-methods: OPTIONS,GET </li>
+<li>Vary: Accept-Encoding</li>
+<li>Content-Encoding: gzip </li>
+<li>Content-Length: 369 Keep-Alive: timeout=5, max=100</li>
+<li>Connection: Keep-Alive </li>
+<li>Content-Type: application/json; charset=UTF-8</li>
+</ul>
+<p><strong>Eclipse headers (debugging)</strong></p>
+<p>Request:</p>
+<ul>
+<li>GET /nominatim/search.php?q=CALLE+POZO+SANTA+CATALINA+3+Ciudad Real&amp;format=json&amp;addressdetails=1 HTTP/1.1</li>
+<li>User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0</li>
+<li>Host: local.ip</li>
+<li>Accept: */*</li>
+</ul>
+<p>User-Agent is copied and manually set from the original HTTP request in the PHP script. If not done, Eclipse it is not sending any user-agent header. This is the reason I thought it could be due to headers when reading OSM wiki about service.</p>
+<p>Response:</p>
+<ul>
+<li>HTTP/1.1 200 OK Date: Wed, 28 Oct 2015 09:17:56 GMT  </li>
+<li>Server: Apache/2.2.22 (Debian)  </li>
+<li>X-Powered-By: PHP/5.4.4-14+deb7u14 </li>
+<li>Access-Control-Allow-Origin: * </li>
+<li>Access-Control-Allow-Methods: OPTIONS,GET  </li>
+<li>Vary:  Accept-Encoding</li>
+<li>Connection: close </li>
+<li>Content-Type: text/html; charset=UTF-8</li>
+</ul>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-json" href="/tags/json/" rel="tag" title="see questions tagged 'json'">json</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-html" href="/tags/html/" rel="tag" title="see questions tagged 'html'">html</a>
+<a class="post-tag tag-link-php" href="/tags/php/" rel="tag" title="see questions tagged 'php'">php</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>23 Oct '15, 09:03</strong>
+</p>
+<img alt="Juanma%20MR's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8ff71fc907067296fbfac86e637faa50?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10983/juanma-mr">Juanma MR</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Juanma MR has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/46064/">
+                edited
+                <strong>28 Oct '15, 09:41</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-46064">
+<a name="46070"></a>
+<div class="comment" id="comment-46070">
+<div class="comment-score" id="post-46070-score">4</div>
+<div class="comment-text"><p><em>I make sure of copying agent header from the webbrowser request headers</em> -&gt; That's wrong. You should NOT fake a user agent, instead specify YOUR program. But that shouldn't be the problem. Can you post the complete HTTP request you are sending? Or compare it on your own with the request your browser sends. You can capture it by using wireshark or tcpdump.</p></div>
+<div class="comment-info" id="comment-46070-info">
+<span class="comment-age">(23 Oct '15, 09:44)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="46160"></a>
+<div class="comment" id="comment-46160">
+<div class="comment-score" id="post-46160-score">1</div>
+<div class="comment-text"><p>Thanks for your response. I added the headers of both requests. Eclipse is not adding almost any header. This iis why I thought it could be due to headers but I am not sure which are the ones necessary if this is the problem.</p>
+<p>It works the same in local or using nominatim.openstreetmap.org service.</p></div>
+<div class="comment-info" id="comment-46160-info">
+<span class="comment-age">(28 Oct '15, 09:40)</span>
+<a class="comment-user userinfo" href="/users/10983/juanma-mr">Juanma MR</a>
+</div>
+</div>
+<a name="46161"></a>
+<div class="comment" id="comment-46161">
+<div class="comment-score" id="post-46161-score">1</div>
+<div class="comment-text"><p>One difference is that your browser offers <code>gzip</code> encoding in its request. This is then also chosen by Nominatim for its response. Your Eclipse doesn't offer this encoding. Maybe Nominatim needs gzip encoding for returning json? Try to add the header <code>Content-Encoding: gzip</code> to your request. Just a guess, I don't know anything about Nominatim's internals.</p></div>
+<div class="comment-info" id="comment-46161-info">
+<span class="comment-age">(28 Oct '15, 09:54)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="46172"></a>
+<div class="comment" id="comment-46172">
+<div class="comment-score" id="post-46172-score"></div>
+<div class="comment-text"><p>I got it. It was accept-encoding as you pointed out. Just wrote the answer. Thanks again.</p></div>
+<div class="comment-info" id="comment-46172-info">
+<span class="comment-age">(28 Oct '15, 11:47)</span>
+<a class="comment-user userinfo" href="/users/10983/juanma-mr">Juanma MR</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-46064">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-46064-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/46064/nomintaim-is-returning-html-when-asking-for-json-in-php?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/46064/nomintaim-is-returning-html-when-asking-for-json-in-php?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/46064/nomintaim-is-returning-html-when-asking-for-json-in-php?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/46064/nomintaim-is-returning-html-when-asking-for-json-in-php?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="46171"></a>
+<div class="answer answered-by-owner" id="answer-container-46171">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/46171/up/" id="post-46171-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-46171-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/46171/down/" id="post-46171-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Thanks to <a href="https://help.openstreetmap.org/users/158/scai">scai</a> commnets I got the solution.</p>
+<p>According to documentation it is necessary to send correctly referer or user-agent headers. However it is not true. It works without them, at least in my tests with the headers shown above without user-agent header.</p>
+<p>However the accept-encoding in the request is compulsory as if Nominatim does not find it, will always response in HTML. </p>
+<p>I have used curl for the tests and added this header with the following php function (just copied the string from the working web browser header):</p>
+<blockquote>
+<p>curl_setopt($curl, CURLOPT_ENCODING ,"gzip, deflate");</p>
+</blockquote>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/46171/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>28 Oct '15, 11:45</strong>
+</p>
+<img alt="Juanma%20MR's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8ff71fc907067296fbfac86e637faa50?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10983/juanma-mr">Juanma MR</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Juanma MR has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-46171">
+</div>
+<div class="comment-tools" id="comment-tools-46171">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-46171-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/46064/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="QndWoWkBt5zULE6yF2xm3ZlA4QJeg3AA"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

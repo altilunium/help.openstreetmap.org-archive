@@ -1,0 +1,201 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/27449/filtering-planet-for-just-placename-geocoding">Filtering planet for just placename geocoding</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/27449/up/" id="post-27449-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-27449-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/27449/down/" id="post-27449-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/27449/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I would like to start with the planet database, and then filter it to use for only administrative and geographic placename geocoding to lat-long (using nominatim). I don't care about roads, POI's, etc. I want to reduce the import time and storage requirements.</p>
+<p>I first tried this in a straightforward way: I started with the whole planet db (22GB) and then removed all relations and ways so I was only left with nodes (15GB). I further filtered the nodes to places and some geographic features (down to 117MB). The import took less than overnight.</p>
+<p>However, this filtering does not work so well, because some containment relationships are specified by <em>boundary=administrative</em>. Since boundaries are ways, I lost those by removing all ways. For instance, I lost the state boundaries, and so some US cities came back with lookup results like <em>City, County, USA</em>, instead of <em>City, County, State, USA</em>.</p>
+<p>I'll put back the administrative boundaries. But I would very much appreciate any further advice about what to remove and what not to remove so as not to lose too much information but  still reduce the database size significantly.</p>
+<p><strong>FOLLOWUP:</strong> For my purposes, removing buildings and roads was fine. The input data does not mention roads, so they could be safely removed. I used <code>osmfilter</code>:</p>
+<pre><code> osmfilter --keep="name= and ( mountain_pass= or natural= or place= or waterway= or boundary=administrative or boundary=national_park or boundary=protected_area )"
+</code></pre>
+<p>I reduced the planet pbf from 22GB to 1.6GB using the above filtering. Doing <code>--drop-author</code> reduces it further to 1.4GB.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-filter" href="/tags/filter/" rel="tag" title="see questions tagged 'filter'">filter</a>
+<a class="post-tag tag-link-placenames" href="/tags/placenames/" rel="tag" title="see questions tagged 'placenames'">placenames</a>
+<a class="post-tag tag-link-geocoding" href="/tags/geocoding/" rel="tag" title="see questions tagged 'geocoding'">geocoding</a>
+<a class="post-tag tag-link-features" href="/tags/features/" rel="tag" title="see questions tagged 'features'">features</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>23 Oct '13, 18:28</strong>
+</p>
+<img alt="dhalbert's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/507c65170b1d6d484cf28f1a4db5ecb6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5409/dhalbert">dhalbert</a><br/>
+<span class="score" title="61 reputation points">61</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="8 badges"><span class="bronze">●</span><span class="badgecount">8</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="dhalbert has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/27449/">
+                edited
+                <strong>28 Oct '13, 20:25</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-27449">
+</div>
+<div class="comment-tools" id="comment-tools-27449">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-27449-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/27449/filtering-planet-for-just-placename-geocoding?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/27449/filtering-planet-for-just-placename-geocoding?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/27449/filtering-planet-for-just-placename-geocoding?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/27449/filtering-planet-for-just-placename-geocoding?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="27507"></a>
+<div class="answer accepted-answer" id="answer-container-27507">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/27507/up/" id="post-27507-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-27507-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/27507/down/" id="post-27507-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/27507/" rel="nofollow" title="dhalbert has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Removing ways which only have either a building tag, a building tag and a source tag or a building tag, source tag and wall tag will <strong>significantly</strong> reduce the file size. On the other hand, nominatim might do this already. You'd also want to remove their nodes if you're not planning to use updates. </p>
+<p>You can't always remove roads because some geocoders rely on them.</p>
+<p>From a file size perspective, the planet is largely buildings, roads and the nodes used for them. natural/landuse are the only other tags that spring to mind, but you don't want to removed any named landuse.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/27507/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>26 Oct '13, 12:07</strong>
+</p>
+<img alt="pnorman's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/5634c46072077e10f5b7c0da9b4bbb62?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/290/pnorman">pnorman</a><br/>
+<span class="score" title="2352 reputation points"><span class="">2.4k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="21 badges"><span class="silver">●</span><span class="badgecount">21</span></span><span title="40 badges"><span class="bronze">●</span><span class="badgecount">40</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="pnorman has 9 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/27507/">
+                edited
+                <strong>29 Oct '13, 21:18</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-27507">
+</div>
+<div class="comment-tools" id="comment-tools-27507">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-27507-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="27465"></a>
+<div class="answer" id="answer-container-27465">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/27465/up/" id="post-27465-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-27465-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/27465/down/" id="post-27465-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I think you are potentially underestimating the complexity of what you want to do. Nominatim employs a lot of logic to try to get it right using the whole database, has to use heuristics in some circumstances and still doesn't "always" get it right.</p>
+<p>Probably the best approach would be to just remove data where you can be fairly sure that it will have no consequences for your application, for example just revmoving building outlines that have no interesting tags and are not member of a relation should already result in a noticeable size reduction.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/27465/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>24 Oct '13, 10:42</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-27465">
+</div>
+<div class="comment-tools" id="comment-tools-27465">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-27465-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/27449/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Mgr22r94WWH2Ei0SpCNK7gIbBGReenCF"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,148 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/80268/osm-geocoding-inverse-local-wamp">OSM geocoding inverse :local wamp</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80268/up/" id="post-80268-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80268-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/80268/down/" id="post-80268-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/80268/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am using the following code to retrieve the address from lon and lat:
+    $lon = 100.753;
+    $lat = 13.69362;</p>
+<pre><code>function getAddress($RG_Lat,$RG_Lon)
+{
+  $json = "https://nominatim.openstreetmap.org/reverse?format=json&amp;lat=".$RG_Lat."&amp;lon=".$RG_Lon."&amp;zoom=27&amp;addressdetails=1";
+
+  $ch = curl_init($json);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:59.0) Gecko/20100101 Firefox/59.0");
+  $jsonfile = curl_exec($ch);
+  curl_close($ch);
+
+  $RG_array = json_decode($jsonfile,true);
+
+  return $RG_array['display_name'];
+  // $RG_array['address']['city'];
+  // $RG_array['address']['country'];
+}
+
+$addr = getAddress($lat,$lon);
+echo "Address: ".$addr;
+</code></pre>
+<p>My code works very well under ovh server.</p>
+<p>My application is installed locally under wamp server.</p>
+<p>The same code, does not return anything: What extension or something else that I must activate it locally to have a return of my code?</p>
+<p>Do you have any idea, why my code no longer works locally (wamp server)?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-geocoding" href="/tags/geocoding/" rel="tag" title="see questions tagged 'geocoding'">geocoding</a>
+</div>
+<div class="post-controls" id="question-controls">
+<div class="community-wiki">
+        This question is marked "community wiki".
+        
+    </div>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>23 May '21, 23:12</strong>
+</p>
+<img alt="Lemjid's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bb762f011c30332a088e644823f52ea2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20255/lemjid">Lemjid</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Lemjid has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/80268/">
+                edited
+                <strong>24 May '21, 08:46</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80268">
+<a name="80289"></a>
+<div class="comment" id="comment-80289">
+<div class="comment-score" id="post-80289-score"></div>
+<div class="comment-text"><p>Hello everyone,
+ Someone has an approach, an idea: is it possible to use this code locally as my application is well installed locally ???</p></div>
+<div class="comment-info" id="comment-80289-info">
+<span class="comment-age">(25 May '21, 16:13)</span>
+<a class="comment-user userinfo" href="/users/20255/lemjid">Lemjid</a>
+</div>
+</div>
+<a name="80293"></a>
+<div class="comment" id="comment-80293">
+<div class="comment-score" id="post-80293-score"></div>
+<div class="comment-text"><p>Help please ????????</p></div>
+<div class="comment-info" id="comment-80293-info">
+<span class="comment-age">(25 May '21, 18:39)</span>
+<a class="comment-user userinfo" href="/users/20255/lemjid">Lemjid</a>
+</div>
+</div>
+<a name="80306"></a>
+<div class="comment" id="comment-80306">
+<div class="comment-score" id="post-80306-score">2</div>
+<div class="comment-text"><p>You probably aren't getting any responses because nobody here knows how to help you. This doesn't sound like an OSM issue, but rather a more general issue with configuring a web server. You might get more help from somewhere like StackOverflow.</p></div>
+<div class="comment-info" id="comment-80306-info">
+<span class="comment-age">(26 May '21, 17:35)</span>
+<a class="comment-user userinfo" href="/users/8189/alester">alester</a>
+</div>
+</div>
+<a name="80307"></a>
+<div class="comment" id="comment-80307">
+<div class="comment-score" id="post-80307-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/8189/alester">@Alester</a> : thanks</p></div>
+<div class="comment-info" id="comment-80307-info">
+<span class="comment-age">(26 May '21, 17:57)</span>
+<a class="comment-user userinfo" href="/users/20255/lemjid">Lemjid</a>
+</div>
+</div>
+<a name="80308"></a>
+<div class="comment" id="comment-80308">
+<div class="comment-score" id="post-80308-score">1</div>
+<div class="comment-text"><p>To add to what alester said - if something works in place A but not in place B then the difference is between place A and place B, and we don't have any information about those and so can't really comment.</p></div>
+<div class="comment-info" id="comment-80308-info">
+<span class="comment-age">(26 May '21, 18:00)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-80268">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80268-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/80268/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="VapT7oORxR1t0HlPCv5OStKdrcHPfzZ9"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

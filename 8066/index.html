@@ -1,0 +1,286 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/8066/ios-android-sdk">iOS - Android SDK ?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/8066/up/" id="post-8066-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-8066-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/8066/down/" id="post-8066-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/8066/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi, I'm a complete newbie here. Please bear with me.
+I'm trying to find a way to include offline mapping in my iOS and Android app which effectively plots a GPS position (or many positions/trail) on a map background.
+I can do this live/on line (if a data connection is available) with, say, Google Maps, but now want to add offline capability.</p>
+<p>I have the GPS/positioning (getting and manipulating Lat/Lon data) side of things pretty much sussed but have no idea how to simply/easily offer the capability to plot positions on a pre-downloaded map within my app. I can currently load in, say, an image, and display it but have no idea as to how to then scale said image correctly and pass in a position (Lat/Lon) for display on said 'image'...</p>
+<p>Is there an SDK for Android / iOS ?
+Am I missing something really obvious ?
+Am I in the right place ?
+Maybe this has already been done and is now a little passee but I'm really keen to do soemthing with OSM as the map source.
+Sorry, completely lost !</p>
+<p>Can anyone point me in the right direction please ?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-sdk" href="/tags/sdk/" rel="tag" title="see questions tagged 'sdk'">sdk</a>
+<a class="post-tag tag-link-ios" href="/tags/ios/" rel="tag" title="see questions tagged 'ios'">ios</a>
+<a class="post-tag tag-link-amdroid" href="/tags/amdroid/" rel="tag" title="see questions tagged 'amdroid'">amdroid</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Sep '11, 14:38</strong>
+</p>
+<img alt="JanCol's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e97550047f470639a8ac81615c36b87d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2115/jancol">JanCol</a><br/>
+<span class="score" title="44 reputation points">44</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="JanCol has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-8066">
+</div>
+<div class="comment-tools" id="comment-tools-8066">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-8066-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/8066/ios-android-sdk?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/8066/ios-android-sdk?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/8066/ios-android-sdk?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/8066/ios-android-sdk?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="8068"></a>
+<div class="answer" id="answer-container-8068">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/8068/up/" id="post-8068-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-8068-score" title="current number of votes">
+    6
+</div>
+<a class="ajax-command post-vote down" href="/vote/8068/down/" id="post-8068-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>OpenStreetMap doesn't provide a formal SDK. We focus on creating the map data; we don't provide an end-user product or developer tools. We leave that to other people!</p>
+<p>For iOS, the most popular map library is <a href="https://github.com/route-me/route-me">RouteMe</a>, which is open source. Bear in mind, however, that if your app uses map images from <a href="http://openstreetmap.org">openstreetmap.org</a>, you absolutely must adhere to the <a href="http://wiki.openstreetmap.org/wiki/Tile_usage_policy">Tile Usage Policy</a>, and that pretty much means using your own server or a third-party one unless you're expecting only miniscule amounts of usage.</p>
+<p>You may also find <a href="http://developers.cloudmade.com/projects">CloudMade's SDKs</a> of interest. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/8068/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Sep '11, 16:03</strong>
+</p>
+<img alt="Richard's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/08324717c25d6067fa4ff23ef37d455f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5/richard">Richard ♦</a><br/>
+<span class="score" title="30902 reputation points"><span class="">30.9k</span></span><span title="44 badges"><span class="badge1">●</span><span class="badgecount">44</span></span><span title="279 badges"><span class="silver">●</span><span class="badgecount">279</span></span><span title="412 badges"><span class="bronze">●</span><span class="badgecount">412</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Richard has 98 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-8068">
+<a name="8072"></a>
+<div class="comment" id="comment-8072">
+<div class="comment-score" id="post-8072-score"></div>
+<div class="comment-text"><p>Hi. Thanks for the answers. Appreciated. I'm still confused though - sorry... like i say, i'm new to this.
+So, I understand that OSM 'provides' the map data. And <code>others</code> provide the ability to view such data... I guess I'd like /need to find a suitable SDK -or- create my own but, how would i download a particular area/map tile? If i did download one, am i able to use it offline? Would i be able to zoom in/out or is the tile of a fixed zoom level once downloaded ? Would i need to download the same tile at various zoom levels to be able to zoom in/out or....is the map image/tile scaled? I mean how is the map bounds and scale data incorporated? Within the map 'tile' or as a separate 'data' file...
+I'm really keen to provide off-line mapping but am looking for some pointers as to the established 'norms' so i can decide if i need to create something myself and how simple it is to download the map tiles themselves and then scale them/set the lat/lon bounds etc
+Like i say, I'm keen to use OSM as my data source but am confused as to how to/where to start... as you'll have gathered from the above...</p>
+<p>If you've gotten this far then thanks. I hope you can help point me in the right direction TIA, Jane.</p></div>
+<div class="comment-info" id="comment-8072-info">
+<span class="comment-age">(21 Sep '11, 22:28)</span>
+<a class="comment-user userinfo" href="/users/2115/jancol">JanCol</a>
+</div>
+</div>
+<a name="8092"></a>
+<div class="comment" id="comment-8092">
+<div class="comment-score" id="post-8092-score">1</div>
+<div class="comment-text"><p>First of all you need to decide whether you want map tiles (pre-rendered vector images, usually .pngs of 256x256 pixels each) or to draw your own map from vector data. Map tiles are easier to work with for simple map display - the Route-Me library, for example, uses map tiles - but you'll need to identify a server from where you can get them.</p>
+<p>Once you've decided that, come back and ask us more - right now your question is a bit too open-ended for us to advise more.</p></div>
+<div class="comment-info" id="comment-8092-info">
+<span class="comment-age">(23 Sep '11, 11:40)</span>
+<a class="comment-user userinfo" href="/users/5/richard">Richard ♦</a>
+</div>
+</div>
+<a name="8096"></a>
+<div class="comment" id="comment-8096">
+<div class="comment-score" id="post-8096-score">1</div>
+<div class="comment-text"><p>Saying more about that : map tiles are simple pre-rendered image files (png or jpg) you can store on your device for the offline mode. But be aware that this requires a lot of storage memory, depending the amount of zooms and the area you want to cover. Storing the vector data is surely an alternative that offers other possibilities like off-line routing but you will have to render the images yourself.</p></div>
+<div class="comment-info" id="comment-8096-info">
+<span class="comment-age">(23 Sep '11, 12:23)</span>
+<a class="comment-user userinfo" href="/users/87/pieren">Pieren</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-8068">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-8068-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="8079"></a>
+<div class="answer" id="answer-container-8079">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/8079/up/" id="post-8079-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-8079-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/8079/down/" id="post-8079-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The map data is provided as whole planet dumps or extracts.  See <a href="http://wiki.openstreetmap.org/wiki/Planet.osm">Planet.osm</a> on the wiki for more details.  These are quite large files and contain every (current) bit of data is the osm database.  For a mobile app you would probably run the data through filters beforehand possibly changing the format as well as discarding unwanted elements.  Then you application would have to read the vector data and render it on the mobile device.</p>
+<p>This is fairly complex to program, you might find open source programs which can do this already and try to use them.</p>
+<p>The other way is to use map tiles which are rendered on a server and sent as pictures (usually png).  This is what you see on the main site.  You can use the tiles rendered by the openstreetmap servers but there is the <a href="http://wiki.openstreetmap.org/wiki/Tile_usage_policy">Tile Usage Policy</a> mentioned by Richard which doesn't allow mass downloading of tiles for offline use.  The solution is to set up your own server to render the tiles (or find another source of tiles with a compatible usage policy).</p>
+<p>A disadvantage of this is that the tiles take up quite a lot more storage than the vector data so the offline area would be more restricted.  Making a program to display map tiles is much easier and uses less processing power on the device, again you might find an already existing open source program which would help.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/8079/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Sep '11, 14:07</strong>
+</p>
+<img alt="quantumstate's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7bb4d30bb6d40cf9b3644ff4f453e5bd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1002/quantumstate">quantumstate</a><br/>
+<span class="score" title="455 reputation points">455</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="quantumstate has 3 accepted answers">30%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-8079">
+</div>
+<div class="comment-tools" id="comment-tools-8079">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-8079-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="8071"></a>
+<div class="answer" id="answer-container-8071">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/8071/up/" id="post-8071-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-8071-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/8071/down/" id="post-8071-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Have a look at the OSM wiki about <a href="http://wiki.openstreetmap.org/wiki/Apple_iOS">Apple iOS</a> and <a href="http://wiki.openstreetmap.org/wiki/Android">Android</a> ... there are some apps that are opensource. </p>
+<p>Have a look how they get theit OSM derived data and how they display it.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/8071/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Sep '11, 18:34</strong>
+</p>
+<img alt="stephan75's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/245b73d4390c3408fe3c6da759b9897f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/99/stephan75">stephan75</a><br/>
+<span class="score" title="12642 reputation points"><span class="">12.6k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="56 badges"><span class="silver">●</span><span class="badgecount">56</span></span><span title="210 badges"><span class="bronze">●</span><span class="badgecount">210</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="stephan75 has 37 accepted answers">6%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-8071">
+<a name="8089"></a>
+<div class="comment" id="comment-8089">
+<div class="comment-score" id="post-8089-score"></div>
+<div class="comment-text"><p>Thanks... a lot to be thinking about. Thanks for the clear and concise answers to my somewhat vague questions. Back to the wiki.again - thanks</p></div>
+<div class="comment-info" id="comment-8089-info">
+<span class="comment-age">(22 Sep '11, 22:26)</span>
+<a class="comment-user userinfo" href="/users/2115/jancol">JanCol</a>
+</div>
+</div>
+<a name="8090"></a>
+<div class="comment" id="comment-8090">
+<div class="comment-score" id="post-8090-score"></div>
+<div class="comment-text"><p>thanks... like i say a lot to be thinking about. Need to decide first i guess on vector or png-style (raster, i guess) mapping... again, back to the wiki...</p></div>
+<div class="comment-info" id="comment-8090-info">
+<span class="comment-age">(22 Sep '11, 22:28)</span>
+<a class="comment-user userinfo" href="/users/2115/jancol">JanCol</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-8071">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-8071-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/8066/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="VYvgLNBW1bjBBztF0B59gVB1gvKfLeg1"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

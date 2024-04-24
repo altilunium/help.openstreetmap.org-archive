@@ -1,0 +1,187 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/29964/nominatim-problem-after-installing-tiger-data">nominatim problem after installing TIGER data</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/29964/up/" id="post-29964-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-29964-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/29964/down/" id="post-29964-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/29964/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>I'm trying to install TIGER data on a local Nominatim server.</p>
+<p>During the first step in the installation, I started seeing errors like the one pasted below (only for numbers larger than about 60000).</p>
+<p>After installing the TIGER data (as specified at the bottom of the installation instructions page) it stopped working fine.</p>
+<p>Reverse geo queries return blank pages, if I view the source I only see "1" on the page.
+Geo coding queries seem not to find any results.</p>
+<p>The table location_property_tiger still exists.</p>
+<p>Any clues?
+Thanks,
+Raz</p>
+<pre><code>Traceback (most recent call last):
+  File "/home/raz/Downloads/Nominatim-2.1/utils/tigerAddressImport.py", line 4064, in &lt;module&gt;
+    shape_to_osm( shape, osm, id )
+  File "/home/raz/Downloads/Nominatim-2.1/utils/tigerAddressImport.py", line 3955, in shape_to_osm
+    parsed_features = parse_shp_for_osm( shp_filename )
+  File "/home/raz/Downloads/Nominatim-2.1/utils/tigerAddressImport.py", line 3475, in parse_shp_for_osm
+    tags.update( fipsstate(statefp, countyfp) )
+  File "/home/raz/Downloads/Nominatim-2.1/utils/tigerAddressImport.py", line 3344, in fipsstate
+    county = county_fips[county_fips_code]
+KeyError: '60010'
+Failed parse (/data1/EDGES/tl_2013_60010_edges.zip)
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-tiger" href="/tags/tiger/" rel="tag" title="see questions tagged 'tiger'">tiger</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>19 Jan '14, 08:00</strong>
+</p>
+<img alt="RazAlon's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/84ebb95a07dd884e34f0170b07b1d652?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8079/razalon">RazAlon</a><br/>
+<span class="score" title="61 reputation points">61</span><span title="9 badges"><span class="badge1">●</span><span class="badgecount">9</span></span><span title="9 badges"><span class="silver">●</span><span class="badgecount">9</span></span><span title="14 badges"><span class="bronze">●</span><span class="badgecount">14</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="RazAlon has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/29964/">
+                edited
+                <strong>20 Feb '14, 11:56</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-29964">
+<a name="29999"></a>
+<div class="comment" id="comment-29999">
+<div class="comment-score" id="post-29999-score"></div>
+<div class="comment-text"><p>Can you check if the table <code>location_property_tiger</code> still exists in your DB?</p></div>
+<div class="comment-info" id="comment-29999-info">
+<span class="comment-age">(20 Jan '14, 08:20)</span>
+<a class="comment-user userinfo" href="/users/2921/lonvia">lonvia</a>
+</div>
+</div>
+<a name="30012"></a>
+<div class="comment" id="comment-30012">
+<div class="comment-score" id="post-30012-score"></div>
+<div class="comment-text"><p>yes, it's there</p></div>
+<div class="comment-info" id="comment-30012-info">
+<span class="comment-age">(20 Jan '14, 12:00)</span>
+<a class="comment-user userinfo" href="/users/8079/razalon">RazAlon</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-29964">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-29964-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/29964/nominatim-problem-after-installing-tiger-data?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/29964/nominatim-problem-after-installing-tiger-data?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/29964/nominatim-problem-after-installing-tiger-data?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/29964/nominatim-problem-after-installing-tiger-data?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="30873"></a>
+<div class="answer accepted-answer" id="answer-container-30873">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/30873/up/" id="post-30873-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-30873-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/30873/down/" id="post-30873-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/30873/" rel="nofollow" title="RazAlon has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Your problems are not related to the error messages you got during import. They just indicate that some edge files couldn't be processed and have been skipped. All other edge files will have worked fine.</p>
+<p>To find the source of your problem you need to find out more about what exactly happens when sending the requests. A few places to start looking:</p>
+<ul>
+<li>Check the postgresql log for errors.</li>
+<li>Run the query with the additional parameter <code>debug=1</code>. It should give you a lot of debug output. See if you can find something about an SQL error there.</li>
+<li>Make sure the php code has not been modified and there are no syntax errors in <code>setting/local.php</code>.</li>
+</ul>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/30873/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Feb '14, 12:32</strong>
+</p>
+<img alt="lonvia's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d888b712d85dee0aa304297f2dc697c7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2921/lonvia">lonvia</a><br/>
+<span class="score" title="6213 reputation points"><span class="">6.2k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="57 badges"><span class="silver">●</span><span class="badgecount">57</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="lonvia has 43 accepted answers">40%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-30873">
+<a name="31074"></a>
+<div class="comment" id="comment-31074">
+<div class="comment-score" id="post-31074-score">1</div>
+<div class="comment-text"><p>thank you for the advice. it was due to "www-data" versus "apache" username. I should have imported the TIGER data before changing the username, or, change back, import, and change back again... :)</p></div>
+<div class="comment-info" id="comment-31074-info">
+<span class="comment-age">(27 Feb '14, 11:39)</span>
+<a class="comment-user userinfo" href="/users/8079/razalon">RazAlon</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-30873">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-30873-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/29964/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="qknmp9cT19sE26bQgw7ipaKXOfWxswnM"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

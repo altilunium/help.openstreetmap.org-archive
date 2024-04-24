@@ -1,0 +1,208 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/44577/issue-with-importing-osm-file-in-nominatim">Issue with Importing osm-file in Nominatim</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44577/up/" id="post-44577-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44577-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/44577/down/" id="post-44577-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/44577/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>We are getting the following error while importing OSM data during the installation of Nominatim on Centos 6.6 cPanel server:</p>
+<p>--</p>
+<h1>./utils/setup.php --osm-file india-latest.osm.pbf --all --osm2pgsql-cache 18000</h1>
+<p>Create DB
+<br/>
+<b>Strict Standards</b>:  Non-static method PEAR::isError() should not be called statically in <b>/home/fleetlink/public_html/Nominatim/utils/setup.php</b> on line <b>96</b><br/>
+Password: 
+createdb: database creation failed: ERROR:  permission denied to create database
+Error executing external command: createdb -E UTF-8 -p 5432 nominatim
+--</p>
+<p>Can any one please let us know how to resolve?</p>
+<p>Thank you.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-import" href="/tags/import/" rel="tag" title="see questions tagged 'import'">import</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-error" href="/tags/error/" rel="tag" title="see questions tagged 'error'">error</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>01 Aug '15, 02:00</strong>
+</p>
+<img alt="wizztechs's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/200527a878b092a0076b529cf7469019?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11311/wizztechs">wizztechs</a><br>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="wizztechs has no accepted answers">0%</span>
+</br></br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44577">
+</div>
+<div class="comment-tools" id="comment-tools-44577">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44577-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/44577/issue-with-importing-osm-file-in-nominatim?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/44577/issue-with-importing-osm-file-in-nominatim?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/44577/issue-with-importing-osm-file-in-nominatim?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/44577/issue-with-importing-osm-file-in-nominatim?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="44580"></a>
+<div class="answer" id="answer-container-44580">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44580/up/" id="post-44580-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44580-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/44580/down/" id="post-44580-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Are you sure you followed the instructions correctly, particularly</p>
+<blockquote>
+<b>Creating the importer account</b><p>
+The import needs to be done with a postgres superuser with the same name as the account doing the import. You can create such a postgres superuser account by running:</p><p>
+</p><pre>sudo -u postgres createuser -s [your user name]</pre>
+</blockquote>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/44580/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>01 Aug '15, 08:32</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44580">
+<a name="44596"></a>
+<div class="comment" id="comment-44596">
+<div class="comment-score" id="post-44596-score"></div>
+<div class="comment-text"><p>Frederik, Could you please give more enlighten help for this error? Would like also to see a solution for this type of errors.</p>
+<p>Thank you. </p></div>
+<div class="comment-info" id="comment-44596-info">
+<span class="comment-age">(03 Aug '15, 15:29)</span>
+<a class="comment-user userinfo" href="/users/11322/gregosmartinez">gregosmartinez</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-44580">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44580-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="44581"></a>
+<div class="answer answered-by-owner" id="answer-container-44581">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44581/up/" id="post-44581-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44581-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/44581/down/" id="post-44581-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Yes, this has been already done, but still no success. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/44581/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>01 Aug '15, 15:11</strong>
+</p>
+<img alt="wizztechs's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/200527a878b092a0076b529cf7469019?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11311/wizztechs">wizztechs</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="wizztechs has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/44581/">
+                edited
+                <strong>01 Aug '15, 15:13</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44581">
+</div>
+<div class="comment-tools" id="comment-tools-44581">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44581-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/44577/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="5Qc0Jah8YDx29PcRqhF9RH6cy6Tb91PF"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

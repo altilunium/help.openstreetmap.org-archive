@@ -1,0 +1,416 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/83374/compile-osmium-tool-for-windows">Compile osmium tool for Windows</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/83374/up/" id="post-83374-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-83374-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/83374/down/" id="post-83374-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/83374/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi I've been trying to compile Osmium Tool for Windows using Visual Studio and I can't get past this error and am not sure how to resolve it. Any help would be appreciated (unfortunately I don't know much about C++) but am trying my best! I see it was successful here but the artifacts are gone now. <a href="https://ci.appveyor.com/project/Mapbox/osmium-tool/build/1.0.281/job/va8388o8synhjii8">https://ci.appveyor.com/project/Mapbox/osmium-tool/build/1.0.281/job/va8388o8synhjii8</a></p>
+<pre><code><a href="https://github.com/osmcode/osmium-tool">https://github.com/osmcode/osmium-tool</a>
+
+Used repo tag 1.13.2
+
+Reviewed appveyor.yml
+
+VS2019
+
+    Installed Visual Studio 2019 (16.11.9)
+    - installed desktop development with c++
+    - installed MSVC v140 - VS 2015 C++ build tools (v14.00)
+
+    Reviewed build-appveyor.bat
+    - Updated vcvarsall.bat location for VS2019 install location (VC\Auxiliary\Build\vcvarsall.bat)
+    - Changed cmake_cmd "Visual Studio 14 Win64" to "Visual Studio 16"
+    - Changed toolsversion from 14.0 to Current
+
+VS2015 community edition
+
+    Reviewed build-appveyor.bat
+    - Updated vcvarsall.bat location for VS2019 install location (VC\vcvarsall.bat)
+
+    Downloaded lastest cmake, added to path C:\Program Files\CMake\bin
+
+In C:\projects
+    git clone --depth 1 <a href="https://github.com/osmcode/libosmium">https://github.com/osmcode/libosmium</a>
+    git clone --depth 1 <a href="https://github.com/mapbox/protozero">https://github.com/mapbox/protozero</a>
+
+Download latest nuget.exe and placed in path
+
+Downloaded boost 1.63 to C:/Libraries/boost_1_63_0
+- ran bootstrap.bat
+- ran b2.exe
+
+Ran build-local.bat
+
+ERRORS:
+
+libboost_program_options-vc140-mt-1_63.lib(options_description.obj) : fatal error LNK1112: module machine type 'X86' conflicts with target machine type 'x64' [C:\projects\osmium-tool\build\test\unit_tests.vcxproj]
+Done Building Project "C:\projects\osmium-tool\build\test\unit_tests.vcxproj" (default targets) -- FAILED.
+Done Building Project "C:\projects\osmium-tool\build\test\unit_tests.vcxproj.metaproj" (default targets) -- FAILED.
+Done Building Project "C:\projects\osmium-tool\build\ALL_BUILD.vcxproj.metaproj" (default targets) -- FAILED.
+Done Building Project "C:\projects\osmium-tool\build\osmium.sln" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\projects\osmium-tool\build\osmium.sln" (default target) (1) -&gt;
+"C:\projects\osmium-tool\build\ALL_BUILD.vcxproj.metaproj" (default target) (2) -&gt;
+"C:\projects\osmium-tool\build\test\unit_tests.vcxproj.metaproj" (default target) (6) -&gt;
+"C:\projects\osmium-tool\build\test\unit_tests.vcxproj" (default target) (7) -&gt;
+(ClCompile target) -&gt; 
+  c:\projects\osmium-tool\test\include\catch.hpp(1648): warning C4800: 'osmium::io::overwrite': forcing value to bool 'true' or 'false' (performance warning) [C:\projects\osmium-tool\build\test\unit_tests.vcxproj]
+
+
+"C:\projects\osmium-tool\build\osmium.sln" (default target) (1) -&gt;
+"C:\projects\osmium-tool\build\ALL_BUILD.vcxproj.metaproj" (default target) (2) -&gt;
+"C:\projects\osmium-tool\build\src\osmium.vcxproj.metaproj" (default target) (4) -&gt;
+"C:\projects\osmium-tool\build\src\osmium.vcxproj" (default target) (5) -&gt;
+(Link target) -&gt; 
+  libboost_program_options-vc140-mt-1_63.lib(options_description.obj) : fatal error LNK1112: module machine type 'X86' conflicts with target machine type 'x64' [C:\projects\osmium-tool\build\src\osmium.vcxproj]
+
+
+"C:\projects\osmium-tool\build\osmium.sln" (default target) (1) -&gt;
+"C:\projects\osmium-tool\build\ALL_BUILD.vcxproj.metaproj" (default target) (2) -&gt;
+"C:\projects\osmium-tool\build\test\unit_tests.vcxproj.metaproj" (default target) (6) -&gt;
+"C:\projects\osmium-tool\build\test\unit_tests.vcxproj" (default target) (7) -&gt;
+  libboost_program_options-vc140-mt-1_63.lib(options_description.obj) : fatal error LNK1112: module machine type 'X86' conflicts with target machine type 'x64' [C:\projects\osmium-tool\build\test\unit_tests.vcxproj]
+
+    1 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:08:06.76
+~~~~~~ ERROR C:\projects\osmium-tool\build-appveyor.bat ~~~~~~
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osmium" href="/tags/osmium/" rel="tag" title="see questions tagged 'osmium'">osmium</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>05 Feb '22, 19:20</strong>
+</p>
+<img alt="aarismendi's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/dd57ba63729e44a014376d152f9dcf67?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/21382/aarismendi">aarismendi</a><br/>
+<span class="score" title="56 reputation points">56</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="aarismendi has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/83374/">
+                edited
+                <strong>05 Feb '22, 19:23</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-83374">
+</div>
+<div class="comment-tools" id="comment-tools-83374">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-83374-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    4 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/83374/compile-osmium-tool-for-windows?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/83374/compile-osmium-tool-for-windows?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/83374/compile-osmium-tool-for-windows?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/83374/compile-osmium-tool-for-windows?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="83375"></a>
+<div class="answer answered-by-owner" id="answer-container-83375">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/83375/up/" id="post-83375-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-83375-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/83375/down/" id="post-83375-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Got it working, instead of building boost I used a pre-built binary -</p>
+<p><a href="https://sourceforge.net/projects/boost/">https://sourceforge.net/projects/boost/</a></p>
+<p><a href="https://iweb.dl.sourceforge.net/project/boost/boost-binaries/1.63.0/boost_1_63_0-msvc-14.0-64.exe">https://iweb.dl.sourceforge.net/project/boost/boost-binaries/1.63.0/boost_1_63_0-msvc-14.0-64.exe</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/83375/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Feb '22, 01:52</strong>
+</p>
+<img alt="aarismendi's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/dd57ba63729e44a014376d152f9dcf67?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/21382/aarismendi">aarismendi</a><br/>
+<span class="score" title="56 reputation points">56</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="aarismendi has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-83375">
+</div>
+<div class="comment-tools" id="comment-tools-83375">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-83375-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="86873"></a>
+<div class="answer" id="answer-container-86873">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/86873/up/" id="post-86873-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-86873-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/86873/down/" id="post-86873-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I have no problem opening, building and debugging in Visual Studio on Windows.<br/>
+You need to make sure that all required c++ components are installed, incl cmake and vcpkg.</p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/cpp/build/vscpp-step-0-installation?view=msvc-170">Install C++ in VS</a> </li>
+<li><a href="https://learn.microsoft.com/en-us/cpp/build/cmake-projects-in-visual-studio?view=msvc-170#installation">CMake Installation</a> </li>
+<li><a href="https://vcpkg.io/en/getting-started.html">Install vcpkg</a></li>
+<li><a href="https://learn.microsoft.com/en-us/cpp/build/cmake-projects-in-visual-studio?view=msvc-170#vcpkg-integration">Vcpkg integration</a> </li>
+<li><a href="https://learn.microsoft.com/en-us/cpp/build/cmake-projects-in-visual-studio?view=msvc-170#ide-integration">Open CMake project in VS</a></li>
+</ul>
+<p>Tested on latest Visual Studio 2022 Community version, Windows 11.<br/>
+My build artefacts: <a href="https://drive.google.com/drive/folders/15ImH-DCtIPyoFrzQnFyhUBm3YsmUZtRa">google drive</a>.</p>
+<p>Easy local build script using <a href="https://github.com/microsoft/vcpkg">vcpkg</a>, like github actions <a href="https://github.com/osmcode/osmium-tool/blob/583db02ac9193dfb5217f93c823a4975405338ac/.github/actions/cmake-windows/action.yml">cmake</a> and <a href="https://github.com/osmcode/osmium-tool/blob/583db02ac9193dfb5217f93c823a4975405338ac/.github/actions/build-windows/action.yml">build</a>:</p>
+<ol>
+<li>Install <code>vcpkg</code>
+<a href="https://github.com/microsoft/vcpkg#quick-start-windows">https://github.com/microsoft/vcpkg#quick-start-windows</a></li>
+<li>Install <code>cmake</code> (set PATH environment)
+<a href="https://cmake.org/download/">https://cmake.org/download/</a></li>
+<li>Cd work dir, clone <code>osmium-tool</code>, <code>libosmium</code>, <code>protozero</code> </li>
+<li>Copy <code>build-local-vcpkg.bat</code> (see google drive) to <code>osmium-tool</code> dir and launch</li>
+<li>The binaries dir: <code>work-dir\osmium-tool\build\src\Release\</code></li>
+</ol>
+<p>Should work without Visual Studio.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/86873/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Mar '23, 10:34</strong>
+</p>
+<img alt="Ildar's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a4d0974f0b47ec75fe84cf6740b562d3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/22785/ildar">Ildar</a><br>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Ildar has no accepted answers">0%</span>
+</br></br></p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/86873/">
+                edited
+                <strong>03 Oct '23, 18:26</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-86873">
+<a name="86874"></a>
+<div class="comment" id="comment-86874">
+<div class="comment-score" id="post-86874-score"></div>
+<div class="comment-text"><p>For completeness, which Visual Studio version you were using?</p></div>
+<div class="comment-info" id="comment-86874-info">
+<span class="comment-age">(04 Mar '23, 10:46)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="86876"></a>
+<div class="comment" id="comment-86876">
+<div class="comment-score" id="post-86876-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/387/someoneelse">@SomeoneElse</a> VS 2022, answer updated.</p></div>
+<div class="comment-info" id="comment-86876-info">
+<span class="comment-age">(04 Mar '23, 14:00)</span>
+<a class="comment-user userinfo" href="/users/22785/ildar">Ildar</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-86873">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-86873-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="84392"></a>
+<div class="answer" id="answer-container-84392">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/84392/up/" id="post-84392-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-84392-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/84392/down/" id="post-84392-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hi aarismendi, I also look for osmium.exe for windows. But I am not able to compile it by myself. Can you share the osmium.exe for windows ? If yes, please contact me thomas(at)img2ms.de</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/84392/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 May '22, 21:27</strong>
+</p>
+<img alt="morgen1's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9fbaa9a481c1ff01706ba5ab66868a0f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/21732/morgen1">morgen1</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="morgen1 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-84392">
+<a name="84393"></a>
+<div class="comment" id="comment-84393">
+<div class="comment-score" id="post-84393-score">1</div>
+<div class="comment-text"><p>Just a thought - would Windows Subsystem for Linux be an option for you?  That way you wouldn't have to be a small Windows dog on the floor waiting for he crumbs to fall off the Linux table :)</p></div>
+<div class="comment-info" id="comment-84393-info">
+<span class="comment-age">(06 May '22, 21:35)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="84398"></a>
+<div class="comment" id="comment-84398">
+<div class="comment-score" id="post-84398-score"></div>
+<div class="comment-text"><p>I will try to install the linux subsystem... maybee it is the solution..</p></div>
+<div class="comment-info" id="comment-84398-info">
+<span class="comment-age">(07 May '22, 07:11)</span>
+<a class="comment-user userinfo" href="/users/21732/morgen1">morgen1</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-84392">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-84392-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="86875"></a>
+<div class="answer" id="answer-container-86875">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/86875/up/" id="post-86875-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-86875-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/86875/down/" id="post-86875-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>There is no need to compile it for windows by yourself. There are ready to use compiled builds available at internet: My way : install anacaonda, it includes all binaries and the osmium.exe. After installing Anacanda, I get a directory \Anaconda3\Library\bin. Then i copied boost_program_options.dll; libbz2.dll;libexpat.dll;liblz4.dll;zlib.dll and osmium.exe to a other PC and can work with osmium.exe.</p>
+<p>morgen1</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/86875/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Mar '23, 13:02</strong>
+</p>
+<img alt="morgen1's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9fbaa9a481c1ff01706ba5ab66868a0f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/21732/morgen1">morgen1</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="morgen1 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-86875">
+</div>
+<div class="comment-tools" id="comment-tools-86875">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-86875-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/83374/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="KbPiTUuobesu6Tvit4jCNBFwcJFtwNuQ"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

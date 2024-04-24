@@ -1,0 +1,221 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/81289/fix-incomplete-geometries">Fix Incomplete Geometries</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/81289/up/" id="post-81289-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-81289-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/81289/down/" id="post-81289-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/81289/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>How can I fix the incomplete geometries of ways and relations on a local OSM server?</p>
+<p>This problem has plagued me for a while now but hasn't caused any major issues, until a few days ago when the USA relation (148838) and the Canada relation (1428125) broke for me. My server does daily updates, and I was hoping that would fix it, but it hasn't yet. In fact, I assume that the daily updates are the cause of the problem in the first place. There's nothing else changing the database so unless some extraneous other event happened, that would be the only place for things to go wrong.</p>
+<p>Looking at the relations in overpass turbo it says "Attention: incomplete geometry (e.g. some nodes missing)" for both of them. This also causes any area filtering using that relation's area to be completely wrong as well as not giving nearly enough results.</p>
+<p>I've had this same problem for a while now but have been able to find workarounds to get the query results that I want, but the USA relation and Canada relation breaking is something that I cannot work around.</p>
+<p>Any help at all would be <em>greatly</em> appreciated!</p>
+<p>Edit:
+Found more of the specifics. The two nodes that don't exist in my local sever that are causing the problem are <a href="https://www.openstreetmap.org/node/8856238004">8856238004</a> and <a href="https://www.openstreetmap.org/node/8856295638">8856295638</a>, both of which are part of the relation for USA and Canada. They are also part of way <a href="https://www.openstreetmap.org/way/957074345#map=17/44.99673/-74.51237">957074345</a>, which does not exist at all on my server. The way itself and all of the nodes that are a part of it just don't exist for me.</p>
+<p>Edit 2: In the bin/nohup.out file of my server it has a <em>lot</em> of lines that say something like
+</p><pre>compute_geometry: Node 8856295638 used in way 571733868 not found.</pre>
+Where the actual node and way numbers vary, but all of the node values are in a range between 8853109156 ~ 8861281943 (not exact range). There's similar statements for missing ways for relations.<p></p>
+<p>It has these statements once a day, I assume, when it updates because the time stamps right before them are the same range as the update times.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+<a class="post-tag tag-link-overpass-api" href="/tags/overpass-api/" rel="tag" title="see questions tagged 'overpass-api'">overpass-api</a>
+<a class="post-tag tag-link-database" href="/tags/database/" rel="tag" title="see questions tagged 'database'">database</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>12 Aug '21, 15:14</strong>
+</p>
+<img alt="nbreden's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/90c1a2a6f8b3789f0622ae27f3d92bd6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20341/nbreden">nbreden</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="6 badges"><span class="badge1">●</span><span class="badgecount">6</span></span><span title="6 badges"><span class="silver">●</span><span class="badgecount">6</span></span><span title="10 badges"><span class="bronze">●</span><span class="badgecount">10</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="nbreden has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/81289/">
+                edited
+                <strong>12 Aug '21, 16:20</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-81289">
+</div>
+<div class="comment-tools" id="comment-tools-81289">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-81289-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/81289/fix-incomplete-geometries?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/81289/fix-incomplete-geometries?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/81289/fix-incomplete-geometries?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/81289/fix-incomplete-geometries?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="81290"></a>
+<div class="answer accepted-answer" id="answer-container-81290">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/81290/up/" id="post-81290-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-81290-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/81290/down/" id="post-81290-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/81290/" rel="nofollow" title="nbreden has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You write "a local OSM server" which I take to mean "a local Overpass server". I can't debug what the problem is exactly; I wonder if maybe you missed an update at some point and therefore are missing ways or so. If you can afford to, switching to regular full imports will of course get rid of the problem. To fix the issue at hand, you could also cheat by:</p>
+<ol>
+<li>identifying the IDs of all missing objects</li>
+<li>using <code>osmium getid</code> to extract the objects with these IDs from a planet file (or North America file or so), be sure to save them in the "osc" format</li>
+<li>feeding the resulting .osc file(s) into the update process of Overpass</li>
+</ol>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/81290/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Aug '21, 16:34</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-81290">
+<a name="81291"></a>
+<div class="comment" id="comment-81291">
+<div class="comment-score" id="post-81291-score"></div>
+<div class="comment-text"><p>Thanks for the response! Yes, I do mean "a local Overpass server", sorry for any confusion.</p>
+<p>Could you expand more on what you mean by "switching to regular full imports"? Do you mean to do <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Installation#Populating_the_DB">this</a> regularly instead of what I'm doing currently which is from <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Installation#Applying_minutely_.28or_hourly.2C_or_daily.29_diffs">these</a> steps?</p></div>
+<div class="comment-info" id="comment-81291-info">
+<span class="comment-age">(12 Aug '21, 16:42)</span>
+<a class="comment-user userinfo" href="/users/20341/nbreden">nbreden</a>
+</div>
+</div>
+<a name="81292"></a>
+<div class="comment" id="comment-81292">
+<div class="comment-score" id="post-81292-score"></div>
+<div class="comment-text"><p>Yes, that's what I mean, of course you would not load a full planet but just the area of interest. If you have enough disk space, it is also possible to run the import into a secondary database and keep the "production" database running, and then switch over once the import is complete. This would give you only a minimal service interruption.</p></div>
+<div class="comment-info" id="comment-81292-info">
+<span class="comment-age">(12 Aug '21, 17:03)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="81294"></a>
+<div class="comment" id="comment-81294">
+<div class="comment-score" id="post-81294-score"></div>
+<div class="comment-text"><p>Hmm, I'm a bit confused. So with the database that I've setup following <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Installation">these</a> instructions, I can take an extract from <a href="http://download.openstreetmap.fr/extracts/">here</a> and apply it to the database? I can't find how to apply a .pbf to the database, or if I convert it to a different format using something like <a href="https://wiki.openstreetmap.org/wiki/Osmconvert#Converting_Files">osmconvert</a>, I still can't find anything to apply a different format to the database... I feel like <a href="https://wiki.openstreetmap.org/wiki/OsmChange">.osc</a> is what I want but I'm not sure. Sorry if I'm missing something obvious.</p></div>
+<div class="comment-info" id="comment-81294-info">
+<span class="comment-age">(13 Aug '21, 12:43)</span>
+<a class="comment-user userinfo" href="/users/20341/nbreden">nbreden</a>
+</div>
+</div>
+<a name="81295"></a>
+<div class="comment" id="comment-81295">
+<div class="comment-score" id="post-81295-score">1</div>
+<div class="comment-text"><p>We might be confusing the concepts of "database engine" and "database content" here. Once you've set up the Overpass database engine, you have to load a data set - either the planet-wide data, or a regional excerpt. If you choose the "cloning from the dev server" option you always get a world-wide database. If you choose the "populate the overpass database from a planet file" path you have a choice of loading the full planet, or an extract. This needs to be supplied to the <code>update_database</code> script in plain XML form on stdin, so if you download a .osm.pbf file you will want to do something like</p>
+<pre><code> osmium cat -f osm somefile.osm.pbf | update_database --db-dir=somedir --meta
+</code></pre>
+<p>(you will note that the init_osm3s.sh script mentioned in the install instructions does something similar - if you have a .osm.bz2 file and not an .osm.pbf file then you do not need osmium and can use "bzcat" instead).</p>
+<p>Loading a file this way will <em>replace</em> your current database with the new data. Any process that works with .osc files will <em>augment</em> your already existing data.</p></div>
+<div class="comment-info" id="comment-81295-info">
+<span class="comment-age">(13 Aug '21, 13:30)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="81297"></a>
+<div class="comment" id="comment-81297">
+<div class="comment-score" id="post-81297-score"></div>
+<div class="comment-text"><p>That cleared up a <em>lot</em> for me, thanks. So I tried that out with this command:  </p>
+<pre>osmium cat -f osm ../canada.osm.pbf | ./bin/update_database --db-dir=./db/</pre>
+<p>And it didn't do anything? It went through saying</p>
+<pre>elapsed node 721769976. Flushing to database ...... done.     ]   4%              ]   0%</pre>
+<p>...
+</p>
+<pre>compute_geometry: Node 9002479052 used in way 19693304 not found.</pre>
+<p></p>
+<p>From my understanding (which may be wrong) this shouldn't be happening? I thought it would be taking information from canada.osm.pbf (which presumably doesn't have missing nodes like this) and replacing my current database with that information.</p></div>
+<div class="comment-info" id="comment-81297-info">
+<span class="comment-age">(13 Aug '21, 17:01)</span>
+<a class="comment-user userinfo" href="/users/20341/nbreden">nbreden</a>
+</div>
+</div>
+<a name="81298"></a>
+<div class="comment not_top_scorer" id="comment-81298">
+<div class="comment-score" id="post-81298-score"></div>
+<div class="comment-text"><p>I won't delete my previous comment, but it's wrong. Your command <em>did</em> work! Thank you so much! I think this will be enough of a solution for my problems.</p></div>
+<div class="comment-info" id="comment-81298-info">
+<span class="comment-age">(13 Aug '21, 20:59)</span>
+<a class="comment-user userinfo" href="/users/20341/nbreden">nbreden</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-81290">
+<span class="comments-showing">
+            showing 5 of 6
+        </span>
+<a class="show-all-comments-link" href="#">show 1 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-81290-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/81289/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="2r8Bq2Y3XmJkfQgl1eEo7QFo6USOKCHa"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

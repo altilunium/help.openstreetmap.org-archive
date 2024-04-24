@@ -1,0 +1,104 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/72235/opening_hours-differs-on-even-odd-days">opening_hours differs on even / odd days?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/72235/up/" id="post-72235-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-72235-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/72235/down/" id="post-72235-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/72235/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>It is very common in some countries that some amenities changes workhours on alternating days (so one day the work in the morning, the next in the evening). </p>
+<p>So for example on even days (like 2.Jan or 18.Jun etc.) they will work only in the morning (for example 08:00-13:00), while on odd days (like 7.Mar or 31.Oct etc.) the will work only in the evening (for example 14:00-19:00).</p>
+<p>While it is simple schedule in practice, looking at the <a href="https://wiki.openstreetmap.org/wiki/Key:opening_hours">https://wiki.openstreetmap.org/wiki/Key:opening_hours</a> I cannot seem to figure out how to map it. Any ideas?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-opening_hours" href="/tags/opening_hours/" rel="tag" title="see questions tagged 'opening_hours'">opening_hours</a>
+<a class="post-tag tag-link-odd-even" href="/tags/odd-even/" rel="tag" title="see questions tagged 'odd-even'">odd-even</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>27 Dec '19, 18:08</strong>
+</p>
+<img alt="Matija%20Nalis's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/666391973130e371bf8092f70c43df28?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6497/matija-nalis">Matija Nalis</a><br/>
+<span class="score" title="750 reputation points">750</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="9 badges"><span class="silver">●</span><span class="badgecount">9</span></span><span title="16 badges"><span class="bronze">●</span><span class="badgecount">16</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Matija Nalis has 2 accepted answers">11%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-72235">
+<a name="72237"></a>
+<div class="comment" id="comment-72237">
+<div class="comment-score" id="post-72237-score"></div>
+<div class="comment-text"><p>I presume you are looking for a solution other than by brute force listing all the odd days there could be in a month?</p></div>
+<div class="comment-info" id="comment-72237-info">
+<span class="comment-age">(27 Dec '19, 20:20)</span>
+<a class="comment-user userinfo" href="/users/4426/insertuser">InsertUser</a>
+</div>
+</div>
+<a name="72240"></a>
+<div class="comment" id="comment-72240">
+<div class="comment-score" id="post-72240-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/4426/insertuser">@InsertUser</a> yes, that is correct assumption - listing half of days in a year one by one would be terrible (even if it actually worked, which I'm sceptical about due to extreme length of the field in such a case)... I was hoping for something like <code>week 2-53/2 10:00-20:00</code> but for even days instead of even weeks</p></div>
+<div class="comment-info" id="comment-72240-info">
+<span class="comment-age">(27 Dec '19, 22:12)</span>
+<a class="comment-user userinfo" href="/users/6497/matija-nalis">Matija Nalis</a>
+</div>
+</div>
+<a name="72253"></a>
+<div class="comment" id="comment-72253">
+<div class="comment-score" id="post-72253-score">3</div>
+<div class="comment-text"><p>No expert on this , but you should be able to do something like 02-30/2 08:00-13:00; 01-31/2 14:00-19:00. I have no idea what happens to evaluation if you then introduce month or week ranges as well or, for that matter,  days of the week. However, this does not seem to properly specified so there is probably no implementation (see <a href="https://github.com/opening-hours/opening_hours.js/issues/252)">https://github.com/opening-hours/opening_hours.js/issues/252)</a></p></div>
+<div class="comment-info" id="comment-72253-info">
+<span class="comment-age">(28 Dec '19, 10:15)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="72290"></a>
+<div class="comment" id="comment-72290">
+<div class="comment-score" id="post-72290-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/647/sk53">@SK53</a> thanks for the reference! Unfortunately, as you say at this time it does not seem to be implemented in <a href="https://openingh.openstreetmap.de/evaluation_tool/">https://openingh.openstreetmap.de/evaluation_tool/</a> nor elsewhere I looked :(</p></div>
+<div class="comment-info" id="comment-72290-info">
+<span class="comment-age">(30 Dec '19, 22:13)</span>
+<a class="comment-user userinfo" href="/users/6497/matija-nalis">Matija Nalis</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-72235">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-72235-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/72235/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="OhXtZvSNzlFKAqWIm141QZolGakob4b0"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

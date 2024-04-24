@@ -1,0 +1,132 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/80291/edit-open-cycle-maps-in-qgis">Edit Open Cycle Maps in Qgis</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80291/up/" id="post-80291-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80291-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/80291/down/" id="post-80291-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/80291/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Dear all,</p>
+<p>Pretty new to OSM and GIS software overall here.</p>
+<p>I am working on a publication with the birding hotspots in Georgia (Caucasus). I would need to create some maps to indicate places of interest.</p>
+<p>As a baselayer I like the looks of Open Cyclemap, OCMlandscape or similar.</p>
+<p>So what I would need to do is edit these maps in Qgis to leave out some information and add some others (place names in English or English and Georgian).
+So can I edit this information straight in Qgis (and how) or do I need to go through OpenMapTiles or anything like that? </p>
+<p>Thanks a lot in advance for your advice,
+B</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-qgis" href="/tags/qgis/" rel="tag" title="see questions tagged 'qgis'">qgis</a>
+<a class="post-tag tag-link-opencyclemap" href="/tags/opencyclemap/" rel="tag" title="see questions tagged 'opencyclemap'">opencyclemap</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 May '21, 17:16</strong>
+</p>
+<img alt="Brecht's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a917ca4a6fd423dad723d6416d8899b2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20182/brecht">Brecht</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Brecht has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80291">
+</div>
+<div class="comment-tools" id="comment-tools-80291">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80291-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/80291/edit-open-cycle-maps-in-qgis?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/80291/edit-open-cycle-maps-in-qgis?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/80291/edit-open-cycle-maps-in-qgis?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/80291/edit-open-cycle-maps-in-qgis?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="80299"></a>
+<div class="answer" id="answer-container-80299">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80299/up/" id="post-80299-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80299-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/80299/down/" id="post-80299-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Tile servers provide raster information, hence the only edits are on a pixel basis. If you don't find georgian language generated tiles, go for a different approach.</p>
+<p>If you don't need routing, go for <a href="http://umap.openstreetmap.fr/it/">umap</a>: chooose an aerial imagery background and vector layers with the OSM elements useful for the project (bird watching stands, paths, place names etc); if you don't plan to add your elements to OSM, you can straight edit the umap and/or import datasets in several formats (csv, geojson, gpx, kml...); vector layers styles are customizeble.</p>
+<p>Umap provides user some funcions for interaction, typically click to get pop-up element info; see <a href="http://umap.openstreetmap.fr/it/map/alberi-monumentali_605261">example</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/80299/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>26 May '21, 08:29</strong>
+</p>
+<img alt="Cascafico's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d33efa30f05d8f3604e7210c48b24a8b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/853/cascafico">Cascafico</a><br/>
+<span class="score" title="283 reputation points">283</span><span title="20 badges"><span class="badge1">●</span><span class="badgecount">20</span></span><span title="23 badges"><span class="silver">●</span><span class="badgecount">23</span></span><span title="29 badges"><span class="bronze">●</span><span class="badgecount">29</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Cascafico has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80299">
+</div>
+<div class="comment-tools" id="comment-tools-80299">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80299-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/80291/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="0TdiyXCVM6reimUeVyohZSqX52V3ehN5"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

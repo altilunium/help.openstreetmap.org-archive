@@ -1,0 +1,70 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/43220/how-to-fix-incorrect-import-or-incorrect-reading-in-nominatim">How to fix incorrect import or incorrect reading in Nominatim?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/43220/up/" id="post-43220-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-43220-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/43220/down/" id="post-43220-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/43220/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I compiled from git my own nominatim server, and imported the latest osm data for the country Malta.</p>
+<p>The address search index is inaccurate however, and is not the same as what is provided by the nominatim api.</p>
+<p>Example: <a href="http://nominatim.openstreetmap.org/details.php?place_id=60073339">http://nominatim.openstreetmap.org/details.php?place_id=60073339</a> Selects the town to be Senglea</p>
+<p><a href="http://robin.dazzlepanel.com/Nom/details.php?place_id=109025">http://robin.dazzlepanel.com/Nom/details.php?place_id=109025</a> Selects the town to be the city Valletta</p>
+<p>Looking into the postgres osm/nominatim database, the table place_addressline has a column isaddress, which is a boolean. In the example above, the place_id for "Senglea" under "triq ir-Rizq", is marked as false. If this is marked as true, it works correctly. So how do I fix this issue when the nodes are being generated and indexed while installing and setting up Nominatim?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-planet.osm" href="/tags/planet.osm/" rel="tag" title="see questions tagged 'planet.osm'">planet.osm</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>26 May '15, 13:09</strong>
+</p>
+<img alt="ChristopherBartolo's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7674255f67227e173400c635f053e027?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11026/christopherbartolo">ChristopherB...</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ChristopherBartolo has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-43220">
+</div>
+<div class="comment-tools" id="comment-tools-43220">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-43220-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/43220/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="9iJ3mbLf4v2jEfyqcI3JaY4Q21S7tfZ5"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

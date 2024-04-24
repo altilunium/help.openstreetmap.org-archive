@@ -1,0 +1,194 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/70119/api-for-getting-trees-in-tiled-web-map">API for getting trees in tiled web map</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/70119/up/" id="post-70119-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-70119-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/70119/down/" id="post-70119-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/70119/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am looking for an API where I can retrieve the co-ordinates (GeoJson or topojson) of trees (Or POIs which consists of trees) . I want the request to be sent in tiled web map format (ie <a href="https://data.osmbuildings.org/0.2/anonymous/tree/15/33187/22545.json">https://data.osmbuildings.org/0.2/anonymous/tree/15/33187/22545.json</a> something like this). I have checked OSMBuildings it doesn't have details of trees.</p>
+<pre><code>{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "id": "Id",
+            "type": "Feature",
+            "properties": {
+                "type": "tree"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                        [
+                            13.420876,
+                            52.53766
+                        ]
+                ]
+            }
+        }
+    ]
+}
+</code></pre>
+<p>I am expecting this kind of response from the server</p>
+<p>Thank you</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-api" href="/tags/api/" rel="tag" title="see questions tagged 'api'">api</a>
+<a class="post-tag tag-link-tiles" href="/tags/tiles/" rel="tag" title="see questions tagged 'tiles'">tiles</a>
+<a class="post-tag tag-link-pois" href="/tags/pois/" rel="tag" title="see questions tagged 'pois'">pois</a>
+<a class="post-tag tag-link-geojson" href="/tags/geojson/" rel="tag" title="see questions tagged 'geojson'">geojson</a>
+<a class="post-tag tag-link-trees" href="/tags/trees/" rel="tag" title="see questions tagged 'trees'">trees</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>17 Jul '19, 14:59</strong>
+</p>
+<img alt="aravinda_b's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b2a848310ef5f6fccb46794b8d4ac5de?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16934/aravinda_b">aravinda_b</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="aravinda_b has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/70119/">
+                edited
+                <strong>18 Jul '19, 08:42</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-70119">
+<a name="70120"></a>
+<div class="comment" id="comment-70120">
+<div class="comment-score" id="post-70120-score"></div>
+<div class="comment-text"><p>You seem to have conflicting requests. Do you want to get raw data for the trees, or rendered image tiles? If you want the raw data, then you'll have to use whatever syntax the given API expects, which almost certainly won't be the Slippy Map syntax.</p></div>
+<div class="comment-info" id="comment-70120-info">
+<span class="comment-age">(17 Jul '19, 16:59)</span>
+<a class="comment-user userinfo" href="/users/8189/alester">alester</a>
+</div>
+</div>
+<a name="70121"></a>
+<div class="comment" id="comment-70121">
+<div class="comment-score" id="post-70121-score"></div>
+<div class="comment-text"><p>I'd be really suprised if there was an off-the-shelf server that provided what you want.  I'm sure that you can download OSM data and extract what you want, though, or use <a href="https://overpass-turbo.eu/s/KOH">overpass</a> to obtain it for a particular area.</p></div>
+<div class="comment-info" id="comment-70121-info">
+<span class="comment-age">(17 Jul '19, 17:30)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="70123"></a>
+<div class="comment" id="comment-70123">
+<div class="comment-score" id="post-70123-score"></div>
+<div class="comment-text"><p>Thanks to alester and SomeoneElse for responding. I have updated question with sample response. This makes solves the confusion i guess.</p></div>
+<div class="comment-info" id="comment-70123-info">
+<span class="comment-age">(18 Jul '19, 08:22)</span>
+<a class="comment-user userinfo" href="/users/16934/aravinda_b">aravinda_b</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-70119">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-70119-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/70119/api-for-getting-trees-in-tiled-web-map?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/70119/api-for-getting-trees-in-tiled-web-map?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/70119/api-for-getting-trees-in-tiled-web-map?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/70119/api-for-getting-trees-in-tiled-web-map?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="70131"></a>
+<div class="answer" id="answer-container-70131">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/70131/up/" id="post-70131-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-70131-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/70131/down/" id="post-70131-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>There's the <a href="http://www.opentrees.org/">OpenTrees</a> site which seems to do what you are seeking as an end product. The code is viewable <a href="https://github.com/stevage/opentrees">here</a>, this might help you set up your own project.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/70131/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Jul '19, 01:39</strong>
+</p>
+<img alt="philam48's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/109b4b042580ca2017fb1f29d0602e71?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15108/philam48">philam48</a><br/>
+<span class="score" title="86 reputation points">86</span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="8 badges"><span class="bronze">●</span><span class="badgecount">8</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="philam48 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-70131">
+<a name="70156"></a>
+<div class="comment" id="comment-70156">
+<div class="comment-score" id="post-70156-score"></div>
+<div class="comment-text"><p>Thank you but that doesn't have data of my region</p></div>
+<div class="comment-info" id="comment-70156-info">
+<span class="comment-age">(22 Jul '19, 12:33)</span>
+<a class="comment-user userinfo" href="/users/16934/aravinda_b">aravinda_b</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-70131">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-70131-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/70119/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Tz4xVMjy2Hqayg3vquFuzqyn2xOLBgmi"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

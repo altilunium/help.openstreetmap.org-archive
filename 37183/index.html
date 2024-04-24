@@ -1,0 +1,149 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/37183/openstreetmap-carto-for-switch2osm-from-packages">openstreetmap-carto for switch2osm ''from packages"</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/37183/up/" id="post-37183-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-37183-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/37183/down/" id="post-37183-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/37183/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have an OSM tile server that I built using switch2osm "Building a tile server from packages". It works fine. Now I want to make some styling changes. I have set up openstreetmap-carto as per the instructions. When I create the xml file I get the same error as described in a <a href="https://help.openstreetmap.org/questions/14468/format-of-osmxml-stylesheet">previous post</a></p>
+<p>I took the advice there and now get SQL errors:</p>
+<pre><code>ERROR:  column "pixel_width" does not exist LINE 2: ...y, "natural", waterway, landuse, name, way_area/(!pixel_widt...                                                              ^ Full sql was: 'SELECT * FROM (SELECT     way, "natural", waterway, landuse, name, way_area/(!pixel_width!*!pixel_height!) AS way_pixels   FROM planet_osm_polygon   WHERE     (waterway IN ('dock', 'riverbank', 'canal')       OR landuse IN ('reservoir','basin')       OR "natural" IN ('lake','water','land','glacier','mud'))     AND building IS NULL     AND way_area/(!pixel_width!*!pixel_height!) &gt; 0.01   ORDER BY z_order, way_area) AS water_areas LIMIT 0'  (encountered during parsing of layer 'water-areas' in map '/etc/mapnik-carto/ma
+</code></pre>
+<p>Any help would be fantastic.</p>
+<p>Harold Ship</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap" href="/tags/openstreetmap/" rel="tag" title="see questions tagged 'openstreetmap'">openstreetmap</a>
+<a class="post-tag tag-link-tilemill" href="/tags/tilemill/" rel="tag" title="see questions tagged 'tilemill'">tilemill</a>
+<a class="post-tag tag-link-switch2osm" href="/tags/switch2osm/" rel="tag" title="see questions tagged 'switch2osm'">switch2osm</a>
+<a class="post-tag tag-link-tileserver" href="/tags/tileserver/" rel="tag" title="see questions tagged 'tileserver'">tileserver</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>01 Oct '14, 12:57</strong>
+</p>
+<img alt="haroldship's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/86d98b7622295c7fdc8bdf8f449e4c78?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9344/haroldship">haroldship</a><br/>
+<span class="score" title="90 reputation points">90</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="8 badges"><span class="bronze">●</span><span class="badgecount">8</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="haroldship has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-37183">
+<a name="37184"></a>
+<div class="comment" id="comment-37184">
+<div class="comment-score" id="post-37184-score">1</div>
+<div class="comment-text"><p>A couple of notes from IRC when this was first raised:</p>
+<p>The required mapnik version was increased to 2.1.0 <a href="https://github.com/gravitystorm/openstreetmap-carto/commit/f4445a1fff63053fc77bc913659f03f3a4e30f36">in May</a>.  I'm fairly sure that someone's been through the "packages" switch2osm instructions since then (though perhaps with a different stylesheet?) so maybe there wasn't a requirement for Mapnik 2.1 immediately.</p>
+<p>The lines causing the error with your older Mapnik seem to have been introduced <a href="https://github.com/gravitystorm/openstreetmap-carto/commit/d8afe6fc0c4d5b104a7726d49634b1001a667a8e">on August 14th</a>.  One workaround would be to get a local copy of openstreetmap-carto via "git clone <a href="https://github.com/gravitystorm/openstreetmap-carto">https://github.com/gravitystorm/openstreetmap-carto"</a> and then checkout an earlier version from there, perhaps via:</p>
+<pre><code>git checkout `git rev-list -n 1 --before="2014-08-14 00:01" master`
+</code></pre>
+<p>That <em>might</em> work.</p>
+<p>In the longer term an update to or a replacement for the "packages" version of the switch2osm instructions (which is under way, I believe) is probably what's needed.</p></div>
+<div class="comment-info" id="comment-37184-info">
+<span class="comment-age">(01 Oct '14, 14:04)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-37183">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-37183-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/37183/openstreetmap-carto-for-switch2osm-from-packages?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/37183/openstreetmap-carto-for-switch2osm-from-packages?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/37183/openstreetmap-carto-for-switch2osm-from-packages?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/37183/openstreetmap-carto-for-switch2osm-from-packages?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="37225"></a>
+<div class="answer" id="answer-container-37225">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/37225/up/" id="post-37225-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-37225-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/37225/down/" id="post-37225-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You need to upgrade your Mapnik version. Without knowing details about how you installed Mapnik and OS versions and other information, I can't suggest an exact course of action but you might want to</p>
+<ul>
+<li>Use the <a href="https://launchpad.net/~kakrueger/+archive/ubuntu/osm-unstable">osm-unstable</a> PPA</li>
+<li>Use the <a href="https://launchpad.net/~mapnik/+archive/ubuntu/v2.2.0">Mapnik v2.2.0 PPA</a> or Ubuntu 14.04 and build mod_tile/renderd from source</li>
+</ul>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/37225/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>02 Oct '14, 16:03</strong>
+</p>
+<img alt="pnorman's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/5634c46072077e10f5b7c0da9b4bbb62?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/290/pnorman">pnorman</a><br/>
+<span class="score" title="2352 reputation points"><span class="">2.4k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="21 badges"><span class="silver">●</span><span class="badgecount">21</span></span><span title="40 badges"><span class="bronze">●</span><span class="badgecount">40</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="pnorman has 9 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-37225">
+</div>
+<div class="comment-tools" id="comment-tools-37225">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-37225-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/37183/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="ib9akapX6p9zw8BklU7nJzr3rBb4m7VC"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,178 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/71952/way_id-node_id-are-those-permanent-connect-to-the-same-place-coordinate-always">way_id, node_id are those permanent ? Connect to the same place, coordinate always ?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/71952/up/" id="post-71952-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-71952-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/71952/down/" id="post-71952-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/71952/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>My question is what happens with way_id, node_id as time goes? Are they always permanently bound to the real world entities   they were first time assigned (some geographical object like a highway or river for ways and simple coordinate for nodes) or they could change their real world counterparts over time ?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-id" href="/tags/id/" rel="tag" title="see questions tagged 'id'">id</a>
+<a class="post-tag tag-link-database" href="/tags/database/" rel="tag" title="see questions tagged 'database'">database</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>02 Dec '19, 21:56</strong>
+</p>
+<img alt="Stan%20Sokolov's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a8f90b657d65e9a61669af64f2cd969f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17532/stan-sokolov">Stan Sokolov</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Stan Sokolov has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-71952">
+</div>
+<div class="comment-tools" id="comment-tools-71952">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-71952-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/71952/way_id-node_id-are-those-permanent-connect-to-the-same-place-coordinate-always?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/71952/way_id-node_id-are-those-permanent-connect-to-the-same-place-coordinate-always?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/71952/way_id-node_id-are-those-permanent-connect-to-the-same-place-coordinate-always?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/71952/way_id-node_id-are-those-permanent-connect-to-the-same-place-coordinate-always?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="71953"></a>
+<div class="answer" id="answer-container-71953">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/71953/up/" id="post-71953-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-71953-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/71953/down/" id="post-71953-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The IDs are not permanent. They can change for various reasons, e.g.:</p>
+<ul>
+<li>something is deleted and re-created (the old ID will become unused)</li>
+<li>something is split into several parts (the old ID will either become unused or refer to only one of the parts)</li>
+<li>several things are merged into one (it is possible that one of the old IDs then refers to the whole thing and the others become unused)</li>
+</ul>
+<p>Do not rely on IDs remaining constant. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/71953/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>02 Dec '19, 22:07</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-71953">
+<a name="71954"></a>
+<div class="comment" id="comment-71954">
+<div class="comment-score" id="post-71954-score"></div>
+<div class="comment-text"><p>We are working on a routing framework that uses permanent route keys that contain entire path. In certain scenarios it was desired to repeat route exactly the same way without any modifications. We were  using  a way:node id sequence to encode route, however it seems to be not a legit option as those IDs are not permanent. Hmm very sad. Seems that our problem has no solution as coordinates of nodes could also be moved with map modifications. So there is no way to force a route go exactly the same path as was found suitable a certain time before.</p></div>
+<div class="comment-info" id="comment-71954-info">
+<span class="comment-age">(02 Dec '19, 23:11)</span>
+<a class="comment-user userinfo" href="/users/17532/stan-sokolov">Stan Sokolov</a>
+</div>
+</div>
+<a name="71955"></a>
+<div class="comment" id="comment-71955">
+<div class="comment-score" id="post-71955-score"></div>
+<div class="comment-text"><p>Maybe it would work to store the coordinates directly? That way you know they aren't going to change.</p></div>
+<div class="comment-info" id="comment-71955-info">
+<span class="comment-age">(03 Dec '19, 00:37)</span>
+<a class="comment-user userinfo" href="/users/10973/maxerickson">maxerickson</a>
+</div>
+</div>
+<a name="71957"></a>
+<div class="comment" id="comment-71957">
+<div class="comment-score" id="post-71957-score"></div>
+<div class="comment-text"><p>We have some additional metadata attached to OSM ways that we would like to append to the route each time someone uses it. If we store coordinates we will need to figure out which OSM way this coordinate lays on that is an expensive step for us. Ideally we would like to have a quick way to match route with OSM ways and get the metadata from the place we store it (Redis at this moment). Also as of now we only store OSM way:node id at places where route switches from one OSM way to another, skipping all the nodes in between. But if we store the coordinates we would need to store the entire path what will make us to transmit more data. Many downsides of this approach. </p>
+<p>Take example of a person who walks the same way from one place to another 2.5 miles every day and back just for some purpose (let say a servicemen). He also has a few alternative routes in case if they provide more service targets. We have the information stored in Redis that is updated every minute about service targets assigned to OSM ways/nodes and we would like quickly figure out which alternative route has more places for service. When we store ways:nodes we could easily match route against list of targets.</p></div>
+<div class="comment-info" id="comment-71957-info">
+<span class="comment-age">(03 Dec '19, 01:12)</span>
+<a class="comment-user userinfo" href="/users/17532/stan-sokolov">Stan Sokolov</a>
+</div>
+</div>
+<a name="71959"></a>
+<div class="comment" id="comment-71959">
+<div class="comment-score" id="post-71959-score">1</div>
+<div class="comment-text"><p>But as soon as someone splits a road (e.g. different sidewalks, max speed, a bus route that uses only part of the OSM-way), you will have to adapt your route and add the extra OSM way otherwise, you have a gap in your route</p></div>
+<div class="comment-info" id="comment-71959-info">
+<span class="comment-age">(03 Dec '19, 04:08)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+<a name="71960"></a>
+<div class="comment" id="comment-71960">
+<div class="comment-score" id="post-71960-score">1</div>
+<div class="comment-text"><blockquote>
+<p>But if we store the coordinates we would need to store the entire path what will make us to transmit more data</p>
+</blockquote>
+<p>Look into Google polyline format.</p></div>
+<div class="comment-info" id="comment-71960-info">
+<span class="comment-age">(03 Dec '19, 06:31)</span>
+<a class="comment-user userinfo" href="/users/5/richard">Richard ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-71953">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-71953-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/71952/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="QBIkfps1ECTudPseVCF0EbIldkxaa0wK"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

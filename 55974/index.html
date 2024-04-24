@@ -1,0 +1,95 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/55974/is-it-possible-to-get-my-20-most-recent-edits-using-overpass-turbo">Is it possible to get my 20 most recent edits using Overpass Turbo?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/55974/up/" id="post-55974-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-55974-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/55974/down/" id="post-55974-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/55974/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm trying to get my 20 most recent edits and export it as a JSON, but I can't seem to get overpass to limit my query properly. This is my query:</p>
+<pre><code>[out:json][timeout:60];
+(
+  node(user:"bddavidson")({{bbox}});
+  way(user:"bddavidson")({{bbox}});
+  relation(user:"bddavidson")({{bbox}});
+);
+// print results
+out body;
+&gt;;
+out skel qt;
+</code></pre>
+<p>I've tried using the <a href="http://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Print_.28out.29">print actions found here</a> to limit on the <code>out</code> commands, but I haven't had any luck so far. I also tried on the <code>&gt;</code>, but that didn't seem to work either.</p>
+<p>Is there currently a way with Overpass to get my 20 most recent changes no matter what they are (point/line/polygon)?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+<a class="post-tag tag-link-overpass-ql" href="/tags/overpass-ql/" rel="tag" title="see questions tagged 'overpass-ql'">overpass-ql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>01 May '17, 16:14</strong>
+</p>
+<img alt="bddavidson's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c37cbe38f485579bcc6a040b405b55e6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11716/bddavidson">bddavidson</a><br/>
+<span class="score" title="161 reputation points">161</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="11 badges"><span class="bronze">●</span><span class="badgecount">11</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="bddavidson has one accepted answer">100%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/55974/">
+                edited
+                <strong>01 May '17, 16:14</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-55974">
+<a name="55975"></a>
+<div class="comment" id="comment-55975">
+<div class="comment-score" id="post-55975-score">2</div>
+<div class="comment-text"><p>I think you'll have to manually determine the date of the 20th changeset back and then use <code>newer</code> or <code>diff</code> to fetch the changes since that time.</p></div>
+<div class="comment-info" id="comment-55975-info">
+<span class="comment-age">(01 May '17, 17:23)</span>
+<a class="comment-user userinfo" href="/users/10973/maxerickson">maxerickson</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-55974">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-55974-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/55974/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="RrlkWD76alK9z9L8gj46S2QByFdq0Tv3"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,239 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/85352/osm2pgsql-error-open-failed-for-osm-no-such-file-or-directory">osm2pgsql: ERROR: Open failed for 'osm': No such file or directory</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/85352/up/" id="post-85352-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-85352-score" title="current number of votes">
+    -2
+</div>
+<a class="ajax-command post-vote down" href="/vote/85352/down/" id="post-85352-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/85352/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>after compiling osm2pgsql v1.6.0 and all its requirements, I tried to use it.
+But it did fail with <strong><em>ERROR: Open failed for 'osm': No such file or directory</em></strong>.
+where could I find out about the file or directory?</p>
+<p>osm2pgsql --slim -d gis -C 1600 -H uslamvm3.gre.hpecorp.net -P 5432 --number-process 1 -G --hstore --tag-transform-script ./openstreetmap-carto.lua -S ./openstreetmap-carto.style --log-level=debug -v ./data/gcc-states-140101.osm.pbf
+2022-08-16 00:46:32  osm2pgsql version 1.6.0 (1.6.0-244-g65d0d27)
+Password:
+2022-08-16 00:46:34  [0] Database version: 12.11
+2022-08-16 00:46:34  [0] PostGIS version: 3.1
+2022-08-16 00:46:34  [0] Reading file: osm
+2022-08-16 00:46:34  [0] Reading file: ./data/gcc-states-140101.osm.pbf
+2022-08-16 00:46:34  [0] Started pool with 1 threads.
+2022-08-16 00:46:34  [0] Mid: pgsql, cache=1600
+2022-08-16 00:46:34  [0] Setting up table 'planet_osm_nodes'
+2022-08-16 00:46:34  [0] Setting up table 'planet_osm_ways'
+2022-08-16 00:46:34  [0] Setting up table 'planet_osm_rels'
+2022-08-16 00:46:34  [0] Using projection SRS 3857 (Spherical Mercator)
+2022-08-16 00:46:34  [0] Using lua based tag transformations with script ./openstreetmap-carto.lua
+2022-08-16 00:46:34  [0] Setting up table 'planet_osm_point'
+2022-08-16 00:46:34  [0] Setting up table 'planet_osm_line'
+2022-08-16 00:46:34  [0] Setting up table 'planet_osm_polygon'
+2022-08-16 00:46:34  [0] Setting up table 'planet_osm_roads'
+2022-08-16 00:46:34  [0] ERROR: Open failed for 'osm': No such file or directory</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-failed" href="/tags/failed/" rel="tag" title="see questions tagged 'failed'">failed</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Aug '22, 00:25</strong>
+</p>
+<img alt="HoangA's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/cfc1c707b366ad757397920866cb6819?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/22130/hoanga">HoangA</a><br/>
+<span class="score" title="9 reputation points">9</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="HoangA has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-85352">
+<a name="85372"></a>
+<div class="comment" id="comment-85372">
+<div class="comment-score" id="post-85372-score"></div>
+<div class="comment-text"><p>I have no idea what is happening: the same command on my own osm2pgsql install complains about the file name " ERROR: Open failed for './data/gcc-states-140101.osm.pbf': The system cannot find the file specified." as I would expect.</p></div>
+<div class="comment-info" id="comment-85372-info">
+<span class="comment-age">(18 Aug '22, 10:45)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-85352">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-85352-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/85352/osm2pgsql-error-open-failed-for-osm-no-such-file-or-directory?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/85352/osm2pgsql-error-open-failed-for-osm-no-such-file-or-directory?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/85352/osm2pgsql-error-open-failed-for-osm-no-such-file-or-directory?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/85352/osm2pgsql-error-open-failed-for-osm-no-such-file-or-directory?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="85364"></a>
+<div class="answer answered-by-owner" id="answer-container-85364">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/85364/up/" id="post-85364-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-85364-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/85364/down/" id="post-85364-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I did check all the input files, and they do exist.</p>
+<p>looking at code, I do see this error only in:</p>
+<p>contrib/libosmium/include/osmium/io/detail/read_write.hpp:     </p>
+<p>throw std::system_error{errno, std::system_category(), 
+                           std::string("<strong><em>Open failed for</em></strong> '") + filename + "'"};</p>
+<p>but I don't understand why user "osm" is view as file .. </p>
+<p>the function "open_for_writing" is called by function in 
+<em>contrib/libosmium/include/osmium/io/writer.hpp</em>:</p>
+<p>std::unique_ptr&lt;osmium::io::compressor&gt; compressor =
+      <strong>CompressionFactory::instance().create_compressor</strong>(file.compression(),
+                          osmium::io::detail::open_for_writing(<strong><em>m_file.filename()</em></strong>, 
+                                                               options.allow_overwrite), 
+                          options.sync);</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/85364/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>17 Aug '22, 00:35</strong>
+</p>
+<img alt="HoangA's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/cfc1c707b366ad757397920866cb6819?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/22130/hoanga">HoangA</a><br/>
+<span class="score" title="9 reputation points">9</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="HoangA has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/85364/">
+                edited
+                <strong>17 Aug '22, 00:37</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-85364">
+</div>
+<div class="comment-tools" id="comment-tools-85364">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-85364-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="85381"></a>
+<div class="answer answered-by-owner" id="answer-container-85381">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/85381/up/" id="post-85381-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-85381-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/85381/down/" id="post-85381-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>the error is due to -W...
+see <a href="https://stackoverflow.com/questions/44552054/osm2pgsql-error-trying-to-import-osm-to-postgis-on-aws">osm2pgsql-error-trying-to-import-osm-to-postgis-on-aws</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/85381/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Aug '22, 14:23</strong>
+</p>
+<img alt="HoangA's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/cfc1c707b366ad757397920866cb6819?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/22130/hoanga">HoangA</a><br/>
+<span class="score" title="9 reputation points">9</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="HoangA has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/85381/">
+                edited
+                <strong>19 Aug '22, 14:24</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-85381">
+<a name="85384"></a>
+<div class="comment" id="comment-85384">
+<div class="comment-score" id="post-85384-score">1</div>
+<div class="comment-text"><p>There was no -W in your original query. It really helps if you provide an accurate command line.</p></div>
+<div class="comment-info" id="comment-85384-info">
+<span class="comment-age">(21 Aug '22, 13:35)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-85381">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-85381-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/85352/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="yT6WmUw9TMYnNgnioe82dmfGdOX3lnqB"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

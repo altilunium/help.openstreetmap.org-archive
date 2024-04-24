@@ -1,0 +1,149 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/26168/quality-assurance-tools-for-public-transport-schema">Quality Assurance tools for Public Transport Schema</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/26168/up/" id="post-26168-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-26168-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/26168/down/" id="post-26168-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/26168/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I've been working lately on mapping the bus lines in my home city (Tucson, AZ, USA), but I'm not sure how to confirm that my edits are correct.</p>
+<p>Öpnvkarte and the main site transport layer are nice, and do well with "overshooting" errors where I forgot to properly split a way at a turn in the bus route. They don't, however, help me to:</p>
+<ul>
+<li>Keep the ways within the relations ordered (as recommended by the Public Transport schema). I'm especially not sure what happens when I split a way that's part of a relation (e.g. when a bus route I'm mapping now shares a road with a previously-mapped one along a small section).</li>
+<li>Deal with stops. I haven't gotten to this step yet, preferring to do the routes first, but the few I've tried don't seem to appear correctly.</li>
+</ul>
+<p>There's a lot of contradictory information on public transport mapping -- the Öpnvkarte page mentions the 'forward'/'backward' roles, for example, and there's many ways to map stops. I'm wondering if there's a tool I can use as a sort of baseline, or at the very least to check some subset of what I'm doing a bit more thoroughly.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-bus" href="/tags/bus/" rel="tag" title="see questions tagged 'bus'">bus</a>
+<a class="post-tag tag-link-public-transport" href="/tags/public-transport/" rel="tag" title="see questions tagged 'public-transport'">public-transport</a>
+<a class="post-tag tag-link-quality" href="/tags/quality/" rel="tag" title="see questions tagged 'quality'">quality</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>07 Sep '13, 07:42</strong>
+</p>
+<img alt="ianmcorvidae's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bb82047b8a0bdf018f053debeb8cf665?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7328/ianmcorvidae">ianmcorvidae</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ianmcorvidae has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-26168">
+</div>
+<div class="comment-tools" id="comment-tools-26168">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-26168-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/26168/quality-assurance-tools-for-public-transport-schema?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/26168/quality-assurance-tools-for-public-transport-schema?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/26168/quality-assurance-tools-for-public-transport-schema?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/26168/quality-assurance-tools-for-public-transport-schema?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="26169"></a>
+<div class="answer" id="answer-container-26169">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/26169/up/" id="post-26169-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-26169-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/26169/down/" id="post-26169-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I find JOSM useful while creating the relation - double clicking on the relation will highlight it so that it's easy to verify connectivity.   It also has a "Public Transport" plugin that will automatically order ways in the relation and assign forward/backward roles to create a continuous path.</p>
+<p>Re: Stops - some of the map rendering is behind, so most people tag bus stops with both highway=bus_stop and public_transport=platform to assist with the transition.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/26169/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>07 Sep '13, 11:34</strong>
+</p>
+<img alt="Mike%20N's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1dd5f61a81b99dd54ec6f33d96aa38b2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/21/mike-n">Mike N</a><br/>
+<span class="score" title="2926 reputation points"><span class="">2.9k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="22 badges"><span class="silver">●</span><span class="badgecount">22</span></span><span title="54 badges"><span class="bronze">●</span><span class="badgecount">54</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Mike N has 16 accepted answers">17%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-26169">
+<a name="26171"></a>
+<div class="comment" id="comment-26171">
+<div class="comment-score" id="post-26171-score">1</div>
+<div class="comment-text"><p>Good to know -- I don't generally use JOSM (a couple times of it failing to let me type letters was enough -- probably my own fault with OS/window manager choices, but perhaps I'll need to try again!). Do you know how/if the public transport plugin figures out what it should consider the start and which the end?</p></div>
+<div class="comment-info" id="comment-26171-info">
+<span class="comment-age">(07 Sep '13, 11:39)</span>
+<a class="comment-user userinfo" href="/users/7328/ianmcorvidae">ianmcorvidae</a>
+</div>
+</div>
+<a name="26204"></a>
+<div class="comment" id="comment-26204">
+<div class="comment-score" id="post-26204-score"></div>
+<div class="comment-text"><p>It picks the open segment as start / end.  If it picks the wrong direction, you can use the Public Transport Plugin "Reflect" tool to reverse the sense of start and end.</p></div>
+<div class="comment-info" id="comment-26204-info">
+<span class="comment-age">(08 Sep '13, 16:19)</span>
+<a class="comment-user userinfo" href="/users/21/mike-n">Mike N</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-26169">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-26169-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/26168/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="wflMGuDF59TiSULdFvZO7jLK0FWMi0jJ"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

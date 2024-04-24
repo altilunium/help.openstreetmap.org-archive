@@ -1,0 +1,168 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/79363/change-svg-size-by-definition-in-mss-files">Change svg size by definition in .mss files</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/79363/up/" id="post-79363-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-79363-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/79363/down/" id="post-79363-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/79363/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>During carto style definition I would like to enlarge some svg's icons depends on <code>zoom</code> level.
+I'm wondering if it's possible to override some SVG file attributes in <code>.mss</code> files?
+In example I would like to override <code>width</code> and <code>height</code> value defined already in SVG file.
+Or scale up svg for specific scale.<br/>
+For example:
+<code>[highway = 'motorway_link'] {
+         [zoom &gt;= 16 ] {
+         marker-scale: 2;
+         }
+          marker-fill: @motorway-oneway-arrow-color;
+        }</code></p>
+<p>or</p>
+<p><code>[highway = 'motorway_link'] {
+         [zoom &gt;= 16 ] {
+         marker-width: 15;
+         marker-height: 15;
+         }
+          marker-fill: @motorway-oneway-arrow-color;
+        }</code></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-style" href="/tags/style/" rel="tag" title="see questions tagged 'style'">style</a>
+<a class="post-tag tag-link-carto" href="/tags/carto/" rel="tag" title="see questions tagged 'carto'">carto</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>23 Mar '21, 10:30</strong>
+</p>
+<img alt="engopy's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/735ed8c1abf1a1f7b907b78d9594303c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19203/engopy">engopy</a><br>
+<span class="score" title="126 reputation points">126</span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="10 badges"><span class="silver">●</span><span class="badgecount">10</span></span><span title="15 badges"><span class="bronze">●</span><span class="badgecount">15</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="engopy has no accepted answers">0%</span>
+</br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-79363">
+</div>
+<div class="comment-tools" id="comment-tools-79363">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-79363-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/79363/change-svg-size-by-definition-in-mss-files?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/79363/change-svg-size-by-definition-in-mss-files?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/79363/change-svg-size-by-definition-in-mss-files?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/79363/change-svg-size-by-definition-in-mss-files?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="79364"></a>
+<div class="answer accepted-answer" id="answer-container-79364">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/79364/up/" id="post-79364-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-79364-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/79364/down/" id="post-79364-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/79364/" rel="nofollow" title="engopy has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Please look at the Mapnik documentation, there are some marker-related functions like <em>marker-transform</em>:</p>
+<p><a href="https://cartocss.readthedocs.io/en/latest/mapnik_api.html#markers">https://cartocss.readthedocs.io/en/latest/mapnik_api.html#markers</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/79364/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>23 Mar '21, 10:47</strong>
+</p>
+<img alt="kocio's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e228dd20b7da2a6c8f559e2118ce08d3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11332/kocio">kocio</a><br/>
+<span class="score" title="2054 reputation points"><span class="">2.1k</span></span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="23 badges"><span class="silver">●</span><span class="badgecount">23</span></span><span title="41 badges"><span class="bronze">●</span><span class="badgecount">41</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="kocio has 14 accepted answers">20%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-79364">
+<a name="79365"></a>
+<div class="comment" id="comment-79365">
+<div class="comment-score" id="post-79365-score">3</div>
+<div class="comment-text"><p>I wasn't aware there are so many possible configurations for SVG.
+actually:
+<code>marker-width:
+marker-height:</code>
+does what I needed
+Thanks</p></div>
+<div class="comment-info" id="comment-79365-info">
+<span class="comment-age">(23 Mar '21, 14:04)</span>
+<a class="comment-user userinfo" href="/users/19203/engopy">engopy</a>
+</div>
+</div>
+<a name="79366"></a>
+<div class="comment" id="comment-79366">
+<div class="comment-score" id="post-79366-score"></div>
+<div class="comment-text"><p>Exactly what you have ordered... :-)</p></div>
+<div class="comment-info" id="comment-79366-info">
+<span class="comment-age">(23 Mar '21, 14:12)</span>
+<a class="comment-user userinfo" href="/users/11332/kocio">kocio</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-79364">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-79364-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/79363/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="WgGkTj6GQ0wLZixXMvVA9HWqvSv1nhXB"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,262 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/57027/associating-an-accesscustomers-parking-with-its-amenity">Associating an access=customers parking with its amenity?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/57027/up/" id="post-57027-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-57027-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/57027/down/" id="post-57027-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/57027/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>A shop has several parking places reserved for customers.  How would I tag the parking places to indicate that they are reserved to <em>that</em> particular shop's customers?</p>
+<p>In most cases such places are adjacent to the shop's building, but in one case the parking places are actually on the opposite side of a <code>highway=service access=public</code> road.</p>
+<p>I think perhaps that could be mapped as a multipolygon with the shop and the parking places as role='outer' members, or with a 'site' relationship with both the shop and the parking places as role='' members.  Thoughts?  Other options?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-access" href="/tags/access/" rel="tag" title="see questions tagged 'access'">access</a>
+<a class="post-tag tag-link-customers" href="/tags/customers/" rel="tag" title="see questions tagged 'customers'">customers</a>
+<a class="post-tag tag-link-relation_type-site" href="/tags/relation_type-site/" rel="tag" title="see questions tagged 'relation_type-site'">relation_type-site</a>
+<a class="post-tag tag-link-multipolygon" href="/tags/multipolygon/" rel="tag" title="see questions tagged 'multipolygon'">multipolygon</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>12 Jul '17, 01:10</strong>
+</p>
+<img alt="dsh4's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8440750fd002fd989ab2e6b613ca3ccb?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13665/dsh4">dsh4</a><br/>
+<span class="score" title="867 reputation points">867</span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="13 badges"><span class="silver">●</span><span class="badgecount">13</span></span><span title="30 badges"><span class="bronze">●</span><span class="badgecount">30</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="dsh4 has one accepted answer">4%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/57027/">
+                edited
+                <strong>21 Jan '18, 13:49</strong>
+</a>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-57027">
+<a name="57051"></a>
+<div class="comment" id="comment-57051">
+<div class="comment-score" id="post-57051-score">2</div>
+<div class="comment-text"><p>There is actually a little used, and presumably NEVER consumed, relation type for exactly this problem called associatedParking. It might not be consumed but at least captures the information.</p></div>
+<div class="comment-info" id="comment-57051-info">
+<span class="comment-age">(13 Jul '17, 09:52)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="57078"></a>
+<div class="comment" id="comment-57078">
+<div class="comment-score" id="post-57078-score">1</div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/647/sk53">@SK53</a>: This kind of relation is probably the only universally applicable solution. But please use associated_parking, not associatedParking. The naming conventions for OSM tags suggest lowercase words separated by underscores, not camelCase. And given the low usage numbers and lack of application support, there's no reason to keep the problematic spelling around for compatibility.</p></div>
+<div class="comment-info" id="comment-57078-info">
+<span class="comment-age">(13 Jul '17, 16:31)</span>
+<a class="comment-user userinfo" href="/users/14/tordanik">Tordanik</a>
+</div>
+</div>
+<a name="57083"></a>
+<div class="comment" id="comment-57083">
+<div class="comment-score" id="post-57083-score"></div>
+<div class="comment-text"><p>For posterity, the current uses of associatedParking has the main entity as a member with role="" and the parking as a member with either role="" or role="parking".</p>
+<p>I still feel, though, that a 'site' relation with role="parking" members would scale better (if somebody wants to invent <em>another</em> thing that's associated with a shop, besides its parking spaces).</p></div>
+<div class="comment-info" id="comment-57083-info">
+<span class="comment-age">(13 Jul '17, 18:48)</span>
+<a class="comment-user userinfo" href="/users/13665/dsh4">dsh4</a>
+</div>
+</div>
+<a name="57084"></a>
+<div class="comment" id="comment-57084">
+<div class="comment-score" id="post-57084-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/14/tordanik">@Tordanik</a> I merely provide an example which someone else had created and which I used 2-3 times. I suspect along the lines of associatedStreet which has 250k+ instances. Consistency is always good, but needless duplication for the sake of consistency less so.</p></div>
+<div class="comment-info" id="comment-57084-info">
+<span class="comment-age">(13 Jul '17, 23:25)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="57087"></a>
+<div class="comment" id="comment-57087">
+<div class="comment-score" id="post-57087-score">1</div>
+<div class="comment-text"><p>Regarding site relations, I did have a look at consuming them for map display, but after looking at their usage I couldn't really figure out which ones were useful and which ones weren't - they seemed to be used (in the UK) for a whole range of "X is somehow associated with Y" that it wasn't easy to do anything useful with at rendering time (not a technical problem - knowing what the user meant was the problem).</p>
+<p>If you're going to use either a site relation (or some other sort of relation) for parking add a dozen or so examples and say what you're doing in the changeset comment and discussion, and document it in somewhere in the wiki.</p></div>
+<div class="comment-info" id="comment-57087-info">
+<span class="comment-age">(14 Jul '17, 10:16)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-57027">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-57027-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/57027/associating-an-accesscustomers-parking-with-its-amenity?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/57027/associating-an-accesscustomers-parking-with-its-amenity?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/57027/associating-an-accesscustomers-parking-with-its-amenity?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/57027/associating-an-accesscustomers-parking-with-its-amenity?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="57039"></a>
+<div class="answer" id="answer-container-57039">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/57039/up/" id="post-57039-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-57039-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/57039/down/" id="post-57039-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I thought the common way to map this is, is with access=customers; operator=...
+Perhaps not on the complete parking but on the amenity-parking_space in this case</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/57039/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Jul '17, 17:04</strong>
+</p>
+<img alt="escada's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/813a136afe7d4c95fd5bccdd78705e0e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5390/escada">escada</a><br/>
+<span class="score" title="19043 reputation points"><span class="">19.0k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="166 badges"><span class="silver">●</span><span class="badgecount">166</span></span><span title="302 badges"><span class="bronze">●</span><span class="badgecount">302</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="escada has 97 accepted answers">21%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-57039">
+<a name="57043"></a>
+<div class="comment" id="comment-57043">
+<div class="comment-score" id="post-57043-score"></div>
+<div class="comment-text"><p>Wouldn't operator= on the parking indicate who operates the parking --- who may be a subcontractor of the shop?  E.g., if I saw an operator= on <a href="https://www.openstreetmap.org/way/207066386">this hotel's parking</a>, I would assume the hotel outsourced the operation of the parking lot.</p></div>
+<div class="comment-info" id="comment-57043-info">
+<span class="comment-age">(12 Jul '17, 20:43)</span>
+<a class="comment-user userinfo" href="/users/13665/dsh4">dsh4</a>
+</div>
+</div>
+<a name="57044"></a>
+<div class="comment" id="comment-57044">
+<div class="comment-score" id="post-57044-score"></div>
+<div class="comment-text"><p>I mean, if I saw operator=<em>something other than "Travelodge"</em> on that parking.</p></div>
+<div class="comment-info" id="comment-57044-info">
+<span class="comment-age">(12 Jul '17, 20:44)</span>
+<a class="comment-user userinfo" href="/users/13665/dsh4">dsh4</a>
+</div>
+</div>
+<a name="57045"></a>
+<div class="comment" id="comment-57045">
+<div class="comment-score" id="post-57045-score"></div>
+<div class="comment-text"><p>Yes, operator will work in some cases but won't in others.</p></div>
+<div class="comment-info" id="comment-57045-info">
+<span class="comment-age">(12 Jul '17, 21:00)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-57039">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-57039-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="57033"></a>
+<div class="answer" id="answer-container-57033">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/57033/up/" id="post-57033-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-57033-score" title="current number of votes">
+    -2
+</div>
+<a class="ajax-command post-vote down" href="/vote/57033/down/" id="post-57033-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hi read these lines, <a href="http://wiki.openstreetmap.org/wiki/Key:access,">http://wiki.openstreetmap.org/wiki/Key:access,</a> following that you should use access=private and you could add access:conditional=customers "name".
+And add operator="name" to the area as well.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/57033/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Jul '17, 13:03</strong>
+</p>
+<img alt="Hendrikklaas's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/742e93034cd38ad243f7ab26f350b659?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3443/hendrikklaas">Hendrikklaas</a><br/>
+<span class="score" title="9286 reputation points"><span class="">9.3k</span></span><span title="207 badges"><span class="badge1">●</span><span class="badgecount">207</span></span><span title="238 badges"><span class="silver">●</span><span class="badgecount">238</span></span><span title="387 badges"><span class="bronze">●</span><span class="badgecount">387</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Hendrikklaas has 39 accepted answers">5%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-57033">
+</div>
+<div class="comment-tools" id="comment-tools-57033">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-57033-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/57027/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="47yxIFr7QwOL0bPiQS1tZMCoHmuqftRO"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

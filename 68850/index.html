@@ -1,0 +1,113 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/68850/how-to-download-osm-db-data-with-both-land-and-sea-data">how to download OSM DB data with both land and sea data?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68850/up/" id="post-68850-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68850-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/68850/down/" id="post-68850-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/68850/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Greetings.</p>
+<p>I've been using the planet.osm.pbf files from for a while to create offline maps for my application. I recently received a request to add maritime maps. I looked at the OpenSeaMap project, but they don't seem to have a regularly updated export. And the planet files on <a href="https://planet.openstreetmap.org">https://planet.openstreetmap.org</a> don't seem to include anything with the seamark:* tags.</p>
+<p>How can I get a planet file (or equivalent) with both land and sea raw vector data?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-seamark" href="/tags/seamark/" rel="tag" title="see questions tagged 'seamark'">seamark</a>
+<a class="post-tag tag-link-planet.osm" href="/tags/planet.osm/" rel="tag" title="see questions tagged 'planet.osm'">planet.osm</a>
+<a class="post-tag tag-link-openseamap" href="/tags/openseamap/" rel="tag" title="see questions tagged 'openseamap'">openseamap</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>19 Apr '19, 16:31</strong>
+</p>
+<img alt="AndrewEMT's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ab48c3ad406e6af0a1bc72a50db16641?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16565/andrewemt">AndrewEMT</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="AndrewEMT has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68850">
+<a name="68854"></a>
+<div class="comment" id="comment-68854">
+<div class="comment-score" id="post-68854-score">2</div>
+<div class="comment-text"><p>Planet files include all data - your issue is perhaps more likely to be how you're loading it into your database. If you can give more details on what you're doing there, people can hopefully help you more.</p></div>
+<div class="comment-info" id="comment-68854-info">
+<span class="comment-age">(19 Apr '19, 19:08)</span>
+<a class="comment-user userinfo" href="/users/5/richard">Richard ♦</a>
+</div>
+</div>
+<a name="68881"></a>
+<div class="comment" id="comment-68881">
+<div class="comment-score" id="post-68881-score"></div>
+<div class="comment-text"><p>Sorry, I searched the entire contents of <a href="https://planet.openstreetmap.org/pbf/planet-190415.osm.pbf">https://planet.openstreetmap.org/pbf/planet-190415.osm.pbf</a> and there isn't one occurrence of any variant of the "seamark" keys in any tag records. I can't extract the seamarks if they are not in the file.</p></div>
+<div class="comment-info" id="comment-68881-info">
+<span class="comment-age">(23 Apr '19, 04:52)</span>
+<a class="comment-user userinfo" href="/users/16565/andrewemt">AndrewEMT</a>
+</div>
+</div>
+<a name="68884"></a>
+<div class="comment" id="comment-68884">
+<div class="comment-score" id="post-68884-score">3</div>
+<div class="comment-text"><p>All of OSM is in that file. Like I said, please give more details on what you're doing. For example, when you say "I searched", explain how you are searching, what tool you're using, what arguments you're passing to it, etc. etc.</p></div>
+<div class="comment-info" id="comment-68884-info">
+<span class="comment-age">(23 Apr '19, 09:30)</span>
+<a class="comment-user userinfo" href="/users/5/richard">Richard ♦</a>
+</div>
+</div>
+<a name="68902"></a>
+<div class="comment" id="comment-68902">
+<div class="comment-score" id="post-68902-score">2</div>
+<div class="comment-text"><p>Never mind. You called it. I found a typo in my preprocessor that was discarding all records with seamark:type tags instead of storing them. Fixed now, and finding <em>lots</em> of seamark nodes and ways.</p></div>
+<div class="comment-info" id="comment-68902-info">
+<span class="comment-age">(24 Apr '19, 01:52)</span>
+<a class="comment-user userinfo" href="/users/16565/andrewemt">AndrewEMT</a>
+</div>
+</div>
+<a name="68911"></a>
+<div class="comment" id="comment-68911">
+<div class="comment-score" id="post-68911-score"></div>
+<div class="comment-text"><p>Yay, glad it works :)</p></div>
+<div class="comment-info" id="comment-68911-info">
+<span class="comment-age">(24 Apr '19, 10:11)</span>
+<a class="comment-user userinfo" href="/users/5/richard">Richard ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-68850">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68850-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/68850/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="NNQvTG0yZu3jgpVP0xxxY4yBlOsqudkp"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

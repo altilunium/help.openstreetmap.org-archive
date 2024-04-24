@@ -1,0 +1,123 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/52369/how-to-query-a-way-containing-a-specific-way-overpass-api">how to query a way containing a specific way overpass api?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/52369/up/" id="post-52369-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-52369-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/52369/down/" id="post-52369-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/52369/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have this query to get hot_water_tanks:</p>
+<pre><code>[out:json][timeout:85];
+
+(
+
+  node["man_made"="hot_water_tank"]({{bbox}});
+  way["man_made"="hot_water_tank"]({{bbox}});
+
+);
+
+out body;
+&gt;;
+out skel qt;
+</code></pre>
+<p>and here to get industrial building or landuse.</p>
+<pre><code>[out:json][timeout:85];
+
+(
+
+node["landuse"="industrial"]({{bbox}});
+  way["landuse"="industrial"]({{bbox}});
+rel["landuse"="industrial"]({{bbox}});
+
+
+);
+
+out body;
+&gt;;
+out skel qt;
+</code></pre>
+<p>How can i get only landuse=industrial where there is a hot_water_tank?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+<a class="post-tag tag-link-overpass-api" href="/tags/overpass-api/" rel="tag" title="see questions tagged 'overpass-api'">overpass-api</a>
+<a class="post-tag tag-link-overpass-ql" href="/tags/overpass-ql/" rel="tag" title="see questions tagged 'overpass-ql'">overpass-ql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>04 Oct '16, 14:56</strong>
+</p>
+<img alt="JsonKh's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fdd97ceec9f9544f1c9d7c57b1ee9707?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12840/jsonkh">JsonKh</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="JsonKh has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/52369/">
+                edited
+                <strong>04 Oct '16, 15:48</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-52369">
+<a name="52377"></a>
+<div class="comment" id="comment-52377">
+<div class="comment-score" id="post-52377-score"></div>
+<div class="comment-text"><p>Not sure how to do this in overpass, but you could easily do this within a GIS tool like QGIS.</p></div>
+<div class="comment-info" id="comment-52377-info">
+<span class="comment-age">(06 Oct '16, 09:08)</span>
+<a class="comment-user userinfo" href="/users/10142/joost-schouppe">joost schouppe</a>
+</div>
+</div>
+<a name="52378"></a>
+<div class="comment" id="comment-52378">
+<div class="comment-score" id="post-52378-score">1</div>
+<div class="comment-text"><p>cross-posted: <a href="https://stackoverflow.com/questions/39870997/how-can-i-find-a-tag-way-in-another-way-area-overpass">https://stackoverflow.com/questions/39870997/how-can-i-find-a-tag-way-in-another-way-area-overpass</a></p></div>
+<div class="comment-info" id="comment-52378-info">
+<span class="comment-age">(06 Oct '16, 09:36)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-52369">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-52369-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/52369/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="JHmLSGsZO65hXsfvWVUtKI3rVMEnVvRr"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

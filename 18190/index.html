@@ -1,0 +1,181 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/18190/export-cities-zipcodes-streets-of-a-country-for-auto-completion-of-physical-addresses-in-mobile-application">Export Cities-ZipCodes-Streets of a country, for auto-completion of physical addresses in mobile application</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/18190/up/" id="post-18190-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-18190-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/18190/down/" id="post-18190-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/18190/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>My question is similar to <a href="https://help.openstreetmap.org/questions/5473/export-country-state-city-street-zip-code-worldwide-for-use-with-address-auto-completion">this one</a>, but the only answer offered over there does not satisfy my requirement. </p>
+<p><br/></p>
+<p>I need a to create a database containing the required data to <strong>auto-complete a postal address</strong> filled in by a user in a mobile application.<br/>
+The database must be embed in the application, to allow for <strong>offline use</strong> and always snappy auto-completion.</p>
+<p>In this context, my technical goal is to create a SQLite database with the <strong>cities, zip code and streets</strong>. I do not need the coordinates of the points.
+I have no problem converting from a <em>classic</em> SQL flavor database to SQLite. I'm however having trouble going from <code>osm</code> format to <code>SQL</code>.<br/>
+If an other format usable in a mobile application is more appropriate, I'm of course ok with it too.</p>
+<p>I have the feeling that I'm not dealing with the problem with the right strategy and adequate tools.<br/>
+What steps and tools do you suggest?</p>
+<p><br/>
+</p><hr/>
+<br/>
+Here is what I tried:<br/>
+Using an extract from <a href="http://download.geofabrik.de/openstreetmap/">OpenStreetMap Extracts</a>, I have successfully created a SQLite database with <a href="https://github.com/technimad/osm2sqlite">osm2sqlite</a>.<br/>
+I'm a bit confused about the format of the rows.<br/>
+And there is a lot of information I don't care about. While I could remove it, it feels backward to import it from <code>osm</code> to <code>SQL</code> to then remove it. Would be much more efficient to not import it in the first place.<p></p>
+<p><strong>Updated to describe an other try:</strong><br/>
+Using osm2pgsql, I'm loading the file into a Postgres database.</p>
+<pre><code>osm2pgsql -c -G -d osm -S /usr/local/share/osm2pgsql/default.style france.osm.pbf
+</code></pre>
+<p>Seems nice, but I can't find the zip code. Is it not available for France in original osm file, or is it the import that skipped it?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-autocomplete" href="/tags/autocomplete/" rel="tag" title="see questions tagged 'autocomplete'">autocomplete</a>
+<a class="post-tag tag-link-sqlite" href="/tags/sqlite/" rel="tag" title="see questions tagged 'sqlite'">sqlite</a>
+<a class="post-tag tag-link-export" href="/tags/export/" rel="tag" title="see questions tagged 'export'">export</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-address" href="/tags/address/" rel="tag" title="see questions tagged 'address'">address</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>04 Dec '12, 14:52</strong>
+</p>
+<img alt="Guillaume's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a41a211aed3597a7d55f9b7ca5b32a41?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5128/guillaume">Guillaume</a><br>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Guillaume has no accepted answers">0%</span>
+</br></br></p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/18190/">
+                edited
+                <strong>09 Aug '16, 11:23</strong>
+</a>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span></br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-18190">
+</div>
+<div class="comment-tools" id="comment-tools-18190">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-18190-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/18190/export-cities-zipcodes-streets-of-a-country-for-auto-completion-of-physical-addresses-in-mobile-application?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/18190/export-cities-zipcodes-streets-of-a-country-for-auto-completion-of-physical-addresses-in-mobile-application?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/18190/export-cities-zipcodes-streets-of-a-country-for-auto-completion-of-physical-addresses-in-mobile-application?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/18190/export-cities-zipcodes-streets-of-a-country-for-auto-completion-of-physical-addresses-in-mobile-application?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="18196"></a>
+<div class="answer" id="answer-container-18196">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/18196/up/" id="post-18196-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-18196-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/18196/down/" id="post-18196-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Please have a look at the OSM wiki and do a search there for the tools called osmfilter and osmconvert.</p>
+<p>If you have your rae OSM source data, do a filtering for any objects to keep addr:* tags</p>
+<p>Then process the result file with osmconvert where you can produce CSV data sets easily.</p>
+<p>Then import that CSV data in any database you like.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/18196/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Dec '12, 17:07</strong>
+</p>
+<img alt="stephan75's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/245b73d4390c3408fe3c6da759b9897f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/99/stephan75">stephan75</a><br>
+<span class="score" title="12642 reputation points"><span class="">12.6k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="56 badges"><span class="silver">●</span><span class="badgecount">56</span></span><span title="210 badges"><span class="bronze">●</span><span class="badgecount">210</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="stephan75 has 37 accepted answers">6%</span>
+</br></br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-18196">
+<a name="18200"></a>
+<div class="comment" id="comment-18200">
+<div class="comment-score" id="post-18200-score"></div>
+<div class="comment-text"><p><a href="/users/99/stephan75"></a><a href="/users/99/stephan75">@stephan75</a> If I want to import everything in the database, do I need to run the osmfilter command (your line "do a filtering for any objects to keep addr:* tags" sounds like you need to explicitly hint you want to keep a specific tag). I will try osmconvert to write a csv. I have also updated my question, to document my latest try with osm2pgsql</p></div>
+<div class="comment-info" id="comment-18200-info">
+<span class="comment-age">(04 Dec '12, 21:40)</span>
+<a class="comment-user userinfo" href="/users/5128/guillaume">Guillaume</a>
+</div>
+</div>
+<a name="18215"></a>
+<div class="comment" id="comment-18215">
+<div class="comment-score" id="post-18215-score"></div>
+<div class="comment-text"><p>hi Guillaume,
+Well, I am not so familiar with OSM import to an SQL database ... but if you want to know whether you NEED to do some filtering before importing: try it on your own!</p>
+<p>Take a small raw OSM file from an area, maybe your hometown or similar, and try all features of osmfilter to find out how it works and if you can benefit from it before importing. There are enough examples about filtering on the OSM wiki page of osmfilter.</p>
+<p>Tell us when you get stuck somewhere in detail, with adequate examples.</p></div>
+<div class="comment-info" id="comment-18215-info">
+<span class="comment-age">(05 Dec '12, 17:44)</span>
+<a class="comment-user userinfo" href="/users/99/stephan75">stephan75</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-18196">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-18196-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/18190/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="5uvostbIz9uxKI724rHuxR8ai97Mc55s"/>
+<div style="clear:both">
+</div>
+</form>
+</hr></div>
+</div>
+</div>

@@ -1,0 +1,120 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/77957/vector-tile-server-hardware-requirements">Vector tile server hardware requirements</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/77957/up/" id="post-77957-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-77957-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/77957/down/" id="post-77957-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/77957/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi there,</p>
+<p>I'm planning to create my own tile server to allow customize style and also allow me to get the vector tiles instead of raster tiles. But my budget is limited, so I want to know the minimum hardware requirement of <strong>vector tiles</strong> server.</p>
+<p>I read some Q&amp;A like this, but all about raster tiles, not vector tiles. 
+If I understand right, the vector tiles server will lighter than raster because it can serve the vector directly to client without render  (<a href="https://github.com/osm2vectortiles/osm2vectortiles/issues/457),">https://github.com/osm2vectortiles/osm2vectortiles/issues/457),</a> then client can use Leaflet of OpenLayer to style and display them.</p>
+<p>So below are jobs that I think my server will do:</p>
+<ul>
+<li>
+<p>Import/Sync data from OSM to postgresql using osm2pgsql (Maybe one time each month for Asia and America only).</p>
+</li>
+<li>
+<p>Pre-create vector tiles for above data (I'm not sure I need this step or not).</p>
+</li>
+<li>
+<p>Serve vector tiles to client on request.</p>
+</li>
+</ul>
+<p>With above jobs, please help to let me know the minimum hardware requirement. Thank you so much!</p>
+<p>Additional, I researched two days and it seems that all the free tile servers only served raster tiles (<a href="http://leaflet-extras.github.io/leaflet-providers/preview/).">http://leaflet-extras.github.io/leaflet-providers/preview/).</a> That is why I must create a tile server myself with a limited budget:sad:</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-hardware" href="/tags/hardware/" rel="tag" title="see questions tagged 'hardware'">hardware</a>
+<a class="post-tag tag-link-tiles" href="/tags/tiles/" rel="tag" title="see questions tagged 'tiles'">tiles</a>
+<a class="post-tag tag-link-vector" href="/tags/vector/" rel="tag" title="see questions tagged 'vector'">vector</a>
+<a class="post-tag tag-link-tileserver" href="/tags/tileserver/" rel="tag" title="see questions tagged 'tileserver'">tileserver</a>
+<a class="post-tag tag-link-custom_tiles" href="/tags/custom_tiles/" rel="tag" title="see questions tagged 'custom_tiles'">custom_tiles</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Dec '20, 18:04</strong>
+</p>
+<img alt="bahung1221's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/611ff06dfd6b8165defd20ce36a68fab?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19416/bahung1221">bahung1221</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="bahung1221 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/77957/">
+                edited
+                <strong>16 Dec '20, 18:04</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-77957">
+<a name="77958"></a>
+<div class="comment" id="comment-77958">
+<div class="comment-score" id="post-77958-score"></div>
+<div class="comment-text"><p>Not really an answer to your question but regarding your last line I believe Mapbox has vector tiles and a <a href="https://www.mapbox.com/pricing/">free tier</a>.</p></div>
+<div class="comment-info" id="comment-77958-info">
+<span class="comment-age">(16 Dec '20, 20:53)</span>
+<a class="comment-user userinfo" href="/users/4426/insertuser">InsertUser</a>
+</div>
+</div>
+<a name="77961"></a>
+<div class="comment" id="comment-77961">
+<div class="comment-score" id="post-77961-score"></div>
+<div class="comment-text"><p>Thanks, I considered Mapbox before, but some people say that Mapbox has a rate limit for maximum tiles each user can download (for offline usage). <a href="https://stackoverflow.com/questions/37781166/ios-mapbox-map-offline-price.">https://stackoverflow.com/questions/37781166/ios-mapbox-map-offline-price.</a> is it right?</p></div>
+<div class="comment-info" id="comment-77961-info">
+<span class="comment-age">(17 Dec '20, 03:06)</span>
+<a class="comment-user userinfo" href="/users/19416/bahung1221">bahung1221</a>
+</div>
+</div>
+<a name="77962"></a>
+<div class="comment" id="comment-77962">
+<div class="comment-score" id="post-77962-score"></div>
+<div class="comment-text"><p>I also curious about how they calculate "Active User Monthly", what they say on the pricing page makes me a bit confused. Maybe I should contact them about this question. Anyway, thanks for your help</p></div>
+<div class="comment-info" id="comment-77962-info">
+<span class="comment-age">(17 Dec '20, 03:09)</span>
+<a class="comment-user userinfo" href="/users/19416/bahung1221">bahung1221</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-77957">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-77957-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/77957/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="savVPxH0MOMNWhqLNQY2YQucHkqavi0s"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,248 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/59737/how-to-map-a-preferred-route-by-the-local-authorities-which-is-marked-with-direction-signs-eg-through-a-city-to-avoid-old-city-streets">how to map a preferred route by the local authorities which is marked with direction signs e.g. through a city to avoid old city streets</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/59737/up/" id="post-59737-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-59737-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/59737/down/" id="post-59737-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/59737/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am not sure if I found a good title for my question, that's why it became so long. Please excuse both. (Anyone with a good short expression about what I mean?)</p>
+<p>Certainly a plot describes it better: Imagine a city with a lot of streets and especially many possibilities to go from A to B and C and D etc. You come from the south and want to cross the city to the north. As the city has a nice little old part in the middle, the local authorities want drivers who only cross the city to drives along some streets in the east of the city. They have thus installed a series of direction signs to guide you respectively. But you would also have the chance to pass through the old city, it would even be better in terms of travel time, since the streets are also broad and without anything slowing you down. Still the signs tell differently and the authorities and the population don't want you to.</p>
+<p>How can these direction signs respectively their preference for a route be mapped? Of course primarily to give routing applications the chance and "instruct" them to route according to the signs and target of the local authorities. But not only for the routers (I know we don't map only for the map and certainly not only for the routers ;-)), as the signs also are a part of the reality the exists and should be mapped from my point of view.
+Any relation to create a route for such? Or something else?</p>
+<p>The routing applications will surely calculate on the type of streets and maxspeed, etc. And they don't have any other chance if they don't know about the signs.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-directions" href="/tags/directions/" rel="tag" title="see questions tagged 'directions'">directions</a>
+<a class="post-tag tag-link-signs" href="/tags/signs/" rel="tag" title="see questions tagged 'signs'">signs</a>
+<a class="post-tag tag-link-durchfahrt" href="/tags/durchfahrt/" rel="tag" title="see questions tagged 'durchfahrt'">durchfahrt</a>
+<a class="post-tag tag-link-mapping" href="/tags/mapping/" rel="tag" title="see questions tagged 'mapping'">mapping</a>
+<a class="post-tag tag-link-routing" href="/tags/routing/" rel="tag" title="see questions tagged 'routing'">routing</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Sep '17, 08:19</strong>
+</p>
+<img alt="geohobbes's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/123f4fd2a676d8b3d454fc0e6457782a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11759/geohobbes">geohobbes</a><br/>
+<span class="score" title="166 reputation points">166</span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="8 badges"><span class="silver">●</span><span class="badgecount">8</span></span><span title="13 badges"><span class="bronze">●</span><span class="badgecount">13</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="geohobbes has one accepted answer">33%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-59737">
+<a name="59739"></a>
+<div class="comment" id="comment-59739">
+<div class="comment-score" id="post-59739-score">1</div>
+<div class="comment-text"><p>Are you looking for the <a href="https://wiki.openstreetmap.org/wiki/Key:destination">destination</a> key?</p></div>
+<div class="comment-info" id="comment-59739-info">
+<span class="comment-age">(21 Sep '17, 08:29)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="59743"></a>
+<div class="comment" id="comment-59743">
+<div class="comment-score" id="post-59743-score"></div>
+<div class="comment-text"><p>Thanks for pointing me at this key, which I was not aware of yet! It solves the mapping of the signs, definitely. But as far as I understood, it will not help the routing applications / navigation systems to guide us along these signs. So I would still be interested in how to achieve that.</p></div>
+<div class="comment-info" id="comment-59743-info">
+<span class="comment-age">(21 Sep '17, 14:41)</span>
+<a class="comment-user userinfo" href="/users/11759/geohobbes">geohobbes</a>
+</div>
+</div>
+<a name="59749"></a>
+<div class="comment" id="comment-59749">
+<div class="comment-score" id="post-59749-score">1</div>
+<div class="comment-text"><p>Technically routers could use the destination key during route calculation. However this will make route calculations (much) more expensive. You will have to determine the cities along the route, i.e. perform regular geocoding. And you will have to calculate the route somehow backwards in order to know which cities you are going to drive through.</p></div>
+<div class="comment-info" id="comment-59749-info">
+<span class="comment-age">(21 Sep '17, 15:19)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="59772"></a>
+<div class="comment" id="comment-59772">
+<div class="comment-score" id="post-59772-score"></div>
+<div class="comment-text"><p>I agree. That's also why I think some sort of relation would be better for the intention, as in my comment to rorym below. And I think it would even be beneficial for the routers to make calculations less expensive. Instead of that they need to calculate a route through the city themselves, they could first look for an existing relation of that kind and use it, if it exists. I guess the lookup would not be much overhead (would it?) and the benefit would be big, no?</p></div>
+<div class="comment-info" id="comment-59772-info">
+<span class="comment-age">(22 Sep '17, 13:45)</span>
+<a class="comment-user userinfo" href="/users/11759/geohobbes">geohobbes</a>
+</div>
+</div>
+<a name="59776"></a>
+<div class="comment" id="comment-59776">
+<div class="comment-score" id="post-59776-score">1</div>
+<div class="comment-text"><p>This would require to create relations for all kinds of possible routes. This is not feasible and not maintainable. User rorym already explained why these relations are usually not needed. There might be edge-cases of course, as there always will be.</p></div>
+<div class="comment-info" id="comment-59776-info">
+<span class="comment-age">(22 Sep '17, 14:09)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="59799"></a>
+<div class="comment not_top_scorer" id="comment-59799">
+<div class="comment-score" id="post-59799-score"></div>
+<div class="comment-text"><p>Routers may go around if the authorities have set the speed restrictions low enough, and we map them!</p></div>
+<div class="comment-info" id="comment-59799-info">
+<span class="comment-age">(23 Sep '17, 15:54)</span>
+<a class="comment-user userinfo" href="/users/644/andy-mackey">andy mackey</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-59737">
+<span class="comments-showing">
+            showing 5 of 6
+        </span>
+<a class="show-all-comments-link" href="#">show 1 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-59737-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/59737/how-to-map-a-preferred-route-by-the-local-authorities-which-is-marked-with-direction-signs-eg-through-a-city-to-avoid-old-city-streets?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/59737/how-to-map-a-preferred-route-by-the-local-authorities-which-is-marked-with-direction-signs-eg-through-a-city-to-avoid-old-city-streets?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/59737/how-to-map-a-preferred-route-by-the-local-authorities-which-is-marked-with-direction-signs-eg-through-a-city-to-avoid-old-city-streets?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/59737/how-to-map-a-preferred-route-by-the-local-authorities-which-is-marked-with-direction-signs-eg-through-a-city-to-avoid-old-city-streets?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="59740"></a>
+<div class="answer" id="answer-container-59740">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/59740/up/" id="post-59740-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-59740-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/59740/down/" id="post-59740-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I don't think there is a relation for that. Usually, in my experience, the outer "ring road" will be a higher road classification than the inner part. There are other ways to map things which routers can use to figure out that they should not route through the middle. I presume the speed limits in the middle will be lower. There will probably also be more traffic lights, pedestrian crossings, and yield/give way junctions. Routers use this sort of data to guess at how fast a route is (lots of traffic lights makes things slower).</p>
+<p>You could also map the width of the roads (although that's hard and I don't think any software uses that). Mapping the <a href="https://wiki.openstreetmap.org/wiki/Key:lanes">number of lanes</a> might help the router to figure out what is the 2 lane ring road and which is the 1 lane inner city road. You can also map <a href="https://wiki.openstreetmap.org/wiki/Key:destination">what the destination of the lane is</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/59740/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Sep '17, 08:45</strong>
+</p>
+<img alt="rorym's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/16e12e337f6edc3750681492656097ed?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/30/rorym">rorym</a><br/>
+<span class="score" title="5358 reputation points"><span class="">5.4k</span></span><span title="14 badges"><span class="badge1">●</span><span class="badgecount">14</span></span><span title="49 badges"><span class="silver">●</span><span class="badgecount">49</span></span><span title="100 badges"><span class="bronze">●</span><span class="badgecount">100</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="rorym has 18 accepted answers">11%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-59740">
+<a name="59746"></a>
+<div class="comment" id="comment-59746">
+<div class="comment-score" id="post-59746-score"></div>
+<div class="comment-text"><p>That's a pity, if there is no possibility. Sure, you are right about all the possibilities by which the routers might decide to take the preferred route. My example is certainly a little over-exaggerated to neglect all difference, as I wanted to make clear what I mean. But I definitely had the case quite some times that the router chose wrongly and in which I was quite sure that it was due to pretty similar road conditions regarding what you mentioned.
+So I think it would be beneficial for OSM completeness and a being better data source than others, for the local people and for the navigated users, if anything would exist that would offer the possibility.
+Aren't hiking routing applications using the approach that I am think of, if they chose parts / legs of specified hiking routes in OSM data, instead of the shortest way? Some sort of "direction route relation" or "through traffic relation" or "transit traffic relation" could be used as an offer for routers / navigation systems, to route the users exactly how the signs tell them, what do you think?</p></div>
+<div class="comment-info" id="comment-59746-info">
+<span class="comment-age">(21 Sep '17, 15:03)</span>
+<a class="comment-user userinfo" href="/users/11759/geohobbes">geohobbes</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-59740">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-59740-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="59777"></a>
+<div class="answer" id="answer-container-59777">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/59777/up/" id="post-59777-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-59777-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/59777/down/" id="post-59777-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>In most countries, the roads around the edge of the city would have a higher class (say, <code>highway=primary</code>) and those in the centre of the city a lower class (<code>highway=unclassified</code> or <code>highway=residential</code>). The <code>highway=</code> tag indicates a road's importance in the connected highway network.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/59777/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Sep '17, 15:09</strong>
+</p>
+<img alt="Richard's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/08324717c25d6067fa4ff23ef37d455f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5/richard">Richard ♦</a><br/>
+<span class="score" title="30902 reputation points"><span class="">30.9k</span></span><span title="44 badges"><span class="badge1">●</span><span class="badgecount">44</span></span><span title="279 badges"><span class="silver">●</span><span class="badgecount">279</span></span><span title="412 badges"><span class="bronze">●</span><span class="badgecount">412</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Richard has 98 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-59777">
+</div>
+<div class="comment-tools" id="comment-tools-59777">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-59777-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/59737/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="zV5pGqbjeSmi55R9fLx3WUFVIli7bOHE"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,216 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/20521/operator-does-not-exist-unknown-text">operator does not exist: unknown =&gt; text</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/20521/up/" id="post-20521-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-20521-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/20521/down/" id="post-20521-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/20521/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi for all. When I run:</p>
+<p>$ ./setup.php --osm-file poland.osm.bz2 --all</p>
+<p>script is running until:</p>
+<p>...</p>
+<p>Strict Standards: Non-static method DB::isError() should not be called statically in /usr/share/php/DB.php on line 557
+PHP Strict Standards:  Non-static method PEAR::isError() should not be called statically in /home/nominatim/lib/db.php on line 8</p>
+<p>Strict Standards: Non-static method PEAR::isError() should not be called statically in /home/nominatim/lib/db.php on line 8
+PHP Strict Standards:  Non-static method DB::isManip() should not be called statically, assuming $this from incompatible context in /usr/share/php/DB/common.php on line 2200</p>
+<p>Strict Standards: Non-static method DB::isManip() should not be called statically, assuming $this from incompatible context in /usr/share/php/DB/common.php on line 2200</p>
+<p>PHP Strict Standards:  Non-static method DB::isManip() should not be called statically, assuming $this from incompatible context in /usr/share/php/DB/common.php on line 2200</p>
+<p>Strict Standards: Non-static method DB::isManip() should not be called statically, assuming $this from incompatible context in /usr/share/php/DB/common.php on line 2200</p>
+<p><strong>PHP Warning:  pg_query(): Query failed: ERROR:  operator does not exist: unknown =&gt; text
+LINE 1: SELECT 'ref'=&gt;NEW.postcode</strong></p>
+<pre><code>    ^
+</code></pre>
+<p>HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+QUERY:  SELECT 'ref'=&gt;NEW.postcode
+CONTEXT:  PL/pgSQL function placex_insert() line 84 at assignment in /home/nominatim/utils/setup.php on line 455</p>
+<p><strong>Warning: pg_query(): Query failed: ERROR:  operator does not exist: unknown =&gt; text
+LINE 1: SELECT 'ref'=&gt;NEW.postcode</strong></p>
+<pre><code>   ^
+</code></pre>
+<p>HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+QUERY:  SELECT 'ref'=&gt;NEW.postcode
+CONTEXT:  PL/pgSQL function placex_insert() line 84 at assignment in /home/nominatim/utils/setup.php on line 455
+ERROR: ERROR:  operator does not exist: unknown =&gt; text
+LINE 1: SELECT 'ref'=&gt;NEW.postcode
+                    ^</p>
+<p>HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+QUERY:  SELECT 'ref'=&gt;NEW.postcode
+CONTEXT:  PL/pgSQL function placex_insert() line 84 at assignment
+ERROR:  operator does not exist: unknown =&gt; text
+LINE 1: SELECT 'ref'=&gt;NEW.postcode
+                    ^</p>
+<p>HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+QUERY:  SELECT 'ref'=&gt;NEW.postcode
+CONTEXT:  PL/pgSQL function placex_insert() line 84 at assignment</p>
+<p>END OF LOGS</p>
+<p>From setup.php I can see that it is breaking down somewhere in --load-data function. Earlier tasks run just fine.</p>
+<p>I also found in nominatim/sql/functions.sql, in line 982:</p>
+<p>NEW.name := 'ref'=&gt;NEW.postcode;</p>
+<p>My software (system is gentoo):</p>
+<p>mapnik-2.1.0</p>
+<p>postgis-2.0.2-r2</p>
+<p>osm2pgsql version from <a href="http://svn.openstreetmap.org/applications/utils/export/osm2pgsql/" title="title">svn sources</a> (tried with and without --64bit-ids support compiled in, same result)</p>
+<p>postgres-9.2</p>
+<p>geos-3.3.3</p>
+<p>libxml2-2.9.0-r2</p>
+<p>pear-1.9.4</p>
+<p>PEAR-DB-1.7.14</p>
+<p>PEAR-MDB2_Driver_pgsql-1.5.0_beta3</p>
+<p>php-5.4.8</p>
+<p><strong>What is wrong?</strong></p>
+<p>In nominatim sources I have made a change:</p>
+<ol>
+<li>Using sed: www-data -&gt; osmuser but this shouldn't break anything.</li>
+</ol>
+<p>Also in postgres, in pg_operator table I <strong>can't find</strong> '=&gt;' operator but I didn't modify anything there. Any help?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-operator" href="/tags/operator/" rel="tag" title="see questions tagged 'operator'">operator</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-postcode" href="/tags/postcode/" rel="tag" title="see questions tagged 'postcode'">postcode</a>
+<a class="post-tag tag-link-pg_query" href="/tags/pg_query/" rel="tag" title="see questions tagged 'pg_query'">pg_query</a>
+<a class="post-tag tag-link-name" href="/tags/name/" rel="tag" title="see questions tagged 'name'">name</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>06 Mar '13, 09:59</strong>
+</p>
+<img alt="myvupln's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/dac1e1598195ef62ce74c782c0bbe536?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5758/myvupln">myvupln</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="myvupln has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-20521">
+</div>
+<div class="comment-tools" id="comment-tools-20521">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-20521-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/20521/operator-does-not-exist-unknown-text?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/20521/operator-does-not-exist-unknown-text?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/20521/operator-does-not-exist-unknown-text?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/20521/operator-does-not-exist-unknown-text?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="20522"></a>
+<div class="answer" id="answer-container-20522">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/20522/up/" id="post-20522-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-20522-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/20522/down/" id="post-20522-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Support for postgresql versions &gt;= 9.2 and postgis &gt;= 2.0 has only been recently added to Nominatim. Please try the latest development version from github.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/20522/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Mar '13, 10:52</strong>
+</p>
+<img alt="lonvia's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d888b712d85dee0aa304297f2dc697c7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2921/lonvia">lonvia</a><br/>
+<span class="score" title="6213 reputation points"><span class="">6.2k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="57 badges"><span class="silver">●</span><span class="badgecount">57</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="lonvia has 43 accepted answers">40%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-20522">
+<a name="20526"></a>
+<div class="comment" id="comment-20526">
+<div class="comment-score" id="post-20526-score"></div>
+<div class="comment-text"><p>Hi, thanks for quick response.</p>
+<p>I had Nominatim from <a>git://github.com/twain47/Nominatim.git.</a></p>
+<p>I used version: Nominatim-2.0.0 (from tag).</p>
+<p>After checkout to master (so now I am using the latest commit):</p>
+<p>ERROR: PostGIS version is not correct.  Expected 1.5 found 2.0</p>
+<p>So currently I need to switch to postgis-1.5.3 from postgis-2.0.0 :(</p>
+<p>Thanks for Your help.</p></div>
+<div class="comment-info" id="comment-20526-info">
+<span class="comment-age">(06 Mar '13, 13:01)</span>
+<a class="comment-user userinfo" href="/users/5758/myvupln">myvupln</a>
+</div>
+</div>
+<a name="20527"></a>
+<div class="comment" id="comment-20527">
+<div class="comment-score" id="post-20527-score"></div>
+<div class="comment-text"><p>As I thought. This requires also downgrade of whole postgresql-server to version 9.1.x due to postgis dependency and so on, and so on...</p></div>
+<div class="comment-info" id="comment-20527-info">
+<span class="comment-age">(06 Mar '13, 13:09)</span>
+<a class="comment-user userinfo" href="/users/5758/myvupln">myvupln</a>
+</div>
+</div>
+<a name="20528"></a>
+<div class="comment" id="comment-20528">
+<div class="comment-score" id="post-20528-score"></div>
+<div class="comment-text"><p>You need to change the postgis version in your settings/local.php. Just copy the relevant line from settings/settings.php and change the version to 2.0.</p></div>
+<div class="comment-info" id="comment-20528-info">
+<span class="comment-age">(06 Mar '13, 13:10)</span>
+<a class="comment-user userinfo" href="/users/2921/lonvia">lonvia</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-20522">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-20522-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/20521/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="a9kgBDo4PmXGg6SzYxHBu9AwfpfmsbhL"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

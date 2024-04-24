@@ -1,0 +1,218 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/42332/server-busy-error-when-its-really-not">Server Busy Error (when it's really not)</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/42332/up/" id="post-42332-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-42332-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/42332/down/" id="post-42332-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/42332/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I've been trying to download a section of a map as a PDF for many days but have been unable to. I keep getting an error page that reads "The server is too busy at the moment. Please wait a few minutes before trying again."</p>
+<p>In looking at other similar questions that have been asked, the typical response is "because the servers are overloaded. Wait until they're below 25", as seen in this question/answer <a href="https://help.openstreetmap.org/questions/21192/error-export-load-average-on-the-server-is-too-high-at-the-moment">https://help.openstreetmap.org/questions/21192/error-export-load-average-on-the-server-is-too-high-at-the-moment</a></p>
+<p>It's recommended to check this page to make sure that the level is below 25. I'm seeing that it's well below 25 (below 10 even) and yet I still keep getting this error.</p>
+<p><a href="http://munin.openstreetmap.org/openstreetmap/yevaud.openstreetmap/load.html">http://munin.openstreetmap.org/openstreetmap/yevaud.openstreetmap/load.html</a></p>
+<p>I have tried exporting a smaller chunk of the map but that still doesn't help. Any help or advice would be appreciated. Much thanks ahead of time!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-download" href="/tags/download/" rel="tag" title="see questions tagged 'download'">download</a>
+<a class="post-tag tag-link-export" href="/tags/export/" rel="tag" title="see questions tagged 'export'">export</a>
+<a class="post-tag tag-link-server" href="/tags/server/" rel="tag" title="see questions tagged 'server'">server</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>15 Apr '15, 02:56</strong>
+</p>
+<img alt="EChrisDenney's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ca7c5a640cf34837a624fae1426736ae?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10841/echrisdenney">EChrisDenney</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="EChrisDenney has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/42332/">
+                edited
+                <strong>15 Apr '15, 12:44</strong>
+</a>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-42332">
+<a name="42347"></a>
+<div class="comment" id="comment-42347">
+<div class="comment-score" id="post-42347-score"></div>
+<div class="comment-text"><p>interesting, maybe the pdf creation is done by another server now. However, the time at around 2:00 UTC (the time of your question) looks like a very low load time on yevaud and I guess this is a similar pattern also for other servers (due to geographic/time zone distribution of our users). Maybe asking the server admins (e.g via the <a href="https://trac.openstreetmap.org/wiki/OsmComponentReports">"admin" component at our trac</a>) would be applicable if that does not work for anybody all the time.</p></div>
+<div class="comment-info" id="comment-42347-info">
+<span class="comment-age">(15 Apr '15, 13:18)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+<a name="42357"></a>
+<div class="comment not_top_scorer" id="comment-42357">
+<div class="comment-score" id="post-42357-score"></div>
+<div class="comment-text"><p>Thanks for the response aseerel4c26. I had it working for me last week, but then when I tried it again this weekend it didn't work. I tried it every day since then, multiple times per day, at multiple hours of the day. Same results. </p>
+<p>How might I mention this to the server admins? I visited the link you provided but don't see a way of getting a message to them.</p></div>
+<div class="comment-info" id="comment-42357-info">
+<span class="comment-age">(15 Apr '15, 19:21)</span>
+<a class="comment-user userinfo" href="/users/10841/echrisdenney">EChrisDenney</a>
+</div>
+</div>
+<a name="42358"></a>
+<div class="comment" id="comment-42358">
+<div class="comment-score" id="post-42358-score">1</div>
+<div class="comment-text"><p>Also take a look at similar questions, for example <a href="https://help.openstreetmap.org/questions/22/how-do-i-export-map-images-of-larger-areas">How do I export map images of larger areas?</a>.</p></div>
+<div class="comment-info" id="comment-42358-info">
+<span class="comment-age">(15 Apr '15, 19:39)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="42359"></a>
+<div class="comment not_top_scorer" id="comment-42359">
+<div class="comment-score" id="post-42359-score"></div>
+<div class="comment-text"><p><a href="http://help.openstreetmap.org/users/158/scai"></a><a href="http://help.openstreetmap.org/users/158/scai">@scai</a>: right, other options exist. </p>
+<p><a href="http://help.openstreetmap.org/users/10841/echrisdenney"></a><a href="http://help.openstreetmap.org/users/10841/echrisdenney">@EChrisDenney</a>: Yes, I meant the server admins (I can do that for you, of course). I will try an PDF export of a small, not densely mapped area later to see if it works for me. If it works for someone, please mention here.</p></div>
+<div class="comment-info" id="comment-42359-info">
+<span class="comment-age">(15 Apr '15, 20:12)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+<a name="42362"></a>
+<div class="comment" id="comment-42362">
+<div class="comment-score" id="post-42362-score">1</div>
+<div class="comment-text"><p><a href="http://help.openstreetmap.org/users/158/scai">@scai</a> <a href="http://help.openstreetmap.org/users/5179/aseerel4c26">@aseerel4c26</a> I'm actually trying to export a very small area, just one street in a quiet suburban neighborhood. <a href="https://www.openstreetmap.org/#map=18/42.13273/-72.73832">https://www.openstreetmap.org/#map=18/42.13273/-72.73832</a></p></div>
+<div class="comment-info" id="comment-42362-info">
+<span class="comment-age">(15 Apr '15, 20:52)</span>
+<a class="comment-user userinfo" href="/users/10841/echrisdenney">EChrisDenney</a>
+</div>
+</div>
+<a name="42389"></a>
+<div class="comment" id="comment-42389">
+<div class="comment-score" id="post-42389-score">2</div>
+<div class="comment-text"><p>I have asked the admins: <a href="https://trac.openstreetmap.org/ticket/5308">https://trac.openstreetmap.org/ticket/5308</a></p></div>
+<div class="comment-info" id="comment-42389-info">
+<span class="comment-age">(16 Apr '15, 14:51)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+<a name="42391"></a>
+<div class="comment" id="comment-42391">
+<div class="comment-score" id="post-42391-score">2</div>
+<div class="comment-text"><p>Thank you so much <a href="http://help.openstreetmap.org/users/5179/aseerel4c26">@aseerel4c26</a>. I really hope I can use this tool again as it was very valuable to me.</p></div>
+<div class="comment-info" id="comment-42391-info">
+<span class="comment-age">(16 Apr '15, 16:45)</span>
+<a class="comment-user userinfo" href="/users/10841/echrisdenney">EChrisDenney</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-42332">
+<span class="comments-showing">
+            showing 5 of 7
+        </span>
+<a class="show-all-comments-link" href="#">show 2 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-42332-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/42332/server-busy-error-when-its-really-not?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/42332/server-busy-error-when-its-really-not?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/42332/server-busy-error-when-its-really-not?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/42332/server-busy-error-when-its-really-not?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="42393"></a>
+<div class="answer" id="answer-container-42393">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/42393/up/" id="post-42393-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-42393-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/42393/down/" id="post-42393-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I had asked the admins: <a href="https://trac.openstreetmap.org/ticket/5308">https://trac.openstreetmap.org/ticket/5308</a> . It looks like there was an error in the webserver program code, which has been fixed now (thank you, <a href="http://help.openstreetmap.org/users/1/tomh">@TomH</a>). Except than in the very busiest periods you now should be able to do exports. I tried to export a whole small city to pdf (server load is at 170 - quite a busy time): works.</p>
+<p>The server <a href="http://munin.openstreetmap.org/openstreetmap/yevaud.openstreetmap/load.html">load</a> number is no direct limit any more, but you may use it to to spot not-that-busy periods in case it does not work at a specific point in time.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/42393/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>16 Apr '15, 18:59</strong>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="aseerel4c26 has 169 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-42393">
+<a name="42392"></a>
+<div class="comment" id="comment-42392">
+<div class="comment-score" id="post-42392-score"></div>
+<div class="comment-text"><p>It's fixed! Oh my goodness thank you so much. This was very stressful for me as I had a very important project I was working on. Thank you so much <a href="http://help.openstreetmap.org/users/5179/aseerel4c26">@aseerel4c26</a></p></div>
+<div class="comment-info" id="comment-42392-info">
+<span class="comment-age">(16 Apr '15, 16:52)</span>
+<a class="comment-user userinfo" href="/users/10841/echrisdenney">EChrisDenney</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-42393">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-42393-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/42332/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="bg7IoM2etcvXDuQUeMv1bqppOdFg9q3Q"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

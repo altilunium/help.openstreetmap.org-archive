@@ -1,0 +1,213 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/38372/api-or-tool-to-match-a-gps-track-to-existing-roads">API or tool to match a GPS track to existing roads</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/38372/up/" id="post-38372-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-38372-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/38372/down/" id="post-38372-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/38372/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I need to identify the road (or, more precisely, the sequence of road segments) that a GPS track is following. </p>
+<p>I can see how to implement this through low-level methods - find closest segments for each point on the track, then clean up the results - but maybe this is already implemented somewhere?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-track" href="/tags/track/" rel="tag" title="see questions tagged 'track'">track</a>
+<a class="post-tag tag-link-api" href="/tags/api/" rel="tag" title="see questions tagged 'api'">api</a>
+<a class="post-tag tag-link-matching" href="/tags/matching/" rel="tag" title="see questions tagged 'matching'">matching</a>
+<a class="post-tag tag-link-road" href="/tags/road/" rel="tag" title="see questions tagged 'road'">road</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>08 Nov '14, 06:46</strong>
+</p>
+<img alt="leonid's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/777894ea5153122bfa6b83f5bbf23622?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9965/leonid">leonid</a><br/>
+<span class="score" title="61 reputation points">61</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="leonid has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/38372/">
+                edited
+                <strong>11 Nov '14, 06:56</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-38372">
+</div>
+<div class="comment-tools" id="comment-tools-38372">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-38372-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/38372/api-or-tool-to-match-a-gps-track-to-existing-roads?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/38372/api-or-tool-to-match-a-gps-track-to-existing-roads?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/38372/api-or-tool-to-match-a-gps-track-to-existing-roads?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/38372/api-or-tool-to-match-a-gps-track-to-existing-roads?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="38448"></a>
+<div class="answer" id="answer-container-38448">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/38448/up/" id="post-38448-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-38448-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/38448/down/" id="post-38448-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>One simple possibility is to use routing software, such as OSRM, to find a route between a series of via points taken from your GPS track.</p>
+<p>You could take a point from your track every 2km, and add a via point at that location. Then call OSRM's viaroute function to get a route back which will follow OSM data between those points.</p>
+<p>To make the route more faithful, you could replace "every 2km" with a shorter interval, or add some logic to add a via point whenever the track goes round a sharp corner.</p>
+<p>OSRM will return turn-by-turn directions for the route, plus a polyline. If you want the exact OSM IDs, you can run your own instance of OSRM and adapt the car.lua profile code to return OSM IDs as part of the road name.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/38448/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>11 Nov '14, 10:08</strong>
+</p>
+<img alt="Richard's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/08324717c25d6067fa4ff23ef37d455f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5/richard">Richard ♦</a><br/>
+<span class="score" title="30902 reputation points"><span class="">30.9k</span></span><span title="44 badges"><span class="badge1">●</span><span class="badgecount">44</span></span><span title="279 badges"><span class="silver">●</span><span class="badgecount">279</span></span><span title="412 badges"><span class="bronze">●</span><span class="badgecount">412</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Richard has 98 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-38448">
+</div>
+<div class="comment-tools" id="comment-tools-38448">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-38448-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="38376"></a>
+<div class="answer" id="answer-container-38376">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/38376/up/" id="post-38376-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-38376-score" title="current number of votes">
+    -2
+</div>
+<a class="ajax-command post-vote down" href="/vote/38376/down/" id="post-38376-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This kind of problem is called "matching" and is adressed by various approaches:<br/>
+<a href="http://lmgtfy.com/?q=match+gps+track+road+network">http://lmgtfy.com/?q=match+gps+track+road+network</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/38376/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Nov '14, 13:55</strong>
+</p>
+<img alt="iii's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/49a7d0e0408e9cf2f698faac0f4d837a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4984/iii">iii</a><br>
+<span class="score" title="4892 reputation points"><span class="">4.9k</span></span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="40 badges"><span class="silver">●</span><span class="badgecount">40</span></span><span title="82 badges"><span class="bronze">●</span><span class="badgecount">82</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="iii has 16 accepted answers">10%</span>
+</br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-38376">
+<a name="38378"></a>
+<div class="comment" id="comment-38378">
+<div class="comment-score" id="post-38378-score">2</div>
+<div class="comment-text"><p>I suspect that the OP was perfectly capable of doing a web search and was rather hoping for personal recommendations of what works and what doesn't in particular circumstances...</p></div>
+<div class="comment-info" id="comment-38378-info">
+<span class="comment-age">(08 Nov '14, 13:59)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="38447"></a>
+<div class="comment" id="comment-38447">
+<div class="comment-score" id="post-38447-score">1</div>
+<div class="comment-text"><p>Please don't reply with lmgtfy-type sites. This is help.osm.org, not snarky.osm.org.</p></div>
+<div class="comment-info" id="comment-38447-info">
+<span class="comment-age">(11 Nov '14, 10:05)</span>
+<a class="comment-user userinfo" href="/users/5/richard">Richard ♦</a>
+</div>
+</div>
+<a name="38460"></a>
+<div class="comment" id="comment-38460">
+<div class="comment-score" id="post-38460-score">1</div>
+<div class="comment-text"><p>I'm sorry, my intention wasn't to blame anybody. I just thought that <a href="http://help.openstreetmap.org/users/9965/leonid">@leonid</a> didn't had an idea on what he is looking in detail (as he didn't provided further infos about his usecase).</p></div>
+<div class="comment-info" id="comment-38460-info">
+<span class="comment-age">(11 Nov '14, 18:22)</span>
+<a class="comment-user userinfo" href="/users/4984/iii">iii</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-38376">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-38376-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/38372/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="dfMH7YHpooIQadFVofkxp2alw0W8FiWX"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

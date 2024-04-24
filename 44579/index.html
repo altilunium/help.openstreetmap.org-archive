@@ -1,0 +1,176 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/44579/osm2pgsql-does-not-add-a-relation-into-db">osm2pgsql does not add a relation into db</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44579/up/" id="post-44579-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44579-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/44579/down/" id="post-44579-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/44579/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am using nominatim. I am working on a metro extract from <a href="https://mapzen.com/data/metro-extracts">https://mapzen.com/data/metro-extracts</a> </p>
+<p>During the nominatim setup process I add the {extract}.osm file.
+There is a osm_id=   <a href="http://www.openstreetmap.org/relation/1942609">http://www.openstreetmap.org/relation/1942609</a>
+which I cannot find in the place and placex database using sql queries.
+How do I debug why this never got added to the database?</p>
+<p>Even openstreetmap.org has problem with this relation. When you search for the exact name of the relation on the
+site "North West Delhi District", it goes to some other artifact.</p>
+<p>When I hit nominatim with "osmid=1942609&amp;osmtype=R", it fails. A very similar relation and right next to it in the
+file "1942605" succeeds...</p>
+<p>Fails : <a href="https://nominatim.openstreetmap.org/details.php?osmtype=R&amp;osmid=1942609">https://nominatim.openstreetmap.org/details.php?osmtype=R&amp;osmid=1942609</a></p>
+<p>Succeeds : <a href="https://nominatim.openstreetmap.org/details.php?osmtype=R&amp;osmid=1942605">https://nominatim.openstreetmap.org/details.php?osmtype=R&amp;osmid=1942605</a></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>01 Aug '15, 03:21</strong>
+</p>
+<img alt="arahut_kyenetic's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e8920ebfd05463a0cdf49fc7bfc05258?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11313/arahut_kyenetic">arahut_kyenetic</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="arahut_kyenetic has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/44579/">
+                edited
+                <strong>01 Aug '15, 03:24</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44579">
+</div>
+<div class="comment-tools" id="comment-tools-44579">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44579-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/44579/osm2pgsql-does-not-add-a-relation-into-db?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/44579/osm2pgsql-does-not-add-a-relation-into-db?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/44579/osm2pgsql-does-not-add-a-relation-into-db?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/44579/osm2pgsql-does-not-add-a-relation-into-db?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="44590"></a>
+<div class="answer" id="answer-container-44590">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44590/up/" id="post-44590-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44590-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/44590/down/" id="post-44590-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Likely the relation itself is simply broken. See:</p>
+<p><a href="http://ra.osmsurround.org/analyzeRelation?relationId=1942609&amp;_noCache=on">http://ra.osmsurround.org/analyzeRelation?relationId=1942609&amp;_noCache=on</a></p>
+<p>I would suggest editing it in JOSM and running the validator on it.</p>
+<p>PS: as you can see there is a gap here : <a href="http://www.openstreetmap.org/relation/1942609#map=18/28.70812/77.16314">http://www.openstreetmap.org/relation/1942609#map=18/28.70812/77.16314</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/44590/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Aug '15, 07:38</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/44590/">
+                edited
+                <strong>04 Aug '15, 08:13</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44590">
+<a name="44600"></a>
+<div class="comment" id="comment-44600">
+<div class="comment-score" id="post-44600-score"></div>
+<div class="comment-text"><p>Simon, Thanks! for the answer. That makes sense. 
+As a follow up is there a way to run the import in a less strict fashion?</p></div>
+<div class="comment-info" id="comment-44600-info">
+<span class="comment-age">(04 Aug '15, 00:02)</span>
+<a class="comment-user userinfo" href="/users/11313/arahut_kyenetic">arahut_kyenetic</a>
+</div>
+</div>
+<a name="44602"></a>
+<div class="comment" id="comment-44602">
+<div class="comment-score" id="post-44602-score"></div>
+<div class="comment-text"><p><a href="http://help.openstreetmap.org/users/11313/arahut_kyenetic"></a><a href="http://help.openstreetmap.org/users/11313/arahut_kyenetic">@arahut_kyenetic</a> IMHO you have two options:</p>
+<ul>
+<li>fix the relation, wait till it it the planet / or in the extract you are importing and re-import</li>
+<li>fix the relation and comsume diffs up to at least the point in time the relation is OK again.</li>
+</ul>
+<p>THe problem with "less strict" is that osm2pgsql would still have to build a valid geometry from what exsits (aka close the polygon) which is naturally technically possible but I don't believe anybody has implemented that.</p></div>
+<div class="comment-info" id="comment-44602-info">
+<span class="comment-age">(04 Aug '15, 08:12)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-44590">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44590-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/44579/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="0PPcEXVzUfCcFh6GsT5c3mydXXQu01Zs"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

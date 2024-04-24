@@ -1,0 +1,109 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/22070/street-pattern-graph-in-matlab">Street pattern graph in Matlab</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/22070/up/" id="post-22070-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-22070-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/22070/down/" id="post-22070-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/22070/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Dear all,</p>
+<p>I am looking for the following. I need to have a graph based representation of a city in Matlab. Preferably I would like to decide myself where exactly in the world. Therefore, I would imagine I would need the following: long. and latitude of nodes (points) that have a street in between (so where there is an edge present). In this way I can create a graph.
+Preferably I would also like to know the type of the street for each edge (main street, small street, etc.), but this is not strictly necessary. If I get it into a text file, I will be able to load it into Matlab. But I have no idea how to obtain this data from this website.</p>
+<p>I am completely new to this kind of street data and all the associated file types. Can someone help me with this? If something is is not clear about what I need please let me know.</p>
+<p>Kind regards.</p>
+<p>Roland</p>
+<p>I would really appreciate your help!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-graph" href="/tags/graph/" rel="tag" title="see questions tagged 'graph'">graph</a>
+<a class="post-tag tag-link-streets" href="/tags/streets/" rel="tag" title="see questions tagged 'streets'">streets</a>
+<a class="post-tag tag-link-matlab" href="/tags/matlab/" rel="tag" title="see questions tagged 'matlab'">matlab</a>
+<a class="post-tag tag-link-city" href="/tags/city/" rel="tag" title="see questions tagged 'city'">city</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 May '13, 10:04</strong>
+</p>
+<img alt="Roland_d's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9676e0d862b1ee6391d0afb9fad17f00?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6302/roland_d">Roland_d</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Roland_d has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-22070">
+<a name="22072"></a>
+<div class="comment" id="comment-22072">
+<div class="comment-score" id="post-22072-score"></div>
+<div class="comment-text"><p>People have tried turning OSM data into a (mathematical) graph before - <a href="https://help.openstreetmap.org/search/?q=graph&amp;Submit=Search&amp;t=question">search this help site for "graph"</a> and you'll get some helpful answers.  Also, if you've not already read it, have a read of <a href="http://wiki.openstreetmap.org/wiki/Beginners_Guide_1.3">this page of the "Beginners' Guide"</a> that explains what sort of data (in the sense of "what's in the XML file that you download")</p></div>
+<div class="comment-info" id="comment-22072-info">
+<span class="comment-age">(03 May '13, 12:08)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="22078"></a>
+<div class="comment" id="comment-22078">
+<div class="comment-score" id="post-22078-score"></div>
+<div class="comment-text"><p>That guide that you refer to seems to be only about editing the map. Where can i find how to choose which data to export and what not?</p></div>
+<div class="comment-info" id="comment-22078-info">
+<span class="comment-age">(03 May '13, 14:23)</span>
+<a class="comment-user userinfo" href="/users/6302/roland_d">Roland_d</a>
+</div>
+</div>
+<a name="22079"></a>
+<div class="comment" id="comment-22079">
+<div class="comment-score" id="post-22079-score"></div>
+<div class="comment-text"><p>There are multiple possibilities. You can use <a href="http://wiki.openstreetmap.org/wiki/Osmfilter">osmfilter</a> after you obtained the data or you can use some API that supports filtering like the <a href="http://wiki.openstreetmap.org/wiki/Overpass_API">Overpass API</a> (also take a look at <a href="http://overpass-turbo.eu/">Overpass Turbo</a>). Or you skip the uninteresting parts while parsing a data export.</p></div>
+<div class="comment-info" id="comment-22079-info">
+<span class="comment-age">(03 May '13, 14:32)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="22080"></a>
+<div class="comment" id="comment-22080">
+<div class="comment-score" id="post-22080-score"></div>
+<div class="comment-text"><p>osmfilter, osmconvert, overpass, XAPI, Geofabrik downloads, osmosis, imposm ..... Search the wiki.</p></div>
+<div class="comment-info" id="comment-22080-info">
+<span class="comment-age">(03 May '13, 14:33)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-22070">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-22070-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/22070/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Jn94KTNdVTbP1HXfBYFSQH1KxL2t9NDA"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

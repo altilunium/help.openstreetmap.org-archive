@@ -1,0 +1,162 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/63281/dont-osm2pgsql-x-extra-attributes-option-extract-the-ways-which-have-no-tags-and-load-them-into-database-table">don't osm2pgsql -x|--extra-attributes option extract the ways which have no tags and load them into database table?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/63281/up/" id="post-63281-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-63281-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/63281/down/" id="post-63281-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/63281/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am using osm2pgsql 0.92.0,in windows, to load the osm data from a pbf file into postgresql database. First time i have loaded the data without using "--extra-attributes" option, and i observed that the objects which have no tags attached to them are skipped. i.e., count of nodes in "planet_osm_nodes" slim table is greater than count of points in "planet_osm_point" database table. hstore column also don't have metadata like osm_user, osm_uid, osm_timestamp, osm_changeset etc.</p>
+<p>Second time i have loaded the same pbf file into another database with "--extra-attributes" option, and also i have added osm_user and osm_uid to default style file. Here I observed that all the nodes are loaded into database point table irrespective of whether a node has tags attached to it or not. i.e., count of nodes in slim table "planet_osm_nodes" is equal to count of points in database table "planet_osm_point". Table columns for the nodes which have no tags are null except osm_user and osm_uid columns. Remaining metadata like osm_timestamp, osm_changeset etc are stored in hstore column.   </p>
+<p>So I supposed all the ways which have no tags attached to them also would get loaded same as nodes into "planet_osm_line" table irrespective of closed way or non-closed way.  But observed that these ways are not loaded. Database tables "planet_osm_line" has the ways which have tags attached only, and osm_user and osm_uid columns got filled up and the remaining metadata is stored in hstore column for all. But this table doesn't have the ways which have no tags. </p>
+<p>Can anyone, who has clear understanding of slim tables and database tables as in the osm2pgsql schema, please tell me "--extra-attributes" only work with the nodes or it should work with ways as well? if the --extra-attributes option extract all the metadata and treat the nodes which have no tags as legible to put in "planet_osm_point" table then why the line table is missing the ways which have no tags? has anyone experienced the same?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 May '18, 09:27</strong>
+</p>
+<img alt="Phanindra's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3bbb39efe1f2875e439ef6145dc83ce2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7242/phanindra">Phanindra</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Phanindra has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/63281/">
+                edited
+                <strong>04 May '18, 07:35</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-63281">
+<a name="63288"></a>
+<div class="comment" id="comment-63288">
+<div class="comment-score" id="post-63288-score">1</div>
+<div class="comment-text"><p>Please format your question so that it is legible (paragraphs and so on). Thank you.</p></div>
+<div class="comment-info" id="comment-63288-info">
+<span class="comment-age">(03 May '18, 18:45)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+<a name="63309"></a>
+<div class="comment" id="comment-63309">
+<div class="comment-score" id="post-63309-score"></div>
+<div class="comment-text"><p>SimonPoole, I have formatted the question. I believe it is legible now. Thanks</p></div>
+<div class="comment-info" id="comment-63309-info">
+<span class="comment-age">(04 May '18, 07:41)</span>
+<a class="comment-user userinfo" href="/users/7242/phanindra">Phanindra</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-63281">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-63281-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/63281/dont-osm2pgsql-x-extra-attributes-option-extract-the-ways-which-have-no-tags-and-load-them-into-database-table?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/63281/dont-osm2pgsql-x-extra-attributes-option-extract-the-ways-which-have-no-tags-and-load-them-into-database-table?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/63281/dont-osm2pgsql-x-extra-attributes-option-extract-the-ways-which-have-no-tags-and-load-them-into-database-table?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/63281/dont-osm2pgsql-x-extra-attributes-option-extract-the-ways-which-have-no-tags-and-load-them-into-database-table?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="63310"></a>
+<div class="answer" id="answer-container-63310">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/63310/up/" id="post-63310-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-63310-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/63310/down/" id="post-63310-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I have to admit that I've never tried with adding extra columns in the style file, but if you have hstore enabled, the values will be added to the tags in hstore. </p>
+<p>The style file controls which OSM objects are imported at all, untagged ways will typically have to be a member of an imported relation type to be included. I don't believe that there is a direct way to include other untag ways (you could try with the * wildcard for the tag), or potentially use LUA transforms.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/63310/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 May '18, 10:26</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/63310/">
+                edited
+                <strong>04 May '18, 10:30</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-63310">
+</div>
+<div class="comment-tools" id="comment-tools-63310">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-63310-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/63281/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="xnuHWvVhOMD08ItMykQNLKyjARFklK9o"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

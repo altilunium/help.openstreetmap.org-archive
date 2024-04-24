@@ -1,0 +1,92 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/47097/moving-nominatim-db-to-another-machine-avoiding-to-repeat-the-indexing-process">"moving" nominatim db to another machine (avoiding to repeat the indexing process)</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/47097/up/" id="post-47097-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-47097-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/47097/down/" id="post-47097-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/47097/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi guys and thank you in advance</p>
+<p>I have a virtual machine with nominatim and Italian map (about 1gb I don't remember). Now I would like to provide this service to another machine (with no big requirements..) and to avoid the indexing process, I was thinking of install nominatim on their machine and move (copy) the postgres data folder to their postgres Installation. Do you think can it work??</p>
+<p>Thanks a lot</p>
+<p>Confirmed!!</p>
+<p>Sorry if I edit my post so late but I have tried this procedure and it worked perfectly with montecarlo map.</p>
+<p>I dump my postgres db (db where I indexed the map)  with this command:</p>
+<pre><code> pg_dump nominatim &gt; &lt;folder&gt;/dump.sql
+</code></pre>
+<p>Now put this file in the clean machine where you want replicate the service - follow the wiki.guide untill nominatim installation then create nominatim database with command:</p>
+<pre><code>CREATE DATABASE nominatim OWNER &lt;user&gt;
+</code></pre>
+<p>Instead of web user create directly apache user (on centos 6.6) with command:</p>
+<pre><code> createuser -SDR apache
+</code></pre>
+<p>execute the db restore with command:</p>
+<pre><code> psql -d nominatim -f dump.sql
+</code></pre>
+<p>resume the wiki.guide at paragraph "Install service on http" and "iptable configuration"</p>
+<p>And thats it!!
+Maybe could help someone
+Bye</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>11 Dec '15, 14:44</strong>
+</p>
+<img alt="developer_afbnet's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/baa53b81d8a54ef27c893d8bc1c4ea0b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11008/developer_afbnet">developer_af...</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="developer_afbnet has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/47097/">
+                edited
+                <strong>13 Jan '16, 16:01</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-47097">
+</div>
+<div class="comment-tools" id="comment-tools-47097">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-47097-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/47097/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Jj59uTwADXNwiR9jREi4TUWsSBVSDVrO"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

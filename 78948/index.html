@@ -1,0 +1,87 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/78948/pyrosm-python-package-how-to-filter">Pyrosm python package: how to filter?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/78948/up/" id="post-78948-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-78948-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/78948/down/" id="post-78948-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/78948/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello, </p>
+<p>I'm using the pyrosm package in python and I read with it a bdf file for Bristol city. I want to filter and query all the shops and couple of amenities. However, every time I filter only for all shops I've 3,367 records. When I filter for all shops and some amenities, instead of having more records I have less (2,059). It seems in the data that I miss some of the shops. Below my code.</p>
+<pre><code>from pyrosm import OSM
+osm_path ='bristol-latest.osm.pbf' # downloaded from geofabrik
+osm = OSM(osm_path)
+custom_filter = {"shop":True, "amenity":["bar", "cafe", "fast_food", "ice_cream", "pub", "cinema"]}
+pois = osm.get_pois(custom_filter=custom_filter)
+</code></pre>
+<p>Any idea what's wrong please?</p>
+<p>Thank you.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-python" href="/tags/python/" rel="tag" title="see questions tagged 'python'">python</a>
+<a class="post-tag tag-link-filter" href="/tags/filter/" rel="tag" title="see questions tagged 'filter'">filter</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-pyrosm" href="/tags/pyrosm/" rel="tag" title="see questions tagged 'pyrosm'">pyrosm</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>19 Feb '21, 15:21</strong>
+</p>
+<img alt="Katerina_Kourou's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/78ca4faede71449fd93c1790b87d816d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19629/katerina_kourou">Katerina_Kourou</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Katerina_Kourou has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/78948/">
+                edited
+                <strong>19 Feb '21, 15:57</strong>
+</a>
+</p>
+<img alt="MarcoR's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9c8957ccf79025bf749665ebec2bdfa2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6765/marcor">MarcoR</a><br/>
+<span class="score" title="687 reputation points">687</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="8 badges"><span class="silver">●</span><span class="badgecount">8</span></span><span title="20 badges"><span class="bronze">●</span><span class="badgecount">20</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-78948">
+</div>
+<div class="comment-tools" id="comment-tools-78948">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-78948-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/78948/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="ksp0b6OP0Amn7FcWbcusMf3R1hcCsbfs"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

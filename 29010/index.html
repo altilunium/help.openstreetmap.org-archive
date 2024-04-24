@@ -1,0 +1,156 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/29010/reading-in-planet-file-aborted-core-dump">Reading in Planet File - Aborted Core Dump</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/29010/up/" id="post-29010-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-29010-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/29010/down/" id="post-29010-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/29010/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>This problem may have been cataloged <a href="https://help.openstreetmap.org/questions/27411/reading-in-planet-file-aborted-core-dump">before</a> so I'm posting in case there are continuing problems with osm.pbf planet files or to get help discovering any problems on my end.</p>
+<p>My setup:</p>
+<ul>
+<li><strong>Machine</strong></li>
+<li>Windows 7</li>
+<li>32 GB RAM</li>
+<li>Intel i7-3740QM 2.70 GHZ processor</li>
+<li>236 GB disk space</li>
+<li>64-bit</li>
+<li><strong>VirtualBox</strong></li>
+<li>Version 4.3.4</li>
+<li>Linux 2.6 (64-bit) running Ubuntu 12.04</li>
+<li>24 GB RAM</li>
+<li>620 GB disk space</li>
+<li><strong>osm2pgsql command</strong>: osm2pgsql --slim -d gis -C 18000 --number-processes 3 planet-latest.pbf</li>
+</ul>
+<p>What happened:</p>
+<p>While following the <a href="http://switch2osm.org/serving-tiles/manually-building-a-tile-server-12-04/">Manually building a tile server directions</a> on switch2osm all steps up to the planet file import completed successfully. However, towards the end of Processing: Relation (47800 3.66/s) I got the following error:</p>
+<pre><code>osm2pgsql: PolygonBuilder.cpp:261: geos::geomgraph::EdgeRing* geos::operation::overlay::PolygonBuilder::findshell(std::vector&lt;geos::operation::overlay::MinimalEdgeRing*&gt;*):Assertion 'shellCount &lt;=1' failed. Aborted (core dumped)
+</code></pre>
+<p>I downloaded the planet on December 10th (with command wget <a href="http://planet.openstreetmap.org/pbf/planet-latest.osm.pbf">http://planet.openstreetmap.org/pbf/planet-latest.osm.pbf</a>) and started the import the same day. Have problems been reported with planet-131204 (or was a different file planet-latest.osm.pbf on the 10th)? Could it be a problem on my end?</p>
+<p>Thanks!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-pbf" href="/tags/pbf/" rel="tag" title="see questions tagged 'pbf'">pbf</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>12 Dec '13, 15:07</strong>
+</p>
+<img alt="Alpha47's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7ee1136c8ef2d8dc1e88bedbd50f6db2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7958/alpha47">Alpha47</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Alpha47 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/29010/">
+                edited
+                <strong>12 Dec '13, 15:25</strong>
+</a>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-29010">
+</div>
+<div class="comment-tools" id="comment-tools-29010">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-29010-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/29010/reading-in-planet-file-aborted-core-dump?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/29010/reading-in-planet-file-aborted-core-dump?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/29010/reading-in-planet-file-aborted-core-dump?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/29010/reading-in-planet-file-aborted-core-dump?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="29145"></a>
+<div class="answer answered-by-owner" id="answer-container-29145">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/29145/up/" id="post-29145-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-29145-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/29145/down/" id="post-29145-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Update:</p>
+<p>I switched to osm2pgsql 0.81 like daveyp1234 and got around this problem. I ran into other problems towards the end of the planet file import but right now I'm still investigating them.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/29145/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>17 Dec '13, 17:02</strong>
+</p>
+<img alt="Alpha47's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7ee1136c8ef2d8dc1e88bedbd50f6db2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7958/alpha47">Alpha47</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Alpha47 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-29145">
+</div>
+<div class="comment-tools" id="comment-tools-29145">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-29145-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/29010/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="FvIWti3jInOUsLdLwcPN27mwhRjjRr2C"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

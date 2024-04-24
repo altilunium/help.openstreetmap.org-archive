@@ -1,0 +1,215 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/63123/overpass-turbo-park-not-highlighted">Overpass Turbo: Park not highlighted?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/63123/up/" id="post-63123-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-63123-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/63123/down/" id="post-63123-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/63123/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>This is clearly <a href="https://www.openstreetmap.org/relation/3118071">a park</a>. It was marked as such over 4 years ago (in 2013).</p>
+<p>However, the following query, when done with said park in view, does not highlight it:</p>
+<pre><code>[bbox:{{bbox}}];
+(
+    way[leisure=park];
+);
+out body;
+&gt;;
+out skel qt;
+
+{{style:
+    way[leisure=park],
+{ color:blue; fill-color:blue; }
+}}
+</code></pre>
+<p>Is there any reason for that? It seems that <code>rel[leisure=park]</code> does highlight it.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-park" href="/tags/park/" rel="tag" title="see questions tagged 'park'">park</a>
+<a class="post-tag tag-link-highlighting" href="/tags/highlighting/" rel="tag" title="see questions tagged 'highlighting'">highlighting</a>
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 Apr '18, 09:54</strong>
+</p>
+<img alt="moriakaice's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/931d7ae976d4b6bc0463ebc6f04a6a9c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15021/moriakaice">moriakaice</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="moriakaice has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-63123">
+</div>
+<div class="comment-tools" id="comment-tools-63123">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-63123-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/63123/overpass-turbo-park-not-highlighted?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/63123/overpass-turbo-park-not-highlighted?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/63123/overpass-turbo-park-not-highlighted?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/63123/overpass-turbo-park-not-highlighted?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="63124"></a>
+<div class="answer accepted-answer" id="answer-container-63124">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/63124/up/" id="post-63124-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-63124-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/63124/down/" id="post-63124-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/63124/" rel="nofollow" title="moriakaice has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hello,</p>
+<p>In your Overpass query you are searching for way with leisure=park tag, but the park you have linked is not a way it's a relation, a multipolygon type relation used to describe a complex area.</p>
+<p>You should add relation to your Overpass query by adding <code>relation[leisure=park];</code></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/63124/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Apr '18, 10:05</strong>
+</p>
+<img alt="Kazing's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/487887a5692e82a08bb50e587292033a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13207/kazing">Kazing</a><br/>
+<span class="score" title="66 reputation points">66</span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Kazing has one accepted answer">100%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-63124">
+<a name="63126"></a>
+<div class="comment" id="comment-63126">
+<div class="comment-score" id="post-63126-score"></div>
+<div class="comment-text"><p>Thank you for the answer.</p>
+<p>What does make an area a <code>relation</code> and not a <code>way</code>? We've got other parks (like Hyde Park) that are <code>ways</code>.</p></div>
+<div class="comment-info" id="comment-63126-info">
+<span class="comment-age">(25 Apr '18, 10:21)</span>
+<a class="comment-user userinfo" href="/users/15021/moriakaice">moriakaice</a>
+</div>
+</div>
+<a name="63127"></a>
+<div class="comment" id="comment-63127">
+<div class="comment-score" id="post-63127-score">2</div>
+<div class="comment-text"><p>The relation is used when the area you want to describe is complex, it has holes for examples. See the wiki page for more details/examples <a href="https://wiki.openstreetmap.org/wiki/Relation:multipolygon">https://wiki.openstreetmap.org/wiki/Relation:multipolygon</a></p>
+<p>For Brockwell Park I don't see why it is describe with a relation, but i'm not an expert of multipolygon. And there is nothing that forbids using multipolygon if you think it's more convenient.</p></div>
+<div class="comment-info" id="comment-63127-info">
+<span class="comment-age">(25 Apr '18, 10:31)</span>
+<a class="comment-user userinfo" href="/users/13207/kazing">Kazing</a>
+</div>
+</div>
+<a name="63128"></a>
+<div class="comment" id="comment-63128">
+<div class="comment-score" id="post-63128-score"></div>
+<div class="comment-text"><p>So on the page you've provided, the examples are having both way and relation, while Brockwell Park seems to be only having a relation, which is very strange for me and, if possible, I'd love to have a <code>way</code> there as well.</p></div>
+<div class="comment-info" id="comment-63128-info">
+<span class="comment-age">(25 Apr '18, 10:44)</span>
+<a class="comment-user userinfo" href="/users/15021/moriakaice">moriakaice</a>
+</div>
+</div>
+<a name="63129"></a>
+<div class="comment" id="comment-63129">
+<div class="comment-score" id="post-63129-score">2</div>
+<div class="comment-text"><p>The Brockwell Park, also have ways, the ways are all included in the relation that describe the park area, ways can have the role of "outer" perimeter or "inner" perimeter
+See this way, it describes a part of the park's external perimeter and its included inside the multipolygon relation:
+<a href="https://www.openstreetmap.org/way/232229963#map=17/51.44733/-0.10696">https://www.openstreetmap.org/way/232229963#map=17/51.44733/-0.10696</a></p></div>
+<div class="comment-info" id="comment-63129-info">
+<span class="comment-age">(25 Apr '18, 10:52)</span>
+<a class="comment-user userinfo" href="/users/13207/kazing">Kazing</a>
+</div>
+</div>
+<a name="63130"></a>
+<div class="comment not_top_scorer" id="comment-63130">
+<div class="comment-score" id="post-63130-score"></div>
+<div class="comment-text"><p>Thanks for pointing it out. Does it mean that, due to the fact those are not marked with <code>leisure=park</code>, the whole thing doesn't get highlighted with my original filter?</p>
+<p>Would recreating it/adding appropriate tags fix the problem?</p></div>
+<div class="comment-info" id="comment-63130-info">
+<span class="comment-age">(25 Apr '18, 11:26)</span>
+<a class="comment-user userinfo" href="/users/15021/moriakaice">moriakaice</a>
+</div>
+</div>
+<a name="63131"></a>
+<div class="comment" id="comment-63131">
+<div class="comment-score" id="post-63131-score">1</div>
+<div class="comment-text"><p>No, there is no problem in the data. The tags belong on the multipolygon and not on the individual ways (see the first point at <a href="https://wiki.openstreetmap.org/wiki/Relation:multipolygon#Usage">multipolygon#Usage</a>). Otherwise you are creating an old-style multipolygon which has lead to several problems in the past and should be avoided. You have to fix your query, not the data.</p></div>
+<div class="comment-info" id="comment-63131-info">
+<span class="comment-age">(25 Apr '18, 11:46)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="63132"></a>
+<div class="comment not_top_scorer" id="comment-63132">
+<div class="comment-score" id="post-63132-score"></div>
+<div class="comment-text"><p>That's a shame. The query itself was rev-eng to cover for what Niantic, developer of Pokemon GO, is likely using for one of the in-game features. Not sure how exactly the data-mining was done to establish the query, but it's sad that only some parks that are marked in OSM will enjoy the feature, while others will miss it (Hyde Park vs Brockwell Park).</p></div>
+<div class="comment-info" id="comment-63132-info">
+<span class="comment-age">(25 Apr '18, 12:15)</span>
+<a class="comment-user userinfo" href="/users/15021/moriakaice">moriakaice</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-63124">
+<span class="comments-showing">
+            showing 5 of 7
+        </span>
+<a class="show-all-comments-link" href="#">show 2 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-63124-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/63123/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="ddEs8y9kIABE4DrqnRDI6fNEZbkIHXu0"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

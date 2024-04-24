@@ -1,0 +1,147 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/39100/overpass-api-around-query-very-slow">Overpass API : around query very slow</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/39100/up/" id="post-39100-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-39100-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/39100/down/" id="post-39100-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/39100/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I want to find all the communes in a "Département" and around 10 kilometers of the limit of this département.
+rel[name="Ille-et-Vilaine"][boundary=administrative];rel(around:10000)['admin_level'='8'];out meta;</p>
+<p>The request is very very slow</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-around" href="/tags/around/" rel="tag" title="see questions tagged 'around'">around</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>06 Dec '14, 12:45</strong>
+</p>
+<img alt="mga_geo's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/79073eb17b9dccd64df88187d0d7561d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10110/mga_geo">mga_geo</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mga_geo has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-39100">
+</div>
+<div class="comment-tools" id="comment-tools-39100">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-39100-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/39100/overpass-api-around-query-very-slow?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/39100/overpass-api-around-query-very-slow?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/39100/overpass-api-around-query-very-slow?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/39100/overpass-api-around-query-very-slow?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="39101"></a>
+<div class="answer" id="answer-container-39101">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/39101/up/" id="post-39101-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-39101-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/39101/down/" id="post-39101-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>No surprise here. This kind of query is known to be slow. Moreover, the way you constructed the query would even return incorrect results, as you wouldn't get all communities in your department (only those up to 10km proximity to the border).</p>
+<p><strong>Note: I had to remove most parts of my previous answer, as it didn't properly take the 10km distance into account. Sorry for that.</strong></p>
+<p>I've submitted a <a href="https://github.com/drolbr/Overpass-API/pull/167">pull request</a> to improve the runtime of your query. Once that fix is in place, your query will run in about 2 minutes with the following result:</p>
+<p><img alt="alt text" src="http://help.openstreetmap.org/upfiles/role.png"/></p>
+<p>Link to previous (non-working) overpass turbo query: <a href="http://overpass-turbo.eu/s/6oX">http://overpass-turbo.eu/s/6oX</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/39101/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Dec '14, 13:22</strong>
+</p>
+<img alt="mmd's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/264d84ab05b942224b05960903eba7a7?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/8708/mmd">mmd</a><br/>
+<span class="score" title="5682 reputation points"><span class="">5.7k</span></span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="53 badges"><span class="silver">●</span><span class="badgecount">53</span></span><span title="88 badges"><span class="bronze">●</span><span class="badgecount">88</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mmd has 44 accepted answers">37%</span>
+</p>
+</img></div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/39101/">
+                edited
+                <strong>28 Dec '14, 15:30</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-39101">
+<a name="43758"></a>
+<div class="comment" id="comment-43758">
+<div class="comment-score" id="post-43758-score"></div>
+<div class="comment-text"><p>Pull request for faster <code>around</code> statement can now be tested on the dev instance: <a href="http://overpass-turbo.eu/s/a6n">http://overpass-turbo.eu/s/a6n</a> </p>
+<p>This query might take up to 2 minutes and returns about 30MB of data. Results should look pretty much like on the screenshot above.</p></div>
+<div class="comment-info" id="comment-43758-info">
+<span class="comment-age">(24 Jun '15, 21:20)</span>
+<a class="comment-user userinfo" href="/users/8708/mmd">mmd</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-39101">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-39101-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/39100/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="CNsvehkMz8RZN6kRehcXkYvKrce0dEZU"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

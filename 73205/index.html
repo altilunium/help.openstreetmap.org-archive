@@ -1,0 +1,189 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/73205/why-are-streetcrossings-not-always-splitted-problems-using-the-data">Why are streetcrossings not always splitted? Problems using the Data!</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/73205/up/" id="post-73205-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-73205-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/73205/down/" id="post-73205-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/73205/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Dear OSM Community.</p>
+<p>I´m trying to use the exported OSM Data and there are issues with the street crossings because they are differently defined and "drawn" in OSM.</p>
+<p>As an example what do I mean with different:</p>
+<p>A) Let´s take the crossing "Goethestrasse" / "Dinghoferstrasse" in "Linz/Austria". Every street stops in the middle of the crossing at the Node. So there are actually 4 Streets getting connected. So the Node is the connection point between the 4 streets.</p>
+<p>[img]<a href="https://i.imgur.com/QNgfsgP.png?1">https://i.imgur.com/QNgfsgP.png?1</a> [/img]</p>
+<p>B) Compared to that...now let´s look at "Schillerstrasse" / "Starhembergstrasse" in Linz/Austria. Schillerstrasse is passing right through the crossing. And so does "Starhembergstrasse". BUT there is a Node (!) in the middle. This Node is not defined as crossing and so the crossing CAN'T be identified.</p>
+<p>[img]<a href="https://i.imgur.com/fQ3Ix4j.png">https://i.imgur.com/fQ3Ix4j.png</a> [/img]</p>
+<p>Same with a T-junction. If 3 streets have a Node as connection = Perfect identification.
+2 streets (1 street passing through the Node) = no identification.</p>
+<p>I hope I make myself clear and I really need some advice how to "clean" the Data. I also would love to help OSM to develop... you guys a great!</p>
+<p>Explanation of My project:</p>
+<p>Help to develop a Street Import Mod for the Simulation Game Cities Skylines to improve traffic in my town by 1. Simulating the traffic accurately, 2. Applying road changes by trial/error, 3. Get in contact with the authorities.</p>
+<p>Questions I´m asking in the CS Forum: <a href="https://steamcommunity.com/workshop/filedetails/discussion/1957515502/1744516325379783072/">https://steamcommunity.com/workshop/filedetails/discussion/1957515502/1744516325379783072/</a></p>
+<ol>
+<li>
+<p>We can´t change every OSM Street so we can get a "perfect" Data in OSM, right? Or can we?</p>
+</li>
+<li>
+<p>How can we identify and re-write the Data so the Crossings are all identified 100%?</p>
+</li>
+<li>
+<p>After we identified them: How does the algorithm look like, so we can fix the Data?</p>
+</li>
+</ol>
+<p>Or maybe we need to think more out of the box. Write a new Mode: "Every street crossing (even if there are different altitudes) must connect to a CS crossing." This would also connect the actual overpasses. But there are very few overpasses, right? Those can be corrected manually later on in the game fast.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-crossing" href="/tags/crossing/" rel="tag" title="see questions tagged 'crossing'">crossing</a>
+<a class="post-tag tag-link-import" href="/tags/import/" rel="tag" title="see questions tagged 'import'">import</a>
+<a class="post-tag tag-link-nodes" href="/tags/nodes/" rel="tag" title="see questions tagged 'nodes'">nodes</a>
+<a class="post-tag tag-link-export" href="/tags/export/" rel="tag" title="see questions tagged 'export'">export</a>
+<a class="post-tag tag-link-data" href="/tags/data/" rel="tag" title="see questions tagged 'data'">data</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>23 Feb '20, 16:00</strong>
+</p>
+<img alt="alexandler's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8d20f4b7be33a5b3ce0b0a8147b52fc9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17949/alexandler">alexandler</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="alexandler has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/73205/">
+                edited
+                <strong>23 Feb '20, 16:06</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-73205">
+<a name="73214"></a>
+<div class="comment" id="comment-73214">
+<div class="comment-score" id="post-73214-score"></div>
+<div class="comment-text"><p>Same question on forum: <a href="https://forum.openstreetmap.org/viewtopic.php?id=68730">https://forum.openstreetmap.org/viewtopic.php?id=68730</a></p></div>
+<div class="comment-info" id="comment-73214-info">
+<span class="comment-age">(24 Feb '20, 08:04)</span>
+<a class="comment-user userinfo" href="/users/16887/kovoschiz">Kovoschiz</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-73205">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-73205-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/73205/why-are-streetcrossings-not-always-splitted-problems-using-the-data?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/73205/why-are-streetcrossings-not-always-splitted-problems-using-the-data?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/73205/why-are-streetcrossings-not-always-splitted-problems-using-the-data?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/73205/why-are-streetcrossings-not-always-splitted-problems-using-the-data?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="73206"></a>
+<div class="answer" id="answer-container-73206">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/73206/up/" id="post-73206-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-73206-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/73206/down/" id="post-73206-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I assume you man "crossroads" (or interections) where you say "crossings". Crossroads are not explicitly mapped in OSM; they are simply where several highway ways share a node. Your expectation that every situation should be mapped like your example "A" is simply wrong; it is the data consumer's task to infer these crossroads. Doing so is easy by looking at the node IDs that the various ways use; if several ways use a node with the same ID then there is a crossroads, otherwise there isn't - for example if there is a bridge or a tunnel, then even if the road going over another road should accidentally have a node in the same location it would be a node with a different ID.</p>
+<p>No "fixing" in OSM is necessary; you just need to process the data correctly.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/73206/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>23 Feb '20, 16:55</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-73206">
+<a name="73210"></a>
+<div class="comment" id="comment-73210">
+<div class="comment-score" id="post-73210-score">1</div>
+<div class="comment-text"><p>Adding to Frederik's answer: There are a number of tools that will take OSM data and import it into GIS enabled databases splitting ways as needed to create a valid node and edge routing graph. The one I've worked with is osm2pgrouting but there are others.</p></div>
+<div class="comment-info" id="comment-73210-info">
+<span class="comment-age">(24 Feb '20, 02:28)</span>
+<a class="comment-user userinfo" href="/users/5918/n76">n76</a>
+</div>
+</div>
+<a name="73248"></a>
+<div class="comment" id="comment-73248">
+<div class="comment-score" id="post-73248-score">1</div>
+<div class="comment-text"><p>Yes I meant crossroads :)</p>
+<p>Thank you very much for your response. I understand now that OSM is correctly working and the data needed to be procesed correctly. My appology. </p>
+<p>And also thanks for giving the hint for osm2pgrouting.</p>
+<p>All the best guys. You are great.</p></div>
+<div class="comment-info" id="comment-73248-info">
+<span class="comment-age">(26 Feb '20, 21:14)</span>
+<a class="comment-user userinfo" href="/users/17949/alexandler">alexandler</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-73206">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-73206-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/73205/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="4R0z1xCovP6ol153D78h7xBK5pnR0IzR"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

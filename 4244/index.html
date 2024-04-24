@@ -1,0 +1,198 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/4244/reverse-geocoding-doesnt-return-postal-code-in-netherlands">reverse geocoding doesn't return postal code in Netherlands</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/4244/up/" id="post-4244-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-4244-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/4244/down/" id="post-4244-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/4244/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I was trying to use reverse Geocoding to retrieve postal code from give Lat Lon information. We are using it in a test case to validate some of our data.</p>
+<p>For germany it works fine, but if i try to use this same service for with Lat/Long from the Netherlands,
+the response does not contain postal code information.</p>
+<p>do you know why this is? If i can remember correctly a while ago, it was using a different URL for the request, but it returned the postal code as a part of the response? </p>
+<p>Sorry if it wasn't complete. here are two examples, both from center of different cities:</p>
+<p><strong>Germany - Bochum:</strong> </p>
+<p><em>request</em> - <a href="http://www.openstreetmap.org/geocoder/description_osm_nominatim?lat=51.486514&amp;lon=7.20764"></a><a href="http://www.openstreetmap.org/geocoder/description_osm_nominatim?lat=51.486514&amp;lon=7.20764"></a><a href="http://www.openstreetmap.org/geocoder/description_osm_nominatim?lat=51.486514&amp;lon=7.20764">http://www.openstreetmap.org/geocoder/description_osm_nominatim?lat=51.486514&amp;lon=7.20764</a></p>
+<p><em>response</em> - Präsidentstraße, Hamme, Bochum, Regierungsbezirk Arnsberg, North Rhine-Westphalia, 44789, Germany</p>
+<p><strong>Netherlands - Utrecht:</strong> </p>
+<p><em>request</em> - <a href="http://www.openstreetmap.org/geocoder/description_osm_nominatim?lat=52.09914&amp;lon=5.123649"></a><a href="http://www.openstreetmap.org/geocoder/description_osm_nominatim?lat=52.09914&amp;lon=5.123649"></a><a href="http://www.openstreetmap.org/geocoder/description_osm_nominatim?lat=52.09914&amp;lon=5.123649">http://www.openstreetmap.org/geocoder/description_osm_nominatim?lat=52.09914&amp;lon=5.123649</a></p>
+<p><em>response</em> - Jan van der Heijdenstraat, Utrecht, Bestuur Regio Utrecht, Utrecht, The Netherlands</p>
+<p>The response from Netherlands, does not contain the postal code information.</p>
+<p>The same results are obtained if you use the following URL: </p>
+<p><a href="http://nominatim.openstreetmap.org/reverse?lat=52.09914&amp;lon=5.123649"></a><a href="http://nominatim.openstreetmap.org/reverse?lat=52.09914&amp;lon=5.123649"></a><a href="http://nominatim.openstreetmap.org/reverse?lat=52.09914&amp;lon=5.123649">http://nominatim.openstreetmap.org/reverse?lat=52.09914&amp;lon=5.123649</a></p>
+<p>Regards</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-netherlands" href="/tags/netherlands/" rel="tag" title="see questions tagged 'netherlands'">netherlands</a>
+<a class="post-tag tag-link-postal" href="/tags/postal/" rel="tag" title="see questions tagged 'postal'">postal</a>
+<a class="post-tag tag-link-code" href="/tags/code/" rel="tag" title="see questions tagged 'code'">code</a>
+<a class="post-tag tag-link-geocoding" href="/tags/geocoding/" rel="tag" title="see questions tagged 'geocoding'">geocoding</a>
+<a class="post-tag tag-link-reverse" href="/tags/reverse/" rel="tag" title="see questions tagged 'reverse'">reverse</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>01 Apr '11, 14:43</strong>
+</p>
+<img alt="pance's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/11536e2e01a1ea7cc3840b994f9d27e3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1118/pance">pance</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="pance has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/4244/">
+                edited
+                <strong>01 Apr '11, 15:49</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-4244">
+<a name="4245"></a>
+<div class="comment" id="comment-4245">
+<div class="comment-score" id="post-4245-score"></div>
+<div class="comment-text"><p>Can you edit your question and add some more information, especially one URL from Germany where it works, one URL from Netherlands where it fails, and: what engine/web-app are you using for geocoding?</p></div>
+<div class="comment-info" id="comment-4245-info">
+<span class="comment-age">(01 Apr '11, 15:29)</span>
+<a class="comment-user userinfo" href="/users/99/stephan75">stephan75</a>
+</div>
+</div>
+<a name="4270"></a>
+<div class="comment" id="comment-4270">
+<div class="comment-score" id="post-4270-score"></div>
+<div class="comment-text"><p>Maybe related, I've noticed that the street/postcodes in the Netherlands are not connected to the city. So for instance, looking for "Mendelssohnstraat, Delft" doesn't lead to any result, while it should return:
+<a href="http://open.mapquestapi.com/nominatim/v1/details.php?place_id=15301180">http://open.mapquestapi.com/nominatim/v1/details.php?place_id=15301180</a>
+(Mendelssohnstraat, 2625 AD, The Netherlands)</p>
+<p>Not sure whether it's a problem in the data or Nominatim.</p></div>
+<div class="comment-info" id="comment-4270-info">
+<span class="comment-age">(04 Apr '11, 16:19)</span>
+<a class="comment-user userinfo" href="/users/846/eric-piel">Éric Piel</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-4244">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-4244-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/4244/reverse-geocoding-doesnt-return-postal-code-in-netherlands?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/4244/reverse-geocoding-doesnt-return-postal-code-in-netherlands?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/4244/reverse-geocoding-doesnt-return-postal-code-in-netherlands?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/4244/reverse-geocoding-doesnt-return-postal-code-in-netherlands?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="4254"></a>
+<div class="answer" id="answer-container-4254">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/4254/up/" id="post-4254-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-4254-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/4254/down/" id="post-4254-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p><em>Disclaimer: I'm no expert on Nominatim</em></p>
+<p>The reason your query for Utrecht does not return a postcode is apparently quite simply that the OSM database does not contain postcode information for the street. As with any other information, OSM only contains what users have entered, and for some areas (notably house numbers and postcodes) coverage is often very spotty, even in regions where streets and street names are fairly complete.</p>
+<p>If you search for other streets in the Netherlands using Nominatim, you'll see that you sometimes get postcode information, and sometimes not. For example,</p>
+<p><a href="http://nominatim.openstreetmap.org/reverse?lat=52.65285&amp;lon=6.03195">http://nominatim.openstreetmap.org/reverse?lat=52.65285&amp;lon=6.03195</a></p>
+<p>will give you postcode information.</p>
+<p>That said, even if you do get a postcode, you cannot necessarily rely on it in all areas. Notably, your example result for "Präsidentenstraße, Bochum" is wrong - the correct postcode is 44791, and not 44789, as Nominatim reports (check it on e.g. <a href="http://www.postleitzahl.de/">http://www.postleitzahl.de/</a> ).</p>
+<p>So, in order to use postcode information from Nominatim, you'd first need to check whether there is reliable postcode information for the region of interest. If there is, the calls you used should return the postcode. If they don't, then that's another question...</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/4254/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Apr '11, 14:53</strong>
+</p>
+<img alt="sleske's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/6c2dd6a39d3f38f1bb47a8c1fe8325e2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/666/sleske">sleske</a><br/>
+<span class="score" title="4090 reputation points"><span class="">4.1k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="56 badges"><span class="silver">●</span><span class="badgecount">56</span></span><span title="78 badges"><span class="bronze">●</span><span class="badgecount">78</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="sleske has 19 accepted answers">24%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-4254">
+<a name="4271"></a>
+<div class="comment" id="comment-4271">
+<div class="comment-score" id="post-4271-score"></div>
+<div class="comment-text"><p>Thanks for the answer sleske.</p>
+<p>I am aware that the information is not always 100% correct. It can be edited all the time, but this is not relevant at this point.</p>
+<p><em>"The reason your query for Utrecht does not return a postcode is apparently quite simply that the OSM database does not contain postcode information for the street.</em>"</p>
+<p>The reason i raised this thread is that i am pretty sure that this information existed. Then simply some weeks ago it was not returned any more as part of the response. </p>
+<p>My concern was as to why was this, and if anyone was aware of it?
+Was there maybe some law that forbids displaying postal code details in reverse geocoding? or etc.</p></div>
+<div class="comment-info" id="comment-4271-info">
+<span class="comment-age">(04 Apr '11, 16:33)</span>
+<a class="comment-user userinfo" href="/users/1118/pance">pance</a>
+</div>
+</div>
+<a name="17527"></a>
+<div class="comment" id="comment-17527">
+<div class="comment-score" id="post-17527-score"></div>
+<div class="comment-text"><p>Maybe it's license change related scrubbing?</p></div>
+<div class="comment-info" id="comment-17527-info">
+<span class="comment-age">(06 Nov '12, 20:26)</span>
+<a class="comment-user userinfo" href="/users/4653/gormo">gormo</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-4254">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-4254-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/4244/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="MZBUNGQl52Zf5zthrIKTVdZT9MWMHrIu"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

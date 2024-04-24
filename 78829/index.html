@@ -1,0 +1,164 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/78829/merge-2-huge-shapefiles-using-command-line-utility">Merge 2 huge shapefiles using command line utility</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/78829/up/" id="post-78829-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-78829-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/78829/down/" id="post-78829-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/78829/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>I need to merge 2 huge shapefiles (~3.4GB each). I was using QGIS explorer to merge 2 shapefiles but the application runs out of memory and getting error can't exceed 4 GB shapefile limit . I want the same way QGIS merges vectors but using commandline tool so that I can merge them on the cloud server. </p>
+<p>I tried merging 2 separate .osm files but there is some issue in osrm-extraction. </p>
+<p>What is the proper way to merge 2 shape files?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osrm" href="/tags/osrm/" rel="tag" title="see questions tagged 'osrm'">osrm</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>13 Feb '21, 09:36</strong>
+</p>
+<img alt="Mukul2990's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7996417a96c5227404f348e863457405?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19703/mukul2990">Mukul2990</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Mukul2990 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-78829">
+</div>
+<div class="comment-tools" id="comment-tools-78829">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-78829-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/78829/merge-2-huge-shapefiles-using-command-line-utility?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/78829/merge-2-huge-shapefiles-using-command-line-utility?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/78829/merge-2-huge-shapefiles-using-command-line-utility?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/78829/merge-2-huge-shapefiles-using-command-line-utility?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="78830"></a>
+<div class="answer" id="answer-container-78830">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/78830/up/" id="post-78830-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-78830-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/78830/down/" id="post-78830-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You cannot merge two 3.4 GB shape files. Shape files have a size limit of 2 GB, and some applications like GDAL will allow you to create up to 4 GB (using unsigned IDs internally) but will warn you that these files might not be readable with other software. More than 4 GB isn't possible with any software.</p>
+<p>Depending on what you want to do, you might want to switch to SQLite files which can be readily processed with GDAL (ogr2ogr command line tool). You can convert the first shape file to SQLite and then append the second shape file to that existing SQLite file. QGIS can load SQLite files.</p>
+<p>Note that this simply combines the file into one. If by "merge" you mean an actual merge operation on geometries, combining overlapping features into one, then that's a different ballgame that would require loading the data into PostGIS.  </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/78830/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>13 Feb '21, 11:31</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/78830/">
+                edited
+                <strong>13 Feb '21, 11:32</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-78830">
+<a name="78838"></a>
+<div class="comment" id="comment-78838">
+<div class="comment-score" id="post-78838-score"></div>
+<div class="comment-text"><p>I was appending both shapefiles data to the table using this command to insert shapefile to PostGIS DB. </p>
+<p>ogr2ogr -update -append -progress -f "ESRI Shapefile" PG:"dbname=postgres user=postgres port=5432 password=postgres" Shape1.shp -nln ShapeFilesData</p>
+<p>But there were some issues with this approach. OSRM cluster was not showing the routes correctly.</p></div>
+<div class="comment-info" id="comment-78838-info">
+<span class="comment-age">(14 Feb '21, 05:35)</span>
+<a class="comment-user userinfo" href="/users/19703/mukul2990">Mukul2990</a>
+</div>
+</div>
+<a name="78842"></a>
+<div class="comment" id="comment-78842">
+<div class="comment-score" id="post-78842-score"></div>
+<div class="comment-text"><p>OSRM does not read shape files OR PostGIS database tables. If you want to do routing on PostGIS database tables, try PGRouting.</p></div>
+<div class="comment-info" id="comment-78842-info">
+<span class="comment-age">(14 Feb '21, 11:37)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="78852"></a>
+<div class="comment" id="comment-78852">
+<div class="comment-score" id="post-78852-score"></div>
+<div class="comment-text"><p>No. What I mean to say is I was using the shapefile data loaded in QGIS and generate .osm files, then that osm will generate .pbf which is supplied to the osrm-extraction.</p></div>
+<div class="comment-info" id="comment-78852-info">
+<span class="comment-age">(14 Feb '21, 21:43)</span>
+<a class="comment-user userinfo" href="/users/19703/mukul2990">Mukul2990</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-78830">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-78830-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/78829/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="tBvOBfh3yWP40gkoefC6qJ7uwKaPSfID"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

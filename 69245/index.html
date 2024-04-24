@@ -1,0 +1,161 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/69245/how-convert-osm-relation-to-geojson-based-on-relation-members-roles">How convert OSM relation to GeoJSON based on relation member's roles</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/69245/up/" id="post-69245-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-69245-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/69245/down/" id="post-69245-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/69245/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I just want to convert OSM data to GeoJSON where it is pretty simple with node and way tags of OSM data, but relation which is giving complex can't find the logic to convert OSM relation to GeoJSON format, especially how to form coordinates parameter of GeoJSON based on their relation member roles (ex. Inner, outer,admin_centre,riverbank,side_stream,main_stream,from,via,to,forward,backward,stop_entry_only,stop_exit_only and platform_exit_only).</p>
+<p>I have tried many documentation but no logics or code found in Java and Python.</p>
+<p>In Python <a href="https://pypi.org/project/osm2geojson/">https://pypi.org/project/osm2geojson/</a> osm Official <a href="https://wiki.openstreetmap.org">https://wiki.openstreetmap.org</a> geojson Official <a href="https://geojson.org/">https://geojson.org/</a> sample data: <a href="https://download.geofabrik.de/asia/maldives-latest.osm.bz2">https://download.geofabrik.de/asia/maldives-latest.osm.bz2</a> <a href="https://download.geofabrik.de/asia/bhutan-latest.osm.pbf">https://download.geofabrik.de/asia/bhutan-latest.osm.pbf</a></p>
+<p>As simple, how to form relation member's latitude and longitude in coordinates parameter of GeoJSON based on their roles?</p>
+<p>EXample code</p>
+<pre><code>public void processRelations() {
+    try {
+        LineIterable lineIterable = LineIterable.openGzipFile(dir + OsmJoin.REL_ID_COMPLETE_JSON);
+        try (JsonWriter writer = createJsonWriter(OsmType.RELATION)) {
+            Processor&lt;String, JsonObject&gt; p = compose(entryParsingProcessor, jsonParsingProcessor, new Processor&lt;JsonObject, JsonObject&gt;() {
+                @Override
+                public JsonObject process(JsonObject input) {
+                    // FIXME see if we can extract some useful things from relations                       
+                    return null;
+                }
+            });
+            try (ConcurrentProcessingIterable&lt;String, JsonObject&gt; concIt = processConcurrently(lineIterable, p, 10, 9, 100)) {
+                for (JsonObject o : concIt) {
+                    if (o != null) {
+                        writer.add(o);
+                    }
+                }
+            } catch (IOException e) {
+                throw new IllegalStateException(e);
+            }
+        }
+    } catch (IOException e) {
+        throw new IllegalStateException(e);
+    }
+}
+</code></pre>
+<p>I have tried in Java and Python but reason is I could not find the logic behind the conversion of the relation tags from OSM to GeoJSON</p>
+<p>I am expecting the logic behind the conversion of the relation tags from OSM to GeoJSON and sample code for that.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-geometry" href="/tags/geometry/" rel="tag" title="see questions tagged 'geometry'">geometry</a>
+<a class="post-tag tag-link-osmtogeojson" href="/tags/osmtogeojson/" rel="tag" title="see questions tagged 'osmtogeojson'">osmtogeojson</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+<a class="post-tag tag-link-geojson" href="/tags/geojson/" rel="tag" title="see questions tagged 'geojson'">geojson</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>20 May '19, 12:16</strong>
+</p>
+<img alt="jaye19's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/545b9ba53f0b1764bbaf495f040d5d06?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16686/jaye19">jaye19</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="jaye19 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-69245">
+</div>
+<div class="comment-tools" id="comment-tools-69245">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-69245-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/69245/how-convert-osm-relation-to-geojson-based-on-relation-members-roles?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/69245/how-convert-osm-relation-to-geojson-based-on-relation-members-roles?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/69245/how-convert-osm-relation-to-geojson-based-on-relation-members-roles?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/69245/how-convert-osm-relation-to-geojson-based-on-relation-members-roles?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="74468"></a>
+<div class="answer" id="answer-container-74468">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/74468/up/" id="post-74468-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-74468-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/74468/down/" id="post-74468-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Try using <code>ogr2ogr</code> command instead. You need to export different "layers" but it could work like:</p>
+<pre><code>ogr2ogr -f GeoJSON tmp_lines.geojson myosm.pbf lines
+ogr2ogr -f GeoJSON tmp_mpoly.geojson myosm.pbf multipolygons
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/74468/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>29 Apr '20, 09:30</strong>
+</p>
+<img alt="mcld's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/cb99b2abaa73502ace0175863ca12b92?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5965/mcld">mcld</a><br/>
+<span class="score" title="81 reputation points">81</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="9 badges"><span class="bronze">●</span><span class="badgecount">9</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mcld has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-74468">
+</div>
+<div class="comment-tools" id="comment-tools-74468">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-74468-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/69245/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Sk8W7gJ5128aXfeHNfiD1A4VBrcTQxDk"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

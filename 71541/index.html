@@ -1,0 +1,327 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/71541/download-certain-pois-for-a-whole-country-and-transfer-to-postgres-database">Download certain POIs for a whole country and transfer to Postgres-database</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/71541/up/" id="post-71541-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-71541-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/71541/down/" id="post-71541-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/71541/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>I'd like to extract certain data from OSM for a whole country (Germany).
+The data I'd like to obtain are POI's, but oviously not all of them. 
+I'd like to filter only the supermarkets for example and transfer them directly into a postgres database.</p>
+<p>So far I understood that I can archieve that for example with the Overpass api (via Overpass turbo). I already tried two options:</p>
+<ul>
+<li><strong>Overpass-Turbo (browser-based)</strong></li>
+<li><strong>QuickOSM-Plugin for QGIS</strong> </li>
+</ul>
+<p>In Overpass Turbo I filtered through the query-wizard I the POIs (shop=supermarket) and set a bounding box fitting germany inside. It worked only once though (when i chosed only nodes and due to access limitations...), but I got also POIS around Germany (as the bbox doesn't match with the country border). Therfore I tried to use the area-tags (<strong>addr:country=DE</strong>) to filter only supermarkets in Germany. But then some Points where left out because missing country-tags... 
+anyways when chosing nodes, relations and ways, the query collapses after timeout.</p>
+<p>The I tried the QuickOSM-Plugin for QGIS using the area-code (<strong>3600051477</strong>) to filter only the supermarkets inside Germany. Same thing – the area seems too big to rum the query successfully. 
+After 180 seconds (max. timeout I guess…) the query aborts.
+Therefore I tried the same query with sub-regions (like German provinces, for e.g. Berlin, Bayern, etc.) and it worked. </p>
+<p>I mean I could do several queries for each province in a row to fetch the data and merge it after all together, but there should be a more convinient way. </p>
+<p>I downloaded the <strong>germany osm.pbf</strong> file from <strong>Geofrabrik</strong> and transfered it with <strong>osm2pgsql</strong> into my postgres database. Its a huge file (3 GB- takes a lot of disk-space!) and needed several hours to transfer (even with cached 16 GB ram…)  and I have now loads of data in my database, which I actually dont need.
+Alltogether not the most satifiying solution as well.</p>
+<p>I heard that I could prefilter the .osm data with <strong>osmosis</strong> before transfering it with osm2pgsql right? </p>
+<p>But my question is: </p>
+<p>Do I really have to download the whole dataset .osm.pbf, filter it with <strong>osmosis</strong> and transfer it with <strong>osm2pgsql</strong>?</p>
+<p>Or is there any other solution regarding <strong>overpass</strong> that I dont know about?</p>
+<p>It would be so much more efficient to download only the data I actually need!</p>
+<p>Thanks in advance for any suggestions!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-query" href="/tags/query/" rel="tag" title="see questions tagged 'query'">query</a>
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+<a class="post-tag tag-link-postgres" href="/tags/postgres/" rel="tag" title="see questions tagged 'postgres'">postgres</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>08 Nov '19, 15:11</strong>
+</p>
+<img alt="Pippo87's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/79075c02f75a547c7bee9dc19f57d9a7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17418/pippo87">Pippo87</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Pippo87 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/71541/">
+                edited
+                <strong>08 Nov '19, 15:48</strong>
+</a>
+</p>
+<img alt="andy%20mackey's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/efa7ca36d4499200879223dc5ad5ecac?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/644/andy-mackey">andy mackey</a><br/>
+<span class="score" title="13238 reputation points"><span class="">13.2k</span></span><span title="87 badges"><span class="badge1">●</span><span class="badgecount">87</span></span><span title="143 badges"><span class="silver">●</span><span class="badgecount">143</span></span><span title="285 badges"><span class="bronze">●</span><span class="badgecount">285</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-71541">
+</div>
+<div class="comment-tools" id="comment-tools-71541">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-71541-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/71541/download-certain-pois-for-a-whole-country-and-transfer-to-postgres-database?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/71541/download-certain-pois-for-a-whole-country-and-transfer-to-postgres-database?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/71541/download-certain-pois-for-a-whole-country-and-transfer-to-postgres-database?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/71541/download-certain-pois-for-a-whole-country-and-transfer-to-postgres-database?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="71622"></a>
+<div class="answer" id="answer-container-71622">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/71622/up/" id="post-71622-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-71622-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/71622/down/" id="post-71622-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<blockquote>
+<p>Do I really have to download the whole dataset .osm.pbf, filter it with osmosis and transfer it with osm2pgsql?</p>
+</blockquote>
+<p>No. For example you could pay somebody or a company to extract the data that you need for you (given that we are only talking about Germany I don't quite see where the pain is supposed to be, but OK). If it makes sense to import the data with osm2pgsql depends on what you actually want to do with the resulting data, which is what you don't mention. In any case you should think about if you actually need the original data, which will include polygons for those POIs that are mapped as areas, or if gettign everything as points would be better.</p>
+<blockquote>
+<p>Or is there any other solution regarding overpass that I dont know about?</p>
+</blockquote>
+<p>Probably not, the overpass servers are a shared, volunteer run resource that can't simply cater for everything people would like to do.</p>
+<blockquote>
+<p>It would be so much more efficient to download only the data I actually need!</p>
+</blockquote>
+<p>TANSTAAFL</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/71622/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>13 Nov '19, 22:42</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/71622/">
+                edited
+                <strong>13 Nov '19, 23:14</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-71622">
+<a name="71631"></a>
+<div class="comment" id="comment-71631">
+<div class="comment-score" id="post-71631-score"></div>
+<div class="comment-text"><p>Points would be better. Polygons are not needed, as I would use the locations in the database for further map productions later on.</p></div>
+<div class="comment-info" id="comment-71631-info">
+<span class="comment-age">(14 Nov '19, 13:56)</span>
+<a class="comment-user userinfo" href="/users/17418/pippo87">Pippo87</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-71622">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-71622-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="71626"></a>
+<div class="answer" id="answer-container-71626">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/71626/up/" id="post-71626-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-71626-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/71626/down/" id="post-71626-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Please set a manual timeout. An example:</p>
+<pre><code>[timeout:900];
+area[name="Deutschland"];
+nwr[shop=supermarket](area);
+out center;
+</code></pre>
+<p>Please do not download through Overpass Turbo, because displaying in the browser is not designed for large queries. Use <a href="https://dev.overpass-api.de/overpass-doc/en/full_data/area.html#full">wget or curl</a> instead.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/71626/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>14 Nov '19, 04:24</strong>
+</p>
+<img alt="Roland%20Olbricht's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fcfdb0825826fd13d2ff0d83d58819c6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3480/roland-olbricht">Roland Olbricht</a><br/>
+<span class="score" title="6666 reputation points"><span class="">6.7k</span></span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="64 badges"><span class="silver">●</span><span class="badgecount">64</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Roland Olbricht has 40 accepted answers">36%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-71626">
+<a name="71632"></a>
+<div class="comment" id="comment-71632">
+<div class="comment-score" id="post-71632-score"></div>
+<div class="comment-text"><p>Thx! I will try that. But as a newbie in that field, as far as I understood, to use overpass-api I'd have to download a clone of the overpass database (the whole planet-file?) and start queries from there? (As it is described here: <a href="https://dev.overpass-api.de/no_frills.html#startup)">https://dev.overpass-api.de/no_frills.html#startup)</a> Then again, I'd download mostly unneccessary data then...</p></div>
+<div class="comment-info" id="comment-71632-info">
+<span class="comment-age">(14 Nov '19, 14:04)</span>
+<a class="comment-user userinfo" href="/users/17418/pippo87">Pippo87</a>
+</div>
+</div>
+<a name="71637"></a>
+<div class="comment" id="comment-71637">
+<div class="comment-score" id="post-71637-score"></div>
+<div class="comment-text"><p>You can just use the public instance. It is well within reasonable limits.</p></div>
+<div class="comment-info" id="comment-71637-info">
+<span class="comment-age">(14 Nov '19, 19:01)</span>
+<a class="comment-user userinfo" href="/users/3480/roland-olbricht">Roland Olbricht</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-71626">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-71626-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="71629"></a>
+<div class="answer" id="answer-container-71629">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/71629/up/" id="post-71629-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-71629-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/71629/down/" id="post-71629-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>With the Germany pbf file you can quickly filter out supermarkets using osmfilter. Furthermore you can convert areas to centroids using osmconvert if it suits.</p>
+<p>As Roland says do not use Overpass-turbo for large queries. You can export your query in a form suitable for use directly with the overpass-api through the command line.</p>
+<p>In both cases you probably need to import data to PostGiS using osm2pgsql because areas are not returned from the overpass-api.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/71629/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>14 Nov '19, 11:33</strong>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br/>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SK53 has 121 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-71629">
+<a name="71633"></a>
+<div class="comment" id="comment-71633">
+<div class="comment-score" id="post-71633-score"></div>
+<div class="comment-text"><p>Whats the difference betwenn osmfilter and osmosis?</p></div>
+<div class="comment-info" id="comment-71633-info">
+<span class="comment-age">(14 Nov '19, 14:07)</span>
+<a class="comment-user userinfo" href="/users/17418/pippo87">Pippo87</a>
+</div>
+</div>
+<a name="71635"></a>
+<div class="comment" id="comment-71635">
+<div class="comment-score" id="post-71635-score"></div>
+<div class="comment-text"><p>osmconvert is closer to osmosis, osmfilter is for filtering (a bit like tag-filter). They are simpler to run (single executables, no dependencies), they use a proprietary format (o5m) for some actions, and are not as flexible as osmosis. However, their greater simplicity makes them highly suitable for the type of task you describe.</p></div>
+<div class="comment-info" id="comment-71635-info">
+<span class="comment-age">(14 Nov '19, 14:26)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-71629">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-71629-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/71541/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="OZvvDshrQ7fHUgP4ehMCtpi8gHaJ6hFq"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

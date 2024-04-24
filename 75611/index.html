@@ -1,0 +1,204 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/75611/transform-xy-pixel-values-into-lat-and-long">Transform x,y pixel values into lat and long</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75611/up/" id="post-75611-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75611-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/75611/down/" id="post-75611-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/75611/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi I have a little problem here. I have latitude, longitude and zoom of center of my map window (openstreet map). I have dimension map window. I also have pixel positions of specific events on the map  in the window. Can Anyone help me how to convert these pixel positions into latitude and longitude coordinates or any other coordinate system that I will be able to visualize on different map later ? Here is an illustration of my problem. <img alt="alt text" src="https://help.openstreetmap.org/upfiles/Capture_8U84fS2.PNG"/></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-python" href="/tags/python/" rel="tag" title="see questions tagged 'python'">python</a>
+<a class="post-tag tag-link-map" href="/tags/map/" rel="tag" title="see questions tagged 'map'">map</a>
+<a class="post-tag tag-link-transformation" href="/tags/transformation/" rel="tag" title="see questions tagged 'transformation'">transformation</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>09 Jul '20, 08:24</strong>
+</p>
+<img alt="Jozef's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ccc5a8a21df20158837f5cd1ae83b4d2?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/18659/jozef">Jozef</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jozef has no accepted answers">0%</span>
+</p>
+</img></div>
+</div>
+<div class="comments-container" id="comments-container-75611">
+</div>
+<div class="comment-tools" id="comment-tools-75611">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75611-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/75611/transform-xy-pixel-values-into-lat-and-long?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/75611/transform-xy-pixel-values-into-lat-and-long?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/75611/transform-xy-pixel-values-into-lat-and-long?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/75611/transform-xy-pixel-values-into-lat-and-long?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="75616"></a>
+<div class="answer" id="answer-container-75616">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75616/up/" id="post-75616-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75616-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/75616/down/" id="post-75616-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The projection you are displaying the map in is the so called spherical Mercator projection, you can convert Mercator coordinates to WGS84 lat/lon with the formulas from <a href="https://wiki.openstreetmap.org/wiki/Mercator">https://wiki.openstreetmap.org/wiki/Mercator</a> (you will need to scale from you screen pixels or whatever to Mercator meters but that is a simple exercise left for the reader).</p>
+<p>Further note: Mercator latitude coordinates do not actually cover -90° to 90° degrees as your image would suggest.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/75616/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Jul '20, 12:19</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-75616">
+</div>
+<div class="comment-tools" id="comment-tools-75616">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75616-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="75621"></a>
+<div class="answer answered-by-owner" id="answer-container-75621">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75621/up/" id="post-75621-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75621-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/75621/down/" id="post-75621-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Thank I have found the solution using this formula (<a href="https://en.wikipedia.org/wiki/Web_Mercator_projection">https://en.wikipedia.org/wiki/Web_Mercator_projection</a> ) <img alt="alt text" src="https://help.openstreetmap.org/upfiles/Capture2_0tNpXAS.PNG"/></p>
+<ol>
+<li>calculate the x,y position of my center point</li>
+<li>transform coordinate system of window to global</li>
+<li>inverse transformation</li>
+</ol>
+<p>code below</p>
+<pre><code>def LatLontoXY(lat_center,lon_center,zoom):
+    C =(256/(2*pi) )* 2**zoom
+
+    x=C*(math.radians(lon_center)+pi)
+    y=C*(pi-math.log( math.tan(  (pi/4) + math.radians(lat_center)/2    )  ))
+
+    return x,y
+
+def xy2LatLon(lat_center,lon_center,zoom,width_internal,height_internal,pxX_internal,pxY_internal):
+
+    xcenter,ycenter=LatLontoXY(lat_center,lon_center,zoom)
+
+    xPoint=xcenter- (width_internal/2-pxX_internal)
+    ypoint=ycenter -(height_internal/2-pxY_internal)
+
+
+    C = (256 / (2 * pi)) * 2 ** zoom
+    M = (xPoint/C)-pi
+    N =-(ypoint/C) + pi
+
+    lon_Point =math.degrees(M)
+    lat_Point =math.degrees( (math.atan( math.e**N)-(pi/4))*2 )
+
+    return lat_Point,lon_Point
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/75621/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Jul '20, 15:43</strong>
+</p>
+<img alt="Jozef's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ccc5a8a21df20158837f5cd1ae83b4d2?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/18659/jozef">Jozef</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jozef has no accepted answers">0%</span>
+</p>
+</img></div>
+</div>
+<div class="comments-container" id="comments-container-75621">
+</div>
+<div class="comment-tools" id="comment-tools-75621">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75621-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/75611/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="211EsBkvjP2EyJDOA4UrXSLOyxEc30bE"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

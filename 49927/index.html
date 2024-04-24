@@ -1,0 +1,179 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/49927/export-the-coordinates-for-every-cycling-path-in-a-city-in-json-format">Export the coordinates for every cycling path in a city in JSON format</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/49927/up/" id="post-49927-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-49927-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/49927/down/" id="post-49927-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/49927/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi there, I'm trying to export only the cycle map for the city of São Paulo (top lat: -23.3984, bottom lat: -23.7552, left lng: -46.9027, right lng: -46.2888) using the openStreetMap API in <a href="http://www.openstreetmap.org/export">http://www.openstreetmap.org/export</a> in JSON format but as I click the export button the API downloads only an empty html file (0 bytes) called "map.osm.html". I already tried waiting and in many different days. It's been more than 2 weeks that I'm trying everyday and the only output is this 0 bytes file.
+I also tryied using the Overpass API, and it works, but the output is a HUGE XML file which I can't use because of the size.
+Tried also reading the overpass api docs to change the output to JSON with no success.</p>
+<p>Can someone help me with this?</p>
+<p>Thanks in advance,
+Giovanni.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-opencyclemap" href="/tags/opencyclemap/" rel="tag" title="see questions tagged 'opencyclemap'">opencyclemap</a>
+<a class="post-tag tag-link-json" href="/tags/json/" rel="tag" title="see questions tagged 'json'">json</a>
+<a class="post-tag tag-link-export" href="/tags/export/" rel="tag" title="see questions tagged 'export'">export</a>
+<a class="post-tag tag-link-error" href="/tags/error/" rel="tag" title="see questions tagged 'error'">error</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>31 May '16, 18:52</strong>
+</p>
+<img alt="gask's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/eddb52ee4acdd021853b148510d8e796?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12367/gask">gask</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="gask has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/49927/">
+                edited
+                <strong>31 May '16, 21:19</strong>
+</a>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-49927">
+<a name="49928"></a>
+<div class="comment" id="comment-49928">
+<div class="comment-score" id="post-49928-score"></div>
+<div class="comment-text"><p>I guess you could be better helped if you would mention in more detail what you want to do with the exported data.</p></div>
+<div class="comment-info" id="comment-49928-info">
+<span class="comment-age">(31 May '16, 19:48)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+<a name="49929"></a>
+<div class="comment" id="comment-49929">
+<div class="comment-score" id="post-49929-score"></div>
+<div class="comment-text"><p>At /export there is no OpenCycleMap export. You only get raw OSM data in XML there. You likely do not get data because the area of the city contains too much data (the city is dense!) and our resources are limited ... it is the big pile of data which you get via Overpass.</p></div>
+<div class="comment-info" id="comment-49929-info">
+<span class="comment-age">(31 May '16, 19:48)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+<a name="49932"></a>
+<div class="comment" id="comment-49932">
+<div class="comment-score" id="post-49932-score"></div>
+<div class="comment-text"><p>I want to map the cycling paths of the city in a cycling app. So I need the geo coordinates for every cycling path in the city in JSON format, which a co-worker said he got it from there. I filtered the api with "cycle map" under the "Layers" button, set the map to focus São Paulo (the bounding box I sent you in the question" and clicked the "Export" button.
+If it's not possible through this button, can you help me how will I get the expected output? :)</p></div>
+<div class="comment-info" id="comment-49932-info">
+<span class="comment-age">(31 May '16, 20:53)</span>
+<a class="comment-user userinfo" href="/users/12367/gask">gask</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-49927">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-49927-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/49927/export-the-coordinates-for-every-cycling-path-in-a-city-in-json-format?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/49927/export-the-coordinates-for-every-cycling-path-in-a-city-in-json-format?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/49927/export-the-coordinates-for-every-cycling-path-in-a-city-in-json-format?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/49927/export-the-coordinates-for-every-cycling-path-in-a-city-in-json-format?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="49933"></a>
+<div class="answer" id="answer-container-49933">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/49933/up/" id="post-49933-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-49933-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/49933/down/" id="post-49933-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>the <a href="//wiki.openstreetmap.org/wiki/Browsing#Layers">Layers button </a> only affects/switches the map view (the images you see). All those different maps (and much more which are not listed in the layers menu) are based on the same OSM data set. A part of that data set (which you can get for example as <a href="//wiki.openstreetmap.org/wiki/OSM_XML">XML</a>) are the cycle routes and cycle paths.</p>
+<p>You may want to learn a bit about how some cycling paths and routes are represented in our database. See e.g. <a href="https://wiki.openstreetmap.org/wiki/Bicycle">https://wiki.openstreetmap.org/wiki/Bicycle</a> and <a href="https://wiki.openstreetmap.org/wiki/Cycle_routes">https://wiki.openstreetmap.org/wiki/Cycle_routes</a> . I am not sure which type you are looking for. Just cycleable ways, specific cycle ways, cycle routes (usually many kilometres long), ...? All of that potentially exists in the OSM data.</p>
+<p>If you only want the cycle routes the data can be filtered and also transformed to other formats and interpretations. I guess it is possible via Overpass API. See e.g. the question <a href="/questions/49683/">overpass-turbo-cycle-route-with-barriers</a>. You can export as geoJSON in Overpass Turbo (which is a front end for Overpass API). Likely someone else here can provide a better answer based on the information we now have, just wait a bit. Or maybe that's already enough for you (and you can describe how it worked afterwards)?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/49933/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>31 May '16, 21:15</strong>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="aseerel4c26 has 169 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/49933/">
+                edited
+                <strong>31 May '16, 21:25</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-49933">
+</div>
+<div class="comment-tools" id="comment-tools-49933">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-49933-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/49927/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="4pI6wEG6yfpFVib2gLmjRxLcXnMMjhbK"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

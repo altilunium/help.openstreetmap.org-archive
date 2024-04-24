@@ -1,0 +1,138 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/49964/how-to-create-cruise-maps-automatically">how to create cruise maps automatically</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/49964/up/" id="post-49964-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-49964-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/49964/down/" id="post-49964-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/49964/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>so I have a project here that requires to create maps of cruises (with ships) (e.g. cruises of Carnival Cruise Line or RCCL or MSC). So usually these maps are painted by hand either really painted or edited in some sort of map editor. The challenge is that you only have the GPS coordinates of the ports where the ship is calling. Since there are no streets all of the routing mechanism <em>just use straight lines</em> even if an island is in between.</p>
+<p>So what I'm looking for is a way to just enter GPS coordinates and then have a tool generating cruise route maps automatically.</p>
+<p>That should be the result: <img alt="http://media.montrosetravel.com/montrosetravel/images/group-travel/mediterranean_wine_cruise_map.jpg" src="http://media.montrosetravel.com/montrosetravel/images/group-travel/mediterranean_wine_cruise_map.jpg"/></p>
+<p>looking forward to creative ideas!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-itinerary" href="/tags/itinerary/" rel="tag" title="see questions tagged 'itinerary'">itinerary</a>
+<a class="post-tag tag-link-cruise" href="/tags/cruise/" rel="tag" title="see questions tagged 'cruise'">cruise</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>02 Jun '16, 02:29</strong>
+</p>
+<img alt="das_ubersoldat's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d9322b9f975f9e0ecefa79d460447f6e?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/12376/das_ubersoldat">das_ubersoldat</a><br/>
+<span class="score" title="55 reputation points">55</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="das_ubersoldat has no accepted answers">0%</span>
+</p>
+</img></div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/49964/">
+                edited
+                <strong>02 Jun '16, 19:42</strong>
+</a>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-49964">
+<a name="49967"></a>
+<div class="comment" id="comment-49967">
+<div class="comment-score" id="post-49967-score">3</div>
+<div class="comment-text"><p>Could this question be more suitable for <a href="http://gis.stackexchange.com/">GIS Stack Exchange</a>?</p></div>
+<div class="comment-info" id="comment-49967-info">
+<span class="comment-age">(02 Jun '16, 08:43)</span>
+<a class="comment-user userinfo" href="/users/5070/lightsider">Lightsider</a>
+</div>
+</div>
+<a name="49968"></a>
+<div class="comment" id="comment-49968">
+<div class="comment-score" id="post-49968-score">3</div>
+<div class="comment-text"><p>Well, you do have coast outlines in OSM; so it's a matter of finding a short-ish Bezier path from one hop to next, one which doesn't intersect coastlines, and keeps reasonably clear of the coast (perhaps by extending the coastlines a few km out and routing in the resulting shape). Getting from that to an algorithm should be smooth sailing (pardon the pun). This, of course, will be an approximation only, as shipping lanes are dictated by other factors, and you'd need to tweak the map by hand (e.g. for the strait of Sicily).</p></div>
+<div class="comment-info" id="comment-49968-info">
+<span class="comment-age">(02 Jun '16, 08:46)</span>
+<a class="comment-user userinfo" href="/users/9641/piskvor">Piskvor</a>
+</div>
+</div>
+<a name="49973"></a>
+<div class="comment" id="comment-49973">
+<div class="comment-score" id="post-49973-score">2</div>
+<div class="comment-text"><p>Cross-posted here: <a href="http://forum.openstreetmap.org/viewtopic.php?id=54771">http://forum.openstreetmap.org/viewtopic.php?id=54771</a></p></div>
+<div class="comment-info" id="comment-49973-info">
+<span class="comment-age">(02 Jun '16, 17:25)</span>
+<a class="comment-user userinfo" href="/users/8189/alester">alester</a>
+</div>
+</div>
+<a name="49974"></a>
+<div class="comment" id="comment-49974">
+<div class="comment-score" id="post-49974-score"></div>
+<div class="comment-text"><p>Record them with a gps, smart phone or a car sat nav which you could power with one of high capacity power banks or from the ship's power supply, as i assume you may have to keep the device powered up for a few days. Getting a signal below decks will be a problem, although i recorded one by the window on a holiday jet. If you are working for the cruise line get a gpx from the company.</p></div>
+<div class="comment-info" id="comment-49974-info">
+<span class="comment-age">(02 Jun '16, 17:35)</span>
+<a class="comment-user userinfo" href="/users/644/andy-mackey">andy mackey</a>
+</div>
+</div>
+<a name="49976"></a>
+<div class="comment" id="comment-49976">
+<div class="comment-score" id="post-49976-score"></div>
+<div class="comment-text"><p>Thanks! I forgot the mention that the route doesn't have to be precisely the route the ship is taking. It is just for informational purposes.</p></div>
+<div class="comment-info" id="comment-49976-info">
+<span class="comment-age">(02 Jun '16, 18:26)</span>
+<a class="comment-user userinfo" href="/users/12376/das_ubersoldat">das_ubersoldat</a>
+</div>
+</div>
+<a name="49978"></a>
+<div class="comment not_top_scorer" id="comment-49978">
+<div class="comment-score" id="post-49978-score"></div>
+<div class="comment-text"><p><a href="http://help.openstreetmap.org/users/12376/das_ubersoldat">@das_ubersoldat</a>: In general, please do not post your questions to several places (at least not without mentioning it and linking all places). That wastes help resources.</p></div>
+<div class="comment-info" id="comment-49978-info">
+<span class="comment-age">(02 Jun '16, 19:41)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-49964">
+<span class="comments-showing">
+            showing 5 of 6
+        </span>
+<a class="show-all-comments-link" href="#">show 1 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-49964-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/49964/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="qYugWOBSIPiEfVqIQFrpjWuec4FZQQjQ"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

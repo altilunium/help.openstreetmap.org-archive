@@ -1,0 +1,113 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/80763/getting-all-results-for-a-street-across-multiple-districts">Getting all results for a street across multiple districts</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80763/up/" id="post-80763-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80763-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/80763/down/" id="post-80763-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/80763/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>With <a href="https://nominatim.openstreetmap.org/ui/search.html?q=karl+liebknecht+stra%C3%9Fe+leipzig">this query</a> I get one match for the street (Leipzig, Germany) with no hint it persists into the next southern district. With a slight to <a href="https://nominatim.openstreetmap.org/ui/search.html?q=karl+liebknecht+stra%C3%9Fe+connewitz+leipzig">modification</a> I get matches for the next district (Connewitz).</p>
+<p>I'm wondering how I can find all matches for the street, regardless of the district. Or how I can start from the first response to request information about the street in the next district.</p>
+<p>Thank you!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-search" href="/tags/search/" rel="tag" title="see questions tagged 'search'">search</a>
+<a class="post-tag tag-link-street" href="/tags/street/" rel="tag" title="see questions tagged 'street'">street</a>
+<a class="post-tag tag-link-district" href="/tags/district/" rel="tag" title="see questions tagged 'district'">district</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>28 Jun '21, 17:03</strong>
+</p>
+<img alt="JonasDoe's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d4f6fdeb11b94cdb270a90623caa8c1a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20429/jonasdoe">JonasDoe</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="JonasDoe has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/80763/">
+                edited
+                <strong>29 Jun '21, 09:24</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80763">
+<a name="80771"></a>
+<div class="comment" id="comment-80771">
+<div class="comment-score" id="post-80771-score"></div>
+<div class="comment-text"><p>I doubt it Nominatim has much of a notion of streets spanning districts (addresses &amp; postal codes likely change). OSM itself has no notion except for some major roads where individual parts of the road are grouped in a relation.</p></div>
+<div class="comment-info" id="comment-80771-info">
+<span class="comment-age">(29 Jun '21, 10:22)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="80776"></a>
+<div class="comment" id="comment-80776">
+<div class="comment-score" id="post-80776-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/647/sk53">@SK53</a> Well, it would even help if the first query would return the results of the second query, too, given the second query appears to be a subset of the first one. But I figure it's not that easy as one might think.</p></div>
+<div class="comment-info" id="comment-80776-info">
+<span class="comment-age">(29 Jun '21, 16:33)</span>
+<a class="comment-user userinfo" href="/users/20429/jonasdoe">JonasDoe</a>
+</div>
+</div>
+<a name="80778"></a>
+<div class="comment" id="comment-80778">
+<div class="comment-score" id="post-80778-score">1</div>
+<div class="comment-text"><p>I don't know the context of what you are trying to do, but maybe Overpass Turbo queries would be more suited to what you are trying to do than the Nominatim search engine?</p></div>
+<div class="comment-info" id="comment-80778-info">
+<span class="comment-age">(30 Jun '21, 09:21)</span>
+<a class="comment-user userinfo" href="/users/14272/alan_gr">alan_gr</a>
+</div>
+</div>
+<a name="80785"></a>
+<div class="comment" id="comment-80785">
+<div class="comment-score" id="post-80785-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/14272/alan_gr"></a><a href="https://help.openstreetmap.org/users/14272/alan_gr">@alan_gr</a> I don't even know whether my results bear streets or not. But in case they do I'ld like to get all of them where the search string matches their names. I mean, I don't even understand why the results of the second query won't appear in the first one at all. But I guess there's just no way to achieve that, so I figure I've got to live with that or - in case the result set contains streets - run subsequent queries with Overpass. (I assume that I'ld get at least one street in case the name matches, so I could that take as a hint to dive deeper via Overpass.) Not sure I really want to go that route, but thanks for nudging me in that direction anyway!</p></div>
+<div class="comment-info" id="comment-80785-info">
+<span class="comment-age">(30 Jun '21, 16:39)</span>
+<a class="comment-user userinfo" href="/users/20429/jonasdoe">JonasDoe</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-80763">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80763-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/80763/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="EeUjadXA4UYDR6pTQrs8ju0AItRJcH7K"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,351 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/1778/how-can-i-display-a-map-with-multiple-markers">How can I display a map with multiple markers?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1778/up/" id="post-1778-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1778-score" title="current number of votes">
+    7
+</div>
+<a class="ajax-command post-vote down" href="/vote/1778/down/" id="post-1778-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/1778/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   4
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>How can I create a multiple markers on openstreetmap?
+and how can I interact with them with ajax?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-marker" href="/tags/marker/" rel="tag" title="see questions tagged 'marker'">marker</a>
+<a class="post-tag tag-link-love2020" href="/tags/love2020/" rel="tag" title="see questions tagged 'love2020'">love2020</a>
+<a class="post-tag tag-link-ajax" href="/tags/ajax/" rel="tag" title="see questions tagged 'ajax'">ajax</a>
+<a class="post-tag tag-link-multiple" href="/tags/multiple/" rel="tag" title="see questions tagged 'multiple'">multiple</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>12 Dec '10, 11:51</strong>
+</p>
+<img alt="godard59's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e9efbf5b26eb4a5b6d5ab52c13446288?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/531/godard59">godard59</a><br/>
+<span class="score" title="106 reputation points">106</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="godard59 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/1778/">
+                edited
+                <strong>28 Nov '20, 10:24</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1778">
+</div>
+<div class="comment-tools" id="comment-tools-1778">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1778-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    4 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/1778/how-can-i-display-a-map-with-multiple-markers?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/1778/how-can-i-display-a-map-with-multiple-markers?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/1778/how-can-i-display-a-map-with-multiple-markers?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/1778/how-can-i-display-a-map-with-multiple-markers?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="1822"></a>
+<div class="answer" id="answer-container-1822">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1822/up/" id="post-1822-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1822-score" title="current number of votes">
+    8
+</div>
+<a class="ajax-command post-vote down" href="/vote/1822/down/" id="post-1822-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can't add multiple markers on the OpenStreetMap.org homepage. For point &amp; click solutions you might like <a href="http://wiki.openstreetmap.org/wiki/UMap">uMap</a>,<a href="http://geocommons.com/">geocommmons</a>, <a href="http://wiki.openstreetmap.org/wiki/StaticMap">StaticMap</a>, and others, but for more power and flexibility it's worth learning a few javascript tricks:</p>
+<p>Check out: <a href="http://harrywood.co.uk/maps/examples/openlayers/marker-popups.view.html">this multiple markers example</a> </p>
+<ul>
+<li>It uses the open source JavaScript
+   library called OpenLayers (<a href="http://harrywood.co.uk/maps/examples/leaflet/marker-array.view.html">There's an equivalent example for leafletJS</a>)</li>
+<li>The map is initialised with a basemap
+   layer from the default OpenStreetMap
+   tile server (other tileservers and
+   alternative renderings of
+   OpenStreetMap data are available)</li>
+<li>It adds a 'Vector' layer, where the
+   markers are defined.</li>
+<li>It needs a <a href="http://funmap.co.uk/examples/openlayers/img/marker.png">marker image</a> file placed in a 'img' folder alongside</li>
+<li>It adds three markers. If you were adding more, you might want to do this by defining an array first, and then looping through this as in <a href="http://harrywood.co.uk/maps/examples/openlayers/marker-array.view.html">this example</a></li>
+<li>As an exampe of event handling, it detects the event of selecting the marker, and calls 'createPopup'</li>
+</ul>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/1822/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>15 Dec '10, 14:39</strong>
+</p>
+<img alt="Harry%20Wood's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9e04333be840d50c6aa66fb112aad77c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/107/harry-wood">Harry Wood</a><br/>
+<span class="score" title="9489 reputation points"><span class="">9.5k</span></span><span title="25 badges"><span class="badge1">●</span><span class="badgecount">25</span></span><span title="88 badges"><span class="silver">●</span><span class="badgecount">88</span></span><span title="128 badges"><span class="bronze">●</span><span class="badgecount">128</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Harry Wood has 19 accepted answers">14%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/1822/">
+                edited
+                <strong>12 Dec '14, 00:19</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1822">
+<a name="1833"></a>
+<div class="comment" id="comment-1833">
+<div class="comment-score" id="post-1833-score"></div>
+<div class="comment-text"><p>Thank you all,
+Harry
+I saw OpenLayers library
+I Like the example of the three marker, but i need add more.
+Can you give me an example how to integrate an array in this code ?,
+Or there is an example on OpenLayers library?</p></div>
+<div class="comment-info" id="comment-1833-info">
+<span class="comment-age">(16 Dec '10, 09:44)</span>
+<a class="comment-user userinfo" href="/users/531/godard59">godard59</a>
+</div>
+</div>
+<a name="3359"></a>
+<div class="comment" id="comment-3359">
+<div class="comment-score" id="post-3359-score"></div>
+<div class="comment-text"><p>How about you learn javascript or pay somebody to code it for you? Looping over an array in javascript is not really openstreetmap related.</p></div>
+<div class="comment-info" id="comment-3359-info">
+<span class="comment-age">(24 Feb '11, 18:12)</span>
+<a class="comment-user userinfo" href="/users/8/petschge">petschge</a>
+</div>
+</div>
+<a name="36853"></a>
+<div class="comment" id="comment-36853">
+<div class="comment-score" id="post-36853-score">1</div>
+<div class="comment-text"><p>I'm updating my old answer here to link to 'uMap' as a newer point and click approach.  Also linking my array looping example to answer godard69's question (4 years late!)</p></div>
+<div class="comment-info" id="comment-36853-info">
+<span class="comment-age">(15 Sep '14, 23:40)</span>
+<a class="comment-user userinfo" href="/users/107/harry-wood">Harry Wood</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-1822">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1822-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="1779"></a>
+<div class="answer" id="answer-container-1779">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1779/up/" id="post-1779-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1779-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/1779/down/" id="post-1779-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This is not yet possible for the slippy map on the front page. But you can check out <a href="http://www.openlayers.org/">OpenLayers</a> which is an open source javascript slippy map that you can deploy on your own site.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/1779/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Dec '10, 12:05</strong>
+</p>
+<img alt="Gnonthgol's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/44a4438f0146dfd898e24c221fd28b58?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/131/gnonthgol">Gnonthgol ♦</a><br/>
+<span class="score" title="13750 reputation points"><span class="">13.8k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="103 badges"><span class="silver">●</span><span class="badgecount">103</span></span><span title="198 badges"><span class="bronze">●</span><span class="badgecount">198</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Gnonthgol has 57 accepted answers">16%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/1779/">
+                edited
+                <strong>15 Dec '10, 13:28</strong>
+</a>
+</p>
+<img alt="ChrisH's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b906204accce0fd58bc408b22bae01f2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/34/chrish">ChrisH</a><br/>
+<span class="score" title="4075 reputation points"><span class="">4.1k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="42 badges"><span class="silver">●</span><span class="badgecount">42</span></span><span title="62 badges"><span class="bronze">●</span><span class="badgecount">62</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1779">
+</div>
+<div class="comment-tools" id="comment-tools-1779">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1779-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="1817"></a>
+<div class="answer" id="answer-container-1817">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1817/up/" id="post-1817-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1817-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/1817/down/" id="post-1817-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The short answer is that we don't provide a mechanism to do that directly on the web site, but that doing so isn't hard at all if you have a little web development experience (which it seems you do). All you need to do is use OpenLayers and use OSM as your background layer.</p>
+<p>Here's a URL of a talk I prepared for State of the Map US 2010 (but never got to present), which will take you through the basics of web development using OSM:</p>
+<p><a href="http://www.emacsen.net/osm/osm-web-tutorial.pdf"></a><a href="http://www.emacsen.net/osm/osm-web-tutorial.pdf"></a><a href="http://www.emacsen.net/osm/osm-web-tutorial.pdf">http://www.emacsen.net/osm/osm-web-tutorial.pdf</a></p>
+<p>If you go through that presentation, you should hopefully have a good foundation on how to use OSM on your site.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/1817/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>15 Dec '10, 11:49</strong>
+</p>
+<img alt="emacsen's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/5f2082b86cc50d63c05f33f55166df2d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/540/emacsen">emacsen</a><br/>
+<span class="score" title="1191 reputation points"><span class="">1.2k</span></span><span title="16 badges"><span class="silver">●</span><span class="badgecount">16</span></span><span title="23 badges"><span class="bronze">●</span><span class="badgecount">23</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="emacsen has 4 accepted answers">13%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1817">
+</div>
+<div class="comment-tools" id="comment-tools-1817">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1817-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="77887"></a>
+<div class="answer" id="answer-container-77887">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/77887/up/" id="post-77887-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-77887-score" title="current number of votes">
+    -1
+</div>
+<a class="ajax-command post-vote down" href="/vote/77887/down/" id="post-77887-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>step 1 : save your coordinates as json or csv in somewhere and get that link </p>
+<p>step 2 : use leaflet or some other library to write codes in html file </p>
+<p>step 3 : by using ajax js with above link to fetch data </p>
+<p>step 4 : use for loop in the data to do marking (marker in map)  automatically </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/77887/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>10 Dec '20, 10:12</strong>
+</p>
+<img alt="kathir_vibes's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fba989d99dfe0896d7a2401975532200?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19384/kathir_vibes">kathir_vibes</a><br/>
+<span class="score" title="0 reputation points">0</span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="kathir_vibes has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-77887">
+</div>
+<div class="comment-tools" id="comment-tools-77887">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-77887-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/1778/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="fkmq9XoDm8sO2p2KDYw0fvAVPz96hysm"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

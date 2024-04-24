@@ -1,0 +1,103 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/24945/given-a-set-of-gps-coordinates-how-do-i-find-the-closest-freeway-name">Given a set of GPS coordinates, how do I find the closest freeway name?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/24945/up/" id="post-24945-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-24945-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/24945/down/" id="post-24945-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/24945/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have been given 100's of GPS coordinates for points along the freeway.  These points are actually freeway exit GPS coordinates.  I need to run a query that just provides the name of the freeway or highway closest to the coordinates.  I will than parse this data into Excel where I can display the name.  I have the Excel portion resolved, I just need to reduce the query to just the closest freeway.  I am new to this type of query so I really need some help.   <br/>
+</p>
+<p>If nothing else just provide a query so I can get the closest freeway!</p>
+<p>Sample Data</p>
+<pre><code>PRIMM                       1       35.612419   -115.389038 
+SR161-JEAN-GOODSPRINGS      1       35.780735   -115.328254 
+SLOAN                       0       35.930599   -115.193115 
+HENDERSON-LAKE MEAD         0       35.961925   -115.18177
+SEACHLIGHT-NEEDLES          1       35.967418   -114.894599
+</code></pre>
+<p>Sample Query:  <a href="http://nominatim.openstreetmap.org/reverse?format=xml&amp;lat=35.612419%20&amp;lon=-115.389038&amp;zoom=18&amp;addressdetails=1">http://nominatim.openstreetmap.org/reverse?format=xml&amp;lat=35.612419%20&amp;lon=-115.389038&amp;zoom=18&amp;addressdetails=1</a></p>
+<pre><code>XML Output:
+
+&lt;reversegeocode timestamp="Mon, 05 Aug 13 22:08:40 +0000" attribution="Data © OpenStreetMap contributors, ODbL 1.0. <a href="http://www.openstreetmap.org/copyright">http://www.openstreetmap.org/copyright"</a> querystring="format=xml&amp;lat=35.612419%20&amp;lon=-115.389038&amp;zoom=18&amp;addressdetails=1"&gt;
+    &lt;result place_id="5999235837" osm_type="way" osm_id="148728272" ref="East Primm Boulevard" lat="35.6125513" lon="-115.3843467"&gt;
+    East Primm Boulevard, Primm, Clark, Nevada, United States of America
+    &lt;/result&gt;
+    &lt;addressparts&gt;
+    &lt;road&gt;East Primm Boulevard&lt;/road&gt;
+    &lt;village&gt;Primm&lt;/village&gt;
+    &lt;county&gt;Clark&lt;/county&gt;
+    &lt;state&gt;Nevada&lt;/state&gt;
+    &lt;country&gt;United States of America&lt;/country&gt;
+    &lt;country_code&gt;us&lt;/country_code&gt;
+    &lt;/addressparts&gt;
+    &lt;/reversegeocode&gt;
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-reversegeocoding" href="/tags/reversegeocoding/" rel="tag" title="see questions tagged 'reversegeocoding'">reversegeocoding</a>
+<a class="post-tag tag-link-excel" href="/tags/excel/" rel="tag" title="see questions tagged 'excel'">excel</a>
+<a class="post-tag tag-link-highway" href="/tags/highway/" rel="tag" title="see questions tagged 'highway'">highway</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>05 Aug '13, 23:13</strong>
+</p>
+<img alt="israellopez215's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/5e5a8c89caac04019351513e5b6728ea?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7032/israellopez215">israellopez215</a><br>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="israellopez215 has no accepted answers">0%</span>
+</br></p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/24945/">
+                edited
+                <strong>25 Nov '13, 15:40</strong>
+</a>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-24945">
+</div>
+<div class="comment-tools" id="comment-tools-24945">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-24945-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/24945/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="KsFeov4w5E5i0w74bRj0emv2KoH3wjz7"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

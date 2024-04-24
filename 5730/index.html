@@ -1,0 +1,150 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/5730/split-one-polygon-into-two-in-potlatch-2">Split One Polygon into Two in Potlatch 2?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/5730/up/" id="post-5730-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-5730-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/5730/down/" id="post-5730-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/5730/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Is there a way I can split one large polygon in Potlatch 2 into two smaller ones (to save redrawing / adding nodes)?</p>
+<p>This is for landuse - to save editing and redrawing large parts.  Ideally, the two split halves would inherit the same tags from the parent.</p>
+<p>Thanks</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-potlatch2" href="/tags/potlatch2/" rel="tag" title="see questions tagged 'potlatch2'">potlatch2</a>
+<a class="post-tag tag-link-polgon" href="/tags/polgon/" rel="tag" title="see questions tagged 'polgon'">polgon</a>
+<a class="post-tag tag-link-editing" href="/tags/editing/" rel="tag" title="see questions tagged 'editing'">editing</a>
+<a class="post-tag tag-link-split" href="/tags/split/" rel="tag" title="see questions tagged 'split'">split</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>13 Jun '11, 12:57</strong>
+</p>
+<img alt="tommg's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fafdd7d0595258b50e78e78156d4c2d2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1563/tommg">tommg</a><br/>
+<span class="score" title="36 reputation points">36</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="tommg has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-5730">
+</div>
+<div class="comment-tools" id="comment-tools-5730">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-5730-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/5730/split-one-polygon-into-two-in-potlatch-2?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/5730/split-one-polygon-into-two-in-potlatch-2?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/5730/split-one-polygon-into-two-in-potlatch-2?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/5730/split-one-polygon-into-two-in-potlatch-2?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="5731"></a>
+<div class="answer accepted-answer" id="answer-container-5731">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/5731/up/" id="post-5731-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-5731-score" title="current number of votes">
+    6
+</div>
+<a class="ajax-command post-vote down" href="/vote/5731/down/" id="post-5731-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/5731/" rel="nofollow" title="tommg has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hello,</p>
+<p>You can select a node where you would like to split the polygon, and click the "cut" icon.  This will split the single way into two parts (obviously there will be another split created somewhere around the loop.</p>
+<p>Both halves will inherit the tags from the whole, however, you will now have two linear ways, rather than one area.  If it is landuse, you will need to join the areas back into two separate circular ways for it to render again.</p>
+<p>i.e.  assume you have a square field with six nodes, A-F</p>
+<p>A--------B---------C</p>
+<p>|......................|</p>
+<p>|......................|</p>
+<p>|......................|</p>
+<p>D--------E----------F</p>
+<p>You could split this at E.  Assuming the way also splits at B, you then have two separate ways, BADE and BCFE.</p>
+<p>You would then need to join E to B (perhaps via some new nodes) twice, once for way BADE and once for way BCFE, if that makes sense...?</p>
+<p>Regards
+Chris</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/5731/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>13 Jun '11, 13:34</strong>
+</p>
+<img alt="c2r's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7a81832ca1b48080d1a57be29dff3a8c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/489/c2r">c2r</a><br/>
+<span class="score" title="413 reputation points">413</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="6 badges"><span class="silver">●</span><span class="badgecount">6</span></span><span title="11 badges"><span class="bronze">●</span><span class="badgecount">11</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="c2r has 2 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-5731">
+<a name="5732"></a>
+<div class="comment" id="comment-5732">
+<div class="comment-score" id="post-5732-score"></div>
+<div class="comment-text"><p>(Note that if there multipolygon relations, then this becomes slightly more tricky)</p></div>
+<div class="comment-info" id="comment-5732-info">
+<span class="comment-age">(13 Jun '11, 13:35)</span>
+<a class="comment-user userinfo" href="/users/489/c2r">c2r</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-5731">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-5731-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/5730/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="OrcFi2b7t5Qh4DksexRqIHvfs3etWUph"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

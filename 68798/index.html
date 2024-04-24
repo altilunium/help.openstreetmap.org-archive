@@ -1,0 +1,183 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/68798/how-to-make-a-tile-server-on-my-lan-externally-accessible">How to make a tile server on my LAN externally accessible?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68798/up/" id="post-68798-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68798-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/68798/down/" id="post-68798-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/68798/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have successfully installed my own map tile server using the same guide as <a href="https://help.openstreetmap.org/questions/67834/how-to-start-using-my-own-mounted-tile-server?page=1&amp;focusedAnswerId=68798#68798">here</a> on an Ubuntu desktop.</p>
+<p>I have reserved the IP of my server using its MAC address via DHCP in my router so now my server has always the same IP in the home network. I can serve tiles to any device (laptop, cell phone) that is connected to the home network using this IP, but I need some help regarding accessing the service from outside.
+I have followed some instructions and created a hostname on DDNS provider No-IP. After that, I have opened a port in my router (port forwarding) that “shows” at the stable internal IP (192.168.X.X) of my server. Is this correct? Then, I installed and configured ddclient on the desktop to use my account at No-IP and redirect the hits of the hostname at my server. When I change the first argument of L.tileLayer to “hostname:port” in leaflet files the map does not appear and finally times out.</p>
+<p>I used nmap for both hostname and 192.168.X.X and I received “Host is up”, “not shown: xxx closed ports”. I received the same for nmap localhost but with an additional open port shown for postgresql. Is there something wrong with the installation? Finally, when I nslookup the hostname from my Windows laptop I get as an address the gateway (router’s IP).</p>
+<p>Finally, is there a way to make the access to the service restrictive?
+Apologies for mentioning too many details but I am a beginner and just want to be surel. I searched for a guide on network configuration for own osm tile server but did not find any. Please for your help.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-forwarding" href="/tags/forwarding/" rel="tag" title="see questions tagged 'forwarding'">forwarding</a>
+<a class="post-tag tag-link-port" href="/tags/port/" rel="tag" title="see questions tagged 'port'">port</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>15 Apr '19, 15:49</strong>
+</p>
+<img alt="yol_89's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e8163e2e2f7e46a3f8f153657008a6d9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16539/yol_89">yol_89</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="yol_89 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/68798/">
+                converted to question
+                <strong>15 Apr '19, 16:47</strong>
+</a>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68798">
+</div>
+<div class="comment-tools" id="comment-tools-68798">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68798-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/68798/how-to-make-a-tile-server-on-my-lan-externally-accessible?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/68798/how-to-make-a-tile-server-on-my-lan-externally-accessible?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/68798/how-to-make-a-tile-server-on-my-lan-externally-accessible?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/68798/how-to-make-a-tile-server-on-my-lan-externally-accessible?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="68800"></a>
+<div class="answer" id="answer-container-68800">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68800/up/" id="post-68800-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68800-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/68800/down/" id="post-68800-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It sounds like you've already set up port forwarding on your router between your external IP address and the internal machine where Apache is running.  To check that this is working </p>
+<ul>
+<li>
+<p>Use a "show my ip address" service such as <a href="https://whatismyipaddress.com/">this one</a> (others are available) to show your current IPV4 address.</p>
+</li>
+<li>
+<p>Turn off wifi access on your phone and browse using mobile data to that address - just type the numbers into the address bar and tap return to try and make an http:// connection to that address.</p>
+</li>
+</ul>
+<p>If it gives "unable to connect" then either your haven't done the port forwarding properly or your ISP is blocking access to port 80 on your connection.  We know you can serve tiles to other devices on your home LAN so it's unlikely (although not impossible) that a local firewall is blocking access on the tile server itself.  If it can (i.e. you can an Apache "it worked" page), then we'd need to understand exactly how you are referencing the tile layer.</p>
+<p>What to do next depends on the answer to the previous paragraph...</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/68800/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>15 Apr '19, 17:00</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/68800/">
+                edited
+                <strong>15 Apr '19, 17:01</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68800">
+<a name="68819"></a>
+<div class="comment" id="comment-68819">
+<div class="comment-score" id="post-68819-score"></div>
+<div class="comment-text"><p>I checked the port (24) I had declared at NO-IP and at my router for port forwarding at several online tools for open port checking and it always seemed close. I tried different ports and adjusted some settings on the router with my ISP but the result was the same for all. I finally tried to port forward the port 80 which appeared open in every tool only when my desktop was open. At this time I got the Apache "It works" when I browse to my public IP from my phone using mobile data. I then tried to use my hostname in leaflet file (I removed the ":24" from my IP at NO-IP site) but it did not load. Finally when I "ip a" command on desktop I get inet 192.168.X.X:24.</p></div>
+<div class="comment-info" id="comment-68819-info">
+<span class="comment-age">(16 Apr '19, 20:26)</span>
+<a class="comment-user userinfo" href="/users/16539/yol_89">yol_89</a>
+</div>
+</div>
+<a name="68843"></a>
+<div class="comment" id="comment-68843">
+<div class="comment-score" id="post-68843-score"></div>
+<div class="comment-text"><p>First things first - don't worry about dynamic DNS or your account at NO-IP - just try and get internet routing working first.</p>
+<p>What you'd normally do is:</p>
+<ul>
+<li>Run a web server on port 80 on your LAN</li>
+<li>Forward port 80 on your router to port 80 on the web server o your LAN</li>
+<li>Have users access port 80 on the external address of your router, which gets forwarded to port 80 on your web server</li>
+</ul>
+<p>It sounds like you've got port forwarding working on port 80 (you got the Apache "It works" when you browsed to your public IP from your phone using mobile data).</p>
+<p>The next bit is name resolution.  Let's imagine that the name you've reserved with NO-IP is "example123.hopto.org".  From a command line on a PC do "nslookup example123.hopto.org".  If that returns your current IP address then you should be able to use "example123.hopto.org" in place of your current IP address, and the client that you can download from them is supposed to keep it updated when your IP address changes.  I'm not sure why you'd declare a port with NO-IP (but I've never used their update client - maybe it is something to do with that?).</p></div>
+<div class="comment-info" id="comment-68843-info">
+<span class="comment-age">(19 Apr '19, 00:57)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-68800">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68800-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/68798/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="OMJESkTzmBrUOYGL39150phKhv3b7AHO"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,167 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/44057/how-to-reduce-polygon_geojson-co-ordinates">how to reduce polygon_geojson co-ordinates</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44057/up/" id="post-44057-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44057-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/44057/down/" id="post-44057-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/44057/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi to all,</p>
+<p>We can get co-ordinates for a region(city/state/country) using  polygon_geojson=1 in nominatim url.
+It will give large amount of data(co-ordinates) for large regions(example for a country).
+Now i want to reduce the co-ordinates count. How it is possible?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-coordinates" href="/tags/coordinates/" rel="tag" title="see questions tagged 'coordinates'">coordinates</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-admin_boundary" href="/tags/admin_boundary/" rel="tag" title="see questions tagged 'admin_boundary'">admin_boundary</a>
+<a class="post-tag tag-link-polygon" href="/tags/polygon/" rel="tag" title="see questions tagged 'polygon'">polygon</a>
+<a class="post-tag tag-link-geojson" href="/tags/geojson/" rel="tag" title="see questions tagged 'geojson'">geojson</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>09 Jul '15, 10:15</strong>
+</p>
+<img alt="Rajavelu_M's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1ffa52ca3632b5a0cf02b51459b7529b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11165/rajavelu_m">Rajavelu_M</a><br/>
+<span class="score" title="253 reputation points">253</span><span title="45 badges"><span class="badge1">●</span><span class="badgecount">45</span></span><span title="48 badges"><span class="silver">●</span><span class="badgecount">48</span></span><span title="58 badges"><span class="bronze">●</span><span class="badgecount">58</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Rajavelu_M has one accepted answer">33%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44057">
+<a name="44059"></a>
+<div class="comment" id="comment-44059">
+<div class="comment-score" id="post-44059-score"></div>
+<div class="comment-text"><p>Are you asking for an algorithm for simplifying a polygon?</p></div>
+<div class="comment-info" id="comment-44059-info">
+<span class="comment-age">(09 Jul '15, 10:25)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="44060"></a>
+<div class="comment" id="comment-44060">
+<div class="comment-score" id="post-44060-score"></div>
+<div class="comment-text"><p><a href="http://help.openstreetmap.org/users/158/scai"></a><a href="http://help.openstreetmap.org/users/158/scai">@scai</a>: yes. An algorithm for simplifying a polygon is fine.
+For example <a href="http://nominatim.openstreetmap.org/search?q=India&amp;polygon_geojson=1&amp;format=json">http://nominatim.openstreetmap.org/search?q=India&amp;polygon_geojson=1&amp;format=json</a>
+The above url gives 1.5MB data. I want to reduce co-ordinates and the  size to around 200kb.</p></div>
+<div class="comment-info" id="comment-44060-info">
+<span class="comment-age">(09 Jul '15, 10:35)</span>
+<a class="comment-user userinfo" href="/users/11165/rajavelu_m">Rajavelu_M</a>
+</div>
+</div>
+<a name="44063"></a>
+<div class="comment" id="comment-44063">
+<div class="comment-score" id="post-44063-score">1</div>
+<div class="comment-text"><p>gpsbabel can <a href="https://wiki.openstreetmap.org/wiki/Using_filters_with_GPSBabel#Simplifying_tracks">simplify tracks</a> which could be an option depending on what you are trying to do.</p></div>
+<div class="comment-info" id="comment-44063-info">
+<span class="comment-age">(09 Jul '15, 11:41)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="44123"></a>
+<div class="comment" id="comment-44123">
+<div class="comment-score" id="post-44123-score"></div>
+<div class="comment-text"><p>... or try JOSM offline editor (not sure whether it can load geojson, but it has a simplify feature for lines)... or maybe QGIS?</p></div>
+<div class="comment-info" id="comment-44123-info">
+<span class="comment-age">(10 Jul '15, 20:25)</span>
+<a class="comment-user userinfo" href="/users/99/stephan75">stephan75</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-44057">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44057-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/44057/how-to-reduce-polygon_geojson-co-ordinates?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/44057/how-to-reduce-polygon_geojson-co-ordinates?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/44057/how-to-reduce-polygon_geojson-co-ordinates?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/44057/how-to-reduce-polygon_geojson-co-ordinates?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="68161"></a>
+<div class="answer" id="answer-container-68161">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68161/up/" id="post-68161-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68161-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/68161/down/" id="post-68161-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I was trying to do the same and found that using param polygon_threshold=0.009 is usefull</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/68161/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>26 Feb '19, 15:09</strong>
+</p>
+<img alt="shaniqwa's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/47d77f38a7c24a48cdaf9476db8670a1?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16332/shaniqwa">shaniqwa</a><br/>
+<span class="score" title="16 reputation points">16</span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="shaniqwa has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68161">
+</div>
+<div class="comment-tools" id="comment-tools-68161">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68161-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/44057/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="6UlPOcMy1d7mDnZHBNQ8j5IHja3asxbv"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

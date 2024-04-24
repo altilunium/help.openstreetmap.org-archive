@@ -1,0 +1,165 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/886/expire-tiles-after-postgres-db-update">Expire tiles after Postgres DB update</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/886/up/" id="post-886-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-886-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/886/down/" id="post-886-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/886/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am creating my own tile server for OSM using Windows Server 2003.<br/>
+I need help on how to make tiles expire and create new tiles after updating my postgres DB with osm diffs.</p>
+<p>Since I am using Windows 2003, I can not use mod_tile.
+Here is my stack so far:</p>
+<ol>
+<li>Data: OSM Planet dump</li>
+<li>DB: Postgres with PostGIS</li>
+<li>Web Server: Apache Tomcat</li>
+<li>OS: Windows Server 2003</li>
+<li>UI: OpenLayers</li>
+<li>DB loader: osm2pgsql</li>
+<li>Tile Maker: Mapnik</li>
+</ol>
+<p>I am currently serving up tiles from a folder on my server using the OpenLayers.Layer.OSM class, i.e. I am not using TileCache or anything else.
+I see you can you use the --expire-tiles option within osm2pgsql to create a list of expired tiles after you append new OSM data into the DB.<br/>
+How do I use this option to then create new tiles? Is this the right way to even proceed?<br/>
+Any help would be greatly appreciated. Please feel free to be as detailed as you can afford ;-)</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-diff" href="/tags/diff/" rel="tag" title="see questions tagged 'diff'">diff</a>
+<a class="post-tag tag-link-tiles" href="/tags/tiles/" rel="tag" title="see questions tagged 'tiles'">tiles</a>
+<a class="post-tag tag-link-expiry" href="/tags/expiry/" rel="tag" title="see questions tagged 'expiry'">expiry</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Sep '10, 15:47</strong>
+</p>
+<img alt="maw269's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fbb15843641ffaf1c2259cc7ebb4735c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/233/maw269">maw269</a><br>
+<span class="score" title="115 reputation points">115</span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="7 badges"><span class="silver">●</span><span class="badgecount">7</span></span><span title="14 badges"><span class="bronze">●</span><span class="badgecount">14</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="maw269 has no accepted answers">0%</span>
+</br></br></p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/886/">
+                edited
+                <strong>21 Sep '10, 16:13</strong>
+</a>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span></br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-886">
+<a name="898"></a>
+<div class="comment" id="comment-898">
+<div class="comment-score" id="post-898-score">1</div>
+<div class="comment-text"><p>May I ask where mod_tile fails on windows? Given that it is a apache module, it should be crossplatform capable. I don't know of anyone who has tried it though, so it might well need some tweeks to get it to build.</p></div>
+<div class="comment-info" id="comment-898-info">
+<span class="comment-age">(21 Sep '10, 20:54)</span>
+<a class="comment-user userinfo" href="/users/65/apmon">apmon</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-886">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-886-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/886/expire-tiles-after-postgres-db-update?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/886/expire-tiles-after-postgres-db-update?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/886/expire-tiles-after-postgres-db-update?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/886/expire-tiles-after-postgres-db-update?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="895"></a>
+<div class="answer accepted-answer" id="answer-container-895">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/895/up/" id="post-895-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-895-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/895/down/" id="post-895-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/895/" rel="nofollow" title="maw269 has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>First of all, you have to understand that this is not a high performance setup and that you will not be able to keep a current set of tiles for anything larger than a small country with this. With no on-demand tile rendering you will always struggle to keep every single tile current, spending lots of CPU cycles for nothing.</p>
+<p>You are probably using generate-tiles.py from the OSM Mapnik SVN. There is a function in there that calculates a single tile. With a little bit of Python you should be able to adapt the script to actually read the file generated by osm2pgsql and call the tile compute routine for each tile in that file. I am not aware of a ready-made solution for that in a renderd setup you could use render_expired but you'll have to do it that way.</p>
+<p>You can request osm2pgsql to output a list of modified tiles for a whole range of zoom levels. Be aware that if you include small zoom levels then the tiles on these zoom levels will be rendered very often; you might want to employ some grep/sort magic and re-render those only once every few days.</p>
+<p>All in all, the mechanisms involved are complex and PostGIS caching performance is less if you render a flurry of new tiles across a large area compared to systematically rendering all tiles. You might find that with the rather small area you're able to cover with your setup anyway, it might be easier and not even slower to just re-render the whole lot once in a while rather than trying to process updates.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/895/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Sep '10, 19:31</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-895">
+</div>
+<div class="comment-tools" id="comment-tools-895">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-895-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/886/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="FLRQmr059Mfd6H4nUjldcvmvWPiOJsMM"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

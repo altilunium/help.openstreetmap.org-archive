@@ -1,0 +1,174 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/10088/mapnik-rendering-road-cores-and-casings">[closed] Mapnik - Rendering - Road Cores and Casings</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/10088/up/" id="post-10088-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-10088-score" title="current number of votes">
+    -1
+</div>
+<a class="ajax-command post-vote down" href="/vote/10088/down/" id="post-10088-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/10088/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>In short I'm wondering if someone would be able to have a look at the mapnik rule sheet on road widths, in regards to what I shall elaborate on.  I have done about as much as I am able to do myself.</p>
+<p>On the Mapnik renders there are a few differences in the road widths which I would like to propose getting a bit of a tweaking.  I haven't looked at the rulesheet itself for a couple of reasons, so I started by making a test area for the different zoom levels for the road combinations. (excluding _link being down the central line).</p>
+<p>(all these links are having the underscore dropped after the last - because it seems to be the italic shortcut)</p>
+<p><a href="http://wiki.openstreetmap.org/w/images/1/14/Core-Casing_-">http://wiki.openstreetmap.org/w/images/1/14/Core-Casing_-</a><em>Z13.png 
+</em></p><p><em> <a href="http://wiki.openstreetmap.org/w/images/0/02/Core-Casing">http://wiki.openstreetmap.org/w/images/0/02/Core-Casing</a></em>-<em>Z14.png
+</em></p><p><em> <a href="http://wiki.openstreetmap.org/w/images/2/21/Core-Casing">http://wiki.openstreetmap.org/w/images/2/21/Core-Casing</a></em>-<em>Z15.png
+</em></p><p><em> <a href="http://wiki.openstreetmap.org/w/images/e/e5/Core-Casing">http://wiki.openstreetmap.org/w/images/e/e5/Core-Casing</a></em>-<em>Z16.png
+</em></p><p><em> <a href="http://wiki.openstreetmap.org/w/images/5/55/Core-Casing">http://wiki.openstreetmap.org/w/images/5/55/Core-Casing</a></em>-<em>Z17.png
+</em></p><p><em> <a href="http://wiki.openstreetmap.org/w/images/4/40/Core-Casing">http://wiki.openstreetmap.org/w/images/4/40/Core-Casing</a></em>-_Z18.png</p>
+<p>From this I have extracted estimations the core-casing values and put them here:</p>
+<p><a href="http://wiki.openstreetmap.org/wiki/User:Ben./MapnikRoads">http://wiki.openstreetmap.org/wiki/User:Ben./MapnikRoads</a> </p><p>
+(These are estimates, so may not always be correct, but it makes it clear where the differences are)</p>
+<p>So then I stuck them into this table:
+<a href="http://wiki.openstreetmap.org/w/images/0/02/Difference_in_Core-Casing.PNG">http://wiki.openstreetmap.org/w/images/0/02/Difference_in_Core-Casing.PNG</a></p>
+<p>To evaluate:</p>
+<p>The "motorway" and "motorway_link_" are the strangest as they are smaller than all but a few roads of lower status than them.  Then from trunk to Secondary the roads are a fraction bigger than others, but more noticeable the casing is thinner.  Thirdly the way they increase over zoom levels isn't smooth at times.  Finally the order in which they render has <em>links</em> render very early, rather than just before there similarly named road (i.e. motorway_link to motorway).</p>
+<p>The main issue with this is in flyover junctions where roads don't flow nicely into one another; but there are other reasons also.</p>
+<p>In conclusion:  The answer to this is a bit opinionated so there isn't really one, but the suggestion I would make is that either all roads bar maybe residential and service should be the same size with the same casing, maybe oneday having lanes= taken into consideration.  Another option is to have all roads under and including tertiary as the same along with all _link roads being the same.  Then all roads at secondary and above levels being steped up bigger.  This section would be good to discuss though for the better idea.</p>
+<p>cheers,
+Ben</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-roads" href="/tags/roads/" rel="tag" title="see questions tagged 'roads'">roads</a>
+<a class="post-tag tag-link-rendering" href="/tags/rendering/" rel="tag" title="see questions tagged 'rendering'">rendering</a>
+<a class="post-tag tag-link-road" href="/tags/road/" rel="tag" title="see questions tagged 'road'">road</a>
+<a class="post-tag tag-link-renderer" href="/tags/renderer/" rel="tag" title="see questions tagged 'renderer'">renderer</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>20 Jan '12, 08:09</strong>
+</p>
+<img alt="Ben's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/56455f550da19b500ce9750cdb822395?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1402/ben">Ben</a><br/>
+<span class="score" title="30 reputation points">30</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Ben has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/10088/">
+                closed
+                <strong>20 Jan '12, 08:18</strong>
+</a>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-10088">
+</div>
+<div class="comment-tools" id="comment-tools-10088">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-10088-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<div class="question-status" style="margin-bottom:15px">
+<h3>
+                The question has been closed for the following reason "Not a question" by
+                <a href="/users/104/frederik-ramm">Frederik Ramm</a>
+                 20 Jan '12, 08:18
+            </h3>
+</div>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/10088/mapnik-rendering-road-cores-and-casings?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/10088/mapnik-rendering-road-cores-and-casings?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/10088/mapnik-rendering-road-cores-and-casings?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/10088/mapnik-rendering-road-cores-and-casings?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="10089"></a>
+<div class="answer" id="answer-container-10089">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/10089/up/" id="post-10089-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-10089-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/10089/down/" id="post-10089-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>What you are writing is not a question. You would like to have a discussion about the standard rendering style we have on <a href="http://www.openstreetmap.org">www.openstreetmap.org</a>. This site is not suitable for discussions; mailing lists are. I have taken the liberty of copying your post to <a href="http://lists.openstreetmap.org/listinfo/talk">our "talk" mailing list.</a> Here's a <a href="http://lists.openstreetmap.org/pipermail/talk/2012-January/061699.html">direct link to the article.</a></p>
+<p>For concrete change requests (but this doesn't seem to be one yet), one could also use our <a href="http://trac.openstreetmap.org/">bug tracker</a>.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/10089/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>20 Jan '12, 08:17</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-10089">
+<a name="10091"></a>
+<div class="comment" id="comment-10091">
+<div class="comment-score" id="post-10091-score"></div>
+<div class="comment-text"><p>Ok, my mistake, cheers.</p></div>
+<div class="comment-info" id="comment-10091-info">
+<span class="comment-age">(20 Jan '12, 09:12)</span>
+<a class="comment-user userinfo" href="/users/1402/ben">Ben</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-10089">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-10089-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/10088/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="ekPvzpd6yu6ahJgg9mVn1b1R2WmsUh0z"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

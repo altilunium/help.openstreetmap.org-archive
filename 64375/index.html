@@ -1,0 +1,99 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/64375/find-all-junction-next-to-way-which-has-the-tag-landusemeadow">Find all junction next to way which has the tag landuse=meadow</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/64375/up/" id="post-64375-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-64375-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/64375/down/" id="post-64375-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/64375/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello everybody,</p>
+<p>I try to create a request to find all junction next to way which has the tag landuse=meadow in a certain radius.</p>
+<pre><code>// Find nodes up to 1000m  around a point
+node(around:1000,49.0809183333  ,9.2923300000)
+-&gt;.aroundnodes;
+way(bn.aroundnodes)["junction"]["roundabout"]["landuse"="meadow"]-&gt;.allways;
+// determine nodes belonging to found ways
+    node(w.allways)-&gt;.waynodes;
+    ( 
+    // determine intersection of all ways' nodes and nodes around center point  
+    node.waynodes.aroundnodes;  
+    // and return ways (intersection is just a workaround for a bug)  
+    way.allways.allways; 
+    );
+out;
+</code></pre>
+<p>Where is my mistake? Help is much appreciated.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap" href="/tags/openstreetmap/" rel="tag" title="see questions tagged 'openstreetmap'">openstreetmap</a>
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>26 Jun '18, 08:37</strong>
+</p>
+<img alt="Gustav9999's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/dbcc94f4176dd0d253bf83871344cbff?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15215/gustav9999">Gustav9999</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Gustav9999 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-64375">
+<a name="64386"></a>
+<div class="comment" id="comment-64386">
+<div class="comment-score" id="post-64386-score">1</div>
+<div class="comment-text"><p>Also asked in the Forum: <a href="https://forum.openstreetmap.org/viewtopic.php?id=62827">https://forum.openstreetmap.org/viewtopic.php?id=62827</a></p></div>
+<div class="comment-info" id="comment-64386-info">
+<span class="comment-age">(26 Jun '18, 14:55)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="64401"></a>
+<div class="comment" id="comment-64401">
+<div class="comment-score" id="post-64401-score"></div>
+<div class="comment-text"><p>Yeah but I dont receive any help, sugesstions or an answer. What a great admin.</p></div>
+<div class="comment-info" id="comment-64401-info">
+<span class="comment-age">(27 Jun '18, 06:15)</span>
+<a class="comment-user userinfo" href="/users/15215/gustav9999">Gustav9999</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-64375">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-64375-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/64375/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="g6DiqrYJwp9VbfbzMlMkreSRXGxQDw10"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

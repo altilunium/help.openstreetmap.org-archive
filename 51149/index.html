@@ -1,0 +1,255 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/51149/best-practice-on-inner-and-outer">Best practice on inner and outer.</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/51149/up/" id="post-51149-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-51149-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/51149/down/" id="post-51149-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/51149/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have come across a few mapping areas which have problems with inner and outer tags, and I am not sure what is considered to be best practice.</p>
+<p>So here is a scenario,</p>
+<p>Imagine a residential area, within that area is a golf course, on the golf course there are a number bunkers ( sand ) and a few areas of woodland, also a lake and in the middle of the lake is an island which has a wood on it, and a pond and also more sand( bunkers ), I am not sure what the relationships on OSM are meant to be.</p>
+<p>Any help or guidance would be appreciated.</p>
+<p>Regards</p>
+<p>Gary</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-outer" href="/tags/outer/" rel="tag" title="see questions tagged 'outer'">outer</a>
+<a class="post-tag tag-link-inner" href="/tags/inner/" rel="tag" title="see questions tagged 'inner'">inner</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>28 Jul '16, 14:18</strong>
+</p>
+<img alt="Rossendale%20Gary's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1a48846e2865ba49198e0fb8e4064358?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11006/rossendale-gary">Rossendale Gary</a><br/>
+<span class="score" title="141 reputation points">141</span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="9 badges"><span class="silver">●</span><span class="badgecount">9</span></span><span title="17 badges"><span class="bronze">●</span><span class="badgecount">17</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Rossendale Gary has one accepted answer">20%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/51149/">
+                edited
+                <strong>28 Jul '16, 14:21</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-51149">
+</div>
+<div class="comment-tools" id="comment-tools-51149">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-51149-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/51149/best-practice-on-inner-and-outer?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/51149/best-practice-on-inner-and-outer?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/51149/best-practice-on-inner-and-outer?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/51149/best-practice-on-inner-and-outer?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="51152"></a>
+<div class="answer" id="answer-container-51152">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/51152/up/" id="post-51152-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-51152-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/51152/down/" id="post-51152-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>First, "inner" and "outer" are not tags. They are <strong>roles</strong> of relation members. Each member of a multipolygon relation gets such a role, either "outer" for the ways making up the outer boundary of the area, or "inner" for the inner boundary.</p>
+<p>So in your example the outermost area is the residential area. You create a multipolygon relation with the tags <em>type=multipolygon</em> and <em>landuse=residential</em>. The ways making up the boundaries of this area are untagged, but they get the roles "outer" and "inner" in the relation. Then you create another relation tagged <em>type=multipolygon</em> and <em>leisure=golf_course</em>. Its members are the ways you put in the residential area relation as "inner", but this time they are "outer". You add new "inner" ways to this relation for the holes in the golf course. And so on. So all the ways (except outermost and, possibly, innermost boundaries) do double duty as the inner boundary of the outer area and the outer boundary of the area nested inside of it.</p>
+<p>Arguably the sand bunkers of a golf course are part of the golf course. They are not in holes in the golf course. So the golf course should probably tagged over all it contains with no inner holes. But the golf course is not part of the residential area, so a hole in the residential area makes sense. It is somewhat unclear what to do in each situation. Use your judgement.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/51152/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>28 Jul '16, 14:50</strong>
+</p>
+<img alt="Jochen%20Topf's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2d4dfcdcde73aa5e2ffa4a9b3a7cb51d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/112/jochen-topf">Jochen Topf</a><br/>
+<span class="score" title="5244 reputation points"><span class="">5.2k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="50 badges"><span class="silver">●</span><span class="badgecount">50</span></span><span title="74 badges"><span class="bronze">●</span><span class="badgecount">74</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jochen Topf has 32 accepted answers">31%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/51152/">
+                edited
+                <strong>28 Jul '16, 14:53</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-51152">
+</div>
+<div class="comment-tools" id="comment-tools-51152">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-51152-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="51165"></a>
+<div class="answer" id="answer-container-51165">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/51165/up/" id="post-51165-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-51165-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/51165/down/" id="post-51165-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hi Gary,
+Did you notice the existance of these pages ? 
+<a href="https://wiki.openstreetmap.org/wiki/Multipolygon_Examples">https://wiki.openstreetmap.org/wiki/Multipolygon_Examples</a>
+The complex ones could be the answer to your problem and question.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/51165/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>29 Jul '16, 09:07</strong>
+</p>
+<img alt="Hendrikklaas's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/742e93034cd38ad243f7ab26f350b659?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3443/hendrikklaas">Hendrikklaas</a><br/>
+<span class="score" title="9286 reputation points"><span class="">9.3k</span></span><span title="207 badges"><span class="badge1">●</span><span class="badgecount">207</span></span><span title="238 badges"><span class="silver">●</span><span class="badgecount">238</span></span><span title="387 badges"><span class="bronze">●</span><span class="badgecount">387</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Hendrikklaas has 39 accepted answers">5%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-51165">
+</div>
+<div class="comment-tools" id="comment-tools-51165">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-51165-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="51150"></a>
+<div class="answer" id="answer-container-51150">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/51150/up/" id="post-51150-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-51150-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/51150/down/" id="post-51150-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I think I'd only use a multipolygon relation for the lake with a hole for the situation you describe with the lake tags on the relation. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/51150/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>28 Jul '16, 14:42</strong>
+</p>
+<img alt="EdLoach's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f25a8392e12ed696b16554b3d08e4e2b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/339/edloach">EdLoach ♦</a><br/>
+<span class="score" title="19478 reputation points"><span class="">19.5k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="156 badges"><span class="silver">●</span><span class="badgecount">156</span></span><span title="280 badges"><span class="bronze">●</span><span class="badgecount">280</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="EdLoach has 93 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-51150">
+<a name="51151"></a>
+<div class="comment" id="comment-51151">
+<div class="comment-score" id="post-51151-score">1</div>
+<div class="comment-text"><p>can you point me to an example on OSM ?</p></div>
+<div class="comment-info" id="comment-51151-info">
+<span class="comment-age">(28 Jul '16, 14:45)</span>
+<a class="comment-user userinfo" href="/users/11006/rossendale-gary">Rossendale Gary</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-51150">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-51150-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/51149/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="KnOp9pXHDkt1w99UsvT2DdOC7s5f06KN"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

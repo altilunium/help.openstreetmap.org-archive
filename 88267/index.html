@@ -1,0 +1,149 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/88267/osm2pgsql-import-timestamp-from-osm-pbf-file-using-flex-output">[closed] OSM2PGSQL import timestamp from osm PBF file using flex output</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/88267/up/" id="post-88267-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-88267-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/88267/down/" id="post-88267-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/88267/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,
+I am new to osm2pgsql and i am figuring out how to import timestamp from osm .pbf file using the flex output. I am using version 1.8.0</p>
+<p>My problem: Can't access to object.timestamp as the <a href="https://osm2pgsql.org/doc/manual.html#processing-callbacks">documentation</a> says</p>
+<p>My Lua file:</p>
+<pre><code>local pois = osm2pgsql.define_table({
+    name = 'pois',
+    ids = { type = 'any', type_column = 'osm_type', id_column = 'osm_id' },
+    columns = {
+        { column = 'updated_at'},
+        { column = 'name' },
+        { column = 'class', not_null = true },
+        { column = 'subclass' },
+        { column = 'geom', type = 'point', not_null = true },
+        { column = 'tags', type = 'jsonb' },
+}})
+
+
+function process_poi(object, geom)
+    local a = {
+        updated_at = object.timestamp or nil,
+        name = object.tags.name,
+        geom = geom,
+        tags = object.tags,
+    }
+
+    if object.tags.amenity and ( 
+           object.tags.amenity == 'place_of_worship' or 
+           object.tags.amenity == 'drinking_water' 
+        )
+        then
+        a.class = 'amenity'
+        a.subclass = object.tags.amenity
+    elseif object.tags.natural and (
+           object.tags.natural == 'peak' or
+           object.tags.natural == 'spring'
+        )
+        then
+        a.class = 'natural'
+        a.subclass = object.tags.natural   
+    else
+        return
+    end
+
+    pois:insert(a)
+end
+
+function osm2pgsql.process_node(object)
+    process_poi(object, object:as_point())
+end
+
+function osm2pgsql.process_way(object)
+    if object.is_closed and object.tags.building then
+        process_poi(object, object:as_polygon():centroid())
+    end
+end
+</code></pre>
+<p>What am i missing here?</p>
+<p>Thank you for the attention.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-timestamps" href="/tags/timestamps/" rel="tag" title="see questions tagged 'timestamps'">timestamps</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>05 Mar, 09:20</strong>
+</p>
+<img alt="Gemanzo's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/86e6372f950b0edfb6b0b946efb1540d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/23683/gemanzo">Gemanzo</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Gemanzo has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/88267/">
+                closed
+                <strong>06 Mar, 10:50</strong>
+</a>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-88267">
+<a name="88272"></a>
+<div class="comment" id="comment-88272">
+<div class="comment-score" id="post-88272-score">1</div>
+<div class="comment-text"><p>Duplicate of <a href="https://community.openstreetmap.org/t/osm2pgsql-import-timestamp-from-osm-pbf-file-using-flex-output/110138">https://community.openstreetmap.org/t/osm2pgsql-import-timestamp-from-osm-pbf-file-using-flex-output/110138</a> and answered there.</p></div>
+<div class="comment-info" id="comment-88272-info">
+<span class="comment-age">(06 Mar, 10:50)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-88267">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-88267-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<div class="question-status" style="margin-bottom:15px">
+<h3>
+                The question has been closed for the following reason "Duplicate Question" by
+                <a href="/users/387/someoneelse">SomeoneElse</a>
+                 06 Mar, 10:50
+            </h3>
+</div>
+<form action="/questions/88267/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="8xaOStxfPzZAWMUFMICl1KRaNSB1lAD5"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

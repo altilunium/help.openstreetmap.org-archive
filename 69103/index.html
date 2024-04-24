@@ -1,0 +1,169 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/69103/how-to-merge-maps-that-were-developed-independently">How to merge maps that were developed independently?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/69103/up/" id="post-69103-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-69103-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/69103/down/" id="post-69103-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/69103/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello.</p>
+<p>Some time ago I have downloaded pbf map (MAP-1) from geofabrik. Since then I have edited this map for my own purposes (mostly added some ways). Now I have downloaded a new map (MAP-2) of a different region and I would like to merge those maps (to further edit them locally). <br/>
+The problem is, that after using osmosis merge, some of the ways that I have edited in MAP-1 suddenly lead to MAP-2 and back. </p>
+<p>What I think happened is that there are node ID conflicts because both maps have a common source, but were later developed independently - I have added some nodes, they got own IDs and official osm MAP-2 was edited at the same time, and nodes with the same IDs were created but in different places. That way depending on the conflict resolution method in osmosis merge command, either the way on the MAP-2 leads to the MAP-1 or vice versa.</p>
+<p>Solutions that I have thought about:</p>
+<ol>
+<li>
+<p>Extract changes done by me (either by finding author, or using timestamp) from local MAP-1, download new MAP-1-new, merge MAP-1-new with MAP-2 and add the changes back</p>
+</li>
+<li>
+<p>Increase IDs of objects that were created by me by a huge number, so that no conflict occurs</p>
+</li>
+</ol>
+<p>Extra suggestions are most welcome.</p>
+<p>I have no idea how to implement any of the solutions nor if they are correct. I will be grateful for any hints.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-conflicts" href="/tags/conflicts/" rel="tag" title="see questions tagged 'conflicts'">conflicts</a>
+<a class="post-tag tag-link-map" href="/tags/map/" rel="tag" title="see questions tagged 'map'">map</a>
+<a class="post-tag tag-link-id" href="/tags/id/" rel="tag" title="see questions tagged 'id'">id</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+<a class="post-tag tag-link-merge" href="/tags/merge/" rel="tag" title="see questions tagged 'merge'">merge</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>06 May '19, 13:33</strong>
+</p>
+<img alt="JacekDAC's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/30591e74ea983d1d5f193b588868c497?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16638/jacekdac">JacekDAC</a><br>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="JacekDAC has no accepted answers">0%</span>
+</br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-69103">
+<a name="69106"></a>
+<div class="comment" id="comment-69106">
+<div class="comment-score" id="post-69106-score"></div>
+<div class="comment-text"><p>Are the ways that you have added in some way unsuitable for inclusion in OpenStreetMap? </p>
+<p>I think that the strategy used by some of the editing software is to use negative IDs for items that hanve't yet been uploaded to avoid conflicts, but my experience is restricted to user-side stuff, not anything on the backend.</p></div>
+<div class="comment-info" id="comment-69106-info">
+<span class="comment-age">(06 May '19, 16:09)</span>
+<a class="comment-user userinfo" href="/users/4426/insertuser">InsertUser</a>
+</div>
+</div>
+<a name="69109"></a>
+<div class="comment" id="comment-69109">
+<div class="comment-score" id="post-69109-score"></div>
+<div class="comment-text"><p>Yes, the changes are not suitable to be included in OpenStreetMap.</p>
+<p>Unfortunately, this is not a case. I run my own OpenStreetMap server and I have published the data there - this means that IDs are not negative. </p>
+<p>I think that osmosis --read-apidb-change intervalBegin would be suitable but I need to read file not database. I need something like --read-pbf-change. Of filter by the author</p></div>
+<div class="comment-info" id="comment-69109-info">
+<span class="comment-age">(07 May '19, 08:07)</span>
+<a class="comment-user userinfo" href="/users/16638/jacekdac">JacekDAC</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-69103">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-69103-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/69103/how-to-merge-maps-that-were-developed-independently?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/69103/how-to-merge-maps-that-were-developed-independently?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/69103/how-to-merge-maps-that-were-developed-independently?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/69103/how-to-merge-maps-that-were-developed-independently?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="69111"></a>
+<div class="answer" id="answer-container-69111">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/69111/up/" id="post-69111-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-69111-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/69111/down/" id="post-69111-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I would simply renumber one of the datasets see <a href="https://docs.osmcode.org/osmium/latest/osmium-renumber.html">https://docs.osmcode.org/osmium/latest/osmium-renumber.html</a> (starting with ids that are guaranteed to not conflict with what you have used).</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/69111/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>07 May '19, 12:04</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/69111/">
+                edited
+                <strong>07 May '19, 12:04</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-69111">
+</div>
+<div class="comment-tools" id="comment-tools-69111">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-69111-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/69103/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="XkW9O5x6fs2TtGBh8o8ktE5uLZD1z77q"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

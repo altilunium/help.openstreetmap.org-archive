@@ -1,0 +1,162 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/70747/render_list-doesnt-work">render_list doesnt work</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/70747/up/" id="post-70747-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-70747-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/70747/down/" id="post-70747-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/70747/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm running pre-render for ajt style map</p>
+<pre><code>render_list -all --socket /var/run/renderd/renderd.sock -z 1 -Z 1 -n 15
+</code></pre>
+<p>I can see this in the syslog:</p>
+<pre><code>renderd[35121]: DEBUG: Got incoming connection, fd 7, number 1
+renderd[35121]: DEBUG: Got incoming connection, fd 9, number 2
+renderd[35121]: DEBUG: Got incoming connection, fd 10, number 3
+renderd[35121]: DEBUG: Got incoming connection, fd 11, number 4
+renderd[35121]: DEBUG: Got incoming connection, fd 12, number 5
+renderd[35121]: DEBUG: Got incoming connection, fd 13, number 6
+renderd[35121]: DEBUG: Got incoming connection, fd 17, number 7
+renderd[35121]: DEBUG: Got incoming connection, fd 18, number 8
+renderd[35121]: DEBUG: Got incoming connection, fd 19, number 9
+renderd[35121]: DEBUG: Got incoming connection, fd 20, number 10
+renderd[35121]: DEBUG: Got incoming connection, fd 21, number 11
+renderd[35121]: DEBUG: Got incoming connection, fd 22, number 12
+renderd[35121]: DEBUG: Got incoming connection, fd 23, number 13
+renderd[35121]: DEBUG: Got incoming connection, fd 24, number 14
+renderd[35121]: DEBUG: Got incoming connection, fd 25, number 15
+</code></pre>
+<p>But when looking on <code>syslog</code> and <code>htop</code> and even <code>iotop</code> it looks like the machine is doing nothing</p>
+<p>What am I missing?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-rendering" href="/tags/rendering/" rel="tag" title="see questions tagged 'rendering'">rendering</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>12 Sep '19, 13:06</strong>
+</p>
+<img alt="LiorM's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/47110f56c594a7515b757d9975b9a8c6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16446/liorm">LiorM</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="8 badges"><span class="bronze">●</span><span class="badgecount">8</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="LiorM has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/70747/">
+                edited
+                <strong>12 Sep '19, 14:02</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-70747">
+</div>
+<div class="comment-tools" id="comment-tools-70747">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-70747-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/70747/render_list-doesnt-work?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/70747/render_list-doesnt-work?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/70747/render_list-doesnt-work?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/70747/render_list-doesnt-work?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="70753"></a>
+<div class="answer answered-by-owner" id="answer-container-70753">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/70753/up/" id="post-70753-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-70753-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/70753/down/" id="post-70753-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>it seems that providing the socket fixed it:</p>
+<pre><code>render_list -all --socket=/var/run/renderd/renderd.sock -z 1 -Z 1 -n 15
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/70753/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Sep '19, 16:04</strong>
+</p>
+<img alt="LiorM's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/47110f56c594a7515b757d9975b9a8c6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16446/liorm">LiorM</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="8 badges"><span class="bronze">●</span><span class="badgecount">8</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="LiorM has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-70753">
+<a name="70754"></a>
+<div class="comment" id="comment-70754">
+<div class="comment-score" id="post-70754-score"></div>
+<div class="comment-text"><p>"-s /var/run/renderd/renderd.sock" would also have worked - there are two ways of specifying the options I think.</p></div>
+<div class="comment-info" id="comment-70754-info">
+<span class="comment-age">(12 Sep '19, 16:36)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-70753">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-70753-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/70747/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="8U5SRwRhWxDecJUTvIzgYav3nKVb6zYC"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

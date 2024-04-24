@@ -1,0 +1,216 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/52384/very-restrictive-usage-limit-on-the-overpass-api-since-a-while">Very restrictive usage limit on the overpass api since a while?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/52384/up/" id="post-52384-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-52384-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/52384/down/" id="post-52384-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/52384/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>My Android app <a href="https://play.google.com/store/apps/details?id=nl.rulex.bikenode">BikeNode</a> was successfully using the overpass api for years. I was using this format: </p>
+<ul>
+<li><a href="http://www.overpass-api.de/api/xapi?node[rcn_ref=*][bbox=5.170799818181818,51.363934891891894,5.534436181818181,51.580151108108105]">http://www.overpass-api.de/api/xapi?node[rcn_ref=*][bbox=5.170799818181818,51.363934891891894,5.534436181818181,51.580151108108105]</a></li>
+</ul>
+<p>But since a while I face issues. Now often I get this error:</p>
+<pre><code>runtime error: open64: 0 Success /osm3s_v0.7.53_osm_base Dispatcher_Client::request_read_and_idx::rate_limited. Please check /api/status for the quota of your IP address.
+</code></pre>
+<p>Before August-2016 I never received this error. Usage of my BikeNode app did not increase. If I check this <a href="http://www.overpass-api.de/api/status">/api/status</a> page I see a message like this:</p>
+<pre><code>Connected as: 2441151942
+Rate limit: 2
+Slot available after: 2016-10-06T10:34:46Z
+Slot available after: 2016-10-06T10:36:35Z
+Currently running queries (pid, space limit, time limit, start time):
+</code></pre>
+<p>I tried to switch to the Rambler Overpass API Instance, using this format:</p>
+<ul>
+<li><a href="http://overpass.osm.rambler.ru/cgi/xapi?node[rcn_ref=*][bbox=5.170799818181818,51.363934891891894,5.534436181818181,51.580151108108105]">http://overpass.osm.rambler.ru/cgi/xapi?node[rcn_ref=*][bbox=5.170799818181818,51.363934891891894,5.534436181818181,51.580151108108105]</a></li>
+</ul>
+<p>But this regularly shows this error:</p>
+<pre><code>runtime error: open64: 0 No error: 0 /osm3s_v0.7.52_osm_base Dispatcher_Client::request_read_and_idx::timeout. Probably the server is overcrowded.
+</code></pre>
+<p>If I check its <a href="http://overpass.osm.rambler.ru/cgi/status">/api/status</a> page, I see a message like this:</p>
+<pre><code>Connected as: 2130706433
+Rate limit: 0
+Currently running queries (pid, space limit, time limit, start time):
+75742   536870912   180 2016-10-06T10:42:52Z
+75784   536870912   180 2016-10-06T10:43:00Z
+75770   536870912   180 2016-10-06T10:42:57Z
+75796   536870912   180 2016-10-06T10:43:02Z
+75797   536870912   180 2016-10-06T10:43:02Z
+75808   536870912   180 2016-10-06T10:43:02Z
+75809   536870912   180 2016-10-06T10:43:02Z
+</code></pre>
+<p>The general <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/status">Overpass API/status</a> page explains about an issue since 23-aug-2016.</p>
+<p><strong>Does anybody know what's happening here? What is the current status of the servers? Is there a limit configured since some weeks? Are the servers overloaded since some weeks? Does anybody have tips/hints?</strong></p>
+<p>PS1. Both servers (Main and Rambler) have the following Usage Policy:</p>
+<ul>
+<li>Both servers have a total capacity of about 1.000.000 requests per day. You can safely assume that you don't disturb other users when you do less than 10.000 queries per day or download less than 5 GB data per day.</li>
+</ul>
+<p>PS2. Related question: <a href="https://help.openstreetmap.org/questions/52333">https://help.openstreetmap.org/questions/52333</a></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-usage" href="/tags/usage/" rel="tag" title="see questions tagged 'usage'">usage</a>
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-xapi" href="/tags/xapi/" rel="tag" title="see questions tagged 'xapi'">xapi</a>
+<a class="post-tag tag-link-limit" href="/tags/limit/" rel="tag" title="see questions tagged 'limit'">limit</a>
+<a class="post-tag tag-link-overpass-api" href="/tags/overpass-api/" rel="tag" title="see questions tagged 'overpass-api'">overpass-api</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>06 Oct '16, 20:57</strong>
+</p>
+<img alt="alexvanderlinden's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/595fb362d66af578137fd9607c891639?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12850/alexvanderlinden">alexvanderli...</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="alexvanderlinden has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/52384/">
+                edited
+                <strong>09 Oct '16, 20:27</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-52384">
+</div>
+<div class="comment-tools" id="comment-tools-52384">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-52384-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/52384/very-restrictive-usage-limit-on-the-overpass-api-since-a-while?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/52384/very-restrictive-usage-limit-on-the-overpass-api-since-a-while?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/52384/very-restrictive-usage-limit-on-the-overpass-api-since-a-while?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/52384/very-restrictive-usage-limit-on-the-overpass-api-since-a-while?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="52385"></a>
+<div class="answer" id="answer-container-52385">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/52385/up/" id="post-52385-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-52385-score" title="current number of votes">
+    6
+</div>
+<a class="ajax-command post-vote down" href="/vote/52385/down/" id="post-52385-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The "xapi" endpoint has been severely limited to counteract a malicious or extremely thoughtless user/app developer making between 300,000 and 500,000 requests every hour since the 20th of August. If you were to switch to "Overpass QL" or XML queries instead of using the "xapi" endpoint you'd still get responses.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/52385/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Oct '16, 21:29</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-52385">
+<a name="52401"></a>
+<div class="comment" id="comment-52401">
+<div class="comment-score" id="post-52401-score">1</div>
+<div class="comment-text"><p>I'm switching to "Overpass QL" and that works. Thanks for the input! I'm using this format now: </p>
+<p><a href="http://www.overpass-api.de/api/interpreter?data=node[">http://www.overpass-api.de/api/interpreter?data=node["rcn_ref"](51.42283,5.44612,51.45386,5.50655);out;</a></p></div>
+<div class="comment-info" id="comment-52401-info">
+<span class="comment-age">(07 Oct '16, 21:18)</span>
+<a class="comment-user userinfo" href="/users/12850/alexvanderlinden">alexvanderli...</a>
+</div>
+</div>
+<a name="52428"></a>
+<div class="comment" id="comment-52428">
+<div class="comment-score" id="post-52428-score">1</div>
+<div class="comment-text"><p>I skipped to conclusions to fast. The "Overpass QL" format shows the same availability issues. After testing some time, this seems to be the behavior for both end-points (.de/api/xapi and .de/api/interpreter):</p>
+<ul>
+<li>From one IP address you can use it twice in a row. After this you'll have to wait some minutes before you can use it again.</li>
+<li>The performance from phone (from my android app) is very slow (around 15s response time).</li>
+</ul></div>
+<div class="comment-info" id="comment-52428-info">
+<span class="comment-age">(09 Oct '16, 20:36)</span>
+<a class="comment-user userinfo" href="/users/12850/alexvanderlinden">alexvanderli...</a>
+</div>
+</div>
+<a name="52456"></a>
+<div class="comment" id="comment-52456">
+<div class="comment-score" id="post-52456-score">1</div>
+<div class="comment-text"><p>This related issue at the server has been registered at 7-oct-2016: <a href="https://github.com/drolbr/Overpass-API/issues/323">https://github.com/drolbr/Overpass-API/issues/323</a></p></div>
+<div class="comment-info" id="comment-52456-info">
+<span class="comment-age">(10 Oct '16, 21:15)</span>
+<a class="comment-user userinfo" href="/users/12850/alexvanderlinden">alexvanderli...</a>
+</div>
+</div>
+<a name="52501"></a>
+<div class="comment" id="comment-52501">
+<div class="comment-score" id="post-52501-score">1</div>
+<div class="comment-text"><p>This issue is fixed: <a href="https://github.com/drolbr/Overpass-API/issues/323">https://github.com/drolbr/Overpass-API/issues/323</a> .
+As a result the server response is like it used to be.
+Thanks a lot for fixing this issue!</p></div>
+<div class="comment-info" id="comment-52501-info">
+<span class="comment-age">(12 Oct '16, 18:54)</span>
+<a class="comment-user userinfo" href="/users/12850/alexvanderlinden">alexvanderli...</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-52385">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-52385-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/52384/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="fXW5BZcAVUzwkFUNtcCInR1eVuqKDs15"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

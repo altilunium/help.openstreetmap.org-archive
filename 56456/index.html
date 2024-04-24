@@ -1,0 +1,211 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/56456/mapnik-installation-issue-on-centos-7">Mapnik installation issue on centos 7</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/56456/up/" id="post-56456-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-56456-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/56456/down/" id="post-56456-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/56456/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi All,
+      I have been trying to setup osm on centos 7. I have been following this site <a href="https://github.com/lijenpan/osm/blob/master/osm-centos7.md.">https://github.com/lijenpan/osm/blob/master/osm-centos7.md.</a> Most of the steps like installing postgres, boost c++ library I did had issue I managed to resolve them too. 
+  I am stucked at here git clone <a>git://github.com/mapnik/mapnik</a></p>
+<pre><code>&gt; cd maplink ./configure I got the
+&gt; following errors. ./configure scons:
+&gt; Reading SConscript files ...
+
+Welcome to Mapnik...
+
+Configuring build environment...
+Configuring on Linux in *release mode*...
+CXX c++ (GCC) 4.8.5 20150623 (Red Hat 4.8.5-11)
+Copyright (C) 2015 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Checking for freetype-config... yes
+Checking for dlfcn.h support ... no
+Checking if compiler (c++) supports -std=c++14 flag... (cached) no
+C++ compiler does not support C++14 standard (-std=c++14), which is required. Please upgrade your compiler
+[root@localhost mapnik]# gcc --version
+gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-11)
+Copyright (C) 2015 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</code></pre>
+<p>Then I google and manually download the latest release candidate and ran the ./configure command but I end up with different set of errors. </p>
+<p>Could not find required header files for boost python
+Checking for pkg-config... yes
+Checking for pycairo... yes</p>
+<p>Exiting... the following required dependencies were not found:
+   - ltdl (GNU Libtool | more info: <a href="http://www.gnu.org/software/libtool)">http://www.gnu.org/software/libtool)</a>
+   - boost version &gt;=1.47 (more info see: <a href="https://github.com/mapnik/mapnik/wiki//MapnikInstallation">https://github.com/mapnik/mapnik/wiki//MapnikInstallation</a> &amp; <a href="http://www.boost.org">http://www.boost.org</a>)
+   - boost system (more info see: <a href="https://github.com/mapnik/mapnik/wiki//MapnikInstallation">https://github.com/mapnik/mapnik/wiki//MapnikInstallation</a> &amp; <a href="http://www.boost.org">http://www.boost.org</a>)
+   - boost filesystem (more info see: <a href="https://github.com/mapnik/mapnik/wiki//MapnikInstallation">https://github.com/mapnik/mapnik/wiki//MapnikInstallation</a> &amp; <a href="http://www.boost.org">http://www.boost.org</a>)
+   - boost regex (more info see: <a href="https://github.com/mapnik/mapnik/wiki//MapnikInstallation">https://github.com/mapnik/mapnik/wiki//MapnikInstallation</a> &amp; <a href="http://www.boost.org">http://www.boost.org</a>)
+   - boost thread (more info see: <a href="https://github.com/mapnik/mapnik/wiki//MapnikInstallation">https://github.com/mapnik/mapnik/wiki//MapnikInstallation</a> &amp; <a href="http://www.boost.org">http://www.boost.org</a>)
+   - boost python (more info see: <a href="https://github.com/mapnik/mapnik/wiki//MapnikInstallation">https://github.com/mapnik/mapnik/wiki//MapnikInstallation</a> &amp; <a href="http://www.boost.org">http://www.boost.org</a>)</p>
+<p>See '/usr/local/mapnik-v2.1.0rc2/config.log' for details on possible problems.</p>
+<p>I tried to run yum install libtool-ltdl but it says already installed.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>05 Jun '17, 19:30</strong>
+</p>
+<img alt="newbie14's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/26750873415fcbe30ebf2fdeab499d99?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13794/newbie14">newbie14</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="9 badges"><span class="badge1">●</span><span class="badgecount">9</span></span><span title="9 badges"><span class="silver">●</span><span class="badgecount">9</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="newbie14 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-56456">
+<a name="56463"></a>
+<div class="comment" id="comment-56463">
+<div class="comment-score" id="post-56463-score">1</div>
+<div class="comment-text"><p>Similar issue: <a href="https://github.com/mapnik/mapnik/issues/3591">https://github.com/mapnik/mapnik/issues/3591</a> . You need to update your compiler. Maybe there are third-party gcc packages with newer versions for CentOS available?</p></div>
+<div class="comment-info" id="comment-56463-info">
+<span class="comment-age">(06 Jun '17, 09:00)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="56464"></a>
+<div class="comment" id="comment-56464">
+<div class="comment-score" id="post-56464-score">1</div>
+<div class="comment-text"><p>See also this forum thread: <a href="https://forum.openstreetmap.org/viewtopic.php?id=58594">https://forum.openstreetmap.org/viewtopic.php?id=58594</a></p></div>
+<div class="comment-info" id="comment-56464-info">
+<span class="comment-age">(06 Jun '17, 09:08)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="56467"></a>
+<div class="comment" id="comment-56467">
+<div class="comment-score" id="post-56467-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/158/scai">@scai</a> I have run yum update yet the same what else should I do with the gcc?</p></div>
+<div class="comment-info" id="comment-56467-info">
+<span class="comment-age">(06 Jun '17, 15:18)</span>
+<a class="comment-user userinfo" href="/users/13794/newbie14">newbie14</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-56456">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-56456-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/56456/mapnik-installation-issue-on-centos-7?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/56456/mapnik-installation-issue-on-centos-7?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/56456/mapnik-installation-issue-on-centos-7?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/56456/mapnik-installation-issue-on-centos-7?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="56469"></a>
+<div class="answer accepted-answer" id="answer-container-56469">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/56469/up/" id="post-56469-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-56469-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/56469/down/" id="post-56469-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/56469/" rel="nofollow" title="newbie14 has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It sounds like you have a couple of options on Centos:</p>
+<ol>
+<li>Ask someone who's familiar with Centos how to install gcc 6 (and manually set clang if necessary, as per <a href="https://github.com/mapnik/mapnik/issues/3591#issuecomment-299469997">https://github.com/mapnik/mapnik/issues/3591#issuecomment-299469997</a> ) and try that.</li>
+<li>Try an earlier version of mapnik, and use a map style that doesn't depend on very recent mapnik features.  "OSM Bright" in the "lijenpan" instructions will likely work with an earlier mapnik.</li>
+</ol>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/56469/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Jun '17, 15:42</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-56469">
+<a name="56480"></a>
+<div class="comment" id="comment-56480">
+<div class="comment-score" id="post-56480-score">1</div>
+<div class="comment-text"><p>I found a better link as most steps in here works <a href="http://qiita.com/nkmrtkhd/items/642ae1b8a996cc46d85c">http://qiita.com/nkmrtkhd/items/642ae1b8a996cc46d85c</a></p></div>
+<div class="comment-info" id="comment-56480-info">
+<span class="comment-age">(06 Jun '17, 20:38)</span>
+<a class="comment-user userinfo" href="/users/13794/newbie14">newbie14</a>
+</div>
+</div>
+<a name="56481"></a>
+<div class="comment" id="comment-56481">
+<div class="comment-score" id="post-56481-score">1</div>
+<div class="comment-text"><p>OK, so that's using the 2.3 branch of Mapnik and osm-bright.</p></div>
+<div class="comment-info" id="comment-56481-info">
+<span class="comment-age">(06 Jun '17, 21:00)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-56469">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-56469-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/56456/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="XLoOMszXZ1rtSc2g4PZ9aM3NCEW2HXGC"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

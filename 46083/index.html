@@ -1,0 +1,93 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/46083/tiles-server-issue">tiles server issue</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/46083/up/" id="post-46083-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-46083-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/46083/down/" id="post-46083-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/46083/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>i got some troubles with Configuring OSM Bright. it the switch2osm web site they said i need to use nano and "Find the lines with URLs pointing to shapefiles (ending .zip) and replace each one with these appropriate pairs of lines"</p>
+<p>what does it mean, how do i use the nano , and can i looking for shapefiles.. ? can someone explain me how i do this part .</p>
+<pre><code>Configuring OSM Bright The OSM Bright stylesheet now needs to be adjusted to include the location of our data files. Edit the file osm-bright/osm-bright.osm2pgsql.mml in your favourite text editor, for example:
+
+nano osm-bright/osm-bright.osm2pgsql.mml
+
+Find the lines with URLs pointing to shapefiles (ending .zip) and replace each one with these appropriate  pairs of lines: "file": "/usr/local/share/maps/style/osm-bright-master/shp/land-polygons-split-3857/land_polygons.shp", "type": "shape"
+
+"file": "/usr/local/share/maps/style/osm-bright-master/shp/simplified-land-polygons-complete-3857/simplified_land_polygons.shp", "type": "shape",
+
+"file": "/usr/local/share/maps/style/osm-bright-master/shp/ne_10m_populated_places_simple/ne_10m_populated_places_simple.shp", "type": "shape"
+
+Note that we are also adding “type”: “shape” to each one. (If you’re using nano, to save, now press ctrl-X and Y.) Finally, in the section dealing with “ne_places”, replace the “srs” and “srs-name” lines with this one line:
+
+"srs": "+proj=longlat +ellps=WGS84
++datum=WGS84 +no_defs"
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-style" href="/tags/style/" rel="tag" title="see questions tagged 'style'">style</a>
+<a class="post-tag tag-link-switch2osm" href="/tags/switch2osm/" rel="tag" title="see questions tagged 'switch2osm'">switch2osm</a>
+<a class="post-tag tag-link-tileserver" href="/tags/tileserver/" rel="tag" title="see questions tagged 'tileserver'">tileserver</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>23 Oct '15, 20:39</strong>
+</p>
+<img alt="elad159's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/6b66d6d6b94b411a9d897ff1887c43e9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11589/elad159">elad159</a><br/>
+<span class="score" title="36 reputation points">36</span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="7 badges"><span class="silver">●</span><span class="badgecount">7</span></span><span title="10 badges"><span class="bronze">●</span><span class="badgecount">10</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="elad159 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/46083/">
+                edited
+                <strong>23 Oct '15, 23:28</strong>
+</a>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-46083">
+</div>
+<div class="comment-tools" id="comment-tools-46083">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-46083-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/46083/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="saekcZnpA92zAZaGyqsLIT1PTT4coJUF"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

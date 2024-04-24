@@ -1,0 +1,286 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/8126/topology-and-wayfinding">Topology and wayfinding</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/8126/up/" id="post-8126-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-8126-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/8126/down/" id="post-8126-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/8126/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Being rather new in OSM.... I am wondering how node/edge topology is handled internally in OSM networks. Apparently - in the network that can be down loaded straight away - major roads are continues, i.e. not 'broken up' where minor roads are joining. Accordingly nodes are missing at these 'tributary' locations. How does e.g. shortest path analysis take place, when full node/edge topology is missing? Do OSM apply an alternative algorithm that - in some clever way - can work without topology, or is there a version of the network with all edges split up at junctions? If the latter is the case, can such a data set be downloaded? And if so, how?
+Cheers
+Hans Skov-Petersen, Uni. of Copenhagen, DK</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-topology" href="/tags/topology/" rel="tag" title="see questions tagged 'topology'">topology</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>24 Sep '11, 21:25</strong>
+</p>
+<img alt="Hans%20SP's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7ee16a181aada217a5742f7ac4d1df55?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2137/hans-sp">Hans SP</a><br/>
+<span class="score" title="46 reputation points">46</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Hans SP has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-8126">
+</div>
+<div class="comment-tools" id="comment-tools-8126">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-8126-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    4 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/8126/topology-and-wayfinding?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/8126/topology-and-wayfinding?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/8126/topology-and-wayfinding?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/8126/topology-and-wayfinding?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="8127"></a>
+<div class="answer" id="answer-container-8127">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/8127/up/" id="post-8127-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-8127-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/8127/down/" id="post-8127-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>If you are to look at the OSM data as a formal graph then a <em>node</em> in OSM is a node in the graph and the OSM <em>way</em> is a path. This is the most logical way to store information about the roads. To find the edges you have to splitt the paths into the edges. Routing software does this when reading the OSM data.</p>
+<p>When you think about it the road network is not a planar graph. Roads can cross without there being an intersection. This can happen if one or boath ways is a bridge or a tunnel. Routing engies should not route between ways that cross without a node.</p>
+<p>If you find two ways that does not share a node at the intersection in OSM, but there is an intersection there, then this is an error in the data.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/8127/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>24 Sep '11, 22:04</strong>
+</p>
+<img alt="Gnonthgol's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/44a4438f0146dfd898e24c221fd28b58?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/131/gnonthgol">Gnonthgol ♦</a><br/>
+<span class="score" title="13750 reputation points"><span class="">13.8k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="103 badges"><span class="silver">●</span><span class="badgecount">103</span></span><span title="198 badges"><span class="bronze">●</span><span class="badgecount">198</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Gnonthgol has 57 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-8127">
+</div>
+<div class="comment-tools" id="comment-tools-8127">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-8127-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="8159"></a>
+<div class="answer" id="answer-container-8159">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/8159/up/" id="post-8159-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-8159-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/8159/down/" id="post-8159-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Gnonthgol has given a good answer. But on a broader point, you should bear in mind: OSM data is not optimised for any single use, whether that be routing or rendering or whatever. Rather, you are expected to preprocess it into a form that suits your application's needs.</p>
+<p>So, for example, the Mapnik rendering on <a href="http://osm.org">osm.org</a> does not use OSM data directly; rather, it uses an optimised version produced by the program osm2pgsql. Similarly, as Gnonthgol says, you will need to create a graph to route effectively, and there are several pieces of software that do that.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/8159/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>26 Sep '11, 19:53</strong>
+</p>
+<img alt="Richard's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/08324717c25d6067fa4ff23ef37d455f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5/richard">Richard ♦</a><br/>
+<span class="score" title="30902 reputation points"><span class="">30.9k</span></span><span title="44 badges"><span class="badge1">●</span><span class="badgecount">44</span></span><span title="279 badges"><span class="silver">●</span><span class="badgecount">279</span></span><span title="412 badges"><span class="bronze">●</span><span class="badgecount">412</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Richard has 98 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-8159">
+</div>
+<div class="comment-tools" id="comment-tools-8159">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-8159-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="8248"></a>
+<div class="answer" id="answer-container-8248">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/8248/up/" id="post-8248-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-8248-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/8248/down/" id="post-8248-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hans, for the specific issue of reconnecting minor roads to major ones, you have at least two tools that allow you to do just this (e. g. simply point them to Copenhagen in your above case):
+<a href="http://tools.geofabrik.de/osmi">http://tools.geofabrik.de/osmi</a>
+and
+<a href="http://keepright.ipax.at/report_map.php">http://keepright.ipax.at/report_map.php</a></p>
+<p>They are even capable to detect "suspicious node proximities" and show you the potential "culprits" automatically</p>
+<p>Hervé</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/8248/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Oct '11, 13:02</strong>
+</p>
+<img alt="Herve5's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/63a3d001d166921b51b1bd82b2865726?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1166/herve5">Herve5</a><br/>
+<span class="score" title="568 reputation points">568</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="9 badges"><span class="silver">●</span><span class="badgecount">9</span></span><span title="11 badges"><span class="bronze">●</span><span class="badgecount">11</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Herve5 has 3 accepted answers">12%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/8248/">
+                edited
+                <strong>03 Oct '11, 13:05</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-8248">
+</div>
+<div class="comment-tools" id="comment-tools-8248">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-8248-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="8229"></a>
+<div class="answer answered-by-owner" id="answer-container-8229">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/8229/up/" id="post-8229-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-8229-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/8229/down/" id="post-8229-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Thanks, both of you. I continue with a local version, where I can build the full topology my self. For sure I finde many places (e.g. i Copenhagen) where nodes are not present, where minor meets major roads. I would regard route finding a rather generic application, not 'any single use'. I agree that route finding can take place with only nodes (with node/edge topology build in), but rendering resulting routes  will be problematic, without edges being clipped at junctions/nodes.
+Cheers
+Hans</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/8229/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>01 Oct '11, 13:51</strong>
+</p>
+<img alt="Hans%20SP's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7ee16a181aada217a5742f7ac4d1df55?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2137/hans-sp">Hans SP</a><br/>
+<span class="score" title="46 reputation points">46</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Hans SP has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-8229">
+</div>
+<div class="comment-tools" id="comment-tools-8229">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-8229-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/8126/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="9rFzR2hxx2nD1kaLQzxJm2aMeoMP7vZ0"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

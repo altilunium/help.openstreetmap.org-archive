@@ -1,0 +1,308 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/75483/can-i-differentiate-between-no-data-and-no-results-with-the-overpass-api">Can I differentiate between no-data and no-results with the Overpass API?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75483/up/" id="post-75483-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75483-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/75483/down/" id="post-75483-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/75483/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm using an API query to find out whether a small bounding box point contains:
+ - one way (a regular point on a road)
+ - no ways (e.g. the middle of a field, or a building)
+ - multiple ways (e.g. a bridge or a crossing)</p>
+<p>I'm using a self-hosting database, so I've only got the data I've loaded (e.g. not the entire world, just one city and eventually the country).</p>
+<p>If I make a request such as this, which is a road under a bridge in London:</p>
+<p>[out:json][timeout:10];(way(51.5994,-0.23376,51.5996,-0.23356)[!"landuse"];);out count;&gt;;
+<a href="https://overpass-turbo.eu/s/VCE">https://overpass-turbo.eu/s/VCE</a></p>
+<p>(Note this query intentionally returns no nodes, but the counts of data found. Focus on elements.0.ways figure.)</p>
+<p>but the data for London has not been loaded - it returns 0 ways.</p>
+<p>Equally a query where there are actually no ways returns the same information:
+<a href="https://overpass-turbo.eu/">https://overpass-turbo.eu/</a></p>
+<p>I get that it's difficult for a system to know <em>why</em> there are no results, but in the hope there's a way:</p>
+<p>Is there a way to find out whether data for that region hasn't been loaded, or whether there's plenty of data nearby just not results for that in particular?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-self-hosted" href="/tags/self-hosted/" rel="tag" title="see questions tagged 'self-hosted'">self-hosted</a>
+<a class="post-tag tag-link-api" href="/tags/api/" rel="tag" title="see questions tagged 'api'">api</a>
+<a class="post-tag tag-link-data" href="/tags/data/" rel="tag" title="see questions tagged 'data'">data</a>
+<a class="post-tag tag-link-overpass-api" href="/tags/overpass-api/" rel="tag" title="see questions tagged 'overpass-api'">overpass-api</a>
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>30 Jun '20, 18:48</strong>
+</p>
+<img alt="Patabugen's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ecd7f35230124b6353b01fbae53eaa4b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18620/patabugen">Patabugen</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Patabugen has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/75483/">
+                edited
+                <strong>30 Jun '20, 18:48</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-75483">
+</div>
+<div class="comment-tools" id="comment-tools-75483">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75483-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    4 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/75483/can-i-differentiate-between-no-data-and-no-results-with-the-overpass-api?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/75483/can-i-differentiate-between-no-data-and-no-results-with-the-overpass-api?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/75483/can-i-differentiate-between-no-data-and-no-results-with-the-overpass-api?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/75483/can-i-differentiate-between-no-data-and-no-results-with-the-overpass-api?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="75484"></a>
+<div class="answer" id="answer-container-75484">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75484/up/" id="post-75484-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75484-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/75484/down/" id="post-75484-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Unsure whether you're asking why "it returns 0 ways." as it does for me: <a href="https://overpass-turbo.eu/s/VCY">https://overpass-turbo.eu/s/VCY</a></p>
+<p>out count; on its own will always display the 'This map intentionally left blank' message</p>
+<p>or how you can test for an empty return set: (if:count(ways) == 0);</p>
+<p>Which city have you got loaded in your self-hosting database,? Rome or London?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/75484/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Jun '20, 20:03</strong>
+</p>
+<img alt="DaveF's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c9c8b421ad22f51ddd62f23413717036?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1532/davef">DaveF</a><br/>
+<span class="score" title="3264 reputation points"><span class="">3.3k</span></span><span title="84 badges"><span class="badge1">●</span><span class="badgecount">84</span></span><span title="98 badges"><span class="silver">●</span><span class="badgecount">98</span></span><span title="133 badges"><span class="bronze">●</span><span class="badgecount">133</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="DaveF has 17 accepted answers">16%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/75484/">
+                edited
+                <strong>30 Jun '20, 20:13</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-75484">
+</div>
+<div class="comment-tools" id="comment-tools-75484">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75484-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="75485"></a>
+<div class="answer answered-by-owner" id="answer-container-75485">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75485/up/" id="post-75485-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75485-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/75485/down/" id="post-75485-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I'm asking how I can test for an "empty return set" vs "server hasn't got data for that region".</p>
+<p>I've got Greater London loaded.</p>
+<p>Actually I thought I had London loaded until my queries all returned 0 ways, which lead me to see that I've not loaded it properly and so I want to protect against that in future.</p>
+<p>The workaround I've implemented so far - which works for me - is that if the waypoint returns 0 ways I double check it against the demo serer. My waypoints are all tracking drivers driving cars down roads, so I should never have 0. By double checking against the demo server I can throw an error if my server and the demo server disagree.</p>
+<p>But I'd like to do it all on my server if possible.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/75485/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Jun '20, 20:28</strong>
+</p>
+<img alt="Patabugen's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ecd7f35230124b6353b01fbae53eaa4b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18620/patabugen">Patabugen</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Patabugen has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-75485">
+</div>
+<div class="comment-tools" id="comment-tools-75485">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75485-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="75486"></a>
+<div class="answer" id="answer-container-75486">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75486/up/" id="post-75486-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75486-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/75486/down/" id="post-75486-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>"I'm asking how I can test for an "empty return set" vs "server hasn't got data for that region"."</p>
+<p>I've reread your original post &amp; I'm at a loss how that was to be determined. Please be clearer when asking questions. 
+This is a server side problem. Nothing to do with OP.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/75486/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Jun '20, 20:54</strong>
+</p>
+<img alt="DaveF's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c9c8b421ad22f51ddd62f23413717036?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1532/davef">DaveF</a><br/>
+<span class="score" title="3264 reputation points"><span class="">3.3k</span></span><span title="84 badges"><span class="badge1">●</span><span class="badgecount">84</span></span><span title="98 badges"><span class="silver">●</span><span class="badgecount">98</span></span><span title="133 badges"><span class="bronze">●</span><span class="badgecount">133</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="DaveF has 17 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-75486">
+</div>
+<div class="comment-tools" id="comment-tools-75486">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75486-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="75487"></a>
+<div class="answer answered-by-owner" id="answer-container-75487">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75487/up/" id="post-75487-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75487-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/75487/down/" id="post-75487-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I do apologise if my initial question wasn't clear enough.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/75487/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Jun '20, 20:59</strong>
+</p>
+<img alt="Patabugen's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ecd7f35230124b6353b01fbae53eaa4b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18620/patabugen">Patabugen</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Patabugen has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-75487">
+</div>
+<div class="comment-tools" id="comment-tools-75487">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75487-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/75483/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="ZQEvFIlHy2kcOV6goLT9oNxkAxRTsIoL"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

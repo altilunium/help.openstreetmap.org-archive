@@ -1,0 +1,323 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/35529/nominatim-pgsql-database-size-growing-gradually">Nominatim PgSQL database size growing gradually</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/35529/up/" id="post-35529-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-35529-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/35529/down/" id="post-35529-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/35529/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>We have installed Nominatim 2.2.0 on centos</p>
+<p>We have uploaded\imported Netherlands Map.</p>
+<p>and initiated daily Auto updates using command </p>
+<pre><code>"/utils/update.php --import-osmosis-all --no-npi"
+</code></pre>
+<p>Now, every day Postgres database size growing rapidly , even though only imported NL maps. </p>
+<p>How can I decrease or limit the size of Nominatim database to not growing gradually.</p>
+<p>Thanks</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-database" href="/tags/database/" rel="tag" title="see questions tagged 'database'">database</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-size" href="/tags/size/" rel="tag" title="see questions tagged 'size'">size</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>05 Aug '14, 14:29</strong>
+</p>
+<img alt="PrakashThakor's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/374a88555372b3ec6b7e5accef89b9f3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8618/prakashthakor">PrakashThakor</a><br/>
+<span class="score" title="6 reputation points">6</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="PrakashThakor has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/35529/">
+                edited
+                <strong>05 Aug '14, 14:45</strong>
+</a>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-35529">
+<a name="35544"></a>
+<div class="comment" id="comment-35544">
+<div class="comment-score" id="post-35544-score"></div>
+<div class="comment-text"><p>What version of PG is this ? Did you leave the autovacuum settings at their default ? Does <a href="http://bucardo.org/wiki/Check_postgres">check_postgres.pl</a> --action=bloat --db=nominatim show a lot of bloat ?</p></div>
+<div class="comment-info" id="comment-35544-info">
+<span class="comment-age">(05 Aug '14, 17:39)</span>
+<a class="comment-user userinfo" href="/users/867/vincent-de-phily">Vincent de P... ♦</a>
+</div>
+</div>
+<a name="35656"></a>
+<div class="comment" id="comment-35656">
+<div class="comment-score" id="post-35656-score"></div>
+<div class="comment-text"><p>Hi Vincent,</p>
+<ol>
+<li>I have PGSQL 9.3</li>
+<li>Yes , I did not change in autovaccum settings and its default.</li>
+<li>"check_postgres.pl --action=bloat --db=nominatim" shown following result</li>
+</ol>
+<h2>[root@nominatim-ams check_postgres-2.21.0]# ./check_postgres.pl --action=bloat -db=nominatim POSTGRES_BLOAT CRITICAL: DB "nominatim" (db nominatim) index planet_osm_ways_nodes rows:? pages:1737024 shouldbe:502394 (3.5X) wasted bytes:10114088960 (9 GB) | planet_osm_ways_nodes=10114088960B public.place_addressline=1059995648B idx_search_name_nameaddress_vector=1001832448B idx_placex_pendingsector=114614272B public.search_name=110084096B public.location_area_large_117=45719552B public.placex=7045120B idx_location_area_large_117_geometry=1089536B idx_location_area_large_117_place_id=0B idx_place_addressline_address_place_id=0B idx_place_addressline_place_id=0B idx_search_name_centroid=0B idx_search_name_name_vector=0B idx_search_name_place_id=0B public.planet_osm_ways=0B</h2></div>
+<div class="comment-info" id="comment-35656-info">
+<span class="comment-age">(09 Aug '14, 11:07)</span>
+<a class="comment-user userinfo" href="/users/8618/prakashthakor">PrakashThakor</a>
+</div>
+</div>
+<a name="51167"></a>
+<div class="comment" id="comment-51167">
+<div class="comment-score" id="post-51167-score"></div>
+<div class="comment-text"><p>I was able to reduce the bloating by reindexing the affected tables, first I ran above check_postgres script to find out which tables/indexes exactly where affected:</p>
+<ul>
+<li>POSTGRES_BLOAT CRITICAL: DB "nominatim" (db nominatim) index idx_search_name_nameaddress_vector rows:? pages:5571228 shouldbe:1788574 (3.1X) wasted bytes:30987501568 (28 GB) * (db nominatim) table public.place_addressline rows:299672640 pages:3052511 shouldbe:2200240 (1.4X) wasted size:6981804032 (6 GB) | [...]</li>
+</ul>
+<p>and then ran the following commands:</p>
+<ul>
+<li>psql nominatim -c "reindex index idx_search_name_nameaddress_vector;"</li>
+<li>psql nominatim -c "reindex table public.place_addressline;"</li>
+</ul>
+<p>Freed up a lot of space</p></div>
+<div class="comment-info" id="comment-51167-info">
+<span class="comment-age">(29 Jul '16, 12:34)</span>
+<a class="comment-user userinfo" href="/users/294/jot">jot</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-35529">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-35529-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/35529/nominatim-pgsql-database-size-growing-gradually?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/35529/nominatim-pgsql-database-size-growing-gradually?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/35529/nominatim-pgsql-database-size-growing-gradually?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/35529/nominatim-pgsql-database-size-growing-gradually?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="35657"></a>
+<div class="answer" id="answer-container-35657">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/35657/up/" id="post-35657-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-35657-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/35657/down/" id="post-35657-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Are you updating from the global minutely diffs? If yes, while I don't know the exact workings of nominatim, this will cause additional objects to be added outside of the area of your original extract.</p>
+<p>There are numerous ways around this problem, one is to consume diffs that are specific to your region as, for example, provided by GeoFabrik <a href="http://download.geofabrik.de/europe/netherlands-updates/">http://download.geofabrik.de/europe/netherlands-updates/</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/35657/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Aug '14, 12:30</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/35657/">
+                edited
+                <strong>09 Aug '14, 12:31</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-35657">
+<a name="35660"></a>
+<div class="comment" id="comment-35660">
+<div class="comment-score" id="post-35660-score"></div>
+<div class="comment-text"><p>Hi SimonPools,</p>
+<p>Mostly  I kept default setting of Nominatim , should I change replication URL to <a href="http://download.geofabrik.de/europe/netherlands-updates/">http://download.geofabrik.de/europe/netherlands-updates/</a></p>
+<p>//Replication settings</p>
+<p>@define('CONST_Replication_Url', 'http://planet.openstreetmap.org/replication/minute');</p>
+<pre><code>    @define('CONST_Replication_MaxInterval', '40000');
+
+    @define('CONST_Replication_Update_Interval', '172800');  // How often upstream publishes diffs
+
+    @define('CONST_Replication_Recheck_Interval', '900'); // How long to sleep if no update found yet
+</code></pre></div>
+<div class="comment-info" id="comment-35660-info">
+<span class="comment-age">(09 Aug '14, 12:52)</span>
+<a class="comment-user userinfo" href="/users/8618/prakashthakor">PrakashThakor</a>
+</div>
+</div>
+<a name="35661"></a>
+<div class="comment" id="comment-35661">
+<div class="comment-score" id="post-35661-score">1</div>
+<div class="comment-text"><p>Yes, you should change the URL. You might also want to redo your import from scratch to get rid of the unwanted world data.</p></div>
+<div class="comment-info" id="comment-35661-info">
+<span class="comment-age">(09 Aug '14, 14:31)</span>
+<a class="comment-user userinfo" href="/users/867/vincent-de-phily">Vincent de P... ♦</a>
+</div>
+</div>
+<a name="35662"></a>
+<div class="comment" id="comment-35662">
+<div class="comment-score" id="post-35662-score"></div>
+<div class="comment-text"><p>Hi Vincent,</p>
+<p>But I did initial import of only Netherland maps using netherlands-latest.osm.pbf and not the entire planet maps , AS we only required Netherlands Maps.</p>
+<p>Do I need to still import from scratch.</p></div>
+<div class="comment-info" id="comment-35662-info">
+<span class="comment-age">(09 Aug '14, 14:38)</span>
+<a class="comment-user userinfo" href="/users/8618/prakashthakor">PrakashThakor</a>
+</div>
+</div>
+<a name="35664"></a>
+<div class="comment" id="comment-35664">
+<div class="comment-score" id="post-35664-score">1</div>
+<div class="comment-text"><p>Consuming worldwide diffs adds worldwide data to your db, regardless of what region the initial db contained. That's certainly what causes the rapid db growth.</p>
+<p>You don't <em>have</em> to remove that data, but it's probably a good idea.</p></div>
+<div class="comment-info" id="comment-35664-info">
+<span class="comment-age">(09 Aug '14, 14:49)</span>
+<a class="comment-user userinfo" href="/users/867/vincent-de-phily">Vincent de P... ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-35657">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-35657-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="35663"></a>
+<div class="answer" id="answer-container-35663">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/35663/up/" id="post-35663-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-35663-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/35663/down/" id="post-35663-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>As SimonPoole says, making sure you get only the local diffs is the most important step. That said, it's strange that you got all the way to a 9G/3.5x bloat. Check that <a href="http://www.postgresql.org/docs/current/static/routine-vacuuming.html">autovacuum</a> is working as expected :</p>
+<pre><code>psql nominatim -c "select relname,last_autovacuum from pg_stat_user_tables;"
+</code></pre>
+<p>You should see recent-ish dates for your updated tables. Check your logs for errors if not.</p>
+<p>It's often a good idea to set your vacuuming more aggressively in postgresql.conf:</p>
+<pre><code>autovacuum_vacuum_threshold = 5000
+autovacuum_analyze_threshold = 5000
+autovacuum_vacuum_scale_factor = 0.02
+autovacuum_analyze_scale_factor = 0.01
+autovacuum_vacuum_cost_delay = 10ms
+</code></pre>
+<p>Also, at any time you can issue a manual full vacuum to regain space (note that some % of bloat is normal, and that doing a "full" vacuum will block other db queries) :</p>
+<pre><code>vacuumdb -fz nominatim
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/35663/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Aug '14, 14:45</strong>
+</p>
+<img alt="Vincent%20de%20Phily's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d20f86db9a6f03cb070e9fbaaf0b7228?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/867/vincent-de-phily">Vincent de P... ♦</a><br/>
+<span class="score" title="17304 reputation points"><span class="">17.3k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="152 badges"><span class="silver">●</span><span class="badgecount">152</span></span><span title="249 badges"><span class="bronze">●</span><span class="badgecount">249</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Vincent de Phily has 64 accepted answers">19%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-35663">
+<a name="35665"></a>
+<div class="comment" id="comment-35665">
+<div class="comment-score" id="post-35665-score"></div>
+<div class="comment-text"><p>Hi Vincent I just ran query to find most space consuming tables on Nominatim db.</p>
+<p>and found tables consumes most of the space in Indexing </p>
+<p>for example plane_osm_ways occupies 14 GB of index</p>
+<p></p><hr/>
+<p>Table Name ; Table_size ; Indexs_size, Total Size</p>
+<hr/>
+<p>""public"."planet_osm_ways"";"4914 MB";"14 GB";"19 GB"</p>
+<p>""public"."planet_osm_nodes"";"10 GB";"5773 MB";"16 GB"</p>
+<p>""public"."placex"";"5609 MB";"10 GB";"16 GB"</p>
+<p>""public"."place"";"5416 MB";"2152 MB";"7568 MB"</p>
+<p>""public"."place_addressline"";"3687 MB";"3512 MB";"7200 MB"</p>
+<p>""public"."new_query_log"";"6537 MB";"341 MB";"6879 MB"</p><p></p></div>
+<div class="comment-info" id="comment-35665-info">
+<span class="comment-age">(09 Aug '14, 15:03)</span>
+<a class="comment-user userinfo" href="/users/8618/prakashthakor">PrakashThakor</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-35663">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-35663-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/35529/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="vkY7UgQYXkOXWzmLrlmZnl4AhuQAjVBd"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

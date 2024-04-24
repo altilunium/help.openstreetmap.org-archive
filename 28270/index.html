@@ -1,0 +1,160 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/28270/using-raw-ways-as-arcs-of-road-network-graph">Using raw ways as arcs of road network (graph)</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/28270/up/" id="post-28270-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-28270-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/28270/down/" id="post-28270-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/28270/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm looking for algorithm which could help me with building my own road network (for routing) from OSM data.</p>
+<p>I chose Spatialite DB for this, but here I have only one problem: Spatialite provides interface for build road network, but prepared road graph is saved in BLOBS so I can't get any information about it (of course, I can write queries to DB for routing facilities) but I want to draw all links on my map, so I need to get their coordinates.</p>
+<p>Actually, I'm not sure if Spatialite could provide such API or smith like that.</p>
+<p>I don't understand how to define junctions(links) between roads through all this data. 
+<em>My first idea was that all ways could be used as the arcs of graph. But I'm not sure if they doesn't consist links inside them. I mean that in &lt;way&gt; first and last nodes always links and only they, whereas other nodes mentioned in this &lt;way&gt; is used only for geometry of they way</em></p>
+<p>Is that statement right ?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-ways" href="/tags/ways/" rel="tag" title="see questions tagged 'ways'">ways</a>
+<a class="post-tag tag-link-junction" href="/tags/junction/" rel="tag" title="see questions tagged 'junction'">junction</a>
+<a class="post-tag tag-link-network" href="/tags/network/" rel="tag" title="see questions tagged 'network'">network</a>
+<a class="post-tag tag-link-highway" href="/tags/highway/" rel="tag" title="see questions tagged 'highway'">highway</a>
+<a class="post-tag tag-link-routing" href="/tags/routing/" rel="tag" title="see questions tagged 'routing'">routing</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>20 Nov '13, 10:25</strong>
+</p>
+<img alt="TemaKrukovets's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ae0b6110ad187821727e0f4e400c09ea?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7856/temakrukovets">TemaKrukovets</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="TemaKrukovets has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-28270">
+<a name="28271"></a>
+<div class="comment" id="comment-28271">
+<div class="comment-score" id="post-28271-score">2</div>
+<div class="comment-text"><p>This is not quite correct. The first and the last node don't have to be links, a way can have one or even two open ends. Furthermore <em>every</em> node in the way can be part of one or more other ways, thus creating a junction. This is not limited to the first and last node.</p></div>
+<div class="comment-info" id="comment-28271-info">
+<span class="comment-age">(20 Nov '13, 10:33)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="28272"></a>
+<div class="comment" id="comment-28272">
+<div class="comment-score" id="post-28272-score"></div>
+<div class="comment-text"><p><a href="/users/158/scai">@scai</a> , So, how can i define links to build graph?  Manually look for nodes which mentioned in 2 or more ways ?</p></div>
+<div class="comment-info" id="comment-28272-info">
+<span class="comment-age">(20 Nov '13, 10:44)</span>
+<a class="comment-user userinfo" href="/users/7856/temakrukovets">TemaKrukovets</a>
+</div>
+</div>
+<a name="28273"></a>
+<div class="comment" id="comment-28273">
+<div class="comment-score" id="post-28273-score">4</div>
+<div class="comment-text"><p>Yes. But you wouldn't do that manually. Enter the term "graph" in the search box above and read some of the results.</p></div>
+<div class="comment-info" id="comment-28273-info">
+<span class="comment-age">(20 Nov '13, 10:51)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-28270">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-28270-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/28270/using-raw-ways-as-arcs-of-road-network-graph?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/28270/using-raw-ways-as-arcs-of-road-network-graph?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/28270/using-raw-ways-as-arcs-of-road-network-graph?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/28270/using-raw-ways-as-arcs-of-road-network-graph?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="28332"></a>
+<div class="answer" id="answer-container-28332">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/28332/up/" id="post-28332-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-28332-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/28332/down/" id="post-28332-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The preprocessing of OSM data for routing can be very tricky, as you have to take a lot of stuff into account (access and surface tags, restrictions, defaults per country, ...).</p>
+<p>If you just like to create/try an routing algorithm, you might try <strong>this framework</strong>, that creates already a graph for you: <a href="http://code.google.com/p/trafficmining/">http://code.google.com/p/trafficmining/</a>.
+You might also consider other existing solutions as <strong>osm2pgrouting</strong> if you aren't tied to Spatiallite DB <a href="http://wiki.openstreetmap.org/wiki/Routing">http://wiki.openstreetmap.org/wiki/Routing</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/28332/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Nov '13, 09:40</strong>
+</p>
+<img alt="iii's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/49a7d0e0408e9cf2f698faac0f4d837a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4984/iii">iii</a><br/>
+<span class="score" title="4892 reputation points"><span class="">4.9k</span></span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="40 badges"><span class="silver">●</span><span class="badgecount">40</span></span><span title="82 badges"><span class="bronze">●</span><span class="badgecount">82</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="iii has 16 accepted answers">10%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-28332">
+</div>
+<div class="comment-tools" id="comment-tools-28332">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-28332-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/28270/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="jiydFnXhXuN8SbmDnVp8wpiAQxZr7o2j"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

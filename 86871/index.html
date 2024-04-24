@@ -1,0 +1,145 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/86871/routing-distance-from-openstreet-map-data">Routing distance from Openstreet Map data</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/86871/up/" id="post-86871-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-86871-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/86871/down/" id="post-86871-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/86871/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>We have a application where we need routing information(Transport distance) between two points so I am trying to setup my own routing server. I used OSRM backend API to calculate routing waypoints but they have usage limit. Alternatives to that are Mapbox(Paid APIs), Openlayers(Free APIs). </p>
+<p>Geofabrik provides data extracts in .osm.pbf format But how can I use the data to to get routing information(distance between two LatLong).</p>
+<p>I explored leaflet library also, but they seems to be using same OSRM backend API.</p>
+<p>Should I create my own library to access this data or using Openlayers is good option? Any suggestions, ideas or if I am mising out anything, Please guide me.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap.de" href="/tags/openstreetmap.de/" rel="tag" title="see questions tagged 'openstreetmap.de'">openstreetmap.de</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 Mar '23, 14:05</strong>
+</p>
+<img alt="Vikas%20Singla's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/5ad7f3355e56126c366d8cabe7021aff?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/22782/vikas-singla">Vikas Singla</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Vikas Singla has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-86871">
+</div>
+<div class="comment-tools" id="comment-tools-86871">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-86871-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/86871/routing-distance-from-openstreet-map-data?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/86871/routing-distance-from-openstreet-map-data?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/86871/routing-distance-from-openstreet-map-data?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/86871/routing-distance-from-openstreet-map-data?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="86872"></a>
+<div class="answer accepted-answer" id="answer-container-86872">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/86872/up/" id="post-86872-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-86872-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/86872/down/" id="post-86872-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/86872/" rel="nofollow" title="Vikas Singla has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can set up either GraphHopper or OSRM on your own infrastructure, then load a PBF file from Geofabrik into that software, and then use the API on your own server. Both Leaflet and OpenLayers can be used but the routing software's API could also be used directly by the application that requires the distance, no need to use a Javascript library. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/86872/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Mar '23, 15:50</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-86872">
+<a name="86879"></a>
+<div class="comment" id="comment-86879">
+<div class="comment-score" id="post-86879-score"></div>
+<div class="comment-text"><p>Hey thanks, I was able set up my own OSRM and load pbf file from Geofabrik. However, if I load for smaller region like berlin. It works. But if I try it for entire US. It does not. I am trying to figure out.</p></div>
+<div class="comment-info" id="comment-86879-info">
+<span class="comment-age">(06 Mar '23, 04:49)</span>
+<a class="comment-user userinfo" href="/users/22782/vikas-singla">Vikas Singla</a>
+</div>
+</div>
+<a name="86883"></a>
+<div class="comment" id="comment-86883">
+<div class="comment-score" id="post-86883-score">1</div>
+<div class="comment-text"><p>OSRM has hefty hardware requirements and you may need a bigger server to run the whole US.</p></div>
+<div class="comment-info" id="comment-86883-info">
+<span class="comment-age">(06 Mar '23, 11:35)</span>
+<a class="comment-user userinfo" href="/users/5/richard">Richard ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-86872">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-86872-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/86871/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Nkp8C4xdBbSY8LsARR4F0R2L3bJlTNWt"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,192 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/35922/get-all-poi-via-overpass">Get *all* PoI via Overpass?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/35922/up/" id="post-35922-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-35922-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/35922/down/" id="post-35922-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/35922/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>This is my first time using Overpass.</p>
+<p>I want a list of <strong>all</strong> the PoI within a bounding box.</p>
+<p>I can get a list of all <em>nodes</em> using</p>
+<pre><code><a href="http://overpass-api.de/api/interpreter?data=[out:json];node(51.7248487,-1.2328819,51.7249487,-1.2329819);out;">http://overpass-api.de/api/interpreter?data=[out:json];node(51.7248487,-1.2328819,51.7249487,-1.2329819);out;</a>
+</code></pre>
+<p>I just want the shops, cafes, bus stops, benches, etc - not the empty nodes.  Is there any way to prune out all the nodes and just get the places / things?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-api" href="/tags/api/" rel="tag" title="see questions tagged 'api'">api</a>
+<a class="post-tag tag-link-poi" href="/tags/poi/" rel="tag" title="see questions tagged 'poi'">poi</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>17 Aug '14, 16:00</strong>
+</p>
+<img alt="Terence%20Eden's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52cb49a66755f31abf4df9a6549f0f9c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9471/terence-eden">Terence Eden</a><br/>
+<span class="score" title="46 reputation points">46</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Terence Eden has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-35922">
+</div>
+<div class="comment-tools" id="comment-tools-35922">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-35922-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/35922/get-all-poi-via-overpass?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/35922/get-all-poi-via-overpass?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/35922/get-all-poi-via-overpass?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/35922/get-all-poi-via-overpass?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="35923"></a>
+<div class="answer accepted-answer" id="answer-container-35923">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/35923/up/" id="post-35923-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-35923-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/35923/down/" id="post-35923-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/35923/" rel="nofollow" title="Terence Eden has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You have to realise that some POI (i.e. restaurants, etc.) are not represented by points, but by ways or even relations.
+The following query returns all amenities and shops <a href="http://overpass-turbo.eu/s/4BV">http://overpass-turbo.eu/s/4BV</a> in the visible box. Replace the BBox with the one you need.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/35923/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>17 Aug '14, 16:15</strong>
+</p>
+<img alt="escada's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/813a136afe7d4c95fd5bccdd78705e0e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5390/escada">escada</a><br/>
+<span class="score" title="19043 reputation points"><span class="">19.0k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="166 badges"><span class="silver">●</span><span class="badgecount">166</span></span><span title="302 badges"><span class="bronze">●</span><span class="badgecount">302</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="escada has 97 accepted answers">21%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-35923">
+<a name="35925"></a>
+<div class="comment" id="comment-35925">
+<div class="comment-score" id="post-35925-score">2</div>
+<div class="comment-text"><p>bus stops are not amenities, nor shops. So you might have to add highway=bus_stop and public_transport=stop_position</p></div>
+<div class="comment-info" id="comment-35925-info">
+<span class="comment-age">(17 Aug '14, 17:15)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-35923">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-35923-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="35956"></a>
+<div class="answer" id="answer-container-35956">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/35956/up/" id="post-35956-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-35956-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/35956/down/" id="post-35956-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>If you get any result file from overpass-api or overpass-turbo.eu in format of raw OSM data in XML format, you can try <strong><a href="http://wiki.openstreetmap.org/wiki/Osmconvert">osmconvert</a></strong> to produce a list of all POIs in CSV format.</p>
+<p>Try also <a href="http://wiki.openstreetmap.org/wiki/Osmfilter">osmfilter</a> if needed.</p>
+<p>Search for CSV on this FAQ to find some more hints.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/35956/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>18 Aug '14, 14:49</strong>
+</p>
+<img alt="stephan75's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/245b73d4390c3408fe3c6da759b9897f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/99/stephan75">stephan75</a><br/>
+<span class="score" title="12642 reputation points"><span class="">12.6k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="56 badges"><span class="silver">●</span><span class="badgecount">56</span></span><span title="210 badges"><span class="bronze">●</span><span class="badgecount">210</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="stephan75 has 37 accepted answers">6%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-35956">
+</div>
+<div class="comment-tools" id="comment-tools-35956">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-35956-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/35922/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="HFSvUVFtYaKZUbl7EYxIl7LRGlTPz0iy"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

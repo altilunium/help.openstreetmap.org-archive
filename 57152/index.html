@@ -1,0 +1,144 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/57152/how-to-find-closest-way-from-a-given-lat-long">How to find closest way from a given lat, long</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/57152/up/" id="post-57152-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-57152-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/57152/down/" id="post-57152-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/57152/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Nominatim api gives me road name given a lat, long value which I guess is the nearest one but it doesnot provide wayId. 
+Is there any way to get that information. Or does any of osm v0.6 apis provide this feature.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>18 Jul '17, 12:29</strong>
+</p>
+<img alt="shashank's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ac0dd91ec334a38434646d7effb4ac10?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13952/shashank">shashank</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="shashank has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/57152/">
+                edited
+                <strong>18 Jul '17, 12:30</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-57152">
+</div>
+<div class="comment-tools" id="comment-tools-57152">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-57152-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/57152/how-to-find-closest-way-from-a-given-lat-long?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/57152/how-to-find-closest-way-from-a-given-lat-long?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/57152/how-to-find-closest-way-from-a-given-lat-long?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/57152/how-to-find-closest-way-from-a-given-lat-long?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="57153"></a>
+<div class="answer" id="answer-container-57153">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/57153/up/" id="post-57153-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-57153-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/57153/down/" id="post-57153-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Nominatim returns an "osm_type" and "osm_id" which point to the street, if the street is what your query found. Of course your query could also find a bus shelter or a building! You should be able to influence what types of objects are returned if you fiddle with the "zoom" parameter.</p>
+<p>Just to be clear, do not use that in any kind of "production" app or website where you want to make a larger number of requests (like displaying the "road you are currently on" in a moving car or so). That would be a surefire way to have you and your app blocked from using the server. If you are envisaging that kind of use, download the Nominatim software and the OSM data and set up your own server.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/57153/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>18 Jul '17, 13:05</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-57153">
+<a name="57155"></a>
+<div class="comment" id="comment-57155">
+<div class="comment-score" id="post-57155-score"></div>
+<div class="comment-text"><p>nominatim returns osm_type and osm_id for the point(lat,long) I am searching and not for the nearest road. So I cant use that osm id for getting road information later.</p>
+<p>P.S: I have setup my local nominatim server with my osm dataset.</p></div>
+<div class="comment-info" id="comment-57155-info">
+<span class="comment-age">(18 Jul '17, 13:15)</span>
+<a class="comment-user userinfo" href="/users/13952/shashank">shashank</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-57153">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-57153-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/57152/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="E8BUSfmdEKRltFm9tg263tL8by1yiRmG"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

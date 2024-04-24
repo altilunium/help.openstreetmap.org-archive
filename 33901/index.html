@@ -1,0 +1,248 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/33901/temporary-hgv-destination-road-signs">Temporary HGV destination road signs</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/33901/up/" id="post-33901-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-33901-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/33901/down/" id="post-33901-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/33901/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,
+While editing the road network in OSM we have encountered a situation, which we are not sure how to tag.</p>
+<p>Temporary HGV destination road signs.</p>
+<p>Roads are being repaired and some of the town couincils refuse the HGV traffic to pass through their towns for the duration of the repairs. </p>
+<p>We have found two ways to do it and we would like some guidance on which one to choose:</p>
+<p>The goal of the tag is to express that only HGV who are supplying the road can enter and that it will in effect from date x to date y.</p>
+<p>Option 1</p>
+<pre><code>Temporary:hgv=destination
+Temporary:date_on=20-10-2014
+Temporary:date_off=28-11-2014
+</code></pre>
+<p>Option 2</p>
+<pre><code>hgv:conditional=destination @ (20.10.2014-28.11.2014)
+</code></pre>
+<p>Which one is better to use? Thank you for all yout answers.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-hgv" href="/tags/hgv/" rel="tag" title="see questions tagged 'hgv'">hgv</a>
+<a class="post-tag tag-link-roads" href="/tags/roads/" rel="tag" title="see questions tagged 'roads'">roads</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>12 Jun '14, 08:51</strong>
+</p>
+<img alt="Tomas%20Pajonk's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bbe97c3fa23d557d5cdaec1fef8e28db?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/669/tomas-pajonk">Tomas Pajonk</a><br/>
+<span class="score" title="191 reputation points">191</span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="8 badges"><span class="silver">●</span><span class="badgecount">8</span></span><span title="17 badges"><span class="bronze">●</span><span class="badgecount">17</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Tomas Pajonk has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-33901">
+</div>
+<div class="comment-tools" id="comment-tools-33901">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-33901-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/33901/temporary-hgv-destination-road-signs?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/33901/temporary-hgv-destination-road-signs?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/33901/temporary-hgv-destination-road-signs?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/33901/temporary-hgv-destination-road-signs?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="33911"></a>
+<div class="answer accepted-answer" id="answer-container-33911">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/33911/up/" id="post-33911-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-33911-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/33911/down/" id="post-33911-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/33911/" rel="nofollow" title="Tomas Pajonk has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You should prefer using <a href="http://wiki.openstreetmap.org/wiki/Conditional_restriction">conditional access restrictions</a> instead of the <a href="http://wiki.openstreetmap.org/wiki/Proposed_features/temporary">temporary proposal</a>. It is more widely in use and more flexible.</p>
+<p>However your date doesn't follow the specification. The time &amp; date in the <a href="http://wiki.openstreetmap.org/wiki/Conditional_restriction#Condition">condition</a> field should follow the <a href="http://wiki.openstreetmap.org/wiki/Key:opening_hours:specification">specification</a> of the <a href="http://wiki.openstreetmap.org/wiki/Key:opening_hours">opening_hours</a> key which in turn is based on the <a href="http://wiki.openstreetmap.org/wiki/Proposed_features/Time_domains">time domains</a> proposal. So if I'm not mistaken it has to be</p>
+<pre><code>hgv:conditional=destination @ (2014 Oct 20-2014 Nov 28)
+</code></pre>
+<p>But don't expect any software to handle this correctly at the moment.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/33911/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Jun '14, 12:05</strong>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="scai has 168 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-33911">
+<a name="33916"></a>
+<div class="comment" id="comment-33916">
+<div class="comment-score" id="post-33916-score"></div>
+<div class="comment-text"><p>Thank you.</p></div>
+<div class="comment-info" id="comment-33916-info">
+<span class="comment-age">(12 Jun '14, 12:49)</span>
+<a class="comment-user userinfo" href="/users/669/tomas-pajonk">Tomas Pajonk</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-33911">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-33911-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="33902"></a>
+<div class="answer" id="answer-container-33902">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/33902/up/" id="post-33902-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-33902-score" title="current number of votes">
+    -1
+</div>
+<a class="ajax-command post-vote down" href="/vote/33902/down/" id="post-33902-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hi Tomas, there have been questions like yours before, please read the links. And search with temporary for more.
+<a href="https://help.openstreetmap.org/questions/259/what-is-the-recommended-way-to-tag-temporary-road-works-and-traffic-situations">https://help.openstreetmap.org/questions/259/what-is-the-recommended-way-to-tag-temporary-road-works-and-traffic-situations</a>
+<a href="http://wiki.openstreetmap.org/wiki/Proposed_features/temporary">http://wiki.openstreetmap.org/wiki/Proposed_features/temporary</a>
+And yes it’s possible to add the time of the construction, but it won’t disappear from OSM out of its self. You’ll have to remember as owner of the action to remove it afterwards.
+I would go for just one line option 1 ; hgv=no, temporary:period=3-4-2014 - 12-8-2014</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/33902/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Jun '14, 09:34</strong>
+</p>
+<img alt="Hendrikklaas's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/742e93034cd38ad243f7ab26f350b659?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3443/hendrikklaas">Hendrikklaas</a><br/>
+<span class="score" title="9286 reputation points"><span class="">9.3k</span></span><span title="207 badges"><span class="badge1">●</span><span class="badgecount">207</span></span><span title="238 badges"><span class="silver">●</span><span class="badgecount">238</span></span><span title="387 badges"><span class="bronze">●</span><span class="badgecount">387</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Hendrikklaas has 39 accepted answers">5%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/33902/">
+                edited
+                <strong>12 Jun '14, 09:42</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-33902">
+<a name="33903"></a>
+<div class="comment" id="comment-33903">
+<div class="comment-score" id="post-33903-score">1</div>
+<div class="comment-text"><p>Your <em>temporary</em> syntax is completely wrong, please re-read the proposal. The correct tags would be <em>temporary:hgv=destination</em>, <em>temporary:date_on=2014-10-20</em>, <em>temporary:date_off=2014-11-28</em>. But the <em>temporary</em> proposal is a bad idea anyway because it doesn't support multiple overlapping conditions. <a href="http://wiki.openstreetmap.org/wiki/Conditional_restriction">Conditional access restrictions</a> are more flexible.</p></div>
+<div class="comment-info" id="comment-33903-info">
+<span class="comment-age">(12 Jun '14, 10:01)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="33905"></a>
+<div class="comment" id="comment-33905">
+<div class="comment-score" id="post-33905-score"></div>
+<div class="comment-text"><p>It is not HGV no. HGV can go there if it has a purpose. Ie. construction on the road closes the road, but vehicles cannot go through nearby village and completely ruin its one lane road (though if the vehicles must go to the village, they are allowed to enter)</p></div>
+<div class="comment-info" id="comment-33905-info">
+<span class="comment-age">(12 Jun '14, 10:18)</span>
+<a class="comment-user userinfo" href="/users/669/tomas-pajonk">Tomas Pajonk</a>
+</div>
+</div>
+<a name="33906"></a>
+<div class="comment" id="comment-33906">
+<div class="comment-score" id="post-33906-score">1</div>
+<div class="comment-text"><p>Thanks for the link.</p></div>
+<div class="comment-info" id="comment-33906-info">
+<span class="comment-age">(12 Jun '14, 10:18)</span>
+<a class="comment-user userinfo" href="/users/669/tomas-pajonk">Tomas Pajonk</a>
+</div>
+</div>
+<a name="33909"></a>
+<div class="comment" id="comment-33909">
+<div class="comment-score" id="post-33909-score">1</div>
+<div class="comment-text"><p>Oh you are right, I changed it to <em>hgv=destination</em> :).</p></div>
+<div class="comment-info" id="comment-33909-info">
+<span class="comment-age">(12 Jun '14, 10:28)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-33902">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-33902-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/33901/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="HqTyJT0i2ah3CfIF7CaTa7Q755QPNwjy"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

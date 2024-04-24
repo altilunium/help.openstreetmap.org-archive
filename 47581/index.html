@@ -1,0 +1,191 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/47581/view-maps-without-buildings">View maps without buildings</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/47581/up/" id="post-47581-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-47581-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/47581/down/" id="post-47581-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/47581/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hey everyone, this is more of a user based question than a technical one. If I wanted to embed OSM on my website, how can I turn off the buildings and other overlays like commerical areas and residential areas?</p>
+<p>Thanks!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-layers" href="/tags/layers/" rel="tag" title="see questions tagged 'layers'">layers</a>
+<a class="post-tag tag-link-overlays" href="/tags/overlays/" rel="tag" title="see questions tagged 'overlays'">overlays</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>19 Jan '16, 09:59</strong>
+</p>
+<img alt="PeteInIndia's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/01d0d9046e3c896488038c8755ba6d48?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11885/peteinindia">PeteInIndia</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="PeteInIndia has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-47581">
+<a name="47597"></a>
+<div class="comment" id="comment-47597">
+<div class="comment-score" id="post-47597-score">1</div>
+<div class="comment-text"><p>Which rendering are you referring to? There are countless different renderings of the OpenStreetMap data, and quite a few of them don't contain any "overlays".</p></div>
+<div class="comment-info" id="comment-47597-info">
+<span class="comment-age">(19 Jan '16, 16:54)</span>
+<a class="comment-user userinfo" href="/users/8189/alester">alester</a>
+</div>
+</div>
+<a name="47599"></a>
+<div class="comment" id="comment-47599">
+<div class="comment-score" id="post-47599-score"></div>
+<div class="comment-text"><p>Sorry, to clarify I meant with the Standard layer or the MapQuest Open layer. I wanted to be able to display the map but without the buildings and most of the overlays that denote the commercial/residential neighbourhoods.</p></div>
+<div class="comment-info" id="comment-47599-info">
+<span class="comment-age">(19 Jan '16, 17:54)</span>
+<a class="comment-user userinfo" href="/users/11885/peteinindia">PeteInIndia</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-47581">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-47581-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/47581/view-maps-without-buildings?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/47581/view-maps-without-buildings?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/47581/view-maps-without-buildings?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/47581/view-maps-without-buildings?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="47602"></a>
+<div class="answer" id="answer-container-47602">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/47602/up/" id="post-47602-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-47602-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/47602/down/" id="post-47602-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The standard and MapQuest Open layers use pre-rendered tiles. That is, they take the OSM data, apply certain rules that they've determined ahead of time to define how objects should be rendered, and then static image files are created. There are no overlays, so if someone wanted to remove some objects, such a change would have to occur earlier in the rendering process by changing the rules.</p>
+<p>If you want a rendering without buildings, you'll have to look at alternate providers. <a href="http://wiki.openstreetmap.org/wiki/List_of_OSM-based_services">This list</a> is a good starting point, but there are probably many others out there that may not be on this list.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/47602/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Jan '16, 18:26</strong>
+</p>
+<img alt="alester's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/087bb38ba920baadf1df9dfc473208ec?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8189/alester">alester</a><br/>
+<span class="score" title="6631 reputation points"><span class="">6.6k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="66 badges"><span class="silver">●</span><span class="badgecount">66</span></span><span title="100 badges"><span class="bronze">●</span><span class="badgecount">100</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="alester has 37 accepted answers">28%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-47602">
+</div>
+<div class="comment-tools" id="comment-tools-47602">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-47602-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="47605"></a>
+<div class="answer" id="answer-container-47605">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/47605/up/" id="post-47605-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-47605-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/47605/down/" id="post-47605-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Another option that may or may not work for you is to <a href="https://switch2osm.org/serving-tiles/manually-building-a-tile-server-14-04/">create your own map tiles</a>.  If you only want a small area (say the size of one smallish country rather than the whole world) the server you'd need to do that is "desktop PC" or smaller not "large expensive server".  You could if you wanted to use the <a href="https://github.com/gravitystorm/openstreetmap-carto">"standard" style</a> unchanged and remove buildings from the data before creating map tiles (actually only about 3 lines of code), though of course "creating your own map tiles" is always going to be more complicated than "using someone else's".</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/47605/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Jan '16, 19:01</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-47605">
+</div>
+<div class="comment-tools" id="comment-tools-47605">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-47605-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/47581/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="aT2BhlcE0QxxIIff6fW06WeOxOGWb2B0"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,164 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/60603/how-do-i-map-a-building-with-holes-and-parts">How do I map a building with "holes" and parts?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/60603/up/" id="post-60603-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-60603-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/60603/down/" id="post-60603-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/60603/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>So, I want to map a building which has an inner courtyard, and parts, which have different properties.</p>
+<p>I made a relation which has <code>type=multipolygon</code> and <code>building=hospital</code> (because it's a hospital building).</p>
+<p>Now, the outer line has no tags, and is in the relation as <code>outer</code>. The courtyard, also has no tags, and is in the relation as <code>inner</code>. So far so good.</p>
+<p>The part of the building with different properties, touches the outer ring on some sections. It has a couple tags, like <code>building:levels=2</code>, and <code>roof:shape=gabled</code>, etc.</p>
+<p>It is in the relation as <code>part</code>, but now I'm getting an error in JOSM:</p>
+<blockquote>
+<p>Multipolygon outer way shares segment(s) with other ring (1)</p>
+</blockquote>
+<p>So I know how to make buildings made up of several parts, and I also know how to make buildings with pateos, and other "holes", etc. But combining the two seems a bit like an impossibility, because for a building with holes, the relation is a <code>type=multipolygon</code>, and <code>type=building</code> if it's a building that consists of several parts.</p>
+<p>So how do I go about this?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-building" href="/tags/building/" rel="tag" title="see questions tagged 'building'">building</a>
+<a class="post-tag tag-link-part" href="/tags/part/" rel="tag" title="see questions tagged 'part'">part</a>
+<a class="post-tag tag-link-relations" href="/tags/relations/" rel="tag" title="see questions tagged 'relations'">relations</a>
+<a class="post-tag tag-link-multipolygon" href="/tags/multipolygon/" rel="tag" title="see questions tagged 'multipolygon'">multipolygon</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>14 Nov '17, 06:29</strong>
+</p>
+<img alt="polemon's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fb7188d8be002ece64870dffe9ec6fa7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14400/polemon">polemon</a><br/>
+<span class="score" title="146 reputation points">146</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="10 badges"><span class="bronze">●</span><span class="badgecount">10</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="polemon has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-60603">
+<a name="60604"></a>
+<div class="comment" id="comment-60604">
+<div class="comment-score" id="post-60604-score"></div>
+<div class="comment-text"><p>what if you do not add building:parts to the multipolygon ? Would that be wrong ?</p></div>
+<div class="comment-info" id="comment-60604-info">
+<span class="comment-age">(14 Nov '17, 06:38)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+<a name="60606"></a>
+<div class="comment" id="comment-60606">
+<div class="comment-score" id="post-60606-score"></div>
+<div class="comment-text"><p>I was once stuck on something similar and for adding to the building relation I used the "outer" (yes it has no tag) of the multipolygon. I don't know if I did it correctly but everything renders well.</p></div>
+<div class="comment-info" id="comment-60606-info">
+<span class="comment-age">(14 Nov '17, 08:46)</span>
+<a class="comment-user userinfo" href="/users/14163/privatemajory">Privatemajory</a>
+</div>
+</div>
+<a name="60623"></a>
+<div class="comment" id="comment-60623">
+<div class="comment-score" id="post-60623-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/5390/escada">@escada</a> that'exactly how I left things right now. As for whether that's correct or not: I have no idea. I'd imagine the <code>building:part</code> object should be also part of the relation, but I really don't know. It seems to work wouth having the building part added to the relation. It's just that I've seen it being part of the relation in other buildings, hence I thought that's the correct way of going about this.</p></div>
+<div class="comment-info" id="comment-60623-info">
+<span class="comment-age">(14 Nov '17, 23:13)</span>
+<a class="comment-user userinfo" href="/users/14400/polemon">polemon</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-60603">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-60603-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/60603/how-do-i-map-a-building-with-holes-and-parts?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/60603/how-do-i-map-a-building-with-holes-and-parts?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/60603/how-do-i-map-a-building-with-holes-and-parts?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/60603/how-do-i-map-a-building-with-holes-and-parts?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="60631"></a>
+<div class="answer accepted-answer" id="answer-container-60631">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/60631/up/" id="post-60631-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-60631-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/60631/down/" id="post-60631-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/60631/" rel="nofollow" title="polemon has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You cannot use one relation as a building relation and a multipolygon relation at the same time. Instead, after creating your multipolygon, you would need to create a second relation, this time using <code>type=building</code> instead of <code>type=multipolygon</code>. Add the multipolygon relation, not the outer way, as the <code>outline</code> member.</p>
+<p>Note, however, that building relations are optional (and indeed unnecessary) for almost all buildings – see my <a href="https://help.openstreetmap.org/questions/60330/how-do-you-create-a-relation-between-a-building-and-3d-building-parts/60332">answer</a> to a related question. So you can probably avoid the problem by simply not using one. :)</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/60631/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>15 Nov '17, 15:48</strong>
+</p>
+<img alt="Tordanik's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0626be5f46f32fce501353e8a5ec399c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14/tordanik">Tordanik</a><br/>
+<span class="score" title="11998 reputation points"><span class="">12.0k</span></span><span title="15 badges"><span class="badge1">●</span><span class="badgecount">15</span></span><span title="106 badges"><span class="silver">●</span><span class="badgecount">106</span></span><span title="147 badges"><span class="bronze">●</span><span class="badgecount">147</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Tordanik has 58 accepted answers">35%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-60631">
+</div>
+<div class="comment-tools" id="comment-tools-60631">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-60631-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/60603/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="FMi1wvG1CwJpSYDO9GF7e1Snaa93JORv"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

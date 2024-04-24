@@ -1,0 +1,205 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/66170/how-to-identify-parts-of-the-same-osm_id-in-planet_osm_polygon">how to identify parts of the same osm_id in planet_osm_polygon?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66170/up/" id="post-66170-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66170-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/66170/down/" id="post-66170-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/66170/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>The relation <a href="https://www.openstreetmap.org/relation/303702">303702</a> and many others in the table <code>planet_osm_polygon</code> have same <code>osm_id</code>, so, same ID and no other id (eg. <code>z_order</code> is zero)... There are a column that I not see?  How to configure <code>osm2pgsql</code>  to add a <code>gid</code> or any complement to add a counter for each "multiple osm_id"?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>05 Oct '18, 12:44</strong>
+</p>
+<img alt="ppKrauss's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/6963015ca2c3146e2a2a348b7fcb793b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14889/ppkrauss">ppKrauss</a><br/>
+<span class="score" title="95 reputation points">95</span><span title="19 badges"><span class="badge1">●</span><span class="badgecount">19</span></span><span title="22 badges"><span class="silver">●</span><span class="badgecount">22</span></span><span title="25 badges"><span class="bronze">●</span><span class="badgecount">25</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ppKrauss has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66170">
+</div>
+<div class="comment-tools" id="comment-tools-66170">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66170-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/66170/how-to-identify-parts-of-the-same-osm_id-in-planet_osm_polygon?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/66170/how-to-identify-parts-of-the-same-osm_id-in-planet_osm_polygon?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/66170/how-to-identify-parts-of-the-same-osm_id-in-planet_osm_polygon?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/66170/how-to-identify-parts-of-the-same-osm_id-in-planet_osm_polygon?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="66171"></a>
+<div class="answer" id="answer-container-66171">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66171/up/" id="post-66171-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66171-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/66171/down/" id="post-66171-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You could use the <code>--multi-geometry</code> flag with osm2pgsql which should get rid of <em>most</em> of these cases (instead, they would all be combined in one record with a multipolygon or multilinestring geometry). Other than that you could follow the standard postgres recommendations of adding an integer column and populating it with a default value that uses a sequence, as explained e.g. in <a href="https://stackoverflow.com/questions/9490014/adding-serial-to-existing-column-in-postgres">https://stackoverflow.com/questions/9490014/adding-serial-to-existing-column-in-postgres</a> - there's no particular osm2pgsql option that would do this for you.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/66171/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>05 Oct '18, 13:13</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66171">
+<a name="66174"></a>
+<div class="comment" id="comment-66174">
+<div class="comment-score" id="post-66174-score"></div>
+<div class="comment-text"><p>The <code>--multi-geometry</code>  is a good clue, I will test in the next planet-conversion... And will back here with results.  If there are no complete solution, my answer below is a workaround  using pure SQL and perhaps <code>ALTER TABLE</code> (adding UNIQUE clause to index it) enhance performance.</p></div>
+<div class="comment-info" id="comment-66174-info">
+<span class="comment-age">(05 Oct '18, 15:37)</span>
+<a class="comment-user userinfo" href="/users/14889/ppkrauss">ppKrauss</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-66171">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66171-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="66172"></a>
+<div class="answer answered-by-owner" id="answer-container-66172">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66172/up/" id="post-66172-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66172-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/66172/down/" id="post-66172-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>If it is the truth, as @FraderikRamm say "there's no particular osm2pgsql option that would do this for you"... The only solution is by SQL,    </p>
+<pre><code>select osm_id, row_number() OVER (PARTITION BY osm_id) as sub_id 
+from planet_osm_polygon
+</code></pre>
+<p>so, now we have a UNIQUE(osm_id,sub_id).</p>
+<hr/>
+<h2>Complete solution</h2>
+<p>(can be repeated changing table name)</p>
+<pre><code>ALTER TABLE planet_osm_polygon ADD COLUMN osm_id2 int;
+UPDATE planet_osm_polygon
+SET  osm_id2 = sub_id
+FROM (
+  SELECT osm_id, way, row_number() OVER (PARTITION BY osm_id) as sub_id 
+  FROM planet_osm_polygon
+) t WHERE t.osm_id=planet_osm_polygon.osm_id AND t.way=planet_osm_polygon.way
+;
+ALTER TABLE planet_osm_polygon ALTER COLUMN osm_id2 SET NOT NULL;
+ALTER TABLE planet_osm_polygon ADD CONSTRAINT osm_uniqids UNIQUE(osm_id,osm_id2);
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/66172/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>05 Oct '18, 14:08</strong>
+</p>
+<img alt="ppKrauss's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/6963015ca2c3146e2a2a348b7fcb793b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14889/ppkrauss">ppKrauss</a><br/>
+<span class="score" title="95 reputation points">95</span><span title="19 badges"><span class="badge1">●</span><span class="badgecount">19</span></span><span title="22 badges"><span class="silver">●</span><span class="badgecount">22</span></span><span title="25 badges"><span class="bronze">●</span><span class="badgecount">25</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ppKrauss has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/66172/">
+                edited
+                <strong>10 Oct '18, 00:27</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66172">
+</div>
+<div class="comment-tools" id="comment-tools-66172">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66172-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/66170/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="9iHuKyrO450DOH7x8F0EWJzjEAPSCJt8"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

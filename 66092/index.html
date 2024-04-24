@@ -1,0 +1,162 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/66092/osm-updates-with-osmosis-osm2pgsql-resulting-in-missing-features">OSM updates with Osmosis -&gt; Osm2Pgsql resulting in missing features</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66092/up/" id="post-66092-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66092-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/66092/down/" id="post-66092-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/66092/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>For my project, I have successfully created a PostgreSQL database of the entire planet file using osm2pgsql. My next task was to sucessfuly update the database using daily change files through the well renowned osmosis -&gt; osm2pgsql (append) process chain.</p>
+<p>To test updates, I added some hiking trails to the OpenStreetMap. The end nodes were auto snapped to the edges of existing roads in the forest in the OSM editing session (website). I pulled the change file with osmosis using the sequence id, per standard, and used the osm2pgsql --append command, as outline by numerous help sites and forums. My new trail came through, and was visually proven using a Geoserver platform to serve the postgres data.</p>
+<p>Here is the problem...any existing road that was modified was absent in the osm_line data after the update. The two roads to which either end of the newly digitized trail were gone. They are still in the map, as confirmed by a Geofabrik download of the local area, as well as by simply going to the OSM website. Additionally, an existing trail that was incorrect and I moved a few nodes within is also gone. It seems my command (either Osmosis or Osm2pgsql append) is wrong, and is only applying new features and knocking out anything that changed.</p>
+<p>Hoping we have some OSM gurus that can help.</p>
+<p>My two commands are as follows:</p>
+<p>1) osmosis --read-replication-interval workingDirectory=D:\osm_updates --simplify-change --write-xml-change D:\osm_updates\changes.osc.gz</p>
+<p>2) osm2pgsql --append -d planet -U postgres -S default.style -E 4326 -C 8000 --slim --number-processes 6 d:\osm_updates\changes.osc.gz</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-diffs" href="/tags/diffs/" rel="tag" title="see questions tagged 'diffs'">diffs</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>29 Sep '18, 02:45</strong>
+</p>
+<img alt="mykol404's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bbd0e184c8bbe03544aefb4e57ac5ccd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15726/mykol404">mykol404</a><br/>
+<span class="score" title="36 reputation points">36</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mykol404 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/66092/">
+                edited
+                <strong>29 Sep '18, 02:46</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66092">
+<a name="66098"></a>
+<div class="comment" id="comment-66098">
+<div class="comment-score" id="post-66098-score"></div>
+<div class="comment-text"><p>What command line did you use to import the initial data with osm2pgsql?</p></div>
+<div class="comment-info" id="comment-66098-info">
+<span class="comment-age">(29 Sep '18, 21:12)</span>
+<a class="comment-user userinfo" href="/users/2921/lonvia">lonvia</a>
+</div>
+</div>
+<a name="66114"></a>
+<div class="comment" id="comment-66114">
+<div class="comment-score" id="post-66114-score"></div>
+<div class="comment-text"><p>d:\osm2pgsql-bin&gt;osm2pgsql -c -d planet -U postgres -W -H localhost -S default.style c:\osm\planet.pbf -E 4326 -C 8000 -s --flat-nodes D:\nodes.cache --number-processes 6</p></div>
+<div class="comment-info" id="comment-66114-info">
+<span class="comment-age">(01 Oct '18, 15:30)</span>
+<a class="comment-user userinfo" href="/users/15726/mykol404">mykol404</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-66092">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66092-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/66092/osm-updates-with-osmosis-osm2pgsql-resulting-in-missing-features?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/66092/osm-updates-with-osmosis-osm2pgsql-resulting-in-missing-features?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/66092/osm-updates-with-osmosis-osm2pgsql-resulting-in-missing-features?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/66092/osm-updates-with-osmosis-osm2pgsql-resulting-in-missing-features?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="66115"></a>
+<div class="answer accepted-answer" id="answer-container-66115">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66115/up/" id="post-66115-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66115-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/66115/down/" id="post-66115-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/66115/" rel="nofollow" title="mykol404 has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You need to be careful to use the same options for update that you used for the import. In your case, you used a flat node file (<code>--flat-nodes</code> option) for the import. You need to keep this file around and use the option for updates as well.</p>
+<p>The file contains all the coordinates of all points in your planets. OSC update files only contain the coordinates of points that have actually been changed. If a way is modified then its coordinates are not in the OSC file. They need to be looked up from the import.</p>
+<p>If you still have the flatnode file, nothing is lost yet. Simply apply your change files again in chronological order, this time with the <code>--flat-nodes</code> option and the lost ways will reappear in your database.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/66115/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>01 Oct '18, 15:48</strong>
+</p>
+<img alt="lonvia's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d888b712d85dee0aa304297f2dc697c7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2921/lonvia">lonvia</a><br/>
+<span class="score" title="6213 reputation points"><span class="">6.2k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="57 badges"><span class="silver">●</span><span class="badgecount">57</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="lonvia has 43 accepted answers">40%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66115">
+</div>
+<div class="comment-tools" id="comment-tools-66115">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66115-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/66092/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="2x5b1Mdu8xoFUUXcEHIF5kkTimdkgvav"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

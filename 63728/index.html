@@ -1,0 +1,195 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/63728/osm2pgsql-extreme-slow-down-in-relation-processing-planet">OSM2PGSQL - Extreme Slow Down in Relation Processing - Planet</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/63728/up/" id="post-63728-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-63728-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/63728/down/" id="post-63728-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/63728/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi - I am trying to load a planet file into Postgres on a very fast University Networked VM and the relation processing speed is extremely slow. But in comparison the Node &amp; Way processing seems to be very fast (when comparing to the OSM2PGSQL benchmarks). My current estimates for the Relation processing to finish is near enough 20 days + !!! I have tried about 20 different loads with different settings - but always the relations are slow.</p>
+<p><strong>Processing: Node(4512083k 5086.9k/s) Way(494141k 137.53k/s) Relation(40080 2.16/s)</strong></p>
+<p>Can anyone point to an obvious mistake or error? Or provide some advice? I'm using the latest OSM2PGSQL build - 0.96.0 64bit ( I have tried 0.94 - but this was even slower)  </p>
+<p><strong>HARDWARE</strong> </p>
+<pre><code>Ubuntu 16.04 VM / 96GB RAM / 8 CPU / 2TB SAN Network
+</code></pre>
+<p><strong>COMMAND</strong></p>
+<p>osm2pgsql -v -l --unlogged  --create --slim -C 30000 --number-processes 8 --flat-nodes /var/data_2/planet.nodes -S /usr/local/share/osm2pgsql/default.style --tablespace-slim-index index_space --tablespace-main-index index_space --hstore -d osm_planet -U osm  planet-latest.osm.pbf</p>
+<p><strong>PostgreSQL Settings</strong> <strong>- Version 9.6.8 / PostGIS 2.3.3</strong></p>
+<pre><code>shared_buffers = 14GB
+work_mem = 1GB
+max_connections = 300
+maintenance_work_mem = 8GB
+effective_cache_size = 25GB
+fsync = off
+synchronous_commit = off
+checkpoint_timeout = 1h
+max_wal_size = 8GB
+min_wal_size = 4GB
+checkpoint_completion_target = 0.95
+full_page_writes = off
+autovacuum = off
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 May '18, 09:52</strong>
+</p>
+<img alt="mike_de_funk's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/23c610c873fb12824008d2d9e17c915b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15164/mike_de_funk">mike_de_funk</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mike_de_funk has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-63728">
+</div>
+<div class="comment-tools" id="comment-tools-63728">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-63728-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/63728/osm2pgsql-extreme-slow-down-in-relation-processing-planet?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/63728/osm2pgsql-extreme-slow-down-in-relation-processing-planet?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/63728/osm2pgsql-extreme-slow-down-in-relation-processing-planet?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/63728/osm2pgsql-extreme-slow-down-in-relation-processing-planet?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="63730"></a>
+<div class="answer accepted-answer" id="answer-container-63730">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/63730/up/" id="post-63730-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-63730-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/63730/down/" id="post-63730-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/63730/" rel="nofollow" title="SimonPoole has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>a) the relation is slow slow because any associated geometries need to be built from the constituent relation members (just as way processing was slower than node processing).</p>
+<p>b) the processing speeds up as the older relations tend to have more large ones and the fast to process ones (turn restrictions etc) tend to have become popular later on (you should have seen a similar effect during way processing).</p>
+<p>c) I wouldn't set number-processors to 8 if you have 8 cores, you will have an additional database process per osm2pgsql thread and you may be overwhelming available memory</p>
+<p>d) check that you are not swapping/paging (one time out is ok, back in not) and that you are not limited by the SAN, these days fast imports tend to run directly to local SSDs.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/63730/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 May '18, 10:02</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/63730/">
+                edited
+                <strong>25 May '18, 13:40</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-63730">
+<a name="63732"></a>
+<div class="comment" id="comment-63732">
+<div class="comment-score" id="post-63732-score"></div>
+<div class="comment-text"><p>Hi Simon - thanks for the reply.</p>
+<p>a) I know that Relations would be slower - just not this slow. I did a full planet import over a year ago on much less powerful infrastructure and was getting ~100/s. this led to a successful import in just under 3 days.</p>
+<p>c) The machine actually has 16 cores, but I will try an import with maybe 6 processes to see if it makes any difference.</p>
+<p>d) I created a 20GB swap partition on the VM prior to the load and the system never uses any swap memory</p>
+<p>Do you have any comments on the Postgres settings? Anything there that might be limiting?</p></div>
+<div class="comment-info" id="comment-63732-info">
+<span class="comment-age">(25 May '18, 12:31)</span>
+<a class="comment-user userinfo" href="/users/15164/mike_de_funk">mike_de_funk</a>
+</div>
+</div>
+<a name="63734"></a>
+<div class="comment" id="comment-63734">
+<div class="comment-score" id="post-63734-score"></div>
+<div class="comment-text"><p>Can you check that the --flat-nodes file is actually being populated (and IMHO that definitely should be local), though you would notice that processing ways too? Modern versions of osm2pgsql are far better in caching so the -C 30000 can be a lot smaller, but as you said you are not swapping so that is unlikely to have an effect.</p>
+<p>In general I would consider anything over two days for a full planet import on a machine half up to the job is too long, so I agree with you there. But I haven't seen any thing in your config that would cause any such problems, so I would continue to suspect the SAN.</p></div>
+<div class="comment-info" id="comment-63734-info">
+<span class="comment-age">(25 May '18, 13:39)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+<a name="63783"></a>
+<div class="comment" id="comment-63783">
+<div class="comment-score" id="post-63783-score">1</div>
+<div class="comment-text"><p>Hi Simon</p>
+<p>I spoke to our infrastructure team at the University - they spun up another VM but this time with "direct access" to the SAN. I'm not an infrastructure specialist but they said it's using ceph rather than iscsi.</p>
+<p>I kicked off a new planet load and the difference was huge. Full planet import in 16 hours :)</p>
+<p>Processing: Node(4512083k 3689.4k/s) Way(494141k 114.12k/s) Relation(5827810 456.22/s)</p>
+<p>Thanks for your help - but it just looks like it was a hardware issue.</p></div>
+<div class="comment-info" id="comment-63783-info">
+<span class="comment-age">(28 May '18, 11:11)</span>
+<a class="comment-user userinfo" href="/users/15164/mike_de_funk">mike_de_funk</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-63730">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-63730-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/63728/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="6r8CSvZBabmM2O2FIHJRREg1rqIP2rZn"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

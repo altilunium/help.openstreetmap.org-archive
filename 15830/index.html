@@ -1,0 +1,153 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/15830/any-substitution-for-tiger-line-address-range-data">any substitution for Tiger Line address range data?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/15830/up/" id="post-15830-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-15830-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/15830/down/" id="post-15830-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/15830/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi everyone
+I am trying to do some routing and locating work with OSM data. I want to locate an address by its street number 
+for example, I want to locate the address "4103 Walnut St, Philadelphia, PA"
+"Walnut St" "Philadelphia“ and "PA" can be got easily, but I have no idea how to parse the OSM data so that I can  find where 4103 is..</p>
+<p>I Tiger Line, this is easy, since it has address range data...</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-locations" href="/tags/locations/" rel="tag" title="see questions tagged 'locations'">locations</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>05 Sep '12, 19:21</strong>
+</p>
+<img alt="NGEva01's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b6f92a74168ad26a9b7c9e084b2a3b55?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4448/ngeva01">NGEva01</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="NGEva01 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-15830">
+</div>
+<div class="comment-tools" id="comment-tools-15830">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-15830-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/15830/any-substitution-for-tiger-line-address-range-data?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/15830/any-substitution-for-tiger-line-address-range-data?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/15830/any-substitution-for-tiger-line-address-range-data?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/15830/any-substitution-for-tiger-line-address-range-data?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="15842"></a>
+<div class="answer" id="answer-container-15842">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/15842/up/" id="post-15842-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-15842-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/15842/down/" id="post-15842-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The best way is to use <a href="http://wiki.openstreetmap.org/wiki/Nominatim">Nominatim</a>.   Many areas of the US are lacking address data, but the addresses which are present in OSM are generally much better than the TIGER lines.   Nominatim has logic which can fall back to the TIGER lines when no OSM data is entered.</p>
+<p>For testing, you can use the OpenStreetMap version of Nominatim.  For low-medium volumes of lookups, you can also use the <a href="http://devblog.mapquest.com/2012/08/21/new-geocoding-service-and-updated-apis-based-on-open-data-2/">Mapquest Open</a> Geocoding APIs.  For rapid response or high volumes of lookups, you will need to set up Nominatim on a server.   In this case, you'll need to load the TIGER line address data following the procedure at <a href="https://help.openstreetmap.org/questions/12150/missing-house-numbers-in-local-nominatim-instance">this answer</a>.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/15842/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Sep '12, 12:22</strong>
+</p>
+<img alt="Mike%20N's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1dd5f61a81b99dd54ec6f33d96aa38b2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/21/mike-n">Mike N</a><br/>
+<span class="score" title="2926 reputation points"><span class="">2.9k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="22 badges"><span class="silver">●</span><span class="badgecount">22</span></span><span title="54 badges"><span class="bronze">●</span><span class="badgecount">54</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Mike N has 16 accepted answers">17%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/15842/">
+                edited
+                <strong>07 Sep '12, 03:33</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-15842">
+<a name="15843"></a>
+<div class="comment" id="comment-15843">
+<div class="comment-score" id="post-15843-score">1</div>
+<div class="comment-text"><p>Doesn't Nominatim use Tiger data in the US?  According to <a href="https://help.openstreetmap.org/questions/12150/missing-house-numbers-in-local-nominatim-instance">this answer</a>, anyway.</p></div>
+<div class="comment-info" id="comment-15843-info">
+<span class="comment-age">(06 Sep '12, 12:28)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="15872"></a>
+<div class="comment" id="comment-15872">
+<div class="comment-score" id="post-15872-score">1</div>
+<div class="comment-text"><p>Good catch - I've updated the answer to refer to the other answer.</p></div>
+<div class="comment-info" id="comment-15872-info">
+<span class="comment-age">(07 Sep '12, 03:34)</span>
+<a class="comment-user userinfo" href="/users/21/mike-n">Mike N</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-15842">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-15842-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/15830/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="uT1kdhnPQghCfnUuVcdfhWdXV0GXMoYH"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

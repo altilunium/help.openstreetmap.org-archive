@@ -1,0 +1,195 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/71022/osm-not-rendering-all-content">OSM not rendering all content</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/71022/up/" id="post-71022-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-71022-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/71022/down/" id="post-71022-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/71022/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm developing project with your osm soft. </p>
+<p>Some months agora I was able to start a server of tiles using a docker (<a href="https://github.com/Overv/openstreetmap-tile-server)">https://github.com/Overv/openstreetmap-tile-server)</a></p>
+<p>Now, on try to create a new server I am not able to render tiles with information about state, city and street.. all my tiles in a country are 'blank'</p>
+<p>(northeastern Brazil)
+<img alt="alt text" src="https://i.imgur.com/r5ILYW5.png"/></p>
+<h2>--</h2>
+<p>The log of my docker can be find in : <a href="https://anotepad.com/notes/33n3c3c">https://anotepad.com/notes/33n3c3c</a></p>
+<p>Data used: <a href="https://download.geofabrik.de/south-america/brazil.html">https://download.geofabrik.de/south-america/brazil.html</a></p>
+<p>My question: Whats is the reason for my tiles be 'blank' ?</p>
+<p>(Sorry if it is not the place to do this question)</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-brazil" href="/tags/brazil/" rel="tag" title="see questions tagged 'brazil'">brazil</a>
+<a class="post-tag tag-link-tiles" href="/tags/tiles/" rel="tag" title="see questions tagged 'tiles'">tiles</a>
+<a class="post-tag tag-link-docker" href="/tags/docker/" rel="tag" title="see questions tagged 'docker'">docker</a>
+<a class="post-tag tag-link-tileserver" href="/tags/tileserver/" rel="tag" title="see questions tagged 'tileserver'">tileserver</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 Oct '19, 15:00</strong>
+</p>
+<img alt="Diego's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7c1485a1adb683f4bab3c29a3d8283bc?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/17271/diego">Diego</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Diego has no accepted answers">0%</span>
+</p>
+</img></div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/71022/">
+                edited
+                <strong>03 Oct '19, 15:00</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-71022">
+<a name="71043"></a>
+<div class="comment" id="comment-71043">
+<div class="comment-score" id="post-71043-score">1</div>
+<div class="comment-text"><p>The log isn't visible in a web browser without adverts appearing over the top of it.</p>
+<p>What have you looked at so far in order to investigate the problem?</p></div>
+<div class="comment-info" id="comment-71043-info">
+<span class="comment-age">(05 Oct '19, 11:11)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="71047"></a>
+<div class="comment" id="comment-71047">
+<div class="comment-score" id="post-71047-score"></div>
+<div class="comment-text"><p>I think something is breaking the thread of render of images</p>
+<p>Monday, I will try to build a version using the data of a small country to test my theory</p></div>
+<div class="comment-info" id="comment-71047-info">
+<span class="comment-age">(05 Oct '19, 17:17)</span>
+<a class="comment-user userinfo" href="/users/17271/diego">Diego</a>
+</div>
+</div>
+<a name="72218"></a>
+<div class="comment" id="comment-72218">
+<div class="comment-score" id="post-72218-score">1</div>
+<div class="comment-text"><p>AFAIK coastline rendering is normally special and done from a different file from the other data. Do you definitely have all the required data?</p></div>
+<div class="comment-info" id="comment-72218-info">
+<span class="comment-age">(26 Dec '19, 02:42)</span>
+<a class="comment-user userinfo" href="/users/4426/insertuser">InsertUser</a>
+</div>
+</div>
+<a name="72219"></a>
+<div class="comment" id="comment-72219">
+<div class="comment-score" id="post-72219-score">1</div>
+<div class="comment-text"><p>Do you have an extra colon in your first line <code>.../openmaptiles/brazil-latest.osm.pbf:/data.osm.pbf -v...</code>?</p></div>
+<div class="comment-info" id="comment-72219-info">
+<span class="comment-age">(26 Dec '19, 03:00)</span>
+<a class="comment-user userinfo" href="/users/4426/insertuser">InsertUser</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-71022">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-71022-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/71022/osm-not-rendering-all-content?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/71022/osm-not-rendering-all-content?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/71022/osm-not-rendering-all-content?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/71022/osm-not-rendering-all-content?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="72220"></a>
+<div class="answer answered-by-owner" id="answer-container-72220">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/72220/up/" id="post-72220-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-72220-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/72220/down/" id="post-72220-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p><a href="https://help.openstreetmap.org/users/4426/insertuser"><a href="https://help.openstreetmap.org/users/4426/insertuser">@insertUser</a></a> </p>
+<p>Yes, I had all required data.</p>
+<p>I was able to render all content some weeks before the 'crash'</p>
+<p>Current status:</p>
+<ol>
+<li>The OSM is working fine in the server of my client</li>
+<li>I am using a public server, in some moment in the future I will recreate my OSM server</li>
+</ol>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/72220/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>26 Dec '19, 11:12</strong>
+</p>
+<img alt="Diego's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7c1485a1adb683f4bab3c29a3d8283bc?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17271/diego">Diego</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Diego has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/72220/">
+                edited
+                <strong>26 Dec '19, 11:14</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-72220">
+</div>
+<div class="comment-tools" id="comment-tools-72220">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-72220-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/71022/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="4Xq4B0rrREVmdUxTUfbkPFU6q4PnqAqw"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

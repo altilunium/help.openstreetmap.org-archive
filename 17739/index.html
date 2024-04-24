@@ -1,0 +1,256 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/17739/how-do-i-see-gpx-waypoints-in-josm">How do I see GPX waypoints in JOSM</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/17739/up/" id="post-17739-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-17739-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/17739/down/" id="post-17739-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/17739/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am trying to map an area from a GPX 1.1 file I collected on a trip (cannot easily return there).  The GPX file was generated with <a href="http://osmtracker-android.googlecode.com/">OSMTracker for Android™</a> and contains both &lt;wpt&gt; and &lt;trk&gt;/&lt;trkpt&gt; tags.</p>
+<p>My &lt;wpt&gt; points contain text descriptions (&lt;name&gt; tags) of map features such as barriers and roads.  Unfortunately the current JOSM doesn't seem to display them in any meaningful way, and all the menu items I can find for the resulting "marker" layer are focused on Audio mapping, which is just so irrelevant.</p>
+<p>My searching came up with references to a setting named "Create non-audio markers when reading GPX", but I was unable to find this setting in the actual JOSM user interface.  I also came across a lot of (bad) replies about how to set icons for imported Garmin GPX files with &lt;sym&gt; tags, but that is not what I have, just a bunch of plain &lt;name&gt; tags.</p>
+<p>I have also tried converting the other GPX layer to a data layer, but it only includes the nameless &lt;trkpt&gt; nodes, not the named &lt;wpt&gt; nodes.</p>
+<p>So what is the practical way to import GPX data to JOSM for use as the base of mapping features?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-marker" href="/tags/marker/" rel="tag" title="see questions tagged 'marker'">marker</a>
+<a class="post-tag tag-link-josm" href="/tags/josm/" rel="tag" title="see questions tagged 'josm'">josm</a>
+<a class="post-tag tag-link-gpx" href="/tags/gpx/" rel="tag" title="see questions tagged 'gpx'">gpx</a>
+<a class="post-tag tag-link-waypoints" href="/tags/waypoints/" rel="tag" title="see questions tagged 'waypoints'">waypoints</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Nov '12, 04:13</strong>
+</p>
+<img alt="jbohmdk's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d148a0fb6c59569b86b2f3062dea5a61?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5006/jbohmdk">jbohmdk</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="jbohmdk has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-17739">
+<a name="17767"></a>
+<div class="comment" id="comment-17767">
+<div class="comment-score" id="post-17767-score"></div>
+<div class="comment-text"><p>If you would provide the file in question, I'd like to have a look at it.
+If you don't know how, put it to a one-klick-hoster like this one: <a href="http://ompldr.org/">http://ompldr.org/</a></p></div>
+<div class="comment-info" id="comment-17767-info">
+<span class="comment-age">(18 Nov '12, 17:18)</span>
+<a class="comment-user userinfo" href="/users/583/malenki">malenki</a>
+</div>
+</div>
+<a name="17777"></a>
+<div class="comment" id="comment-17777">
+<div class="comment-score" id="post-17777-score">1</div>
+<div class="comment-text"><p>I'm using GPX OSMTracker for Android along with JOSM (v5576). I'm able to see the way points in JOSM.</p>
+<p>The text way point from the gpx file looks as follows :
+</p>
+<pre>    &lt; wpt lat="12.88459012" lon="77.58261194"&gt;
+        &lt; ele&gt;846.7&lt; /ele&gt;
+        &lt; time&gt;2012-11-17T12:43:28Z &lt; /time&gt;
+        &lt; name&gt;&lt;![CDATA[bus stop]]&gt;&lt; /name&gt;
+        &lt; sat&gt;9&lt;/sat&gt;
+    &lt; /wpt&gt;
+</pre>
+<p></p>
+<p>Please ignore the spaces after the "&lt;" symbol, there are adde to make the XML visible.
+Did you try turning off the imagery or changing the colors of GPS points (Preferences -&gt; Display Settings -&gt; Colors)?</p></div>
+<div class="comment-info" id="comment-17777-info">
+<span class="comment-age">(19 Nov '12, 04:38)</span>
+<a class="comment-user userinfo" href="/users/5023/bluetiger">BlueTiger</a>
+</div>
+</div>
+<a name="19441"></a>
+<div class="comment" id="comment-19441">
+<div class="comment-score" id="post-19441-score">1</div>
+<div class="comment-text"><p>For info, a couple of related questions - <a href="https://help.openstreetmap.org/questions/6368/in-josm-is-it-possible-to-see-gpx-track-waypoint-details">here</a> and <a href="https://help.openstreetmap.org/questions/7675/josm-is-it-possible-to-convert-an-individual-waypoint-in-a-gpx-file-to-a-node">here</a>.</p></div>
+<div class="comment-info" id="comment-19441-info">
+<span class="comment-age">(30 Jan '13, 12:30)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-17739">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-17739-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/17739/how-do-i-see-gpx-waypoints-in-josm?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/17739/how-do-i-see-gpx-waypoints-in-josm?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/17739/how-do-i-see-gpx-waypoints-in-josm?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/17739/how-do-i-see-gpx-waypoints-in-josm?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="19548"></a>
+<div class="answer answered-by-owner" id="answer-container-19548">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/19548/up/" id="post-19548-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-19548-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/19548/down/" id="post-19548-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>First, sorry for not returning to this forum sooner.</p>
+<p>I found my own workaround before any answers came here, this is extremely clumsy, but seemed the only way I could see the waypoints and their names in JOSM:</p>
+<ol>
+<li>Convert the gpx file from LF to CRLF format with cygwin (only needed on Windows).</li>
+<li>Use a text editor to create two copies of the file, one with waypoints only, one with trackpoints only.</li>
+<li>Use GPSBabel to convert the wpt-only gpx file to an osm file.</li>
+<li>In JOSM, import the waypoint osm file and the trackpoint gpx file as their own layers.</li>
+<li>Now do the actual editing.</li>
+</ol>
+<p>I don't know why it worked for BlueTiger, as my waypoints look the same in the GPX and I was using the same JOSM version at the time.  If this was about color settings, then the defaults must have been wrong in that version of JOSM.</p>
+<p>As for the two links provided by user SomeOneElse, the first was another Garmin-gpx-symbol post of no relevance, but <a href="https://help.openstreetmap.org/questions/7675/josm-is-it-possible-to-convert-an-individual-waypoint-in-a-gpx-file-to-a-node">the other</a> was very similar to both my problems and solutions, except I cared about all the waypoints in the file, not just one.</p>
+<p>I don't think I was using any satellite image overlays during the editing.  So I cannot accept Glassman's "answer" as having any relevance.</p>
+<p>I cannot retest right now as I don't have a working Java on the PC.</p>
+<p>Here are some snippets from one of the (large) files in question:</p>
+<pre><code>&lt; ?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt; gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="OSMTracker for Android™ - <a href="http://osmtracker-android.googlecode.com/">http://osmtracker-android.googlecode.com/"</a> xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 <a href="http://www.topografix.com/GPX/1/1/gpx.xsd">http://www.topografix.com/GPX/1/1/gpx.xsd</a> "&gt;
+    &lt; wpt lat="55.41190083600891" lon="11.560011318167248"&gt;
+        &lt; ele&gt;87.0&lt; /ele&gt;
+        &lt; time&gt;2012-10-28T23:24:29Z&lt; /time&gt;
+        &lt; name&gt;&lt; ![CDATA[School]]&gt;&lt; /name&gt;
+        &lt; cmt&gt;&lt; ![CDATA[Accuracy: 5.0m]]&gt;&lt; /cmt&gt;
+        &lt; sat&gt;7&lt; /sat&gt;
+        &lt; hdop&gt;1.25&lt; /hdop&gt;
+    &lt; /wpt&gt;
+...
+    &lt; trk&gt;
+        &lt; name&gt;&lt; ![CDATA[Tracked with OSMTracker for Android™]]&gt;&lt; /name&gt;
+        &lt; cmt&gt;&lt; ![CDATA[Warning: HDOP values aren't the HDOP as returned by the GPS device. They're approximated from the location accuracy in meters.]]&gt;&lt; /cmt&gt;
+        &lt; trkseg&gt;
+            &lt; trkpt lat="55.411865588216614" lon="11.560238205932786"&gt;
+                &lt; ele&gt;70.0&lt; /ele&gt;
+                &lt; time&gt;2012-10-28T23:24:02Z&lt; /time&gt;
+                &lt; hdop&gt;8.75&lt; /hdop&gt;
+            &lt; /trkpt&gt;
+...
+        &lt; /trkseg&gt;
+    &lt; /trk&gt;
+&lt; /gpx&gt;
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/19548/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Feb '13, 07:07</strong>
+</p>
+<img alt="jbohmdk's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d148a0fb6c59569b86b2f3062dea5a61?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5006/jbohmdk">jbohmdk</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="jbohmdk has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-19548">
+</div>
+<div class="comment-tools" id="comment-tools-19548">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-19548-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="19475"></a>
+<div class="answer" id="answer-container-19475">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/19475/up/" id="post-19475-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-19475-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/19475/down/" id="post-19475-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Try turning your background image (bing) off. You can also change the color of the gpx trace in Preferences. The light gray is really hard to read. So in Display Preferences, Colors Tab change gps marker to a brighter color. What is displayed is controlled in the GPS Tab. Look for Waypoint labeling. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/19475/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>31 Jan '13, 01:20</strong>
+</p>
+<img alt="Glassman's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/131090595e5da40681c2f9bfabca395d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5514/glassman">Glassman</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Glassman has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-19475">
+</div>
+<div class="comment-tools" id="comment-tools-19475">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-19475-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/17739/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="hTrCppmQjzGalqCdWXDfCLHg2TfCjRHJ"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

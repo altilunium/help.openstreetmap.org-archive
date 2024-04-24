@@ -1,0 +1,206 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/48449/how-to-get-area-type-given-latlon-coordinates">How to get area type given lat/lon coordinates ?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48449/up/" id="post-48449-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48449-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/48449/down/" id="post-48449-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/48449/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi -</p>
+<p>sorry if this question seems stupid. 
+Given a lat/lon coordinates, I'd like to known if the point is in a lake, in a forest or on an highway for instance.</p>
+<p>Nominatim geocoding gives me the nearest node thus it does not really answer my need.</p>
+<p>What's the right way / tool to use to get that ?</p>
+<p>Thanks a lot for your help</p>
+<p>--
+david</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-reversegeocoding" href="/tags/reversegeocoding/" rel="tag" title="see questions tagged 'reversegeocoding'">reversegeocoding</a>
+<a class="post-tag tag-link-geocoding" href="/tags/geocoding/" rel="tag" title="see questions tagged 'geocoding'">geocoding</a>
+<a class="post-tag tag-link-coordinates" href="/tags/coordinates/" rel="tag" title="see questions tagged 'coordinates'">coordinates</a>
+<a class="post-tag tag-link-area" href="/tags/area/" rel="tag" title="see questions tagged 'area'">area</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>02 Mar '16, 13:23</strong>
+</p>
+<img alt="dmercier90's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/878fd3d25e7dd8ba8c0fb59e7e450587?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11931/dmercier90">dmercier90</a><br/>
+<span class="score" title="76 reputation points">76</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="dmercier90 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/48449/">
+                edited
+                <strong>02 Mar '16, 14:30</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48449">
+</div>
+<div class="comment-tools" id="comment-tools-48449">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48449-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/48449/how-to-get-area-type-given-latlon-coordinates?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/48449/how-to-get-area-type-given-latlon-coordinates?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/48449/how-to-get-area-type-given-latlon-coordinates?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/48449/how-to-get-area-type-given-latlon-coordinates?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="48450"></a>
+<div class="answer accepted-answer" id="answer-container-48450">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48450/up/" id="post-48450-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48450-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/48450/down/" id="post-48450-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/48450/" rel="nofollow" title="dmercier90 has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This is exactly what "query feature" on the <a href="http://osm.org/">http://osm.org/</a> map does, using <a href="http://wiki.openstreetmap.org/wiki/Overpass_turbo">Overpass Turbo</a>:</p>
+<pre><code>[timeout:5][out:json];is_in(lat,lon)-&gt;.a;way(pivot.a);out tags geom({{bbox}});relation(pivot.a);out tags bb;
+</code></pre>
+<p>Where you need to replace <code>lon</code> and <code>lat</code> with the coordinates of the point, and replace <code>{{bbox}}</code> by the current map bounding box (if you need that). This gives you the elements <em>surrounding</em> the given point. Note that this also returns administrative boundaries (county, state, etc.), not just physical elements - you'd need to filter on this, perhaps by throwing away <code>boundary</code> relations etc. See e.g. <a href="http://overpass-api.de/api/convert?data=%5Btimeout%3A5%5D%5Bout%3Ajson%5D%3Bis_in(50.08417%2C14.35882)-%3E.a%3Bway(pivot.a)%3Bout%20tags%20geom(50.08157175512576%2C14.357349872589111%2C50.08436684351692%2C14.374194145202637)%3Brelation(pivot.a)%3Bout%20tags%20bb%3B&amp;target=compact">this query</a> - note that the largest enclosing feature is the entire country.</p>
+<p>Also, this will give you <em>enclosing</em> features - so for a highway (which is usually an unclosed way), you wouldn't get a usable result. For that, you may need the other query, "nearby features":</p>
+<pre><code>[timeout:5][out:json];(node(around:radius,lat,lon);way(around:radius,lat,lon));out tags geom({{bbox}});relation(around:radius,lat,lon);out geom({{bbox}});
+</code></pre>
+<p>Again, you need to replace <code>lon</code>,<code>lat</code>,<code>{{bbox}}</code>, and in addition <code>radius</code> (how far from the point to look, not sure of the unit) with your data. See e.g. <a href="http://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A5%5D%3B%28node%28around%3A35%2C50%2E08417%2C14%2E35882%29%3Bway%28around%3A35%2C50%2E08417%2C14%2E35882%29%3B%29%3Bout%20tags%20geom%2850%2E0824805209559%2C14%2E355810284614563%2C50%2E08604657192704%2C14%2E362789392471315%29%3Brelation%28around%3A22%2E5%2C50%2E08417%2C14%2E35882%29%3Bout%20body%20geom%2850%2E0824805209559%2C14%2E355810284614563%2C50%2E08604657192704%2C14%2E362789392471315%29%3B%0A">this query</a> - note that by setting the radius too high, there will be many objects; but with a radius too low, there may not be anything found. Depending on your goal, perhaps you might want to start out small and increase the radius in a few steps.</p>
+<p>Pay attention also to the freshness data returned with results - Overpass uses its own cache, and updates it from the main db; this can sometimes take <em>days</em>, so newest edits may not be returned in the results immediately.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/48450/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>02 Mar '16, 14:44</strong>
+</p>
+<img alt="Piskvor's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8200fa5c0cc8feb096558c5972a6191c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9641/piskvor">Piskvor</a><br/>
+<span class="score" title="1266 reputation points"><span class="">1.3k</span></span><span title="9 badges"><span class="badge1">●</span><span class="badgecount">9</span></span><span title="15 badges"><span class="silver">●</span><span class="badgecount">15</span></span><span title="35 badges"><span class="bronze">●</span><span class="badgecount">35</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Piskvor has 9 accepted answers">37%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/48450/">
+                edited
+                <strong>02 Mar '16, 16:51</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48450">
+<a name="48451"></a>
+<div class="comment" id="comment-48451">
+<div class="comment-score" id="post-48451-score"></div>
+<div class="comment-text"><p>Thanks a lot for your fast answer Piskvor !</p>
+<p>I'm going to have a look at Overpass, it seems it will help for sure.
+Btw I didn't found any access to overpass API from <a href="http://osm.org">http://osm.org</a>, maybe something's missing me or I didn't understand. As far as I know osm.org reverse geocoding is using Nominatim, not Overpass.</p>
+<p>Example queries you have provided will be very usefull, thanks again.</p></div>
+<div class="comment-info" id="comment-48451-info">
+<span class="comment-age">(02 Mar '16, 15:00)</span>
+<a class="comment-user userinfo" href="/users/11931/dmercier90">dmercier90</a>
+</div>
+</div>
+<a name="48452"></a>
+<div class="comment" id="comment-48452">
+<div class="comment-score" id="post-48452-score">3</div>
+<div class="comment-text"><p>Overpass is accessed when you use the "Query features" tool, the "?" at the bottom of the right button bar.</p></div>
+<div class="comment-info" id="comment-48452-info">
+<span class="comment-age">(02 Mar '16, 15:11)</span>
+<a class="comment-user userinfo" href="/users/10973/maxerickson">maxerickson</a>
+</div>
+</div>
+<a name="48454"></a>
+<div class="comment" id="comment-48454">
+<div class="comment-score" id="post-48454-score"></div>
+<div class="comment-text"><p>Thanks Maxerickson, I'm going to change my glasses :)</p></div>
+<div class="comment-info" id="comment-48454-info">
+<span class="comment-age">(02 Mar '16, 15:24)</span>
+<a class="comment-user userinfo" href="/users/11931/dmercier90">dmercier90</a>
+</div>
+</div>
+<a name="48455"></a>
+<div class="comment" id="comment-48455">
+<div class="comment-score" id="post-48455-score"></div>
+<div class="comment-text"><p>To correct answer, it seems is_in takes (lat,lon), not (lon,lat)</p></div>
+<div class="comment-info" id="comment-48455-info">
+<span class="comment-age">(02 Mar '16, 16:27)</span>
+<a class="comment-user userinfo" href="/users/11931/dmercier90">dmercier90</a>
+</div>
+</div>
+<a name="48456"></a>
+<div class="comment" id="comment-48456">
+<div class="comment-score" id="post-48456-score"></div>
+<div class="comment-text"><p>Thanks, good catch! Silly me, edited.</p></div>
+<div class="comment-info" id="comment-48456-info">
+<span class="comment-age">(02 Mar '16, 16:49)</span>
+<a class="comment-user userinfo" href="/users/9641/piskvor">Piskvor</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-48450">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48450-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/48449/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="RCdEs1sJbks62kQljLsVTTJa5maGUZh5"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

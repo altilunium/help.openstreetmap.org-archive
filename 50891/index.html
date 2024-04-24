@@ -1,0 +1,193 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/50891/problem-with-rendering-water-from-overpass-data">Problem with rendering water from Overpass data</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/50891/up/" id="post-50891-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-50891-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/50891/down/" id="post-50891-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/50891/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>EDIT: 
+The question is also posted here: <a href="http://forum.openstreetmap.org/viewtopic.php?id=55126">http://forum.openstreetmap.org/viewtopic.php?id=55126</a></p>
+<p>In the past, I thought thay it might be a problem with Maperitive, but apparently it is not: <a href="https://groups.google.com/forum/m/#!msg/maperitive/-aXn7-2_f-4/nrVaQJ18HgAJ">https://groups.google.com/forum/m/#!msg/maperitive/-aXn7-2_f-4/nrVaQJ18HgAJ</a></p>
+<p>Hello! I am trying to render a simple but complete map of a 18x18km city area.</p>
+<p>I extract data from my own instance of OverpassAPI, using query given below, and then open extracted *.osm file in Maperitive and render a bitmap. </p>
+<p>My example query for NYC:</p>
+<pre><code>[timeout:3600];(node(40.64975,-74.09327,40.811447,-73.87989);rel(bn)-&gt;.x;way(bn);rel(bw););(._;way(r););(._;node(r)-&gt;.x;node(w););(._;rel(br);rel(br);rel(br);rel(br););out;
+</code></pre>
+<p>Example map - as you can clearly see, a huge part of water is not rendered at all:</p>
+<p><img alt="alt text" src="http://help.openstreetmap.org/upfiles/NYC.jpg"/></p>
+<p>P.S. Someone has already advised me to download data from geofabrik, and extract a piece of it with osmconvert, using the 'keep ways and areas complete, even if they cross the border' option. It works just fine, but is 10x slower than downloading data from Overpass. I am pretty sure that it is possible to write a Overpass query which will fit my needs, but the query language is difficult. Help me please!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-water" href="/tags/water/" rel="tag" title="see questions tagged 'water'">water</a>
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-overpassapi" href="/tags/overpassapi/" rel="tag" title="see questions tagged 'overpassapi'">overpassapi</a>
+<a class="post-tag tag-link-maperitive" href="/tags/maperitive/" rel="tag" title="see questions tagged 'maperitive'">maperitive</a>
+<a class="post-tag tag-link-query" href="/tags/query/" rel="tag" title="see questions tagged 'query'">query</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>13 Jul '16, 14:12</strong>
+</p>
+<img alt="Kervyn's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/83574717ad22ec1c6ed654911a88ff9d?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/12545/kervyn">Kervyn</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Kervyn has no accepted answers">0%</span>
+</p>
+</img></div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/50891/">
+                edited
+                <strong>15 Jul '16, 10:09</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-50891">
+<a name="50894"></a>
+<div class="comment" id="comment-50894">
+<div class="comment-score" id="post-50894-score">2</div>
+<div class="comment-text"><p>Did you check your .osm file in JOSM already to see if it includes all relevant data?</p></div>
+<div class="comment-info" id="comment-50894-info">
+<span class="comment-age">(13 Jul '16, 14:48)</span>
+<a class="comment-user userinfo" href="/users/8708/mmd">mmd</a>
+</div>
+</div>
+<a name="50900"></a>
+<div class="comment" id="comment-50900">
+<div class="comment-score" id="post-50900-score">2</div>
+<div class="comment-text"><p>Cross posted: <a href="http://forum.openstreetmap.org/viewtopic.php?pid=600156#p600156">http://forum.openstreetmap.org/viewtopic.php?pid=600156#p600156</a></p></div>
+<div class="comment-info" id="comment-50900-info">
+<span class="comment-age">(13 Jul '16, 18:47)</span>
+<a class="comment-user userinfo" href="/users/8708/mmd">mmd</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-50891">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-50891-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/50891/problem-with-rendering-water-from-overpass-data?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/50891/problem-with-rendering-water-from-overpass-data?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/50891/problem-with-rendering-water-from-overpass-data?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/50891/problem-with-rendering-water-from-overpass-data?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="50901"></a>
+<div class="answer" id="answer-container-50901">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/50901/up/" id="post-50901-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-50901-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/50901/down/" id="post-50901-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I don't know enough about coastline rendering to be positive, but if you have a look at <a href="http://www.openstreetmap.org/way/179057060">one of the ways where your water stops</a> you'll see that it's only part of one multipolygon. Hence your map is rendering the data correctly: there is actually nothing in the data that would imply this is water. That has something to do with this being the sea: in OpenStreetMap, coastlines are treated a bit special. A dataset defining the main bodies of water is kept a little separate from the general database, to define main landmasses and oceans. This is to avoid the constant flooding of continents you would see everytime someone makes a tiny mistake when editing coastlines.</p>
+<p>I guess you might solve it for your usecase by closing your landmasses along the border of your area, and defining everything not enclosed as sea.</p>
+<p>I'm sure others can give a more exact answer as to the rendering of coastlines.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/50901/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>13 Jul '16, 19:13</strong>
+</p>
+<img alt="joost%20schouppe's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1df835d513b1282e0edd7405d29cd8d9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10142/joost-schouppe">joost schouppe</a><br/>
+<span class="score" title="3427 reputation points"><span class="">3.4k</span></span><span title="24 badges"><span class="badge1">●</span><span class="badgecount">24</span></span><span title="50 badges"><span class="silver">●</span><span class="badgecount">50</span></span><span title="87 badges"><span class="bronze">●</span><span class="badgecount">87</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="joost schouppe has 9 accepted answers">12%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-50901">
+<a name="50905"></a>
+<div class="comment" id="comment-50905">
+<div class="comment-score" id="post-50905-score"></div>
+<div class="comment-text"><p>Thanks joost! It would be quite difficult to write a tool automatically closing the landmasses as you suggest, though. 
+I hope that somebody will help me rewrite the query, or suggest other solution to download the data (including water) properly ;-)</p></div>
+<div class="comment-info" id="comment-50905-info">
+<span class="comment-age">(14 Jul '16, 11:23)</span>
+<a class="comment-user userinfo" href="/users/12545/kervyn">Kervyn</a>
+</div>
+</div>
+<a name="50965"></a>
+<div class="comment" id="comment-50965">
+<div class="comment-score" id="post-50965-score"></div>
+<div class="comment-text"><p>Well, I'm not sure if there's a way to let overpass return you data that doesn't exist :) (i.e. continents aren't regular polygons in OSM)
+But you could refrase your question into "how to get closed landmasses with overpass" or something like that. Other than that, I would think the simplest way would be to manually create a polygon for the area you need.</p></div>
+<div class="comment-info" id="comment-50965-info">
+<span class="comment-age">(18 Jul '16, 10:58)</span>
+<a class="comment-user userinfo" href="/users/10142/joost-schouppe">joost schouppe</a>
+</div>
+</div>
+<a name="50967"></a>
+<div class="comment" id="comment-50967">
+<div class="comment-score" id="post-50967-score">2</div>
+<div class="comment-text"><p>This might help too: <a href="http://maperitive.net/docs/Rendering_Coastlines_And_Sea.html">http://maperitive.net/docs/Rendering_Coastlines_And_Sea.html</a></p></div>
+<div class="comment-info" id="comment-50967-info">
+<span class="comment-age">(18 Jul '16, 12:42)</span>
+<a class="comment-user userinfo" href="/users/10142/joost-schouppe">joost schouppe</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-50901">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-50901-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/50891/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="PZPgo1P24XEK2vfh31gJanm9bxXbOQNq"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,216 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/60210/get-around-ways-more-data">get around ways - more data</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/60210/up/" id="post-60210-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-60210-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/60210/down/" id="post-60210-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/60210/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm trying to get the ways around me using this API query: (overpass-turbo.au)</p>
+<pre><code>&lt;query type="way"&gt;
+    &lt;around lat="52.002362" lon="-1.271373" radius="20"/&gt;
+ &lt;has-kv k="highway"/&gt;
+&lt;/query&gt;
+&lt;union&gt;  &lt;item/&gt;
+  &lt;recurse type="down"/&gt;
+&lt;/union&gt;
+&lt;print/&gt;
+</code></pre>
+<p>Its returns data but i want to get more nodes, in this example more of road M40 so I can reduce the API calls.
+is it possible using this query with other parameters or by query for the specific road (M40) by another API call?</p>
+<p>Thnak's</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-ways" href="/tags/ways/" rel="tag" title="see questions tagged 'ways'">ways</a>
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-api" href="/tags/api/" rel="tag" title="see questions tagged 'api'">api</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>22 Oct '17, 10:39</strong>
+</p>
+<img alt="alto's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/663a45374a1761302899764bb54aac8f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14342/alto">alto</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="alto has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-60210">
+<a name="60236"></a>
+<div class="comment" id="comment-60236">
+<div class="comment-score" id="post-60236-score">1</div>
+<div class="comment-text"><p>Is there any reason you're looking for an API for this?  Why not just download the data that you are interested in, load it into a database and query that?</p></div>
+<div class="comment-info" id="comment-60236-info">
+<span class="comment-age">(23 Oct '17, 12:19)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="60237"></a>
+<div class="comment" id="comment-60237">
+<div class="comment-score" id="post-60237-score"></div>
+<div class="comment-text"><p>I'm working on a POC application that need to know ahead the road I'm on it.
+The DB can't be downloaded to the mobile device - too big.
+For now I'm using the public (overpass-turbo.au) API server, but in the moment it will work, I'll use my own servers for that of course.</p></div>
+<div class="comment-info" id="comment-60237-info">
+<span class="comment-age">(23 Oct '17, 12:22)</span>
+<a class="comment-user userinfo" href="/users/14342/alto">alto</a>
+</div>
+</div>
+<a name="60238"></a>
+<div class="comment" id="comment-60238">
+<div class="comment-score" id="post-60238-score"></div>
+<div class="comment-text"><p>Can't the mobile app contact an app server of yours?  Then it can do any query it wants and not be limited by a third-party API (which you presumably don't have an SLA for).</p></div>
+<div class="comment-info" id="comment-60238-info">
+<span class="comment-age">(23 Oct '17, 12:35)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="60239"></a>
+<div class="comment not_top_scorer" id="comment-60239">
+<div class="comment-score" id="post-60239-score"></div>
+<div class="comment-text"><p>Sure, that the plan, after I'll see that it's working.
+For now it's simple to work with the public API servers than build my own servers.
+Time to market and proof of concept first :)</p></div>
+<div class="comment-info" id="comment-60239-info">
+<span class="comment-age">(23 Oct '17, 12:38)</span>
+<a class="comment-user userinfo" href="/users/14342/alto">alto</a>
+</div>
+</div>
+<a name="60240"></a>
+<div class="comment" id="comment-60240">
+<div class="comment-score" id="post-60240-score">2</div>
+<div class="comment-text"><p>Just be careful you don't get into <a href="https://xkcd.com/1150/">https://xkcd.com/1150/</a> territory :)</p></div>
+<div class="comment-info" id="comment-60240-info">
+<span class="comment-age">(23 Oct '17, 12:41)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="60256"></a>
+<div class="comment" id="comment-60256">
+<div class="comment-score" id="post-60256-score">1</div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/14342/alto">@alto</a>: what do you think of apps such as OsmAnd, maps.me, Magic Earth, etc. They all put a database on a mobile device. That database contains streets, addresses, POIs, opening hours, etc. and information to render, navigate and search. They do not put the whole world on your device, but allow you to download the country/state/provinces of interest. No need to pay for mobile data.</p></div>
+<div class="comment-info" id="comment-60256-info">
+<span class="comment-age">(24 Oct '17, 04:49)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+<a name="60261"></a>
+<div class="comment not_top_scorer" id="comment-60261">
+<div class="comment-score" id="post-60261-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/5390/escada">@escada</a>: totally correct, I even uses some of them but as I said, for now I'm working on POC project only, it's easier to work for now with public API.
+in the feature, if this project will became something 'real', we'll have to decide how to set/get the data, I assume that its will be online also, but from our servers, since the all app needs to be online and it's a lot of data to download if you don't know the exact area you going to be on and you have to remember to do it before going there...</p>
+<p>Its all depend on the usage and business model of the app.</p></div>
+<div class="comment-info" id="comment-60261-info">
+<span class="comment-age">(24 Oct '17, 10:16)</span>
+<a class="comment-user userinfo" href="/users/14342/alto">alto</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-60210">
+<span class="comments-showing">
+            showing 5 of 7
+        </span>
+<a class="show-all-comments-link" href="#">show 2 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-60210-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/60210/get-around-ways-more-data?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/60210/get-around-ways-more-data?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/60210/get-around-ways-more-data?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/60210/get-around-ways-more-data?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="60234"></a>
+<div class="answer answered-by-owner" id="answer-container-60234">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/60234/up/" id="post-60234-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-60234-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/60234/down/" id="post-60234-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>After looking more into the api:
+Its shame there is no straight way to get the all parts of the road by some part of it, it's will be much easier.
+I found a way to do it, but with some work:</p>
+<ol>
+<li>query again the overpass api by the name &amp; ref that I get from the first query, e.g: <a href="http://overpass-api.de/api/interpreter?data=[out:json][timeout:25];(node[">http://overpass-api.de/api/interpreter?data=[out:json][timeout:25];(node["name"="John</a> F Foran Freeway"]["ref"="I 280"];way["name"="John F Foran Freeway"]["ref"="I 280"];relation["name"="John F Foran Freeway"]["ref"="I 280"];);out;&gt;;out skel qt;</li>
+<li>get all way nodes from the result json and merge them to one list of points, need some work since you need to pass each of the items and find the next one by compare each the last and the first points.</li>
+</ol>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/60234/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>23 Oct '17, 11:55</strong>
+</p>
+<img alt="alto's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/663a45374a1761302899764bb54aac8f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14342/alto">alto</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="alto has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-60234">
+</div>
+<div class="comment-tools" id="comment-tools-60234">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-60234-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/60210/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="7eUfqClDrwdtlLJyQFnmBC37xqcb7UKo"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

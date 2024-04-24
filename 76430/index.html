@@ -1,0 +1,170 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/76430/pbf-file-missing-osmosis_replication_sequence_number-in-header">pbf file missing 'osmosis_replication_sequence_number' in header</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/76430/up/" id="post-76430-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-76430-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/76430/down/" id="post-76430-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/76430/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I downloaded the latest pbf file(dated 27-Aug-2020 23:37) from <a href="https://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/pbf/">a mirror</a> and read its header using <a href="https://pypi.org/project/osmium/">a python wrapper to osmium</a> (v3.0.1)</p>
+<pre><code>import osmium
+
+f = osmium.io.Reader("path/to/pbf_file.osm.pbf")
+header = f.header()
+seqnum = header.get("osmosis_replication_sequence_number", "")
+timestamp = header.get("osmosis_replication_timestamp", "")
+print(f'{seqnum!r},{timestamp!r}')
+# output: '', '2020-08-23T23:59:50Z'
+</code></pre>
+<p>The sequence number was missing. Is this expected behaviour?</p>
+<p>In the <a href="https://wiki.openstreetmap.org/wiki/PBF_Format#What_are_the_replication_fields_for.3F">documentation</a>, all the replication fields in OSMHeader seem to be set as optional. What pbf files are expected to have these values set?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osmium" href="/tags/osmium/" rel="tag" title="see questions tagged 'osmium'">osmium</a>
+<a class="post-tag tag-link-header" href="/tags/header/" rel="tag" title="see questions tagged 'header'">header</a>
+<a class="post-tag tag-link-pbf" href="/tags/pbf/" rel="tag" title="see questions tagged 'pbf'">pbf</a>
+<a class="post-tag tag-link-python" href="/tags/python/" rel="tag" title="see questions tagged 'python'">python</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>04 Sep '20, 09:37</strong>
+</p>
+<img alt="M_T_'s gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ab24d4200eae973dd66c10684f25f767?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18923/m_t_">M_T_</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="M_T_ has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/76430/">
+                edited
+                <strong>04 Sep '20, 10:26</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-76430">
+</div>
+<div class="comment-tools" id="comment-tools-76430">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-76430-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/76430/pbf-file-missing-osmosis_replication_sequence_number-in-header?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/76430/pbf-file-missing-osmosis_replication_sequence_number-in-header?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/76430/pbf-file-missing-osmosis_replication_sequence_number-in-header?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/76430/pbf-file-missing-osmosis_replication_sequence_number-in-header?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="76466"></a>
+<div class="answer accepted-answer" id="answer-container-76466">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/76466/up/" id="post-76466-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-76466-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/76466/down/" id="post-76466-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/76466/" rel="nofollow" title="M_T_ has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The sequence field in the headers are currently set only on extracts from <a href="http://download.geofabrik.de/">Geofabrik</a>. pyosmium-up-to-date also sets them when you update a PBF file.</p>
+<p>There is a good reason that the sequence number is not set on the official planet file: there is no exact sequence number that corresponds to the state of a planet file. Planet files are created independently of the change files. So the content of the planet might correspond to something like sequence number "4164164 3/4".</p>
+<p>When you want to use updates with a downloaded planet file, the usual way is to look at the creation time and find a change sequence number that is far enough in the past that you get all new changes that are not yet contained in the planet. You don't have to do the math yourself, pyosmium-get-changes, which is included in the python osmium package, can do that for you. Just run</p>
+<pre><code>pyosmium-get-changes -O planet-latest.osm.pbf
+</code></pre>
+<p>and it prints a single number. This is the recommended sequence number where you should start with the updates.</p>
+<p>See the <a href="https://docs.osmcode.org/pyosmium/latest/updating_osm_data.html">section on updating OSM data</a> in the pyosmium manual for more information.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/76466/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>05 Sep '20, 20:25</strong>
+</p>
+<img alt="lonvia's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d888b712d85dee0aa304297f2dc697c7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2921/lonvia">lonvia</a><br/>
+<span class="score" title="6213 reputation points"><span class="">6.2k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="57 badges"><span class="silver">●</span><span class="badgecount">57</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="lonvia has 43 accepted answers">40%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-76466">
+<a name="76479"></a>
+<div class="comment" id="comment-76479">
+<div class="comment-score" id="post-76479-score"></div>
+<div class="comment-text"><p>AFAIU the sequence number you get from a call to <code>pyosmium-get-changes</code> is the minutely sequence number. How would you translate this to a daily or hourly sequence number? It seems that some minute updates have been skipped, so one can't do a simple multiplication to translate between the two</p></div>
+<div class="comment-info" id="comment-76479-info">
+<span class="comment-age">(07 Sep '20, 10:15)</span>
+<a class="comment-user userinfo" href="/users/18923/m_t_">M_T_</a>
+</div>
+</div>
+<a name="76560"></a>
+<div class="comment" id="comment-76560">
+<div class="comment-score" id="post-76560-score">1</div>
+<div class="comment-text"><p>You can't directly translate to hourly/daily sequence ID. You need to compute the appropriate ID in the same way as for the minutely replication. Use the parameter <code>--server</code> with  <code>pyosmium-get-changes</code> to choose a different replication source. For example, to get the sequence ID for daily updates run <code>pyosmium-get-changes --server <a href="https://planet.osm.org/replication/day/">https://planet.osm.org/replication/day/</a> -O planet-latest.osm.pbf</code>.</p></div>
+<div class="comment-info" id="comment-76560-info">
+<span class="comment-age">(12 Sep '20, 15:35)</span>
+<a class="comment-user userinfo" href="/users/2921/lonvia">lonvia</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-76466">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-76466-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/76430/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="mLjX6Q9t2Nw1KGrLQBsosSg8Z9sJAdxt"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

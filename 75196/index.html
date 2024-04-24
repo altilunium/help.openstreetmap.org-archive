@@ -1,0 +1,271 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/75196/get-bus-stops-by-given-area-and-relation">Get bus stops by given area and relation.</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75196/up/" id="post-75196-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75196-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/75196/down/" id="post-75196-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/75196/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Wondering how to write an Overpass query to get only nodes with bus_stops from this query:</p>
+<pre><code>[out:json][timeout:25];
+area[name="Radom"]-&gt;.searchArea;
+( 
+  relation["name"="8: Os. Wośniki =&gt; Kierzków"](area.searchArea);
+);
+out body;
+&gt;;
+out skel qt;
+</code></pre>
+<p>in shortcut get bus stops by given area and relation.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-bus" href="/tags/bus/" rel="tag" title="see questions tagged 'bus'">bus</a>
+<a class="post-tag tag-link-stop" href="/tags/stop/" rel="tag" title="see questions tagged 'stop'">stop</a>
+<a class="post-tag tag-link-relation" href="/tags/relation/" rel="tag" title="see questions tagged 'relation'">relation</a>
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>08 Jun '20, 09:46</strong>
+</p>
+<img alt="macik1423's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/20a6e9808fa4fa75b537e684bb8a9030?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18512/macik1423">macik1423</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="macik1423 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/75196/">
+                edited
+                <strong>08 Jun '20, 10:14</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-75196">
+<a name="75201"></a>
+<div class="comment" id="comment-75201">
+<div class="comment-score" id="post-75201-score"></div>
+<div class="comment-text"><p>Don't know much about Overpass QL, but if the relation is according to PTv2 it <a href="https://wiki.openstreetmap.org/wiki/Tag:route%3Dbus">should have</a> a role of <code>platform</code>, <code>platform_exit_only</code> or <code>platform_entry_only</code>. In the more traditional tagging they would have no role and you would have to look for nodes nodes in the relation that have the <code>highway=bus_stop</code> tag.</p></div>
+<div class="comment-info" id="comment-75201-info">
+<span class="comment-age">(08 Jun '20, 13:29)</span>
+<a class="comment-user userinfo" href="/users/4426/insertuser">InsertUser</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-75196">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75196-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/75196/get-bus-stops-by-given-area-and-relation?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/75196/get-bus-stops-by-given-area-and-relation?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/75196/get-bus-stops-by-given-area-and-relation?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/75196/get-bus-stops-by-given-area-and-relation?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="75247"></a>
+<div class="answer accepted-answer" id="answer-container-75247">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75247/up/" id="post-75247-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75247-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/75247/down/" id="post-75247-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/75247/" rel="nofollow" title="macik1423 has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>OK. We should get only the nodes belonging to the relation. I think it should be better like this :</p>
+<pre><code>[out:json][timeout:25];
+area[name="Radom"]-&gt;.searchArea;
+
+relation["name"="8: Os. Wośniki =&gt; Kierzków"](area.searchArea);
+node(r)[highway=bus_stop];
+out body qt;
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/75247/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Jun '20, 19:03</strong>
+</p>
+<img alt="zorglubu's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a588fbc312ece948db9faa4cc02b40de?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14264/zorglubu">zorglubu</a><br/>
+<span class="score" title="324 reputation points">324</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="zorglubu has 3 accepted answers">15%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-75247">
+<a name="75257"></a>
+<div class="comment" id="comment-75257">
+<div class="comment-score" id="post-75257-score"></div>
+<div class="comment-text"><p>Thanks a lot! This is what I have been looking for. :D</p></div>
+<div class="comment-info" id="comment-75257-info">
+<span class="comment-age">(09 Jun '20, 21:29)</span>
+<a class="comment-user userinfo" href="/users/18512/macik1423">macik1423</a>
+</div>
+</div>
+<a name="77904"></a>
+<div class="comment" id="comment-77904">
+<div class="comment-score" id="post-77904-score"></div>
+<div class="comment-text"><p>I have another question, is it possible to get order of nodes in data as same as relation in map? For example in this query</p>
+<p><code>[out:json][timeout:25];
+area[name="Radom"]-&gt;.searchArea;
+(
+relation(5347191)(area.searchArea);
+node(r)[highway=bus_stop];
+);
+out geom;</code></p>
+<p>order is random, not fit to relation on map.</p></div>
+<div class="comment-info" id="comment-77904-info">
+<span class="comment-age">(12 Dec '20, 11:03)</span>
+<a class="comment-user userinfo" href="/users/18512/macik1423">macik1423</a>
+</div>
+</div>
+<a name="77905"></a>
+<div class="comment" id="comment-77905">
+<div class="comment-score" id="post-77905-score">1</div>
+<div class="comment-text"><p>I am not sure, but I think that it is not possible directly with overpass. In my mind, the order is the one of the BDD.
+I am interested if somebody else has a better answer :-)</p>
+<p>I have checked this request :
+[out:json][timeout:25];
+relation(5347191);
+out meta;</p>
+<p>The order seems to be the one shown in JOSM. Then you will need a post processing treatment.</p></div>
+<div class="comment-info" id="comment-77905-info">
+<span class="comment-age">(12 Dec '20, 11:27)</span>
+<a class="comment-user userinfo" href="/users/14264/zorglubu">zorglubu</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-75247">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75247-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="75209"></a>
+<div class="answer" id="answer-container-75209">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75209/up/" id="post-75209-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75209-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/75209/down/" id="post-75209-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hello,
+Could you try :</p>
+<pre><code>[out:json][timeout:25];
+area[name="Radom"]-&gt;.searchArea;
+
+relation["name"="8: Os. Wośniki =&gt; Kierzków"](area.searchArea);
+
+&gt; -&gt; .a;
+node.a[highway=bus_stop];
+
+out body qt;
+</code></pre>
+<p>This should extract the elements of the relation, and then only the nodes with the good tag.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/75209/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Jun '20, 17:11</strong>
+</p>
+<img alt="zorglubu's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a588fbc312ece948db9faa4cc02b40de?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14264/zorglubu">zorglubu</a><br/>
+<span class="score" title="324 reputation points">324</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="zorglubu has 3 accepted answers">15%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-75209">
+<a name="75235"></a>
+<div class="comment" id="comment-75235">
+<div class="comment-score" id="post-75235-score"></div>
+<div class="comment-text"><p>Thanks for respond! It's not quite what I expect. Query returns all bus stops (relation "8: Os. Wośniki =&gt; Kierzków" and reverse relation "8: Kierzków =&gt; Os. Wośniki"), I wanna bus stops from one direction.</p></div>
+<div class="comment-info" id="comment-75235-info">
+<span class="comment-age">(09 Jun '20, 10:14)</span>
+<a class="comment-user userinfo" href="/users/18512/macik1423">macik1423</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-75209">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75209-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/75196/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="RNCWxF6fuyEnPIXxCbiISAhRUZgaMjXz"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,238 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/72391/production-date-of-aerial-imagery">production date of aerial imagery</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/72391/up/" id="post-72391-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-72391-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/72391/down/" id="post-72391-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/72391/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Is there a possibility to see the date of production of aerial imagery? Where I am interested, the images of Bing and Esri are <strong>very</strong> different.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-imagery" href="/tags/imagery/" rel="tag" title="see questions tagged 'imagery'">imagery</a>
+<a class="post-tag tag-link-mapping" href="/tags/mapping/" rel="tag" title="see questions tagged 'mapping'">mapping</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>07 Jan '20, 07:45</strong>
+</p>
+<img alt="derFred's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/93249e7a7a52d8d1d08cc69e60b0106a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12342/derfred">derFred</a><br/>
+<span class="score" title="66 reputation points">66</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="derFred has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-72391">
+</div>
+<div class="comment-tools" id="comment-tools-72391">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-72391-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/72391/production-date-of-aerial-imagery?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/72391/production-date-of-aerial-imagery?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/72391/production-date-of-aerial-imagery?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/72391/production-date-of-aerial-imagery?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="72500"></a>
+<div class="answer" id="answer-container-72500">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/72500/up/" id="post-72500-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-72500-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/72500/down/" id="post-72500-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hi derFred -- the background imagery providers are capable of tagging their tiles with metadata that indicates the image capture date or production date. And some map editing software is capable of showing that information. But the details are a little complicated.</p>
+<ul>
+<li>
+<p>To see tile information in iD, go into Edit mode and zoom into the map, then hit Ctrl-Shift-B to bring up the "Background" info window. It will display a "Vintage" date (or date range) for the current imagery -- or "Unknown" if the imagery date is not known. You can also click the "Show Tiles" button at the bottom of the Background box to see info for individual tiles, in case you're in an area where some tiles are newer than others. <em>(Note that some browsers use the Ctrl-Shift-B shortcut for their own purposes! iD should be able to "steal" this key combo from the browser but it only seems to work if you're zoomed in close. It might take a few tries.)</em></p>
+</li>
+<li>
+<p>To see the tile information in JOSM, you can load various imagery layers, zoom in, right-click the map, select the name of one of the loaded imagery layers, and select "Show tile info" for the tile at that map position. Various info fields will be shown, and may include the imagery date. (Ignore the lastModification and expirationTime fields -- those refer to the current download of the tile, not the imagery itself.)</p>
+</li>
+</ul>
+<p>But here's where things get weird: In my area I have imagery available from Bing, ESRI, and Mapbox. To see the Bing date info, I have to use JOSM -- it shows "Vintage Unknown" in iD. To see the ESRI date info, I have to use iD -- no production date shows up in the JOSM tile info dialog. So it seems like both the publishing of these data fields and the software support are not exactly standardized. (Mapbox doesn't appear to publish any tile date metadata at all.)</p>
+<p>See also this similar question: <a href="https://help.openstreetmap.org/questions/72212/how-to-ascertain-the-age-of-the-aerial-imagery-at-a-particular-location">https://help.openstreetmap.org/questions/72212/how-to-ascertain-the-age-of-the-aerial-imagery-at-a-particular-location</a> </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/72500/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>14 Jan '20, 14:56</strong>
+</p>
+<img alt="jmapb's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/977d95e2184a885d9a01fb3297225872?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14350/jmapb">jmapb</a><br/>
+<span class="score" title="3387 reputation points"><span class="">3.4k</span></span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="33 badges"><span class="silver">●</span><span class="badgecount">33</span></span><span title="61 badges"><span class="bronze">●</span><span class="badgecount">61</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="jmapb has 22 accepted answers">22%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/72500/">
+                edited
+                <strong>14 Jan '20, 16:51</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-72500">
+</div>
+<div class="comment-tools" id="comment-tools-72500">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-72500-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="72484"></a>
+<div class="answer" id="answer-container-72484">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/72484/up/" id="post-72484-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-72484-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/72484/down/" id="post-72484-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I don't think it could be possible to see the date of production of aerial imagery. The way around it is using Show historical imagery tool in Google Earth to determine how your study area looked like in the past, and then to see whether you will be able to tell where Bing imagery fits on the timeline - it's easy to do with areas with some sort of development undertaken recently. I don't think that credits are good indication of imagery date.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/72484/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>13 Jan '20, 08:28</strong>
+</p>
+<img alt="Gaurav%20Parajuli's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/4af421ee150ee53344589a9c1d896884?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17375/gaurav-parajuli">Gaurav Parajuli</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Gaurav Parajuli has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-72484">
+</div>
+<div class="comment-tools" id="comment-tools-72484">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-72484-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="72494"></a>
+<div class="answer" id="answer-container-72494">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/72494/up/" id="post-72494-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-72494-score" title="current number of votes">
+    -1
+</div>
+<a class="ajax-command post-vote down" href="/vote/72494/down/" id="post-72494-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hi not a direct answer but use full maybe, use JOSM or any editor which offers a range of areal views. And have a look to find the most recent background and use that one.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/72494/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>14 Jan '20, 09:24</strong>
+</p>
+<img alt="Hendrikklaas's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/742e93034cd38ad243f7ab26f350b659?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3443/hendrikklaas">Hendrikklaas</a><br/>
+<span class="score" title="9286 reputation points"><span class="">9.3k</span></span><span title="207 badges"><span class="badge1">●</span><span class="badgecount">207</span></span><span title="238 badges"><span class="silver">●</span><span class="badgecount">238</span></span><span title="387 badges"><span class="bronze">●</span><span class="badgecount">387</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Hendrikklaas has 39 accepted answers">5%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-72494">
+</div>
+<div class="comment-tools" id="comment-tools-72494">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-72494-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/72391/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="B2iJ1KkhmaqDC0CjgAel0tn0kKIYhsoR"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

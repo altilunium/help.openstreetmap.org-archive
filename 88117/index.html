@@ -1,0 +1,109 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/88117/in-openstreemap-how-to-make-a-html-code-that-when-i-move-the-mouse-over-the-map-it-will-display-in-real-time-the-coordinates-in-a-small-tooltip">in openstreemap how to make a html code that when i move the mouse over the map it will display in real time the coordinates in a small tooltip?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/88117/up/" id="post-88117-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-88117-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/88117/down/" id="post-88117-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/88117/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I want that when i move the mouse over the map it will display like in a small tool tip balloon the coordinates in real time on the mouse cursor for example like: 35.56, 56.765</p>
+<p>I tried this code in my wix site but it's showing the map but the coordinate with the mouse is not working showing anything.</p>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+   &lt;link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /&gt;
+   &lt;script src="https://unpkg.com/leaflet/dist/leaflet.js"&gt;&lt;/script&gt;
+   &lt;style&gt;
+      body, html, #map {
+         height: 100%;
+         margin: 0;
+      }
+   &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;div id="map"&gt;&lt;/div&gt;
+
+   &lt;script&gt;
+      var map = L.map('map').setView([32.921, 39.562], 10);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+         attribution: '© OpenStreetMap contributors'
+      }).addTo(map);
+
+      var marker = L.marker([32.921, 39.562]).addTo(map);
+      marker.bindPopup("&lt;b&gt;Hello World!&lt;/b&gt;&lt;br&gt;This is a customizable popup.").openPopup();
+
+      // Create a tooltip to show coordinates
+      var tooltip = L.tooltip({
+         permanent: true,
+         direction: 'bottom',
+         opacity: 0.7
+      });
+
+      // Add the tooltip to the map
+      tooltip.addTo(map);
+
+      // Event listener for mousemove
+      map.on('mousemove', function (e) {
+         var latlng = e.latlng;
+         tooltip.setLatLng(latlng).setContent('Coordinates: ' + latlng.lat.toFixed(6) + ', ' + latlng.lng.toFixed(6));
+      });
+   &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap" href="/tags/openstreetmap/" rel="tag" title="see questions tagged 'openstreetmap'">openstreetmap</a>
+<a class="post-tag tag-link-html" href="/tags/html/" rel="tag" title="see questions tagged 'html'">html</a>
+<a class="post-tag tag-link-javascript" href="/tags/javascript/" rel="tag" title="see questions tagged 'javascript'">javascript</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 Jan, 20:23</strong>
+</p>
+<img alt="chocolade72's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/341f73e16114cc9ef077ab0c66f1a4a9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/23576/chocolade72">chocolade72</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="chocolade72 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-88117">
+</div>
+<div class="comment-tools" id="comment-tools-88117">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-88117-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/88117/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="N8fTO80eIekeZ4CI4MLrq6gdnnUIBgHv"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

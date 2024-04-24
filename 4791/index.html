@@ -1,0 +1,212 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/4791/how-do-i-export-map-of-large-area-in-osm-format">How do I export map of large area in .osm format?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/4791/up/" id="post-4791-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-4791-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/4791/down/" id="post-4791-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/4791/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I want to download a map of large area (like a city) for some researches, in the .osm format.
+Methods in <a href="http://help.openstreetmap.org/questions/22/how-do-i-export-map-images-of-larger-areas">http://help.openstreetmap.org/questions/22/how-do-i-export-map-images-of-larger-areas</a> seems useless for my problem because it can capture the small area in .osm format only.
+How can I do that?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-large" href="/tags/large/" rel="tag" title="see questions tagged 'large'">large</a>
+<a class="post-tag tag-link-.osm" href="/tags/.osm/" rel="tag" title="see questions tagged '.osm'">.osm</a>
+<a class="post-tag tag-link-area" href="/tags/area/" rel="tag" title="see questions tagged 'area'">area</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 Apr '11, 14:04</strong>
+</p>
+<img alt="crisp22140's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/812e5d5946cdd3c66a718d4685ac703f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1259/crisp22140">crisp22140</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="crisp22140 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-4791">
+</div>
+<div class="comment-tools" id="comment-tools-4791">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-4791-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/4791/how-do-i-export-map-of-large-area-in-osm-format?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/4791/how-do-i-export-map-of-large-area-in-osm-format?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/4791/how-do-i-export-map-of-large-area-in-osm-format?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/4791/how-do-i-export-map-of-large-area-in-osm-format?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="4793"></a>
+<div class="answer accepted-answer" id="answer-container-4793">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/4793/up/" id="post-4793-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-4793-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/4793/down/" id="post-4793-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/4793/" rel="nofollow" title="crisp22140 has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The Export tab on the main OSM site is not the appropriate way to export large areas: it uses too many resources from the <a href="http://wiki.openstreetmap.org/wiki/API_v0.6">API</a>. I also think it is limited by constraints in the API interface itself: there is a maximum area and maximum amount of data which can be downloaded through the API <a href="http://wiki.openstreetmap.org/wiki/API_v0.6#Retrieving_map_data_by_bounding_box:_GET_.2Fapi.2F0.6.2Fmap">map</a> call.</p>
+<p>Therefore you will need to use the available alternatives:</p>
+<ul>
+<li><strong>One of the <a href="http://wiki.openstreetmap.org/wiki/Xapi">XAPI</a> instances</strong>. These are designed for providing read-only access to very recent snapshots of OSM data. Unfortunately, they are often overwhelmed by requests. The <a href="http://open.mapquestapi.com/xapi/">JAXPI</a> instance run by MapQuest is probably the best one to use: it should certainly cope with downloading a city.</li>
+<li><strong>Using an already available download</strong>, such as those of <a href="http://www.geofabrik.de/data/download.html">Geofabrik</a> and <a href="http://downloads.cloudmade.com/">Cloudmade</a>. These cover many (but not all) countries and most regions of the world. For places which are very actively mapped there may be extracts of smaller areas. In most cases you will still want to reduce the amount of data you use. To do this you should use <a href="http://wiki.openstreetmap.org/wiki/Osmosis">Osmosis</a> to read the extract file and extract a bounding box from it (<code>osmosis --rx file="bla.osm" --bbox left=##.## right=##.## top=##.## bottom=##.## --wx file="extracted_city.osm"</code>, where the numeric values are the lat and lon of a bounding box)</li>
+</ul>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/4793/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Apr '11, 14:34</strong>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br/>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SK53 has 121 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-4793">
+</div>
+<div class="comment-tools" id="comment-tools-4793">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-4793-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="53602"></a>
+<div class="answer" id="answer-container-53602">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/53602/up/" id="post-53602-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-53602-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/53602/down/" id="post-53602-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can use QGis to download large data.
+Vector-&gt;OpenStreetMap-&gt; download data </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/53602/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Dec '16, 05:47</strong>
+</p>
+<img alt="Man's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/6c7e605d14fb58b948cf721f9506f1b2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13096/man">Man</a><br/>
+<span class="score" title="16 reputation points">16</span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Man has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-53602">
+<a name="68377"></a>
+<div class="comment" id="comment-68377">
+<div class="comment-score" id="post-68377-score"></div>
+<div class="comment-text"><p>This solution is very simple. Thank you Man for your answer.</p></div>
+<div class="comment-info" id="comment-68377-info">
+<span class="comment-age">(14 Mar '19, 23:35)</span>
+<a class="comment-user userinfo" href="/users/16405/banananas">BanAnanas</a>
+</div>
+</div>
+<a name="73231"></a>
+<div class="comment" id="comment-73231">
+<div class="comment-score" id="post-73231-score"></div>
+<div class="comment-text"><p>Is that still up to date?
+Was just searching for a solution, to download larger areas from OSM and found your answer.
+But when I go for Vector - there is not OpenStreetMap.
+Is there another way today or just not possible anymore?</p></div>
+<div class="comment-info" id="comment-73231-info">
+<span class="comment-age">(25 Feb '20, 12:50)</span>
+<a class="comment-user userinfo" href="/users/17955/sant0s_">sant0s_</a>
+</div>
+</div>
+<a name="73232"></a>
+<div class="comment" id="comment-73232">
+<div class="comment-score" id="post-73232-score">1</div>
+<div class="comment-text"><p>Yes there is still a download option in QGIS, the QuickOSM plugin, which is an interface to Overpass which these days is the de facto answer to the question. In general it's probably better in this case to ask a new question as this one is rather old: it's rather easier to provide an up-to-date answer without having to explain why the accepted answers are no longer applicable.</p></div>
+<div class="comment-info" id="comment-73232-info">
+<span class="comment-age">(25 Feb '20, 15:43)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-53602">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-53602-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/4791/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="dk00BIp22dN9Jl00xdf0WzYyiNIIGsgh"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

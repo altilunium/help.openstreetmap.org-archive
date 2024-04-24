@@ -1,0 +1,165 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/27007/nominatim-setup-cannot-find-postgissql">Nominatim setup cannot find postgis.sql</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/27007/up/" id="post-27007-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-27007-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/27007/down/" id="post-27007-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/27007/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Upon running the command, </p>
+<pre><code>./Nominatim-2.1/utils/setup.php --osm-file /postgres/OpenStreetMaps/planetfile/north-america-latest.osm.pbf --all --osm2pgsql-cache 18000
+</code></pre>
+<p>the setup ended quickly with the following output. </p>
+<pre><code>Create DB
+Setup DB
+createlang: language "plpgsql" is already installed in database "nominatim"
+WARNING:  =&gt; is deprecated as an operator name
+DETAIL:  This name may be disallowed altogether in future versions of PostgreSQL.
+CREATE EXTENSION
+ERROR: unable to find /usr/share/postgresql/9.1/contrib/postgis-1.5/postgis.sql
+unable to find /usr/share/postgresql/9.1/contrib/postgis-1.5/postgis.sql
+</code></pre>
+<p>I know that postgis is installed on my machine, so finding postgis.sql file yielded the following:</p>
+<pre><code>/usr/pgsql-9.1/share/contrib/postgis-2.0/postgis.sql
+/usr/pgsql-9.1/share/contrib/postgis-1.5/postgis.sql
+</code></pre>
+<p>How can I let Nominatim know where my postgis.sql is? Thanks</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>08 Oct '13, 02:01</strong>
+</p>
+<img alt="baekacaek's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/61de868d7785f30711497cecbdddf5f4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7476/baekacaek">baekacaek</a><br/>
+<span class="score" title="176 reputation points">176</span><span title="12 badges"><span class="badge1">●</span><span class="badgecount">12</span></span><span title="13 badges"><span class="silver">●</span><span class="badgecount">13</span></span><span title="17 badges"><span class="bronze">●</span><span class="badgecount">17</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="baekacaek has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-27007">
+</div>
+<div class="comment-tools" id="comment-tools-27007">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-27007-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/27007/nominatim-setup-cannot-find-postgissql?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/27007/nominatim-setup-cannot-find-postgissql?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/27007/nominatim-setup-cannot-find-postgissql?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/27007/nominatim-setup-cannot-find-postgissql?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="27012"></a>
+<div class="answer accepted-answer" id="answer-container-27012">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/27012/up/" id="post-27012-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-27012-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/27012/down/" id="post-27012-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/27012/" rel="nofollow" title="baekacaek has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Add, or create if needed, <code>settings/local.php</code> and add the following lines:</p>
+<pre><code>@define('CONST_Postgis_Version', '2.0');
+@define('CONST_Path_Postgresql_Contrib', '/usr/pgsql-9.1/share/contrib/postgis-2.0');
+@define('CONST_Path_Postgresql_Postgis', '/usr/pgsql-9.1/share/contrib/postgis-2.0');
+</code></pre>
+<p>The second line gives the path to <code>spatial_ref_sys.sql</code> if it isn't in the same folder you may need to alter this.</p>
+<p>You will find a number of settings in settings in <code>settings/settings.php</code> that should allow you to customise paths as required.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/27012/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Oct '13, 12:41</strong>
+</p>
+<img alt="twain's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bda08a105bb6a4a606d47c1b27187fac?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4/twain">twain</a><br/>
+<span class="score" title="2381 reputation points"><span class="">2.4k</span></span><span title="25 badges"><span class="silver">●</span><span class="badgecount">25</span></span><span title="38 badges"><span class="bronze">●</span><span class="badgecount">38</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="twain has 15 accepted answers">40%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/27012/">
+                edited
+                <strong>08 Oct '13, 12:44</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-27012">
+<a name="27018"></a>
+<div class="comment" id="comment-27018">
+<div class="comment-score" id="post-27018-score">1</div>
+<div class="comment-text"><p>Thanks! It somehow flew over my head that this is included in the Nominatim installation wiki.</p></div>
+<div class="comment-info" id="comment-27018-info">
+<span class="comment-age">(08 Oct '13, 17:49)</span>
+<a class="comment-user userinfo" href="/users/7476/baekacaek">baekacaek</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-27012">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-27012-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/27007/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="trsD7RI9luqKuP7Kar6UpTXDiXk9XSxj"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,105 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/84418/overpassql-how-can-i-filter-for-ways-and-their-related-nodes-in-a-given-radius">OverpassQL: How can i filter for ways and their related nodes in a given radius?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/84418/up/" id="post-84418-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-84418-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/84418/down/" id="post-84418-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/84418/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am struggling with my query setup. What i want is a set of nodes and ways (and their related nodes) in a given radius.</p>
+<p>This is what i have so far:</p>
+<pre><code>(
+nw(around:1000,52.46989,13.21026)[highway~"^(motorway|trunk|primary|secondary|tertiary|unclassified|residential|living_street|service)$"];
+nw(around:1000,52.46989,13.21026)[highway~"^(footway|path|track)$"];
+nw(around:1000,52.46989,13.21026)[natural~"^(cave_entrance|spring|peak|rock)$"];
+nw(around:1000,52.46989,13.21026)[tourism~"^(wildernis_hut|viewpoint)$"];
+);
+(._;&gt;;);
+out body;
+</code></pre>
+<p>This returns all the related of nodes of the found ways in that radius. But i don't want nodes that are not in the given radius, even if they are related to said ways. How can i achieve this?</p>
+<p>Also i am sure there is a more efficient way to use the around-filter (only applying it ones) but i couldn't figure this out either.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-radius" href="/tags/radius/" rel="tag" title="see questions tagged 'radius'">radius</a>
+<a class="post-tag tag-link-around" href="/tags/around/" rel="tag" title="see questions tagged 'around'">around</a>
+<a class="post-tag tag-link-overpass-ql" href="/tags/overpass-ql/" rel="tag" title="see questions tagged 'overpass-ql'">overpass-ql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>09 May '22, 12:42</strong>
+</p>
+<img alt="Tibooo's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/54fb737382e1afa8c9f969d8407fd9b5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/21743/tibooo">Tibooo</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Tibooo has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-84418">
+<a name="84435"></a>
+<div class="comment" id="comment-84435">
+<div class="comment-score" id="post-84435-score"></div>
+<div class="comment-text"><p>IIRC the string of punctuation on the line above <code>out body</code> gives all child nodes for the dataset under consideration. I imagine you would need to re-filter for distance after this stage, but that might give poor results as a straight section of road passing through the area could have no nodes in the search radius even if it goes directly over the point you're querying.</p></div>
+<div class="comment-info" id="comment-84435-info">
+<span class="comment-age">(11 May '22, 08:43)</span>
+<a class="comment-user userinfo" href="/users/4426/insertuser">InsertUser</a>
+</div>
+</div>
+<a name="84456"></a>
+<div class="comment" id="comment-84456">
+<div class="comment-score" id="post-84456-score"></div>
+<div class="comment-text"><p>thank you for the reply <a href="https://help.openstreetmap.org/users/4426/insertuser"></a><a href="https://help.openstreetmap.org/users/4426/insertuser">@InsertUser</a>, i think this is it. i tried to replace the line with another around filter but if i just add another around filter instead it works! (although it seems very hacky)</p></div>
+<div class="comment-info" id="comment-84456-info">
+<span class="comment-age">(12 May '22, 13:42)</span>
+<a class="comment-user userinfo" href="/users/21743/tibooo">Tibooo</a>
+</div>
+</div>
+<a name="84729"></a>
+<div class="comment" id="comment-84729">
+<div class="comment-score" id="post-84729-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/21743/tibooo">@Tibooo</a> Could you post your solution for others to learn from.</p></div>
+<div class="comment-info" id="comment-84729-info">
+<span class="comment-age">(07 Jun '22, 17:12)</span>
+<a class="comment-user userinfo" href="/users/1532/davef">DaveF</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-84418">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-84418-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/84418/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="BulK2S329V7QIxmbtur75OY6FgGGn9S9"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

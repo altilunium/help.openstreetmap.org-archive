@@ -1,0 +1,157 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/56990/area-query-not-containing-all-elements-id-expect">area query not containing all elements I'd expect</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/56990/up/" id="post-56990-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-56990-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/56990/down/" id="post-56990-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/56990/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi everyone,</p>
+<p>I'm testing in Overpass Turbo with following command:</p>
+<pre><code>[out:json];
+(node["amenity"="fast_food"](area:3600062484);
+rel["amenity"="fast_food"](area:3600062484);
+way["amenity"="fast_food"](area:3600062484);
+);
+out;
+</code></pre>
+<p>I do get results, but not all I'd expect from looking at the map. For example, I'd expect <a href="http://www.openstreetmap.org/node/1783787144">this node</a> - which fulfills the amenity fast_food condition - to be in the <a href="https://www.openstreetmap.org/relation/62484#map=11/48.5512/12.1516">area 3600062484</a> and therefore in the result set amongst others, which unfortunately it isn't.</p>
+<p>What am I doing wrong?</p>
+<p>Thankful for any help I can get here.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-api" href="/tags/api/" rel="tag" title="see questions tagged 'api'">api</a>
+<a class="post-tag tag-link-area" href="/tags/area/" rel="tag" title="see questions tagged 'area'">area</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>10 Jul '17, 13:49</strong>
+</p>
+<img alt="robmso's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e784d5df54cdda12fd979efa7d9c0114?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13920/robmso">robmso</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="robmso has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-56990">
+</div>
+<div class="comment-tools" id="comment-tools-56990">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-56990-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/56990/area-query-not-containing-all-elements-id-expect?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/56990/area-query-not-containing-all-elements-id-expect?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/56990/area-query-not-containing-all-elements-id-expect?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/56990/area-query-not-containing-all-elements-id-expect?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="56999"></a>
+<div class="answer" id="answer-container-56999">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/56999/up/" id="post-56999-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-56999-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/56999/down/" id="post-56999-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Running your query on the public overpass-turbo instance gives the expected results for me (Kebab TURM is returned).</p>
+<p>I have a screen shot if necessary.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/56999/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>10 Jul '17, 20:18</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-56999">
+<a name="57000"></a>
+<div class="comment" id="comment-57000">
+<div class="comment-score" id="post-57000-score"></div>
+<div class="comment-text"><p>No need for a screen shot, I believe you - I just cannot replicate the result after testing again now. I assume by "the public overpass-turbo instance" you mean overpass-turbo.eu, which I also use (new to the topic in general, might be wrong here).</p>
+<p>Interestingly, when I'm loading the same query as an URI against overpass-api.de ( <a href="http://overpass-api.de/api/interpreter?data=[out:json];(node">http://overpass-api.de/api/interpreter?data=[out:json];(node</a><a>%22amenity%22=%22fast_food%22</a>;rel<a>%22amenity%22=%22fast_food%22</a>;way<a>%22amenity%22=%22fast_food%22</a>;);out; ), I do get a more complete result, as it seems (contains the node used as example, at least).</p>
+<p>Since I'll be using that way to access the data for my task, the behavior is acceptable to me - I just would have liked to test queries in Overpass Turbo and do not quite understand what makes my results different to e.g. yours.</p></div>
+<div class="comment-info" id="comment-57000-info">
+<span class="comment-age">(10 Jul '17, 20:33)</span>
+<a class="comment-user userinfo" href="/users/13920/robmso">robmso</a>
+</div>
+</div>
+<a name="57001"></a>
+<div class="comment" id="comment-57001">
+<div class="comment-score" id="post-57001-score"></div>
+<div class="comment-text"><p>yes, overpass-turbo.eu</p>
+<p>Really didn't do anything special, just a C&amp;P of your query and then "run".</p></div>
+<div class="comment-info" id="comment-57001-info">
+<span class="comment-age">(10 Jul '17, 20:50)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-56999">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-56999-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/56990/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="5sELztZLwzhSKwkvZsyEXufv7FI0o3aN"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

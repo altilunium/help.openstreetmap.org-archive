@@ -1,0 +1,211 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/29155/how-to-convert-an-osm-file-to-obf-via-command-line">How to convert an OSM file to OBF, via command-line</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/29155/up/" id="post-29155-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-29155-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/29155/down/" id="post-29155-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/29155/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have a remote server tasked with regularly generating .osm files from <a href="http://en.wikivoyage.org">Wikivoyage</a> listings.</p>
+<p>I would like that server to also convert from <a href="https://sourceforge.net/projects/wikivoyage/files/Listings-as-OSM/">.osm</a> to <a href="https://sourceforge.net/projects/wikivoyage/files/Listings-as-OBF/">.obf</a><br/>
+While this conversion is easy with the GUI of OsmAndMapCreator (screenshot below), I am not sure how to proceed by command-line (bash).</p>
+<p><img alt="OsmAnd Map Creator - Create .obf from osm file..." src="http://img5.imageshack.us/img5/2305/mf7q.png"/></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-obf" href="/tags/obf/" rel="tag" title="see questions tagged 'obf'">obf</a>
+<a class="post-tag tag-link-osmand" href="/tags/osmand/" rel="tag" title="see questions tagged 'osmand'">osmand</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>18 Dec '13, 09:12</strong>
+</p>
+<img alt="Nicolas%20Raoul's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c3af87f6b1d4d247d01ce3b73d918fc7?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/7970/nicolas-raoul">Nicolas Raoul</a><br>
+<span class="score" title="645 reputation points">645</span><span title="17 badges"><span class="badge1">●</span><span class="badgecount">17</span></span><span title="25 badges"><span class="silver">●</span><span class="badgecount">25</span></span><span title="33 badges"><span class="bronze">●</span><span class="badgecount">33</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Nicolas Raoul has one accepted answer">20%</span>
+</br></p>
+</img></div>
+</div>
+<div class="comments-container" id="comments-container-29155">
+</div>
+<div class="comment-tools" id="comment-tools-29155">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-29155-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/29155/how-to-convert-an-osm-file-to-obf-via-command-line?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/29155/how-to-convert-an-osm-file-to-obf-via-command-line?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/29155/how-to-convert-an-osm-file-to-obf-via-command-line?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/29155/how-to-convert-an-osm-file-to-obf-via-command-line?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="29156"></a>
+<div class="answer answered-by-owner" id="answer-container-29156">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/29156/up/" id="post-29156-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-29156-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/29156/down/" id="post-29156-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>1) Create 2 folders, for instance <code>/home/nico/osm2obf/input</code> and <code>/home/nico/osm2obf/output</code></p>
+<p>2) Put your OSM file(s) in <code>/home/nico/osm2obf/input</code>.</p>
+<p>3) Create this file in the folder where OsmAndMapCreator is installed:</p>
+<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;batch_process&gt;
+    &lt;process_attributes
+        mapZooms=""
+        renderingTypesFile=""
+        zoomWaySmoothness="" 
+        osmDbDialect="sqlite"
+        mapDbDialect="sqlite"/&gt;
+    &lt;process
+        directory_for_osm_files="/home/nico/osm2obf/input"
+        directory_for_index_files="/home/nico/osm2obf/output"
+        directory_for_generation="/home/nico/osm2obf/output"
+        skipExistingIndexesAt=""
+        indexPOI="true"
+        indexRouting="false"
+        indexMap="false"
+        indexTransport="false"
+        indexAddress="false"&gt;
+    &lt;/process&gt;
+&lt;/batch_process&gt;
+</code></pre>
+<p>4) Run this command:</p>
+<pre><code>java -Djava.util.logging.config.file=logging.properties -Xms256M -Xmx2560M -cp "./OsmAndMapCreator.jar:./lib/OsmAnd-core.jar:./lib/*.jar" net.osmand.data.index.IndexBatchCreator osm2obf.xml
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/29156/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>18 Dec '13, 09:36</strong>
+</p>
+<img alt="Nicolas%20Raoul's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c3af87f6b1d4d247d01ce3b73d918fc7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7970/nicolas-raoul">Nicolas Raoul</a><br/>
+<span class="score" title="645 reputation points">645</span><span title="17 badges"><span class="badge1">●</span><span class="badgecount">17</span></span><span title="25 badges"><span class="silver">●</span><span class="badgecount">25</span></span><span title="33 badges"><span class="bronze">●</span><span class="badgecount">33</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Nicolas Raoul has one accepted answer">20%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/29156/">
+                edited
+                <strong>18 Dec '13, 09:38</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-29156">
+</div>
+<div class="comment-tools" id="comment-tools-29156">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-29156-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="87952"></a>
+<div class="answer" id="answer-container-87952">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/87952/up/" id="post-87952-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-87952-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/87952/down/" id="post-87952-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I have two more questions about this topic :</p>
+<p>1) Could you update this answer : It seems net.osmand.data.index.IndexBatchCreator no more exists in 2023 versions
+2) I noticed that the software increased from 2014 to 2023 from a size of 24MB to 189MB. What are the reasons for such great growth when the software of 2014 made it possible to do everything that the software of 2023?</p>
+<p>thanks a lot for any answer</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/87952/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>27 Oct '23, 22:56</strong>
+</p>
+<img alt="chris38's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c189c06690bd74e121219ad54ddab475?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/23433/chris38">chris38</a><br/>
+<span class="score" title="1 reputation points">1</span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="chris38 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-87952">
+</div>
+<div class="comment-tools" id="comment-tools-87952">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-87952-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/29155/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="4EIlqPpb7A3nTDF0dyIiFXyotjiN0Ma8"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

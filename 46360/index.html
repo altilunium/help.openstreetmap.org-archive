@@ -1,0 +1,203 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/46360/overpass-api-to-postgresql">Overpass API to PostgreSQL ?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/46360/up/" id="post-46360-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-46360-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/46360/down/" id="post-46360-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/46360/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello again,</p>
+<p>I would like to know how can i use the overpass api of pyhton to store information into my Postgresql database (i have a PostGIS extencion) . My idea was to get the "id" of the nodes and then creating an "id" camp on the database gather the information of the tags in question.</p>
+<p>Thank you again for all the help,</p>
+<p>Francisco Costa</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-newbie" href="/tags/newbie/" rel="tag" title="see questions tagged 'newbie'">newbie</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+<a class="post-tag tag-link-overpass-api" href="/tags/overpass-api/" rel="tag" title="see questions tagged 'overpass-api'">overpass-api</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 Nov '15, 10:09</strong>
+</p>
+<img alt="FrancisCosta's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2d5201d8b00ecd21e515f37b627df3b0?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11575/franciscosta">FrancisCosta</a><br/>
+<span class="score" title="0 reputation points">0</span><span title="12 badges"><span class="badge1">●</span><span class="badgecount">12</span></span><span title="12 badges"><span class="silver">●</span><span class="badgecount">12</span></span><span title="13 badges"><span class="bronze">●</span><span class="badgecount">13</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="FrancisCosta has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-46360">
+</div>
+<div class="comment-tools" id="comment-tools-46360">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-46360-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/46360/overpass-api-to-postgresql?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/46360/overpass-api-to-postgresql?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/46360/overpass-api-to-postgresql?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/46360/overpass-api-to-postgresql?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="46374"></a>
+<div class="answer" id="answer-container-46374">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/46374/up/" id="post-46374-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-46374-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/46374/down/" id="post-46374-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hi,
+You can use the overpass API to get data from OSM and then OGR to write it to PostgreSQL.
+You can do it on the command line or within Python. The intermediate format can be the native OSM XML format, or you can change to JSON.</p>
+<p>Example on command line:</p>
+<pre><code>wget 'http://overpass-api.de/api/interpreter?data=way["highway"="residential"]["name"](41.8942593,12.4812841,41.9030756,12.4945021);out;' -O rome.osm 
+osm2pgsql -H localhost -s -U geobox -d geotuga -c rome.osm
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/46374/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Nov '15, 11:10</strong>
+</p>
+<img alt="Jorge%20Gustavo%20Rocha's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b4a923f887dc2b8e233085d0355e2aae?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8710/jorge-gustavo-rocha">Jorge Gustav...</a><br/>
+<span class="score" title="67 reputation points">67</span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jorge Gustavo Rocha has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-46374">
+</div>
+<div class="comment-tools" id="comment-tools-46374">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-46374-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="46369"></a>
+<div class="answer" id="answer-container-46369">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/46369/up/" id="post-46369-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-46369-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/46369/down/" id="post-46369-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Maybe you can try QGIS for this task?</p>
+<p>QGIS has a plugin called QuickOSM where you can query for OSM data via overpassAPI.</p>
+<p>And QGIS has an interface to Postgresql databases, or not? But I have no clue whether that interface is a oneway connection just to load data from database in QGIS.</p>
+<p>Have NOT tried that on my own.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/46369/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Nov '15, 16:35</strong>
+</p>
+<img alt="stephan75's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/245b73d4390c3408fe3c6da759b9897f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/99/stephan75">stephan75</a><br/>
+<span class="score" title="12642 reputation points"><span class="">12.6k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="56 badges"><span class="silver">●</span><span class="badgecount">56</span></span><span title="210 badges"><span class="bronze">●</span><span class="badgecount">210</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="stephan75 has 37 accepted answers">6%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-46369">
+<a name="46378"></a>
+<div class="comment" id="comment-46378">
+<div class="comment-score" id="post-46378-score"></div>
+<div class="comment-text"><p>I regularly pull GEOJSON from Overpass into QGIS &amp; push to PostGIS: but this is a distinctly non-automated approach.</p></div>
+<div class="comment-info" id="comment-46378-info">
+<span class="comment-age">(04 Nov '15, 11:50)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="46379"></a>
+<div class="comment" id="comment-46379">
+<div class="comment-score" id="post-46379-score"></div>
+<div class="comment-text"><p><a href="http://help.openstreetmap.org/users/647/sk53"></a><a href="http://help.openstreetmap.org/users/647/sk53">@SK53</a>: just to clarify your statement: I guess you mean "pull GeoJSON from overpass turbo"? The difference is quite important, as Overpass API doesn't provide GeoJSON out of the box. It provides some custom JSON format only, which doesn't really qualify as GeoJSON.</p></div>
+<div class="comment-info" id="comment-46379-info">
+<span class="comment-age">(04 Nov '15, 12:03)</span>
+<a class="comment-user userinfo" href="/users/8708/mmd">mmd</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-46369">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-46369-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/46360/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="v7vPFhRsKO9JlTZtPEsvKQhE5CzlHdIV"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

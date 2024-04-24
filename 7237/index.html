@@ -1,0 +1,320 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/7237/setting-exact-location-for-a-point-of-interest">Setting exact location for a Point of Interest</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/7237/up/" id="post-7237-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-7237-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/7237/down/" id="post-7237-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/7237/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>On holiday, I marked with my Garmin some points of interest - ancient monuments, associated car parking.</p>
+<p>I've added one of these to Open Streetmap. Surely I should be able to use the coordinates recorded on the Garmin to set the exact location of my POI but I can't see how to do it.</p>
+<p>Help, please?</p>
+<p>Dave</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-point" href="/tags/point/" rel="tag" title="see questions tagged 'point'">point</a>
+<a class="post-tag tag-link-exact" href="/tags/exact/" rel="tag" title="see questions tagged 'exact'">exact</a>
+<a class="post-tag tag-link-location" href="/tags/location/" rel="tag" title="see questions tagged 'location'">location</a>
+<a class="post-tag tag-link-interest" href="/tags/interest/" rel="tag" title="see questions tagged 'interest'">interest</a>
+<a class="post-tag tag-link-poi" href="/tags/poi/" rel="tag" title="see questions tagged 'poi'">poi</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Aug '11, 12:12</strong>
+</p>
+<img alt="flightmaker's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3407c124dac612d0b9f046f50bf63c6e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1956/flightmaker">flightmaker</a><br/>
+<span class="score" title="226 reputation points">226</span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="6 badges"><span class="silver">●</span><span class="badgecount">6</span></span><span title="10 badges"><span class="bronze">●</span><span class="badgecount">10</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="flightmaker has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-7237">
+</div>
+<div class="comment-tools" id="comment-tools-7237">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-7237-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    4 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/7237/setting-exact-location-for-a-point-of-interest?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/7237/setting-exact-location-for-a-point-of-interest?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/7237/setting-exact-location-for-a-point-of-interest?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/7237/setting-exact-location-for-a-point-of-interest?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="7238"></a>
+<div class="answer" id="answer-container-7238">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/7238/up/" id="post-7238-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-7238-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/7238/down/" id="post-7238-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The JOSM editor has an option called "add node" in the "tools" menu that lets you specify an exact location for a new node, but you cannot move an existing node to an exact location (other than manually moving it and watching the coordinate display while you do). </p>
+<p>It is possible to work around this using the following procedure (in JOSM):</p>
+<ul>
+<li>load OSM data for region of interest</li>
+<li>move existing node just a little</li>
+<li>save data as .osm file, close JOSM</li>
+<li>open .osm file in text editor, find node (search for "action='modify'"), change location in XML, save file</li>
+<li>open JOSM, load file from disk, upload to OSM.</li>
+</ul>
+<p>Another, slightly less complicated, option is to use the <a href="http://wiki.openstreetmap.org/wiki/RawEditor">OSM Raw Editor</a> (which will nonetheless require that you edit XML code by hand, but it does so in a browser window).</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/7238/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Aug '11, 12:22</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-7238">
+<a name="7239"></a>
+<div class="comment" id="comment-7239">
+<div class="comment-score" id="post-7239-score">3</div>
+<div class="comment-text"><p>Also keep in mind that it doesn't make sense to move the node if it is already correct within a meter or two. Your GPS is most likely no more precise than that.</p></div>
+<div class="comment-info" id="comment-7239-info">
+<span class="comment-age">(21 Aug '11, 13:05)</span>
+<a class="comment-user userinfo" href="/users/8/petschge">petschge</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-7238">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-7238-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="7240"></a>
+<div class="answer" id="answer-container-7240">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/7240/up/" id="post-7240-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-7240-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/7240/down/" id="post-7240-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>If you've marked waypoints on your Garmin, and you upload the trace to OSM, you can also add the waypoints to OSM directly in the Potlatch 2 online editor.  Have a look at <a href="http://www.openstreetmap.org/user/SomeoneElse/traces/1056198">this trace</a> - if you edit the area and zoom in you'll see an orange dot where a waypoint was marked in the middle.  To convert it to a node, "alt-click" on it, select "advanced" mode in Potlatch and add any necessary tags (and remove any Garmin ones that don't belong in OSM, such as "cmt" and "extensions").</p>
+<p>With Potlatch 2, this works provided the node isn't under an existing OSM way</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/7240/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Aug '11, 13:14</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-7240">
+<a name="7246"></a>
+<div class="comment" id="comment-7246">
+<div class="comment-score" id="post-7246-score"></div>
+<div class="comment-text"><p>Ah interesting. Potlatch 1 used to ignore any waypoints contained within GPX files. This is quite a useful feature.</p></div>
+<div class="comment-info" id="comment-7246-info">
+<span class="comment-age">(22 Aug '11, 05:24)</span>
+<a class="comment-user userinfo" href="/users/603/ebenezer">Ebenezer</a>
+</div>
+</div>
+<a name="7251"></a>
+<div class="comment" id="comment-7251">
+<div class="comment-score" id="post-7251-score"></div>
+<div class="comment-text"><p>Potlatch 1 doesn't ignore waypoints for me - trying editing the "this trace" link above with it and you'll see an orange dot for the waypoint.</p>
+<p>Potlatch 1 actually has a couple of advantages over Potlatch 2 as far as waypoint handling goes - see trac 3669 and <a href="http://help.openstreetmap.org/questions/2355/waypoint-handling-in-potlatch-2">http://help.openstreetmap.org/questions/2355/waypoint-handling-in-potlatch-2</a></p></div>
+<div class="comment-info" id="comment-7251-info">
+<span class="comment-age">(22 Aug '11, 10:01)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-7240">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-7240-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="7242"></a>
+<div class="answer" id="answer-container-7242">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/7242/up/" id="post-7242-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-7242-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/7242/down/" id="post-7242-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>If your garmin can be set to lat long degrees mode (etrex can) the marks recorded will be easy to plot in potlach 2. In edit mode there is an "option box" drop down menu box to show the lat long of mouse pointer which you tick. this works ok for the odd point but the answers above are neater for bigger jobs. For best accuracy the etrex and some other models can average the point with a number of readings. you can also view the error on  the screen in some modes.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/7242/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Aug '11, 16:01</strong>
+</p>
+<img alt="andy%20mackey's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/efa7ca36d4499200879223dc5ad5ecac?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/644/andy-mackey">andy mackey</a><br/>
+<span class="score" title="13238 reputation points"><span class="">13.2k</span></span><span title="87 badges"><span class="badge1">●</span><span class="badgecount">87</span></span><span title="143 badges"><span class="silver">●</span><span class="badgecount">143</span></span><span title="285 badges"><span class="bronze">●</span><span class="badgecount">285</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="andy mackey has 37 accepted answers">4%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-7242">
+<a name="7372"></a>
+<div class="comment" id="comment-7372">
+<div class="comment-score" id="post-7372-score"></div>
+<div class="comment-text"><p>That one works for me, for what I need to do at this time. Nice to see that another way point I marked with my Garmin exactly agrees with the POI placed on the map by another user.</p></div>
+<div class="comment-info" id="comment-7372-info">
+<span class="comment-age">(28 Aug '11, 10:53)</span>
+<a class="comment-user userinfo" href="/users/1956/flightmaker">flightmaker</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-7242">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-7242-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="65113"></a>
+<div class="answer" id="answer-container-65113">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/65113/up/" id="post-65113-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-65113-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/65113/down/" id="post-65113-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>With JOSM, which is the best editor, you can relocate any existing node with JOSM&gt;Tools&gt;Move Node</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/65113/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Aug '18, 15:52</strong>
+</p>
+<img alt="A_Pirard's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/6abea2df2074c337b7ef787d1cc80028?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3009/a_pirard">A_Pirard</a><br/>
+<span class="score" title="0 reputation points">0</span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="A_Pirard has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-65113">
+</div>
+<div class="comment-tools" id="comment-tools-65113">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-65113-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/7237/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="3tTQa7rGRNesoKbEQuYog7iFPiyi1J1u"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

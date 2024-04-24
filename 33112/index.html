@@ -1,0 +1,135 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/33112/postgis-osm2pgsql-vs-osmconvert-filter-which-methods-are-the-best">postgis &amp; osm2pgsql  vs osmconvert &amp; -filter: which methods are the best</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/33112/up/" id="post-33112-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-33112-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/33112/down/" id="post-33112-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/33112/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>what should i use: </p>
+<p>PostGis as a  solution for getting a database populated by osm2pgsql 
+or osmconvert / -filter to create csv-sheets </p>
+<p>aimed is to transform data out of German osm-pbf-files - in order to get the data (not to creat maps again) </p>
+<p>see the source (s)= <a href="http://download.geofabrik.de/europe/germany.html">http://download.geofabrik.de/europe/germany.html</a>
+ranging form 10 MB (Bremen) to 390 MB (Nordrhein Westfalen) the osm.pbf-files are not too big; 
+Question: which method is the best -  the most appropiate? - to store the  results in a mysql-db or just have big calc-sheets (with csv-data)</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osmfilter" href="/tags/osmfilter/" rel="tag" title="see questions tagged 'osmfilter'">osmfilter</a>
+<a class="post-tag tag-link-osmconvert" href="/tags/osmconvert/" rel="tag" title="see questions tagged 'osmconvert'">osmconvert</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+<a class="post-tag tag-link-linux" href="/tags/linux/" rel="tag" title="see questions tagged 'linux'">linux</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>12 May '14, 14:25</strong>
+</p>
+<img alt="say_hello_to_the_world's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bf4d2d8660e82c4a7387b7d2a8a8cfcd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8644/say_hello_to_the_world">say_hello_to...</a><br/>
+<span class="score" title="19 reputation points">19</span><span title="23 badges"><span class="badge1">●</span><span class="badgecount">23</span></span><span title="24 badges"><span class="silver">●</span><span class="badgecount">24</span></span><span title="27 badges"><span class="bronze">●</span><span class="badgecount">27</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="say_hello_to_the_world has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-33112">
+<a name="33113"></a>
+<div class="comment" id="comment-33113">
+<div class="comment-score" id="post-33113-score">2</div>
+<div class="comment-text"><p>What data do you actually want?  Could you describe it in a bit more detail, using words?  That way people will be able to see how well that concept maps to OSM data and what manipulation would be needed at your end.</p>
+<p>Also (given that you've asked a few questions here) perhaps a more interactive mechanism for asking questions (like the #osm IRC channel) might be a better option?</p></div>
+<div class="comment-info" id="comment-33113-info">
+<span class="comment-age">(12 May '14, 14:29)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="33114"></a>
+<div class="comment" id="comment-33114">
+<div class="comment-score" id="post-33114-score"></div>
+<div class="comment-text"><p>hello dear Someone elsenode  i want to have id="20" lat="574" lon="3.0"&gt;
+&lt;tag k="addr:housenumber" v="9"/&gt;
+&lt;tag k="addr:street" v="Marktplaats"/&gt;
+&lt;tag k="amenity" v="cafe"/&gt;
+&lt;tag k="email" v="vandaelekoen67@skynet.be"/&gt;
+&lt;tag k="name" v="Paviljoentje"/&gt;
+&lt;tag k="opening_hours" v="Mo-Su 09:00+; Tu off; Th 09:00-14:00"/&gt;
+&lt;tag k="phone" v="+3251636211"/&gt;
+&lt;tag k="website" v="http://www.paviljoentjestaden.be"/&gt;
+&lt;/node&gt;
+&lt;node id="244312208" lat="51.2461401" lon="5.4390455"&gt;
+&lt;tag k="amenity" v="cafe"/&gt;
+&lt;tag k="created_by" v="JOSM"/&gt;
+&lt;tag k="name" v="De Club"/&gt;
+&lt;/node&gt;</p>
+<p>what do  you think?</p></div>
+<div class="comment-info" id="comment-33114-info">
+<span class="comment-age">(12 May '14, 16:08)</span>
+<a class="comment-user userinfo" href="/users/3389/tagtheworld">tagtheworld</a>
+</div>
+</div>
+<a name="33115"></a>
+<div class="comment" id="comment-33115">
+<div class="comment-score" id="post-33115-score"></div>
+<div class="comment-text"><p>This is XML, not CSV. Please explain exactly what data you are trying to extract and what your desired output format is.</p></div>
+<div class="comment-info" id="comment-33115-info">
+<span class="comment-age">(12 May '14, 16:28)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="33118"></a>
+<div class="comment" id="comment-33118">
+<div class="comment-score" id="post-33118-score"></div>
+<div class="comment-text"><p><a href="/users/3389/tagtheworld">@tagtheworld</a>  So you only want the XML for one node?  What information do you have that you want to use to obtain that node (e.g. its ID in the OSM database, its location, its name, or something else)?  Is this related to <a href="/users/8644/say_hello_to_the_world">@say_hello_to_the_world</a> 's question or something else?</p></div>
+<div class="comment-info" id="comment-33118-info">
+<span class="comment-age">(12 May '14, 17:46)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="33119"></a>
+<div class="comment" id="comment-33119">
+<div class="comment-score" id="post-33119-score"></div>
+<div class="comment-text"><p>hello you both - thx alot for posting. well the final formate is calc-based or to view the data in phpmyadmin (or  thelike). so i want to gather data out of the osm-data (the map-data) and need to have an oferview on e.g. the restaurants of germany. goal : to have a valid dataset with the adress etc. data of e.g. the restaurants. Question: which tool (set) is the best and which mehtod should be used? - love to hear from you both - btw. say-hello is identical. soorry - i wont repost  a similarquestion onaother board again...</p></div>
+<div class="comment-info" id="comment-33119-info">
+<span class="comment-age">(12 May '14, 18:09)</span>
+<a class="comment-user userinfo" href="/users/8644/say_hello_to_the_world">say_hello_to...</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-33112">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-33112-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/33112/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="8dyvMzRY7lvCTKefgCFvjZirU43VrvKt"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

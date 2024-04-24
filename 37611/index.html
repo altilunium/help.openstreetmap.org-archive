@@ -1,0 +1,101 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/37611/renderd-doesnt-update-tiles">Renderd doesn't update tiles</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/37611/up/" id="post-37611-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-37611-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/37611/down/" id="post-37611-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/37611/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am running a tile server on an Ubuntu-based virtual machine and configured it using the guide the guide on switch2osm.org. It's just for private purposes, so it's not public. In the beginning, everything was just fine and I could import large amounts of map data without problems. Changes became visible soon after. 
+I have done some minor edits to Mapnik's osm.xml file since then, changing things such as water color or label font size. Since a couple of days, my tiles don't seem to get updated anymore.</p>
+<p>When I use</p>
+<pre><code>render_list -f -a
+</code></pre>
+<p>this <em>normally</em> gives me no errors. Well, actually that means it goes until</p>
+<pre><code>Rendering all tiles for zoom 6 from (0,0) to (63,63)
+</code></pre>
+<p>and then it gets stuck forever. Sometimes it doesn't get that far and gives me an error message saying</p>
+<pre><code>rendering failed with command 4, pausing
+</code></pre>
+<p>I can restart Renderd just fine and get no errors. I also often use </p>
+<pre><code>touch /var/lib/mod_tile/planet-import-complete
+</code></pre>
+<p>to notify it of any change.</p>
+<p>Why are my tiles not getting updated anymore? I have my machine switched on for more than 12 hours and yet I see no changes on my slippymap.</p>
+<p>Did my edits to Mapnik's osm.xml maybe corrupt the file and therefore make updating tiles impossible for renderd? Is my machine too slow and it takes weeks to render the whole planet? (I have 16 GB RAM and an 8 core CPU) What else could be the reason?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-tiles" href="/tags/tiles/" rel="tag" title="see questions tagged 'tiles'">tiles</a>
+<a class="post-tag tag-link-renderd" href="/tags/renderd/" rel="tag" title="see questions tagged 'renderd'">renderd</a>
+<a class="post-tag tag-link-updating" href="/tags/updating/" rel="tag" title="see questions tagged 'updating'">updating</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+<a class="post-tag tag-link-tileserver" href="/tags/tileserver/" rel="tag" title="see questions tagged 'tileserver'">tileserver</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>14 Oct '14, 17:27</strong>
+</p>
+<img alt="Maturi0n's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9b1b4e90f4146bc02ab2da5df7df202d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8753/maturi0n">Maturi0n</a><br/>
+<span class="score" title="44 reputation points">44</span><span title="6 badges"><span class="badge1">●</span><span class="badgecount">6</span></span><span title="6 badges"><span class="silver">●</span><span class="badgecount">6</span></span><span title="10 badges"><span class="bronze">●</span><span class="badgecount">10</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Maturi0n has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/37611/">
+                edited
+                <strong>14 Oct '14, 18:01</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-37611">
+<a name="37650"></a>
+<div class="comment" id="comment-37650">
+<div class="comment-score" id="post-37650-score"></div>
+<div class="comment-text"><p>Rendering the planet requires a lot of resources, especially if you want to speed-up the first import. But if you say that your problem is only coming after a style change, I would suggest you to report your change on the mapnik forum (Search google) or mailing list dev@openstreetmap.org</p></div>
+<div class="comment-info" id="comment-37650-info">
+<span class="comment-age">(16 Oct '14, 13:05)</span>
+<a class="comment-user userinfo" href="/users/87/pieren">Pieren</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-37611">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-37611-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/37611/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="4oy3fUrxf7Keuu6eQhotRLJ3OdS119wR"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

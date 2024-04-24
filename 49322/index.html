@@ -1,0 +1,205 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/49322/querying-untagged-data">Querying untagged data?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/49322/up/" id="post-49322-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-49322-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/49322/down/" id="post-49322-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/49322/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Is it possible to query data by attributes that are not tagged?  For example if I wanted to find all roads with access:bicycle=yes or bike lanes=both - I end up missing some roads with those attributes simply because those attributes haven't been "tagged" yet.</p>
+<p>I realize I could manually find and tag them all, but I'm searching a rather large area.
+Any thoughts?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-untagged" href="/tags/untagged/" rel="tag" title="see questions tagged 'untagged'">untagged</a>
+<a class="post-tag tag-link-tag" href="/tags/tag/" rel="tag" title="see questions tagged 'tag'">tag</a>
+<a class="post-tag tag-link-query" href="/tags/query/" rel="tag" title="see questions tagged 'query'">query</a>
+<a class="post-tag tag-link-tagging" href="/tags/tagging/" rel="tag" title="see questions tagged 'tagging'">tagging</a>
+<a class="post-tag tag-link-tags" href="/tags/tags/" rel="tag" title="see questions tagged 'tags'">tags</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Apr '16, 01:46</strong>
+</p>
+<img alt="tordor's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/874c5126a98d733f9bd02366e8ab38f2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12205/tordor">tordor</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="tordor has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-49322">
+<a name="49324"></a>
+<div class="comment" id="comment-49324">
+<div class="comment-score" id="post-49324-score"></div>
+<div class="comment-text"><p>which query language do you use ? OverPass ?</p>
+<p>Also, shouldn't access:bicycle=yes be bicycle=yes ?</p></div>
+<div class="comment-info" id="comment-49324-info">
+<span class="comment-age">(21 Apr '16, 06:11)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-49322">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-49322-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/49322/querying-untagged-data?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/49322/querying-untagged-data?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/49322/querying-untagged-data?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/49322/querying-untagged-data?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="49325"></a>
+<div class="answer" id="answer-container-49325">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/49325/up/" id="post-49325-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-49325-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/49325/down/" id="post-49325-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I think there's a misunderstanding here. In OSM parlance, "tagging" means to apply an attribute to a feature. So by this very definition, there cannot be roads "with certain attributes" in OSM that "have not been tagged as such" - if they have not been tagged then they do not have the attributes.</p>
+<p>Of course you can run a query that gives you all roads that don't have a certain attribute, but without going out and surveying the road (or checking on aerial imagery at least) you won't know whether those roads rightly don't have the attribute, or should have it but lack it.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/49325/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Apr '16, 06:41</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-49325">
+</div>
+<div class="comment-tools" id="comment-tools-49325">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-49325-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="49334"></a>
+<div class="answer" id="answer-container-49334">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/49334/up/" id="post-49334-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-49334-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/49334/down/" id="post-49334-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Keeping Frederik's cautioning words in mind, you can use an <a href="http://wiki.openstreetmap.org/wiki/Overpass_API">overpass</a> query to find <a href="http://overpass-turbo.eu/s/fNN">osm ways tagged with <em>highway</em> but not tagged with <em>any variant of bicycle</em></a>. Remember that the absence of a tag on an osm object doesn't mean that that tag is missing : it might just not be necessary. Also, highways are not the only objects that may have <em>bicycle</em> tags.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/49334/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Apr '16, 12:01</strong>
+</p>
+<img alt="Vincent%20de%20Phily's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d20f86db9a6f03cb070e9fbaaf0b7228?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/867/vincent-de-phily">Vincent de P... ♦</a><br/>
+<span class="score" title="17304 reputation points"><span class="">17.3k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="152 badges"><span class="silver">●</span><span class="badgecount">152</span></span><span title="249 badges"><span class="bronze">●</span><span class="badgecount">249</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Vincent de Phily has 64 accepted answers">19%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-49334">
+<a name="49337"></a>
+<div class="comment" id="comment-49337">
+<div class="comment-score" id="post-49337-score"></div>
+<div class="comment-text"><p>Thank you for your responses - they helped clarify some things.  I guess what I am confused about is why I can select a road feature in editor, see that the field -allowed access- is bicycle=yes, but no wizard query I run for bicycles ever returns the road.</p></div>
+<div class="comment-info" id="comment-49337-info">
+<span class="comment-age">(21 Apr '16, 13:03)</span>
+<a class="comment-user userinfo" href="/users/12205/tordor">tordor</a>
+</div>
+</div>
+<a name="49339"></a>
+<div class="comment" id="comment-49339">
+<div class="comment-score" id="post-49339-score">1</div>
+<div class="comment-text"><p>Be sure to open the "all tags" tab in your editor or find another way to see the actual tags the object has; perhaps you're just making wrong assumptions about what tags the editor converts your form input to.</p></div>
+<div class="comment-info" id="comment-49339-info">
+<span class="comment-age">(21 Apr '16, 13:11)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-49334">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-49334-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/49322/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="l3vfFuZzPMTBjBxqNVLSoh4mM67CXTft"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

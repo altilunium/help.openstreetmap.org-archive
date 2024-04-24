@@ -1,0 +1,98 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/73476/why-my-osm-file-xml-pbf-osm-osmpbf-cant-be-displayed-in-josm-but-not-in-qgis">Why my osm file (.xml .pbf, .osm, .osm.pbf) can't be displayed in JOSM but not in QGIS?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/73476/up/" id="post-73476-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-73476-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/73476/down/" id="post-73476-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/73476/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi everyone, </p>
+<p>I am trying to generate Isochrones from the <a href="https://github.com/marcusyoung/otpr">Open Trip Planner package in R</a>, I have followed all steps from <a href="https://github.com/marcusyoung/otpr#travel-time-isochrones">Marcus Yung OTP tutorial</a>, but the answer when I request to the OTP API is:</p>
+<p><em>"org.opentripplanner.routing.error.VertexNotFoundException: vertices not found: [from] vertices not found: [from]"</em></p>
+<ul>
+<li>I verified that coords were long/lat (as suggest the Young tutorial) and lat/long (as suggest the OTP doc)</li>
+</ul>
+<p>I suppouse that above error it's caused because my route .pbf is wrong. In other <a href="https://github.com/marcusyoung/otp-tutorial">tutorial of Marcus Young about this same theme</a> the <a href="https://github.com/marcusyoung/otp-tutorial/blob/master/materials/data/greater-manchester-osm.pbf">.pbf route that he uses</a> can be opened and displayed on QGIS and JOSM, instead my .pbf file can be opened but not displayed on QGIS but yes can JOSM. When I opened my .pbf file on QGIS, how it isn't displayed, the geographical coords have very low values i.e: (-0.31, -1,123).</p>
+<p>To get my .pbf file I transformed a shapefile to a xml file with ogr2osm, then I converted this xml file to .pbf with osmconverter. I tried too converting xml file to osm.pbf with JOSM, but the results were as I explicited above.</p>
+<p>I need this specific routes because I am trying to get Isochrones with OTP and this API use Shortest Path Tree, so if I add a new route that has shortest paths the results could be wrong.</p>
+<p>So, my question is:</p>
+<p>-<strong>How can I get a .pbf file that I can to display in QGIS and that could works fine in OTP?</strong></p>
+<p>and</p>
+<p>-<strong>Why my osm file (.xml .pbf, .osm, .osm.pbf) can't be displayed in JOSM but not in QGIS?</strong></p>
+<p>Thanks in advance!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap" href="/tags/openstreetmap/" rel="tag" title="see questions tagged 'openstreetmap'">openstreetmap</a>
+<a class="post-tag tag-link-qgis" href="/tags/qgis/" rel="tag" title="see questions tagged 'qgis'">qgis</a>
+<a class="post-tag tag-link-pbf" href="/tags/pbf/" rel="tag" title="see questions tagged 'pbf'">pbf</a>
+<a class="post-tag tag-link-josm" href="/tags/josm/" rel="tag" title="see questions tagged 'josm'">josm</a>
+<a class="post-tag tag-link-xml" href="/tags/xml/" rel="tag" title="see questions tagged 'xml'">xml</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>11 Mar '20, 14:56</strong>
+</p>
+<img alt="Bryan's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/045e09b66b1ea96e44a081f371137789?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18017/bryan">Bryan</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Bryan has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/73476/">
+                edited
+                <strong>11 Mar '20, 15:22</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-73476">
+<a name="73477"></a>
+<div class="comment" id="comment-73477">
+<div class="comment-score" id="post-73477-score">1</div>
+<div class="comment-text"><p>Without samples this is going to be rather difficult, with probably trivial.</p></div>
+<div class="comment-info" id="comment-73477-info">
+<span class="comment-age">(11 Mar '20, 17:12)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-73476">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-73476-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/73476/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="6EfSfCxjqrNNZinPS8CfxhOjpi10EdLi"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

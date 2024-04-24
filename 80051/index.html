@@ -1,0 +1,114 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/80051/maps-not-showing-streets-in-production">Maps not showing streets in Production</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80051/up/" id="post-80051-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80051-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/80051/down/" id="post-80051-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/80051/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>We are using the openstreetmap.org in our web application. The maps are working fine on the windows computer. We have recently tried to open the app on the microsoft surface pros and the maps are not showing the street details. What I found strange is the maps are working fine in the QA environment on the Surface pro but the streets are missing in the Production. Do we need to add an API key or do we need to change any setting on the surface pro?Any help is appreciated.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-maps" href="/tags/maps/" rel="tag" title="see questions tagged 'maps'">maps</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>07 May '21, 14:21</strong>
+</p>
+<img alt="SwathiNimas's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/5e3b15f8455ff9ecc7ceecf0fa24760a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20181/swathinimas">SwathiNimas</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SwathiNimas has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80051">
+<a name="80054"></a>
+<div class="comment" id="comment-80054">
+<div class="comment-score" id="post-80054-score">1</div>
+<div class="comment-text"><p>You'll need to provide more information about how you're using the OSM data. Are you rendering a map background? If so, vector or raster? Which software package?</p></div>
+<div class="comment-info" id="comment-80054-info">
+<span class="comment-age">(07 May '21, 17:00)</span>
+<a class="comment-user userinfo" href="/users/8189/alester">alester</a>
+</div>
+</div>
+<a name="80055"></a>
+<div class="comment" id="comment-80055">
+<div class="comment-score" id="post-80055-score"></div>
+<div class="comment-text"><p>Hi Alester, we are rendering the map in the background of the application. It is a .net application.  We are using the vector images.</p></div>
+<div class="comment-info" id="comment-80055-info">
+<span class="comment-age">(07 May '21, 17:07)</span>
+<a class="comment-user userinfo" href="/users/20181/swathinimas">SwathiNimas</a>
+</div>
+</div>
+<a name="80056"></a>
+<div class="comment" id="comment-80056">
+<div class="comment-score" id="post-80056-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/20181/swathinimas">@SwathiNimas</a> That doesn't really help.  </p>
+<p>Where do you get these "vector images" from (what exact URL)?  What error do you get when you try and retrieve them?</p></div>
+<div class="comment-info" id="comment-80056-info">
+<span class="comment-age">(07 May '21, 17:19)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="80057"></a>
+<div class="comment" id="comment-80057">
+<div class="comment-score" id="post-80057-score"></div>
+<div class="comment-text"><p>We are getting the maps from the <a href="https://www.openstreetmap.org/.">https://www.openstreetmap.org/.</a> The streets are not showing up. I can see the assests(vector images) but not the street names.</p></div>
+<div class="comment-info" id="comment-80057-info">
+<span class="comment-age">(07 May '21, 17:48)</span>
+<a class="comment-user userinfo" href="/users/20181/swathinimas">SwathiNimas</a>
+</div>
+</div>
+<a name="80058"></a>
+<div class="comment" id="comment-80058">
+<div class="comment-score" id="post-80058-score"></div>
+<div class="comment-text"><blockquote>
+<p>We are getting the maps from the <a href="https://www.openstreetmap.org/">https://www.openstreetmap.org/</a> .</p>
+</blockquote>
+<p>Can you give the <em>exact</em> URL of what you are trying to display, and how your are accessing that URL?   What error do you get when you try and retrieve them?  What is different between where it works and where it does not work?</p>
+<p>As an aside, if you are using raster map tiles served by OpenStreetMap then you'll need to follow <a href="https://operations.osmfoundation.org/policies/tiles/">https://operations.osmfoundation.org/policies/tiles/</a> .  I've no idea if that's relevant though as there's really not enough information to tell yet.</p></div>
+<div class="comment-info" id="comment-80058-info">
+<span class="comment-age">(07 May '21, 18:08)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-80051">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80051-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/80051/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="MQblr7uPE56Ph2y2LtVS8cmpCXlF8qBx"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

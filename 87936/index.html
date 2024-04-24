@@ -1,0 +1,164 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/87936/districts-names-with-state-names-as-csv-with-overpass-api">Districts' names with state names as CSV with Overpass API</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/87936/up/" id="post-87936-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-87936-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/87936/down/" id="post-87936-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/87936/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am looking district names of India with state names as CSV format.
+I tried to write an overpass query but it is not working. Please let me know what I am doing wrong. Is there any other simple query also. I am looking only from Overpass API not from any other data provider.</p>
+<pre><code>[out:csv(::type,::id,admin_level,name,"name:en","country","admin_level_4_name")];
+
+rel["name:en"="India"]-&gt;.rel;
+map_to_area-&gt;.a;
+
+(
+    rel[admin_level=4](area.a)-&gt;.admin_level_4;
+    rel[admin_level=5](area.a)-&gt;.admin_level_5;
+    foreach.admin_level_5(
+        out center -&gt;.ctr;
+        .ctr is_in-&gt;.admin_level_4_relation;
+        .admin_level_5 set admin_level_4_name = .admin_level_4_relation["name"];
+        out;
+    );
+);
+
+out;
+</code></pre>
+<p><strong>Update 1:</strong> </p>
+<p>I am adding here the overpass-turbo error:</p>
+<pre><code>An error occurred during the execution of the overpass query! This is what overpass API returned:
+
+Error: line 10: parse error: Invalid parameter for print: "-&gt;"
+Error: line 10: parse error: Invalid parameter for print: "."
+Error: line 10: parse error: Invalid parameter for print: "ctr"
+Error: line 12: parse error: ';' expected - 'set' found.
+</code></pre>
+<p>Link to overpass-turbo for <a href="https://overpass-turbo.eu/s/1CtV">this routine</a>.</p>
+<p><strong>Update 2:</strong></p>
+<p>As per DaveF suggestions here is the modified the query. Now not able to make out how to set admin_level 4 names to admin_level 5.</p>
+<pre><code>[out:csv(::type,::id,admin_level,name,"name:en","country","admin_level_4_name")];
+rel["name:en"="India"];
+map_to_area-&gt;.a;
+(
+    rel[admin_level=4](area.a)-&gt;.admin_level_4;
+    rel[admin_level=5](area.a)-&gt;.admin_level_5;
+    foreach.admin_level_5(
+        out center;
+        is_in-&gt;.admin_level_4_relation;
+        // not able to make out how to set level 4 name to level 5 relation
+        convert rel ::=::; 
+        out;
+    );
+ );
+</code></pre>
+<p>Overpass turbo <a href="https://overpass-turbo.eu/s/1CuS">link for above query</a></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 Oct '23, 08:32</strong>
+</p>
+<img alt="Gagan's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/39d75f04e1a21ba653b41ac75ec1b026?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12655/gagan">Gagan</a><br/>
+<span class="score" title="305 reputation points">305</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="15 badges"><span class="bronze">●</span><span class="badgecount">15</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Gagan has 2 accepted answers">14%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/87936/">
+                edited
+                <strong>26 Oct '23, 17:59</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-87936">
+<a name="87944"></a>
+<div class="comment" id="comment-87944">
+<div class="comment-score" id="post-87944-score"></div>
+<div class="comment-text"><p>It seems inconceivable you got to this stage by building the routine step by step. Start with the basics. Tip: you don't need to put every output into a named set. Try passing level 5 to the foreach</p></div>
+<div class="comment-info" id="comment-87944-info">
+<span class="comment-age">(25 Oct '23, 16:07)</span>
+<a class="comment-user userinfo" href="/users/1532/davef">DaveF</a>
+</div>
+</div>
+<a name="87948"></a>
+<div class="comment" id="comment-87948">
+<div class="comment-score" id="post-87948-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/1532/davef">@Davef</a> I have added the overpass-turbo error also. I suppose I am looping through the admin_level_5 only or is this not the correct way to loop?</p></div>
+<div class="comment-info" id="comment-87948-info">
+<span class="comment-age">(26 Oct '23, 11:32)</span>
+<a class="comment-user userinfo" href="/users/12655/gagan">Gagan</a>
+</div>
+</div>
+<a name="87949"></a>
+<div class="comment" id="comment-87949">
+<div class="comment-score" id="post-87949-score"></div>
+<div class="comment-text"><p>Could you provide urls to an example of what your searching for? Both the district &amp; state.</p></div>
+<div class="comment-info" id="comment-87949-info">
+<span class="comment-age">(26 Oct '23, 14:48)</span>
+<a class="comment-user userinfo" href="/users/1532/davef">DaveF</a>
+</div>
+</div>
+<a name="87950"></a>
+<div class="comment" id="comment-87950">
+<div class="comment-score" id="post-87950-score"></div>
+<div class="comment-text"><p>Here are URLs for <a href="https://en.wikipedia.org/wiki/States_and_union_territories_of_India">India's states</a> admin_level 4 and <a href="https://en.wikipedia.org/wiki/List_of_districts_in_India">districts</a> admin_level 5.</p></div>
+<div class="comment-info" id="comment-87950-info">
+<span class="comment-age">(26 Oct '23, 18:02)</span>
+<a class="comment-user userinfo" href="/users/12655/gagan">Gagan</a>
+</div>
+</div>
+<a name="87951"></a>
+<div class="comment" id="comment-87951">
+<div class="comment-score" id="post-87951-score"></div>
+<div class="comment-text"><p>I think <a href="https://overpass-turbo.eu/s/1CuZ">this query</a> would help me. This is based on this <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_API_by_Example#Adding_Georeference_details_to_village_nodes_(since_0.7.54)">example</a></p></div>
+<div class="comment-info" id="comment-87951-info">
+<span class="comment-age">(26 Oct '23, 18:26)</span>
+<a class="comment-user userinfo" href="/users/12655/gagan">Gagan</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-87936">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-87936-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/87936/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="9FEfdTJKgxCCR8ksTT93tetuWdVcu1nC"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

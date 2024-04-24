@@ -1,0 +1,185 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/68262/remove-geofabrik-subregion-from-database">Remove Geofabrik subregion from database</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68262/up/" id="post-68262-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68262-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/68262/down/" id="post-68262-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/68262/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Is there a way to delete just one region from a postgresql-gis database that was downloaded from <a href="http://geofabrik.de">geofabrik.de</a> and imported using <code>osm2pgsql</code>? </p>
+<p>...or to truncate all data from the necessary tables and start over with a fresh/empty database/table?</p>
+<p>I followed the instructions at <a href="https://switch2osm.org/manually-building-a-tile-server-18-04-lts/">switch2osm</a> and imported North American sub-region data (<code>.osm.pbf</code>) from <a href="http://download.geofabrik.de/north-america.html">geofabrik.de</a> for the state of Maine using <code>osm2pgsql</code>. </p>
+<p>They also have "special" sub regions for the entire US Northeast, which they say "may duplicate data already contained in the other sub regions". </p>
+<p>Now that I know how to do it, I'd rather get rid of the Maine data from <code>maine-latest.osm.pbf</code> and replace it with the <code>us-northeast-latest.osm.pbf</code> data.</p>
+<p>Is there a straightforward way to do this that I'm overlooking in the docs?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-geofabrik" href="/tags/geofabrik/" rel="tag" title="see questions tagged 'geofabrik'">geofabrik</a>
+<a class="post-tag tag-link-delete" href="/tags/delete/" rel="tag" title="see questions tagged 'delete'">delete</a>
+<a class="post-tag tag-link-switch2osm" href="/tags/switch2osm/" rel="tag" title="see questions tagged 'switch2osm'">switch2osm</a>
+<a class="post-tag tag-link-sub-region" href="/tags/sub-region/" rel="tag" title="see questions tagged 'sub-region'">sub-region</a>
+<a class="post-tag tag-link-database" href="/tags/database/" rel="tag" title="see questions tagged 'database'">database</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>04 Mar '19, 22:43</strong>
+</p>
+<img alt="Sareneathenodny's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/940d42e7292c10ce5386ac9503d404ae?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16363/sareneathenodny">Sareneathenodny</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Sareneathenodny has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/68262/">
+                edited
+                <strong>04 Mar '19, 22:44</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68262">
+</div>
+<div class="comment-tools" id="comment-tools-68262">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68262-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/68262/remove-geofabrik-subregion-from-database?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/68262/remove-geofabrik-subregion-from-database?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/68262/remove-geofabrik-subregion-from-database?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/68262/remove-geofabrik-subregion-from-database?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="68263"></a>
+<div class="answer" id="answer-container-68263">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68263/up/" id="post-68263-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68263-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/68263/down/" id="post-68263-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Actually, if you import a new region by default it'll remove any previous data, so you may not need to do anything.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/68263/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Mar '19, 22:50</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68263">
+<a name="68264"></a>
+<div class="comment" id="comment-68264">
+<div class="comment-score" id="post-68264-score"></div>
+<div class="comment-text"><p>Is that true for non-overlapping regions too? If I download and import north-america-latest.osm.pbf, then as a second, separate step import download and import central-america-latest.osm.pbf, will the data for North America be gone?</p></div>
+<div class="comment-info" id="comment-68264-info">
+<span class="comment-age">(04 Mar '19, 22:57)</span>
+<a class="comment-user userinfo" href="/users/16363/sareneathenodny">Sareneathenodny</a>
+</div>
+</div>
+<a name="68265"></a>
+<div class="comment" id="comment-68265">
+<div class="comment-score" id="post-68265-score">1</div>
+<div class="comment-text"><p>Yes, the default action is "create" (which will remove previous data).  "append" is available (but is very slow) if you really do want to append, and that can have problems due to unexpected overlaps between the two areas (think ferry routes).</p>
+<p>If you want to upload two areas it's probably best to merge first and then load that.</p></div>
+<div class="comment-info" id="comment-68265-info">
+<span class="comment-age">(04 Mar '19, 22:59)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="68266"></a>
+<div class="comment" id="comment-68266">
+<div class="comment-score" id="post-68266-score"></div>
+<div class="comment-text"><p>Ah. I see. My thought was to import the 5 separate US-subregions from geofabrik to get a map for just the USA, to save on disk space. So you're saying that could cause issues at the boundaries and that it would be best from a technical standpoint to just get the whole north-america file?</p></div>
+<div class="comment-info" id="comment-68266-info">
+<span class="comment-age">(04 Mar '19, 23:09)</span>
+<a class="comment-user userinfo" href="/users/16363/sareneathenodny">Sareneathenodny</a>
+</div>
+</div>
+<a name="68281"></a>
+<div class="comment" id="comment-68281">
+<div class="comment-score" id="post-68281-score"></div>
+<div class="comment-text"><p>If what you ultimately want is the whole of North America, yes. If you just want some subregions, combine them with osmosis or similar and load the result.</p></div>
+<div class="comment-info" id="comment-68281-info">
+<span class="comment-age">(05 Mar '19, 19:13)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="68284"></a>
+<div class="comment" id="comment-68284">
+<div class="comment-score" id="post-68284-score"></div>
+<div class="comment-text"><p>Great, thanks!</p></div>
+<div class="comment-info" id="comment-68284-info">
+<span class="comment-age">(05 Mar '19, 20:06)</span>
+<a class="comment-user userinfo" href="/users/16363/sareneathenodny">Sareneathenodny</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-68263">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68263-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/68262/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="c8NkjRAYIUVFQfPMMxnkVBnJCZJjTz7C"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

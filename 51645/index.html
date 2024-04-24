@@ -1,0 +1,166 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/51645/whats-the-relationship-between-database-used-in-the-rails-port-database-used-in-the-tile-server-and-datavase-used-in-the-nominatim">What's the relationship between database used in the rails port, database used in the tile server and datavase used in the nominatim?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/51645/up/" id="post-51645-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-51645-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/51645/down/" id="post-51645-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/51645/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>As i know, there are three database used in the OSM, database used in the rails port, database used in the tile server and datavase used in the nominatim. Let me call the three database as openstreetmap, gis and nominatim. And I have two question about these three database. </p>
+<p>1)I have installed the rails port and built up my local tile server, but the tables in the openstreetmap and gis are so different, and the table structure in gis and nominatim are so similiar, so what's the relationship or differences between openstreetmap,gis and nominatim?</p>
+<p>2)How do the three database have the same data index to keep the consistency？ The mean is a node id in the three database is same.</p>
+<p>Anyone can help me is so kindness.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-tileserver" href="/tags/tileserver/" rel="tag" title="see questions tagged 'tileserver'">tileserver</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-railsport" href="/tags/railsport/" rel="tag" title="see questions tagged 'railsport'">railsport</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>22 Aug '16, 15:30</strong>
+</p>
+<img alt="yuyy's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3522efac952d508cf251cd2590e68ca5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12524/yuyy">yuyy</a><br/>
+<span class="score" title="236 reputation points">236</span><span title="22 badges"><span class="badge1">●</span><span class="badgecount">22</span></span><span title="24 badges"><span class="silver">●</span><span class="badgecount">24</span></span><span title="31 badges"><span class="bronze">●</span><span class="badgecount">31</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="yuyy has one accepted answer">20%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-51645">
+</div>
+<div class="comment-tools" id="comment-tools-51645">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-51645-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/51645/whats-the-relationship-between-database-used-in-the-rails-port-database-used-in-the-tile-server-and-datavase-used-in-the-nominatim?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/51645/whats-the-relationship-between-database-used-in-the-rails-port-database-used-in-the-tile-server-and-datavase-used-in-the-nominatim?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/51645/whats-the-relationship-between-database-used-in-the-rails-port-database-used-in-the-tile-server-and-datavase-used-in-the-nominatim?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/51645/whats-the-relationship-between-database-used-in-the-rails-port-database-used-in-the-tile-server-and-datavase-used-in-the-nominatim?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="51647"></a>
+<div class="answer accepted-answer" id="answer-container-51647">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/51647/up/" id="post-51647-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-51647-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/51647/down/" id="post-51647-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/51647/" rel="nofollow" title="yuyy has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The databases you mention are not the only ones; every service based on OSM usually has their own specialist database, like the ones used by routing engines, or Overpass, or taginfo, or analytics web sites. Each of them have their own database schema or structure that is optimised for the purpose they are serving.</p>
+<p>With tile server and Nominatim databases, what OSM does is produce "diff" files from the openstreetmap database (with the Osmosis utility). These are published on a web site and downloaded, again by Osmosis, on the machines running tile server and Nominatim,  and consumed on these machines with osm2pgsql in append mode. Different parameters to osm2pgsql are used for the tile and Nominatim databases, resulting in different database schemas.</p>
+<p>If you want to set up your own copy of the OSM database with your own edits that are different from those edits made in OSM, then you will have to produce diffs from your own database and consume them on tile and Nominatim (the order is not important). If you want to keep your own copy of OSM and simply mirror all edits made to OSM, then you have to consume the diffs produced by OSM in all of your three databases (your own OSM, tile, and Nominatim). Again the order is not important since you don't have these databases linked to each other at all!</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/51647/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Aug '16, 17:14</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/51647/">
+                edited
+                <strong>23 Aug '16, 08:50</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-51647">
+<a name="51668"></a>
+<div class="comment" id="comment-51668">
+<div class="comment-score" id="post-51668-score"></div>
+<div class="comment-text"><p>Thanks very much to your reply, and i leart a lot from your answers. But what's the mean of "diffs" you mentioned above？ How can i produce diffs from my own database or OSM and how can i consume them?</p></div>
+<div class="comment-info" id="comment-51668-info">
+<span class="comment-age">(23 Aug '16, 09:11)</span>
+<a class="comment-user userinfo" href="/users/12524/yuyy">yuyy</a>
+</div>
+</div>
+<a name="51669"></a>
+<div class="comment" id="comment-51669">
+<div class="comment-score" id="post-51669-score">3</div>
+<div class="comment-text"><p>OSM diffs are published on planet.openstreetmap.org in the replication directories. If you want to produce your own diffs because you make your own private edits to your own copy of the data, then you will have to run Osmosis to make the diffs like OSM does on their server.</p></div>
+<div class="comment-info" id="comment-51669-info">
+<span class="comment-age">(23 Aug '16, 09:15)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="51670"></a>
+<div class="comment" id="comment-51670">
+<div class="comment-score" id="post-51670-score"></div>
+<div class="comment-text"><p>Thanks very much,then i will take a look at Osmosis.</p></div>
+<div class="comment-info" id="comment-51670-info">
+<span class="comment-age">(23 Aug '16, 09:23)</span>
+<a class="comment-user userinfo" href="/users/12524/yuyy">yuyy</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-51647">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-51647-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/51645/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="LVQMl0dX0qoJWs8ZuGlO0hgz6xASqjdM"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

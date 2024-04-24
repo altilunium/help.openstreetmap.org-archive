@@ -1,0 +1,213 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/38199/osmosis-cant-split-old-osm-dump-with-poly-file">Osmosis - Can't split old OSM dump with .poly-file</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/38199/up/" id="post-38199-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-38199-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/38199/down/" id="post-38199-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/38199/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hey guys,</p>
+<p>Trying to split a planet dump from before the earthquake in Haiti, I am undergoing some trouble.
+I am using a .poly-file from Geofabrik and the planet dump is from the 6th January 2010. I am using the latest Osmosis version (0.43) with the following command:</p>
+<pre><code>osmosis --read-xml file="planet-100106.osm" --bounding-polygon file="haiti-and-domrep.poly" --write-xml file="haiti-100107.osm" -v5
+</code></pre>
+<p>Osmosis will start doing something for 5 minutes to 2 hours and then sooner or later give out the following Error. 
+Do you have any ideas why this is happening? I am desperate!</p>
+<pre><code>G:\&gt;OSM_CutHaiti.bat
+
+G:\&gt;osmosis --read-xml file="planet-100106.osm" --bounding-polygon file="haiti-a
+nd-domrep.poly" --write-xml file="haiti-100107.osm" -v5
+Oct 31, 2014 11:31:44 PM org.openstreetmap.osmosis.core.Osmosis run
+INFORMATION: Osmosis Version 0.43.1
+Oct 31, 2014 11:31:45 PM org.openstreetmap.osmosis.core.Osmosis run
+INFORMATION: Preparing pipeline.
+Oct 31, 2014 11:31:45 PM org.openstreetmap.osmosis.core.Osmosis run
+INFORMATION: Launching pipeline execution.
+Oct 31, 2014 11:31:45 PM org.openstreetmap.osmosis.core.Osmosis run
+INFORMATION: Pipeline executing, waiting for completion.
+Oct 31, 2014 11:34:49 PM org.openstreetmap.osmosis.core.pipeline.common.ActiveTa
+skManager waitForCompletion
+SCHWERWIEGEND: Thread for task 1-read-xml failed
+org.openstreetmap.osmosis.core.OsmosisRuntimeException: Unable to read XML file
+planet-100106.osm.
+        at org.openstreetmap.osmosis.xml.v0_6.XmlReader.run(XmlReader.java:126)
+        at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: Datenfehler (CRC-Pr³fung)
+        at java.io.FileInputStream.readBytes(Native Method)
+        at java.io.FileInputStream.read(Unknown Source)
+        at org.apache.xerces.impl.XMLEntityManager$RewindableInputStream.read(Un
+known Source)
+        at org.apache.xerces.impl.io.UTF8Reader.read(Unknown Source)
+        at org.apache.xerces.impl.XMLEntityScanner.load(Unknown Source)
+        at org.apache.xerces.impl.XMLEntityScanner.scanLiteral(Unknown Source)
+        at org.apache.xerces.impl.XMLScanner.scanAttributeValue(Unknown Source)
+        at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanAttribute(U
+nknown Source)
+        at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanStartElemen
+t(Unknown Source)
+        at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContent
+Dispatcher.dispatch(Unknown Source)
+        at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Un
+known Source)
+        at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+        at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+        at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+        at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+        at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Sour
+ce)
+        at org.apache.xerces.jaxp.SAXParserImpl.parse(Unknown Source)
+        at javax.xml.parsers.SAXParser.parse(Unknown Source)
+        at org.openstreetmap.osmosis.xml.v0_6.XmlReader.run(XmlReader.java:111)
+        ... 1 more
+
+Oct 31, 2014 11:34:49 PM org.openstreetmap.osmosis.core.Osmosis main
+SCHWERWIEGEND: Execution aborted.
+org.openstreetmap.osmosis.core.OsmosisRuntimeException: One or more tasks failed
+.
+        at org.openstreetmap.osmosis.core.pipeline.common.Pipeline.waitForComple
+tion(Pipeline.java:146)
+        at org.openstreetmap.osmosis.core.Osmosis.run(Osmosis.java:92)
+        at org.openstreetmap.osmosis.core.Osmosis.main(Osmosis.java:37)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+        at java.lang.reflect.Method.invoke(Unknown Source)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.launchStandard(Laun
+cher.java:329)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.jav
+a:239)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(La
+uncher.java:409)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:
+352)
+        at org.codehaus.classworlds.Launcher.main(Launcher.java:47)
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-error" href="/tags/error/" rel="tag" title="see questions tagged 'error'">error</a>
+<a class="post-tag tag-link-planet_osm" href="/tags/planet_osm/" rel="tag" title="see questions tagged 'planet_osm'">planet_osm</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+<a class="post-tag tag-link-bounding-polygon" href="/tags/bounding-polygon/" rel="tag" title="see questions tagged 'bounding-polygon'">bounding-polygon</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>31 Oct '14, 22:55</strong>
+</p>
+<img alt="kartenmalergidi's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/999e9ededccde512b3cbd43683233d30?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9806/kartenmalergidi">kartenmalergidi</a><br/>
+<span class="score" title="46 reputation points">46</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="kartenmalergidi has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-38199">
+</div>
+<div class="comment-tools" id="comment-tools-38199">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-38199-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/38199/osmosis-cant-split-old-osm-dump-with-poly-file?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/38199/osmosis-cant-split-old-osm-dump-with-poly-file?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/38199/osmosis-cant-split-old-osm-dump-with-poly-file?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/38199/osmosis-cant-split-old-osm-dump-with-poly-file?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="38214"></a>
+<div class="answer accepted-answer" id="answer-container-38214">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/38214/up/" id="post-38214-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-38214-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/38214/down/" id="post-38214-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/38214/" rel="nofollow" title="kartenmalergidi has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>As Frederik pointed out this is likely a disk error</p>
+<p>Caused by: java.io.IOException: Datenfehler (CRC-Pr³fung)</p>
+<p>I would suggest checking your logs etc.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/38214/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>01 Nov '14, 08:36</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-38214">
+<a name="38406"></a>
+<div class="comment" id="comment-38406">
+<div class="comment-score" id="post-38406-score">2</div>
+<div class="comment-text"><p>Hey Simon, thank you for the assitance. You were correct: one of my external Hard Disks was spoiled causing the mistake.</p></div>
+<div class="comment-info" id="comment-38406-info">
+<span class="comment-age">(09 Nov '14, 16:42)</span>
+<a class="comment-user userinfo" href="/users/9806/kartenmalergidi">kartenmalergidi</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-38214">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-38214-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/38199/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="j2aQZRtkXa8a9RMdkpKan6CTxr8tGMNU"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

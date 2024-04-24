@@ -1,0 +1,143 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/63613/nominatim-failed-to-open-tcp-connection">Nominatim. Failed to open TCP connection.</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/63613/up/" id="post-63613-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-63613-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/63613/down/" id="post-63613-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/63613/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>On 17 of May 2018 we faced with error “Errno::ENETUNREACH: Failed to open TCP connection to nominatim.openstreetmap.org:80 (Network is unreachable - connect(2) for "nominatim.openstreetmap.org" port 80)” on our server. On the another server we didn’t have this error with the same request.</p>
+<p>Also we had received next responses before error:
+“</p><address>Apache/2.4.18 (Ubuntu) Server at nominatim.openstreetmap.org Port 80</address>
+&lt;/body&gt;&lt;/html&gt;
+Geocoding API's response was not valid JSON: &lt;!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"&gt;
+&lt;html&gt;&lt;head&gt;
+&lt;title&gt;301 Moved Permanently&lt;/title&gt;
+&lt;/head&gt;&lt;body&gt;
+<h1>Moved Permanently</h1>
+<p>The document has moved </p>
+<hr/>”<p></p>
+<p>Now service works fine. 
+Could you please tell us why we had this error? Were we blocked on osm by IP?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>22 May '18, 13:27</strong>
+</p>
+<img alt="vitalyvi's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e3d5afdddb8fb27b76d817cbf7bfda04?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15150/vitalyvi">vitalyvi</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="vitalyvi has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-63613">
+</div>
+<div class="comment-tools" id="comment-tools-63613">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-63613-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/63613/nominatim-failed-to-open-tcp-connection?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/63613/nominatim-failed-to-open-tcp-connection?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/63613/nominatim-failed-to-open-tcp-connection?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/63613/nominatim-failed-to-open-tcp-connection?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="63617"></a>
+<div class="answer" id="answer-container-63617">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/63617/up/" id="post-63617-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-63617-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/63617/down/" id="post-63617-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I just tried visiting <a href="http://nominatim.openstreetmap.org">http://nominatim.openstreetmap.org</a> and it redirected to https, and the example links on the nominatim wiki page were updated from http to https in January, so it might be you need to update your calls to use https</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/63617/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 May '18, 15:38</strong>
+</p>
+<img alt="EdLoach's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f25a8392e12ed696b16554b3d08e4e2b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/339/edloach">EdLoach ♦</a><br/>
+<span class="score" title="19478 reputation points"><span class="">19.5k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="156 badges"><span class="silver">●</span><span class="badgecount">156</span></span><span title="280 badges"><span class="bronze">●</span><span class="badgecount">280</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="EdLoach has 93 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-63617">
+<a name="63624"></a>
+<div class="comment" id="comment-63624">
+<div class="comment-score" id="post-63624-score">1</div>
+<div class="comment-text"><p>That's correct. Starting May/11th the nominatim.osm.org server(s) redirect http to https.</p></div>
+<div class="comment-info" id="comment-63624-info">
+<span class="comment-age">(22 May '18, 20:37)</span>
+<a class="comment-user userinfo" href="/users/150/mtmail">mtmail</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-63617">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-63617-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/63613/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="QNziOD6e4t9XL93BuDwxpsKAZ62dOKuh"/>
+<div style="clear:both">
+</div>
+</form>
+</hr></div>
+</div>
+</div>

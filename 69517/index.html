@@ -1,0 +1,130 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/69517/count-of-sport-centres-in-polygons">Count of Sport centres in polygons</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/69517/up/" id="post-69517-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-69517-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/69517/down/" id="post-69517-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/69517/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi guys,</p>
+<p>I am a complete newbie, any help would is highly appreciated. I am working with a shapefile of the MSOA regions in the UK and would like to get a count of all the sport centres within each of these regions. </p>
+<p>What's the best way to approach this using Python?</p>
+<p>Thanks</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-shapefile" href="/tags/shapefile/" rel="tag" title="see questions tagged 'shapefile'">shapefile</a>
+<a class="post-tag tag-link-sports_centre" href="/tags/sports_centre/" rel="tag" title="see questions tagged 'sports_centre'">sports_centre</a>
+<a class="post-tag tag-link-nodes" href="/tags/nodes/" rel="tag" title="see questions tagged 'nodes'">nodes</a>
+<a class="post-tag tag-link-count" href="/tags/count/" rel="tag" title="see questions tagged 'count'">count</a>
+<a class="post-tag tag-link-uk" href="/tags/uk/" rel="tag" title="see questions tagged 'uk'">uk</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>07 Jun '19, 08:42</strong>
+</p>
+<img alt="bf08's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fba497fa4fcf6bee2c1f134b93dd2233?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16765/bf08">bf08</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="bf08 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-69517">
+</div>
+<div class="comment-tools" id="comment-tools-69517">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-69517-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/69517/count-of-sport-centres-in-polygons?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/69517/count-of-sport-centres-in-polygons?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/69517/count-of-sport-centres-in-polygons?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/69517/count-of-sport-centres-in-polygons?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="69532"></a>
+<div class="answer" id="answer-container-69532">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/69532/up/" id="post-69532-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-69532-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/69532/down/" id="post-69532-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>A simpler was would be to use QGIS. With a layer of MSOAs and a layer of sports centre centroids (example <a href="http://overpass-turbo.eu/s/JL2">Overpass query</a>) it is a simple Point in Polygon query. In python I would guess you will want to use something like Shapely to manipulate the data (for instance as discussed in this <a href="https://streamhacker.com/2010/03/23/python-point-in-polygon-shapely/">old blog</a> post).</p>
+<p>One important caveat is that leisure=sports_centre in OSM is often not equivalent to a council or privately run sports or leisure centre in ordinary UK parlance (i.e., offering a range of sports). It is often used with any sports related facility such as a private rugby club or a <a href="https://www.openstreetmap.org/way/16547827">tennis centre</a>.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/69532/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>07 Jun '19, 14:00</strong>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br/>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SK53 has 121 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-69532">
+</div>
+<div class="comment-tools" id="comment-tools-69532">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-69532-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/69517/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="f7rrwcqNgFxAYHWU8kj0kqtzMVe2IJtt"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

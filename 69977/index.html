@@ -1,0 +1,293 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/69977/osm2pgsql-append-is-removing-features-when-it-shouldnt">osm2pgsql --append is removing features (when it shouldn't)</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/69977/up/" id="post-69977-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-69977-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/69977/down/" id="post-69977-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/69977/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>I created an issue at osm2pgsql's GitHub but it's probably me not correctly using the tools, so I'll ask here as well.</p>
+<p>I'm setting up a renderd / Mapnik tile server that I want to keep synced with osmosis / osm2pgsql hourly. Everything seems to work (outputs of osmosis &amp; osm2pgsql looks fine, osmosis does download the changes, and osm2pgsql does something to the database). But I have two problems:</p>
+<ul>
+<li>if I add / edit a feature on OSM iD, my local database does not get the update (openstreetmap.org did get the update)</li>
+<li>sometimes features are removed (for instance yesterday I lost the USA boundaries polygon, and today France &amp; Spain boundaries are gone as well). They are removed from the DB, it's not a stylesheet problem</li>
+</ul>
+<p>What could be wrong?</p>
+<p>Here's the complete set of command I'm using:</p>
+<p>1°) Database import</p>
+<pre><code>osm2pgsql \
+    -d osm \
+    --create --slim -G --hstore \
+    -C 20000 \
+    --number-processes 1 \
+    --tag-transform-script ~/src/map-styles/openstreetmap-carto/openstreetmap-carto.lua \
+    --style ~/src/map-styles/openstreetmap-carto/openstreetmap-carto.style \
+    --flat-nodes /ssd/flat-nodes/osm.cache \
+    &lt;path/to/planet-osm.pbf&gt;
+</code></pre>
+<p>The process took ~24h, and created a 719GB database (with last week's planet PBF).</p>
+<p>2°) Prepare sync (only once)</p>
+<pre><code># Set the location
+WORKOSM_DIR=~/osm-sync
+
+# Get the PBF file timestamp
+TIMESTAMP=$(osmium fileinfo &lt;path/to/planet-osm.pbf&gt; | grep osmosis_replication_timestamp= | cut -c 35-54)
+
+YEAR=$(echo $TIMESTAMP | cut -c 1-4)
+MONTH=$(echo $TIMESTAMP | cut -c 6-7)
+DAY=$(echo $TIMESTAMP | cut -c 9-10)
+HOUR=$(echo $TIMESTAMP | cut -c 12-13)
+
+# Download the initial state.txt
+wget "https://replicate-sequences.osm.mazdermind.de/?Y=$YEAR&amp;m=$MONTH&amp;d=$DAY&amp;H=$HOUR&amp;i=00&amp;s=00&amp;stream=hour" -O $WORKOSM_DIR/state.txt
+
+# Create the config file
+rm -f $WORKOSM_DIR/configuration.txt
+osmosis --read-replication-interval-init workingDirectory=$WORKOSM_DIR
+
+# Update the config file
+sed -i 's!http:!https:!' $WORKOSM_DIR/configuration.txt sed -i 's!minute!hour!' $WORKOSM_DIR/configuration.txt
+</code></pre>
+<p>3°) Continue to sync (this is called every hour with a CRON task)</p>
+<pre><code># Set some variables
+WORKOSM_DIR=~/osm-sync
+OSM_CARTO_DIR=&lt;path-to-openstreetmap-carto&gt;
+EXPIRE_FILE_NAME=expire-list.txt
+
+# Download changes
+osmosis \
+    --read-replication-interval workingDirectory=$WORKOSM_DIR \
+    --simplify-change \
+    --write-xml-change $WORKOSM_DIR/tmp/osmChange.xml
+
+# Apply the changes
+osm2pgsql \
+    --database gis \
+    --append --slim --multi-geometry --hstore \
+    --cache 3000 \
+    --tag-transform-script $OSM_CARTO_DIR/openstreetmap-carto.lua \
+    --style $OSM_CARTO_DIR/openstreetmap-carto.style \
+    --flat-nodes /ssd/flat-nodes/osm.cache \
+    --expire-tiles 10-20 \
+    --expire-output $WORKOSM_DIR/tmp/$EXPIRE_FILE_NAME \
+    --input-reader xml \
+    $WORKOSM_DIR/tmp/osmChange.xml
+
+# Expire tiles in [10-15]
+render_expired \
+    --tile-dir /hdd/tile-cache/mod_tile \
+    --min-zoom=10 \
+    --max-zoom=15 \
+    --touch-from=10 \
+    --socket /var/run/renderd.sock &lt; $WORKOSM_DIR/tmp/$EXPIRE_FILE_NAME
+
+# Delete tiles in [16-20]
+render_expired \
+    --tile-dir /hdd/tile-cache/mod_tile \
+    --min-zoom=16 \
+    --max-zoom=20 \
+    --delete-from=16 \
+    --socket /var/run/renderd.sock &lt; $WORKOSM_DIR/tmp/$EXPIRE_FILE_NAME
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-deleted" href="/tags/deleted/" rel="tag" title="see questions tagged 'deleted'">deleted</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+<a class="post-tag tag-link-sync" href="/tags/sync/" rel="tag" title="see questions tagged 'sync'">sync</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>10 Jul '19, 19:55</strong>
+</p>
+<img alt="Tim%20Autin's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2a936bbff59e8151128d083b194a0fd7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16898/tim-autin">Tim Autin</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Tim Autin has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/69977/">
+                edited
+                <strong>12 Jul '19, 13:18</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-69977">
+<a name="70047"></a>
+<div class="comment" id="comment-70047">
+<div class="comment-score" id="post-70047-score"></div>
+<div class="comment-text"><p>If it helps you to compare with one that works, I run <a href="https://github.com/SomeoneElseOSM/mod_tile/blob/zoom/openstreetmap-tiles-update-expire">https://github.com/SomeoneElseOSM/mod_tile/blob/zoom/openstreetmap-tiles-update-expire</a> every 5 minutes and I haven't seen the problem that you're seeing.</p></div>
+<div class="comment-info" id="comment-70047-info">
+<span class="comment-age">(13 Jul '19, 15:59)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="70049"></a>
+<div class="comment" id="comment-70049">
+<div class="comment-score" id="post-70049-score"></div>
+<div class="comment-text"><p>Thanks, I already wrote my script based on this one, they are very similar (osmosis + osm2pgsql and then render_expired). It's even worse, my planet_osm_nodes table is now empty -_- ... What did you use to get the PBF file date, to know when to start?</p></div>
+<div class="comment-info" id="comment-70049-info">
+<span class="comment-age">(13 Jul '19, 18:59)</span>
+<a class="comment-user userinfo" href="/users/16898/tim-autin">Tim Autin</a>
+</div>
+</div>
+<a name="70050"></a>
+<div class="comment" id="comment-70050">
+<div class="comment-score" id="post-70050-score"></div>
+<div class="comment-text"><p>If you mean "before applying any updates" then it will have been downloaded from Geofabrik.  The database load script is actually <a href="https://github.com/SomeoneElseOSM/SomeoneElse-style/blob/master/update_render.sh">https://github.com/SomeoneElseOSM/SomeoneElse-style/blob/master/update_render.sh</a> .</p></div>
+<div class="comment-info" id="comment-70050-info">
+<span class="comment-age">(13 Jul '19, 19:59)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="70052"></a>
+<div class="comment" id="comment-70052">
+<div class="comment-score" id="post-70052-score"></div>
+<div class="comment-text"><p>I meant how did you get timestamp to feed the openstreetmap-tiles-update-expire script the first time, to init osmosis with --read-replication-interval-init?</p></div>
+<div class="comment-info" id="comment-70052-info">
+<span class="comment-age">(13 Jul '19, 20:05)</span>
+<a class="comment-user userinfo" href="/users/16898/tim-autin">Tim Autin</a>
+</div>
+</div>
+<a name="70053"></a>
+<div class="comment" id="comment-70053">
+<div class="comment-score" id="post-70053-score"></div>
+<div class="comment-text"><p>The timestamp is scraped from the page: <a href="https://github.com/SomeoneElseOSM/SomeoneElse-style/blob/master/update_render.sh#L141">https://github.com/SomeoneElseOSM/SomeoneElse-style/blob/master/update_render.sh#L141</a> .</p></div>
+<div class="comment-info" id="comment-70053-info">
+<span class="comment-age">(13 Jul '19, 20:07)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="70054"></a>
+<div class="comment not_top_scorer" id="comment-70054">
+<div class="comment-score" id="post-70054-score"></div>
+<div class="comment-text"><p>Oh I see thanks. I'm downloading world data from <a href="https://planet.openstreetmap.org">https://planet.openstreetmap.org</a>, where the timestamp is not given. I'm using "osmium fileinfo $1 | grep osmosis_replication_timestamp=" which seems accurate. Appart from that I can't see what could go wrong :/</p></div>
+<div class="comment-info" id="comment-70054-info">
+<span class="comment-age">(13 Jul '19, 20:56)</span>
+<a class="comment-user userinfo" href="/users/16898/tim-autin">Tim Autin</a>
+</div>
+</div>
+<a name="70059"></a>
+<div class="comment not_top_scorer" id="comment-70059">
+<div class="comment-score" id="post-70059-score"></div>
+<div class="comment-text"><p>Re, the problem is still occuring with your script. I have the same behavior on 3 different servers. I'm using version 0.96.0 of osm2pgsql, what's yours?</p></div>
+<div class="comment-info" id="comment-70059-info">
+<span class="comment-age">(14 Jul '19, 10:51)</span>
+<a class="comment-user userinfo" href="/users/16898/tim-autin">Tim Autin</a>
+</div>
+</div>
+<a name="70060"></a>
+<div class="comment not_top_scorer" id="comment-70060">
+<div class="comment-score" id="post-70060-score"></div>
+<div class="comment-text"><p>The same - "osm2pgsql version 0.96.0 (64 bit id space)", built locally from <a>git://github.com/openstreetmap/osm2pgsql.git</a> I believe.</p>
+<p>(for completeness) the map is <a href="https://map.atownsend.org.uk/">here</a> and the update progress is <a href="https://map.atownsend.org.uk/munin/renderd-day.html">here</a>.</p></div>
+<div class="comment-info" id="comment-70060-info">
+<span class="comment-age">(14 Jul '19, 12:41)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="70061"></a>
+<div class="comment not_top_scorer" id="comment-70061">
+<div class="comment-score" id="post-70061-score"></div>
+<div class="comment-text"><p>Thanks. I re-built osm2pgsql to get the latest updates of the master branch, ran an apt upgrade, and I'm (again) re-creating my planet db to retry. You created your data with line 205 of your update_render.sh, right? Mine is very similar, but I'm using --hstore and --flat-nodes (without this I get an OOME, despite my 64GB of RAM). Do you know if one of these option could cause the bug?</p></div>
+<div class="comment-info" id="comment-70061-info">
+<span class="comment-age">(14 Jul '19, 12:59)</span>
+<a class="comment-user userinfo" href="/users/16898/tim-autin">Tim Autin</a>
+</div>
+</div>
+<a name="70062"></a>
+<div class="comment not_top_scorer" id="comment-70062">
+<div class="comment-score" id="post-70062-score"></div>
+<div class="comment-text"><p>Yes - <a href="https://github.com/SomeoneElseOSM/SomeoneElse-style/blob/master/update_render.sh#L204">https://github.com/SomeoneElseOSM/SomeoneElse-style/blob/master/update_render.sh#L204</a> creates the database, and then appends the two .osm files that contain the map legend.  My guess is that "--flat-nodes" is causing the effect that you're seeing.  Maybe try with a smaller file (that won't run out of memory) without "--flat-nodes"?</p></div>
+<div class="comment-info" id="comment-70062-info">
+<span class="comment-age">(14 Jul '19, 13:26)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="70063"></a>
+<div class="comment not_top_scorer" id="comment-70063">
+<div class="comment-score" id="post-70063-score"></div>
+<div class="comment-text"><p>The problem with a smaller file is that it's harder to see if features have disappeared: it's easy to spot a missing country, less to see a missing restaurant. I'm trying a planet import without --flat-nodes but with --number-processes 1, I never tried that, and it could work.</p></div>
+<div class="comment-info" id="comment-70063-info">
+<span class="comment-age">(14 Jul '19, 13:45)</span>
+<a class="comment-user userinfo" href="/users/16898/tim-autin">Tim Autin</a>
+</div>
+</div>
+<a name="71623"></a>
+<div class="comment not_top_scorer" id="comment-71623">
+<div class="comment-score" id="post-71623-score"></div>
+<div class="comment-text"><p>Hi Tim, did you solve this while using a more recent osm2pgsql version?</p>
+<p>I'm actually seeing the same behavior with osm2pgsql 0.96 and flat-nodes option - at least regarding your second point of (multi-)polygons getting lost while I can't confirm the first one (new nodes not being added).
+And I can add the oddity of running servers in parallel - same stack - same updates but polygon losts are different between the systems ...</p></div>
+<div class="comment-info" id="comment-71623-info">
+<span class="comment-age">(14 Nov '19, 01:01)</span>
+<a class="comment-user userinfo" href="/users/17439/spiekerooger">Spiekerooger</a>
+</div>
+</div>
+<a name="71666"></a>
+<div class="comment not_top_scorer" id="comment-71666">
+<div class="comment-score" id="post-71666-score"></div>
+<div class="comment-text"><p>Problem is still there for me, I ended up recreating the whole database roughly every 3 monthes, and I redirect my users to the backup server during the process. A bit cubersome, but at least it works.</p></div>
+<div class="comment-info" id="comment-71666-info">
+<span class="comment-age">(16 Nov '19, 12:14)</span>
+<a class="comment-user userinfo" href="/users/16898/tim-autin">Tim Autin</a>
+</div>
+</div>
+<a name="71675"></a>
+<div class="comment not_top_scorer" id="comment-71675">
+<div class="comment-score" id="post-71675-score"></div>
+<div class="comment-text"><p>Hi Tim,</p>
+<p>thanks for answering.</p>
+<p>So I'll try to investigate further what's going one there and report back here.</p></div>
+<div class="comment-info" id="comment-71675-info">
+<span class="comment-age">(16 Nov '19, 15:33)</span>
+<a class="comment-user userinfo" href="/users/17439/spiekerooger">Spiekerooger</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-69977">
+<span class="comments-showing">
+            showing 5 of 14
+        </span>
+<a class="show-all-comments-link" href="#">show 9 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-69977-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/69977/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="ZYuBmN7B7Ew3MSZ9x82vJv65nt83k2hR"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,165 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/54434/api-to-find-the-nearest-major-highway-to-a-smaller-road">API to find the nearest major highway to a smaller road?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/54434/up/" id="post-54434-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-54434-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/54434/down/" id="post-54434-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/54434/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm currently using the Overpass API to do some queries that give me a particular Way of interest with highway=residential|unclassified|tertiary|secondary. Now I would like to find the nearest Way with highway=motorway|trunk|primary. I know I could do something like this:</p>
+<pre><code>way(123456789)-&gt;.myroad;
+way(around.myroad:5000)[highway~"^(motorway|trunk|primary)$"];
+out qt;
+</code></pre>
+<p>and then process through the results, calculating the distance between each of the returned ways and my original road way and take the shortest one. If none are found I could requery for 10000 meters, etc. But that is not precise enough for my needs. The closest Way in straight overland distance is not necessarily the closest by roads. It may not even connect for dozens of miles due to terrain.</p>
+<p>Is there maybe a routing API that could handle this type of need? I'd prefer something that uses OSM data so I could feed it in the way ID for my starting road, but I could just as easily specify a coordinate. I wouldnt be able to specify a definite destination.</p>
+<p>As a bonus, I'd also like to be able to do the same thing for other types of map features as well, like nearest (by road distance, not as the crow flies) city/town, bus stop, gas station, etc to the smaller road.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpassapi" href="/tags/overpassapi/" rel="tag" title="see questions tagged 'overpassapi'">overpassapi</a>
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 Feb '17, 00:37</strong>
+</p>
+<img alt="joshcoady's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c49788c38bdb7c114ccf27d800a3bd73?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13283/joshcoady">joshcoady</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="joshcoady has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/54434/">
+                edited
+                <strong>03 Feb '17, 00:44</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-54434">
+</div>
+<div class="comment-tools" id="comment-tools-54434">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-54434-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/54434/api-to-find-the-nearest-major-highway-to-a-smaller-road?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/54434/api-to-find-the-nearest-major-highway-to-a-smaller-road?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/54434/api-to-find-the-nearest-major-highway-to-a-smaller-road?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/54434/api-to-find-the-nearest-major-highway-to-a-smaller-road?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="54438"></a>
+<div class="answer" id="answer-container-54438">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/54438/up/" id="post-54438-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-54438-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/54438/down/" id="post-54438-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I doubt that there is a off the shelf solution but it wouldn't be particularly difficult to do with any of the available routing engines (for example OSRM or graphhopper), you should however probably run your own instance if you are planing to do such queries in a larger way.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/54438/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Feb '17, 10:25</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-54438">
+<a name="54443"></a>
+<div class="comment" id="comment-54443">
+<div class="comment-score" id="post-54443-score"></div>
+<div class="comment-text"><p>Could you give me a push in the right direction? I looked (briefly) at OSRM, but it seemed like I needed to know the destination in order for it to route. Did I miss another way to query for a route? Yes, I'll be doing this on private instances.</p></div>
+<div class="comment-info" id="comment-54443-info">
+<span class="comment-age">(03 Feb '17, 17:34)</span>
+<a class="comment-user userinfo" href="/users/13283/joshcoady">joshcoady</a>
+</div>
+</div>
+<a name="54444"></a>
+<div class="comment" id="comment-54444">
+<div class="comment-score" id="post-54444-score"></div>
+<div class="comment-text"><p>Yes, you need to know two points. One point is the road you are currently on and the other point the road you found via Overpass API. With OSRM you can check if the road is connected to your road and how long the distance/drive time will be. Needs still a lot of queries in the worst case, though.</p></div>
+<div class="comment-info" id="comment-54444-info">
+<span class="comment-age">(03 Feb '17, 19:07)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="54448"></a>
+<div class="comment" id="comment-54448">
+<div class="comment-score" id="post-54448-score"></div>
+<div class="comment-text"><p>You're right. I think that should mostly be doable. I think I could do it with a max of 1-2 overpass queries to see if there are a couple highways in the immediate vicinity of the road (maybe 3km then 10km radius). If that results in 1-4 highways, route to each and find the nearest one. If results in zero or 5+ then I'm thinking I could just route to 4 points 200km N, S, E, and W of the road and one of those should eventually use a highway. So a max of 4 routing queries.</p></div>
+<div class="comment-info" id="comment-54448-info">
+<span class="comment-age">(04 Feb '17, 03:31)</span>
+<a class="comment-user userinfo" href="/users/13283/joshcoady">joshcoady</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-54438">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-54438-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/54434/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="wCZHmmCAJqs1vGo4upDFeF9VhoDeaYFr"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

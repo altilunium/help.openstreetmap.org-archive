@@ -1,0 +1,190 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/76663/how-do-i-know-what-was-marked-in-a-place-before-someone-else-update-it">How do I know what was marked in a place before someone else update it?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/76663/up/" id="post-76663-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-76663-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/76663/down/" id="post-76663-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/76663/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I would like to evaluate the tag history for a location. An agricultural site, for example, I would like to know if what today is a soy plantation, was a corn plantation once. It is possible?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-plantation" href="/tags/plantation/" rel="tag" title="see questions tagged 'plantation'">plantation</a>
+<a class="post-tag tag-link-soil" href="/tags/soil/" rel="tag" title="see questions tagged 'soil'">soil</a>
+<a class="post-tag tag-link-agriculture" href="/tags/agriculture/" rel="tag" title="see questions tagged 'agriculture'">agriculture</a>
+<a class="post-tag tag-link-history" href="/tags/history/" rel="tag" title="see questions tagged 'history'">history</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Sep '20, 15:06</strong>
+</p>
+<img alt="nataliapedroso's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bedfa3abac632da0b3f6ccebce894c9a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18984/nataliapedroso">nataliapedroso</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="nataliapedroso has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-76663">
+</div>
+<div class="comment-tools" id="comment-tools-76663">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-76663-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/76663/how-do-i-know-what-was-marked-in-a-place-before-someone-else-update-it?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/76663/how-do-i-know-what-was-marked-in-a-place-before-someone-else-update-it?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/76663/how-do-i-know-what-was-marked-in-a-place-before-someone-else-update-it?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/76663/how-do-i-know-what-was-marked-in-a-place-before-someone-else-update-it?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="76664"></a>
+<div class="answer" id="answer-container-76664">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/76664/up/" id="post-76664-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-76664-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/76664/down/" id="post-76664-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can use Overpass-turbo to query an area at a date in the past.  <a href="https://overpass-turbo.eu/s/Y4K">https://overpass-turbo.eu/s/Y4K</a> is an example of that.  Zoom out, zoom in anywhere you are interested in, and click "run".  You can then click on any of the things that are highlighted.  That query is:</p>
+<pre><code>[date:"2018-09-04T00:00:00Z"];
+nwr({{bbox}});
+out geom;
+</code></pre>
+<p>but you can of course search for specific things, like with any other overpass query.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/76664/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+<div class="community-wiki">
+        This answer is marked "community wiki".
+        
+    </div>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>16 Sep '20, 16:02</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-76664">
+</div>
+<div class="comment-tools" id="comment-tools-76664">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-76664-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="76666"></a>
+<div class="answer" id="answer-container-76666">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/76666/up/" id="post-76666-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-76666-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/76666/down/" id="post-76666-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can use <a href="https://osmlab.github.io/osm-deep-history/">Deep History</a>, <a href="https://pewu.github.io/osm-history/#/">PeWu</a> or <a href="http://osm.mapki.com/history/">Deep Diff</a> to view the history of an object (node, way or relation)</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/76666/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>16 Sep '20, 17:56</strong>
+</p>
+<img alt="Mannivu's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e3dbac44db8deb4b09af6e6df914de1a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17834/mannivu">Mannivu</a><br/>
+<span class="score" title="1084 reputation points"><span class="">1.1k</span></span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="10 badges"><span class="silver">●</span><span class="badgecount">10</span></span><span title="27 badges"><span class="bronze">●</span><span class="badgecount">27</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Mannivu has 3 accepted answers">6%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/76666/">
+                edited
+                <strong>16 Sep '20, 17:59</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-76666">
+</div>
+<div class="comment-tools" id="comment-tools-76666">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-76666-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/76663/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="8qszswFjYX9gZi6eGDnVEvGkech0R8WN"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

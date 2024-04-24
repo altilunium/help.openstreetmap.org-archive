@@ -1,0 +1,290 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/67918/i-would-like-to-build-a-webservice-to-visualize-historical-changelogs-in-osm-data">I would like to build a webservice to visualize historical changelogs in OSM data</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/67918/up/" id="post-67918-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-67918-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/67918/down/" id="post-67918-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/67918/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello everyone,<br/>
+I am new here and english ist not my native language so I`m sorry for mistakes and inconveniences.<br/>
+I am a college Student of Geoscience and I started a project some weeks ago.<br/>
+I built an Tileserver which gives out a slippy map from some european countries I renderd from osm.pbf files from Geofabrik.de .<br/>
+It is build on an Ubuntu Server 18.10 LTS, 64Bit, runnig in a VM with an Xeon CPU with 3,70Ghz, but just one Core and 5GB of Ram. 
+It is running an apache server and a Postrgresql-Database with PostGis. 
+I do imports of osm.pbf-files with osm2pgsql, for example Switzerland. 
+For the rendering and tileserving I use Mapnik with renderd and mod_tile. 
+For displaying the map tiles i use Leaflet and Openlayers. It works.  </p>
+<p>Now i would like to show the change history of nodes, ways and relatives which were done over the last months or years. 
+Something like switzerland on a slippy map and with a manually used switch or slider you can show the same map but a month ago or a year by sliding left or right.<br/>
+First I thougth about to download the oldest planet.osm.pbf file from Geofabrik.de from 2013, use the tool osmconvert to get the data from switzerland and import this data in Postgresql.<br/>
+Then render new tiles of the old switzerland dataset and let them be served from a second mod_tile (mod_tile2) directory.<br/>
+Then I could use a javascript layerswipe in openlayers, to show a map from 2018 and switch to layer upon to show the same map from 2013.<br/>
+For example like this comparison of OpenStreetMap from 2008 but with a slider - (<a href="http://osmz.ru/osm2008.html#8/47.066/8.550)">http://osmz.ru/osm2008.html#8/47.066/8.550)</a><br/>
+If this should work i repeat the procedure with 2014, 2015, 2016 and 2017. Starting by every first Planet.osm.pbf of a year.  </p>
+<p>My real questions are now, how stupid is this idea?<br/>
+Would this work the way I planned or should I dump this idea?<br/>
+Where are the problems and risks ... or impossibilities?<br/>
+Where could I find even older OSM data to work with?<br/>
+I searched the net for solutions like this but didn`t found a similar procedure.  </p>
+<p>I know there a better ways to show the history of changes in OSM maps. 
+But I lack the knowledge and the comprehension to get to a complex solution like these ones. 
+And I don`t know if my tileserver as it is now ... and my skills, are suited for these kind of solutions.  </p>
+<p>A more fashionable solution would be a gif animation like from the gallery of Geofabrik.de to show the historical developement from 2006 to 2009.<br/>
+<a href="http://www.geofabrik.de/de/gallery/history/index.html">http://www.geofabrik.de/de/gallery/history/index.html</a> </p>
+<p>I am also very interested in a solution like the awesome project of the user "yogi__ks" as an kind of overlay on a existing map:<br/>
+<a href="https://www.openstreetmap.org/user/yogi_ks/diary/35067">https://www.openstreetmap.org/user/yogi_ks/diary/35067</a><br/>
+Will test this out separately on a second VM</p>
+<p>I would appreciate every suggestion, scolding or educational web link.  </p>
+<p>Thank you very much for reading and for responding. And sorry for this amount of text.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-rendering" href="/tags/rendering/" rel="tag" title="see questions tagged 'rendering'">rendering</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-changes" href="/tags/changes/" rel="tag" title="see questions tagged 'changes'">changes</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+<a class="post-tag tag-link-history" href="/tags/history/" rel="tag" title="see questions tagged 'history'">history</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>07 Feb '19, 00:31</strong>
+</p>
+<img alt="Grohnwald's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9ef6971262ce33e76c8120425a953ff3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16259/grohnwald">Grohnwald</a><br>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Grohnwald has no accepted answers">0%</span>
+</br></br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-67918">
+</div>
+<div class="comment-tools" id="comment-tools-67918">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-67918-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/67918/i-would-like-to-build-a-webservice-to-visualize-historical-changelogs-in-osm-data?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/67918/i-would-like-to-build-a-webservice-to-visualize-historical-changelogs-in-osm-data?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/67918/i-would-like-to-build-a-webservice-to-visualize-historical-changelogs-in-osm-data?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/67918/i-would-like-to-build-a-webservice-to-visualize-historical-changelogs-in-osm-data?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="67919"></a>
+<div class="answer" id="answer-container-67919">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/67919/up/" id="post-67919-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-67919-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/67919/down/" id="post-67919-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hi,</p>
+<p>Maybe a planet file with a full history would be useful to you?</p>
+<p><a href="https://wiki.openstreetmap.org/wiki/Planet.osm/full">https://wiki.openstreetmap.org/wiki/Planet.osm/full</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/67919/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>07 Feb '19, 01:25</strong>
+</p>
+<img alt="kocio's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e228dd20b7da2a6c8f559e2118ce08d3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11332/kocio">kocio</a><br>
+<span class="score" title="2054 reputation points"><span class="">2.1k</span></span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="23 badges"><span class="silver">●</span><span class="badgecount">23</span></span><span title="41 badges"><span class="bronze">●</span><span class="badgecount">41</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="kocio has 14 accepted answers">20%</span>
+</br></br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-67919">
+<a name="67921"></a>
+<div class="comment" id="comment-67921">
+<div class="comment-score" id="post-67921-score"></div>
+<div class="comment-text"><p>Thanks for the answer.
+I stumbled over this idea by my "researches" but I didn't got the comprehension how to show the order of events of changes for months or years from only one planet file. 
+I know there are ways, but I don't know how to perform them with my currently server Setup.
+Maybe you have link for me which I could follow?</p></div>
+<div class="comment-info" id="comment-67921-info">
+<span class="comment-age">(07 Feb '19, 03:56)</span>
+<a class="comment-user userinfo" href="/users/16259/grohnwald">Grohnwald</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-67919">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-67919-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="67920"></a>
+<div class="answer" id="answer-container-67920">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/67920/up/" id="post-67920-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-67920-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/67920/down/" id="post-67920-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I can't help with your project but if you only want Switzerland data you can download go here 
+<a href="https://download.geofabrik.de/europe/switzerland.html">https://download.geofabrik.de/europe/switzerland.html</a>
+and click on "Raw directory index" to get older files going back to 2014.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/67920/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>07 Feb '19, 02:01</strong>
+</p>
+<img alt="Rassilon's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a69c47928edc8d3686d5236d45f1f146?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16260/rassilon">Rassilon</a><br>
+<span class="score" title="15 reputation points">15</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Rassilon has no accepted answers">0%</span>
+</br></br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-67920">
+<a name="67922"></a>
+<div class="comment" id="comment-67922">
+<div class="comment-score" id="post-67922-score"></div>
+<div class="comment-text"><p>Thanks for the suggestion. 
+I wanted also to import and render other countries and perform the procedure like on switzerland. 
+But I got problems with my slippymap when I did import and render tiles from osm.pbf files of another country. 
+Some zoomlayers did show blank tiles, some zoomlayers were completely blank. 
+A colleague of mine suggested the reason could be the different timestamp of the different osm_pbf files I used. 
+So thought I extract the data for every country in one mod_tile directory from the same planet file.</p></div>
+<div class="comment-info" id="comment-67922-info">
+<span class="comment-age">(07 Feb '19, 04:21)</span>
+<a class="comment-user userinfo" href="/users/16259/grohnwald">Grohnwald</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-67920">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-67920-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="67923"></a>
+<div class="answer" id="answer-container-67923">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/67923/up/" id="post-67923-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-67923-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/67923/down/" id="post-67923-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The correct resources tools to do this are:</p>
+<ul>
+<li>Full History files (from Geofabrik)</li>
+<li>Osmium or Osmium tool (which can
+   generate a time-snapshot from the
+   .osh file)</li>
+</ul>
+<p>You should look at MaZderMind's <a href="https://github.com/MaZderMind/osm-history-renderer">GitHub repository</a> too.</p>
+<p>The fundamental problem is re-inventing the wheel for osm2pgsql's polygon assembly routines, which is non-trivial (particularly for relations.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/67923/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>07 Feb '19, 13:40</strong>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SK53 has 121 accepted answers">22%</span>
+</br></br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-67923">
+</div>
+<div class="comment-tools" id="comment-tools-67923">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-67923-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/67918/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="X60P3rd6UV76m2NPrDlbboKuvCqjZgKm"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

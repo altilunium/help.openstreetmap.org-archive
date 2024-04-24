@@ -1,0 +1,111 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/59855/osmosis-fails-to-read-xml-change-file-due-to-badsqlgrammer">Osmosis Fails to read XML Change file due to BadSQLGrammer</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/59855/up/" id="post-59855-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-59855-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/59855/down/" id="post-59855-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/59855/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Good Afternoon all. I am new to osmosis but have been spending a lot of time messing around with it. I finally got my process down to creating a postgres, Running the pgsnapshot_schema_0.6, actions, bbox and linestring commands to bulild the schema. I have postgis and hstore installed. I have successfully imported great britain and belgium using this command below but for respective pbf files.</p>
+<p>osmosis --read-pbf file=/N:/RawData/OSM/Great_Britain/great-britain-latest.osm.pbf --write-pgsql host=localhost database=great_britain user=postgres </p>
+<p>My issue is on the read xml change files and write pgsql change commands. i have tried the following commands for both db and downloading the change files from geofabrik. How ever i always run into the same exact error every single time. It appears Java or Osmoisis is not finding postgres and doesnt know how to execute the query. I found similar issues online but NO ONE to explain this one because i feel pretty good about having all other things set up correctly. If someone can help resolve this error it would be greatly appreciated!!!</p>
+<p>N:\RawData\OSM\Belgium&gt;osmosis --read-xml-change file=N:/RawData/OSM/Belgium/bel_diff.osc.gz outPipe(mypipe) --write-pgsql-change host=localhost database=belgium user=postgres password=postgres inPipe(mypipe)
+Sep 26, 2017 1:47:07 PM org.openstreetmap.osmosis.core.Osmosis run
+INFO: Osmosis Version 0.45
+Sep 26, 2017 1:47:07 PM org.openstreetmap.osmosis.core.Osmosis run
+INFO: Preparing pipeline.
+Sep 26, 2017 1:47:08 PM org.openstreetmap.osmosis.core.Osmosis run
+INFO: Launching pipeline execution.
+Sep 26, 2017 1:47:08 PM org.openstreetmap.osmosis.core.Osmosis run
+INFO: Pipeline executing, waiting for completion.
+Sep 26, 2017 1:47:09 PM org.openstreetmap.osmosis.core.pipeline.common.ActiveTaskManager waitForCompletion
+SEVERE: Thread for task 1-read-xml-change failed
+org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [UPDATE nodes SET id = ?, version = ?, user_id = ?, tstamp = ?, changeset_id = ?, tags = ?, geom = ? WHERE id = ?]; nested exception is org.postgresql.util.PSQLException: Can't infer the SQL type to use for an instance of java.util.HashMap. Use setObject() with an explicit Types value to specify the type to use.
+        at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:99)
+        at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:73)
+        at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+        at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+        at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:645)
+        at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:866)
+        at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:890)
+        at org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate.update(NamedParameterJdbcTemplate.java:287)
+        at org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate.update(NamedParameterJdbcTemplate.java:292)
+        at org.openstreetmap.osmosis.pgsnapshot.v0_6.impl.EntityDao.modifyEntity(EntityDao.java:132)
+        at org.openstreetmap.osmosis.pgsnapshot.v0_6.impl.NodeDao.modifyEntity(NodeDao.java:65)
+        at org.openstreetmap.osmosis.pgsnapshot.v0_6.impl.ChangeWriter.write(ChangeWriter.java:126)
+        at org.openstreetmap.osmosis.pgsnapshot.v0_6.impl.ActionChangeWriter.process(ActionChangeWriter.java:54)
+        at org.openstreetmap.osmosis.core.container.v0_6.NodeContainer.process(NodeContainer.java:58)
+        at org.openstreetmap.osmosis.pgsnapshot.v0_6.PostgreSqlChangeWriter.process(PostgreSqlChangeWriter.java:101)
+        at org.openstreetmap.osmosis.xml.v0_6.impl.ChangeSourceElementProcessor$ChangeSinkAdapter.process(ChangeSourceElementProcessor.java:144)
+        at org.openstreetmap.osmosis.xml.v0_6.impl.NodeElementProcessor.end(NodeElementProcessor.java:139)
+        at org.openstreetmap.osmosis.xml.v0_6.impl.OsmChangeHandler.endElement(OsmChangeHandler.java:94)
+        at org.apache.xerces.parsers.AbstractSAXParser.endElement(Unknown Source)
+        at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanEndElement(Unknown Source)
+        at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+        at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+        at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+        at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+        at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+        at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+        at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+        at org.apache.xerces.jaxp.SAXParserImpl.parse(Unknown Source)
+        at javax.xml.parsers.SAXParser.parse(Unknown Source)
+        at org.openstreetmap.osmosis.xml.v0_6.XmlChangeReader.run(XmlChangeReader.java:90)
+        at java.lang.Thread.run(Unknown Source)
+Caused by: org.postgresql.util.PSQLException: Can't infer the SQL type to use for an instance of java.util.HashMap. Use setObject() with an explicit Types value to specify the type to use.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-pgsql" href="/tags/pgsql/" rel="tag" title="see questions tagged 'pgsql'">pgsql</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>26 Sep '17, 19:49</strong>
+</p>
+<img alt="Asinger321's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/913ce6c316180974e96f3ed3dfe6fc4f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14254/asinger321">Asinger321</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Asinger321 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-59855">
+</div>
+<div class="comment-tools" id="comment-tools-59855">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-59855-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/59855/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="YGqlsS6FkLqhmGwC7ryDjFTufemoGXUz"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

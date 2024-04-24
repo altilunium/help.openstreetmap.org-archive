@@ -1,0 +1,182 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/28563/missing-polygons-or-rendering-issue">missing polygons or rendering issue?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/28563/up/" id="post-28563-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-28563-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/28563/down/" id="post-28563-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/28563/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am experimenting with setting up an OSM tile server.</p>
+<p>So far, I have downloaded a recent version of the data, loaded it into PostGIS using osm2pgsql, and set up renderd and mod_tile on my server instance.</p>
+<p>I have a test harness that shows some missing polygons along the River Thames:</p>
+<p><a href="http://174.129.244.158/jlmap.html">http://174.129.244.158/jlmap.html</a></p>
+<p>Is there a straightforward approach to debugging this? How do I determine if the polygons are missing, or if it is a missing tag or rendering error.</p>
+<p>Thanks in advance.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-rendering" href="/tags/rendering/" rel="tag" title="see questions tagged 'rendering'">rendering</a>
+<a class="post-tag tag-link-tileserver" href="/tags/tileserver/" rel="tag" title="see questions tagged 'tileserver'">tileserver</a>
+<a class="post-tag tag-link-polygon" href="/tags/polygon/" rel="tag" title="see questions tagged 'polygon'">polygon</a>
+<a class="post-tag tag-link-missing" href="/tags/missing/" rel="tag" title="see questions tagged 'missing'">missing</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>27 Nov '13, 22:55</strong>
+</p>
+<img alt="john_willyn's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2ccafb68c71bc85b0626afb0152c036e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7897/john_willyn">john_willyn</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="john_willyn has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/28563/">
+                edited
+                <strong>28 Nov '13, 20:01</strong>
+</a>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-28563">
+<a name="28565"></a>
+<div class="comment" id="comment-28565">
+<div class="comment-score" id="post-28565-score">1</div>
+<div class="comment-text"><p>Haven't looked into this in detail, but the fact that the default osm.org map (and, in fact, the various other renders available on osm.org) all show the correct riverbank there suggests to me that it's not a data issue.</p></div>
+<div class="comment-info" id="comment-28565-info">
+<span class="comment-age">(27 Nov '13, 23:27)</span>
+<a class="comment-user userinfo" href="/users/5/richard">Richard ♦</a>
+</div>
+</div>
+<a name="28578"></a>
+<div class="comment" id="comment-28578">
+<div class="comment-score" id="post-28578-score">2</div>
+<div class="comment-text"><p>You're missing dozens of polygons - residential areas around south london, Wimbledon Common etc. It looks like your import has failed somehow.</p></div>
+<div class="comment-info" id="comment-28578-info">
+<span class="comment-age">(28 Nov '13, 09:21)</span>
+<a class="comment-user userinfo" href="/users/3/andy-allan">Andy Allan</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-28563">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-28563-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/28563/missing-polygons-or-rendering-issue?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/28563/missing-polygons-or-rendering-issue?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/28563/missing-polygons-or-rendering-issue?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/28563/missing-polygons-or-rendering-issue?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="28573"></a>
+<div class="answer" id="answer-container-28573">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/28573/up/" id="post-28573-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-28573-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/28573/down/" id="post-28573-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The general way to approach such a problem would be (note that with the web site design constantly changing, the process might differ slightly if you read this at a later time)</p>
+<ul>
+<li>go to www.openstreetmap org</li>
+<li>zoom very far into an area that has at least one line of the polygon you're interested in</li>
+<li>activate the data layer (click the layer button on the right then activate the "map data" checkbox)</li>
+<li>click on the blue line in the map and select "details" on the left hand side</li>
+<li>make a note of the way ID, and also look at the bottom of the node list where it should say "part of..." and point to a riverbank relation</li>
+<li>use pgsql (or pgadmin or similar) to connect to your database</li>
+<li>in the planet_osm_polygons table you should have an object with an osm_id of the negative (!) id of the relation</li>
+<li>if that isn't there, check if your planet_osm_rels has an entry with the positive (!) id of the relation and if planet_osm_ways has all the constituent ways; likely something is missing and therefore the polygon could not be constructed. Check your source data in that case. If however the building blocks are all there but the polygon is not, then for some reason osm2pgsql decided not to create the polygon - either due to a bug or due to tag filtering via the style file or LUA code.</li>
+<li>if however the polygon is there in your database but not on the tiles then there must be some kind of problem down the line, in your rendering rules.</li>
+</ul>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/28573/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>28 Nov '13, 07:53</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-28573">
+<a name="28586"></a>
+<div class="comment" id="comment-28586">
+<div class="comment-score" id="post-28586-score"></div>
+<div class="comment-text"><p>Thanks for the very detailed instructions.  Unfortunately, I only see the node numbers listed in the node list, and not any relations, or at least anything I can identify as a relation.  I scouted around in the tables and tried to figure out the structure, but none of the id's look they were listed in the node list.</p>
+<p>The way ID is 204068876 in case anyone wants to help guide me further.  At least this seems to be one of the missing polygons.</p>
+<p>I do suspect my import was partially bad, and I noticed a couple of errors reported in 'pending ways', but thought the relations and polygons completed without errors.</p>
+<p>Thanks again.</p></div>
+<div class="comment-info" id="comment-28586-info">
+<span class="comment-age">(28 Nov '13, 17:04)</span>
+<a class="comment-user userinfo" href="/users/7897/john_willyn">john_willyn</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-28573">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-28573-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/28563/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="bH1Y7kg2TyUmiG6sA64hZ6gPkQHo4pn3"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

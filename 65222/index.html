@@ -1,0 +1,228 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/65222/mapping-poi-nodes-with-multiple-entrances">Mapping POI nodes with multiple entrances</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/65222/up/" id="post-65222-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-65222-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/65222/down/" id="post-65222-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/65222/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>How should we map POI nodes with multiple entrances? </p>
+<p>For instance, a restaurant occupies the ground floor of a multi-level building that spans an entire city block. It has a main entrance that corresponds to its official address, and another entrance on a parallel street.</p>
+<p>If this restaurant were a mapped as way, I'd simply add two entrance nodes to the way's perimeter, <code>entrance=main</code> and <code>entrance=yes</code>.  But because there are other tenants in the building -- maybe just flats, or maybe other amenities -- the restaurant is mapped as a node. There's no obvious way to associate entrance nodes with the restaurant node.</p>
+<p>Note that:</p>
+<ul>
+<li>Entrances might be on the same
+   street, or on different streets.</li>
+<li>Secondary entrance is often
+   constructed and signed for wheelchair
+   access.</li>
+<li>Secondary entrance may be
+   signed with its own differing
+   address, or with the main 
+   address, or may have no address.</li>
+<li>In some buildings, both main and secondary entrances can correspond to multiple POIs.</li>
+<li>When a building contains multiple
+   POIs, a secondary entrance may be
+   signed for a single POI but in
+   fact allow access to all of them.</li>
+</ul>
+<p>My instinct says there should be a way to join the POI node and the entrance nodes into a relation, but I wouldn't know what to use for type or roles. </p>
+<p>Another thought was simply drawing footways connecting the POI to the entrance nodes, but I'm a little uncomfortable mapping a footway that does not, in fact, correspond to anything in real life. Is there an appropriate tag for a way that isn't meant to directly correspond to something geographically? <code>symbolic=yes</code> or <code>isomorphic=yes</code> or <code>visible=routing_only</code>, something like that?</p>
+<p>Using the <a href="https://wiki.openstreetmap.org/wiki/Simple_Indoor_Tagging">indoor tagging scheme</a> also comes to mind, but ideally I'd want a solution that would allow indoor-tagging-agnostic routing engines to be able to direct users to the best entrance (especially for wheelchair users) without having to deduce, for instance, that an entrance on level 0 corresponds to a POI on level 0 when connected by a corridor on level 0.</p>
+<p>Thanks, J</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-entrance" href="/tags/entrance/" rel="tag" title="see questions tagged 'entrance'">entrance</a>
+<a class="post-tag tag-link-indoor" href="/tags/indoor/" rel="tag" title="see questions tagged 'indoor'">indoor</a>
+<a class="post-tag tag-link-wheelchair" href="/tags/wheelchair/" rel="tag" title="see questions tagged 'wheelchair'">wheelchair</a>
+<a class="post-tag tag-link-tagging" href="/tags/tagging/" rel="tag" title="see questions tagged 'tagging'">tagging</a>
+<a class="post-tag tag-link-poi" href="/tags/poi/" rel="tag" title="see questions tagged 'poi'">poi</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>08 Aug '18, 21:01</strong>
+</p>
+<img alt="jmapb's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/977d95e2184a885d9a01fb3297225872?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14350/jmapb">jmapb</a><br/>
+<span class="score" title="3387 reputation points"><span class="">3.4k</span></span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="33 badges"><span class="silver">●</span><span class="badgecount">33</span></span><span title="61 badges"><span class="bronze">●</span><span class="badgecount">61</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="jmapb has 22 accepted answers">22%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/65222/">
+                edited
+                <strong>21 Aug '18, 16:23</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-65222">
+</div>
+<div class="comment-tools" id="comment-tools-65222">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-65222-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/65222/mapping-poi-nodes-with-multiple-entrances?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/65222/mapping-poi-nodes-with-multiple-entrances?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/65222/mapping-poi-nodes-with-multiple-entrances?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/65222/mapping-poi-nodes-with-multiple-entrances?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="65223"></a>
+<div class="answer accepted-answer" id="answer-container-65223">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/65223/up/" id="post-65223-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-65223-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/65223/down/" id="post-65223-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/65223/" rel="nofollow" title="jmapb has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>From your description, I see no reason not to map this restaurant as an area instead of a node. That the building has other tenants is a good reason to avoid putting the restaurant's tag onto the <em>building area</em>, but it does not stop you from creating an area for the restaurant itself – this second area can even share nodes with the building area. By <strong>mapping the POI as an area</strong>, adding multiple entrances becomes very easy.</p>
+<p>Although this particular situation may be solved using an area, though, you are ultimately correct that there are more complex cases where that doesn't work any more – such as an entrance that provides access to multiple amenities. <strong>Using relations</strong> is probably the best solution for those cases. There is no firmly established relation type yet, but there have been some proposals over the years. For example, I believe the <a href="https://wiki.openstreetmap.org/wiki/Relations/Proposed/Associated_Entrance">associated_entrance</a> relation would cover this use case.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/65223/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Aug '18, 23:03</strong>
+</p>
+<img alt="Tordanik's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0626be5f46f32fce501353e8a5ec399c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14/tordanik">Tordanik</a><br/>
+<span class="score" title="11998 reputation points"><span class="">12.0k</span></span><span title="15 badges"><span class="badge1">●</span><span class="badgecount">15</span></span><span title="106 badges"><span class="silver">●</span><span class="badgecount">106</span></span><span title="147 badges"><span class="bronze">●</span><span class="badgecount">147</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Tordanik has 58 accepted answers">35%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-65223">
+<a name="65224"></a>
+<div class="comment" id="comment-65224">
+<div class="comment-score" id="post-65224-score"></div>
+<div class="comment-text"><p>Thanks. A distinct but overlapping area specifically for the POI is a mapping method I've never encountered, but it sounds useful for the simple cases, of which there are many. Also useful for POIs that span the ground floor of multiple buildings. And it would be compatible with the indoor tagging schema.</p>
+<p>Offhand, one thing that gives me pause is the difficulty of estimating the footprint of a restaurant etc if it's <em>not</em> occupying the entire floor. How best to tag the fact that this may be a rough estimate? I'd hate to clutter the map with notes.</p>
+<p>The associated_entrance relation, though, looks very much like what I had in mind originally. But do any routing engines respect this?</p></div>
+<div class="comment-info" id="comment-65224-info">
+<span class="comment-age">(08 Aug '18, 23:27)</span>
+<a class="comment-user userinfo" href="/users/14350/jmapb">jmapb</a>
+</div>
+</div>
+<a name="65225"></a>
+<div class="comment" id="comment-65225">
+<div class="comment-score" id="post-65225-score">1</div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/14350/jmapb">@jmapb</a>: it's very unlikely that routers support an abandonned proposal with only 44 occurrences (according to taginfo).</p></div>
+<div class="comment-info" id="comment-65225-info">
+<span class="comment-age">(09 Aug '18, 04:11)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+<a name="65237"></a>
+<div class="comment" id="comment-65237">
+<div class="comment-score" id="post-65237-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/14350/jmapb">@jmapb</a>: Estimated polygons can still be useful. And for indoor and underground features, them being estimates would be my default assumption unless the changeset has a source indicating otherwise. But yeah, if you want to explicitly indicate that you've been using an estimate, <a href="https://wiki.openstreetmap.org/wiki/Key:note">note</a> or <a href="https://wiki.openstreetmap.org/wiki/Key:fixme">fixme</a> tags would do the job.</p>
+<p>And routing engines are of course highly unlikely to already support relations for entrances. But one of the best ways to encourage developers to add support for any new tag is to use it a lot!</p></div>
+<div class="comment-info" id="comment-65237-info">
+<span class="comment-age">(09 Aug '18, 15:15)</span>
+<a class="comment-user userinfo" href="/users/14/tordanik">Tordanik</a>
+</div>
+</div>
+<a name="65488"></a>
+<div class="comment" id="comment-65488">
+<div class="comment-score" id="post-65488-score"></div>
+<div class="comment-text"><p>Thanks... I've been trying out some polygon areas for shops and restaurants. Here's a restaurant similar to the situation described in the original question, with a main entry on the corner and a wheelchair entry in the back:
+<a href="https://www.openstreetmap.org/way/617474313">https://www.openstreetmap.org/way/617474313</a></p>
+<p>I've also found this is a great way to map large USA drug stores like Duane Reade and Rite Aid which function as grocery/convenience stores 24/7 and contain a pharmacy with daytime-only hours:</p>
+<p><a href="https://www.openstreetmap.org/way/617474312">https://www.openstreetmap.org/way/617474312</a>
+<a href="https://www.openstreetmap.org/way/616812439">https://www.openstreetmap.org/way/616812439</a></p>
+<p>I've taken special care to make the the <code>entrance</code> nodes are connected to the POI way only, not to the building polygon, so they won't be mistaken for general entrances to the building. I've even separated them from the building footprint by a couple inches, which might be overkill.</p>
+<p>I've also tried out the <code>associated_entrance</code> relation, and though it makes sense to me, JOSM flags it, so I doubt these will survive for too long.</p></div>
+<div class="comment-info" id="comment-65488-info">
+<span class="comment-age">(21 Aug '18, 16:20)</span>
+<a class="comment-user userinfo" href="/users/14350/jmapb">jmapb</a>
+</div>
+</div>
+<a name="65489"></a>
+<div class="comment" id="comment-65489">
+<div class="comment-score" id="post-65489-score">1</div>
+<div class="comment-text"><p>It's all a bit moot at the moment because the available routing doesn't even route to an entrance in the simple case (ie, directions to building that has one and only one entrance node), much less an <code>associated_entrance</code>. But hopefully these things will get more sophisticated with time.</p></div>
+<div class="comment-info" id="comment-65489-info">
+<span class="comment-age">(21 Aug '18, 16:21)</span>
+<a class="comment-user userinfo" href="/users/14350/jmapb">jmapb</a>
+</div>
+</div>
+<a name="66568"></a>
+<div class="comment not_top_scorer" id="comment-66568">
+<div class="comment-score" id="post-66568-score"></div>
+<div class="comment-text"><p>Something I've just noticed re: mapping POIs as areas versus as nodes -- A POI mapped as a node inside a building will inherit that building's address (if it has one) in Nominatim, a but a POI mapped as a closed way will <strong>not</strong>. Even if the way is entirely inside the building, Nominatim will simply associate it with the nearest road, not the building address. So when mapping POIs as areas, be sure to tag them explicitly with <code>addr:*</code> tags if possible.</p></div>
+<div class="comment-info" id="comment-66568-info">
+<span class="comment-age">(30 Oct '18, 15:48)</span>
+<a class="comment-user userinfo" href="/users/14350/jmapb">jmapb</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-65223">
+<span class="comments-showing">
+            showing 5 of 6
+        </span>
+<a class="show-all-comments-link" href="#">show 1 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-65223-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/65222/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="qTEVDVtHdvPSNMCzHUN8OLQJmUMsVwrY"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

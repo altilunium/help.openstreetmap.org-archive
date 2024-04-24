@@ -1,0 +1,174 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/45098/how-can-i-use-osm-api-to-find-the-street-intersection-coordinates-in-android-development">How Can I use OSM API to find the street intersection coordinates in android development?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/45098/up/" id="post-45098-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-45098-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/45098/down/" id="post-45098-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/45098/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I want to create an android project about street intersections! Like I choose a street name, starting point and the radius. Then the program gives me an array of the The streets that cross that one in that radius as a list of street names in another list activity. When I choose one of the streets I want to be redirected to the map at their intersection point. 
+  So how can I use a openStreetMap API.To create this? Any suggestions are pleased.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-intersection" href="/tags/intersection/" rel="tag" title="see questions tagged 'intersection'">intersection</a>
+<a class="post-tag tag-link-points" href="/tags/points/" rel="tag" title="see questions tagged 'points'">points</a>
+</div>
+<div class="post-controls" id="question-controls">
+<div class="community-wiki">
+        This question is marked "community wiki".
+        
+    </div>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>07 Sep '15, 11:52</strong>
+</p>
+<img alt="AzaWiza's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e59db41fb4c0996e512149db6cfbb7d4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11446/azawiza">AzaWiza</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="AzaWiza has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-45098">
+</div>
+<div class="comment-tools" id="comment-tools-45098">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-45098-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/45098/how-can-i-use-osm-api-to-find-the-street-intersection-coordinates-in-android-development?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/45098/how-can-i-use-osm-api-to-find-the-street-intersection-coordinates-in-android-development?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/45098/how-can-i-use-osm-api-to-find-the-street-intersection-coordinates-in-android-development?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/45098/how-can-i-use-osm-api-to-find-the-street-intersection-coordinates-in-android-development?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="45112"></a>
+<div class="answer" id="answer-container-45112">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/45112/up/" id="post-45112-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-45112-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/45112/down/" id="post-45112-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Except in a very loose way, the answer is no. The OSM API is primarly for editing OSM data and doesn't do very much outside of providing you with the data for a specific region.</p>
+<p>The <a href="http://wiki.openstreetmap.org/wiki/Overpass_API">Overpass API</a> provides more in the way of advanced queries, but I suspect your requirements will require loading OSM data in to a geo-aware database (for example Postgres with the PostGIS extension) and performing the corresponding spatial queries yourself. Before you do that you should read up on the OSM data model and the various possible database schemas.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/45112/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Sep '15, 08:36</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-45112">
+<a name="45151"></a>
+<div class="comment" id="comment-45151">
+<div class="comment-score" id="post-45151-score"></div>
+<div class="comment-text"><p>That is exactly what I was Looking for! Thank you! Are there any way to send a query to overpass turbo from an android device? Like Now I have OSM map on my android devidce. by choosing a specia area there, Can I write a query in getText field like this one <br/>"[bbox:{{bbox}}]; <br/>way[highway][name="Юнусалиева Болота проспект"];node(w)-&gt;.n1;<br/> way[highway][name="Скрябина улица"];<br/>node(w)-&gt;.n2; node.n1.n2; <br/>out meta; "<br/><br/>ANd get the result of the query in txt format.
+like this <br/><br/>[bbox:42.84342093245924,74.60618019104004,42.85234094569768,74.63012695312499];<br/>
+way[highway][name="Юнусалиева Болота проспект"];node(w)-&gt;.n1;<br/>
+way[highway][name="Скрябина улица"];node(w)-&gt;.n2;<br/>
+node.n1.n2;<br/>
+out meta;</p></div>
+<div class="comment-info" id="comment-45151-info">
+<span class="comment-age">(10 Sep '15, 03:21)</span>
+<a class="comment-user userinfo" href="/users/11446/azawiza">AzaWiza</a>
+</div>
+</div>
+<a name="45154"></a>
+<div class="comment" id="comment-45154">
+<div class="comment-score" id="post-45154-score">1</div>
+<div class="comment-text"><p>Sure, this is possible. Just send a corresponding HTTP request and parse the response. See the various examples in the <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Language_Guide">Overpass API language guide</a>.</p></div>
+<div class="comment-info" id="comment-45154-info">
+<span class="comment-age">(10 Sep '15, 07:43)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="45206"></a>
+<div class="comment" id="comment-45206">
+<div class="comment-score" id="post-45206-score"></div>
+<div class="comment-text"><p>You should mind your terminology though. Overpass Turbo is a website build around Overpass API which just makes it easier to write queries. A bit like an IDE build around a compiler. Overpass API is one of the public instances that you can call via HTTP requests. However, Overpass API may also refer to the open-source software used to power the public instances.</p></div>
+<div class="comment-info" id="comment-45206-info">
+<span class="comment-age">(12 Sep '15, 11:48)</span>
+<a class="comment-user userinfo" href="/users/280/sanderd17">Sanderd17</a>
+</div>
+</div>
+<a name="45207"></a>
+<div class="comment" id="comment-45207">
+<div class="comment-score" id="post-45207-score">1</div>
+<div class="comment-text"><p><a href="http://help.openstreetmap.org/users/280/sanderd17"></a><a href="http://help.openstreetmap.org/users/280/sanderd17">@Sanderd17</a>:</p>
+<blockquote>
+<p>Overpass API is one of the public instances that you can call via HTTP requests.</p>
+</blockquote>
+<p>Did you perhaps mean: <a href="http://overpass-api.de/">overpass-api.de</a> is one of the public Overpass API instances (in fact it's the <em>main instance</em>) that you can call via HTTP requests? Some of the other public instances are listed <a href="https://wiki.openstreetmap.org/wiki/Overpass_API#Introduction">here</a>.</p></div>
+<div class="comment-info" id="comment-45207-info">
+<span class="comment-age">(12 Sep '15, 13:54)</span>
+<a class="comment-user userinfo" href="/users/8708/mmd">mmd</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-45112">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-45112-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/45098/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="rMARqkKsttREsp3BK1Kh0MOGZxPGaL1m"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

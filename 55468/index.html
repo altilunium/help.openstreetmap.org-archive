@@ -1,0 +1,314 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/55468/umap-installation-postgresql-connection-error">umap installation: postgresql connection error</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/55468/up/" id="post-55468-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-55468-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/55468/down/" id="post-55468-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/55468/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I try to install umap on an alwaysdata server. </p>
+<p>I follow this tutorial :
+<a href="https://umap-project.readthedocs.io/en/latest/install/">https://umap-project.readthedocs.io/en/latest/install/</a></p>
+<p>At the migrate step</p>
+<pre><code>umap migrate
+</code></pre>
+<p>i have this error: </p>
+<pre><code>File "/home/*******/umap/lib/python3.6/site-packages/django/db/backends/base/base.py", line 171, in connect                                                                                   
+    self.connection = self.get_new_connection(conn_params)                                                                                                                                    
+File "/home/*******/umap/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 176, in get_new_connection                                                                  
+    connection = Database.connect(**conn_params)                                                                                                                                              
+File "/home/*******/umap/lib/python3.6/site-packages/psycopg2/__init__.py", line 164, in connect                                                                                              
+    conn = _connect(dsn, connection_factory=connection_factory, async=async)                                                                                                                  
+django.db.utils.OperationalError: could not connect to server: No such file or directory                                                                                                      
+        Is the server running locally and accepting                                                                                                                                           
+        connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+</code></pre>
+<p>This is my local.py (i have try lot of things for the host:</p>
+<pre><code>SECRET_KEY = '********'                                                                                                                                                                    
+INTERNAL_IPS = ('127.0.0.1', )                                                                                                                                                                
+ALLOWED_HOSTS = ['*', 'postgresql-&lt;accountname&gt;.alwaysdata.net',]
+
+DEBUG = True
+
+ADMINS = (                                                                                                                                                                                    
+    ('You', 'your@email'),                                                                                                                                                                    
+)                                                                                                                                                                                             
+MANAGERS = ADMINS
+
+DATABASES = {                                                                                                                                                                                 
+    'default': {                                                                                                                                                                              
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',                                                                                                                                   
+        'NAME': '********_umap',                                                                                                                                                                 
+        'USER': '********',                                                                                                                                                                      
+        'PASSWORD': '********'                                                                                                                                                             
+        'HOST': 'postgresql-&lt;accountname&gt;.alwaysdata.net',                                                                                                                                                  
+        'PORT': '5432',                                                                                                                                                                       
+        'DATABASE_HOST' = 'postgresql-&lt;accountname&gt;.alwaysdata.net',                                                                                                                                        
+    }                                                                                                                                                                                         
+}
+</code></pre>
+<p>The alwaysdata team haven't find a solution for my problem.
+<a href="https://forum.alwaysdata.com/viewtopic.php?id=4763">https://forum.alwaysdata.com/viewtopic.php?id=4763</a></p>
+<p>Have you any idea?</p>
+<p>Thanks a lot.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-migrate" href="/tags/migrate/" rel="tag" title="see questions tagged 'migrate'">migrate</a>
+<a class="post-tag tag-link-installation" href="/tags/installation/" rel="tag" title="see questions tagged 'installation'">installation</a>
+<a class="post-tag tag-link-umap" href="/tags/umap/" rel="tag" title="see questions tagged 'umap'">umap</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-local.py" href="/tags/local.py/" rel="tag" title="see questions tagged 'local.py'">local.py</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>04 Apr '17, 10:37</strong>
+</p>
+<img alt="Suryavarman's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/374bf7c432b5fdaf4aaaef3ebdbf90b6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13556/suryavarman">Suryavarman</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Suryavarman has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/55468/">
+                edited
+                <strong>04 Apr '17, 23:39</strong>
+</a>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-55468">
+</div>
+<div class="comment-tools" id="comment-tools-55468">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-55468-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/55468/umap-installation-postgresql-connection-error?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/55468/umap-installation-postgresql-connection-error?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/55468/umap-installation-postgresql-connection-error?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/55468/umap-installation-postgresql-connection-error?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="55483"></a>
+<div class="answer" id="answer-container-55483">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/55483/up/" id="post-55483-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-55483-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/55483/down/" id="post-55483-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The last three lines of the error message are pretty clear, aren' they? It's expecting to connect to Postgres via a named pipe at /var/run/postgresql/.s.PGSQL.5432, but that file doesn't exist. Does anything named similarly exist in /var/run/postgresql/? Can you see the server running when you type "ps aux | grep postgres"?
+It looks like umap (which I don't have a clue about, sorry) is actually supposed to use an IP socket to connect but somehow the database adapter is forced to only try the Unix socket. Maybe psycopg2 has some kind of config file?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/55483/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>05 Apr '17, 15:22</strong>
+</p>
+<img alt="mbethke's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d62eaa0c9cab6317d2887bfe6bd2163b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12949/mbethke">mbethke</a><br/>
+<span class="score" title="381 reputation points">381</span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="12 badges"><span class="silver">●</span><span class="badgecount">12</span></span><span title="16 badges"><span class="bronze">●</span><span class="badgecount">16</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mbethke has 2 accepted answers">50%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-55483">
+</div>
+<div class="comment-tools" id="comment-tools-55483">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-55483-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="55734"></a>
+<div class="answer answered-by-owner" id="answer-container-55734">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/55734/up/" id="post-55734-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-55734-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/55734/down/" id="post-55734-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Thanks a lot for your answer.
+I'm sorry for the delay.</p>
+<p>The folder  /var/run/postgresql/ doesn't exist.
+"ps aux | grep postgres" return nothing</p>
+<p>I haven't find any psycopg2 config file.
+From psycopg2/__init_.py 
+def connect(dsn=None,                                                                                                                                                                       <br/>
+        database=None, user=None, password=None, host=None, port=None,                                                                                                                      <br/>
+        connection_factory=None, cursor_factory=None, async=False, **kwargs):                                                                                                                 </p>
+<p>the inputs values are:</p>
+<p>user : None
+password : None
+database : ****    # not the good one
+host : None</p>
+<p>I have force the values inside this <strong>init</strong>.py file:</p>
+<p>The output error is : 
+django.db.utils.OperationalError: could not translate host name "postgresql−****.alwaysdata.net" to address: Name or service not known  </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/55734/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Apr '17, 15:14</strong>
+</p>
+<img alt="Suryavarman's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/374bf7c432b5fdaf4aaaef3ebdbf90b6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13556/suryavarman">Suryavarman</a><br>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Suryavarman has no accepted answers">0%</span>
+</br></br></p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/55734/">
+                edited
+                <strong>21 Apr '17, 15:17</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-55734">
+<a name="55740"></a>
+<div class="comment" id="comment-55740">
+<div class="comment-score" id="post-55740-score">1</div>
+<div class="comment-text"><p>meta: please login and then use the "add new comment" button below mbethke's answer if you are commenting on it. Afterwards please delete this "answer".</p></div>
+<div class="comment-info" id="comment-55740-info">
+<span class="comment-age">(22 Apr '17, 02:38)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-55734">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-55734-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="55745"></a>
+<div class="answer answered-by-owner" id="answer-container-55745">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/55745/up/" id="post-55745-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-55745-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/55745/down/" id="post-55745-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>always data have solve my last bug:
+postgresql−<strong><em>*.alwaysdata.net
+has to be ( "−" -&gt; "-" )
+postgresql-</em></strong>*.alwaysdata.net</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/55745/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Apr '17, 10:21</strong>
+</p>
+<img alt="Suryavarman's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/374bf7c432b5fdaf4aaaef3ebdbf90b6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13556/suryavarman">Suryavarman</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Suryavarman has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-55745">
+</div>
+<div class="comment-tools" id="comment-tools-55745">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-55745-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/55468/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="3m7z5LksLBLks47VqDreFgxp1jAzmXtz"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

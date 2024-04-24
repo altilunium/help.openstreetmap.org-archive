@@ -1,0 +1,177 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/19383/error-db-error-insufficient-permissions">Error: DB error: insufficient permissions</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/19383/up/" id="post-19383-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-19383-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/19383/down/" id="post-19383-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/19383/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi
+Last week managed to set up Nominatim successfully following the instructions provided by OSM. However there was one problem where the gb_postcode database was not created. I think it was because it was using deprecated functions so I have replaced them with the newer alternatives.</p>
+<p>I have my postgres user set up as the same user of the computer just as the instructions mention.</p>
+<p>I run the following command:
+./Nominatim-2.0.0/utils/setup.php --osm-file osmfile.osm.pbf --all</p>
+<p>But I get a permissions error as follows:</p>
+<pre><code>Using projection SRS 4326 (Latlong)
+NOTICE:  table "place" does not exist, skipping
+NOTICE:  type "keyvalue" does not exist, skipping
+NOTICE:  type "wordscore" does not exist, skipping
+NOTICE:  type "stringlanguagetype" does not exist, skipping
+NOTICE:  type "keyvaluetype" does not exist, skipping
+NOTICE:  function get_connected_ways(pg_catalog.int4[]) does not exist, skipping
+Allocating memory for dense node cache
+Allocating dense node cache in block sized chunks
+Node-cache: cache=1169MB, maxblocks=0*149633, allocation method=8192
+Mid: pgsql, scale=10000000 cache=1169
+Setting up table: planet_osm_nodes
+NOTICE:  table "planet_osm_nodes" does not exist, skipping
+NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "planet_osm_nodes_pkey" for table "planet_osm_nodes"
+Setting up table: planet_osm_ways
+NOTICE:  table "planet_osm_ways" does not exist, skipping
+NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "planet_osm_ways_pkey" for table "planet_osm_ways"
+Setting up table: planet_osm_rels
+NOTICE:  table "planet_osm_rels" does not exist, skipping
+NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "planet_osm_rels_pkey" for table "planet_osm_rels"
+
+Reading in file: /home/sam/src/nominatim/Edinburgh.osm.pbf
+Processing: Node(460k 153.3k/s) Way(66k 11.02k/s) Relation(820 820.00/s)  parse time: 9s
+
+Node stats: total(460001), max(1955784257) in 3s
+Way stats: total(66118), max(184992843) in 6s
+Relation stats: total(827), max(2454531) in 0s
+node cache: stored: 460001(100.00%), storage efficiency: 2.44% (dense blocks: 18381, sparse nodes: 0), hit rate: 0.00%
+Stopping table: planet_osm_nodes
+Stopping table: planet_osm_ways
+Stopped table: planet_osm_nodes in 0s
+Stopping table: planet_osm_rels
+Building index on table: planet_osm_rels (fastupdate=off)
+Building index on table: planet_osm_ways (fastupdate=off)
+Stopped table: planet_osm_rels in 0s
+Stopped table: planet_osm_ways in 4s
+
+Osm2pgsql took 17s overall
+osm2pgsql SVN version 0.81.0 (32bit id space)
+
+ERROR: DB Error: insufficient permissions
+DB Error: insufficient permissions
+</code></pre>
+<p>I have ran the chmod +x command on all the directories mentioned in the instructions.</p>
+<p>I don't understand why this error occurs. I managed to run the command last week but I can't think of what has changed.</p>
+<p>Can anyone help?</p>
+<p>Thanks</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>28 Jan '13, 01:19</strong>
+</p>
+<img alt="srose's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8f19a0a6b0afe902c224e03a8eb38ece?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4852/srose">srose</a><br/>
+<span class="score" title="161 reputation points">161</span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="10 badges"><span class="silver">●</span><span class="badgecount">10</span></span><span title="16 badges"><span class="bronze">●</span><span class="badgecount">16</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="srose has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-19383">
+</div>
+<div class="comment-tools" id="comment-tools-19383">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-19383-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/19383/error-db-error-insufficient-permissions?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/19383/error-db-error-insufficient-permissions?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/19383/error-db-error-insufficient-permissions?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/19383/error-db-error-insufficient-permissions?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="19404"></a>
+<div class="answer answered-by-owner" id="answer-container-19404">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/19404/up/" id="post-19404-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-19404-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/19404/down/" id="post-19404-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I manged to fix this. Turns out I was using the wrong username in the local.php file. Not sure how this worked before.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/19404/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>28 Jan '13, 16:43</strong>
+</p>
+<img alt="srose's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8f19a0a6b0afe902c224e03a8eb38ece?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4852/srose">srose</a><br/>
+<span class="score" title="161 reputation points">161</span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="10 badges"><span class="silver">●</span><span class="badgecount">10</span></span><span title="16 badges"><span class="bronze">●</span><span class="badgecount">16</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="srose has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-19404">
+</div>
+<div class="comment-tools" id="comment-tools-19404">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-19404-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/19383/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="1sYn7l8WGclPk1jmkILIkzGRqOwvXTCj"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

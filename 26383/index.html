@@ -1,0 +1,247 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/26383/exporting-shapefiles-from-openstreetmap-on-qgis">Exporting shapefiles from OpenStreetMap on QGis</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/26383/up/" id="post-26383-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-26383-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/26383/down/" id="post-26383-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/26383/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello, I'm a student working on a thesis of traffic optimization.
+I'm getting desperate: I need a shapefile out of a little portion of a city (Milan, in my case).
+I achieved that by downloading the portion of the map in ".osm", installing the OpenStreetMap plugin on QGis, and exported in shapefiles.
+The main problem I found is that during this operation I lose a lot of data (my main problem is that I lose traffic lights information).
+I can clearly see that the traffic light is handled as a point in QGis and OSM but as I export as a shapefile and import it back in QGis I lose all the traffic ligths I had when I imported the portion of the map from OSM.
+I don't really know if I expalained myself well, my brain is actually dried out after all the searches I did on google and relatives.
+I'd gladly appreciate any tip or advice on how to get a shapefile with informations on traffic lights in it.
+Thanks in advance.</p>
+<p>P.S. I need the map in shapefile format because I've to load it on Repast Simphony</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-shapefile" href="/tags/shapefile/" rel="tag" title="see questions tagged 'shapefile'">shapefile</a>
+<a class="post-tag tag-link-gis" href="/tags/gis/" rel="tag" title="see questions tagged 'gis'">gis</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-traffic_signals" href="/tags/traffic_signals/" rel="tag" title="see questions tagged 'traffic_signals'">traffic_signals</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Sep '13, 14:54</strong>
+</p>
+<img alt="MassimoUNIMIB's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/218091ef6c8ffad55923d77a99713432?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7389/massimounimib">MassimoUNIMIB</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="MassimoUNIMIB has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/26383/">
+                edited
+                <strong>16 Sep '13, 14:55</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-26383">
+<a name="26400"></a>
+<div class="comment" id="comment-26400">
+<div class="comment-score" id="post-26400-score">3</div>
+<div class="comment-text"><p>two hint for you:</p>
+<p>Be sure that the OSM-import-plugin of QGIS can work with all you data: There is currently a problem with object id numbers szored in 64-bit data:</p>
+<p><a href="http://wiki.openstreetmap.org/wiki/64-bit_Identifiers">http://wiki.openstreetmap.org/wiki/64-bit_Identifiers</a></p>
+<p>and:</p>
+<p>all about OSM2Shapefile should be collected at <a href="http://wiki.openstreetmap.org/wiki/Shapefile">http://wiki.openstreetmap.org/wiki/Shapefile</a></p></div>
+<div class="comment-info" id="comment-26400-info">
+<span class="comment-age">(16 Sep '13, 17:08)</span>
+<a class="comment-user userinfo" href="/users/99/stephan75">stephan75</a>
+</div>
+</div>
+<a name="26403"></a>
+<div class="comment" id="comment-26403">
+<div class="comment-score" id="post-26403-score">2</div>
+<div class="comment-text"><p>one more idea: you can use ogr2ogr (<a href="http://www.gdal.org/ogr/index.html)">http://www.gdal.org/ogr/index.html)</a> to read the .osm file, then produce a shapefile from it.  Once the data is in shapefile format, the 64-bit data isn't an issue.</p></div>
+<div class="comment-info" id="comment-26403-info">
+<span class="comment-age">(16 Sep '13, 17:28)</span>
+<a class="comment-user userinfo" href="/users/595/neuhausr">neuhausr</a>
+</div>
+</div>
+<a name="26418"></a>
+<div class="comment" id="comment-26418">
+<div class="comment-score" id="post-26418-score"></div>
+<div class="comment-text"><p>Hello everyone, thanks for the quick answers!
+My data is still pretty small, a little square located here: <a href="http://www.openstreetmap.org/#map=16/45.5012/9.2365">http://www.openstreetmap.org/#map=16/45.5012/9.2365</a> .
+I'm now triyng the ogr2ogr's way but I'm encountering new problems: it seems the driver doesn't like the geometry type "Geometry Collection" saying that shapefiles don't support that kind of geometry(Error6).
+I've tried to bypass (with skipfailures) it but it gives Error 1 "Non increasing node id. Use OSM_USE_CUSTOM_INDEXING=ON.
+I'm feeling a bit lost, probably because I can't find proper documentation anywhere!Can you point me to it?</p></div>
+<div class="comment-info" id="comment-26418-info">
+<span class="comment-age">(17 Sep '13, 08:53)</span>
+<a class="comment-user userinfo" href="/users/7389/massimounimib">MassimoUNIMIB</a>
+</div>
+</div>
+<a name="26438"></a>
+<div class="comment" id="comment-26438">
+<div class="comment-score" id="post-26438-score">1</div>
+<div class="comment-text"><p>to extract points try something like this:</p>
+<p>ogr2ogr -where "OGR_GEOMETRY='Point'" -lco SHPT=POINT outfile.shp infile.osm</p>
+<p>Also, make sure you're using GDAL 1.10</p></div>
+<div class="comment-info" id="comment-26438-info">
+<span class="comment-age">(17 Sep '13, 16:01)</span>
+<a class="comment-user userinfo" href="/users/595/neuhausr">neuhausr</a>
+</div>
+</div>
+<a name="26493"></a>
+<div class="comment" id="comment-26493">
+<div class="comment-score" id="post-26493-score"></div>
+<div class="comment-text"><p>Hello, I tried that but it still gives me the same error: Non increasing node id. Use etc...". I found a temporary solution by downloading arcGis for desktop and converting the .osm maps with it. It still has some problems (it doubles some points and lines, but I guess I'll fix them with my software). Thanks for replying anyway! Bye.</p></div>
+<div class="comment-info" id="comment-26493-info">
+<span class="comment-age">(19 Sep '13, 09:51)</span>
+<a class="comment-user userinfo" href="/users/7389/massimounimib">MassimoUNIMIB</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-26383">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-26383-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/26383/exporting-shapefiles-from-openstreetmap-on-qgis?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/26383/exporting-shapefiles-from-openstreetmap-on-qgis?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/26383/exporting-shapefiles-from-openstreetmap-on-qgis?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/26383/exporting-shapefiles-from-openstreetmap-on-qgis?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="26495"></a>
+<div class="answer" id="answer-container-26495">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/26495/up/" id="post-26495-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-26495-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/26495/down/" id="post-26495-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I find that far &amp; away the simplest way to get shapefiles from OSM data out of QGIS is to use osm2pgsql to import the data to a PostGIS database and then pull the data into QGIS that way. </p>
+<p>A couple of things are necessary: use the hstore option to get all the tags; and create a view on the standard tables loaded by osm2pgsql to shorten all column names to &lt;= 10 characters if you need those with long names, such as <code>addr:housenumber</code> (otherwise QGIS gets stroppy, saving the data as a Shape file).</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/26495/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Sep '13, 11:06</strong>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br/>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SK53 has 121 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-26495">
+</div>
+<div class="comment-tools" id="comment-tools-26495">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-26495-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="26504"></a>
+<div class="answer" id="answer-container-26504">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/26504/up/" id="post-26504-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-26504-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/26504/down/" id="post-26504-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You could take your OSM file, use OSMConvert to convert it to a CSV and then import that into qgis.</p>
+<p>Also, you could use osmfilter to only keep relevant data.</p>
+<p>See <a href="http://wiki.openstreetmap.org/wiki/Osmconvert#Writing_CSV_Files">http://wiki.openstreetmap.org/wiki/Osmconvert#Writing_CSV_Files</a> .</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/26504/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Sep '13, 15:41</strong>
+</p>
+<img alt="gormo's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/806d5a652505590a9eba797ad5bea8db?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4653/gormo">gormo</a><br/>
+<span class="score" title="2928 reputation points"><span class="">2.9k</span></span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="26 badges"><span class="silver">●</span><span class="badgecount">26</span></span><span title="60 badges"><span class="bronze">●</span><span class="badgecount">60</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="gormo has 13 accepted answers">13%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-26504">
+</div>
+<div class="comment-tools" id="comment-tools-26504">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-26504-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/26383/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="LkHwWXCgJTPEPWeBPVrZQVAJMGAkXKnz"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

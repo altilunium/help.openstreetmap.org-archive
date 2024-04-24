@@ -1,0 +1,156 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/81606/custom-rails-port-implementation-trouble-with-authenticity-tokens">custom Rails Port implementation, trouble with Authenticity Tokens</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/81606/up/" id="post-81606-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-81606-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/81606/down/" id="post-81606-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/81606/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Is there anyone in this channel who can talk to me about the Rails Port's "authenticity token" system?</p>
+<p>I have been implementing a new, customized Rails Port instance for <a href="https://opengeofiction.net/">https://opengeofiction.net/</a> . It's working well but I am having nightmare problems with two things:</p>
+<ul>
+<li>Frequent errors for users: "ActionController::InvalidAuthenticityToken" </li>
+<li>Frequently users are forcibly logged off whenever they change pages (i.e. Diaries to map, map to iD, etc.)</li>
+</ul>
+<p>Is there anyone who can give me insights into what might be going wrong.</p>
+<p>I am not a Ruby on Rails developer or even particularly comfortable with the environment. I have a background in Database admin and design and I am comfortable with most aspects of Linux sysadmin.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-rubyonrails" href="/tags/rubyonrails/" rel="tag" title="see questions tagged 'rubyonrails'">rubyonrails</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>02 Sep '21, 18:26</strong>
+</p>
+<img alt="Luciano%20AK's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1a385e5141831c1926b4254ecc620ea3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20716/luciano-ak">Luciano AK</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Luciano AK has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-81606">
+<a name="81609"></a>
+<div class="comment" id="comment-81609">
+<div class="comment-score" id="post-81609-score"></div>
+<div class="comment-text"><p>Can you explain the changes you have made to the "original", or do you have your version on GitHub somewhere?</p></div>
+<div class="comment-info" id="comment-81609-info">
+<span class="comment-age">(03 Sep '21, 09:36)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="81612"></a>
+<div class="comment" id="comment-81612">
+<div class="comment-score" id="post-81612-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/104/frederik-ramm">@Frederik</a> - I'm sorry we don't have it on github. It's all kind of experimental. In the long run, we hope to formally "fork" openstreetmap-website and post our changes, but we're not there right now.</p>
+<p>Meanwhile, the site is up and seems to be working. We've let in a limited number of users and we're doing testing. Not going to claim victory, yet, but the Authenticity Token errors appear to have gone away. We did a bunch of google-fu and dug up what seemed to have worked. I promise I'll post what we did once I'm confident it worked.</p>
+<p>You're free to browse the website:</p>
+<p><a href="https://opengeofiction.net">https://opengeofiction.net</a></p>
+<p>Anyway thank you so much for taking the time to respond.</p></div>
+<div class="comment-info" id="comment-81612-info">
+<span class="comment-age">(03 Sep '21, 19:33)</span>
+<a class="comment-user userinfo" href="/users/20716/luciano-ak">Luciano AK</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-81606">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-81606-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/81606/custom-rails-port-implementation-trouble-with-authenticity-tokens?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/81606/custom-rails-port-implementation-trouble-with-authenticity-tokens?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/81606/custom-rails-port-implementation-trouble-with-authenticity-tokens?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/81606/custom-rails-port-implementation-trouble-with-authenticity-tokens?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="81615"></a>
+<div class="answer answered-by-owner" id="answer-container-81615">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/81615/up/" id="post-81615-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-81615-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/81615/down/" id="post-81615-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Firstly, thank you to my one responder, for their suggestion.</p>
+<p>Apparently, the openstreetmap-website ("rails port") expects that a production instance will have a tool called <em>memcache</em> installed. It was another member of our team who figured this out, so I don't have the details, but I think that's enough of a hint if someone finds this question in the future and is trying to solve the issue.</p>
+<p>Although we are still running the "rails port" as a development instance (rather than production), we are doing so as a de facto production instance, with 100's of active users.</p>
+<p>This level of deployment requires <em>memcache</em> to manage the authenticity tokens, I guess.</p>
+<p>If I get more details from my colleague about specific steps he took, I'll amend this answer.</p>
+<p>Meanwhile, our site is up and running quite well, now.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/81615/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Sep '21, 17:44</strong>
+</p>
+<img alt="Luciano%20AK's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1a385e5141831c1926b4254ecc620ea3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20716/luciano-ak">Luciano AK</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Luciano AK has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-81615">
+</div>
+<div class="comment-tools" id="comment-tools-81615">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-81615-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/81606/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="vpW177wNimV8hD3V5nOr8YtN20oei685"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,437 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/12636/rendering-using-utm-projection">Rendering using UTM-Projection</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/12636/up/" id="post-12636-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-12636-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/12636/down/" id="post-12636-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/12636/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   2
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Heyho!</p>
+<p>I want to render a map.png in UTM-Projection.
+But I didn't find anything useful on the internet.. :(</p>
+<p>Can anyone tell me, what I have to do to simply render in UTM-Projection??</p>
+<p>I only want to render small maps so the different zones should not be a problem, I think.</p>
+<p>I imported my schleswig-holstein.osm via osm2pgsql to my PostgreSQL/PostGIS database and now I want to render using Python/Mapnik.</p>
+<p>I'm very thankful for any little hint or idea! Please help me!</p>
+<p>Greetz
+Matze</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-rendering" href="/tags/rendering/" rel="tag" title="see questions tagged 'rendering'">rendering</a>
+<a class="post-tag tag-link-projection" href="/tags/projection/" rel="tag" title="see questions tagged 'projection'">projection</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+<a class="post-tag tag-link-utm" href="/tags/utm/" rel="tag" title="see questions tagged 'utm'">utm</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>09 May '12, 09:14</strong>
+</p>
+<img alt="MHein's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/cc0198a02af3c41ad04b61e028c3b126?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3139/mhein">MHein</a><br/>
+<span class="score" title="141 reputation points">141</span><span title="11 badges"><span class="badge1">●</span><span class="badgecount">11</span></span><span title="11 badges"><span class="silver">●</span><span class="badgecount">11</span></span><span title="16 badges"><span class="bronze">●</span><span class="badgecount">16</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="MHein has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-12636">
+</div>
+<div class="comment-tools" id="comment-tools-12636">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-12636-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/12636/rendering-using-utm-projection?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/12636/rendering-using-utm-projection?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/12636/rendering-using-utm-projection?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/12636/rendering-using-utm-projection?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="12834"></a>
+<div class="answer" id="answer-container-12834">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/12834/up/" id="post-12834-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-12834-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/12834/down/" id="post-12834-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Just to make this a little bit clearer and to give you an "answer":<br/>
+If you define an UTM projection in your XML, you simply need to (for mapnik2)</p>
+<pre><code>bounds = (000000, -8100000, 3700000 , 8100000)
+mapfile = '/your/path/to/osm.xml'
+map_ = mapnik.Map(500, 500)
+mapnik.load_map(map_, mapfile)
+bbox = mapnik.Envelope(*bounds)
+map_.zoom_to_box(bbox)
+image = mapnik.Image(width, height)
+mapnik.render(map_, image)
+image.save(image_name, 'png')
+</code></pre>
+<p>and that should give you an image in UTM. You may verify this by printing some metadata</p>
+<pre><code>print map_.srs
+print map_.scale_denominator()
+</code></pre>
+<p>HTH Frank</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/12834/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 May '12, 08:53</strong>
+</p>
+<img alt="frabron's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/30b87850d86c99d1c4f1f72c9abaeb52?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3216/frabron">frabron</a><br>
+<span class="score" title="361 reputation points">361</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="11 badges"><span class="bronze">●</span><span class="badgecount">11</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="frabron has 2 accepted answers">16%</span>
+</br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-12834">
+<a name="12710"></a>
+<div class="comment" id="comment-12710">
+<div class="comment-score" id="post-12710-score"></div>
+<div class="comment-text"><p>Heyho!</p>
+<p>I tried rendering in UTM but when I had eliminated all errors and saw the map, I recognized that the map was still rendered in standard (google?)-projection (where Greenland is as big as Africa).</p>
+<p>I changed the -- Map background-color="#fff" srs="+init=epsg:3857" -- into -- Map background-color="#b5d0d0" srs="&amp;srs_UTM;" --</p>
+<p>and defined srs_UTM in entities.xml.inc this way: </p>
+<p><code>&lt;!ENTITY srs_UTM "+proj=utm +zone=32 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"&gt;</code></p>
+<p>In my generate_imgage.py I used:</p>
+<pre><code>bounds = (000000, -8100000, 3700000 , 8100000)
+# utm in meters 
+    utm = mapnik.Projection('+proj=utm +zone=32 +ellps=WGS84 +datum=WGS84 +units=m +no_defs')
+transform = mapnik.ProjTransform(utm,merc)
+</code></pre>
+<p>I don't know what I did wrong or maybe what I forgot to change..
+e.g. I found </p>
+<pre><code># ensure the target map projection is mercator
+m.srs = merc.params()
+</code></pre>
+<p>and I don't know If I should change it or anything else..</p>
+<p>this is my entities.xcl.inc: <a href="http://dpaste.org/cuJW3/">http://dpaste.org/cuJW3/</a></p>
+<p>this is my osm.xml:          <a href="http://dpaste.org/xLqJA/">http://dpaste.org/xLqJA/</a></p>
+<p>this is my generate_image.py: <a href="http://dpaste.org/0WEQw/">http://dpaste.org/0WEQw/</a></p>
+<p>I hope that anyone can help me.. please!!!</p>
+<p>Greetings
+Matze</p></div>
+<div class="comment-info" id="comment-12710-info">
+<span class="comment-age">(14 May '12, 07:48)</span>
+<a class="comment-user userinfo" href="/users/3139/mhein">MHein</a>
+</div>
+</div>
+<a name="12833"></a>
+<div class="comment" id="comment-12833">
+<div class="comment-score" id="post-12833-score">1</div>
+<div class="comment-text"><p>Well, apparently you are transforming your desired UTM to Mercator in your Python script. Just skip the transformation steps and you should be fine</p></div>
+<div class="comment-info" id="comment-12833-info">
+<span class="comment-age">(21 May '12, 08:43)</span>
+<a class="comment-user userinfo" href="/users/3216/frabron">frabron</a>
+</div>
+</div>
+<a name="12894"></a>
+<div class="comment" id="comment-12894">
+<div class="comment-score" id="post-12894-score"></div>
+<div class="comment-text"><p>Unfortunately it doesn't work.. I will describe the problems in another answer.</p></div>
+<div class="comment-info" id="comment-12894-info">
+<span class="comment-age">(23 May '12, 11:39)</span>
+<a class="comment-user userinfo" href="/users/3139/mhein">MHein</a>
+</div>
+</div>
+<a name="12897"></a>
+<div class="comment" id="comment-12897">
+<div class="comment-score" id="post-12897-score"></div>
+<div class="comment-text"><p>First of all, thank you, Frank!</p>
+<p>I deleted all the transformation-things etc. und put the things as you wrote it.</p>
+<p>The rendering doesn't produce any errors but the maps I get are not like I want them.</p>
+<p>This happens, when I try to render my hometown Kiel in Schleswig-Holstein, Germany: <a href="http://imgur.com/CIPJ5">http://imgur.com/CIPJ5</a> <br/>
+(    <code>bounds = (565124, 6014024, 579888 , 6026499) #Kiel UTM</code>    )</p>
+<p>This looks as if just the coastlines are used to create this image. Why is the osm-content of my schleswig-holstein.osm.pbf not displayed? I imported it like this:         <code>osm2pgsql --slim -d gis -C 1024 -E 32632 ~/schleswig-holstein.osm.pbf</code></p>
+<p>When I try to render the whole world, the image looks like this: <a href="http://imgur.com/f2gNa">http://imgur.com/f2gNa</a></p>
+<p>(   <code>bounds = (000000, -8100000, 3700000 , 8100000)</code>    )</p>
+<p>This looks as if the coastlines have not been used.. Is it because of the fact that the coastlines are not in the right projection?</p>
+<p>I'll post my <code>new_generate_image.py</code>: <a href="http://dpaste.org/RScJO/">http://dpaste.org/RScJO/</a></p>
+<p>Maybe you, Frank or anybody else can can give me some useful advice, info or hint!
+That would make me really glad!</p>
+<p>Thank you in advance!
+Greetings,
+Matze</p></div>
+<div class="comment-info" id="comment-12897-info">
+<span class="comment-age">(23 May '12, 12:08)</span>
+<a class="comment-user userinfo" href="/users/3139/mhein">MHein</a>
+</div>
+</div>
+<a name="12908"></a>
+<div class="comment" id="comment-12908">
+<div class="comment-score" id="post-12908-score">1</div>
+<div class="comment-text"><p>I know Kiel, there's definetely more to see there ;-)<br/>
+I guess that there's a problem with your data from the database. Did you configure your datasource and  settings files correctly, e.g. paths to shapefiles and EPSG codes? Look in the "inc" Folder for those ...</p></div>
+<div class="comment-info" id="comment-12908-info">
+<span class="comment-age">(23 May '12, 15:11)</span>
+<a class="comment-user userinfo" href="/users/3216/frabron">frabron</a>
+</div>
+</div>
+<a name="12923"></a>
+<div class="comment not_top_scorer" id="comment-12923">
+<div class="comment-score" id="post-12923-score"></div>
+<div class="comment-text"><p>Yes, much more!</p>
+<p>As a test, I imported (by osm2pgsql) my schleswig-holstein.osm.pbf with standard projection and rendered with the standard generate_image.py and it all worked out fine.. and I was using the same "inc"-files.</p>
+<p>Anyway, it's surprising that Kiel has the coastline and for the whole world they seem to be missing..</p>
+<p>any other idea?</p></div>
+<div class="comment-info" id="comment-12923-info">
+<span class="comment-age">(24 May '12, 08:45)</span>
+<a class="comment-user userinfo" href="/users/3139/mhein">MHein</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-12834">
+<span class="comments-showing">
+            showing 5 of 6
+        </span>
+<a class="show-all-comments-link" href="#">show 1 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-12834-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="12637"></a>
+<div class="answer" id="answer-container-12637">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/12637/up/" id="post-12637-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-12637-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/12637/down/" id="post-12637-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Well you should have an XML style file that gives the desired map projection at the top, like this:</p>
+<pre><code>&lt;Map background-color="#fff" srs="+init=epsg:3857"&gt;
+</code></pre>
+<p>If you change that to the EPSG code for the UTM projection you want to use (or even, instead of using one of the existing definitions, just write your own projection definition there in proj4 style) then the map is generated in that projection. Be careful when specifying the render extent; you'll have to give that in UTM coordinates then as well.</p>
+<p>If you use nik2img.py (recommended), you can even specify the projection on the command line.</p>
+<p>In the <code>&lt;Layer&gt;</code> defintions that reference your database, make sure to stick to the projection you imported your data in; so if you ran osm2pgsql without <code>-E</code> or <code>-l</code> (ell), the <code>&lt;Layer&gt;</code> bits will continue to have to use EPSG:3857 no matter what your output projection.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/12637/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 May '12, 09:25</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</br></br></p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/12637/">
+                edited
+                <strong>09 May '12, 09:26</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-12637">
+</div>
+<div class="comment-tools" id="comment-tools-12637">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-12637-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="12928"></a>
+<div class="answer" id="answer-container-12928">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/12928/up/" id="post-12928-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-12928-score" title="current number of votes">
+    -1
+</div>
+<a class="ajax-command post-vote down" href="/vote/12928/down/" id="post-12928-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>the map's srs is the dest srs, while your datasource's srs are the source srs.
+since you use osm data, so the datasource's is under wgs84(i.e.lat/long).
+To project to utm, you should set your map's srs to the desired utm zone.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/12928/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>24 May '12, 13:26</strong>
+</p>
+<img alt="feverzsj's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/25ac0534e5b4a6769cd9f07f95cc7463?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3672/feverzsj">feverzsj</a><br/>
+<span class="score" title="10 reputation points">10</span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="feverzsj has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-12928">
+<a name="12929"></a>
+<div class="comment" id="comment-12929">
+<div class="comment-score" id="post-12929-score"></div>
+<div class="comment-text"><p>No, this is not correct, since he used<br/>
+: osm2pgsql --slim -d gis -C 1024 -E 32632<br/>
+to import the data. Pay attention to the -E switch. So his data in PostGIS is actually UTM 32N</p></div>
+<div class="comment-info" id="comment-12929-info">
+<span class="comment-age">(24 May '12, 13:42)</span>
+<a class="comment-user userinfo" href="/users/3216/frabron">frabron</a>
+</div>
+</div>
+<a name="12931"></a>
+<div class="comment" id="comment-12931">
+<div class="comment-score" id="post-12931-score"></div>
+<div class="comment-text"><p>then no projection is needed for mapnik, just set all to same srs</p></div>
+<div class="comment-info" id="comment-12931-info">
+<span class="comment-age">(24 May '12, 13:50)</span>
+<a class="comment-user userinfo" href="/users/3672/feverzsj">feverzsj</a>
+</div>
+</div>
+<a name="13117"></a>
+<div class="comment" id="comment-13117">
+<div class="comment-score" id="post-13117-score"></div>
+<div class="comment-text"><p>as far as I know, I set all the srs..</p>
+<p>In which files do I have to set the srs?</p></div>
+<div class="comment-info" id="comment-13117-info">
+<span class="comment-age">(30 May '12, 10:02)</span>
+<a class="comment-user userinfo" href="/users/3139/mhein">MHein</a>
+</div>
+</div>
+<a name="13149"></a>
+<div class="comment" id="comment-13149">
+<div class="comment-score" id="post-13149-score">2</div>
+<div class="comment-text"><p>The possibly quickest way would be to add a new projection definition to inc/entities.xml.inc<br/>
+</p>
+<pre><code>&lt;!ENTITY utm32 "+proj=utm +zone=32 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"&gt;
+</code></pre>
+<p>just below the other two (srs900913 and srs4326) and in inc/settings.xml.inc set </p>
+<pre><code>&lt;!ENTITY osm2pgsql_projection "&amp;srs900913;"&gt;
+</code></pre>
+<p>to </p>
+<pre><code>&lt;!ENTITY osm2pgsql_projection "&amp;utm32;"&gt;
+</code></pre>
+<p>There's probably no need to adjust the dwithin parameters, I'd give it a try like I described it.</p>
+<p>HTH Frank</p></div>
+<div class="comment-info" id="comment-13149-info">
+<span class="comment-age">(31 May '12, 13:27)</span>
+<a class="comment-user userinfo" href="/users/3216/frabron">frabron</a>
+</div>
+</div>
+<a name="13156"></a>
+<div class="comment not_top_scorer" id="comment-13156">
+<div class="comment-score" id="post-13156-score"></div>
+<div class="comment-text"><p>Thank you!
+I had added the projection in entities yet. But the change in settings was not made yet. now it looks this way:</p>
+<pre><code>&lt;!-- use the '&amp;srs900913;' entity if you have called osm2pgsql without special flags (or with -m); use '&amp;srs4326;' if you have used -l --&gt;
+&lt;!-- &lt;!ENTITY osm2pgsql_projection "&amp;srs900913;"&gt; --&gt;
+&lt;!ENTITY osm2pgsql_projection "&amp;srs_UTM;"&gt;
+</code></pre>
+<p>I will try the next few days if it works ;)</p></div>
+<div class="comment-info" id="comment-13156-info">
+<span class="comment-age">(31 May '12, 15:40)</span>
+<a class="comment-user userinfo" href="/users/3139/mhein">MHein</a>
+</div>
+</div>
+<a name="15203"></a>
+<div class="comment" id="comment-15203">
+<div class="comment-score" id="post-15203-score">1</div>
+<div class="comment-text"><p>it doesn't work :(</p></div>
+<div class="comment-info" id="comment-15203-info">
+<span class="comment-age">(17 Aug '12, 10:11)</span>
+<a class="comment-user userinfo" href="/users/3139/mhein">MHein</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-12928">
+<span class="comments-showing">
+            showing 5 of 6
+        </span>
+<a class="show-all-comments-link" href="#">show 1 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-12928-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/12636/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="SfxmGAge5r8io0hjG4N3ztaVOmyMMG6V"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

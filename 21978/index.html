@@ -1,0 +1,142 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/21978/mapnik-21x-osm-postgis-2-postgresql-92-python26-only-shorelines-and-no-features">Mapnik 2.1.x + OSM + Postgis 2 + PostgreSQL 9.2 + Python26 = Only shorelines and no features</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/21978/up/" id="post-21978-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-21978-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/21978/down/" id="post-21978-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/21978/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm having issues generating an OSM map with generate_image.py with Mapnik.</p>
+<p>I am using PostgreSQL 9.2 with PostGIS 2 and Mapnik 2.1.x and python26
+I am also on Oracle Enterpise Linux 6, which makes things a little less straightforward compared to Ubuntu.</p>
+<p>I'm getting no features, only shorelines, which I know can be a common problem.</p>
+<p>So far:
+I found this: /usr/local/lib/mapnik/input/postgis.input
+So I believe Mapnik was built properly with PostGIS.</p>
+<p>Every time I try to run generate_image.py, I get no errors at the prompt. In my postgresql log I see all the SELECT statements with LIMIT 0 but no further SELECT statements actually querying for the features. On another server where I have things working with Mapnik 1.7, PostgreSQL 8.4, and PostGIS 1.5, I see the LIMIT 0 selects but also a bunch of SELECTs where the actual features are being queried. </p>
+<p>I can also go into psql and try to run some of the osm.xml sql searches and I get results. I can also run:</p>
+<p>SELECT * FROM planet_osm_line WHERE planet_osm_line.way &amp;&amp; ST_MakeEnvelope(-226192, 6890886, -209682, 6896466, 900913);</p>
+<p>Which give me a bunch of results in England, So I think my DB is loaded correctly from osm2pgsql.</p>
+<p>Why is Mapnik stopping at the LIMIT 0 queries and not actually querying for the features?????</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>29 Apr '13, 20:18</strong>
+</p>
+<img alt="maw269's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fbb15843641ffaf1c2259cc7ebb4735c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/233/maw269">maw269</a><br/>
+<span class="score" title="115 reputation points">115</span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="7 badges"><span class="silver">●</span><span class="badgecount">7</span></span><span title="14 badges"><span class="bronze">●</span><span class="badgecount">14</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="maw269 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/21978/">
+                edited
+                <strong>29 Apr '13, 23:43</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-21978">
+</div>
+<div class="comment-tools" id="comment-tools-21978">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-21978-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/21978/mapnik-21x-osm-postgis-2-postgresql-92-python26-only-shorelines-and-no-features?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/21978/mapnik-21x-osm-postgis-2-postgresql-92-python26-only-shorelines-and-no-features?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/21978/mapnik-21x-osm-postgis-2-postgresql-92-python26-only-shorelines-and-no-features?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/21978/mapnik-21x-osm-postgis-2-postgresql-92-python26-only-shorelines-and-no-features?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="24269"></a>
+<div class="answer answered-by-owner" id="answer-container-24269">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/24269/up/" id="post-24269-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-24269-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/24269/down/" id="post-24269-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The issue was mapnik 2.1.x. This release had a bug. I moved to mapnik 2.1.0 and it worked.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/24269/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>15 Jul '13, 18:24</strong>
+</p>
+<img alt="maw269's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fbb15843641ffaf1c2259cc7ebb4735c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/233/maw269">maw269</a><br/>
+<span class="score" title="115 reputation points">115</span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="7 badges"><span class="silver">●</span><span class="badgecount">7</span></span><span title="14 badges"><span class="bronze">●</span><span class="badgecount">14</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="maw269 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-24269">
+</div>
+<div class="comment-tools" id="comment-tools-24269">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-24269-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/21978/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="XNPZgHces404QXegjm3LawiCk2PIRwdJ"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

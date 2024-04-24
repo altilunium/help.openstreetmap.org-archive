@@ -1,0 +1,171 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/65255/how-to-match-node-placecity-to-appropriate-relation-boundaryadministrative">How to match node place=city to appropriate relation boundary=administrative</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/65255/up/" id="post-65255-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-65255-score" title="current number of votes">
+    -1
+</div>
+<a class="ajax-command post-vote down" href="/vote/65255/down/" id="post-65255-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/65255/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>My question is about processing raw OSM data from .osm.pbf exports.</p>
+<p><em>Please don't point me to any online tools, nominatim, or overpass queries.</em></p>
+<p>I have list of Nodes that represent cities in all Europe, for example node for Wrocław has ID of <a href="https://www.openstreetmap.org/node/418392093">418392093</a></p>
+<p>I'd like to select from .osm.pbf relation that represents boundary of this city. Fortunately, <code>boundary=administrative</code> <a href="https://www.openstreetmap.org/relation/2805690">Relation</a> has Wrocław's ID listed as <code>admin_centre</code>. <em>Unfortunately</em> Wrocław is also listed as <code>admin_centre</code> of the region it is in (<a href="https://www.openstreetmap.org/relation/224457">Dolnośląskie voivodeship</a>).</p>
+<p><strong>How can I know for sure which boundary relation matches which city node?</strong></p>
+<p>Subquestions:</p>
+<ol>
+<li>If the answer is "you can use name", is it reliable method? Does boundary has <strong>always</strong> the same name as node?</li>
+<li>If the answer is "select boundary with highest admin level", is it reliable as well? What if subregion has the same admin centre?</li>
+<li>If there isn't "official" method of doing so, why? It seems an important use case to know boundary of any city.</li>
+</ol>
+<p>Raw data for Relation for administrative boundary of Wrocław <strong>city</strong> looks like this:</p>
+<pre><code>  {
+    "ID": 2805690,
+    "Members": {
+      "admin_centre": [
+        418392093
+      ],
+      "outer": [
+        52452667,
+        ...
+        443264980
+      ],
+      "subarea": [
+        2341621,
+        ...
+        2318980
+      ]
+    },
+    "Tags": {
+      "admin_level": "8",
+      "boundary": "administrative",
+      "name": "Wrocław",
+      ...
+      "name:szl": "Wrocłow",
+      "old_name:eo": "Breslaŭo",
+      "old_name:pl": "Wratislaw",
+      "type": "boundary",
+      "wikidata": "Q1799",
+      "wikipedia": "pl:Wrocław"
+    }
+  },
+</code></pre>
+<p>Raw data for Relation for administrative boundary of a <strong>region</strong> Wrocław is in looks like this:</p>
+<pre><code> {
+    "ID": 224457,
+    "Members": {
+      "admin_centre": [
+        418392093
+      ],
+      "label": [
+        505025705
+      ],
+      "outer": [
+        175469910,
+        ...
+        176467203
+      ],
+      "subarea": [
+        451266,
+        ...
+        451516
+      ]
+    },
+    "Tags": {
+      "ISO3166-2": "PL-DS",
+      "admin_level": "4",
+      "alt_name:en": "Lower Silesian Province",
+      "boundary": "administrative",
+      "int_name": "wojewodztwo dolnoslaskie",
+      "license_plate_code": "D",
+      "loc_name": "Dolnośląskie",
+      "long_name:fr": "Voïvodie de Basse-Silésie",
+      "name": "województwo dolnośląskie",
+      "name:ar": "محافظة سيلزيا السفلى",
+      ...
+      "name:zh": "下西里西亚省",
+      "population": "1970217",
+      "ref": "DS",
+      "short_name": "dolnośląskie",
+      "source:population": "Bank Danych Lokalnych - stan na dzień 31.12.2016",
+      "teryt:terc": "02",
+      "type": "boundary",
+      "wikidata": "Q54150",
+      "wikipedia": "pl:Województwo dolnośląskie"
+    }
+  },
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-boundaries" href="/tags/boundaries/" rel="tag" title="see questions tagged 'boundaries'">boundaries</a>
+<a class="post-tag tag-link-cities" href="/tags/cities/" rel="tag" title="see questions tagged 'cities'">cities</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-pbf" href="/tags/pbf/" rel="tag" title="see questions tagged 'pbf'">pbf</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>10 Aug '18, 17:37</strong>
+</p>
+<img alt="sheerun's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/306b63b79c78a1b67e1789790ad2db86?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15512/sheerun">sheerun</a><br/>
+<span class="score" title="10 reputation points">10</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="sheerun has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/65255/">
+                edited
+                <strong>10 Aug '18, 17:38</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-65255">
+<a name="65259"></a>
+<div class="comment" id="comment-65259">
+<div class="comment-score" id="post-65259-score"></div>
+<div class="comment-text"><p>At a minimum you need to create geographical objects from your PBF. It so happens Nominatim &amp; Overpass are by far and away the easiest options. You cant process relationships in geodata without turning into geographies. A short answer is process into PostGIS with osm2pgsql and write suitable queries there: the downside is that you lose some explict relationships between city nodes &amp; boundary relations: however as there is no guarantee that these exist consistently you still have to solve the problem.</p></div>
+<div class="comment-info" id="comment-65259-info">
+<span class="comment-age">(10 Aug '18, 22:10)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-65255">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-65255-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/65255/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="yy1eKv8bx4qDEMwkhV0tKvHqbOwILszA"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

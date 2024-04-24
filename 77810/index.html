@@ -1,0 +1,155 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/77810/postgresql-converting-osm-latlng-from-doublesfloat-to-integer">postgresql converting  osm latlng from doubles/float  to integer</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/77810/up/" id="post-77810-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-77810-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/77810/down/" id="post-77810-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/77810/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>hi i am putting osm data into postgres using osmosis the command i use is :</p>
+<p>osmosis --read-xml file="/home/ubuntu/osmosis/bin/eu_filterxrx.osm" --write-apidb host="localhost" database="osm_test-1" user="shafi" password="lhoft" validateSchemaVersion="no"</p>
+<p>writing it to an apidb.
+Doing this makes converts my latitude and longitudes to integers for some reason</p>
+<p>orignal data looks like this:</p>
+<p><img alt="osm data viewed in notepad++" src="https://help.openstreetmap.org/upfiles/latlngOSM.jpeg"/>
+as you can see lat and long are both decimals above.
+but once i put the data into postgres and i view it using pgadmin the lat and lon are no longer deicmals they are now integers making them useless.
+how do i stop it doing that,</p>
+<p>Thanks in Advance </p>
+<p><img alt="data once it is inside DB" src="https://help.openstreetmap.org/upfiles/Capture_ga6jcJk.PNG"/></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-postgres" href="/tags/postgres/" rel="tag" title="see questions tagged 'postgres'">postgres</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+<a class="post-tag tag-link-help" href="/tags/help/" rel="tag" title="see questions tagged 'help'">help</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>30 Nov '20, 17:03</strong>
+</p>
+<img alt="shafi-as's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/87f23f2f0056b2d7d6ed1760463ea1c0?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/19256/shafi-as">shafi-as</a><br/>
+<span class="score" title="10 reputation points">10</span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="7 badges"><span class="silver">●</span><span class="badgecount">7</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="shafi-as has no accepted answers">0%</span>
+</p>
+</img></div>
+</div>
+<div class="comments-container" id="comments-container-77810">
+</div>
+<div class="comment-tools" id="comment-tools-77810">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-77810-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/77810/postgresql-converting-osm-latlng-from-doublesfloat-to-integer?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/77810/postgresql-converting-osm-latlng-from-doublesfloat-to-integer?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/77810/postgresql-converting-osm-latlng-from-doublesfloat-to-integer?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/77810/postgresql-converting-osm-latlng-from-doublesfloat-to-integer?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="77812"></a>
+<div class="answer" id="answer-container-77812">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/77812/up/" id="post-77812-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-77812-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/77812/down/" id="post-77812-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You have explicitly asked for an "apidb" database. The "apidb" schema is optimised for processing by the "openstreetmap-website" software and nothing else. The openstreetmap-website code expects the latitudes and longitudes to be written exactly like they are here.</p>
+<p>If you want to do <em>anything else</em> with the OSM data than using it with the openstreetmap-website code, then <em>do not use the apidb schema</em>. Import the data with osm2pgsql instead.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/77812/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Nov '20, 17:35</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</img></div>
+</div>
+<div class="comments-container" id="comments-container-77812">
+<a name="77815"></a>
+<div class="comment" id="comment-77815">
+<div class="comment-score" id="post-77815-score"></div>
+<div class="comment-text"><p>i need to use the apidb schema as i have cloned the osm webpage and im viewing this data in josm on my own private server, osm2pgsql doesnt allow me to do that from what i have heard.</p></div>
+<div class="comment-info" id="comment-77815-info">
+<span class="comment-age">(30 Nov '20, 18:21)</span>
+<a class="comment-user userinfo" href="/users/19256/shafi-as">shafi-as</a>
+</div>
+</div>
+<a name="77816"></a>
+<div class="comment" id="comment-77816">
+<div class="comment-score" id="post-77816-score">1</div>
+<div class="comment-text"><p>True, but if you view the data in JOSM then everything is fine, as the openstreetmap-website (or cgimap) code that sits between JOSM and the database will convert these coordinates for you.</p></div>
+<div class="comment-info" id="comment-77816-info">
+<span class="comment-age">(30 Nov '20, 18:24)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-77812">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-77812-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/77810/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="YGtzjmuCi2OH8BLCMHsiOEfkXbNO9tlg"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

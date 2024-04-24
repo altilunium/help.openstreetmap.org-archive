@@ -1,0 +1,151 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/1377/api-howto-please">API howto please</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1377/up/" id="post-1377-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1377-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/1377/down/" id="post-1377-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/1377/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have got the book on OSM by Ramm and Topf. And I read the Wiki about the API 0.6 and followed the link to <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">http://en.wikipedia.org/wiki/Representational_State_Transfer</a>.</p>
+<p>I have managed to try all the examples which can be done with a simple URL. Works fine.</p>
+<p>But somehow something is missing. How can I actually use the methods like in a session? There is an illustration in the Wikipedia (a screenshot) showing the use of telnet. I have not found documentation for the OSM API for telnet. Would that be an acceptable way to use the API? What exact URL and what port? 23 or 80?</p>
+<p>Could somebody give some practical example for a "dialog" with the API please.</p>
+<p>Working on a tiny town in West Africa. So far all is still visible on a single screen in JOSM. But things are getting more complex and soon I could benefit from a structured use of the API. </p>
+<p>thank you</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-wiki" href="/tags/wiki/" rel="tag" title="see questions tagged 'wiki'">wiki</a>
+<a class="post-tag tag-link-api" href="/tags/api/" rel="tag" title="see questions tagged 'api'">api</a>
+<a class="post-tag tag-link-methods" href="/tags/methods/" rel="tag" title="see questions tagged 'methods'">methods</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>31 Oct '10, 12:52</strong>
+</p>
+<img alt="Screentoosmall's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/30c20cb2762636db14c36322853ed87d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/310/screentoosmall">Screentoosmall</a><br/>
+<span class="score" title="66 reputation points">66</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="8 badges"><span class="bronze">●</span><span class="badgecount">8</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Screentoosmall has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1377">
+</div>
+<div class="comment-tools" id="comment-tools-1377">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1377-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/1377/api-howto-please?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/1377/api-howto-please?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/1377/api-howto-please?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/1377/api-howto-please?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="1380"></a>
+<div class="answer accepted-answer" id="answer-container-1380">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1380/up/" id="post-1380-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1380-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/1380/down/" id="post-1380-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/1380/" rel="nofollow" title="Screentoosmall has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The API is meant to be used by editing software, such as JOSM, Potlatch 2 or Merkaartor. It is not, in itself, user-facing. You are not expected to communicate directly with it yourself; rather, you use editing software to do that for you. The P in API stands for "Programming" and it means exactly that.</p>
+<p>There is no Telnet interface to the API nor will there be. You could use command-line tools and text editors to communicate manually with the API if you really wanted, but it's very, very hard work.</p>
+<p>Standard practice for making "programmatic" changes is to download the data using editor software (usually JOSM, which appeals to this sort of tech-savvy audience); save it as an .osm file; munge it somehow using your scripting language of choice; then re-upload using JOSM. However, this sort of editing can really hack people off if done badly, so exercise great caution if you're doing it in an area where other people are mapping.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/1380/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>31 Oct '10, 19:15</strong>
+</p>
+<img alt="Richard's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/08324717c25d6067fa4ff23ef37d455f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5/richard">Richard ♦</a><br/>
+<span class="score" title="30902 reputation points"><span class="">30.9k</span></span><span title="44 badges"><span class="badge1">●</span><span class="badgecount">44</span></span><span title="279 badges"><span class="silver">●</span><span class="badgecount">279</span></span><span title="412 badges"><span class="bronze">●</span><span class="badgecount">412</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Richard has 98 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/1380/">
+                edited
+                <strong>01 Nov '10, 07:53</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1380">
+<a name="1402"></a>
+<div class="comment" id="comment-1402">
+<div class="comment-score" id="post-1402-score">1</div>
+<div class="comment-text"><p>Thank you very much. I was mainly after information as in filtered searches for missing tags etc - No worries, I will not mess with scripting anytime soon, neither via API nor via JOSM.</p>
+<p>The technical data is all there in the wiki, but with your few sentences, it is now all put into perspective for me. Thanks</p></div>
+<div class="comment-info" id="comment-1402-info">
+<span class="comment-age">(01 Nov '10, 19:28)</span>
+<a class="comment-user userinfo" href="/users/310/screentoosmall">Screentoosmall</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-1380">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1380-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/1377/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="ERJftAhAkJ5MIfWCffsLbo8CwB7G6AxF"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

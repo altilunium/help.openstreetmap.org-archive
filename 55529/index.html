@@ -1,0 +1,155 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/55529/how-to-detect-if-point-is-inside-a-building-polygon-with-overpass">How to detect if point is inside a building polygon with overpass ?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/55529/up/" id="post-55529-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-55529-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/55529/down/" id="post-55529-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/55529/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am trying to figure out how to detect if lat/lng pair is inside a building polygon. So far I have something like this:
+<a href="http://overpass-turbo.eu/s/ocv">http://overpass-turbo.eu/s/ocv</a></p>
+<p>This code gets me the nearest but it also gets me the closest buildings, which I don't want - to avoid that I have made the around parameter as small as possible. Is there a better solution ?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-building" href="/tags/building/" rel="tag" title="see questions tagged 'building'">building</a>
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>07 Apr '17, 22:38</strong>
+</p>
+<img alt="krizzz's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2784e6d6311921579300ae1d0ca11f8?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13573/krizzz">krizzz</a><br/>
+<span class="score" title="56 reputation points">56</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="krizzz has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-55529">
+<a name="74373"></a>
+<div class="comment" id="comment-74373">
+<div class="comment-score" id="post-74373-score">1</div>
+<div class="comment-text"><p>And how to do it efficiently for a lot of points? <a href="https://help.openstreetmap.org/questions/74372/how-to-check-efficiently-if-thousands-of-points-are-located-inside-a-building-polygon-using-overpass">https://help.openstreetmap.org/questions/74372/how-to-check-efficiently-if-thousands-of-points-are-located-inside-a-building-polygon-using-overpass</a></p></div>
+<div class="comment-info" id="comment-74373-info">
+<span class="comment-age">(26 Apr '20, 13:07)</span>
+<a class="comment-user userinfo" href="/users/18269/vucod">Vucod</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-55529">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-55529-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/55529/how-to-detect-if-point-is-inside-a-building-polygon-with-overpass?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/55529/how-to-detect-if-point-is-inside-a-building-polygon-with-overpass?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/55529/how-to-detect-if-point-is-inside-a-building-polygon-with-overpass?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/55529/how-to-detect-if-point-is-inside-a-building-polygon-with-overpass?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="57128"></a>
+<div class="answer" id="answer-container-57128">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/57128/up/" id="post-57128-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-57128-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/57128/down/" id="post-57128-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>There is a solution using Python and gis_geometrics [1]. Then create your Python file in the same directory as gis_geometrics.py:</p>
+<pre><code>from gis_geometrics import OSM_Polygon, Overpass
+</code></pre>
+<p>First you need to get your building polygon in gis_geometrics. There are several methods for this: Either you use an Overpass answer. Execute the Overpass query in Python using overpy. Then create a buildings dict with Overpass.getBuildingNodes() and pass each element of its items to the constructor of OSM_Polygon.</p>
+<p>Or you prefer to get the building using it's way id (e.g. WAY_ID=265258282):</p>
+<pre><code>import overpy
+api = overpy.Overpass()
+building = Overpass.getPolygonByWayId(api, WAY_ID)
+</code></pre>
+<p>See also alternative methods to find a building (Overpass.getBuildingByRelationId, Overpass.getBuildingsByBB, OSM_Polygon.getPolygonByCoords).</p>
+<p>Then you can do awesome operations on the building:</p>
+<pre><code>if building.isInPolygon(LAT,LON): print("%f,%f is inside the building."%(LAT,LON))
+</code></pre>
+<p>[1] <a href="https://github.com/timojuez/home/blob/master/mylib/gis_geometrics.py">https://github.com/timojuez/home/blob/master/mylib/gis_geometrics.py</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/57128/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>17 Jul '17, 11:02</strong>
+</p>
+<img alt="timojuez's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/784ae08b746dc5cce3dd9ac99959caf5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13943/timojuez">timojuez</a><br/>
+<span class="score" title="1 reputation points">1</span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="timojuez has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/57128/">
+                edited
+                <strong>17 Jul '17, 11:05</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-57128">
+</div>
+<div class="comment-tools" id="comment-tools-57128">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-57128-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/55529/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="d56yG20ucO5fQMzWjIGc45k8m2ccjnUK"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

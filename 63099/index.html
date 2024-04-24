@@ -1,0 +1,179 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/63099/overpass-api-difference-between-manual-overpass-geojson-export-only-linestring-and-overpass-api-result">[Overpass-API] Difference between manual Overpass GeoJSON export (only LineString) and Overpass API result</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/63099/up/" id="post-63099-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-63099-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/63099/down/" id="post-63099-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/63099/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I would like to export the <a href="https://www.openstreetmap.org/relation/5500685">Nordlink power cable relation</a> to GeoJSON.</p>
+<p>Until now I'm using the API with <a href="https://github.com/mvexel/overpass-api-python-wrapper">python-overpass</a> and the following query:</p>
+<pre><code>relation(5500685);(._;&gt;;);out geom;
+</code></pre>
+<p>As output I'm getting the LineString two times (!) plus all points.
+Example:</p>
+<pre><code>{
+  "geometry": {
+    "coordinates": [
+      6.5962545,
+      58.181566
+    ],
+    "type": "Point"
+  },
+</code></pre>
+<p>While when using the Overpass API manually (<a href="https://overpass-turbo.eu/s/yaT">Link</a>)</p>
+<pre><code>[out:json][timeout:300];
+(
+relation(5500685);
+);
+out body;
+&gt;;
+out skel qt;
+</code></pre>
+<p>I only get the LineString:</p>
+<pre><code>{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "<a href="https://help.openstreetmap.org/users/260/idoneus">@id</a>": "way/370147304",
+        "@relations": [
+          {
+            "role": "",
+            "rel": 5500685,
+            "reltags": {
+              "type": "collection",
+              "wikidata": "Q1961296",
+              "wikipedia": "no:NordLink"
+            }
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            6.6807119,
+            58.2607599
+          ],
+          [
+            6.694153,
+            58.2131834
+          ],
+          [
+            6.6534177,
+            58.1893486
+          ],
+          [
+            6.5962545,
+            58.181566
+          ],
+          [
+            6.4788896,
+            58.1497393
+          ],
+          [
+            6.4419395,
+            58.0867718
+          ],
+          [
+            8.4853879,
+            54.2985972
+          ],
+          [
+            8.7676507,
+            54.179769
+          ]
+        ]
+      },
+      "id": "way/370147304"
+    }
+  ]
+}
+</code></pre>
+<p>How can I get the same result (without points) like the manual query by using the API?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpassapi" href="/tags/overpassapi/" rel="tag" title="see questions tagged 'overpassapi'">overpassapi</a>
+<a class="post-tag tag-link-python" href="/tags/python/" rel="tag" title="see questions tagged 'python'">python</a>
+<a class="post-tag tag-link-geojson" href="/tags/geojson/" rel="tag" title="see questions tagged 'geojson'">geojson</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>24 Apr '18, 09:36</strong>
+</p>
+<img alt="Druzhba's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bdb6a1b49c42d8be4b8d87f3096a3622?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14293/druzhba">Druzhba</a><br/>
+<span class="score" title="150 reputation points">150</span><span title="11 badges"><span class="badge1">●</span><span class="badgecount">11</span></span><span title="11 badges"><span class="silver">●</span><span class="badgecount">11</span></span><span title="18 badges"><span class="bronze">●</span><span class="badgecount">18</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Druzhba has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-63099">
+<a name="63106"></a>
+<div class="comment" id="comment-63106">
+<div class="comment-score" id="post-63106-score"></div>
+<div class="comment-text"><p>The two queries you mention here are different, so it's logical that you'd get different results. Have you tried simply using the same query?</p></div>
+<div class="comment-info" id="comment-63106-info">
+<span class="comment-age">(24 Apr '18, 16:53)</span>
+<a class="comment-user userinfo" href="/users/8189/alester">alester</a>
+</div>
+</div>
+<a name="63108"></a>
+<div class="comment" id="comment-63108">
+<div class="comment-score" id="post-63108-score"></div>
+<div class="comment-text"><p>Note that Overpass-API doesn't output geojson, it outputs a json representation of the osm node/way/relation data model. Overpass Turbo has some code that converts the osm data model to geojson.</p></div>
+<div class="comment-info" id="comment-63108-info">
+<span class="comment-age">(24 Apr '18, 20:15)</span>
+<a class="comment-user userinfo" href="/users/10973/maxerickson">maxerickson</a>
+</div>
+</div>
+<a name="63114"></a>
+<div class="comment" id="comment-63114">
+<div class="comment-score" id="post-63114-score"></div>
+<div class="comment-text"><p>How to convert this json representation to plain geojson?</p></div>
+<div class="comment-info" id="comment-63114-info">
+<span class="comment-age">(24 Apr '18, 21:45)</span>
+<a class="comment-user userinfo" href="/users/14293/druzhba">Druzhba</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-63099">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-63099-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/63099/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="AeyTc1PbTEHY7qww62dTLa5h2lzZHVmR"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

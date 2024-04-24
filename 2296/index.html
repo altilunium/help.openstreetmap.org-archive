@@ -1,0 +1,373 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/2296/extracting-bounding-boxes-osmosis-usage-on-windows">Extracting bounding boxes - Osmosis usage on Windows</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/2296/up/" id="post-2296-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-2296-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/2296/down/" id="post-2296-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/2296/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello I have downloaded europe.osm.bz2 and I would like to exctract a large area using osmosis. Please forgive me for my ignorance, I am not a Linux / Unix at all and if I am missing something obvious, please advise.</p>
+<p>I am ammending this script I found on the <a href="http://wiki.openstreetmap.org/wiki/Osmosis#Extracting_bounding_boxes"></a><a href="http://wiki.openstreetmap.org/wiki/Osmosis#Extracting_bounding_boxes"></a><a href="http://wiki.openstreetmap.org/wiki/Osmosis#Extracting_bounding_boxes">http://wiki.openstreetmap.org/wiki/Osmosis#Extracting_bounding_boxes</a>. </p>
+<p>Published script:</p>
+<pre><code> bzcat downloaded.osm.bz2 | osmosis\
+  --read-xml enableDateParsing=no file=/dev/stdin\
+  --bounding-box top=49.5138 left=10.9351 bottom=49.3866 right=11.201 --write-xml file=-\
+  | bzip2 &gt; extracted.osm.bz2
+</code></pre>
+<p>My ammended script:</p>
+<pre><code> bzcat.exe "I:\europe.osm.bz2" | osmosis.bat\
+  --read-xml enableDateParsing=no file=CONIN$\
+  --bounding-box top=51.2 left=11.7 bottom=47.6 right=23.0 --write-xml file=-\
+  | bzip2 &gt; "I:\czechoslovakia.osm.bz2"
+</code></pre>
+<p>Quite frankly I do not even know what the  symbol really stands for and if it necessary on windows. I am assuming the | is some pipeline notification.</p>
+<p>Here is what I am getting back. </p>
+<p>bzcat.exe: I/O or other error, bailing out.  Possible reason follows.
+bzcat.exe: Invalid argument
+        Input file = I:europe.osm.bz2, output file = (stdout)</p>
+<p>C:Mapyosmosis-0.38bin&gt;--read-xml enableDateParsing=no file=CONIN$
+'--read-xml' is not recognized as an internal or external command,
+operable program or batch file.</p>
+<p>C:Mapyosmosis-0.38bin&gt;--bounding-box top=51.2 left=11.7 bottom=47.6 right=23.0 --write-xml file=-
+'--bounding-box' is not recognized as an internal or external command,
+operable program or batch file.
+| was unexpected at this time.</p>
+<p>Please advise.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-windows" href="/tags/windows/" rel="tag" title="see questions tagged 'windows'">windows</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>19 Jan '11, 13:47</strong>
+</p>
+<img alt="Tomas%20Pajonk's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bbe97c3fa23d557d5cdaec1fef8e28db?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/669/tomas-pajonk">Tomas Pajonk</a><br/>
+<span class="score" title="191 reputation points">191</span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="8 badges"><span class="silver">●</span><span class="badgecount">8</span></span><span title="17 badges"><span class="bronze">●</span><span class="badgecount">17</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Tomas Pajonk has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-2296">
+</div>
+<div class="comment-tools" id="comment-tools-2296">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-2296-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    4 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/2296/extracting-bounding-boxes-osmosis-usage-on-windows?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/2296/extracting-bounding-boxes-osmosis-usage-on-windows?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/2296/extracting-bounding-boxes-osmosis-usage-on-windows?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/2296/extracting-bounding-boxes-osmosis-usage-on-windows?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="2334"></a>
+<div class="answer" id="answer-container-2334">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/2334/up/" id="post-2334-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-2334-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/2334/down/" id="post-2334-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It seems like you need to write everything on one line (or something). This is an error from DOS/Windows:</p>
+<pre><code> '--bounding-box' is not recognized as an internal or external command, operable program or batch file. | was unexpected at this time.
+</code></pre>
+<p>Also I think you forgot the last pipe, try to just export to OSM (or pbf) and see if that works, so write it like this:</p>
+<pre><code>bzcat.exe "I:\europe.osm.bz2" | osmosis.bat --read-xml enableDateParsing=no file=CONIN$  --bounding-box top=51.2 left=11.7 bottom=47.6 right=23.0 --write-xml file="I:\czechoslovakia.osm"
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/2334/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>20 Jan '11, 22:01</strong>
+</p>
+<img alt="emj's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/dd3858f5f89f5a6b738f9dbe59824440?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/188/emj">emj</a><br/>
+<span class="score" title="2024 reputation points"><span class="">2.0k</span></span><span title="12 badges"><span class="badge1">●</span><span class="badgecount">12</span></span><span title="35 badges"><span class="silver">●</span><span class="badgecount">35</span></span><span title="47 badges"><span class="bronze">●</span><span class="badgecount">47</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="emj has 11 accepted answers">15%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/2334/">
+                edited
+                <strong>20 Jan '11, 22:34</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-2334">
+<a name="4064"></a>
+<div class="comment" id="comment-4064">
+<div class="comment-score" id="post-4064-score"></div>
+<div class="comment-text"><p>Why is bzcat used? I thought Osmosis could read .bz2 files anyway?</p></div>
+<div class="comment-info" id="comment-4064-info">
+<span class="comment-age">(25 Mar '11, 10:02)</span>
+<a class="comment-user userinfo" href="/users/339/edloach">EdLoach ♦</a>
+</div>
+</div>
+<a name="4237"></a>
+<div class="comment" id="comment-4237">
+<div class="comment-score" id="post-4237-score">1</div>
+<div class="comment-text"><p>running gz/bz2  as a separate task doesn't hurt and the Java implementations have been known to be buggy (e.g. java had/have problems with gzip concatenated streams).</p></div>
+<div class="comment-info" id="comment-4237-info">
+<span class="comment-age">(31 Mar '11, 21:11)</span>
+<a class="comment-user userinfo" href="/users/188/emj">emj</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-2334">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-2334-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="4061"></a>
+<div class="answer" id="answer-container-4061">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/4061/up/" id="post-4061-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-4061-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/4061/down/" id="post-4061-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Instead of file=CONIN$ you have to use file"-" (see <a href="http://wiki.openstreetmap.org/wiki/Osmosis/Detailedklzzwxh:0000Usageklzzwxh:00010.39">http://wiki.openstreetmap.org/wiki/Osmosis/Detailed_Usage_0.39</a>)</p>
+<p>In my example i used 7-zip (bzcat should work as well when using -d -c as parameters)</p>
+<p>c:Programme7-Zip7z.exe e -so I:AdminThomasosmxmleurope.osm.bz2 | D:OSMosmosisbinosmosis.bat  --rx file="-" --tf accept-ways highway=motorway,trunk,primary --used-node --write-xml file="I:AdminThomasosmxmleuropa_einfach_highway.osm"</p>
+<p>This extracts motorway, trunk and primary street from europe</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/4061/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Mar '11, 08:32</strong>
+</p>
+<img alt="tmandel's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/dbc04706922ab4f5f4bb5cf6e35e8c73?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1070/tmandel">tmandel</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="tmandel has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-4061">
+</div>
+<div class="comment-tools" id="comment-tools-4061">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-4061-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="2297"></a>
+<div class="answer" id="answer-container-2297">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/2297/up/" id="post-2297-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-2297-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/2297/down/" id="post-2297-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>All that I can reliably tell from that error message is that bzcat.exe (not osmosis) is unhappy. So this is not directly openstreetmap related. Check the documentation if the input filename should be I:/europe.osm.bz2 rather than I:europe.osm.bz2.</p>
+<p>Also you might have to use bzip2.exe instead of bzip, but that is unrelated as it breaks down before it ever reaches that stage.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/2297/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Jan '11, 13:55</strong>
+</p>
+<img alt="petschge's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/465f344e31e8ba1be0e0401414815db0?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8/petschge">petschge</a><br/>
+<span class="score" title="8279 reputation points"><span class="">8.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="73 badges"><span class="silver">●</span><span class="badgecount">73</span></span><span title="98 badges"><span class="bronze">●</span><span class="badgecount">98</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="petschge has 29 accepted answers">21%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-2297">
+<a name="2298"></a>
+<div class="comment" id="comment-2298">
+<div class="comment-score" id="post-2298-score"></div>
+<div class="comment-text"><p>When I supplied an incorect file name the error message was different.</p></div>
+<div class="comment-info" id="comment-2298-info">
+<span class="comment-age">(19 Jan '11, 14:08)</span>
+<a class="comment-user userinfo" href="/users/669/tomas-pajonk">Tomas Pajonk</a>
+</div>
+</div>
+<a name="2299"></a>
+<div class="comment" id="comment-2299">
+<div class="comment-score" id="post-2299-score"></div>
+<div class="comment-text"><p>I made a wrong call with the bzcat.exe. I should have called just bzcat.</p></div>
+<div class="comment-info" id="comment-2299-info">
+<span class="comment-age">(19 Jan '11, 14:09)</span>
+<a class="comment-user userinfo" href="/users/669/tomas-pajonk">Tomas Pajonk</a>
+</div>
+</div>
+<a name="2300"></a>
+<div class="comment" id="comment-2300">
+<div class="comment-score" id="post-2300-score"></div>
+<div class="comment-text"><p>I'd also recommend using europe.osm.pbf instead of .bz2, it's probably much faster to process by osmosis.</p></div>
+<div class="comment-info" id="comment-2300-info">
+<span class="comment-age">(19 Jan '11, 14:33)</span>
+<a class="comment-user userinfo" href="/users/118/breki">Breki</a>
+</div>
+</div>
+<a name="2301"></a>
+<div class="comment" id="comment-2301">
+<div class="comment-score" id="post-2301-score"></div>
+<div class="comment-text"><p>Would I then use Osmosis directly on the pbf or do I have to extract it somehow ?</p></div>
+<div class="comment-info" id="comment-2301-info">
+<span class="comment-age">(19 Jan '11, 14:50)</span>
+<a class="comment-user userinfo" href="/users/669/tomas-pajonk">Tomas Pajonk</a>
+</div>
+</div>
+<a name="2305"></a>
+<div class="comment" id="comment-2305">
+<div class="comment-score" id="post-2305-score">1</div>
+<div class="comment-text"><p>Directly: <a href="http://wiki.openstreetmap.org/wiki/Osmosis/Detailed_Usage_0.37#PBF_Binary_Tasks">http://wiki.openstreetmap.org/wiki/Osmosis/Detailed_Usage_0.37#PBF_Binary_Tasks</a></p></div>
+<div class="comment-info" id="comment-2305-info">
+<span class="comment-age">(19 Jan '11, 17:35)</span>
+<a class="comment-user userinfo" href="/users/118/breki">Breki</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-2297">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-2297-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="12919"></a>
+<div class="answer" id="answer-container-12919">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/12919/up/" id="post-12919-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-12919-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/12919/down/" id="post-12919-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Since this is more than a year old, I assume it is answered or not a problem. I agree however that the main problem is a Windows problem with the command syntax. For one thing, Windows commands cannot be continued.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/12919/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>24 May '12, 00:49</strong>
+</p>
+<img alt="Sam%20Hobbs's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/969f41ac9bc38a1aea77cd2372daa7e9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3668/sam-hobbs">Sam Hobbs</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Sam Hobbs has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-12919">
+</div>
+<div class="comment-tools" id="comment-tools-12919">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-12919-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/2296/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="jbFS9aweBPhpRGY6mVGMBTPp1QrZwTqW"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

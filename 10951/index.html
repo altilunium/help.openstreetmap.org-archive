@@ -1,0 +1,171 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/10951/null-or-undefined-error-in-addpopup">Null or undefined error in AddPopup</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/10951/up/" id="post-10951-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-10951-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/10951/down/" id="post-10951-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/10951/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I get this error when I call AddPopup():</p>
+<blockquote>
+<p><em>Unable to get value of the property 'Left'; object is null or undefined</em></p>
+<p><em><a href="http://www.openlayers.org/api/OpenLayers.js">http://www.openlayers.org/api/OpenLayers.js</a></em></p>
+</blockquote>
+<p>The same error occurs in both Chrome and IE. The map works fine when I comment out that line, and the markers work fine as well. Later, icon0 and lonLat0 will be several items in a loop, but I'll handle that. The end result should be a text box of some kind that would display on the marker.</p>
+<p>The marker at lonLat0 displays, so it doesn't seem like a problem with the lonLat object.</p>
+<p>Yes, I will end up displaying many markers with text on them all at once. I know, it seems silly, but that's the requirement. </p>
+<p><strong>Why does addPopup give me this error?</strong></p>
+<pre><code>&lt;html&gt;&lt;body&gt;   
+&lt;div id='mapdiv'&gt;&lt;/div&gt; &lt;script src='http://www.openlayers.org/api/OpenLayers.js'&gt;&lt;/script&gt; 
+&lt;script&gt;
+  map = new OpenLayers.Map('mapdiv');
+  map.addLayer(new OpenLayers.Layer.OSM());
+  var lonLat = new OpenLayers.LonLat(-104.73,38.92).transform(new OpenLayers.Projection('EPSG:4326'), map.getProjectionObject() );
+  var markers = new OpenLayers.Layer.Markers( 'Markers' );
+  map.addLayer(markers);
+  markers.addMarker(new OpenLayers.Marker(lonLat));     
+  function onPopupClose(evt) {selectControl.unselect(this.feature); }
+  var icon0 = new OpenLayers.Icon("pinMS.png", new OpenLayers.Size(32,32), new OpenLayers.Pixel(-16,-32));  
+  var lonLat0 = new OpenLayers.LonLat(-104.73,38.92).transform(new OpenLayers.Projection('EPSG:4326'), map.getProjectionObject());  
+  markers.addMarker(new OpenLayers.Marker(lonLat0, icon0.clone()));  
+  map.addPopup(new OpenLayers.Popup.FramedCloud("featurePopup", lonLat0, new OpenLayers.Size(10, 10), "&lt;h2&gt;Title&lt;/h2&gt;description", null, true, onPopupClose)); 
+  map.setCenter (lonLat, 1);    
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openlayers" href="/tags/openlayers/" rel="tag" title="see questions tagged 'openlayers'">openlayers</a>
+<a class="post-tag tag-link-popup" href="/tags/popup/" rel="tag" title="see questions tagged 'popup'">popup</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>02 Mar '12, 19:23</strong>
+</p>
+<img alt="tsilb's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/30d5456d1b71664feb5cda0233bf0d0d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2967/tsilb">tsilb</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="tsilb has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/10951/">
+                edited
+                <strong>02 Mar '12, 19:24</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-10951">
+</div>
+<div class="comment-tools" id="comment-tools-10951">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-10951-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/10951/null-or-undefined-error-in-addpopup?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/10951/null-or-undefined-error-in-addpopup?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/10951/null-or-undefined-error-in-addpopup?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/10951/null-or-undefined-error-in-addpopup?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="10967"></a>
+<div class="answer accepted-answer" id="answer-container-10967">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/10967/up/" id="post-10967-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-10967-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/10967/down/" id="post-10967-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/10967/" rel="nofollow" title="tsilb has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I had a play around in firefox with your code. For me it gives an error '<code>extent is null</code>' </p>
+<p>...which is easily fixed by swapping the last two lines around i.e. do <code>map.setCenter</code> before <code>map.addPopup</code>.</p>
+<p>For me then it works apart from the size of the bubble popup is wrong and the close button doesn't work, so this would need more work.</p>
+<p>You might find <a href="http://harrywood.co.uk/maps/examples/openlayers/marker-popups.html">my little popups example here</a> useful, except it's defining markers as vector features so it's a bit different.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/10967/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Mar '12, 21:44</strong>
+</p>
+<img alt="Harry%20Wood's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9e04333be840d50c6aa66fb112aad77c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/107/harry-wood">Harry Wood</a><br/>
+<span class="score" title="9489 reputation points"><span class="">9.5k</span></span><span title="25 badges"><span class="badge1">●</span><span class="badgecount">25</span></span><span title="88 badges"><span class="silver">●</span><span class="badgecount">88</span></span><span title="128 badges"><span class="bronze">●</span><span class="badgecount">128</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Harry Wood has 19 accepted answers">14%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-10967">
+<a name="10977"></a>
+<div class="comment" id="comment-10977">
+<div class="comment-score" id="post-10977-score"></div>
+<div class="comment-text"><p>That did it.  Do you know of a way to make the popups smaller?  My requirement is to have many of them with a small text blurb, visible all the time.  Thanks.</p></div>
+<div class="comment-info" id="comment-10977-info">
+<span class="comment-age">(05 Mar '12, 17:45)</span>
+<a class="comment-user userinfo" href="/users/2967/tsilb">tsilb</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-10967">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-10967-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/10951/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Ck5k2ZJugC3eaVNZmb5iOLoNOkFZaLWh"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

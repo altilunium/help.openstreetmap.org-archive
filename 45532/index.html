@@ -1,0 +1,184 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/45532/utilssetupphp-no-such-file-or-directory-initial-data">./utils/setup.php: No such file or directory initial data</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/45532/up/" id="post-45532-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-45532-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/45532/down/" id="post-45532-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/45532/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello friends !</p>
+<p>I'm new here in the forum and am trying to install my first Nominatim server.</p>
+<p>I need it to reverse geocode . I am following the step by step installation manual as in : <a href="http://wiki.openstreetmap.org/wiki/Nominatim/Installation_on_CentOS">http://wiki.openstreetmap.org/wiki/Nominatim/Installation_on_CentOS</a> . and I am facing the following problem on the orientation of import initial data.</p>
+<p>I ran the following command:</p>
+<pre><code>./utils/setup.php --osm-file brazil-latest.osm.pbf --all --osm2pgsql-cache 18000
+</code></pre>
+<p>But returns as follows:</p>
+<pre><code>./utils/setup.php: No such file or directory
+</code></pre>
+<p>Already researched corrections but so far not found , I thank if anyone can help me .</p>
+<p>Thank you</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-initial" href="/tags/initial/" rel="tag" title="see questions tagged 'initial'">initial</a>
+<a class="post-tag tag-link-installation" href="/tags/installation/" rel="tag" title="see questions tagged 'installation'">installation</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>23 Sep '15, 20:10</strong>
+</p>
+<img alt="wmarth's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/5950462743c0b01abaa4f4c9dfc3eff4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11509/wmarth">wmarth</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="wmarth has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/45532/">
+                edited
+                <strong>24 Sep '15, 06:20</strong>
+</a>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-45532">
+<a name="45540"></a>
+<div class="comment" id="comment-45540">
+<div class="comment-score" id="post-45540-score"></div>
+<div class="comment-text"><p>I do not know if made ​​properly, but after its review performed the procedure below and it was the same result , EVEN knowing que la Within this setup.php . See:</p>
+<pre><code>[root@nominaticentos /]# cd /srv/Nominatim/utils
+[root@nominaticentos utils]# ./utils/setup.php --osm-file brazil-latest.osm.pbf  --all --osm2pgsql-cache 18000 2&gt;&amp;1 | tee setup.log
+-bash: ./utils/setup.php: No such file or directory
+</code></pre></div>
+<div class="comment-info" id="comment-45540-info">
+<span class="comment-age">(24 Sep '15, 01:36)</span>
+<a class="comment-user userinfo" href="/users/11509/wmarth">wmarth</a>
+</div>
+</div>
+<a name="45552"></a>
+<div class="comment" id="comment-45552">
+<div class="comment-score" id="post-45552-score"></div>
+<div class="comment-text"><p>If you already switched to the <code>utils</code> directory then remove <code>/utils</code> from the call and just run <code>./setup.php [...]</code> instead. Alternatively just run <code>cd /srv/Nominatim/</code>.</p></div>
+<div class="comment-info" id="comment-45552-info">
+<span class="comment-age">(24 Sep '15, 07:46)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-45532">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-45532-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/45532/utilssetupphp-no-such-file-or-directory-initial-data?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/45532/utilssetupphp-no-such-file-or-directory-initial-data?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/45532/utilssetupphp-no-such-file-or-directory-initial-data?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/45532/utilssetupphp-no-such-file-or-directory-initial-data?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="45536"></a>
+<div class="answer" id="answer-container-45536">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/45536/up/" id="post-45536-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-45536-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/45536/down/" id="post-45536-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Are you in the correct directory? After unpacking the tar archive or cloning the git directory you should switch to the newly created Nominatim directory where <code>./utils/setup.php</code> should be located.</p>
+<p>Based on your new comment: After you did <code>cd /srv/Nominatim/utils</code> you already are in the utils directiory. If you try to run <code>./utils/setup.php</code> you are actually trying to run the file <code>/srv/Nominatim/utils/utils/setup.php</code> – and this file does not exist.</p>
+<p>So, try this:</p>
+<pre><code>[root@nominaticentos /]# cd /srv/Nominatim
+[root@nominaticentos Nominatim]# ./utils/setup.php --osm-file brazil-latest.osm.pbf  --all --osm2pgsql-cache 18000 2&gt;&amp;1 | tee setup.log
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/45536/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>23 Sep '15, 21:07</strong>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="scai has 168 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/45536/">
+                edited
+                <strong>24 Sep '15, 06:15</strong>
+</a>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-45536">
+</div>
+<div class="comment-tools" id="comment-tools-45536">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-45536-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/45532/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="XlbXTktqzVO7ZDc5gn2DG7mYZefDPzvm"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

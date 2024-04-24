@@ -1,0 +1,178 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/16577/openlayers-display-pacific-marks-popup-using-onclick-event">Openlayers: display pacific marks popup using onclick event</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/16577/up/" id="post-16577-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-16577-score" title="current number of votes">
+    -2
+</div>
+<a class="ajax-command post-vote down" href="/vote/16577/down/" id="post-16577-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/16577/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have the following code which addes 3 markers to the map a long with there popup boxes what i want to do is have a list of location at bottom of page and using the id of the marker when click a place on the list just make that places popup appear on the map.</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv="content-type" content="text/html; charset=utf-8"/&gt;
+        &lt;title&gt;Open Street Map&lt;/title&gt;
+        &lt;style type="text/css"&gt;
+            body { font: normal 10pt Helvetica, Arial; }
+            #map { width: 100%; height: 100%; border: 0px; padding: 0px; }
+        &lt;/style&gt;
+        &lt;script src="lib/OpenLayers.js" type="text/javascript"&gt;&lt;/script&gt;
+        &lt;script type="text/javascript"&gt;
+            var iconSize = new OpenLayers.Size(21, 25);
+            var iconOffset = new OpenLayers.Pixel(-(iconSize.w / 2), -iconSize.h);
+            var icon = new OpenLayers.Icon("img/fourmarker.png",
+                           iconSize, iconOffset);
+
+            var zoom, center, currentPopup, map, lyrMarkers;
+            var popupClass = OpenLayers.Class(OpenLayers.Popup.FramedCloud, {
+                "autoSize": true,
+                "minSize": new OpenLayers.Size(300, 50),
+                "maxSize": new OpenLayers.Size(500, 300),
+                "keepInMap": true
+            });
+
+            var bounds = new OpenLayers.Bounds();
+            function addMarker(id, lng, lat, info) {
+                var pt = new OpenLayers.LonLat(lng, lat)
+                                       .transform(new OpenLayers.Projection("EPSG:4326"), 
+                                       map.getProjectionObject());
+                bounds.extend(pt);
+                var feature = new OpenLayers.Feature(lyrMarkers, pt);
+                feature.closeBox = true;
+                feature.popupClass = popupClass;
+                feature.data.popupContentHTML = info ;
+                feature.data.overflow = "auto";
+                var marker = new OpenLayers.Marker(pt, icon.clone());
+
+                var markerClick = function(evt) {
+                    if (currentPopup != null &amp;&amp; currentPopup.visible()) {
+                        currentPopup.hide();
+                    }
+
+                    if (this.popup == null) {
+                        this.popup = this.createPopup(this.closeBox);
+                        map.addPopup(this.popup);
+                        this.popup.show();
+                    } else {
+                        this.popup.toggle();
+                    }
+                    currentPopup = this.popup;
+                    OpenLayers.Event.stop(evt);
+                };
+                marker.events.register("mousedown", feature, markerClick);
+                lyrMarkers.addMarker(marker);
+            }
+
+            function initMap() {
+                var options = {
+                    projection: new OpenLayers.Projection("EPSG:900913"),
+                    displayProjection: new OpenLayers.Projection("EPSG:4326"),
+                    units: "m",
+                    numZoomLevels: 19,
+                    maxResolution: 156543.0339,
+                    maxExtent: new OpenLayers.Bounds(-0.13011, -0.13011, 51.51039, 51.51039)
+                };
+
+                map = new OpenLayers.Map("map", options);
+                map.addControl(new OpenLayers.Control.DragPan());
+                var lyrOsm = new OpenLayers.Layer.OSM();
+                map.addLayer(lyrOsm);
+                lyrMarkers = new OpenLayers.Layer.Markers("Markers");
+                map.addLayer(lyrMarkers);
+
+                 //add marker on given coordinates
+                addMarker('1',-0.12519,51.51112 , '&lt;b&gt;Tescos&lt;/b&gt;&lt;br/&gt;Covent garden');
+                addMarker('2',-0.13264,51.50918 , '&lt;b&gt;Spar&lt;/b&gt;&lt;br/&gt;Leicester Square');
+                addMarker('3', -0.12498,51.50807 , '&lt;b&gt;M &amp; S&lt;/b&gt;&lt;br/&gt;Embankment');
+                center = bounds.getCenterLonLat();
+                map.setCenter(center, map.getZoomForExtent(bounds) - 1);
+                zoom = map.getZoom();
+            }
+
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body onload="initMap()" style="margin:0; border:0; padding:0; width:1000px; height:500px;"&gt;
+        &lt;div id="map"&gt;&lt;/div&gt;
+
+&lt;a href="popup()"id="1"&gt;1&lt;/a&gt; &lt;br/&gt;
+&lt;a href="popup()"&gt;1&lt;/a&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap" href="/tags/openstreetmap/" rel="tag" title="see questions tagged 'openstreetmap'">openstreetmap</a>
+<a class="post-tag tag-link-javascript" href="/tags/javascript/" rel="tag" title="see questions tagged 'javascript'">javascript</a>
+<a class="post-tag tag-link-openlayers" href="/tags/openlayers/" rel="tag" title="see questions tagged 'openlayers'">openlayers</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>01 Oct '12, 15:35</strong>
+</p>
+<img alt="zaratj's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/79efeaa26d0275a0004a660c330cb2cb?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4652/zaratj">zaratj</a><br/>
+<span class="score" title="9 reputation points">9</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="zaratj has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/16577/">
+                edited
+                <strong>01 Oct '12, 16:06</strong>
+</a>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-16577">
+<a name="16579"></a>
+<div class="comment" id="comment-16579">
+<div class="comment-score" id="post-16579-score">2</div>
+<div class="comment-text"><p>That's really an OpenLayers question rather than an OSM one.</p>
+<p>There are a bunch of OpenLayers mailing lists described <a href="http://trac.osgeo.org/openlayers/wiki/MailingLists">here</a>, and other useful resources, including an OpenLayers IRC channel, <a href="http://trac.osgeo.org/openlayers/">here</a>.</p></div>
+<div class="comment-info" id="comment-16579-info">
+<span class="comment-age">(01 Oct '12, 16:05)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-16577">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-16577-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/16577/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="lFaBUhxiPzPIwghDVey4LATc7DErGMhe"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,244 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/8348/is-there-an-efficient-way-to-delete-excessiveredundant-nodes">[closed] Is there an efficient way to delete excessive/redundant nodes?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/8348/up/" id="post-8348-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-8348-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/8348/down/" id="post-8348-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/8348/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am using OSM-Inspector quite a lot nowadays to check/correct not only my contributions to the OSM-DB but also to correct other peoples errors. It is a great tool. 
+To me it has become apparent that there are many redundant/excessive nodes in many ways and if I see one I will eliminate it. It would be nice to have a JOSM-Plug-in the checks a marked way for these excessive nodes,
+highlights them, allow a de-highlighting, and a general delete of those nodes left highlighted.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-nodes" href="/tags/nodes/" rel="tag" title="see questions tagged 'nodes'">nodes</a>
+<a class="post-tag tag-link-excessive" href="/tags/excessive/" rel="tag" title="see questions tagged 'excessive'">excessive</a>
+<a class="post-tag tag-link-redundant" href="/tags/redundant/" rel="tag" title="see questions tagged 'redundant'">redundant</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>08 Oct '11, 15:08</strong>
+</p>
+<img alt="dcp's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/cd4569f9fa1aac11eb6b19d6de309ea6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/716/dcp">dcp</a><br/>
+<span class="score" title="721 reputation points">721</span><span title="37 badges"><span class="badge1">●</span><span class="badgecount">37</span></span><span title="44 badges"><span class="silver">●</span><span class="badgecount">44</span></span><span title="56 badges"><span class="bronze">●</span><span class="badgecount">56</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="dcp has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/8348/">
+                closed
+                <strong>09 Oct '11, 07:37</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-8348">
+<a name="8349"></a>
+<div class="comment" id="comment-8349">
+<div class="comment-score" id="post-8349-score">1</div>
+<div class="comment-text"><p>What are you defining as "excessive"?</p></div>
+<div class="comment-info" id="comment-8349-info">
+<span class="comment-age">(08 Oct '11, 15:37)</span>
+<a class="comment-user userinfo" href="/users/5/richard">Richard ♦</a>
+</div>
+</div>
+<a name="8350"></a>
+<div class="comment" id="comment-8350">
+<div class="comment-score" id="post-8350-score"></div>
+<div class="comment-text"><p>Have a look at relation=1369789 for an example. My guess that in this case up to 50% of the nodes are not required i.e. redundant.</p>
+<p>If a way is straight and has three nodes then the middle node is redundant/excessive. It contributes nothing to the DB but does cost time to download each time it is viewed,etc.</p>
+<p>I have no idea how many nodes could be eliminated but in the light of what is happening, see: <a href="http://www.openstreetmap.org/user/!i!/diary/15046">http://www.openstreetmap.org/user/!i!/diary/15046</a>
+the reduction of redundant nodes should be considered with some priority.</p></div>
+<div class="comment-info" id="comment-8350-info">
+<span class="comment-age">(08 Oct '11, 15:51)</span>
+<a class="comment-user userinfo" href="/users/716/dcp">dcp</a>
+</div>
+</div>
+<a name="8351"></a>
+<div class="comment" id="comment-8351">
+<div class="comment-score" id="post-8351-score">1</div>
+<div class="comment-text"><p>Are you familiar with the built-in Tools/Simplify Way?</p></div>
+<div class="comment-info" id="comment-8351-info">
+<span class="comment-age">(08 Oct '11, 15:55)</span>
+<a class="comment-user userinfo" href="/users/652/gnurk">gnurk</a>
+</div>
+</div>
+<a name="8352"></a>
+<div class="comment not_top_scorer" id="comment-8352">
+<div class="comment-score" id="post-8352-score"></div>
+<div class="comment-text"><p>no. is it a JOSM-plug-in?</p></div>
+<div class="comment-info" id="comment-8352-info">
+<span class="comment-age">(08 Oct '11, 16:00)</span>
+<a class="comment-user userinfo" href="/users/716/dcp">dcp</a>
+</div>
+</div>
+<a name="8353"></a>
+<div class="comment" id="comment-8353">
+<div class="comment-score" id="post-8353-score">1</div>
+<div class="comment-text"><p>I think Tools/Simplify Way is native. Don't you have it in your menu?</p></div>
+<div class="comment-info" id="comment-8353-info">
+<span class="comment-age">(08 Oct '11, 16:03)</span>
+<a class="comment-user userinfo" href="/users/652/gnurk">gnurk</a>
+</div>
+</div>
+<a name="8354"></a>
+<div class="comment not_top_scorer" id="comment-8354">
+<div class="comment-score" id="post-8354-score"></div>
+<div class="comment-text"><p>I have a JOSM German version and it does have shift-Y tool and the translation would be "Simplify Way", so yes you are right and thank-you.
+Big Question: Does it work on areas and multipolygons?</p></div>
+<div class="comment-info" id="comment-8354-info">
+<span class="comment-age">(08 Oct '11, 16:14)</span>
+<a class="comment-user userinfo" href="/users/716/dcp">dcp</a>
+</div>
+</div>
+<a name="8356"></a>
+<div class="comment not_top_scorer" id="comment-8356">
+<div class="comment-score" id="post-8356-score"></div>
+<div class="comment-text"><p>There seems to be no problem to select multiple ways/areas and run Simplify Way, but as always you have to be careful and manually watch that Simplify Way doesn't remove details you don't want to be removed. Especially curved ways may suffer from this.</p>
+<p>Another, potential, data loss may occur if a mapper has mapped a straight way and marked to-be-further-tracked-later-road-crossings as extra nodes on that way. But many times it's obvious that the extra nodes are just mapping noise.</p></div>
+<div class="comment-info" id="comment-8356-info">
+<span class="comment-age">(08 Oct '11, 16:41)</span>
+<a class="comment-user userinfo" href="/users/652/gnurk">gnurk</a>
+</div>
+</div>
+<a name="8357"></a>
+<div class="comment not_top_scorer" id="comment-8357">
+<div class="comment-score" id="post-8357-score"></div>
+<div class="comment-text"><p>I have just tried the "Simplify Way" tool on a Multipolygon with 1977 nodes and it reduced the number to 1489 which is a saving of 488 nodes or about a 25% reduction. That is just great.
+But is it safe to use. Am I destroying something i.e. doing more harm than good for I cannot check those 488 nodes individually.
+And why is it not being widely applied. The reduction of redundant data should be a priority.</p></div>
+<div class="comment-info" id="comment-8357-info">
+<span class="comment-age">(08 Oct '11, 16:41)</span>
+<a class="comment-user userinfo" href="/users/716/dcp">dcp</a>
+</div>
+</div>
+<a name="8360"></a>
+<div class="comment" id="comment-8360">
+<div class="comment-score" id="post-8360-score">2</div>
+<div class="comment-text"><p>Personally I suspect the best answer is to tackle the problem at source: apply strict rules to imports (such as the Corine one you pointed to) and mercilessly revert those that fail to abide by them.</p></div>
+<div class="comment-info" id="comment-8360-info">
+<span class="comment-age">(08 Oct '11, 17:17)</span>
+<a class="comment-user userinfo" href="/users/5/richard">Richard ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-8348">
+<span class="comments-showing">
+            showing 5 of 9
+        </span>
+<a class="show-all-comments-link" href="#">show 4 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-8348-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<div class="question-status" style="margin-bottom:15px">
+<h3>
+                The question has been closed for the following reason "The question is answered, right answer was accepted" by
+                <a href="/users/716/dcp">dcp</a>
+                 09 Oct '11, 07:37
+            </h3>
+</div>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/8348/is-there-an-efficient-way-to-delete-excessiveredundant-nodes?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/8348/is-there-an-efficient-way-to-delete-excessiveredundant-nodes?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/8348/is-there-an-efficient-way-to-delete-excessiveredundant-nodes?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/8348/is-there-an-efficient-way-to-delete-excessiveredundant-nodes?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="8358"></a>
+<div class="answer" id="answer-container-8358">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/8358/up/" id="post-8358-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-8358-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/8358/down/" id="post-8358-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Not everything that OSM Inspector highlights is necessarily an error. There is no need to split ways (creating complicated relations), just because the way has more than 1900 nodes.</p>
+<p>The number of nodes in a way has nothing to do with load on the tile server.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/8358/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Oct '11, 16:45</strong>
+</p>
+<img alt="Vclaw's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/aa505c046b1c010e997a7849c6f3dbbe?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/62/vclaw">Vclaw</a><br/>
+<span class="score" title="9217 reputation points"><span class="">9.2k</span></span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="95 badges"><span class="silver">●</span><span class="badgecount">95</span></span><span title="141 badges"><span class="bronze">●</span><span class="badgecount">141</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Vclaw has 41 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-8358">
+<a name="8362"></a>
+<div class="comment" id="comment-8362">
+<div class="comment-score" id="post-8362-score"></div>
+<div class="comment-text"><p>Then I just don't understand the logic of the program. OSM-Inspector should only show errors. If it highlights valid data as well as errors why should I take the time to look at it. It becomes a puzzle and not a tool.
+Obviously I am not qualified to make judgement on the tile server load. I did not know that the sum of all nodes has no effect on the  on the tile server load. Sorry!</p></div>
+<div class="comment-info" id="comment-8362-info">
+<span class="comment-age">(08 Oct '11, 17:27)</span>
+<a class="comment-user userinfo" href="/users/716/dcp">dcp</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-8358">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-8358-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/8348/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="nhUi4hkABn5WWr4oD0N1v0JvmZLdDMFS"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

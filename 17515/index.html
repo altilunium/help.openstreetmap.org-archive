@@ -1,0 +1,205 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/17515/is-there-currently-an-issue-with-osm-server">Is there currently an issue with OSM server ?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/17515/up/" id="post-17515-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-17515-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/17515/down/" id="post-17515-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/17515/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>In particular api.openstreetmap.org (redirects to main site with a browser) ?</p>
+<p>I am finding JOSM fails when trying to download a map section. "GET <a href="http://api.openstreetmap.org/api/capabilities...">http://api.openstreetmap.org/api/capabilities...".</a> </p>
+<p>I also note while starting JOSM failed to load a image from a .com site ? Thats interesting too !
+"Failed to load <a href="http://o.aolcdn.com/os/mapquest/marketing/MQ_Icon/Tiny/MQ_Icon_Tiny.png,">http://o.aolcdn.com/os/mapquest/marketing/MQ_Icon/Tiny/MQ_Icon_Tiny.png,</a> use cached file and retry next time."</p>
+<p>I have recently updated my Ubuntu OS so it could be a java problem but strace does not spot anything obvious.</p>
+<p>David</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-josm" href="/tags/josm/" rel="tag" title="see questions tagged 'josm'">josm</a>
+<a class="post-tag tag-link-failed" href="/tags/failed/" rel="tag" title="see questions tagged 'failed'">failed</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>06 Nov '12, 05:27</strong>
+</p>
+<img alt="Davo's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/85e1d5d2a4825f5251297994741cd33b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4931/davo">Davo</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Davo has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-17515">
+</div>
+<div class="comment-tools" id="comment-tools-17515">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-17515-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/17515/is-there-currently-an-issue-with-osm-server?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/17515/is-there-currently-an-issue-with-osm-server?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/17515/is-there-currently-an-issue-with-osm-server?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/17515/is-there-currently-an-issue-with-osm-server?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="17516"></a>
+<div class="answer" id="answer-container-17516">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/17516/up/" id="post-17516-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-17516-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/17516/down/" id="post-17516-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>According to the <a href="http://wiki.openstreetmap.org/wiki/Platform_Status">Platform Status</a> there is no problem with the API. Downloading data with JOSM succeeds here. Does it work for you meanwhile? If not it might be a problem of your local network.</p>
+<p><a href="http://api.openstreetmap.org/api/capabilities...">http://api.openstreetmap.org/api/capabilities...</a> redirecting to a HTML page is completely normal, the dots aren't part of the URL. <a href="http://api.openstreetmap.org/api/capabilities">http://api.openstreetmap.org/api/capabilities</a> instead should return with a XML file which is then parsed by JOSM in order to get information about the current API version, various restrictions and so on.</p>
+<p>And the MapQuest icon seems to have changed it's location. This shouldn't be a problem for you and should get fixed with the next JOSM update.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/17516/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Nov '12, 06:40</strong>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="scai has 168 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-17516">
+<a name="17517"></a>
+<div class="comment" id="comment-17517">
+<div class="comment-score" id="post-17517-score"></div>
+<div class="comment-text"><p>thanks Scai, so, an hour or so later, yep, the image is now downloading from MapQuest fine. Both in JOSM and a browser.</p>
+<p>However, the real problem remains in JOSM. I select a small area of the map to download and it eventually fails. Indications are that its still failing at the "GET <a href="http://api.openstreetmap.org/api/capabilities...">http://api.openstreetmap.org/api/capabilities..."</a> but, as you state, I don't get to see what it really is down loading, just a truncated version of it. Java ! If I knew what was hidden behind the "..." I could try it myself.</p>
+<p>I do see a message box saying "Failed to upload data to or download data from 'http://api.openstreetmap.org/api/' due to a problem with transferring data. Details (untranslated): connect timed out"</p>
+<p>Still don't see any reason to suspect my Java install but I am starting to assume that is the case.</p>
+<p>Thanks for your help, especially confirming its working fine there.</p>
+<p>David</p></div>
+<div class="comment-info" id="comment-17517-info">
+<span class="comment-age">(06 Nov '12, 07:51)</span>
+<a class="comment-user userinfo" href="/users/4931/davo">Davo</a>
+</div>
+</div>
+<a name="17518"></a>
+<div class="comment" id="comment-17518">
+<div class="comment-score" id="post-17518-score">1</div>
+<div class="comment-text"><p>There is nothing hidden behind the "...", for downloading actual data JOSM will call <a href="http://api.openstreetmap.org/api/0.6/map?bbox=...">http://api.openstreetmap.org/api/0.6/map?bbox=...</a> per default.</p>
+<p>If you get a timeout try downloading a smaller area or try it again later. I had some timeouts in the last few days myself, I think this is a known problem. Otherwise try contacting someone on <a href="http://wiki.openstreetmap.org/wiki/IRC">IRC</a>, this help site is not really suited for such problems.</p></div>
+<div class="comment-info" id="comment-17518-info">
+<span class="comment-age">(06 Nov '12, 08:46)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-17516">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-17516-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="17534"></a>
+<div class="answer answered-by-owner" id="answer-container-17534">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/17534/up/" id="post-17534-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-17534-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/17534/down/" id="post-17534-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>For the record, I am now convinced that this problem is external, most likely local network problems but further testing will be needed to be quite sure.</p>
+<p>To be clear, your browser should be able to return a bit of simple xml when pointed to <a href="http://api.openstreetmap.org/api/capabilities">http://api.openstreetmap.org/api/capabilities</a></p>
+<p>I can 'sometimes'....</p>
+<p>David</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/17534/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Nov '12, 23:23</strong>
+</p>
+<img alt="Davo's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/85e1d5d2a4825f5251297994741cd33b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4931/davo">Davo</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Davo has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-17534">
+</div>
+<div class="comment-tools" id="comment-tools-17534">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-17534-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/17515/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="T7eY8DMWAAfxr8KOow9WRov2oV7VNKoz"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

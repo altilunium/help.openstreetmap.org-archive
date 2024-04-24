@@ -1,0 +1,166 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/70956/programmatically-download-gps-trace">programmatically download gps trace</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/70956/up/" id="post-70956-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-70956-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/70956/down/" id="post-70956-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/70956/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>No luck with <code>help.openstreetmap.org</code>, so I am asking what is probably a very elementary question.</p>
+<p>How can I download programmatically a GPS trace file which is available at </p>
+<p><code><a href="https://www.openstreetmap.org/trace/traceidnumber/data">https://www.openstreetmap.org/trace/traceidnumber/data</a></code></p>
+<p>i.e. how can I do this with a script?</p>
+<p>I presume the answer is somewhere in the <a href="https://wiki.openstreetmap.org/wiki/API">API wiki documentation </a>, but it's outside of my zone of familiarity (e.g. <code>python</code> or <code>bash</code>).</p>
+<p><strong>Note:</strong> I don't want to download bulk data, I simply want to be able to automate the download of, say, a dozen GPS trace files.</p>
+<hr/>
+<p><strong>Edit:</strong> The reason of my failure was that I had made a mistake in constructing the URL... </p>
+<p>For the record, the following python code snippet works just fine:<br/>
+<code>import requests
+from pathlib import Path
+url = "https://www.openstreetmap.org/trace/3116621/data"
+path = Path.home()/'datasets'
+r = requests.get(url)
+with path.open('wb') as f:
+    f.write(r.content)</code></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-download" href="/tags/download/" rel="tag" title="see questions tagged 'download'">download</a>
+<a class="post-tag tag-link-api" href="/tags/api/" rel="tag" title="see questions tagged 'api'">api</a>
+<a class="post-tag tag-link-traces" href="/tags/traces/" rel="tag" title="see questions tagged 'traces'">traces</a>
+<a class="post-tag tag-link-gps" href="/tags/gps/" rel="tag" title="see questions tagged 'gps'">gps</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>29 Sep '19, 16:44</strong>
+</p>
+<img alt="Antoine%20C's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7645c70e5a141f9b512f7dac0b37fe60?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17250/antoine-c">Antoine C</a><br>
+<span class="score" title="21 reputation points">21</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Antoine C has no accepted answers">0%</span>
+</br></p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/70956/">
+                edited
+                <strong>29 Sep '19, 21:23</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-70956">
+</div>
+<div class="comment-tools" id="comment-tools-70956">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-70956-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/70956/programmatically-download-gps-trace?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/70956/programmatically-download-gps-trace?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/70956/programmatically-download-gps-trace?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/70956/programmatically-download-gps-trace?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="70958"></a>
+<div class="answer" id="answer-container-70958">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/70958/up/" id="post-70958-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-70958-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/70958/down/" id="post-70958-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The top public trace at the moment just happens to be <a href="https://www.openstreetmap.org/user/dimitryos/traces/3116621">this one</a>.  On that page is a download link, which is <a href="https://www.openstreetmap.org/trace/3116621/data">https://www.openstreetmap.org/trace/3116621/data</a>.  If you get that (via e.g. "wget" or within your programming language of choice) I'd expect that you'll get that trace.  I've just done this:</p>
+<pre><code>wget <a href="https://www.openstreetmap.org/trace/3116621/data">https://www.openstreetmap.org/trace/3116621/data</a>
+</code></pre>
+<p>and what I get looks like a GPX file to me.  You could do that as part of a script.  Does this answer the question, or do you need to know how to find out the trace ID, or something else?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/70958/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+<div class="community-wiki">
+        This answer is marked "community wiki".
+        
+    </div>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>29 Sep '19, 17:08</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-70958">
+<a name="70960"></a>
+<div class="comment" id="comment-70960">
+<div class="comment-score" id="post-70960-score"></div>
+<div class="comment-text"><p>Yes that answers my question!</p>
+<p>I was not able to do this in <code>python</code> using its <code>requests</code> package - don't know why.  (It downloads an html file which somewhere says "File not found".)</p>
+<p>To answer your question, I am fine finding trace id (in python using an html parser).</p></div>
+<div class="comment-info" id="comment-70960-info">
+<span class="comment-age">(29 Sep '19, 17:16)</span>
+<a class="comment-user userinfo" href="/users/17250/antoine-c">Antoine C</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-70958">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-70958-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/70956/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="RO3pRLhMgF8V7dBqLf8zD9J42ut9bSkF"/>
+<div style="clear:both">
+</div>
+</form>
+</hr></div>
+</div>
+</div>

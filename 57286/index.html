@@ -1,0 +1,160 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/57286/josm-preset-forward-backward-with-one-checkbox-how">JOSM preset, forward backward with one checkbox. How?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/57286/up/" id="post-57286-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-57286-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/57286/down/" id="post-57286-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/57286/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>We have a traffic_sign C12.</p>
+<p><img alt="alt text" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Nederlands_verkeersbord_C12.svg/60px-Nederlands_verkeersbord_C12.svg.png"/></p>
+<p>Because this sign works from one side. Their could be no sign on the other side.
+Other side, it is possible to enter and turn on road or visit a house/field. And go back.
+The way must set to forward or backward on a small section. Where you do not turn anymore.
+For the traffic_sign, mofa, moped and motor_vehicle
+<strong>Can this be done with one checkbox?</strong>  for forward or backward. 
+And not with multiple checkboxes.</p>
+<pre><code>&lt;item name="C12 " icon="traffic_signs/NL/NL_C12.png" type="node,way"&gt;
+        &lt;key key="traffic_sign"value="NL:C12" /&gt;
+        &lt;key key="motor_vehicle" value="no" /&gt;
+        &lt;key key="mofa" value="yes" /&gt;
+        &lt;key key="moped" value="yes" /&gt;
+
+        &lt;space /&gt;
+        &lt;check key="traffic_sign:forward" text="Forward motor_vehicle" default="off" value_off="" value_on="NL:C12" /&gt;
+        &lt;check key="traffic_sign:backward" text="Backward motor_vehicle" default="off" value_off="" value_on="NL:C12" /&gt;
+        &lt;check key="motor_vehicle:forward" text="Forward motor_vehicle" default="off" value_off="" value_on="no" /&gt;
+        &lt;check key="motor_vehicle:backward" text="Backward motor_vehicle" default="off" value_off="" value_on="no" /&gt;
+        &lt;check key="mofa:forward" text="Forward motor_vehicle" default="off" value_off="" value_on="yes" /&gt;
+        &lt;check key="mofa:backward" text="Backward motor_vehicle" default="off" value_off="" value_on="yes" /&gt;
+        &lt;check key="moped:forward" text="Forward motor_vehicle" default="off" value_off="" value_on="yes" /&gt;
+        &lt;check key="moped:backward" text="Backward motor_vehicle" default="off" value_off="" value_on="yes" /&gt;
+&lt;/item&gt;
+</code></pre>
+<p>Off course in above example the original k/v must be replaced by <em>:forward= or </em>:backward= </p>
+<p>I can not find any solution in other presets.</p>
+<p><strong>Is this possible?</strong></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-forward" href="/tags/forward/" rel="tag" title="see questions tagged 'forward'">forward</a>
+<a class="post-tag tag-link-josm" href="/tags/josm/" rel="tag" title="see questions tagged 'josm'">josm</a>
+<a class="post-tag tag-link-presets" href="/tags/presets/" rel="tag" title="see questions tagged 'presets'">presets</a>
+<a class="post-tag tag-link-backward" href="/tags/backward/" rel="tag" title="see questions tagged 'backward'">backward</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>26 Jul '17, 14:48</strong>
+</p>
+<img alt="Allroads's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/6c5dc0fc3be6786b643d15ec99ba3e3f?s=32&amp;d=identicon&amp;r=g" width="32">
+<p><a href="/users/11443/allroads">Allroads</a><br/>
+<span class="score" title="222 reputation points">222</span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="17 badges"><span class="silver">●</span><span class="badgecount">17</span></span><span title="25 badges"><span class="bronze">●</span><span class="badgecount">25</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Allroads has one accepted answer">10%</span>
+</p>
+</img></div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/57286/">
+                edited
+                <strong>26 Jul '17, 14:51</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-57286">
+</div>
+<div class="comment-tools" id="comment-tools-57286">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-57286-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/57286/josm-preset-forward-backward-with-one-checkbox-how?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/57286/josm-preset-forward-backward-with-one-checkbox-how?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/57286/josm-preset-forward-backward-with-one-checkbox-how?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/57286/josm-preset-forward-backward-with-one-checkbox-how?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="57357"></a>
+<div class="answer" id="answer-container-57357">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/57357/up/" id="post-57357-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-57357-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/57357/down/" id="post-57357-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I don't believe this is possible directly, JOSM allows JAVA code in presets so probably there is a way to do it, but likely not easy.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/57357/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Jul '17, 20:49</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-57357">
+</div>
+<div class="comment-tools" id="comment-tools-57357">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-57357-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/57286/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="n9qnJh0PwiJ6vi3iMCOoCNUqbVTZqVi3"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

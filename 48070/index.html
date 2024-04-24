@@ -1,0 +1,120 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/48070/very-basic-mapnik-xml-stylesheet-showing-ways-and-nodes">Very basic Mapnik XML stylesheet showing ways and nodes</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48070/up/" id="post-48070-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48070-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/48070/down/" id="post-48070-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/48070/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm trying to create an extremely basic Mapnik XML stylesheet, so that I can display purely all ways and nodes in an OSM extract, for debugging purposes. It doesn't need to look pretty.</p>
+<p>I am running this against a flat-file .osm file, using the Geofabrik extract suggested at:
+<a href="http://wiki.openstreetmap.org/wiki/Mapnik/Rendering_OSM_XML_data_directly">http://wiki.openstreetmap.org/wiki/Mapnik/Rendering_OSM_XML_data_directly</a></p>
+<p>I can't get the nodes to show - what am I doing wrong? The ways are showing fine.</p>
+<pre>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;Map background-color="#f2efe9" srs="+proj=latlong +datum=WGS84"&gt;
+
+       &lt;Style name="highways"&gt;
+                &lt;Rule&gt;
+                        &lt;Filter&gt;[highway] &lt;&gt;''&lt;/Filter&gt;
+                        &lt;LineSymbolizer stroke="#808080" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" /&gt;
+                &lt;/Rule&gt;
+        &lt;/Style&gt;
+
+        &lt;Style name="nodes"&gt;
+               &lt;Rule&gt;
+                        &lt;Filter&gt;[mapnik:geometry_type]=point&lt;/Filter&gt;
+                        &lt;PointSymbolizer file="./hospital.16.svg" /&gt;
+                &lt;/Rule&gt;
+        &lt;/Style&gt;
+&lt;/Map&gt;
+</pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>12 Feb '16, 10:36</strong>
+</p>
+<img alt="fooquency's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/354d4e3cc1b448abb29eb4f1bbac395c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11977/fooquency">fooquency</a><br/>
+<span class="score" title="76 reputation points">76</span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="6 badges"><span class="silver">●</span><span class="badgecount">6</span></span><span title="10 badges"><span class="bronze">●</span><span class="badgecount">10</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="fooquency has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/48070/">
+                edited
+                <strong>12 Feb '16, 16:19</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48070">
+<a name="48071"></a>
+<div class="comment" id="comment-48071">
+<div class="comment-score" id="post-48071-score"></div>
+<div class="comment-text"><p>You need to say what format of data that these rules apply to. If its data imported to PostGIS to osm2pgsql then most nodes will not be represented directly.</p></div>
+<div class="comment-info" id="comment-48071-info">
+<span class="comment-age">(12 Feb '16, 11:44)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="48074"></a>
+<div class="comment" id="comment-48074">
+<div class="comment-score" id="post-48074-score"></div>
+<div class="comment-text"><p>It'd be useful for someone to post a minimal mapnik.xml (or a minimal TileMill style) that can be used for people to start from when creating their own styles (perhaps for transparent overlay tiles).</p></div>
+<div class="comment-info" id="comment-48074-info">
+<span class="comment-age">(12 Feb '16, 12:30)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="48078"></a>
+<div class="comment" id="comment-48078">
+<div class="comment-score" id="post-48078-score">1</div>
+<div class="comment-text"><p><a href="http://help.openstreetmap.org/users/647/sk53">@SK53</a>: Have clarified that I'm using a flat-file .osm extract.</p></div>
+<div class="comment-info" id="comment-48078-info">
+<span class="comment-age">(12 Feb '16, 16:18)</span>
+<a class="comment-user userinfo" href="/users/11977/fooquency">fooquency</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-48070">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48070-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/48070/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="gbtoJdKiTDrvWXE2ZewlZUoWaC8IdD8q"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

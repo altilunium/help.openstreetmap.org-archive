@@ -1,0 +1,201 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/66340/function-to-parse-addrflats-tag-to-array-in-postgresql">Function to parse addr:flats tag to array in PostgreSQL?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66340/up/" id="post-66340-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66340-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/66340/down/" id="post-66340-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/66340/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have been using the addr:flats tag on apartment buildings which specifies a range of flat references, together with the building:flats tag which specifies the total number (quantity) of flats. The latter information is actually the bit I'm most interested in, as I am using the data (amongst other purposes) to compute the number of leaflets required for delivery in a district (during political elections). I have two reservations though:</p>
+<ol>
+<li>The building:flats tag seems little used, for some reason</li>
+<li>The value in it is technically redundant as it is computable from the addr:flats data.</li>
+</ol>
+<p>So I wondered if anyone has written or knows of a user-defined function I can use within PostgreSQL to parse an addr:flats tag into a comprehensive array of distinct values. As well as the addr:flats value, the function would need to be passed the addr:interpolation value (or null). The number of flats is then simply the length of the returned array.
+This would be functionally similar to parsing a page printing sequence - eg <a href="https://stackoverflow.com/questions/40161/does-c-sharp-have-built-in-support-for-parsing-page-number-strings">this</a> kind of thing - but I'm not much of a programmer and hoped I could steal someone else's work!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-function" href="/tags/function/" rel="tag" title="see questions tagged 'function'">function</a>
+<a class="post-tag tag-link-addr_flats" href="/tags/addr_flats/" rel="tag" title="see questions tagged 'addr_flats'">addr_flats</a>
+<a class="post-tag tag-link-building_flats" href="/tags/building_flats/" rel="tag" title="see questions tagged 'building_flats'">building_flats</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-parsing" href="/tags/parsing/" rel="tag" title="see questions tagged 'parsing'">parsing</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>14 Oct '18, 10:37</strong>
+</p>
+<img alt="Libarch's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/99265127a23e440720864dbe51e0b48f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13083/libarch">Libarch</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Libarch has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66340">
+</div>
+<div class="comment-tools" id="comment-tools-66340">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66340-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/66340/function-to-parse-addrflats-tag-to-array-in-postgresql?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/66340/function-to-parse-addrflats-tag-to-array-in-postgresql?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/66340/function-to-parse-addrflats-tag-to-array-in-postgresql?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/66340/function-to-parse-addrflats-tag-to-array-in-postgresql?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="66349"></a>
+<div class="answer answered-by-owner" id="answer-container-66349">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66349/up/" id="post-66349-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66349-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/66349/down/" id="post-66349-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I've had a go myself, and this is what I came up with. It seems to work OK on my test data, but any comments or improvements would be very welcome:</p>
+<pre><code>CREATE OR REPLACE FUNCTION addr_flats_to_array(addr_flats text, addr_interpolation text DEFAULT NULL) RETURNS text[] AS $$
+DECLARE
+    part_range text[];
+    part text;
+    return_array text[];
+    start_val int;
+    end_val int;
+    incr int;
+BEGIN
+    IF addr_flats IS NULL THEN
+        RETURN NULL;
+    ELSIF addr_flats ~ ',' THEN -- commas not permitted (other checks here?)
+        RAISE NOTICE 'addr_flats_to_array: Illegal char in [%]', addr_flats;
+        RETURN NULL;            
+    END IF;
+    FOREACH part IN ARRAY regexp_split_to_array(addr_flats, ';')
+    LOOP
+        part_range := regexp_split_to_array(part, '-');
+        CASE array_length(part_range, 1)
+            WHEN 1 THEN -- this case is treated as a single reference, not a range
+                return_array := array_append(return_array, part);
+                CONTINUE;
+            WHEN 2 THEN -- this case is a range, ie two references separated by a hyphen
+                IF part_range[1] ~ '^\d+$' AND part_range[2] ~ '^\d+$' THEN -- both values are integers
+                    start_val := CAST(part_range[1] AS int);
+                    end_val := CAST(part_range[2] AS int);
+                    IF end_val &lt; start_val THEN
+                        RAISE NOTICE 'addr_flats_to_array: Non-incremental range "%" in [%]', part, addr_flats;
+                        RETURN NULL;
+                    END IF;
+                    CASE addr_interpolation
+                        WHEN 'odd' THEN
+                            IF mod(start_val, 2) != 1 THEN
+                                RAISE NOTICE 'addr_flats_to_array: Even start value "%" in odd-interpolated ranges [%]', start_val, addr_flats;
+                                RETURN NULL;
+                            END IF;
+                            incr := 2;
+                        WHEN 'even' THEN
+                            IF mod(start_val, 2) != 0 THEN
+                                RAISE NOTICE 'addr_flats_to_array: Odd start value "%" in even-interpolated ranges [%]', start_val, addr_flats;
+                                RETURN NULL;
+                            END IF;
+                            incr := 2;
+                        ELSE
+                            incr := 1;
+                    END CASE;
+                    FOR i IN start_val..end_val BY incr LOOP
+                        return_array := array_append(return_array, CAST(i AS text));
+                    END LOOP;
+                ELSIF length(part_range[1]) = 1 AND length(part_range[2]) = 1 THEN -- both references are single non-integer chars
+                    start_val := ascii(part_range[1]);
+                    end_val := ascii(part_range[2]);
+                    IF start_val &lt; ascii('A') OR end_val &gt; ascii('Z') OR end_val &lt; start_val THEN -- only capital letters can be used in a range
+                        RAISE NOTICE 'addr_flats_to_array: Malformed alphabetic range "%" in [%]', part, addr_flats;
+                        RETURN NULL;
+                    END IF;
+                    FOR i IN start_val..end_val LOOP
+                        return_array := array_append(return_array, chr(i));
+                    END LOOP;
+                END IF;
+            ELSE -- this shouldn't happen; eg '1-3-9' etc
+                RAISE NOTICE 'addr_flats_to_array: Malformed range "%" in [%]', part, addr_flats;
+                RETURN NULL;
+        END CASE;
+    END LOOP;
+    RETURN return_array;
+END;
+$$ LANGUAGE plpgsql IMMUTABLE;
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/66349/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>15 Oct '18, 15:52</strong>
+</p>
+<img alt="Libarch's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/99265127a23e440720864dbe51e0b48f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13083/libarch">Libarch</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Libarch has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66349">
+</div>
+<div class="comment-tools" id="comment-tools-66349">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66349-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/66340/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="6fccYJX71h31MZ0qTVw5zEIyhBamPyRb"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

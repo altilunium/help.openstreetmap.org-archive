@@ -1,0 +1,193 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/18166/ogr2osm-imported-data-shifted-by-176m-222exported-from-arcgis">Ogr2Osm: Imported data shifted by 176m, 222°(exported from ArcGIS)</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/18166/up/" id="post-18166-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-18166-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/18166/down/" id="post-18166-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/18166/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>We were given city administrative boundary data as .shp files with the permission to import those to OSM / use on <a href="http://www.addismap.com">AddisMap.com</a>.</p>
+<p>I have used the <a href="http://wiki.openstreetmap.org/wiki/Ogr2osm">Ogr2Osm</a> scripts to convert this data to the OSM format. I tried all three versions (old SVN, UVM rewrite,  pnorman's updated version) which are linked in the Wiki.</p>
+<p>All of them produce the same results, but when I load the data in JOSM and compare them with the existing city data (Addis Ababa, Ethiopia), the imported data seems to be shifted by 176m, 222° (I measured this by drawing a way from the point where it should be to the imported point in JOSM) </p>
+<p>When using Ogr2Osm it produces the following output:</p>
+<pre>Detected projection metadata:
+PROJCS["Adindan_UTM_Zone_37N",
+    GEOGCS["GCS_Adindan",
+        DATUM["Adindan",
+            SPHEROID["Clarke_1880_RGS",6378249.145,293.465]],
+        PRIMEM["Greenwich",0.0],
+        UNIT["Degree",0.0174532925199433]],
+    PROJECTION["Transverse_Mercator"],
+    PARAMETER["False_Easting",500000.0],
+    PARAMETER["False_Northing",0.0],
+    PARAMETER["Central_Meridian",39.0],
+    PARAMETER["Scale_Factor",0.9996],
+    PARAMETER["Latitude_Of_Origin",0.0],
+    UNIT["Meter",1.0]]
+</pre>
+<p>The .prj file we received has the following content:</p>
+<pre>PROJCS["Adindan_UTM_Zone_37N",GEOGCS["GCS_Adindan",DATUM["D_Adindan",SPHEROID["Clarke_1880_RGS",6378249.145,293.465]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Transverse_Mercator"],PARAMETER["False_Easting",500000.0],PARAMETER["False_Northing",0.0],PARAMETER["Central_Meridian",39.0],PARAMETER["Scale_Factor",0.9996],PARAMETER["Latitude_Of_Origin",0.0],UNIT["Meter",1.0]]
+</pre>
+<p>The data was exported from ArcGIS.</p>
+<p>What can be the source for the error? How can it be fixed? </p>
+<p>EDIT: Same problem when I use ogr2ogr and shp2osm</p>
+<pre>ogr2ogr -t_srs WGS84 -s_srs "ESRI::subcities.prj" "subcities_converted.shp" "subcities.shp" 
+perl shp2osm.pl subcities_converted.shp &gt; subcities.osm
+</pre>
+<p><em>Semi cross-posted to <a href="http://gis.stackexchange.com/questions/42965/what-can-go-wrong-in-utm-to-wgs1984-conversion-shifted-data">Stackexchange GIS</a></em></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-shapefile" href="/tags/shapefile/" rel="tag" title="see questions tagged 'shapefile'">shapefile</a>
+<a class="post-tag tag-link-import" href="/tags/import/" rel="tag" title="see questions tagged 'import'">import</a>
+<a class="post-tag tag-link-gis" href="/tags/gis/" rel="tag" title="see questions tagged 'gis'">gis</a>
+<a class="post-tag tag-link-ogr2osm" href="/tags/ogr2osm/" rel="tag" title="see questions tagged 'ogr2osm'">ogr2osm</a>
+<a class="post-tag tag-link-arcgis" href="/tags/arcgis/" rel="tag" title="see questions tagged 'arcgis'">arcgis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 Dec '12, 13:00</strong>
+</p>
+<img alt="AddisMap_Alexander's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9ac1de0d402dfdf47bd4c4d664156c64?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/80/addismap_alexander">AddisMap_Ale...</a><br/>
+<span class="score" title="1120 reputation points"><span class="">1.1k</span></span><span title="31 badges"><span class="badge1">●</span><span class="badgecount">31</span></span><span title="40 badges"><span class="silver">●</span><span class="badgecount">40</span></span><span title="62 badges"><span class="bronze">●</span><span class="badgecount">62</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="AddisMap_Alexander has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/18166/">
+                edited
+                <strong>07 Apr '15, 09:54</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-18166">
+</div>
+<div class="comment-tools" id="comment-tools-18166">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-18166-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/18166/ogr2osm-imported-data-shifted-by-176m-222exported-from-arcgis?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/18166/ogr2osm-imported-data-shifted-by-176m-222exported-from-arcgis?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/18166/ogr2osm-imported-data-shifted-by-176m-222exported-from-arcgis?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/18166/ogr2osm-imported-data-shifted-by-176m-222exported-from-arcgis?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="18189"></a>
+<div class="answer answered-by-owner" id="answer-container-18189">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/18189/up/" id="post-18189-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-18189-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/18189/down/" id="post-18189-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>As found out on <a href="http://gis.stackexchange.com/questions/42965/what-can-go-wrong-in-utm-to-wgs1984-conversion-shifted-data/43095#43095">GIS.stackexchange</a> I need to specify the projection string manually, because the ogr library does not detect it properly / does not do the datum conversion:</p>
+<pre><code>python ogr2osm.py -p "+proj=utm +zone=37 +ellps=clrk80 +towgs84=-166,-15,204,0,0,0,0 +units=m +no_defs" inputfile.osm
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/18189/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Dec '12, 14:26</strong>
+</p>
+<img alt="AddisMap_Alexander's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9ac1de0d402dfdf47bd4c4d664156c64?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/80/addismap_alexander">AddisMap_Ale...</a><br/>
+<span class="score" title="1120 reputation points"><span class="">1.1k</span></span><span title="31 badges"><span class="badge1">●</span><span class="badgecount">31</span></span><span title="40 badges"><span class="silver">●</span><span class="badgecount">40</span></span><span title="62 badges"><span class="bronze">●</span><span class="badgecount">62</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="AddisMap_Alexander has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-18189">
+<a name="25380"></a>
+<div class="comment" id="comment-25380">
+<div class="comment-score" id="post-25380-score"></div>
+<div class="comment-text"><p>I think we used to have a similar problem with EPSG:27700.</p></div>
+<div class="comment-info" id="comment-25380-info">
+<span class="comment-age">(14 Aug '13, 18:52)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="25557"></a>
+<div class="comment" id="comment-25557">
+<div class="comment-score" id="post-25557-score"></div>
+<div class="comment-text"><p><a href="/users/647/sk53">@SK53</a>: did you solve it the same way? Or another?</p></div>
+<div class="comment-info" id="comment-25557-info">
+<span class="comment-age">(18 Aug '13, 18:28)</span>
+<a class="comment-user userinfo" href="/users/80/addismap_alexander">AddisMap_Ale...</a>
+</div>
+</div>
+<a name="25560"></a>
+<div class="comment" id="comment-25560">
+<div class="comment-score" id="post-25560-score"></div>
+<div class="comment-text"><p>yes I added the explicit Helmert factors (the 7 towgs84 parameters), Chris Hill blogged about it at the time (<a href="http://chris-osm.blogspot.co.uk/2010/04/getting-boundaries-right.html),">http://chris-osm.blogspot.co.uk/2010/04/getting-boundaries-right.html),</a> but IIRC there were still bugs in proj4 (and therefore ogr2ogr, PostGIS) relating to WGS84 and OSGB transformations in 2011.</p>
+<p>A useful test if you have postgis, but I expect can be done with ogr2ogr is to use a well-defined point and perform transforms between various projections to test accuracy (particularly if there is a non-porj4 transformation available for comparison, as was the case for OSGB).</p></div>
+<div class="comment-info" id="comment-25560-info">
+<span class="comment-age">(18 Aug '13, 19:36)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-18189">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-18189-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/18166/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="2TU9FFefTxMmfO1BCVXWGOVbv27tFr64"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,210 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/36083/extract-beaches-from-planet-file">Extract beaches from planet file</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/36083/up/" id="post-36083-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-36083-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/36083/down/" id="post-36083-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/36083/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi guys,</p>
+<p>I would like to show where a beach is. But I cant extract them.
+From the documentation they seem to be "closed ways" instead of nodes.</p>
+<p>I extract nodes succesfully with osmosis and this command line:</p>
+<pre><code>osmosis --read-pbf file=planet-latest.osm.pbf --node-key-value keyValueList="amenity.restaurant" -- write-xml restaurant.xml
+</code></pre>
+<p>When I want to extract ways (like beaches) I use this Osmosis command line:</p>
+<pre><code>osmosis --read-pbf file=planet-latest.osm.pbf --way-key-value keyValueList="natural.beach" --used-node --write-xml beaches.xml
+</code></pre>
+<p>However this doesnt work. The process starts:</p>
+<pre><code>Pipeline executing, waiting for completion.
+</code></pre>
+<p>But after a while a get an error:</p>
+<pre><code>java.util.zip.DataFormatException: incorrect data check
+</code></pre>
+<p>I have downloaded 3 planet files to make sure the data isnt currupt but this happens all the time.</p>
+<p>How do I extract these beaches?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-ways" href="/tags/ways/" rel="tag" title="see questions tagged 'ways'">ways</a>
+<a class="post-tag tag-link-extraction" href="/tags/extraction/" rel="tag" title="see questions tagged 'extraction'">extraction</a>
+<a class="post-tag tag-link-extract" href="/tags/extract/" rel="tag" title="see questions tagged 'extract'">extract</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>22 Aug '14, 18:03</strong>
+</p>
+<img alt="NLanaconda's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/cbcec43f8f6c9d5b869aa5bdc56eb673?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9504/nlanaconda">NLanaconda</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="NLanaconda has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/36083/">
+                edited
+                <strong>22 Aug '14, 18:09</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-36083">
+<a name="36115"></a>
+<div class="comment" id="comment-36115">
+<div class="comment-score" id="post-36115-score"></div>
+<div class="comment-text"><p>Works fine here using the latest osmosis version (0.43.1). Did you compare the MD5 checksum of your download?</p></div>
+<div class="comment-info" id="comment-36115-info">
+<span class="comment-age">(23 Aug '14, 08:49)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="36121"></a>
+<div class="comment" id="comment-36121">
+<div class="comment-score" id="post-36121-score"></div>
+<div class="comment-text"><p>Checked it with MD5 but the checksum is different, what does that mean? The download is corrupt?</p></div>
+<div class="comment-info" id="comment-36121-info">
+<span class="comment-age">(23 Aug '14, 11:45)</span>
+<a class="comment-user userinfo" href="/users/9504/nlanaconda">NLanaconda</a>
+</div>
+</div>
+<a name="36123"></a>
+<div class="comment" id="comment-36123">
+<div class="comment-score" id="post-36123-score"></div>
+<div class="comment-text"><p>Yes, if the MD5 doesn't match, it's a corrupt download.</p></div>
+<div class="comment-info" id="comment-36123-info">
+<span class="comment-age">(23 Aug '14, 11:53)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="36129"></a>
+<div class="comment" id="comment-36129">
+<div class="comment-score" id="post-36129-score"></div>
+<div class="comment-text"><p>No, I've downloaded an osm.pbf (pbf is compressed?) file and it is 26.6 GB (<a href="ftp://ftp.spline.de/pub/openstreetmap/pbf/)">ftp://ftp.spline.de/pub/openstreetmap/pbf/)</a> </p>
+<p>Should I download a .osm.bz2 file instead of .pbf? Those are around 36G.</p></div>
+<div class="comment-info" id="comment-36129-info">
+<span class="comment-age">(23 Aug '14, 13:02)</span>
+<a class="comment-user userinfo" href="/users/9504/nlanaconda">NLanaconda</a>
+</div>
+</div>
+<a name="36130"></a>
+<div class="comment" id="comment-36130">
+<div class="comment-score" id="post-36130-score">2</div>
+<div class="comment-text"><p>Just to be clear - if the MD5 for the file that you've downloaded doesn't match the value that it is supposed to be, then you have a corrupt download and you need to download it again.  A corrupt download will cause the error that you are seeing (see <a href="https://help.openstreetmap.org/questions/14206/incorrect-data-check">https://help.openstreetmap.org/questions/14206/incorrect-data-check</a> ).</p></div>
+<div class="comment-info" id="comment-36130-info">
+<span class="comment-age">(23 Aug '14, 13:11)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="36131"></a>
+<div class="comment not_top_scorer" id="comment-36131">
+<div class="comment-score" id="post-36131-score"></div>
+<div class="comment-text"><p>Thans SomeoneElse for pointing me the right direction. I'm downloading a new 26G file again :) Hopefully it will work out.</p></div>
+<div class="comment-info" id="comment-36131-info">
+<span class="comment-age">(23 Aug '14, 13:20)</span>
+<a class="comment-user userinfo" href="/users/9504/nlanaconda">NLanaconda</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-36083">
+<span class="comments-showing">
+            showing 5 of 6
+        </span>
+<a class="show-all-comments-link" href="#">show 1 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-36083-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/36083/extract-beaches-from-planet-file?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/36083/extract-beaches-from-planet-file?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/36083/extract-beaches-from-planet-file?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/36083/extract-beaches-from-planet-file?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="36135"></a>
+<div class="answer" id="answer-container-36135">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/36135/up/" id="post-36135-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-36135-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/36135/down/" id="post-36135-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>As you strugle, I'd like to suggest another way to get your data: Overpass API:
+<a href="http://overpass-turbo.eu/s/4Hu">http://overpass-turbo.eu/s/4Hu</a></p>
+<p>Because as other say, fetching 35GB and process it for hours just to extract a few thousand items (a few MB) doesn't make sense, esp. at the beginning :-)</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/36135/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>23 Aug '14, 15:58</strong>
+</p>
+<img alt="iii's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/49a7d0e0408e9cf2f698faac0f4d837a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4984/iii">iii</a><br/>
+<span class="score" title="4892 reputation points"><span class="">4.9k</span></span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="40 badges"><span class="silver">●</span><span class="badgecount">40</span></span><span title="82 badges"><span class="bronze">●</span><span class="badgecount">82</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="iii has 16 accepted answers">10%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-36135">
+</div>
+<div class="comment-tools" id="comment-tools-36135">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-36135-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/36083/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="asoOhW78xhaua2fRlaqxxPO06W2s8ckz"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

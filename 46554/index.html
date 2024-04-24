@@ -1,0 +1,174 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/46554/populating-postgis-database-from-osm-file-with-windows-10">Populating postgis database from osm file with windows 10</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/46554/up/" id="post-46554-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-46554-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/46554/down/" id="post-46554-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/46554/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello everyone. I have Windows 10 64bit installed on my pc. I want If i try to use </p>
+<pre><code>osm2pgsql.exe d:\osm\germany-filtered.osm -d osm -U postgres -P 5432 -S d:\osm\default.style --hstore --keep-coastlines
+</code></pre>
+<p>in the 32bit version it works for a while and then i get the error:</p>
+<pre><code>Reading in file: d:\osm\germany-filtered.osm
+Processing: Node(52420k 213.1k/s) Way(0k 0.00k/s) Relation(0 0.00/s)
+Node cache size is too small to fit all nodes. Please increase cache size
+Error occurred, cleaning up
+</code></pre>
+<p>if i use 64bit and/or the -s switch, my Windows shows me a huge red banner that says that the app can't be executed on this pc and i should contact the software developer.</p>
+<p>If i use the cygwin version i get the error:</p>
+<pre><code>  0 [main] osm2pgsql 4576 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please     report this problem to
+the public mailing list cygwin@cygwin.com
+osm2pgsql SVN version 0.83.0 (64bit id space)
+
+Error: Connection to database failed: could not connect to server: No such file or directory
+    Is the server running locally and accepting
+    connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+</code></pre>
+<p>Starting cmd.exe as an administrator delivers the same results.</p>
+<p>How do i import my osm file into my postgrsql database for further usage?</p>
+<p>Btw, i can't send the error to cygwin@cygwin.com because apparently my mail client sends as text/html and their server only accepts plain text -.-</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>12 Nov '15, 20:40</strong>
+</p>
+<img alt="EinFreierNick's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/991a1daf7de47d3dcc3d94933c70ce2d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11637/einfreiernick">EinFreierNick</a><br/>
+<span class="score" title="121 reputation points">121</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="EinFreierNick has one accepted answer">50%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/46554/">
+                edited
+                <strong>12 Nov '15, 20:43</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-46554">
+<a name="46555"></a>
+<div class="comment" id="comment-46555">
+<div class="comment-score" id="post-46555-score"></div>
+<div class="comment-text"><p>The cygwin error at least has occurred for other people previously:</p>
+<p><a href="https://www.google.co.uk/search?q=%22Couldn%27t+compute+FAST_CWD+pointer%22">https://www.google.co.uk/search?q=%22Couldn%27t+compute+FAST_CWD+pointer%22</a></p></div>
+<div class="comment-info" id="comment-46555-info">
+<span class="comment-age">(12 Nov '15, 20:55)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="46564"></a>
+<div class="comment" id="comment-46564">
+<div class="comment-score" id="post-46564-score">1</div>
+<div class="comment-text"><p>Yeah I run osm2pgsql fine and get this message every time. Nothing to worry about.</p></div>
+<div class="comment-info" id="comment-46564-info">
+<span class="comment-age">(13 Nov '15, 10:40)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-46554">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-46554-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/46554/populating-postgis-database-from-osm-file-with-windows-10?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/46554/populating-postgis-database-from-osm-file-with-windows-10?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/46554/populating-postgis-database-from-osm-file-with-windows-10?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/46554/populating-postgis-database-from-osm-file-with-windows-10?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="46562"></a>
+<div class="answer accepted-answer answered-by-owner" id="answer-container-46562">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/46562/up/" id="post-46562-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-46562-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/46562/down/" id="post-46562-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/46562/" rel="nofollow" title="SomeoneElse has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>as it turned out the link to cygwin on the osm wiki page is outdated by 50 builds. The most current one works, with --host localhost.</p>
+<p>I've updated the link on <a href="http://wiki.openstreetmap.org/wiki/Osm2pgsql#Cygwin">http://wiki.openstreetmap.org/wiki/Osm2pgsql#Cygwin</a> so that others won't fall into that pit too.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/46562/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>13 Nov '15, 08:18</strong>
+</p>
+<img alt="EinFreierNick's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/991a1daf7de47d3dcc3d94933c70ce2d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11637/einfreiernick">EinFreierNick</a><br/>
+<span class="score" title="121 reputation points">121</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="EinFreierNick has one accepted answer">50%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-46562">
+</div>
+<div class="comment-tools" id="comment-tools-46562">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-46562-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/46554/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Qeka25xWMtJdQxKNrtfpf2IMjcBwmkp7"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,241 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/4552/https-requests-failing-to-bctileopenstreetmaporg">https requests failing to b,c.tile.openstreetmap.org</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/4552/up/" id="post-4552-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-4552-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/4552/down/" id="post-4552-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/4552/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am using Teleriks RadMap silverlight control (in a https site) with OpenStreetMap as the provider, I am unable to view any map data so investigated using fiddler. </p>
+<p>I initially got:</p>
+<pre><code>The remote server (a.tile.openstreetmap.org) presented a certificate that did not validate, due to RemoteCertificateNameMismatch.
+
+SUBJECT: CN=*.openstreetmap.org, OU=Domain Control Validated - RapidSSL(R), OU=See www.rapidssl.com/resources/cps (c)10, OU=GT33044578, O=*.openstreetmap.org, C=GB, SERIALNUMBER=Dgi7Lfgx7wbOkaryb/3olT0IlEQOS5b9
+ISSUER: OU=Equifax Secure Certificate Authority, O=Equifax, C=US
+EXPIRES: 14/02/2012 23:38:04
+
+(This warning can be disabled by clicking Tools | Fiddler Options.)
+
+HTTPS connection failed.
+
+System.Net.Sockets.SocketException: No connection could be made because the target machine actively refused it 128.40.168.104:443
+   at Fiddler.ServerChatter.CreateConnectedSocket(IPAddress[] arrDestIPs, Int32 iPort, Session _oSession)
+   at Fiddler.Session._handleHTTPSConnect()
+</code></pre>
+<p>In my browser I added a.tile.openstreetmap.org as an allowed exception and that connection now seems to be accepted, however I am still seeing no map data and for requests to b.tile.openstreetmap.org and c.tile.openstreetmap.org I see:</p>
+<pre><code>HTTPS connection failed.
+
+System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 128.40.168.104:443
+   at Fiddler.ServerChatter.CreateConnectedSocket(IPAddress[] arrDestIPs, Int32 iPort, Session _oSession)
+   at Fiddler.Session._handleHTTPSConnect()
+</code></pre>
+<p>I am not sure what to do to solve this so any advice appreciated.</p>
+<p>Stunty.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-tiles" href="/tags/tiles/" rel="tag" title="see questions tagged 'tiles'">tiles</a>
+<a class="post-tag tag-link-https" href="/tags/https/" rel="tag" title="see questions tagged 'https'">https</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Apr '11, 18:14</strong>
+</p>
+<img alt="Stunty's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/451a0453d27991889a8fa70292a7a946?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1199/stunty">Stunty</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Stunty has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/4552/">
+                edited
+                <strong>05 Jan '14, 09:40</strong>
+</a>
+</p>
+<img alt="iii's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/49a7d0e0408e9cf2f698faac0f4d837a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4984/iii">iii</a><br/>
+<span class="score" title="4892 reputation points"><span class="">4.9k</span></span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="40 badges"><span class="silver">●</span><span class="badgecount">40</span></span><span title="82 badges"><span class="bronze">●</span><span class="badgecount">82</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-4552">
+</div>
+<div class="comment-tools" id="comment-tools-4552">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-4552-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/4552/https-requests-failing-to-bctileopenstreetmaporg?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/4552/https-requests-failing-to-bctileopenstreetmaporg?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/4552/https-requests-failing-to-bctileopenstreetmaporg?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/4552/https-requests-failing-to-bctileopenstreetmaporg?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="29592"></a>
+<div class="answer accepted-answer" id="answer-container-29592">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/29592/up/" id="post-29592-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-29592-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/29592/down/" id="post-29592-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/29592/" rel="nofollow" title="SomeoneElse has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>https is available from today (5th Jan 2014) on a,b,c.tile.openstreetmap.org. Initially only as a test.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/29592/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+<div class="community-wiki">
+        This answer is marked "community wiki".
+        
+    </div>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>05 Jan '14, 03:02</strong>
+</p>
+<img alt="Firefishy's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e79628d44a15e95c607f8c5007d0ccd2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/48/firefishy">Firefishy ♦♦</a><br/>
+<span class="score" title="1296 reputation points"><span class="">1.3k</span></span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="36 badges"><span class="silver">●</span><span class="badgecount">36</span></span><span title="52 badges"><span class="bronze">●</span><span class="badgecount">52</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Firefishy has 14 accepted answers">29%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-29592">
+</div>
+<div class="comment-tools" id="comment-tools-29592">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-29592-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="4553"></a>
+<div class="answer" id="answer-container-4553">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/4553/up/" id="post-4553-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-4553-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/4553/down/" id="post-4553-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>We don't support https access to our tiles - it's just too expensive from a CPU point of view given the number of tiles that we serve.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/4553/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>16 Apr '11, 20:37</strong>
+</p>
+<img alt="TomH's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/dee41dcf0aa0c08cf6b0eb935b7504b7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1/tomh">TomH ♦♦</a><br/>
+<span class="score" title="3325 reputation points"><span class="">3.3k</span></span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="39 badges"><span class="silver">●</span><span class="badgecount">39</span></span><span title="43 badges"><span class="bronze">●</span><span class="badgecount">43</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="TomH has 9 accepted answers">20%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-4553">
+<a name="4585"></a>
+<div class="comment" id="comment-4585">
+<div class="comment-score" id="post-4585-score"></div>
+<div class="comment-text"><p>Ok, thanks, I will see if I can get the control to request http only.</p></div>
+<div class="comment-info" id="comment-4585-info">
+<span class="comment-age">(18 Apr '11, 09:59)</span>
+<a class="comment-user userinfo" href="/users/1199/stunty">Stunty</a>
+</div>
+</div>
+<a name="15347"></a>
+<div class="comment" id="comment-15347">
+<div class="comment-score" id="post-15347-score"></div>
+<div class="comment-text"><p>I understand the need to keep cpu load down.</p>
+<p>Unfortunately, with https for the tiles, it's very difficult to embed a map in an https web page because most browsers will present the user with a scary warning about "unsecured" parts of the web page.</p>
+<p>I wonder if it would be possible to offer both http and https - for people who are showing an http, they can use the http version (and reduce load). But for those displaying the map in an https page, we could choose the https page?</p></div>
+<div class="comment-info" id="comment-15347-info">
+<span class="comment-age">(21 Aug '12, 22:55)</span>
+<a class="comment-user userinfo" href="/users/4340/jamie">jamie</a>
+</div>
+</div>
+<a name="15349"></a>
+<div class="comment" id="comment-15349">
+<div class="comment-score" id="post-15349-score">6</div>
+<div class="comment-text"><p>OSM is not a general-purpose, unlimited-access tileserver. If you want to embed tiles in your webpage but need more than the basic, limited-bandwidth service provided by OSM, you are encouraged to download planet.osm and render your own.</p></div>
+<div class="comment-info" id="comment-15349-info">
+<span class="comment-age">(22 Aug '12, 00:08)</span>
+<a class="comment-user userinfo" href="/users/5/richard">Richard ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-4553">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-4553-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/4552/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="6iCWky3PlChaZl2ABJGOLdEFawerMEqi"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

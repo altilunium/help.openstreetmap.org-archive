@@ -1,0 +1,165 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/68534/prevent-mod_tilerenderd-from-re-rendering-cached-tile-even-if-tile-is-outdated">Prevent mod_tile/renderd from re-rendering cached tile, even if tile is outdated</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68534/up/" id="post-68534-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68534-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/68534/down/" id="post-68534-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/68534/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I only have a high-level understanding of how <code>mod_tile</code> and <code>renderd</code> works so bear with me if I make wrong assumptions.</p>
+<p>On my tile server, I pre-rendered the most important parts of the map.  Some parts of the map are not pre-rendered.</p>
+<p>I want to make it so that <code>mod_tile</code> will never re-render a tile if it is already cached, even if the map has been updated and the tile is outdated.  The only exception to this is when I use <code>render_list</code> to perform a pre-rendering - in this case I want <code>mod_tile</code> to check if a tile is outdated and re-render accordingly.</p>
+<p>For any map tiles that are not cached, I want <code>mod_tile</code> to work normally and render the tiles.</p>
+<p>The reasoning behind this is I'd prefer users to see an outdated tile than to wait 5 seconds to wait for an updated tile to load.</p>
+<p>Is there some way I can configure <code>mod_tile</code> to work like this?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-renderd" href="/tags/renderd/" rel="tag" title="see questions tagged 'renderd'">renderd</a>
+<a class="post-tag tag-link-mod_tile" href="/tags/mod_tile/" rel="tag" title="see questions tagged 'mod_tile'">mod_tile</a>
+<a class="post-tag tag-link-tileserver" href="/tags/tileserver/" rel="tag" title="see questions tagged 'tileserver'">tileserver</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>28 Mar '19, 19:45</strong>
+</p>
+<img alt="valachio's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b1e3fbb6f31c5e0144e7b18fcd7d5d33?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16323/valachio">valachio</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="9 badges"><span class="silver">●</span><span class="badgecount">9</span></span><span title="13 badges"><span class="bronze">●</span><span class="badgecount">13</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="valachio has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/68534/">
+                edited
+                <strong>28 Mar '19, 19:56</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68534">
+</div>
+<div class="comment-tools" id="comment-tools-68534">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68534-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/68534/prevent-mod_tilerenderd-from-re-rendering-cached-tile-even-if-tile-is-outdated?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/68534/prevent-mod_tilerenderd-from-re-rendering-cached-tile-even-if-tile-is-outdated?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/68534/prevent-mod_tilerenderd-from-re-rendering-cached-tile-even-if-tile-is-outdated?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/68534/prevent-mod_tilerenderd-from-re-rendering-cached-tile-even-if-tile-is-outdated?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="68535"></a>
+<div class="answer accepted-answer" id="answer-container-68535">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68535/up/" id="post-68535-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68535-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/68535/down/" id="post-68535-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/68535/" rel="nofollow" title="valachio has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Firstly, you can achieve your goal by doing something else than you are sketching, namely set <code>ModTileRequestTimeout=0</code> which means "always serve the old tile, but kick off a re-render if the tile you just served was old".</p>
+<p>But if you really want to do it as you've described (i.e. serve old tile and <em>not</em> kick off a re-render), then you can disable all re-rendering by adding an empty "planet-import-complete" file to the root of your tile directory having a timestamp that is older than the oldest tile. This will make mod_tile think that all tiles are current.</p>
+<p>Your assumption that mod_tile is in any way involved when running render_list is wrong; render_list works without mod_tile. render_list, when run without <code>--force</code>, will also honour the <code>planet-import-complete</code> file and consider all tiles current, and hence not render anything; you will have to remove <code>planet-import-complete</code> or use <code>--force</code>. </p>
+<p>Also you might have a mistaken assumption about "checking if a tile is outdated", there's not really any magic that can do this. If you do database reloads in regular intervals then every tile older than the latest import is considered outdated; if you do differential updates then you have to create lists of expired tiles during the import and "touch" meta tiles with an old time stamp OR feed the list of expired tiles to render_list. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/68535/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>28 Mar '19, 22:05</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68535">
+<a name="68536"></a>
+<div class="comment" id="comment-68536">
+<div class="comment-score" id="post-68536-score"></div>
+<div class="comment-text"><p>If I understood your first paragraph correctly - If mod_tile detects an outdated tile upon a request, it will send the outdated tile off to the user first, and then run a re-render in the background.  </p>
+<p>This means that users will never have to wait for any tiles that are rendered already right?  The worse thing that can happen is that they receive an outdated tile.  The next user who requests the same tile will get the updated tile (assuming the re-render has been completed).</p>
+<p>If that's the case, then my concerns are addressed since  <code>ModTileRequestTimeout=0</code> is my current setting.</p>
+<p>-</p>
+<p>A follow-up question to your last paragraph.  I'm assuming when you say "database reloads", you are referring to adding an OSM data file (<code>.osm.pbf</code>) to the database with osm2pgsql.</p>
+<p>If I were to re-upload the exact same OSM data file as last time, mod_tile would think that all tiles are outdated, despite the fact that the map data is still the same?</p></div>
+<div class="comment-info" id="comment-68536-info">
+<span class="comment-age">(28 Mar '19, 22:51)</span>
+<a class="comment-user userinfo" href="/users/16323/valachio">valachio</a>
+</div>
+</div>
+<a name="68540"></a>
+<div class="comment" id="comment-68540">
+<div class="comment-score" id="post-68540-score"></div>
+<div class="comment-text"><p>Yes, with <code>ModTileRequestTimeout=0</code> users will never have to wait for the re-render of and outdated tile and the next user will then get the updated tile. Regarding reloading the data, mod_tile does not magically detect anything about your database. If you do <em>not</em> have a <code>planet-import-complete</code> file and do <em>not</em> somehow fiddle with the file dates of meta tiles, then mod_tile will treat any meta tile older than 3 days as "outdated". If you put a <code>planet-import-complete</code> file then mod_tile will treat every file older than that as outdated. This is totally independent of you having or not having updated the database.</p></div>
+<div class="comment-info" id="comment-68540-info">
+<span class="comment-age">(29 Mar '19, 08:24)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-68535">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68535-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/68534/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="kPcRaJP20nkcKrN41DsTcAQdE94ImK9s"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,164 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/83871/more-than-10-styles">more than 10 styles</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/83871/up/" id="post-83871-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-83871-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/83871/down/" id="post-83871-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/83871/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi there,
+i have my own osm tile server. Everything works so far but i have one problem. I have more than 10 styles to pre render and offer to customers. But when i add more than 10 styles to renderd.conf i get the error "More than 10 styles..." where can i set up this.</p>
+<p>Please help</p>
+<p>Thank you</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-limitations" href="/tags/limitations/" rel="tag" title="see questions tagged 'limitations'">limitations</a>
+<a class="post-tag tag-link-style" href="/tags/style/" rel="tag" title="see questions tagged 'style'">style</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>15 Mar '22, 21:11</strong>
+</p>
+<img alt="Zuane's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bcd5d57b0a8dbe3e71efb99db0935b14?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/21523/zuane">Zuane</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Zuane has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/83871/">
+                edited
+                <strong>15 Mar '22, 21:11</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-83871">
+</div>
+<div class="comment-tools" id="comment-tools-83871">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-83871-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/83871/more-than-10-styles?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/83871/more-than-10-styles?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/83871/more-than-10-styles?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/83871/more-than-10-styles?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="83872"></a>
+<div class="answer" id="answer-container-83872">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/83872/up/" id="post-83872-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-83872-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/83872/down/" id="post-83872-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This is a compile-time setting in renderd, see <a href="https://github.com/openstreetmap/mod_tile/blob/acb11808d62a81b2d2c357425ea0917bc55631a3/includes/render_config.h#L52">https://github.com/openstreetmap/mod_tile/blob/acb11808d62a81b2d2c357425ea0917bc55631a3/includes/render_config.h#L52</a> - you need to re-compile renderd to change this.</p>
+<p>Alternatively, swap out renderd with tirex <a href="https://github.com/openstreetmap/tirex">(https://github.com/openstreetmap/tirex)</a> which has no such limitation.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/83872/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>15 Mar '22, 21:26</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/83872/">
+                edited
+                <strong>15 Mar '22, 22:00</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-83872">
+<a name="83873"></a>
+<div class="comment" id="comment-83873">
+<div class="comment-score" id="post-83873-score"></div>
+<div class="comment-text"><p>Wow Frederik, this was fast. But sorry, i dont know where to find the file in wich i have to change this line.
+Can you please point me there.</p></div>
+<div class="comment-info" id="comment-83873-info">
+<span class="comment-age">(15 Mar '22, 21:42)</span>
+<a class="comment-user userinfo" href="/users/21523/zuane">Zuane</a>
+</div>
+</div>
+<a name="83876"></a>
+<div class="comment" id="comment-83876">
+<div class="comment-score" id="post-83876-score">1</div>
+<div class="comment-text"><p>The following general information holds true for almost all Linux distributions: If you are told that you need to "compile" a piece of software that means that you will have to leave your usual "use package manager to install software" workflow. You will instead have to (1) download the source code, (2) install a software building environment, (3) compile the source code and possibly build a new package to install. </p>
+<p>On a Debian or Ubuntu system, you can usually do <code>apt source renderd</code> which will download the source code for you, then you can make the modification you want. You might need to <code>apt install build-essential</code> or something to get the software build system installed. After than you will likely be able to run <code>debuild</code> to build a modified package (it might tell you to install additionall development packages first) that you can then install with <code>dpkg -i</code>. </p>
+<p>If at all possible, ignore any instructions that tell you to "make install" or something like that, because these will install the software on your system bypassing the package manager and there will be no end of confusion especially if you are not an experienced sysadmin.</p></div>
+<div class="comment-info" id="comment-83876-info">
+<span class="comment-age">(15 Mar '22, 22:15)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-83872">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-83872-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/83871/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="8QjhNMnUCNFMUCIpl0V9T61uutjLFu6L"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,230 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/19234/dutch-bicycle-node-network-data-missing">Dutch Bicycle node network data missing?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/19234/up/" id="post-19234-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-19234-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/19234/down/" id="post-19234-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/19234/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am currently trying to get the full bicycle node network for the netherlands using the overpass API and I noticed something very odd. At least one (and probably loads more) node has no relations for connections to other nodes.</p>
+<p>By using the overpass query:</p>
+<p>&lt;id-query ref="15080799" type="node"/&gt;
+ &lt;recurse type="node-relation"/&gt;
+&lt;print/&gt;</p>
+<p>I found that the only relation it is in is the bicycle node network for the province Utrecht. Which contains a number of relations that are connections between nodes, but none including this specific node.</p>
+<p>If you look at the map at coordinates: 
+52.0917849 5.1047520
+and set view to cycling, you see that this node 26 is connected by light blue lines to node 20 and it seems it's also connected to nodes 31, 38 and 23, but I can't find the data for that connection, I know it must exist because the line is there, but it doesn't seem to be a relation or a way...</p>
+<p>can anyone tell me where to find it?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-data" href="/tags/data/" rel="tag" title="see questions tagged 'data'">data</a>
+<a class="post-tag tag-link-nodes" href="/tags/nodes/" rel="tag" title="see questions tagged 'nodes'">nodes</a>
+<a class="post-tag tag-link-bicycle" href="/tags/bicycle/" rel="tag" title="see questions tagged 'bicycle'">bicycle</a>
+<a class="post-tag tag-link-incomplete" href="/tags/incomplete/" rel="tag" title="see questions tagged 'incomplete'">incomplete</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Jan '13, 14:00</strong>
+</p>
+<img alt="Zoefschildpad's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/eae8ee6cf28243e8986e0175081a1c65?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5191/zoefschildpad">Zoefschildpad</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Zoefschildpad has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-19234">
+</div>
+<div class="comment-tools" id="comment-tools-19234">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-19234-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/19234/dutch-bicycle-node-network-data-missing?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/19234/dutch-bicycle-node-network-data-missing?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/19234/dutch-bicycle-node-network-data-missing?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/19234/dutch-bicycle-node-network-data-missing?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="19240"></a>
+<div class="answer" id="answer-container-19240">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/19240/up/" id="post-19240-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-19240-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/19240/down/" id="post-19240-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p><a href="http://mijndev.openstreetmap.nl/~ligfietser/fiets/?map=route&amp;zoom=17&amp;lat=52.09139&amp;lon=5.10469&amp;layers=000B00FFTFFFFFFFFF">This map</a> uses the following query to get the bicycle node data in an area: <code>?data=relation(bbox)[network=rcn];(way(r)(bbox);node(w););out+skel;node(bbox)[rcn_ref];out;</code></p>
+<p>I can also see all the bicycle route relations around node 26 in Utrecht in JOSM, so they definitely exist as relations.</p>
+<p>What query are you using to get the cycle node data from the Overpass API?</p>
+<p>Edit:</p>
+<p>I have not tested the query below, but I think it is the one you need to get the complete Dutch cycle node network. That is a lot of data, so you might need to fiddle with timeouts.</p>
+<pre><code>&lt;union&gt;
+    &lt;query type="relation"&gt;
+        &lt;has-kv k="type" v="network"/&gt;
+        &lt;has-kv k="network" v="rcn"/&gt;
+        &lt;has-kv k="addr:country" v="NL"/&gt;
+    &lt;/query&gt;
+    &lt;recurse type="relation-node" into="nodes"/&gt;
+    &lt;recurse type="relation-relation"/&gt;
+    &lt;recurse type="relation-way"/&gt;
+    &lt;recurse type="way-node"/&gt;
+&lt;/union&gt;
+&lt;print/&gt;
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/19240/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Jan '13, 19:16</strong>
+</p>
+<img alt="cartinus's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fed945e27bb98de054a867827550812e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2933/cartinus">cartinus</a><br/>
+<span class="score" title="7033 reputation points"><span class="">7.0k</span></span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="66 badges"><span class="silver">●</span><span class="badgecount">66</span></span><span title="105 badges"><span class="bronze">●</span><span class="badgecount">105</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="cartinus has 35 accepted answers">27%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/19240/">
+                edited
+                <strong>22 Jan '13, 23:52</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-19240">
+<a name="19242"></a>
+<div class="comment" id="comment-19242">
+<div class="comment-score" id="post-19242-score"></div>
+<div class="comment-text"><p>This gets me the RCN by region (one big relation per region of nodes and relations):</p>
+<p>&lt;query type="relation"&gt; <br/>
+  &lt;has-kv k="network" v="rcn"/&gt;<br/>
+  &lt;has-kv k="addr:country" v="NL"/&gt;<br/>
+&lt;/query&gt;<br/>
+&lt;print/&gt;</p>
+<p>This should get me the nodes:</p>
+<p>&lt;query type="relation"&gt; <br/>
+  &lt;has-kv k="network" v="rcn"/&gt;<br/>
+  &lt;has-kv k="addr:country" v="NL"/&gt;<br/>
+&lt;/query&gt;<br/>
+&lt;recurse type="relation-node"/&gt;<br/>
+&lt;print/&gt;</p>
+<p>but neither:</p>
+<p>&lt;query type="relation"&gt; <br/>
+  &lt;has-kv k="network" v="rcn"/&gt;<br/>
+  &lt;has-kv k="addr:country" v="NL"/&gt;<br/>
+&lt;/query&gt;<br/>
+&lt;recurse type="relation-relation"/&gt;<br/>
+&lt;print/&gt;</p>
+<p>nor:</p>
+<p>&lt;query type="relation"&gt; <br/>
+  &lt;has-kv k="network" v="rcn"/&gt;<br/>
+  &lt;has-kv k="addr:country" v="NL"/&gt;<br/>
+&lt;/query&gt;<br/>
+&lt;recurse type="relation-node"/&gt;<br/>
+&lt;recurse type="node-relation"/&gt;<br/>
+&lt;print/&gt;</p>
+<p>nor:</p>
+<p>&lt;id-query ref="15080799" type="node"/&gt;<br/>
+&lt;recurse type="node-relation" /&gt;<br/>
+&lt;print/&gt;</p>
+<p>gets me any relation containing node id 15080799 other than the one for all of Utrecht I got with the very first query</p></div>
+<div class="comment-info" id="comment-19242-info">
+<span class="comment-age">(21 Jan '13, 19:55)</span>
+<a class="comment-user userinfo" href="/users/5191/zoefschildpad">Zoefschildpad</a>
+</div>
+</div>
+<a name="19244"></a>
+<div class="comment" id="comment-19244">
+<div class="comment-score" id="post-19244-score"></div>
+<div class="comment-text"><p>Sometime last year some people have decided that the nodes no longer have to be part of the relations connecting the nodes. The whole of Flanders and large parts of the Netherlands are updated to this "improved" tagging scheme. See the changes to <a href="http://wiki.openstreetmap.org/wiki/Cycle_Node_Network_Tagging">Cycle Node Network Tagging</a> in October last year.</p>
+<blockquote>
+<p>There is no need to add the junction nodes to this relation. They are part of the ways, so inherently already part of it. This allows for a more controlled way of downloading the hierarchy (collection/network/route). </p>
+</blockquote></div>
+<div class="comment-info" id="comment-19244-info">
+<span class="comment-age">(21 Jan '13, 20:12)</span>
+<a class="comment-user userinfo" href="/users/2933/cartinus">cartinus</a>
+</div>
+</div>
+<a name="19248"></a>
+<div class="comment" id="comment-19248">
+<div class="comment-score" id="post-19248-score">1</div>
+<div class="comment-text"><p>I'm confused, I'm not really getting the information I need from that page. Your quote hints at a good way to download the network but I haven't been able to find what that is... In fact, I fail to see what part of that page is different from what I'm attempting to do...</p></div>
+<div class="comment-info" id="comment-19248-info">
+<span class="comment-age">(21 Jan '13, 20:52)</span>
+<a class="comment-user userinfo" href="/users/5191/zoefschildpad">Zoefschildpad</a>
+</div>
+</div>
+<a name="19271"></a>
+<div class="comment" id="comment-19271">
+<div class="comment-score" id="post-19271-score"></div>
+<div class="comment-text"><p>The node as a relation member is only present in the network relation. The only other place where you will see the node is as a way node of one of the member ways of the three route relations ending at the node. See the query in my updated answer.</p></div>
+<div class="comment-info" id="comment-19271-info">
+<span class="comment-age">(22 Jan '13, 20:25)</span>
+<a class="comment-user userinfo" href="/users/2933/cartinus">cartinus</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-19240">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-19240-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/19234/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Pos36B2YnoZlJWc8kEnQCVtME7AmSoKA"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

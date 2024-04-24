@@ -1,0 +1,235 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/83153/how-to-filter-by-user-in-overpass-turbo">How to filter by user in overpass turbo</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/83153/up/" id="post-83153-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-83153-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/83153/down/" id="post-83153-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/83153/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   2
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I want to see a particular feature mapped by a given user, and the opposite (mapped by other users different to a given one). However, I see that the user value is in the Meta section, and I cannot write a query to filter by this criterion.</p>
+<p>This is the original query, to get all monitoring stations in Colombia:</p>
+<pre><code>[out:xml][timeout:25];
+area[name="Colombia"][admin_level=2][boundary=administrative]-&gt;.searchColombia;
+(
+  nwr["man_made"="monitoring_station"](area.searchColombia);
+);
+out meta;
+&gt;;
+out meta qt;
+</code></pre>
+<p>However, I know that the user dcruizr has worked a lot on this, and I do not want to see her contributions. I was thinking about something like:</p>
+<pre><code>[out:xml][timeout:25];
+area[name="Colombia"][admin_level=2][boundary=administrative]-&gt;.searchColombia;
+(
+  nwr["man_made"="monitoring_station"][user!="dcruizr"](area.searchColombia);
+);
+out meta;
+&gt;;
+out meta qt;
+</code></pre>
+<p>However, this does not do any filter on the data.
+How can I write a query to filter by user?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-filter" href="/tags/filter/" rel="tag" title="see questions tagged 'filter'">filter</a>
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+<a class="post-tag tag-link-user" href="/tags/user/" rel="tag" title="see questions tagged 'user'">user</a>
+<a class="post-tag tag-link-query" href="/tags/query/" rel="tag" title="see questions tagged 'query'">query</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>22 Jan '22, 19:51</strong>
+</p>
+<img alt="AngocA's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/6998587ec6de0bab814c70777bcdd2ce?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10821/angoca">AngocA</a><br/>
+<span class="score" title="281 reputation points">281</span><span title="23 badges"><span class="badge1">●</span><span class="badgecount">23</span></span><span title="24 badges"><span class="silver">●</span><span class="badgecount">24</span></span><span title="33 badges"><span class="bronze">●</span><span class="badgecount">33</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="AngocA has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-83153">
+</div>
+<div class="comment-tools" id="comment-tools-83153">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-83153-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/83153/how-to-filter-by-user-in-overpass-turbo?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/83153/how-to-filter-by-user-in-overpass-turbo?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/83153/how-to-filter-by-user-in-overpass-turbo?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/83153/how-to-filter-by-user-in-overpass-turbo?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="83156"></a>
+<div class="answer accepted-answer" id="answer-container-83156">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/83156/up/" id="post-83156-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-83156-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/83156/down/" id="post-83156-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/83156/" rel="nofollow" title="AngocA has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>As an update to DaveF's answer, you now can negatively filter for users:</p>
+<pre><code>area[name=Colombia][admin_level=2];
+nwr[man_made=monitoring_station](area)(if:user()!="dcruizr");
+out meta;
+&gt;;
+out meta qt;
+</code></pre>
+<p>The <code>if</code> conditional allows for free-form boolean operations. The only restriction is that <a href="https://dev.overpass-api.de/overpass-doc/en/criteria/misc_criteria.html#count">it only works in combination</a> with another conditional, because one otherwise could too easily ask accidentally for the whole planet.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/83156/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Jan '22, 21:23</strong>
+</p>
+<img alt="Roland%20Olbricht's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fcfdb0825826fd13d2ff0d83d58819c6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3480/roland-olbricht">Roland Olbricht</a><br/>
+<span class="score" title="6666 reputation points"><span class="">6.7k</span></span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="64 badges"><span class="silver">●</span><span class="badgecount">64</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Roland Olbricht has 40 accepted answers">36%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-83156">
+</div>
+<div class="comment-tools" id="comment-tools-83156">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-83156-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="83154"></a>
+<div class="answer" id="answer-container-83154">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/83154/up/" id="post-83154-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-83154-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/83154/down/" id="post-83154-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It's irritating we can't negate user's input directly in overpass.</p>
+<p>The Data variable is used so the search for the user is only performed on the monitoring_stations returned &amp; not the whole of Columbia, speeding it up slightly.</p>
+<p>Note <code>user</code> uses a colon, not an equals sign.</p>
+<p><a href="https://overpass-turbo.eu/s/1fjq">https://overpass-turbo.eu/s/1fjq</a></p>
+<pre><code>area[name=Colombia][admin_level=2];
+(
+ nwr[man_made=monitoring_station](area)-&gt;.Data;
+ -nwr.Data(user:dcruizr);
+);
+out meta;
+&gt;;
+out meta qt;
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/83154/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Jan '22, 20:45</strong>
+</p>
+<img alt="DaveF's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c9c8b421ad22f51ddd62f23413717036?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1532/davef">DaveF</a><br/>
+<span class="score" title="3264 reputation points"><span class="">3.3k</span></span><span title="84 badges"><span class="badge1">●</span><span class="badgecount">84</span></span><span title="98 badges"><span class="silver">●</span><span class="badgecount">98</span></span><span title="133 badges"><span class="bronze">●</span><span class="badgecount">133</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="DaveF has 17 accepted answers">16%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/83154/">
+                edited
+                <strong>22 Jan '22, 20:45</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-83154">
+<a name="83155"></a>
+<div class="comment" id="comment-83155">
+<div class="comment-score" id="post-83155-score">1</div>
+<div class="comment-text"><p>Thank you for your answer. I'm just adding an extra answer, because there are more semantics available now.</p></div>
+<div class="comment-info" id="comment-83155-info">
+<span class="comment-age">(22 Jan '22, 21:15)</span>
+<a class="comment-user userinfo" href="/users/3480/roland-olbricht">Roland Olbricht</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-83154">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-83154-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/83153/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Cg3OUcBh84J2QOhUPKutCfsSIPS1b52C"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

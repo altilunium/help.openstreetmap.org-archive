@@ -1,0 +1,151 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/47612/custom-tile-server-zoom-levels">Custom Tile Server Zoom Levels</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/47612/up/" id="post-47612-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-47612-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/47612/down/" id="post-47612-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/47612/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I created an Android Mobile Application which uses OSMDroid Mapview. It loads perfectly fine from zoom levels 18 and larger. However it only rescales and never serves me tiles from 19 and below.</p>
+<p>I have my own tile server using Mapnik, Renderd, Mod_tile so on and so forth. I've set my application to use my own tile server too. Using/Checking with .../osm_tiles/{zoom}/{x}/{y} I know it goes down to level 20, as I've set because it returns an image, no error nor 404. It simply doesn't serve it to my mobile device.</p>
+<p>I've checked the console logs and if needed, it downloads the tiles. But once it reaches zoom level 19, it stops and rescales instead. Is there some sort of.... Other settings I need to put?</p>
+<pre><code>mv.setUseDataConnection(true);
+mv.setMinZoomLevel(16);
+mv.setMaxZoomLevel(20);
+mv.getController().setZoom(17);
+mv.setMultiTouchControls(true);
+
+ITileSource tileSource;
+tileSource = new XYTileSource("custom", ResourceProxy.string.mapnik, 16, 20, 256, ".png", custom);
+TileSourceFactory.addTileSource(tileSource);
+</code></pre>
+<p>By the way, the last variable "custom" is actually declare like so:</p>
+<pre><code>String custom[] = {"http://mytileserver/osm_tiles/"};
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-zoomlevel" href="/tags/zoomlevel/" rel="tag" title="see questions tagged 'zoomlevel'">zoomlevel</a>
+<a class="post-tag tag-link-android" href="/tags/android/" rel="tag" title="see questions tagged 'android'">android</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-tileserver" href="/tags/tileserver/" rel="tag" title="see questions tagged 'tileserver'">tileserver</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Jan '16, 06:17</strong>
+</p>
+<img alt="Damian's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0855423e70fc0fd35f26e9eeecf99e77?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11890/damian">Damian</a><br/>
+<span class="score" title="46 reputation points">46</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Damian has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/47612/">
+                edited
+                <strong>21 Jan '16, 06:31</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-47612">
+</div>
+<div class="comment-tools" id="comment-tools-47612">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-47612-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/47612/custom-tile-server-zoom-levels?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/47612/custom-tile-server-zoom-levels?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/47612/custom-tile-server-zoom-levels?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/47612/custom-tile-server-zoom-levels?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="47613"></a>
+<div class="answer answered-by-owner" id="answer-container-47613">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/47613/up/" id="post-47613-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-47613-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/47613/down/" id="post-47613-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I found the answer, it seems I had forgotten to add the line</p>
+<pre><code>mv.setTileSource(TileSourceFactory.getTileSource("private"));
+</code></pre>
+<p>After creating and adding the source I need to also set it.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/47613/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Jan '16, 08:04</strong>
+</p>
+<img alt="Damian's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0855423e70fc0fd35f26e9eeecf99e77?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11890/damian">Damian</a><br/>
+<span class="score" title="46 reputation points">46</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Damian has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-47613">
+</div>
+<div class="comment-tools" id="comment-tools-47613">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-47613-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/47612/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="HPcHU9awoDrELSTRkNud481OJbwYVlXc"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

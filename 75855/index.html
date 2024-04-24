@@ -1,0 +1,170 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/75855/running-renderd-for-the-first-time-ubuntu1804">Running renderd for the first time ubuntu18.04</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75855/up/" id="post-75855-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75855-score" title="current number of votes">
+    -1
+</div>
+<a class="ajax-command post-vote down" href="/vote/75855/down/" id="post-75855-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/75855/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<pre><code>Mapnik LOG&gt; 2020-07-22 22:14:57: warning: unable to find face-name 'HanaMinB Regular' in FontSet 'fontset-2'
+Mapnik LOG&gt; 2020-07-22 22:14:57: warning: unable to find face-name 'unifont Medium' in FontSet 'fontset-2'
+renderd[23757]: An error occurred while loading the map layer 'ajt': Postgis Plugin: ERROR:  relation "icesheet_polygons" does not exist
+LINE 1: SELECT ST_SRID("way") AS srid FROM icesheet_polygons WHERE "...
+                                           ^
+in executeQuery Full sql was: 'SELECT ST_SRID("way") AS srid FROM icesheet_polygons WHERE "way" IS NOT NULL LIMIT 1;'
+  encountered during parsing of layer 'icesheet-poly' in Layer at line 5895 of '/home/xj/src/openstreetmap-carto/mapnik.xml'
+renderd[23757]: An error occurred while loading the map layer 'ajt': Postgis Plugin: ERROR:  relation "icesheet_polygons" does not exist
+LINE 1: SELECT ST_SRID("way") AS srid FROM icesheet_polygons WHERE "...
+                                           ^
+in executeQuery Full sql was: 'SELECT ST_SRID("way") AS srid FROM icesheet_polygons WHERE "way" IS NOT NULL LIMIT 1;'
+  encountered during parsing of layer 'icesheet-poly' in Layer at line 5895 of '/home/xj/src/openstreetmap-carto/mapnik.xml'
+renderd[23757]: An error occurred while loading the map layer 'ajt': Postgis Plugin: ERROR:  relation "icesheet_polygons" does not exist
+LINE 1: SELECT ST_SRID("way") AS srid FROM icesheet_polygons WHERE "...
+                                           ^
+in executeQuery Full sql was: 'SELECT ST_SRID("way") AS srid FROM icesheet_polygons WHERE "way" IS NOT NULL LIMIT 1;'
+  encountered during parsing of layer 'icesheet-poly' in Layer at line 5895 of '/home/xj/src/openstreetmap-carto/mapnik.xml'
+renderd[23757]: An error occurred while loading the map layer 'ajt': Postgis Plugin: ERROR:  relation "icesheet_polygons" does not exist
+LINE 1: SELECT ST_SRID("way") AS srid FROM icesheet_polygons WHERE "...
+                                           ^
+in executeQuery Full sql was: 'SELECT ST_SRID("way") AS srid FROM icesheet_polygons WHERE "way" IS NOT NULL LIMIT 1;'
+  encountered during parsing of layer 'icesheet-poly' in Layer at line 5895 of '/home/xj/src/openstreetmap-carto/mapnik.xml'
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-building" href="/tags/building/" rel="tag" title="see questions tagged 'building'">building</a>
+<a class="post-tag tag-link-tile" href="/tags/tile/" rel="tag" title="see questions tagged 'tile'">tile</a>
+<a class="post-tag tag-link-renderd" href="/tags/renderd/" rel="tag" title="see questions tagged 'renderd'">renderd</a>
+<a class="post-tag tag-link-server" href="/tags/server/" rel="tag" title="see questions tagged 'server'">server</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>23 Jul '20, 02:38</strong>
+</p>
+<img alt="%E5%BC%A0%E6%B2%BB%E9%9F%B3's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/4637c543421eb586aa1807010f43b39d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18724/">张治音</a><br/>
+<span class="score" title="90 reputation points">90</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="张治音 has 2 accepted answers">100%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/75855/">
+                edited
+                <strong>23 Jul '20, 06:44</strong>
+</a>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-75855">
+</div>
+<div class="comment-tools" id="comment-tools-75855">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75855-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/75855/running-renderd-for-the-first-time-ubuntu1804?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/75855/running-renderd-for-the-first-time-ubuntu1804?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/75855/running-renderd-for-the-first-time-ubuntu1804?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/75855/running-renderd-for-the-first-time-ubuntu1804?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="75872"></a>
+<div class="answer accepted-answer answered-by-owner" id="answer-container-75872">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75872/up/" id="post-75872-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75872-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/75872/down/" id="post-75872-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/75872/" rel="nofollow" title="scai has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I have solved the problem.
+Because I can not download the shapefiles.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/75872/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>24 Jul '20, 03:23</strong>
+</p>
+<img alt="%E5%BC%A0%E6%B2%BB%E9%9F%B3's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/4637c543421eb586aa1807010f43b39d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18724/">张治音</a><br/>
+<span class="score" title="90 reputation points">90</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="张治音 has 2 accepted answers">100%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-75872">
+<a name="75873"></a>
+<div class="comment" id="comment-75873">
+<div class="comment-score" id="post-75873-score">1</div>
+<div class="comment-text"><p>The question regarding shapefile download is here: <a href="https://help.openstreetmap.org/questions/75856/when-building-tile-server-can-not-download-shapefile">https://help.openstreetmap.org/questions/75856/when-building-tile-server-can-not-download-shapefile</a></p></div>
+<div class="comment-info" id="comment-75873-info">
+<span class="comment-age">(24 Jul '20, 06:48)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-75872">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75872-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/75855/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="kvLC2frUGMYxm8UwZg2PfjHu9NeXCVtW"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

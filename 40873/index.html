@@ -1,0 +1,134 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/40873/get-nodes-with-addresses-interpolated-using-wfs-of-geofabrik">Get nodes with addresses interpolated using WFS of geofabrik</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/40873/up/" id="post-40873-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-40873-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/40873/down/" id="post-40873-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/40873/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi, I'm trying to get the list of nodes with this url:</p>
+<p><a href="http://tools.geofabrik.de/osmi/view/addresses/wxs?SERVICE=WFS&amp;VERSION=1.0.0&amp;REQUEST=GetFeature&amp;BBOX=-74.0135,45.3269,-73.2436,45.8393&amp;TYPENAME=nodes_with_addresses_interpolated">http://tools.geofabrik.de/osmi/view/addresses/wxs?SERVICE=WFS&amp;VERSION=1.0.0&amp;REQUEST=GetFeature&amp;BBOX=-74.0135,45.3269,-73.2436,45.8393&amp;TYPENAME=nodes_with_addresses_interpolated</a></p>
+<p>What i'm doing wrong?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-wfs" href="/tags/wfs/" rel="tag" title="see questions tagged 'wfs'">wfs</a>
+<a class="post-tag tag-link-interpolation" href="/tags/interpolation/" rel="tag" title="see questions tagged 'interpolation'">interpolation</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>09 Feb '15, 03:46</strong>
+</p>
+<img alt="JFDionne's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e649c64bb5987efee0342b7f99487742?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10444/jfdionne">JFDionne</a><br/>
+<span class="score" title="0 reputation points">0</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="JFDionne has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-40873">
+</div>
+<div class="comment-tools" id="comment-tools-40873">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-40873-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/40873/get-nodes-with-addresses-interpolated-using-wfs-of-geofabrik?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/40873/get-nodes-with-addresses-interpolated-using-wfs-of-geofabrik?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/40873/get-nodes-with-addresses-interpolated-using-wfs-of-geofabrik?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/40873/get-nodes-with-addresses-interpolated-using-wfs-of-geofabrik?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="40879"></a>
+<div class="answer" id="answer-container-40879">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/40879/up/" id="post-40879-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-40879-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/40879/down/" id="post-40879-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Request seems syntactically ok and works with smaller bounding boxes, just not with this one. Tracing the MapServer on the backend shows that there seems to be some mutex lockup in the MapServer - some kind of bug but I can't see why exactly. Will have to debug further. For the time being, try requesting a smaller box several times. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/40879/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Feb '15, 09:19</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-40879">
+<a name="40894"></a>
+<div class="comment" id="comment-40894">
+<div class="comment-score" id="post-40894-score"></div>
+<div class="comment-text"><p>Seem to work, thank but, maybe i'm not using it correctly, I don't want to "slow down the server", I'm trying to get a list of all street with housenumber (with the interpolation) of a Region. It is the right way to do it?</p></div>
+<div class="comment-info" id="comment-40894-info">
+<span class="comment-age">(09 Feb '15, 19:25)</span>
+<a class="comment-user userinfo" href="/users/10444/jfdionne">JFDionne</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-40879">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-40879-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/40873/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="2xqMMOsRWxtkEvYEb2S2HWCyLHekMrbc"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

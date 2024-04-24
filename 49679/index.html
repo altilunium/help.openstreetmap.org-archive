@@ -1,0 +1,174 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/49679/overpassapi-returns-a-file-with-old-data">OverpassAPI returns a file with old data</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/49679/up/" id="post-49679-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-49679-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/49679/down/" id="post-49679-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/49679/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi all.</p>
+<pre><code>1) I updated this relation: <a href="http://www.openstreetmap.org/relation/4661740">http://www.openstreetmap.org/relation/4661740</a>
+2) Then I send a query: <a href="http://overpass-api.de/api/interpreter?data=node(337580513);is_in;out;">http://overpass-api.de/api/interpreter?data=node(337580513);is_in;out;</a>
+</code></pre>
+<p>In the file within area <strong>3604661740</strong> I don't see any updated info.
+Is there any delays between OSM and overpass? How long?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>11 May '16, 16:47</strong>
+</p>
+<img alt="bear_ukraine's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1565cd50c70d1108a514e12877171c5f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12273/bear_ukraine">bear_ukraine</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="bear_ukraine has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/49679/">
+                edited
+                <strong>11 May '16, 16:52</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-49679">
+</div>
+<div class="comment-tools" id="comment-tools-49679">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-49679-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/49679/overpassapi-returns-a-file-with-old-data?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/49679/overpassapi-returns-a-file-with-old-data?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/49679/overpassapi-returns-a-file-with-old-data?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/49679/overpassapi-returns-a-file-with-old-data?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="49680"></a>
+<div class="answer accepted-answer" id="answer-container-49680">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/49680/up/" id="post-49680-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-49680-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/49680/down/" id="post-49680-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/49680/" rel="nofollow" title="bear_ukraine has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can find the exact timestamps in the Overpass API response, in particular in the attribute values osm_base and areas.</p>
+<pre><code>&lt;meta osm_base="2016-05-11T17:18:02Z" areas="2016-05-10T06:41:02Z"/&gt;
+</code></pre>
+<ul>
+<li><code>osm_base</code> refers to the timestamp,
+   when nodes, ways and relations were
+   last updated on the server by applying minutely diff files. Usually the delay will just be a few minutes.</li>
+<li><code>areas</code> refers to the timestamp, when the
+   area creation job on the server started to run
+   the last time. The lag can be between 24 and 48 hours at the moment. This is subject to changes in the way the update job runs on the server. Reason being that this is quite a resource intensive task, which needs some time to finish.</li>
+</ul>
+<p>Just have a bit of patience, your changes will most likely be reflected in the areas by tomorrow.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/49680/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>11 May '16, 18:24</strong>
+</p>
+<img alt="mmd's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/264d84ab05b942224b05960903eba7a7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8708/mmd">mmd</a><br/>
+<span class="score" title="5682 reputation points"><span class="">5.7k</span></span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="53 badges"><span class="silver">●</span><span class="badgecount">53</span></span><span title="88 badges"><span class="bronze">●</span><span class="badgecount">88</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mmd has 44 accepted answers">37%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/49680/">
+                edited
+                <strong>11 May '16, 18:28</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-49680">
+<a name="49729"></a>
+<div class="comment" id="comment-49729">
+<div class="comment-score" id="post-49729-score"></div>
+<div class="comment-text"><p>Just want to mention that in my case it was needed to wait ~48 hours</p></div>
+<div class="comment-info" id="comment-49729-info">
+<span class="comment-age">(18 May '16, 15:37)</span>
+<a class="comment-user userinfo" href="/users/12273/bear_ukraine">bear_ukraine</a>
+</div>
+</div>
+<a name="49748"></a>
+<div class="comment" id="comment-49748">
+<div class="comment-score" id="post-49748-score"></div>
+<div class="comment-text"><p>The area creation lag was addressed in the following Github ticket: <a href="https://github.com/drolbr/Overpass-API/issues/141">https://github.com/drolbr/Overpass-API/issues/141</a> - However, the delta solution mentioned there is not yet productive. In the ticket you will also find some comparison chart from last summer.</p></div>
+<div class="comment-info" id="comment-49748-info">
+<span class="comment-age">(19 May '16, 20:35)</span>
+<a class="comment-user userinfo" href="/users/8708/mmd">mmd</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-49680">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-49680-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/49679/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="prizNIO5ZWPfgF45FgMZFckhbBoF8oix"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

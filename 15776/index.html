@@ -1,0 +1,324 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/15776/how-to-send-request-to-server-to-create-a-way-with-nodes-that-do-not-exist">How to send request to server to create a way with nodes that do not exist</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/15776/up/" id="post-15776-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-15776-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/15776/down/" id="post-15776-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/15776/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm developing some Android software using openstreetmap, and I've got a question: </p>
+<p>I'd like to submit XML data to the server to create a way, but it always sends back the response "<code>Precondition Failed</code>".  I understand the error message - it means when the way has nodes that do not exist yet.</p>
+<p>But surely, the nodes of way do not already exist when i create a way?  So I don't know how to solve the problem.  I've read the API documentation many times and am trying to do the same as it shows in the examples.</p>
+<p>Can you help me to solve the problem, or tell me the right way to send a request to server to create a way with nodes that do not yet exist?</p>
+<p>Thank you very much!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-api" href="/tags/api/" rel="tag" title="see questions tagged 'api'">api</a>
+<a class="post-tag tag-link-precondition_failed" href="/tags/precondition_failed/" rel="tag" title="see questions tagged 'precondition_failed'">precondition_failed</a>
+<a class="post-tag tag-link-way" href="/tags/way/" rel="tag" title="see questions tagged 'way'">way</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>04 Sep '12, 03:47</strong>
+</p>
+<img alt="lovepanmei's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0d3f1d803cb1a81267a0f74d6a7e7d38?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4437/lovepanmei">lovepanmei</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="lovepanmei has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/15776/">
+                edited
+                <strong>04 Sep '12, 10:08</strong>
+</a>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-15776">
+<a name="15777"></a>
+<div class="comment" id="comment-15777">
+<div class="comment-score" id="post-15777-score"></div>
+<div class="comment-text"><p>Can you explain a bit more about the purpose of your application?</p></div>
+<div class="comment-info" id="comment-15777-info">
+<span class="comment-age">(04 Sep '12, 07:02)</span>
+<a class="comment-user userinfo" href="/users/1453/mmehl">mmehl</a>
+</div>
+</div>
+<a name="15789"></a>
+<div class="comment" id="comment-15789">
+<div class="comment-score" id="post-15789-score">1</div>
+<div class="comment-text"><p>I'd also mention the "if you want to test your software" section of <a href="http://wiki.openstreetmap.org/wiki/API_v0.6">this page</a>.  There's a copy of the API at <a href="http://api06.dev.openstreetmap.org/">http://api06.dev.openstreetmap.org/</a> which you can use for testing, which avoids filling the live database with rubbish.</p></div>
+<div class="comment-info" id="comment-15789-info">
+<span class="comment-age">(04 Sep '12, 10:17)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="15899"></a>
+<div class="comment" id="comment-15899">
+<div class="comment-score" id="post-15899-score"></div>
+<div class="comment-text"><p>I know it ,but the request i submit probably has something wrong,but i don't know where.Can you help me to check the xml file as following:
+&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;&lt;osm&gt;&lt;node id="-1" lat="34.23294236166552" lon="108.91146183013916" changeset="13030131"/&gt;&lt;node id="-2" lat="34.232294838724385" lon="108.9129638671875" changeset="13030131"/&gt;&lt;way changeset="13030131"&gt;&lt;tag k="name" v="hrllo"/&gt;&lt;tag k="RAILWAY" v="railway_platform"/&gt;&lt;nd ref="-1"/&gt;&lt;nd ref="-2"/&gt;&lt;/way&gt;&lt;/osm&gt;</p></div>
+<div class="comment-info" id="comment-15899-info">
+<span class="comment-age">(08 Sep '12, 06:46)</span>
+<a class="comment-user userinfo" href="/users/4437/lovepanmei">lovepanmei</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-15776">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-15776-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/15776/how-to-send-request-to-server-to-create-a-way-with-nodes-that-do-not-exist?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/15776/how-to-send-request-to-server-to-create-a-way-with-nodes-that-do-not-exist?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/15776/how-to-send-request-to-server-to-create-a-way-with-nodes-that-do-not-exist?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/15776/how-to-send-request-to-server-to-create-a-way-with-nodes-that-do-not-exist?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="15902"></a>
+<div class="answer" id="answer-container-15902">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/15902/up/" id="post-15902-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-15902-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/15902/down/" id="post-15902-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>If you've not tried <a href="http://www.wireshark.org/">Wireshark</a> you might find it of use. I just used JOSM to upload a hedge I traced from Bing and captured what was happening. The XML was:</p>
+<pre><code>&lt;osmChange version="0.6" generator="JOSM"&gt;
+&lt;create&gt;
+  &lt;node id='-7352' action='modify' visible='true' changeset='13030870' lat='51.798472312219666' lon='1.0875406870349713' /&gt;
+  &lt;node id='-7351' action='modify' visible='true' changeset='13030870' lat='51.79929719724354' lon='1.0872364754165609' /&gt;
+  &lt;way id='-7353' action='modify' visible='true' changeset='13030870'&gt;
+    &lt;nd ref='-7351' /&gt;
+    &lt;nd ref='-7352' /&gt;
+    &lt;tag k='barrier' v='hedge' /&gt;
+    &lt;tag k='source' v='bing' /&gt;
+  &lt;/way&gt;
+&lt;/create&gt;
+&lt;/osmChange&gt;
+</code></pre>
+<p>So it looks like you create the nodes and then the ways in the same changeset.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/15902/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Sep '12, 08:58</strong>
+</p>
+<img alt="EdLoach's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f25a8392e12ed696b16554b3d08e4e2b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/339/edloach">EdLoach ♦</a><br/>
+<span class="score" title="19478 reputation points"><span class="">19.5k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="156 badges"><span class="silver">●</span><span class="badgecount">156</span></span><span title="280 badges"><span class="bronze">●</span><span class="badgecount">280</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="EdLoach has 93 accepted answers">22%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/15902/">
+                edited
+                <strong>08 Sep '12, 08:59</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-15902">
+<a name="15903"></a>
+<div class="comment" id="comment-15903">
+<div class="comment-score" id="post-15903-score"></div>
+<div class="comment-text"><p>Is the action that create the nodes and ways in the same chageset wrong?</p></div>
+<div class="comment-info" id="comment-15903-info">
+<span class="comment-age">(08 Sep '12, 09:14)</span>
+<a class="comment-user userinfo" href="/users/4437/lovepanmei">lovepanmei</a>
+</div>
+</div>
+<a name="15904"></a>
+<div class="comment" id="comment-15904">
+<div class="comment-score" id="post-15904-score"></div>
+<div class="comment-text"><p>No, if you look at EdLoach's osmChange XML above you'll see that's exactly what JOSM is doing.  If you compare that XML with the XML that you're sending you may be able to see what you're doing wrong.</p></div>
+<div class="comment-info" id="comment-15904-info">
+<span class="comment-age">(08 Sep '12, 12:06)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-15902">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-15902-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="15778"></a>
+<div class="answer" id="answer-container-15778">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/15778/up/" id="post-15778-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-15778-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/15778/down/" id="post-15778-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can not create a way with nodes that does not exist, or delete nodes when a way refers to it. This is to prevent the data from becoming inconsistant. You have to create the nodes before you create the way, or prefrebly at the same time.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/15778/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Sep '12, 07:13</strong>
+</p>
+<img alt="Gnonthgol's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/44a4438f0146dfd898e24c221fd28b58?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/131/gnonthgol">Gnonthgol ♦</a><br/>
+<span class="score" title="13750 reputation points"><span class="">13.8k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="103 badges"><span class="silver">●</span><span class="badgecount">103</span></span><span title="198 badges"><span class="bronze">●</span><span class="badgecount">198</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Gnonthgol has 57 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-15778">
+<a name="15781"></a>
+<div class="comment" id="comment-15781">
+<div class="comment-score" id="post-15781-score"></div>
+<div class="comment-text"><p>how can i create them at the same time?The data i submit include the way data and the node data also ,it remains wrong ,can you tell me the right xml format.I read the api many times.The time of my project is tight ,so please help.</p></div>
+<div class="comment-info" id="comment-15781-info">
+<span class="comment-age">(04 Sep '12, 07:40)</span>
+<a class="comment-user userinfo" href="/users/4437/lovepanmei">lovepanmei</a>
+</div>
+</div>
+<a name="15782"></a>
+<div class="comment" id="comment-15782">
+<div class="comment-score" id="post-15782-score"></div>
+<div class="comment-text"><p>Would you show us a small XML with a way and only a few nodes that doesn't work?</p></div>
+<div class="comment-info" id="comment-15782-info">
+<span class="comment-age">(04 Sep '12, 07:42)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="15783"></a>
+<div class="comment" id="comment-15783">
+<div class="comment-score" id="post-15783-score"></div>
+<div class="comment-text"><p>&lt;osmchange version="0.6" generator="Osmosis"&gt;
+   &lt;create&gt;
+       &lt;node id="-1" timestamp="2007-01-02T00:00:00.0+11:00" lat="-33.9133118622908" lon="151.117335519304" changeset="1234" version="12"/&gt;
+&lt;node id="-2" timestamp="2007-01-02T00:00:00.0+11:00" lat="-33.9133118622911" lon="151.117335519312" changeset="1234" version="12"/&gt;</p>
+<pre><code>   &lt;way id="-3" timestamp="2007-01-02T00:00:00.0+11:00" changeset="1234" version="32"&gt;
+       &lt;nd ref="-1"/&gt;
+       &lt;nd ref="-2"/&gt;
+   &lt;/way&gt;
+</code></pre>
+<p>&lt;/create&gt;
+&lt;/osmchange&gt;
+what i submit is like above,is there something wrong with it?</p></div>
+<div class="comment-info" id="comment-15783-info">
+<span class="comment-age">(04 Sep '12, 08:00)</span>
+<a class="comment-user userinfo" href="/users/4437/lovepanmei">lovepanmei</a>
+</div>
+</div>
+<a name="15797"></a>
+<div class="comment" id="comment-15797">
+<div class="comment-score" id="post-15797-score">2</div>
+<div class="comment-text"><p>If you are creating a node (using &lt;create&gt; and specifying a negative id), you don't need the version or timestamp just the lon, lat and changeset. </p>
+<p>If you are trying to include an existing node (which is what version 12 suggests), don't try to create it just refer to its existing node id.</p></div>
+<div class="comment-info" id="comment-15797-info">
+<span class="comment-age">(04 Sep '12, 17:00)</span>
+<a class="comment-user userinfo" href="/users/34/chrish">ChrisH</a>
+</div>
+</div>
+<a name="15898"></a>
+<div class="comment" id="comment-15898">
+<div class="comment-score" id="post-15898-score"></div>
+<div class="comment-text"><p>if i want to create  a way including not existing node ,how can i do?
+Is the following xml right?
+&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;osm&gt;
+&lt;node id="-1" lat="34.23294236166552" lon="108.91146183013916" changeset="13030131"/&gt;
+&lt;node id="-2" lat="34.232294838724385" lon="108.9129638671875" changeset="13030131"/&gt;
+&lt;way changeset="13030131"&gt;
+&lt;tag k="name" v="hrllo"/&gt;
+&lt;tag k="RAILWAY" v="railway_platform"/&gt;
+&lt;nd ref="-1"/&gt;
+&lt;nd ref="-2"/&gt;
+&lt;/way&gt;
+&lt;/osm&gt;</p></div>
+<div class="comment-info" id="comment-15898-info">
+<span class="comment-age">(08 Sep '12, 06:43)</span>
+<a class="comment-user userinfo" href="/users/4437/lovepanmei">lovepanmei</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-15778">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-15778-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/15776/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="5JVxquygdsNLhpSaf6IWWFQ5qN9QR8Cb"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

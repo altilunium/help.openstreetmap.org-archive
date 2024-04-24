@@ -1,0 +1,103 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/86606/cursor-pointer-on-marker-in-openstreetmaps">cursor pointer on marker in #openstreetmaps</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/86606/up/" id="post-86606-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-86606-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/86606/down/" id="post-86606-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/86606/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have this code with openstreetmaps (is a cicle, then I have more marker named marker1, marker2 ,marker3 and so on), but property curosor: pointer dont workk (I tried with a lot of browser of course).</p>
+<pre><code>// Create a marker feature 1    
+var marker1 = new ol.Feature({
+    geometry: new ol.geom.Point(ol.proj.fromLonLat([14.3619382, 46.0649361])),
+    name: 'some text',
+    description: 'other some text'
+});
+
+// Create a marker style 1  
+var markerStyle1 = new ol.style.Style({
+    image: new ol.style.Icon({
+    src: '/assets/images/ico.png',
+    scale: 1            }),
+    cursor: 'pointer'
+});
+
+// Set style to marker feature 1    
+marker1.setStyle(markerStyle1);
+
+// Add the marker feature 1 to the vector source
+vectorSource.addFeature(marker1);
+</code></pre>
+<p>Also tried with css:</p>
+<pre><code>.ol-marker .ol-icon {
+  cursor: pointer;
+}
+</code></pre>
+<p>the same, dont work :( 
+Someone can help me plese? 
+Thanks in advanced</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-#pointer" href="/tags/%2523pointer/" rel="tag" title="see questions tagged '#pointer'">#pointer</a>
+<a class="post-tag tag-link-#cursor" href="/tags/%2523cursor/" rel="tag" title="see questions tagged '#cursor'">#cursor</a>
+<a class="post-tag tag-link-#marke" href="/tags/%2523marke/" rel="tag" title="see questions tagged '#marke'">#marke</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>01 Feb '23, 16:25</strong>
+</p>
+<img alt="LucaFrass's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ab7c2b7c000b677ff3eac2da1c98d650?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/22671/lucafrass">LucaFrass</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="LucaFrass has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/86606/">
+                edited
+                <strong>02 Feb '23, 14:11</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-86606">
+</div>
+<div class="comment-tools" id="comment-tools-86606">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-86606-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/86606/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="jsJoaE4tE5Q2IDujWbBryVRv0KmnAuPf"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,249 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/53455/find-all-amenities-with-name-and-address-around-a-given-location">Find all amenities with name and address around a given location</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/53455/up/" id="post-53455-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-53455-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/53455/down/" id="post-53455-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/53455/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I would like to find all objects with an amenity tag within the radius of a location given by coordinates. E.g. I have a location and want to find what restaurants, bars, cafes, cinemas, etc. are around. For each found object I need its name and its address.</p>
+<p>As far as I have found out I can query Nominatim for special phrases and specific amenities but I'm not sure how to query for all amenities.</p>
+<p>Is this possible with Nominatim and how is it done? Or should I rather use Overpass or something different for such a scenario?</p>
+<p>Thanks for your help!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-query" href="/tags/query/" rel="tag" title="see questions tagged 'query'">query</a>
+<a class="post-tag tag-link-amenity" href="/tags/amenity/" rel="tag" title="see questions tagged 'amenity'">amenity</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-find" href="/tags/find/" rel="tag" title="see questions tagged 'find'">find</a>
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>10 Dec '16, 10:36</strong>
+</p>
+<img alt="acgjheeb's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/184999104034d85f3b6114f1dd685fa3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12898/acgjheeb">acgjheeb</a><br/>
+<span class="score" title="101 reputation points">101</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="8 badges"><span class="bronze">●</span><span class="badgecount">8</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="acgjheeb has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-53455">
+</div>
+<div class="comment-tools" id="comment-tools-53455">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-53455-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/53455/find-all-amenities-with-name-and-address-around-a-given-location?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/53455/find-all-amenities-with-name-and-address-around-a-given-location?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/53455/find-all-amenities-with-name-and-address-around-a-given-location?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/53455/find-all-amenities-with-name-and-address-around-a-given-location?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="53519"></a>
+<div class="answer accepted-answer" id="answer-container-53519">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/53519/up/" id="post-53519-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-53519-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/53519/down/" id="post-53519-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/53519/" rel="nofollow" title="acgjheeb has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>As <a href="http://help.openstreetmap.org/users/647/sk53">@SK53</a> suggested use 'around' filter with overpass api for all <a href="http://wiki.openstreetmap.org/wiki/Key:amenity">amenities</a>. Here is the example:</p>
+<pre><code>/*
+This has been generated by the overpass-turbo wizard.
+The original search was:
+“aminity=*”
+*/
+[out:json];
+// gather results
+(
+  // query part for: “aminity=*”
+  node["amenity"](around:2000,51.5,0.01);
+  way["amenity"](around:2000,51.5,0.01);
+  relation["amenity"](around:2000,51.5,0.01);
+);
+// print results
+
+out;
+&gt;;
+out skel qt;
+</code></pre>
+<p>With get method same request to overpass API:</p>
+<pre><code><a href="http://overpass-api.de/api/interpreter?data=[out:json];(node[%22amenity%22](around:2000,51.5,0.01);way[%22amenity%22](around:2000,51.5,0.01);relation[%22amenity%22](around:2000,51.5,0.01););out;%3E;">http://overpass-api.de/api/interpreter?data=[out:json];(node[%22amenity%22](around:2000,51.5,0.01);way[%22amenity%22](around:2000,51.5,0.01);relation[%22amenity%22](around:2000,51.5,0.01););out;%3E;</a>
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/53519/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>13 Dec '16, 04:45</strong>
+</p>
+<img alt="Gagan's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/39d75f04e1a21ba653b41ac75ec1b026?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12655/gagan">Gagan</a><br/>
+<span class="score" title="305 reputation points">305</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="15 badges"><span class="bronze">●</span><span class="badgecount">15</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Gagan has 2 accepted answers">14%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-53519">
+</div>
+<div class="comment-tools" id="comment-tools-53519">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-53519-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="53460"></a>
+<div class="answer" id="answer-container-53460">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/53460/up/" id="post-53460-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-53460-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/53460/down/" id="post-53460-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Definitely use Overpass which has an <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Relative_to_other_elements_.28around.29">around</a> operator.</p>
+<p>This is an example of such a query: <a href="http://overpass-turbo.eu/s/kzx">http://overpass-turbo.eu/s/kzx</a>.</p>
+<p>Note that not every POI will have address information in OSM: it really depends on how much detail local mappers have entered into OSM.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/53460/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>10 Dec '16, 14:20</strong>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br/>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SK53 has 121 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-53460">
+<a name="53464"></a>
+<div class="comment" id="comment-53464">
+<div class="comment-score" id="post-53464-score">1</div>
+<div class="comment-text"><p>sometimes the address information is there, but on the building, not on the POI itself. Overpass cannot solve this I think</p></div>
+<div class="comment-info" id="comment-53464-info">
+<span class="comment-age">(10 Dec '16, 15:10)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+<a name="53466"></a>
+<div class="comment" id="comment-53466">
+<div class="comment-score" id="post-53466-score">1</div>
+<div class="comment-text"><p>Regarding addresses: Maybe an <code>is_in</code> query can help but not sure if it includes unnamed areas with address tags.</p></div>
+<div class="comment-info" id="comment-53466-info">
+<span class="comment-age">(10 Dec '16, 15:40)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="53471"></a>
+<div class="comment" id="comment-53471">
+<div class="comment-score" id="post-53471-score"></div>
+<div class="comment-text"><p>No, looks like <code>is_in</code> finds only named areas. It doesn't returns buildings with addresses but without a name. But a reverse-geocoding call to Nominatim would help do determine the address.</p></div>
+<div class="comment-info" id="comment-53471-info">
+<span class="comment-age">(10 Dec '16, 22:20)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="53487"></a>
+<div class="comment" id="comment-53487">
+<div class="comment-score" id="post-53487-score"></div>
+<div class="comment-text"><p>Thanks a lot! I will dive into Overpass and try it out. If the address is not always there, is there at least a reliable way to determine the POIs city?</p></div>
+<div class="comment-info" id="comment-53487-info">
+<span class="comment-age">(11 Dec '16, 19:49)</span>
+<a class="comment-user userinfo" href="/users/12898/acgjheeb">acgjheeb</a>
+</div>
+</div>
+<a name="53488"></a>
+<div class="comment" id="comment-53488">
+<div class="comment-score" id="post-53488-score"></div>
+<div class="comment-text"><p>I guess separate reverse geocoding of the results with Nominatim won't be an option as it would produce a lot of traffic for Nominatim...</p></div>
+<div class="comment-info" id="comment-53488-info">
+<span class="comment-age">(11 Dec '16, 19:51)</span>
+<a class="comment-user userinfo" href="/users/12898/acgjheeb">acgjheeb</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-53460">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-53460-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/53455/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="A3LXLKMTzcUvXvhAi09dDKSjf3qJfVxz"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

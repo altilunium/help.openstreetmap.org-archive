@@ -1,0 +1,150 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/23949/is-it-possible-to-draw-tiles-directly-from-an-api-database-without-postgis">[closed] Is it possible to draw tiles directly from an API database (without PostGIS)?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/23949/up/" id="post-23949-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-23949-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/23949/down/" id="post-23949-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/23949/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>After having installed PostgreSQL, and successfully imported the full planet to an local API DB, and having successfully setup the replication process to keep it updated using the hourly diffs, I would like to start drawing my own tiles from this database.</p>
+<p>I made a short experiment before and had to export and import the API DB to a PostGIS database, and was able to draw tiles from this PostGIS database (after encountering a LOT of trouble setting up Mapnik on Windows...). However, in this experiment, I used just a very small extract from the main database, and not the full planet.</p>
+<p>Knowing that it would take a very long time (and a lot of memory and CPU resources) to export the full planet to a PostGIS database (my API DB has 1.5 TB as of today after a VACUUM ANALYZE... and growing!), I would like to know if it is possible to somehow draw tiles directly from the local API DB without the intermediate PostGIS database.</p>
+<p>Surely, the performance would be quite lower than the "standard" way of doing things, but it would save me a lot of time and resources.</p>
+<p>Thanks in advance!</p>
+<p>P.S.: Working with a subset or extract of the full planet does NOT interest me.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-tiles" href="/tags/tiles/" rel="tag" title="see questions tagged 'tiles'">tiles</a>
+<a class="post-tag tag-link-apidb" href="/tags/apidb/" rel="tag" title="see questions tagged 'apidb'">apidb</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>04 Jul '13, 01:43</strong>
+</p>
+<img alt="MCPicoli's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/94b019f273c04cd88bc1c8dd0a8f2161?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4231/mcpicoli">MCPicoli</a><br/>
+<span class="score" title="2172 reputation points"><span class="">2.2k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="30 badges"><span class="silver">●</span><span class="badgecount">30</span></span><span title="47 badges"><span class="bronze">●</span><span class="badgecount">47</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="MCPicoli has 10 accepted answers">24%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/23949/">
+                closed
+                <strong>19 Sep '13, 21:52</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-23949">
+</div>
+<div class="comment-tools" id="comment-tools-23949">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-23949-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<div class="question-status" style="margin-bottom:15px">
+<h3>
+                The question has been closed for the following reason "The question is answered, right answer was accepted" by
+                <a href="/users/4231/mcpicoli">MCPicoli</a>
+                 19 Sep '13, 21:52
+            </h3>
+</div>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/23949/is-it-possible-to-draw-tiles-directly-from-an-api-database-without-postgis?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/23949/is-it-possible-to-draw-tiles-directly-from-an-api-database-without-postgis?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/23949/is-it-possible-to-draw-tiles-directly-from-an-api-database-without-postgis?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/23949/is-it-possible-to-draw-tiles-directly-from-an-api-database-without-postgis?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="23954"></a>
+<div class="answer accepted-answer" id="answer-container-23954">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/23954/up/" id="post-23954-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-23954-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/23954/down/" id="post-23954-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/23954/" rel="nofollow" title="MCPicoli has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I don't think anyone has done this before and it would be terribly, terribly slow (to the point of being totally unusable). But if you are hell-bent on trying, you could probably write a set of function-based views that emulate the geometry tables produced by osm2pgsql, and therefore enable rendering from an APIDB schema database. </p>
+<p>Another possible option is using Mapnik's OSM backend instead of the PostGIS backend - i.e. to render a map for a specific area, run an Osmosis task that extracts that area from your database and then use Mapnik's OSM backend to read that data. Since the data structure is different from a standard osm2pgsql database in this case, you will have to use a different map style than the standard Mapnik style.</p>
+<p>All these options are however quite painful in one way or another, and if you want proper rendering without waiting forever, you will need database tables with pre-made geometries.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/23954/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Jul '13, 07:49</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-23954">
+</div>
+<div class="comment-tools" id="comment-tools-23954">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-23954-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/23949/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Y2ZlS27lMadqxxpaX9tGguHvwCoEo7Xv"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

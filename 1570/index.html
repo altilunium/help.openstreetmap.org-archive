@@ -1,0 +1,145 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/1570/administrative-vs-street-names-and-refs">Administrative vs. Street names (and refs)</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1570/up/" id="post-1570-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1570-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/1570/down/" id="post-1570-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/1570/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have an interesting situation: I'm currently adding lots of tracks and roads (which are used to access forests, meadows etc).</p>
+<p>Some of these tracks are part of normal hiking routes, therefore have ref=1, 1a, 16 etc. Then there are still houses alongside these roads, so I assume the name of the road should be what the address indicates. But, the single roads themselves have names on their own. </p>
+<p>An example: Way 81546521 is known to the administration as "Schuster am Stein". So, if there's road repair to do, then they say: "do this and that on the "Schuster am Stein" road!". But, houses on the road have the address "Prieler Weg No. xyz", as an entire area (consisting of more roads) make up for the same address. Whether this is practical or not is not the issue here, but since only a few houses are found alongside this road, it's probably easier not having as many different road names in the town as there are buildings...
+And, lastly, the road is also part of the hiking trail Nr. 3.
+It's clear, I tag the road ref=3, name=Prieler Weg, but where do I put the "Schuster am Stein"? Ref is already used, and I'm also a bit hesitant using it where there would be no clash with an existing ref number, as perhaps it would be rendered (as with other refs) as text in a long rounded box, cluttering the entire map.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-ref" href="/tags/ref/" rel="tag" title="see questions tagged 'ref'">ref</a>
+<a class="post-tag tag-link-name" href="/tags/name/" rel="tag" title="see questions tagged 'name'">name</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Nov '10, 00:19</strong>
+</p>
+<img alt="Alexander%20Roalter's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/720ecc66aa0d49f61a12c4d9e526e66f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/298/alexander-roalter">Alexander Ro...</a><br/>
+<span class="score" title="276 reputation points">276</span><span title="15 badges"><span class="badge1">●</span><span class="badgecount">15</span></span><span title="17 badges"><span class="silver">●</span><span class="badgecount">17</span></span><span title="24 badges"><span class="bronze">●</span><span class="badgecount">24</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Alexander Roalter has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1570">
+</div>
+<div class="comment-tools" id="comment-tools-1570">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1570-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/1570/administrative-vs-street-names-and-refs?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/1570/administrative-vs-street-names-and-refs?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/1570/administrative-vs-street-names-and-refs?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/1570/administrative-vs-street-names-and-refs?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="1571"></a>
+<div class="answer" id="answer-container-1571">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1571/up/" id="post-1571-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1571-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/1571/down/" id="post-1571-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>If I understand you correctly, the "Prieler Weg" is just a <em>postal</em> naming - people living in that road would say "I live in Schuster am Stein", not "I live in Prieler Weg".</p>
+<p>If that is indeed the case, then you should really tag the road </p>
+<pre><code>name=Schuster am Stein
+</code></pre>
+<p>and then tag the houses with </p>
+<pre><code>addr:housenumber=xyz
+addr:street=Prieler Weg
+</code></pre>
+<p>to record the postal address.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/1571/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Nov '10, 08:50</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1571">
+<a name="1572"></a>
+<div class="comment" id="comment-1572">
+<div class="comment-score" id="post-1572-score"></div>
+<div class="comment-text"><p>I think it's the way you understand. There's only one drawback (which brings us back to the rendering): On the map, the street is named according to the name tag, not the addr:street (which is quite obvious). On the other hand, on a printed out map (as with most city maps), I would search for the address by looking up the street to get the approximate location. If now the street name is nowhere to be found (only in the addr:street tags), it might be difficult finding the address.</p></div>
+<div class="comment-info" id="comment-1572-info">
+<span class="comment-age">(21 Nov '10, 11:54)</span>
+<a class="comment-user userinfo" href="/users/298/alexander-roalter">Alexander Ro...</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-1571">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1571-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/1570/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="56HLRq8uG8wYkLDDW2x7nFfZh5nuNVFD"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

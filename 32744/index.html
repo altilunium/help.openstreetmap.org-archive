@@ -1,0 +1,143 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/32744/openstreetmap-server-high-availability">Openstreetmap server high availability</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/32744/up/" id="post-32744-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-32744-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/32744/down/" id="post-32744-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/32744/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi everyone !</p>
+<p>I'd like to build an OpenStreetMap server for my company ...</p>
+<p>We want to handle a large area of data (the whole Europe).
+My question is quite simple, i'd like to know if there is a simple (or not  ) way to pre compile tiles for this area in order to fill the /var/lib/mod_tile folder.
+Once this is done, if i understand well how all this works, that would be much faster to access the tiles for our customers.</p>
+<p>Thank you very much for reading and helping.
+Regards, Guillaume.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-high-speed" href="/tags/high-speed/" rel="tag" title="see questions tagged 'high-speed'">high-speed</a>
+<a class="post-tag tag-link-precompiled" href="/tags/precompiled/" rel="tag" title="see questions tagged 'precompiled'">precompiled</a>
+<a class="post-tag tag-link-tileserver" href="/tags/tileserver/" rel="tag" title="see questions tagged 'tileserver'">tileserver</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>29 Apr '14, 15:52</strong>
+</p>
+<img alt="guillaume's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8fb68885ff997c74135f182880395f56?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8754/guillaume">guillaume</a><br/>
+<span class="score" title="6 reputation points">6</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="guillaume has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-32744">
+</div>
+<div class="comment-tools" id="comment-tools-32744">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-32744-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/32744/openstreetmap-server-high-availability?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/32744/openstreetmap-server-high-availability?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/32744/openstreetmap-server-high-availability?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/32744/openstreetmap-server-high-availability?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="32751"></a>
+<div class="answer accepted-answer" id="answer-container-32751">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/32751/up/" id="post-32751-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-32751-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/32751/down/" id="post-32751-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/32751/" rel="nofollow" title="guillaume has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Pre-rendering tiles is something essentially every provider does, including OSM proper. </p>
+<p>It is simply a trade off between disk space used (even just Europe down to zoom level or so, will be rather large) and compute time. Since the low zoom tiles tend to be very explensive to produce it is customary to pre-render tiles down to around zoom 14 regardless of what you do.</p>
+<p>Tile disk requirements for a full planet can be found here <a href="http://wiki.openstreetmap.org/wiki/Tile_disk_usage">http://wiki.openstreetmap.org/wiki/Tile_disk_usage</a></p>
+<p>If you are using renderd you should already have render_list available that will batch render tiles, see the end of the page of <a href="http://switch2osm.org/serving-tiles/building-a-tile-server-from-packages/">http://switch2osm.org/serving-tiles/building-a-tile-server-from-packages/</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/32751/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>29 Apr '14, 18:06</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/32751/">
+                edited
+                <strong>29 Apr '14, 18:08</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-32751">
+</div>
+<div class="comment-tools" id="comment-tools-32751">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-32751-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/32744/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="pxX71mFcFOYhsLZIRn75JjGrEnCTsEW3"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

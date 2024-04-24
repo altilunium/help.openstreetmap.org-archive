@@ -1,0 +1,159 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/13644/reverse-geocoding-yields-wrong-address">Reverse geocoding yields wrong address</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/13644/up/" id="post-13644-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-13644-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/13644/down/" id="post-13644-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/13644/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have a similar problem as before: </p>
+<p>Here is a address:</p>
+<p>195, Caroni Savannah Rd, San Fernando, Trinidad and Tobago</p>
+<p>"San Fernando" in this case, (and it appears all over Trinidad) is not correct. It simply not supposed to be there.</p>
+<p>What can I do to make these changes?</p>
+<p>If not, can someone do it?</p>
+<p>Please advise.</p>
+<p>Jai</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-corrections" href="/tags/corrections/" rel="tag" title="see questions tagged 'corrections'">corrections</a>
+<a class="post-tag tag-link-errors" href="/tags/errors/" rel="tag" title="see questions tagged 'errors'">errors</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>20 Jun '12, 02:12</strong>
+</p>
+<img alt="dejaiman's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3ae310b7b9c595a1f01a5fea0dfa1069?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3430/dejaiman">dejaiman</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="dejaiman has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-13644">
+</div>
+<div class="comment-tools" id="comment-tools-13644">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-13644-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/13644/reverse-geocoding-yields-wrong-address?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/13644/reverse-geocoding-yields-wrong-address?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/13644/reverse-geocoding-yields-wrong-address?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/13644/reverse-geocoding-yields-wrong-address?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="13647"></a>
+<div class="answer" id="answer-container-13647">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/13647/up/" id="post-13647-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-13647-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/13647/down/" id="post-13647-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can use <a href="http://wiki.openstreetmap.org/wiki/Nominatim">Nominatim</a> to <a href="http://nominatim.openstreetmap.org/search.php?q=195%2C+Caroni+Savannah+Rd%2C+Trinidad+and+Tobago&amp;viewbox=-61.46%2C10.58%2C-61.37%2C10.53">search</a> for this address. Then, click on the little grey <a href="http://nominatim.openstreetmap.org/details.php?place_id=15918661">details</a> link of the first search result. This is Nominatim's view of this object, you can clearly see how the address is build. It also includes San Fernando as a <a href="http://www.openstreetmap.org/browse/node/1110779940">node</a> tagged with <em>place=city</em>.</p>
+<p>San Fernando seems to be the next closest city Nominatim can find, so it assumes that Caroni Savannah Rd belongs to San Fernando. It cannot know better because there is no <a href="http://wiki.openstreetmap.org/wiki/Tag:boundary%3Dadministrative">boundary</a> relation for San Fernando and the other cities. You have to add such a relation with a correct <a href="http://wiki.openstreetmap.org/wiki/Key:admin_level#admin_level">admin_level</a> tag (something between admin_level=7 and admin_level=10, the wiki page will tell you) so that Nominatim can know which place belongs to which city.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/13647/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>20 Jun '12, 05:42</strong>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="scai has 168 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/13647/">
+                edited
+                <strong>20 Jun '12, 11:53</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-13647">
+<a name="13655"></a>
+<div class="comment" id="comment-13655">
+<div class="comment-score" id="post-13655-score"></div>
+<div class="comment-text"><p>How and where do you change the admin levels?</p>
+<p>Jai</p></div>
+<div class="comment-info" id="comment-13655-info">
+<span class="comment-age">(20 Jun '12, 11:10)</span>
+<a class="comment-user userinfo" href="/users/3430/dejaiman">dejaiman</a>
+</div>
+</div>
+<a name="13657"></a>
+<div class="comment" id="comment-13657">
+<div class="comment-score" id="post-13657-score"></div>
+<div class="comment-text"><p>First you have to find a compatible source for the boundary and then add it to OSM by creating a <a href="http://wiki.openstreetmap.org/wiki/Relation:boundary">boundary relation</a> using your <a href="http://wiki.openstreetmap.org/wiki/Editor#Top_two">favourite editor</a>.</p>
+<p>This isn't an easy task for a beginner, maybe someone will help you. You can try to contact local mappers via the <a href="http://lists.openstreetmap.org/listinfo">mailing lists</a> for example.</p></div>
+<div class="comment-info" id="comment-13657-info">
+<span class="comment-age">(20 Jun '12, 11:53)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-13647">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-13647-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/13644/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="N987r0cUMCJEd8UHZ57vM1XlsrhmGguc"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

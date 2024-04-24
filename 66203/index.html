@@ -1,0 +1,210 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/66203/nominatim-returning-road-type-to-figure-out-max-road-speed">Nominatim - returning road type to figure out max road speed</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66203/up/" id="post-66203-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66203-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/66203/down/" id="post-66203-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/66203/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm using nominatim to get max road speed</p>
+<p>If the data is not present (only around 10% is), I can guess the roadspeed based on road type</p>
+<p>i.e. in the UK, if its a residential road, it will be 30mph, and if its a motorway it will be 70mph</p>
+<p>However the data returned does not indicate the road type, 
+I get a OSM_TYPE of WAY, but that's it.</p>
+<p>Is the above possible? if so how can i alter my call to return this info?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-roadtype" href="/tags/roadtype/" rel="tag" title="see questions tagged 'roadtype'">roadtype</a>
+<a class="post-tag tag-link-maxspeed" href="/tags/maxspeed/" rel="tag" title="see questions tagged 'maxspeed'">maxspeed</a>
+<a class="post-tag tag-link-osm_type" href="/tags/osm_type/" rel="tag" title="see questions tagged 'osm_type'">osm_type</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>08 Oct '18, 08:22</strong>
+</p>
+<img alt="Mark%20Davies1664's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/629c67b24fafaf747f4410cfbc7f1fc4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15763/mark-davies1664">Mark Davies1664</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Mark Davies1664 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/66203/">
+                edited
+                <strong>08 Oct '18, 08:23</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66203">
+<a name="66204"></a>
+<div class="comment" id="comment-66204">
+<div class="comment-score" id="post-66204-score">2</div>
+<div class="comment-text"><p>Nominatim seems like an odd choice to get max road speed?</p></div>
+<div class="comment-info" id="comment-66204-info">
+<span class="comment-age">(08 Oct '18, 08:58)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="66205"></a>
+<div class="comment" id="comment-66205">
+<div class="comment-score" id="post-66205-score">1</div>
+<div class="comment-text"><p>Can you give an example query that does not tell you the road type when you expected it to do so?</p></div>
+<div class="comment-info" id="comment-66205-info">
+<span class="comment-age">(08 Oct '18, 08:59)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="66206"></a>
+<div class="comment" id="comment-66206">
+<div class="comment-score" id="post-66206-score"></div>
+<div class="comment-text"><p>I'm using it to get the road name and roadspeed as one call
+Here is an example of one</p>
+<p>{"place_id":"70381573","licence":"Data © OpenStreetMap contributors, ODbL 1.0. https:\/\/osm.org\/copyright", "osm_type":"way", "osm_id":"4968823", "lat":"51.51465608749", "lon":"-3.1915241864833", "display_name":"Heathwood Road, Heath, Cardiff, Wales, CF, UK","address": {"road":"Heathwood Road", "suburb":"Heath", "city":"Cardiff", "county":"Cardiff", "state":"Wales", "postcode":"CF", "country":"UK", "country_code":"gb"}, "extratags":{"foot":"yes", "lanes":"2", "oneway":"no", "surface":"asphalt", "maxspeed":"30 mph"}, "boundingbox":["51.5115152","51.516782","-3.1997308","-3.1860733"]}</p></div>
+<div class="comment-info" id="comment-66206-info">
+<span class="comment-age">(08 Oct '18, 09:25)</span>
+<a class="comment-user userinfo" href="/users/15763/mark-davies1664">Mark Davies1664</a>
+</div>
+</div>
+<a name="66207"></a>
+<div class="comment" id="comment-66207">
+<div class="comment-score" id="post-66207-score">1</div>
+<div class="comment-text"><p>Which query led to this result - did you do a "search.php?q=Heathwood Road, Cardiff" or rather a "reverse.php?lat=51.514656&amp;lon=-3.191524" or...? Please specify exact URL as it might be relevant for finding the problem.</p></div>
+<div class="comment-info" id="comment-66207-info">
+<span class="comment-age">(08 Oct '18, 09:37)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="66212"></a>
+<div class="comment" id="comment-66212">
+<div class="comment-score" id="post-66212-score"></div>
+<div class="comment-text"><p>Its Reverse and JSON
+Here is an example
+<a href="http://myurl.com/nominatim/reverse?format=json&amp;lat=51.51465608749&amp;lon=-3.1915241864833&amp;zoom=18&amp;addressdetails=1&amp;extratags=1">http://myurl.com/nominatim/reverse?format=json&amp;lat=51.51465608749&amp;lon=-3.1915241864833&amp;zoom=18&amp;addressdetails=1&amp;extratags=1</a></p></div>
+<div class="comment-info" id="comment-66212-info">
+<span class="comment-age">(08 Oct '18, 12:34)</span>
+<a class="comment-user userinfo" href="/users/15763/mark-davies1664">Mark Davies1664</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-66203">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66203-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/66203/nominatim-returning-road-type-to-figure-out-max-road-speed?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/66203/nominatim-returning-road-type-to-figure-out-max-road-speed?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/66203/nominatim-returning-road-type-to-figure-out-max-road-speed?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/66203/nominatim-returning-road-type-to-figure-out-max-road-speed?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="66213"></a>
+<div class="answer accepted-answer" id="answer-container-66213">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66213/up/" id="post-66213-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66213-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/66213/down/" id="post-66213-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/66213/" rel="nofollow" title="Mark Davies1664 has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Building up on what Frederik said. Use format=jsonv2, then you'll see a field 'category' and 'type'. Example <a href="https://nominatim.openstreetmap.org/reverse?format=jsonv2&amp;lat=51.51465608749&amp;lon=-3.1915241864833&amp;zoom=18&amp;addressdetails=1&amp;extratags=1">https://nominatim.openstreetmap.org/reverse?format=jsonv2&amp;lat=51.51465608749&amp;lon=-3.1915241864833&amp;zoom=18&amp;addressdetails=1&amp;extratags=1</a> shows 'category=highway', 'type=tertiary' which is equivalent to 'highway=tertiary' in <a href="https://www.openstreetmap.org/way/4968823">https://www.openstreetmap.org/way/4968823</a></p>
+<p>Same for forward search <a href="https://nominatim.openstreetmap.org/search?format=jsonv2&amp;q=Heathwood%20Road,%20Cardiff&amp;addressdetails=1&amp;extratags=1">https://nominatim.openstreetmap.org/search?format=jsonv2&amp;q=Heathwood%20Road,%20Cardiff&amp;addressdetails=1&amp;extratags=1</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/66213/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Oct '18, 12:44</strong>
+</p>
+<img alt="mtmail's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/96aad1e1801b7ea36fba50687924c935?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/150/mtmail">mtmail</a><br/>
+<span class="score" title="4757 reputation points"><span class="">4.8k</span></span><span title="15 badges"><span class="silver">●</span><span class="badgecount">15</span></span><span title="74 badges"><span class="bronze">●</span><span class="badgecount">74</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mtmail has 50 accepted answers">27%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66213">
+<a name="66215"></a>
+<div class="comment" id="comment-66215">
+<div class="comment-score" id="post-66215-score"></div>
+<div class="comment-text"><p>great thanks
+So in the UK i can assume tertiary and residential are both 30mph, and highway is 70mph</p>
+<p>I guess primary, secondary etc are a bit harder to classify so i can leave these as unknown ?</p></div>
+<div class="comment-info" id="comment-66215-info">
+<span class="comment-age">(08 Oct '18, 13:57)</span>
+<a class="comment-user userinfo" href="/users/15763/mark-davies1664">Mark Davies1664</a>
+</div>
+</div>
+<a name="66218"></a>
+<div class="comment" id="comment-66218">
+<div class="comment-score" id="post-66218-score"></div>
+<div class="comment-text"><p>Probably. And there might be limits if it's inside or outside a city boundary. maxspeed is complex <a href="https://wiki.openstreetmap.org/wiki/Talk:Key:maxspeed">https://wiki.openstreetmap.org/wiki/Talk:Key:maxspeed</a> and I'd check if there was previous discussion on <a href="https://lists.openstreetmap.org/listinfo/talk-gb">https://lists.openstreetmap.org/listinfo/talk-gb</a> (or start a new one)</p></div>
+<div class="comment-info" id="comment-66218-info">
+<span class="comment-age">(08 Oct '18, 15:22)</span>
+<a class="comment-user userinfo" href="/users/150/mtmail">mtmail</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-66213">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66213-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/66203/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="UFzNF1KkugpBAESFKq40og6Ugu4vCuD1"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

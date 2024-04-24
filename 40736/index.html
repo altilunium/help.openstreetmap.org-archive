@@ -1,0 +1,142 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/40736/osm-tileserver-for-real">OSM tileserver for real</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/40736/up/" id="post-40736-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-40736-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/40736/down/" id="post-40736-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/40736/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi all</p>
+<p>tl;dr please help me spec out a VM for running OSM tile server planet.</p>
+<p>I have built an OSM tile server on a VM with Ubuntu 12.04. I followed the instructions at switch2osm "Building a tile server from packages". This was a trial run, and it works fine, but I had some issues. In particular, I couldn't get openstreetmap-carto working. It was suggested to me to try using an upgraded version of Mapnik, e.g. the one found in Ubuntu 14.04. </p>
+<p>Well, now I have the opportunity to build a tile server "for real" from scratch. I can spec my own VM including which distro to install. I'm thinking of going with Ubuntu 14.04 "Trusty Tar" and following the same instructions as before.</p>
+<p>My question is then, what should I ask for in the VM including OS, #cores, RAM, disk, etc.
+My other question is whether the "Building a tile server from packages" on switch2osm is the best way to do it.</p>
+<p>Thanks,
+Harold Ship</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-hardware" href="/tags/hardware/" rel="tag" title="see questions tagged 'hardware'">hardware</a>
+<a class="post-tag tag-link-advice" href="/tags/advice/" rel="tag" title="see questions tagged 'advice'">advice</a>
+<a class="post-tag tag-link-switch2osm" href="/tags/switch2osm/" rel="tag" title="see questions tagged 'switch2osm'">switch2osm</a>
+<a class="post-tag tag-link-ubuntu" href="/tags/ubuntu/" rel="tag" title="see questions tagged 'ubuntu'">ubuntu</a>
+<a class="post-tag tag-link-tileserver" href="/tags/tileserver/" rel="tag" title="see questions tagged 'tileserver'">tileserver</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>01 Feb '15, 08:59</strong>
+</p>
+<img alt="haroldship's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/86d98b7622295c7fdc8bdf8f449e4c78?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9344/haroldship">haroldship</a><br/>
+<span class="score" title="90 reputation points">90</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="8 badges"><span class="bronze">●</span><span class="badgecount">8</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="haroldship has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-40736">
+</div>
+<div class="comment-tools" id="comment-tools-40736">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-40736-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/40736/osm-tileserver-for-real?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/40736/osm-tileserver-for-real?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/40736/osm-tileserver-for-real?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/40736/osm-tileserver-for-real?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="40738"></a>
+<div class="answer" id="answer-container-40738">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/40738/up/" id="post-40738-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-40738-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/40738/down/" id="post-40738-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Disk performance is essential - you should definitely make sure you have about 600 GB of SSD capacity for the database volume, and be sure that you don't ruin SSD performance e.g. by using unsuitable controllers or a bad virtualization layer (apparently you can easily ruin disk performance by checking the wrong boxes or selecting the wrong drivers in some VM environments). In addition to the SSD storage for the database you'll need a bit of standard disk storage for the pre-rendered tiles, just a couple 100 GB. Other than that, Ubuntu 14.04, a modern quad-core CPU, and 32 GB of RAM will serve you well. More cores will increase performance but just a little, and 16 GB of RAM would still work but a bit slower. The switch2osm instructions are good - of course the recommendations given there generic and whether they are "the best way to do it" depends very much on the expected usage profile of your tile server. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/40738/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>01 Feb '15, 10:23</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-40738">
+<a name="40741"></a>
+<div class="comment" id="comment-40741">
+<div class="comment-score" id="post-40741-score">2</div>
+<div class="comment-text"><p>Thanks Frederik. This is what I asked for. Let's hope they give it to me :)</p></div>
+<div class="comment-info" id="comment-40741-info">
+<span class="comment-age">(02 Feb '15, 06:59)</span>
+<a class="comment-user userinfo" href="/users/9344/haroldship">haroldship</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-40738">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-40738-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/40736/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="STApcBOzMfdqYyrfREzznD7y9GOruWp4"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

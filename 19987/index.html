@@ -1,0 +1,156 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/19987/overpass-get-values-with-special-characters">Overpass: get values with "special" characters</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/19987/up/" id="post-19987-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-19987-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/19987/down/" id="post-19987-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/19987/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello</p>
+<p>I am trying to use a query for retrieving wrong ( abbreviated ) values in keys, for example: places of worship which names beginning with "S."</p>
+<p>this is the query</p>
+<pre><code>[out:xml]
+;
+(
+  node
+    ["name"~"^S\."]
+    ["amenity"="place_of_worship"]
+    (46.00,12.24,46.70,13.80);
+  way
+    ["name"~"^S\."]
+    ["amenity"="place_of_worship"]
+    (46.00,12.24,46.70,13.80); 
+);
+out meta;
+&gt;;
+out meta;
+</code></pre>
+<p>This returns ALL the features beginning whith "S",
+backslash before the dot seems not to work.</p>
+<p>Where am I wrong?</p>
+<p>Thank You</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-regex" href="/tags/regex/" rel="tag" title="see questions tagged 'regex'">regex</a>
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-character" href="/tags/character/" rel="tag" title="see questions tagged 'character'">character</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Feb '13, 17:53</strong>
+</p>
+<img alt="gpstracks's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1ac18e3a979dc68dbb2c0b4ab7693ddc?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5538/gpstracks">gpstracks</a><br/>
+<span class="score" title="51 reputation points">51</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="gpstracks has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-19987">
+</div>
+<div class="comment-tools" id="comment-tools-19987">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-19987-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/19987/overpass-get-values-with-special-characters?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/19987/overpass-get-values-with-special-characters?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/19987/overpass-get-values-with-special-characters?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/19987/overpass-get-values-with-special-characters?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="20010"></a>
+<div class="answer" id="answer-container-20010">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/20010/up/" id="post-20010-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-20010-score" title="current number of votes">
+    7
+</div>
+<a class="ajax-command post-vote down" href="/vote/20010/down/" id="post-20010-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>In Overpass QL you need to escape backslashes: ["name"~"^S\."] results in the regular expression ^S. (which finds every name starting with "S"). By contrast, ["name"~"^S\\."] produces the most likely ment regular expression ^S\. (which finds every name starting with "S.").</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/20010/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>18 Feb '13, 08:23</strong>
+</p>
+<img alt="Roland%20Olbricht's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fcfdb0825826fd13d2ff0d83d58819c6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3480/roland-olbricht">Roland Olbricht</a><br/>
+<span class="score" title="6666 reputation points"><span class="">6.7k</span></span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="64 badges"><span class="silver">●</span><span class="badgecount">64</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Roland Olbricht has 40 accepted answers">36%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-20010">
+<a name="20050"></a>
+<div class="comment" id="comment-20050">
+<div class="comment-score" id="post-20050-score">2</div>
+<div class="comment-text"><p>It works. Thank You</p></div>
+<div class="comment-info" id="comment-20050-info">
+<span class="comment-age">(19 Feb '13, 22:11)</span>
+<a class="comment-user userinfo" href="/users/5538/gpstracks">gpstracks</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-20010">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-20010-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/19987/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="gIdCFpJUYmeYUGyocxaN3ZxLblldXkUe"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

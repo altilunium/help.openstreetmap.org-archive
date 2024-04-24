@@ -1,0 +1,115 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/80612/osm-landuse">OSM landuse</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80612/up/" id="post-80612-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80612-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/80612/down/" id="post-80612-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/80612/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>In recent years I have been making use of the OSM land use polygon layer in my work. However, it can be quite patchy. In the UK there are huge areas missing and in the Netherlands the polygons overlap. The online map OSMlanduse.org exists and is far more comprehensive.</p>
+<p>Is this a map connected with the open street map layers? If so is it waiting for someone to implement them?</p>
+<p>Thanks!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-landuse" href="/tags/landuse/" rel="tag" title="see questions tagged 'landuse'">landuse</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>18 Jun '21, 08:14</strong>
+</p>
+<img alt="Blaiseo's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7e13807c5ea6f83e9faffa9755118cf3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19213/blaiseo">Blaiseo</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Blaiseo has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80612">
+<a name="80615"></a>
+<div class="comment" id="comment-80615">
+<div class="comment-score" id="post-80615-score"></div>
+<div class="comment-text"><p>I emailed Alexander Zipf last year and he replied to say the improvements would be available soon but no more details. I emailed again the other day to check.</p>
+<p>However, this team has put a huge amount of effort into improving the accuracy of the landuse model, I don't want to nag them to add to OSM. I was wondering if there is already some collaboration? When this data is available (to my mind it is already very accurate and does not need to wait for checking) who would implement the changes?</p></div>
+<div class="comment-info" id="comment-80615-info">
+<span class="comment-age">(18 Jun '21, 09:31)</span>
+<a class="comment-user userinfo" href="/users/19213/blaiseo">Blaiseo</a>
+</div>
+</div>
+<a name="80620"></a>
+<div class="comment" id="comment-80620">
+<div class="comment-score" id="post-80620-score">1</div>
+<div class="comment-text"><p>There's a fair amount of additional material about how to use OSM Landuse elsewhere: for instance I looked at how OSM compared with the CEC Urban Atlas for various places. Presentation at SotM-11. Igor Brekic also looked at Vienna some time past. The basic approach as by the Heidelberg term is: some basic conversion of tags to landuse categories, sensible defaults (farmland works well in lowland Britain), a polygon merge &amp; clipping process, based on an order priority of categories (a simple painter's algorithm worked for me). Additional processes for recognising urban areas have also been documented. Lastly some judicious use of other sources can fill some voids (e.g., Corine woodland in Ireland, other national datasets).</p></div>
+<div class="comment-info" id="comment-80620-info">
+<span class="comment-age">(18 Jun '21, 12:10)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="80626"></a>
+<div class="comment" id="comment-80626">
+<div class="comment-score" id="post-80626-score"></div>
+<div class="comment-text"><p>Interesting to know. I will look up the CEC atlas.</p>
+<p>What I am mainly getting at is the osmlanduse website is called OSM, implying it is some how connected with the OSM geofabrik data.</p>
+<p>In any case rather than trying to replicate the work of Heidelberg, would it be possible to use the dataset they have put together?</p></div>
+<div class="comment-info" id="comment-80626-info">
+<span class="comment-age">(18 Jun '21, 14:02)</span>
+<a class="comment-user userinfo" href="/users/19213/blaiseo">Blaiseo</a>
+</div>
+</div>
+<a name="80627"></a>
+<div class="comment" id="comment-80627">
+<div class="comment-score" id="post-80627-score"></div>
+<div class="comment-text"><p>If they haven't released it then you can't use it other than as a WMS. Yes of course the site is based on OSM data, but they enhance it using their own, probably proprietary, algorithms. They may of course provide some kind of paid service too (after all if you are using it for commercial purposes, it's not unreasonable).</p>
+<p>OSM data is likely to be much better than CLC Corine when it is more than imported Corine data (which is why coverage of landuse is good in many EU countries). OSM is more likely to be properly aligned at changes in landuse; is often more granular, and because it is generally not dependent on remote sensing avoids some classification errors.</p></div>
+<div class="comment-info" id="comment-80627-info">
+<span class="comment-age">(18 Jun '21, 16:16)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="80628"></a>
+<div class="comment" id="comment-80628">
+<div class="comment-score" id="post-80628-score"></div>
+<div class="comment-text"><p>The accuracy and resolution of osmlanduse.org is far and away better than what is currently available from geofabrik for the UK and NL.</p></div>
+<div class="comment-info" id="comment-80628-info">
+<span class="comment-age">(18 Jun '21, 16:57)</span>
+<a class="comment-user userinfo" href="/users/19213/blaiseo">Blaiseo</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-80612">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80612-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/80612/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="PBIEQLVEVwocS2qB7eFS3dyawIJsf4yF"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

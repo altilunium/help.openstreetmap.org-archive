@@ -1,0 +1,151 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/70402/overpassapi-queries-fail-randomly">OverpassAPI: queries fail randomly</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/70402/up/" id="post-70402-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-70402-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/70402/down/" id="post-70402-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/70402/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>I have been trying to query OSM data using overpass-api.de but it's working pretty randomly.
+For example, It gets data twice in a row, but the third request timeouts, or works once then fails two or three times, etc. I haven't been able to determine any patterns in this. it just seems to fail at random times.</p>
+<p>I am getting Connection Timeout as a result of a failed request. 
+Have in mind that It's the same code that sends the request. Same requests work and fail randomly.</p>
+<p>Is there anything I might be missing in here? Do You have any idea what could cause this?</p>
+<p>EDIT: Thanks for the suggestion!
+Query example:
+[bbox:-4.8829942,29.6411133,-4.8720477,29.6520996][timeout:40];
+(
+    node["building"];
+    node[~".<em>"~"^building$"];
+    way["building"];
+    way[~".</em>"~"^building$"];
+    relation["building"];
+    relation[~".*"~"^building$"];
+);
+out meta;&gt;;out meta;</p>
+<p>Thanks,
+Filip</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-query" href="/tags/query/" rel="tag" title="see questions tagged 'query'">query</a>
+<a class="post-tag tag-link-random" href="/tags/random/" rel="tag" title="see questions tagged 'random'">random</a>
+<a class="post-tag tag-link-request" href="/tags/request/" rel="tag" title="see questions tagged 'request'">request</a>
+<a class="post-tag tag-link-timeout" href="/tags/timeout/" rel="tag" title="see questions tagged 'timeout'">timeout</a>
+<a class="post-tag tag-link-failed" href="/tags/failed/" rel="tag" title="see questions tagged 'failed'">failed</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Aug '19, 16:53</strong>
+</p>
+<img alt="fica's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/88a063b5119006eb5b95951959bdd2f5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17049/fica">fica</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="fica has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/70402/">
+                edited
+                <strong>16 Aug '19, 18:38</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-70402">
+<a name="70403"></a>
+<div class="comment" id="comment-70403">
+<div class="comment-score" id="post-70403-score">1</div>
+<div class="comment-text"><p>Hi Fica, could you please edit your question with the query in question? Then we can give feedback. In general, any request randomly can have to wait because of too much data to return or just because it's busy on the server.</p></div>
+<div class="comment-info" id="comment-70403-info">
+<span class="comment-age">(16 Aug '19, 18:16)</span>
+<a class="comment-user userinfo" href="/users/16106/tijmenheid">tijmenheid</a>
+</div>
+</div>
+<a name="70404"></a>
+<div class="comment" id="comment-70404">
+<div class="comment-score" id="post-70404-score"></div>
+<div class="comment-text"><p>Hi tijamenheid,</p>
+<p>Thanks for the quick reply! I included a query example.
+Have in mind that this exact query, for example, works every second time or something like that.</p></div>
+<div class="comment-info" id="comment-70404-info">
+<span class="comment-age">(16 Aug '19, 18:41)</span>
+<a class="comment-user userinfo" href="/users/17049/fica">fica</a>
+</div>
+</div>
+<a name="70413"></a>
+<div class="comment" id="comment-70413">
+<div class="comment-score" id="post-70413-score">1</div>
+<div class="comment-text"><p>Could you clarify what data is being returned "twice"?</p>
+<p>To simplify use the 'nwr' option 
+[bbox:-4.8829942,29.6411133,-4.8720477,29.6520996][timeout:40];
+nwr[building];
+(._;&gt;;);
+out meta;</p>
+<p>This returns 1949 polygons, the same as your routine.</p>
+<p>This line - nwr[~".*"~"^building$"]; is looking for tags with the value of 'building' &amp; in your example returns nothing</p></div>
+<div class="comment-info" id="comment-70413-info">
+<span class="comment-age">(18 Aug '19, 17:19)</span>
+<a class="comment-user userinfo" href="/users/1532/davef">DaveF</a>
+</div>
+</div>
+<a name="70421"></a>
+<div class="comment" id="comment-70421">
+<div class="comment-score" id="post-70421-score"></div>
+<div class="comment-text"><p>Hi DaveF,</p>
+<p>I don't have much experience with the query language so this was how I queried parts of polygons that were partially out of the bounding box. I also wanted to query tags by value as well, just to be sure not to miss anything. Thank You for the suggestion.</p>
+<p>Today queries seem to work fine, none resulted in a timeout. It was probably an overload on the server since I ran the same queries as I did before.</p></div>
+<div class="comment-info" id="comment-70421-info">
+<span class="comment-age">(19 Aug '19, 11:43)</span>
+<a class="comment-user userinfo" href="/users/17049/fica">fica</a>
+</div>
+</div>
+<a name="70425"></a>
+<div class="comment" id="comment-70425">
+<div class="comment-score" id="post-70425-score">1</div>
+<div class="comment-text"><p>The Default timeout value is 180. Setting it to 40 means the routine will quit earlier.</p></div>
+<div class="comment-info" id="comment-70425-info">
+<span class="comment-age">(19 Aug '19, 17:07)</span>
+<a class="comment-user userinfo" href="/users/1532/davef">DaveF</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-70402">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-70402-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/70402/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="INAdpBvGWn98KCf8PI4vkuQtxy0TZQb6"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

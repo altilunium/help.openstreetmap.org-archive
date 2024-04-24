@@ -1,0 +1,293 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/18752/mapnik-german-osm-style-problem-with-views-in-postgres-database">mapnik-german osm style, problem with views in postgres database</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/18752/up/" id="post-18752-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-18752-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/18752/down/" id="post-18752-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/18752/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi, I am trying to get the german mapnik style to work on Ubuntu 12.04 as proposed by the <a href="http://svn.openstreetmap.org/applications/rendering/mapnik-german/">SVN</a> README:</p>
+<pre><code>&gt; To deploy this style use the supplied default.style file for
+&gt; osm2pgsql and import data using the hstore extension of
+&gt; PostgreSQL (--hstore --hstore-match-only switches of osm2pgsql).
+&gt;
+&gt; To keep the database compatible to the "original" Mapnik style we
+&gt; now use views instead of tables. SQL scripts to set up these views
+&gt; are supplied in the views directory.
+</code></pre>
+<p>I create my database using sachsen.osm from geofabrik and osm2pgsql from the ppa:kakrueger/openstreetmap (osm2pgsql SVN version 0.81.0 (64bit id space))</p>
+<pre><code>osm2pgsql -m -d osm --hstore -W -S /path/to/mapnik-german/views/default.style  mapnik/sachsen.osm
+</code></pre>
+<p>Then I create the views that are supposed to be used by the germany mapnik style:</p>
+<pre><code>sudo -u postgres psql osm &lt; mapnik-german/views/view-line.sql
+sudo -u postgres psql osm &lt; mapnik-german/views/view-point.sql
+sudo -u postgres psql osm &lt; mapnik-german/views/view-polygon.sql
+sudo -u postgres psql osm &lt; mapnik-german/views/view-roads.sql
+</code></pre>
+<p>Then I create a new directory "mapnik-de" containing the <a href="http://svn.openstreetmap.org/applications/rendering/mapnik/">mapnik-repo</a>. I copy <a href="http://svn.openstreetmap.org/applications/rendering/mapnik-german/">mapnik-german</a> ontop of that (is that the way to go?) and copy all the template files to inc files in mapnik-de/inc-de/.
+I use mapnik-de as working directory.</p>
+<p>Now, when I try to generate my xml file</p>
+<pre><code>./generate_xml.py --dbname osm --host 'localhost' --user USERNAME --port 5432 --password 'PASSWORD' --inc inc-de  osm-de.xml &gt; osm-local.xml
+</code></pre>
+<p>I get the following error:</p>
+<pre><code>/usr/lib/pymodules/python2.7/mapnik2/__init__.py:27: DeprecationWarning:  mapnik2 module has been deprecated,
+        please use 'import mapnik' 
+  warnings.warn(msg, DeprecationWarning)
+Traceback (most recent call last):
+  File "./generate_xml.py", line 204, in &lt;module&gt;
+    serialize(template_xml,options)
+  File "./generate_xml.py", line 80, in serialize
+    mapnik.load_map(m,xml,True)
+RuntimeError: Postgis Plugin: PSQL error:
+ERROR:  column "wood" does not exist
+LINE 1: ...enity,landuse,leisure,man_made,military,"natural",wood,power...
+                                                             ^
+Full sql was: 'SELECT * FROM (select way,aeroway,amenity,landuse,leisure,man_made,military,"natural",wood,power,tourism,coalesce("name:de",name) as name,highway,
+       case when religion in ('christian','jewish') then religion else 'INT-generic'::text end as religion
+       from planet_osm_polygon
+       where landuse is not null
+          or leisure is not null
+          or aeroway in ('apron','aerodrome')
+          or amenity in ('parking','university','college','school','hospital','kindergarten','grave_yard','prison')
+          or military in ('barracks','danger_area')
+          or "natural" in ('field','beach','desert','heath','mud','grassland','wood','sand','scrub')
+          or power in ('station','sub_station','generator')
+          or tourism in ('attraction','camp_site','caravan_site','picnic_site','zoo')
+          or highway in ('services','rest_area')
+       order by z_order,way_area desc
+      ) as leisure LIMIT 0'
+  encountered during parsing of layer 'landcover' in Layer at line 381 of 'osm-de.xml'
+</code></pre>
+<p>I am using mapnik 2.1.0 from the ppa:mapnik/v2.1.0</p>
+<p>To me it looks like the generated views are not correctly accessed. When I use a custom default.style file with osm2pgsql that contains "wood" and a couple more, then this error does not show and I can create tiles.</p>
+<p>I am not used to postgresql or postgis. Maybe I just understood something wrong? I took a look with pgadmin3 and there are the four views and except view_osmde_roads they all contain the column "wood".</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-style" href="/tags/style/" rel="tag" title="see questions tagged 'style'">style</a>
+<a class="post-tag tag-link-mapnik-german" href="/tags/mapnik-german/" rel="tag" title="see questions tagged 'mapnik-german'">mapnik-german</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+<a class="post-tag tag-link-postgres" href="/tags/postgres/" rel="tag" title="see questions tagged 'postgres'">postgres</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>29 Dec '12, 14:24</strong>
+</p>
+<img alt="skaiwalker's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8841f5a6a609b7eb4cb703f440ffc5e7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5274/skaiwalker">skaiwalker</a><br/>
+<span class="score" title="6 reputation points">6</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="skaiwalker has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/18752/">
+                edited
+                <strong>29 Dec '12, 14:39</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-18752">
+</div>
+<div class="comment-tools" id="comment-tools-18752">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-18752-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/18752/mapnik-german-osm-style-problem-with-views-in-postgres-database?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/18752/mapnik-german-osm-style-problem-with-views-in-postgres-database?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/18752/mapnik-german-osm-style-problem-with-views-in-postgres-database?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/18752/mapnik-german-osm-style-problem-with-views-in-postgres-database?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="18753"></a>
+<div class="answer accepted-answer" id="answer-container-18753">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/18753/up/" id="post-18753-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-18753-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/18753/down/" id="post-18753-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/18753/" rel="nofollow" title="skaiwalker has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Your Mapnik style is trying to access the tables directly instead of the generated views.</p>
+<p>I would assume that your prefix entity in settings.xml.inc is wrong.</p>
+<p>It should contain  &lt;!ENTITY prefix "view_osmde"&gt; instead of &lt;!ENTITY prefix "planet_osm"&gt;</p>
+<p>Sven</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/18753/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>29 Dec '12, 15:40</strong>
+</p>
+<img alt="giggls's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ed4b275dcccc85019201630e7cf0e3b6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1957/giggls">giggls</a><br/>
+<span class="score" title="126 reputation points">126</span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="giggls has 2 accepted answers">50%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-18753">
+<a name="18756"></a>
+<div class="comment" id="comment-18756">
+<div class="comment-score" id="post-18756-score"></div>
+<div class="comment-text"><p>Thanks Sven,<br/>
+I simply forgot the "--prefix" option in generate_xml.py.</p>
+<p>But there is another problem with the database. My generate_xml.py command now looks like this:</p>
+<pre><code>./mapnik/generate_xml.py \
+ --host 'localhost' \
+ --port 5432 \
+ --dbname osm \
+ --prefix view_osmde \
+ --user postgres \
+ --password 'USERPWD' \
+ --inc /home/USERNAME/osm/mapnik-german/inc-de \
+ --world_boundaries /home/USERNAME/osm/mapnik/world_boundaries \
+ /home/USERNAME/osm/mapnik-german/osm-de.xml &gt; /home/USERNAME/osm/mapnik-german/osm-local.xml
+</code></pre>
+<p>And it works.</p>
+<p>When I run generate_tiles.py, it only generates 0/0/0.png and I get errors like this:</p>
+<pre><code>Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/threading.py", line 551, in __bootstrap_inner
+    self.run()
+  File "/usr/lib/python2.7/threading.py", line 504, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File "./mapnik-german/generate_tiles.py", line 115, in loop
+    self.render_tile(tile_uri, x, y, z)
+  File "./mapnik-german/generate_tiles.py", line 97, in render_tile
+    mapnik.render(self.m, im)
+RuntimeError: PostGIS: geometry name lookup failed for table 'view_osmde_point'. Please manually provide the 'geometry_field' parameter or add an entry in the geometry_columns for 'view_osmde_point'.
+</code></pre>
+<p>What does that mean?
+Cheers!</p></div>
+<div class="comment-info" id="comment-18756-info">
+<span class="comment-age">(29 Dec '12, 18:57)</span>
+<a class="comment-user userinfo" href="/users/5274/skaiwalker">skaiwalker</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-18753">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-18753-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="18759"></a>
+<div class="answer answered-by-owner" id="answer-container-18759">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/18759/up/" id="post-18759-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-18759-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/18759/down/" id="post-18759-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>After some googling I found this function "populate_geometry_columns()" and it seemed to do the job:</p>
+<pre><code>sudo -u postgres psql -d osm
+SELECT populate_geometry_columns();
+</code></pre>
+<p>Creating tiles with german style now works.<br/>
+Can you please confirm that I did the right thing? I will write up a short Quickstart guide and upload it to the repo.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/18759/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>29 Dec '12, 20:10</strong>
+</p>
+<img alt="skaiwalker's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8841f5a6a609b7eb4cb703f440ffc5e7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5274/skaiwalker">skaiwalker</a><br>
+<span class="score" title="6 reputation points">6</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="skaiwalker has no accepted answers">0%</span>
+</br></br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-18759">
+<a name="42616"></a>
+<div class="comment" id="comment-42616">
+<div class="comment-score" id="post-42616-score">1</div>
+<div class="comment-text"><p>I had the same problem and that solved it for me too!</p></div>
+<div class="comment-info" id="comment-42616-info">
+<span class="comment-age">(27 Apr '15, 15:49)</span>
+<a class="comment-user userinfo" href="/users/10900/milkbread">milkbread</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-18759">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-18759-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/18752/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="wzQMhsaDAYeva5UX7nsN7fWvoV9jI9m0"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

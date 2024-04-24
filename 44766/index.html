@@ -1,0 +1,188 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/44766/openlayers-slowly-navigate-to-the-map-from-one-location-to-another">OpenLayers: Slowly navigate to the map from one location to another</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44766/up/" id="post-44766-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44766-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/44766/down/" id="post-44766-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/44766/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello Guys,</p>
+<p>Please help me on this, I searched lot but didnt found solution.</p>
+<p>first of all I am setting my map at one point suppose my lat long are <code>19.151568,41.872330</code></p>
+<p>so I am using following code to set my map on load to this points..</p>
+<pre><code>var val1 = "19.151568";
+var val2 = "41.872330";
+var lonLat = new OpenLayers.LonLat(val1,val2).transform(epsg4326, projectTo);
+var zoom=18;
+map.setCenter(lonLat, zoom);
+</code></pre>
+<p>Now in my js code I am calling one function i.e. <code>changeLocation(var1,var2);</code>
+where var1 and var2 are my new lat and long for example : <code>18.950367,41.553726</code></p>
+<p>so my code for <code>changeLocation(var1,var2)</code> is as follows</p>
+<pre><code>function changeLocation(var1,var2) {
+var zoomlvl = map.zoom;
+var lonLat = new OpenLayers.LonLat(val1,val2).transform(epsg4326, projectTo);
+map.setCenter(lonLat, zoomlvl);
+}
+</code></pre>
+<p>after this function my map immediately goes to that location. where want it to go slowly from previous location to my new location.</p>
+<p>Please help me on this.. Thank you guys..:)</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openlayers" href="/tags/openlayers/" rel="tag" title="see questions tagged 'openlayers'">openlayers</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>14 Aug '15, 06:00</strong>
+</p>
+<img alt="akaAni's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0ae2f284895c331bd9b5bd1e8f96ba88?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11372/akaani">akaAni</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="akaAni has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/44766/">
+                edited
+                <strong>14 Aug '15, 06:34</strong>
+</a>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44766">
+</div>
+<div class="comment-tools" id="comment-tools-44766">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44766-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/44766/openlayers-slowly-navigate-to-the-map-from-one-location-to-another?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/44766/openlayers-slowly-navigate-to-the-map-from-one-location-to-another?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/44766/openlayers-slowly-navigate-to-the-map-from-one-location-to-another?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/44766/openlayers-slowly-navigate-to-the-map-from-one-location-to-another?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="44775"></a>
+<div class="answer accepted-answer" id="answer-container-44775">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44775/up/" id="post-44775-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44775-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/44775/down/" id="post-44775-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/44775/" rel="nofollow" title="akaAni has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Here are a few examples for <strong>animated panning / fly to:</strong></p>
+<ul>
+<li>OL3:
+   <a href="http://openlayers.org/en/v3.1.0/examples/animation.html">http://openlayers.org/en/v3.1.0/examples/animation.html</a></li>
+<li>OL2: <a href="http://dev.openlayers.org/examples/animated_panning.html">http://dev.openlayers.org/examples/animated_panning.html</a></li>
+<li>Mapbox: <a href="https://www.mapbox.com/mapbox-gl-js/example/flyto/">https://www.mapbox.com/mapbox-gl-js/example/flyto/</a></li>
+</ul>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/44775/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>15 Aug '15, 10:40</strong>
+</p>
+<img alt="mmd's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/264d84ab05b942224b05960903eba7a7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8708/mmd">mmd</a><br/>
+<span class="score" title="5682 reputation points"><span class="">5.7k</span></span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="53 badges"><span class="silver">●</span><span class="badgecount">53</span></span><span title="88 badges"><span class="bronze">●</span><span class="badgecount">88</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mmd has 44 accepted answers">37%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/44775/">
+                edited
+                <strong>15 Aug '15, 10:42</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44775">
+<a name="44776"></a>
+<div class="comment" id="comment-44776">
+<div class="comment-score" id="post-44776-score"></div>
+<div class="comment-text"><p>about the mapbox solution (or even the OL or leafletjs solution):</p>
+<p>is there any software (except GoogleEarth!) or webservice that can display this smooth zoom out and zoom in on an OSM based map, and that can capture or render a video clip from this?</p></div>
+<div class="comment-info" id="comment-44776-info">
+<span class="comment-age">(15 Aug '15, 13:38)</span>
+<a class="comment-user userinfo" href="/users/99/stephan75">stephan75</a>
+</div>
+</div>
+<a name="44812"></a>
+<div class="comment" id="comment-44812">
+<div class="comment-score" id="post-44812-score"></div>
+<div class="comment-text"><p>Thank you very much......</p></div>
+<div class="comment-info" id="comment-44812-info">
+<span class="comment-age">(19 Aug '15, 05:14)</span>
+<a class="comment-user userinfo" href="/users/11372/akaani">akaAni</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-44775">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44775-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/44766/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="srIRzSmzFTRL6faOb9ehfKfMAhZHokuz"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

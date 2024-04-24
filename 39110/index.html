@@ -1,0 +1,140 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/39110/how-do-i-study-poi-density-in-osm">How do I study POI density in OSM?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/39110/up/" id="post-39110-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-39110-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/39110/down/" id="post-39110-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/39110/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Given the question: Which location has the most of a specific POI mapped in OSM per area?   If I load OSM data into PostgreSQL, can it answer that type of query?</p>
+<p>A more specific example would be "Where in the US does OSM contain the most park benches per square mile?"</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-density" href="/tags/density/" rel="tag" title="see questions tagged 'density'">density</a>
+<a class="post-tag tag-link-poi" href="/tags/poi/" rel="tag" title="see questions tagged 'poi'">poi</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>07 Dec '14, 03:27</strong>
+</p>
+<img alt="Mike%20N's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1dd5f61a81b99dd54ec6f33d96aa38b2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/21/mike-n">Mike N</a><br/>
+<span class="score" title="2926 reputation points"><span class="">2.9k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="22 badges"><span class="silver">●</span><span class="badgecount">22</span></span><span title="54 badges"><span class="bronze">●</span><span class="badgecount">54</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Mike N has 16 accepted answers">17%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-39110">
+<a name="39123"></a>
+<div class="comment" id="comment-39123">
+<div class="comment-score" id="post-39123-score"></div>
+<div class="comment-text"><p>Did you try <a href="http://osmatrix.uni-hd.de/">http://osmatrix.uni-hd.de/</a> ?</p></div>
+<div class="comment-info" id="comment-39123-info">
+<span class="comment-age">(07 Dec '14, 20:33)</span>
+<a class="comment-user userinfo" href="/users/4984/iii">iii</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-39110">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-39110-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/39110/how-do-i-study-poi-density-in-osm?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/39110/how-do-i-study-poi-density-in-osm?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/39110/how-do-i-study-poi-density-in-osm?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/39110/how-do-i-study-poi-density-in-osm?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="39124"></a>
+<div class="answer accepted-answer" id="answer-container-39124">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/39124/up/" id="post-39124-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-39124-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/39124/down/" id="post-39124-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/39124/" rel="nofollow" title="Mike N has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>That kind of question is generally answered with a "heat map" or "hot spot" analysis in GIS (Geographical Information System) terminology.</p>
+<p>QGIS or ArcGIS can do that for you, once you have the data in some kind of GIS ready format (database or shapefile):</p>
+<p><strong>QGIS - Heat Map plugin:</strong>
+<a href="http://docs.qgis.org/2.0/en/docs/user_manual/plugins/plugins_heatmap.html">http://docs.qgis.org/2.0/en/docs/user_manual/plugins/plugins_heatmap.html</a></p>
+<p><strong>ArcGIS - Optimized Hot Spot Analysis (Spatial Statistics):</strong>
+<a href="http://resources.arcgis.com/en/help/main/10.2/index.html#//005p00000058000000">http://resources.arcgis.com/en/help/main/10.2/index.html#//005p00000058000000</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/39124/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>07 Dec '14, 21:20</strong>
+</p>
+<img alt="mboeringa's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/dc8a1ef54d3e25744ee52d1ad1459a81?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9580/mboeringa">mboeringa</a><br/>
+<span class="score" title="1542 reputation points"><span class="">1.5k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="15 badges"><span class="silver">●</span><span class="badgecount">15</span></span><span title="27 badges"><span class="bronze">●</span><span class="badgecount">27</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mboeringa has 4 accepted answers">9%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-39124">
+</div>
+<div class="comment-tools" id="comment-tools-39124">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-39124-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/39110/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="QMEoB5UTjYXderhZ3O93pltEsksfixXc"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

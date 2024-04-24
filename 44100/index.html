@@ -1,0 +1,141 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/44100/is-it-possible-to-have-maxspeed-for-a-node">Is it possible to have maxspeed for a node ?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44100/up/" id="post-44100-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44100-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/44100/down/" id="post-44100-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/44100/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi All,</p>
+<p>My idea is to calculate the max speed by using the open street apis giving latitude and longitude as inputs
+I am able to do it when the osm type is "way" . But for some of the latitude and longitude the osm type returned is "node" instead of "way" (It may be relation also) for which i am not able to calculate the max speed . Is there a possibility that a particular node can have a max speed associated ?</p>
+<p>Any thoughts ? </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-a" href="/tags/a/" rel="tag" title="see questions tagged 'a'">a</a>
+<a class="post-tag tag-link-node" href="/tags/node/" rel="tag" title="see questions tagged 'node'">node</a>
+<a class="post-tag tag-link-maxspeed" href="/tags/maxspeed/" rel="tag" title="see questions tagged 'maxspeed'">maxspeed</a>
+<a class="post-tag tag-link-for" href="/tags/for/" rel="tag" title="see questions tagged 'for'">for</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>10 Jul '15, 08:19</strong>
+</p>
+<img alt="Gauravk's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f5272d3a2e54ebca28981adbb4a3105f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11034/gauravk">Gauravk</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Gauravk has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44100">
+</div>
+<div class="comment-tools" id="comment-tools-44100">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44100-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/44100/is-it-possible-to-have-maxspeed-for-a-node?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/44100/is-it-possible-to-have-maxspeed-for-a-node?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/44100/is-it-possible-to-have-maxspeed-for-a-node?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/44100/is-it-possible-to-have-maxspeed-for-a-node?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="44102"></a>
+<div class="answer" id="answer-container-44102">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44102/up/" id="post-44102-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44102-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/44102/down/" id="post-44102-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Which API are you using exactly? You shouldn't use the <a href="https://wiki.openstreetmap.org/wiki/API">main API</a> for such queries, instead use <a href="https://wiki.openstreetmap.org/wiki/Overpass_API">Overpass API</a> which is both faster and more flexible.</p>
+<p>With Overpass API you can specify the types of <a href="https://wiki.openstreetmap.org/wiki/Elements">elements</a> to query for. This means you can query just for ways if you like, see an <a href="http://overpass-turbo.eu/s/alx">example on overpass turbo</a>.</p>
+<p>For answering your original question: A <a href="http://wiki.openstreetmap.org/wiki/Key:maxspeed">maxspeed tag</a> on a node doesn't really make sense because it lacks one important information: where does it start and where does it end? So this is no typical tagging scheme and can be completely ignored. The only useful meaning is combining it with a <a href="https://wiki.openstreetmap.org/wiki/Key:traffic_sign">traffic_sign tag</a>. But in this case it mainly refers to a traffic sign which is mostly useful for other mappers and less useful for routers.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/44102/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>10 Jul '15, 11:09</strong>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="scai has 168 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44102">
+<a name="44116"></a>
+<div class="comment" id="comment-44116">
+<div class="comment-score" id="post-44116-score"></div>
+<div class="comment-text"><p>Thanks for your response.</p>
+<p>I use <a href="http://nominatim.openstreetmap.org/reverse">http://nominatim.openstreetmap.org/reverse</a> to get the osm_id by giving the latitude and longitude</p>
+<p>Then using <a href="http://overpass-api.de/api/interpreter?data=way(osm_id);out;">http://overpass-api.de/api/interpreter?data=way(osm_id);out;</a> i get the maxspeed or highway type only if the first url gives a "way" type .</p></div>
+<div class="comment-info" id="comment-44116-info">
+<span class="comment-age">(10 Jul '15, 14:43)</span>
+<a class="comment-user userinfo" href="/users/11034/gauravk">Gauravk</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-44102">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44102-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/44100/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="AcbwXvaGDGPWndTETEIRGTjREmAvFmIQ"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

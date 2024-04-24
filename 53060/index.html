@@ -1,0 +1,293 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/53060/exporting-to-shapefiles">exporting to shapefiles</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/53060/up/" id="post-53060-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-53060-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/53060/down/" id="post-53060-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/53060/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I want to export powerline location information for Oman that I see in OpenStreetMap as shapefiles.  How do I do that.  Those powerlines do not seem to be in the gcc-latest-free.shp files available at Geofabrik downloads.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-shapefile" href="/tags/shapefile/" rel="tag" title="see questions tagged 'shapefile'">shapefile</a>
+<a class="post-tag tag-link-export" href="/tags/export/" rel="tag" title="see questions tagged 'export'">export</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Nov '16, 21:18</strong>
+</p>
+<img alt="McGradyM's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1cddf3e689b6d0239e07cf264240885f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13009/mcgradym">McGradyM</a><br/>
+<span class="score" title="17 reputation points">17</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="McGradyM has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-53060">
+</div>
+<div class="comment-tools" id="comment-tools-53060">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-53060-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/53060/exporting-to-shapefiles?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/53060/exporting-to-shapefiles?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/53060/exporting-to-shapefiles?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/53060/exporting-to-shapefiles?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="53062"></a>
+<div class="answer" id="answer-container-53062">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/53062/up/" id="post-53062-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-53062-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/53062/down/" id="post-53062-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>A simple way to do this is using Overpass Turbo. For example, <a href="http://overpass-turbo.eu/s/keu">this query</a> was generated using the Assistant and typing "power=tower in Oman". You can easily adapt the query to get the lines themselves. Just <a href="https://wiki.openstreetmap.org/wiki/Power_lines">check the wiki</a> to see what exactly you need.
+You can then export the data to GeoJSON, which you can drag and drop to QGIS. If you really want to use shapefiles, you can simply save as shapefile in QGIS.
+There is built in support in QGIS (and also the QuickOSM plugin) to do the same without going over a website.</p>
+<p>Of course, if you want to do something more advanced, Jochen's answer is more interesting.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/53062/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Nov '16, 08:56</strong>
+</p>
+<img alt="joost%20schouppe's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1df835d513b1282e0edd7405d29cd8d9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10142/joost-schouppe">joost schouppe</a><br/>
+<span class="score" title="3427 reputation points"><span class="">3.4k</span></span><span title="24 badges"><span class="badge1">●</span><span class="badgecount">24</span></span><span title="50 badges"><span class="silver">●</span><span class="badgecount">50</span></span><span title="87 badges"><span class="bronze">●</span><span class="badgecount">87</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="joost schouppe has 9 accepted answers">12%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-53062">
+<a name="53067"></a>
+<div class="comment" id="comment-53067">
+<div class="comment-score" id="post-53067-score"></div>
+<div class="comment-text"><p>OK.  Thanks.  Maybe I am missing something obvious and easy.  The map key in OSM says that the power lines they show are "cable cars or chair lifts", so maybe the available shape files are named as such.  Anyway, between the two answers, I've got a number of ways forward. Thanks</p></div>
+<div class="comment-info" id="comment-53067-info">
+<span class="comment-age">(22 Nov '16, 10:34)</span>
+<a class="comment-user userinfo" href="/users/13009/mcgradym">McGradyM</a>
+</div>
+</div>
+<a name="53097"></a>
+<div class="comment" id="comment-53097">
+<div class="comment-score" id="post-53097-score">1</div>
+<div class="comment-text"><p>Yeah, our map key is far from perfect. Ski lifts actually do look like that, it's just that power lines are missing in the map key. There is way more visualized on the map than could fit in a normal sized map key. If you want to know what kind of thing you see on the map, you can try clicking on it with the question mark button (below the map key button). What I do more often is click "Map data" in the Layers button. Then all objects become clickable. With either option, you can then see the raw data behind the thing you see on the map. Then hit the wiki to learn more about it.</p></div>
+<div class="comment-info" id="comment-53097-info">
+<span class="comment-age">(24 Nov '16, 13:49)</span>
+<a class="comment-user userinfo" href="/users/10142/joost-schouppe">joost schouppe</a>
+</div>
+</div>
+<a name="53126"></a>
+<div class="comment" id="comment-53126">
+<div class="comment-score" id="post-53126-score"></div>
+<div class="comment-text"><p>Thanks.  That helps.</p></div>
+<div class="comment-info" id="comment-53126-info">
+<span class="comment-age">(26 Nov '16, 10:43)</span>
+<a class="comment-user userinfo" href="/users/13009/mcgradym">McGradyM</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-53062">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-53062-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="53061"></a>
+<div class="answer" id="answer-container-53061">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/53061/up/" id="post-53061-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-53061-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/53061/down/" id="post-53061-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>There are many ways of doing this, they all have their advantages and disadvantages. A lot depends on the amount of data you are dealing with (whole planet vs. small extract) and the system and skills you have. If you are familiar with SQL/PostGIS, for instance, you can use one of the PostGIS importers (like osm2pgsql or imposm) to import OSM data into a PostGIS database and then export into Shapefiles. If you like command lines, try ogr2ogr. If you need something more custom and know C++, you can write your own exporter based on <a href="https://github.com/osmcode/osm-gis-export.">https://github.com/osmcode/osm-gis-export.</a> For smaller files, you can build something with use node-osmium, see the demo here: <a href="https://github.com/osmcode/node-osmium/tree/master/demo/converter.">https://github.com/osmcode/node-osmium/tree/master/demo/converter.</a></p>
+<p><a href="http://wiki.openstreetmap.org/wiki/Shapefiles">http://wiki.openstreetmap.org/wiki/Shapefiles</a> has more options.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/53061/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Nov '16, 08:20</strong>
+</p>
+<img alt="Jochen%20Topf's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2d4dfcdcde73aa5e2ffa4a9b3a7cb51d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/112/jochen-topf">Jochen Topf</a><br/>
+<span class="score" title="5244 reputation points"><span class="">5.2k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="50 badges"><span class="silver">●</span><span class="badgecount">50</span></span><span title="74 badges"><span class="bronze">●</span><span class="badgecount">74</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jochen Topf has 32 accepted answers">31%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-53061">
+<a name="53066"></a>
+<div class="comment" id="comment-53066">
+<div class="comment-score" id="post-53066-score"></div>
+<div class="comment-text"><p>Thanks.  I'll probably nose around some more, and end up asking someone with more skill.  That would be the fastest.</p></div>
+<div class="comment-info" id="comment-53066-info">
+<span class="comment-age">(22 Nov '16, 10:30)</span>
+<a class="comment-user userinfo" href="/users/13009/mcgradym">McGradyM</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-53061">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-53061-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="53235"></a>
+<div class="answer" id="answer-container-53235">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/53235/up/" id="post-53235-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-53235-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/53235/down/" id="post-53235-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>A little bit more explanation to <a href="http://help.openstreetmap.org/users/2850/joostenmies">@joost</a>-schouppe answer. 
+First you need to find out "Oman" or any other region's OSM relation id.</p>
+<p>Use this query in Overpass Turbo</p>
+<pre><code>[out:json][timeout:900];
+// get a few areas into .myArea
+// you can add or remove an area by simply adding or removing
+// one line here.
+
+(
+{{geocodeArea:"Oman"}};
+)-&gt;.myArea;
+
+// display .myArea This can be replaced by any query
+// on the objects in .myArea
+
+rel(pivot.myArea);
+
+// print results
+out geom;
+
+{{style:
+node{opacity:0;fill-opacity:0}
+}}
+</code></pre>
+<p>Now once you know the OSM relation id then you can extract any layer easily with overpass API.
+OSM relation id for "Oman" is "305138"</p>
+<p>Here is curl command to extract power line using <a href="http://wiki.openstreetmap.org/wiki/Overpass_API/Language_Guide#Area_clauses">Area clause</a> of overpass API </p>
+<pre><code>curl \
+  -H "Host: overpass-api.de" -H "Content-Type: text/xml"  \
+  -d '(relation["route"="power"](area:3600305138););(._;&gt;;);out body;'  \
+  <a href="http://overpass-api.de/api/interpreter">http://overpass-api.de/api/interpreter</a>  \
+  -o powerline.osm
+</code></pre>
+<p>Now you can use <a href="http://wiki.openstreetmap.org/wiki/OGR">ogr2ogr</a> to convert OSM to shapefile.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/53235/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Dec '16, 05:35</strong>
+</p>
+<img alt="Gagan's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/39d75f04e1a21ba653b41ac75ec1b026?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12655/gagan">Gagan</a><br/>
+<span class="score" title="305 reputation points">305</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="15 badges"><span class="bronze">●</span><span class="badgecount">15</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Gagan has 2 accepted answers">14%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-53235">
+</div>
+<div class="comment-tools" id="comment-tools-53235">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-53235-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/53060/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="hpNhBD57nvkOc3I96Af2YOD7QMxrXNvu"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

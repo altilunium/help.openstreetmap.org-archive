@@ -1,0 +1,142 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/82955/using-routing-based-on-past-years">using routing based on past years</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/82955/up/" id="post-82955-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-82955-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/82955/down/" id="post-82955-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/82955/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi 
+I am trying to route some locations using Python code. However I want to use the routes if I was using the infrastructure available in 2010. How can I do this? 
+i.e. Either calling an old version of a map (say a 2012 extraction - and how can I call this in my code?) or by restricting new routes (how to code that a specific route that is using was not there in 2012) ?</p>
+<p>thanks!</p>
+<pre><code>def get_route(pickup_lon, pickup_lat, dropoff_lon, dropoff_lat):
+
+loc = "{},{};{},{}".format(pickup_lon, pickup_lat, dropoff_lon, dropoff_lat)
+url = "https://router.project-osrm.org//route/v1/driving/"
+r = requests.get(url + loc) 
+if r.status_code!= 200:
+    return {}
+
+res = r.json()   
+routes = polyline.decode(res['routes'][0]['geometry'])
+start_point = [res['waypoints'][0]['location'][1], res['waypoints'][0]['location'][0]]
+end_point = [res['waypoints'][1]['location'][1], res['waypoints'][1]['location'][0]]
+distance = res['routes'][0]['distance']
+out= pd.DataFrame(routes)
+return out
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-old_routes" href="/tags/old_routes/" rel="tag" title="see questions tagged 'old_routes'">old_routes</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>05 Jan '22, 11:33</strong>
+</p>
+<img alt="Alejandra's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1b437dd173cdeec0e534f7a2d2a99d3e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/21232/alejandra">Alejandra</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Alejandra has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-82955">
+</div>
+<div class="comment-tools" id="comment-tools-82955">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-82955-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/82955/using-routing-based-on-past-years?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/82955/using-routing-based-on-past-years?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/82955/using-routing-based-on-past-years?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/82955/using-routing-based-on-past-years?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="82956"></a>
+<div class="answer" id="answer-container-82956">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/82956/up/" id="post-82956-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-82956-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/82956/down/" id="post-82956-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>For this task, you cannot rely on a routing engine that someone else runs for you; you need to run the routing engine yourself. First grab the "history" file of the area you are interested in. Then, use the <code>osmium</code> utility to extract from this history file a snapshot for the day you want to compute the routing for. Then, set up a routing engine with this snapshot (<a href="https://github.com/Project-OSRM">https://github.com/Project-OSRM</a> for the OSRM you seem to be using). This might require substantial resources if running for a large area (possibly more than 128 GB of RAM to compute a world-wide graph). Then finally, you can run your code against your local routing server (i.e. replace router.project-osrm.org with localhost:5001 or so).</p>
+<p>It is important to understand that if you extract a 2010 snapshot from OSM data, you will see what OSM knew about the world in 2010, not what the world was like in 2010. For some countries, the 2010 road network will be extremely patchy simply because OSM was not widely used in that country at the time.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/82956/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>05 Jan '22, 11:54</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-82956">
+</div>
+<div class="comment-tools" id="comment-tools-82956">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-82956-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/82955/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="yt8WH1M54L26rH5rES8oZAI2N7Y6ADhP"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,292 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/37955/deleteddisjoint-waterways-how-to-find">Deleted/disjoint waterways - how to find?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/37955/up/" id="post-37955-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-37955-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/37955/down/" id="post-37955-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/37955/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Is there a way of finding <em>waterways</em> which have been deleted during the redaction process? (usually waterway=stream)</p>
+<p>I have been checking waterways using OSMi, and have found a lot of them deleted by the redaction bot during the license change in 2012. Now, this means that the water network is disjointed in the map; unlike highways, this has gone unnoticed for so long that I can't find any post-redaction QA tools.</p>
+<p>An example to clarify: </p>
+<ul>
+<li>2012: situation out in the terrain: Stream A flows into Stream B; Stream B flows into River C.</li>
+<li>situation in OSM: everything mapped, but the mapper of Stream B did not agree with the new license.</li>
+<li>
+<p>the redaction bot cometh, and deletes Stream B (this is expected behavior, and I'm not asking about this)</p>
+</li>
+<li>
+<p>2014: in the terrain, Stream A still flows into Stream B, which flows into River C</p>
+</li>
+<li>in the map, Stream A now does not flow into anything, it just ends; it is not connected in any way with River C</li>
+<li>I want to find these situations and resurvey, so that OSM mirrors reality again :)</li>
+<li>This seems to be a very common occurence around [50N,15E], so I'm looking for something more robust than "just look at the map and see if it seems weird"</li>
+<li>(Some sort of graph traversal comes to mind?)</li>
+</ul>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-waterway" href="/tags/waterway/" rel="tag" title="see questions tagged 'waterway'">waterway</a>
+<a class="post-tag tag-link-redaction" href="/tags/redaction/" rel="tag" title="see questions tagged 'redaction'">redaction</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 Oct '14, 21:41</strong>
+</p>
+<img alt="Piskvor's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8200fa5c0cc8feb096558c5972a6191c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9641/piskvor">Piskvor</a><br/>
+<span class="score" title="1266 reputation points"><span class="">1.3k</span></span><span title="9 badges"><span class="badge1">●</span><span class="badgecount">9</span></span><span title="15 badges"><span class="silver">●</span><span class="badgecount">15</span></span><span title="35 badges"><span class="bronze">●</span><span class="badgecount">35</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Piskvor has 9 accepted answers">37%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/37955/">
+                edited
+                <strong>27 Oct '14, 10:33</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-37955">
+</div>
+<div class="comment-tools" id="comment-tools-37955">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-37955-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/37955/deleteddisjoint-waterways-how-to-find?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/37955/deleteddisjoint-waterways-how-to-find?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/37955/deleteddisjoint-waterways-how-to-find?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/37955/deleteddisjoint-waterways-how-to-find?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="37959"></a>
+<div class="answer accepted-answer" id="answer-container-37959">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/37959/up/" id="post-37959-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-37959-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/37959/down/" id="post-37959-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/37959/" rel="nofollow" title="Piskvor has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>As far as I know we had post-redaction tools which showed where the bot was active, but I currently do not remember them, and I guess they may be shut down already (redaction is quite some time ago).</p>
+<p>These <em>general</em> QA tools may help: (the one which you already used …) <a href="http://tools.geofabrik.de/osmi/?view=water&amp;lon=90.84424&amp;lat=15.65447&amp;zoom=1&amp;overlays=bodies_of_water,broken_bow,vmap0_rivers,long_rivers,waterways_river,waterways_stream,waterways_drain,waterways_canal,waterways_riverbank,waterways_other,waterways_width,waterways_in_tunnels,waterways_on_bridges,waterways_without_names,waterway_nodes,coastline,simple_islands,coastline_nodes,rivermouths,coastline_not_simple,coastline_unconnected">OSMI for waterways</a> (makes it much easier to see and follow the waterways) and (for central/eastern Europe around Germany) <a href="http://www.kompf.de/gps/rivermap.html">Martin Kompf's rivermap</a> (disjoint rivers are grey) may help.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/37959/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Oct '14, 23:21</strong>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="aseerel4c26 has 169 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/37959/">
+                edited
+                <strong>27 Oct '14, 13:00</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-37959">
+<a name="37994"></a>
+<div class="comment" id="comment-37994">
+<div class="comment-score" id="post-37994-score">2</div>
+<div class="comment-text"><p>I have initially discovered the issue while using OSMi; the rivermap seems to be the tool I'm looking for. Thank you!</p></div>
+<div class="comment-info" id="comment-37994-info">
+<span class="comment-age">(27 Oct '14, 10:22)</span>
+<a class="comment-user userinfo" href="/users/9641/piskvor">Piskvor</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-37959">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-37959-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="47029"></a>
+<div class="answer answered-by-owner" id="answer-container-47029">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/47029/up/" id="post-47029-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-47029-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/47029/down/" id="post-47029-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>A new set of inspections is now available in the OSMi Water layer, which also addresses this type of error: <a href="http://tools.geofabrik.de/osmi/?view=water">http://tools.geofabrik.de/osmi/?view=water</a></p>
+<p>( See also the blog post: <a href="http://blog.geofabrik.de/en/?p=323">http://blog.geofabrik.de/en/?p=323</a> )</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/47029/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>07 Dec '15, 11:51</strong>
+</p>
+<img alt="Piskvor's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8200fa5c0cc8feb096558c5972a6191c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9641/piskvor">Piskvor</a><br/>
+<span class="score" title="1266 reputation points"><span class="">1.3k</span></span><span title="9 badges"><span class="badge1">●</span><span class="badgecount">9</span></span><span title="15 badges"><span class="silver">●</span><span class="badgecount">15</span></span><span title="35 badges"><span class="bronze">●</span><span class="badgecount">35</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Piskvor has 9 accepted answers">37%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-47029">
+</div>
+<div class="comment-tools" id="comment-tools-47029">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-47029-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="37957"></a>
+<div class="answer" id="answer-container-37957">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/37957/up/" id="post-37957-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-37957-score" title="current number of votes">
+    -1
+</div>
+<a class="ajax-command post-vote down" href="/vote/37957/down/" id="post-37957-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hi Piskvor, if the rivers or streams are removed by the BOT it has to be. The mappers who made them in OSM failed to subscribe to the new rules so the DATA could not be continued. I dont expect them to get a restoration. It would create the unlicensed import of DATA.
+Could you still provide a link to the region ?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/37957/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Oct '14, 23:01</strong>
+</p>
+<img alt="Hendrikklaas's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/742e93034cd38ad243f7ab26f350b659?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3443/hendrikklaas">Hendrikklaas</a><br/>
+<span class="score" title="9286 reputation points"><span class="">9.3k</span></span><span title="207 badges"><span class="badge1">●</span><span class="badgecount">207</span></span><span title="238 badges"><span class="silver">●</span><span class="badgecount">238</span></span><span title="387 badges"><span class="bronze">●</span><span class="badgecount">387</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Hendrikklaas has 39 accepted answers">5%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/37957/">
+                edited
+                <strong>25 Oct '14, 23:02</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-37957">
+<a name="37958"></a>
+<div class="comment" id="comment-37958">
+<div class="comment-score" id="post-37958-score">4</div>
+<div class="comment-text"><p>as I understand it, the question is not about the undeletion/reverting of the bot but to just know where approximately the bot edited waterways and to re-map the waterways then from scratch (with own survey or bing). This may be okay, even without a agreement of the original mappers.</p></div>
+<div class="comment-info" id="comment-37958-info">
+<span class="comment-age">(25 Oct '14, 23:11)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+<a name="37993"></a>
+<div class="comment" id="comment-37993">
+<div class="comment-score" id="post-37993-score"></div>
+<div class="comment-text"><p>Thank you, I may have been unclear: I'm not trying to restore the deleted <em>data</em>; I'm quite aware they were deleted for a reason. I'm trying to find what <em>really existing</em> features were deleted, so I can resurvey them.</p></div>
+<div class="comment-info" id="comment-37993-info">
+<span class="comment-age">(27 Oct '14, 10:21)</span>
+<a class="comment-user userinfo" href="/users/9641/piskvor">Piskvor</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-37957">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-37957-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/37955/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="U5bmiXb08G70cdCeqDhLc7VkRD7NL7WV"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

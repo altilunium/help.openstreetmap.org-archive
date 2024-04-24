@@ -1,0 +1,335 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/6742/available-address-in-osm-fails-in-lookup">Available address in OSM fails in lookup</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/6742/up/" id="post-6742-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-6742-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/6742/down/" id="post-6742-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/6742/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,
+I recognized a strange behavior regarding address lookup. The address "Rheinstraße 33, Munich" is available in OSM and correctly defined by a point. Unfortunately, searching for that address fails and returns available streets in different cities except of Munich, irrespective of the housenumber.
+What is wrong in the looking up for the address database?</p>
+<p>Regards</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-lookup" href="/tags/lookup/" rel="tag" title="see questions tagged 'lookup'">lookup</a>
+<a class="post-tag tag-link-searching" href="/tags/searching/" rel="tag" title="see questions tagged 'searching'">searching</a>
+<a class="post-tag tag-link-address" href="/tags/address/" rel="tag" title="see questions tagged 'address'">address</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>31 Jul '11, 16:34</strong>
+</p>
+<img alt="Robiston's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2f379e02a6e3c82ac534660f98d5780b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1837/robiston">Robiston</a><br/>
+<span class="score" title="36 reputation points">36</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Robiston has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/6742/">
+                edited
+                <strong>31 Jul '11, 18:22</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-6742">
+</div>
+<div class="comment-tools" id="comment-tools-6742">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-6742-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    4 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/6742/available-address-in-osm-fails-in-lookup?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/6742/available-address-in-osm-fails-in-lookup?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/6742/available-address-in-osm-fails-in-lookup?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/6742/available-address-in-osm-fails-in-lookup?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="6859"></a>
+<div class="answer accepted-answer" id="answer-container-6859">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/6859/up/" id="post-6859-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-6859-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/6859/down/" id="post-6859-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/6859/" rel="nofollow" title="Robiston has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This might be yet another case of Nominatim not updating with data from the main map database.</p>
+<p>Nominatim has its own database, which is updated from the main OSM database. Sometimes, this update may lag - in that case Nominatim will search an older version of the OSM data, and may not find things that are visible on the slippy map and in the DB.</p>
+<p>In this case, looking at the history shows that the house number for Rheinstraße 33 was only added on 26 Jul 2011. Searching for e.g. "Rheinstraße 27" works correctly, and this number as added in 2009. So maybe you just need to wait for the update.</p>
+<p><em>Update:</em> Now (March 2012) Nominatim correctly finds "Rheinstraße 33, Munich". So it was probably just an updating problem.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/6859/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Aug '11, 23:31</strong>
+</p>
+<img alt="sleske's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/6c2dd6a39d3f38f1bb47a8c1fe8325e2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/666/sleske">sleske</a><br/>
+<span class="score" title="4090 reputation points"><span class="">4.1k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="56 badges"><span class="silver">●</span><span class="badgecount">56</span></span><span title="78 badges"><span class="bronze">●</span><span class="badgecount">78</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="sleske has 19 accepted answers">24%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/6859/">
+                edited
+                <strong>14 Mar '12, 15:50</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-6859">
+</div>
+<div class="comment-tools" id="comment-tools-6859">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-6859-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="6744"></a>
+<div class="answer" id="answer-container-6744">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/6744/up/" id="post-6744-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-6744-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/6744/down/" id="post-6744-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It seems that you have entered that address in the search field of the main site of <a href="http://osm.org">osm.org</a></p>
+<p>The search engine behind that is called <a href="http://wiki.openstreetmap.org/wiki/Nominatim">Nominatim</a>. You can have a look at all related pages in the OSM wiki to find possible cases where search result is similar to your one.</p>
+<p>Sometimes it seems that the Nominatim methods to find a place are a little bit weird. But then we can only collect test cases to find out where the error can be located.</p>
+<p>So try to find more hints in the wiki, or here at <a href="http://help.osm.org">help.osm.org</a> by searchimg for text or tags "nominatim".</p>
+<p>Or have a look at the detailed search result of Nominatim when you go to its <a href="http://nominatim.openstreetmap.org/">website</a></p>
+<p>PS: I assume that your address data is already present in the raw OSM data for a longer time, because you always have to pay attention of the date when the Nominatim search base has been generated from.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/6744/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>31 Jul '11, 19:28</strong>
+</p>
+<img alt="stephan75's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/245b73d4390c3408fe3c6da759b9897f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/99/stephan75">stephan75</a><br/>
+<span class="score" title="12642 reputation points"><span class="">12.6k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="56 badges"><span class="silver">●</span><span class="badgecount">56</span></span><span title="210 badges"><span class="bronze">●</span><span class="badgecount">210</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="stephan75 has 37 accepted answers">6%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/6744/">
+                edited
+                <strong>02 Aug '11, 15:56</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-6744">
+</div>
+<div class="comment-tools" id="comment-tools-6744">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-6744-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="6790"></a>
+<div class="answer" id="answer-container-6790">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/6790/up/" id="post-6790-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-6790-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/6790/down/" id="post-6790-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This seems to be similar to <a href="http://help.openstreetmap.org/questions/5819/added-street-doesnt-show-up-on-search">this question</a>.</p>
+<p>Currently there seems to be a problem with nominatim not importing updates for some weeks.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/6790/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>02 Aug '11, 16:13</strong>
+</p>
+<img alt="dieterdreist's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f09c0b7a655fed386e070e036e2da248?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/936/dieterdreist">dieterdreist</a><br/>
+<span class="score" title="3677 reputation points"><span class="">3.7k</span></span><span title="11 badges"><span class="badge1">●</span><span class="badgecount">11</span></span><span title="35 badges"><span class="silver">●</span><span class="badgecount">35</span></span><span title="67 badges"><span class="bronze">●</span><span class="badgecount">67</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="dieterdreist has 4 accepted answers">3%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/6790/">
+                edited
+                <strong>02 Aug '11, 16:34</strong>
+</a>
+</p>
+<img alt="banoffee's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b95e1b5cb818be577b5561688a50368c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1620/banoffee">banoffee</a><br/>
+<span class="score" title="884 reputation points">884</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="14 badges"><span class="silver">●</span><span class="badgecount">14</span></span><span title="21 badges"><span class="bronze">●</span><span class="badgecount">21</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-6790">
+<a name="6792"></a>
+<div class="comment" id="comment-6792">
+<div class="comment-score" id="post-6792-score"></div>
+<div class="comment-text"><p>I think you copy-pasted the wrong link... I've updated it to something appropriate with my newly-available "edit" link. Hope that's ok?</p></div>
+<div class="comment-info" id="comment-6792-info">
+<span class="comment-age">(02 Aug '11, 16:35)</span>
+<a class="comment-user userinfo" href="/users/1620/banoffee">banoffee</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-6790">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-6790-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="6858"></a>
+<div class="answer" id="answer-container-6858">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/6858/up/" id="post-6858-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-6858-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/6858/down/" id="post-6858-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>See <a href="http://help.openstreetmap.org/questions/642/issues-with-httpnominatimopenstreetmaporg">this question</a>. Quote: "This is probably not the correct place to report bugs in services. For errors in Nominatim (and most other Open Street Map software) you are best off using the <a href="http://trac.openstreetmap.org/newticket?component=nominatim">Open Street Map bug tracker</a>".</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/6858/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Aug '11, 22:36</strong>
+</p>
+<img alt="mmehl's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a1156d45a55699715b80fc3cadd0c8d7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1453/mmehl">mmehl</a><br/>
+<span class="score" title="565 reputation points">565</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="11 badges"><span class="silver">●</span><span class="badgecount">11</span></span><span title="18 badges"><span class="bronze">●</span><span class="badgecount">18</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mmehl has 3 accepted answers">15%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-6858">
+<a name="6867"></a>
+<div class="comment" id="comment-6867">
+<div class="comment-score" id="post-6867-score"></div>
+<div class="comment-text"><p>Oh, this was obviously not really a bug report but a question about the updating procedure itself. I was wondering, what is influencing the lag between OSM update and Nominatim update. Anyway, the bug tracker is bookmarked for any potential upcoming bugs. Thank you!</p></div>
+<div class="comment-info" id="comment-6867-info">
+<span class="comment-age">(04 Aug '11, 10:31)</span>
+<a class="comment-user userinfo" href="/users/1837/robiston">Robiston</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-6858">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-6858-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/6742/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="a8tKDzg2ijn49QlmIK8TrqNAjEGVqMVn"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

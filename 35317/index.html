@@ -1,0 +1,323 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/35317/local-tile-server-from-packages-404-when-displaying-tiles">Local Tile Server from Packages: 404 when displaying tiles</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/35317/up/" id="post-35317-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-35317-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/35317/down/" id="post-35317-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/35317/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi Everyboy,</p>
+<p>Thanks for reading this and for any help you can provide!</p>
+<p>I am trying to setup my own tile server on Ubuntu 14.04 following the following guide <a href="http://www.distrogeeks.com/build-your-own-tile-server-ubuntu/2/">link text</a>.</p>
+<p>I believe i followed the instructions and everything completed without error.  However, i am getting 404 responses when trying to download tiles (both through slippymap and through /osm_tiles/0/0/0.png).</p>
+<p>Looking at the comments on that guide, it seems lots of people are having a similar problem to me but no solutions have been posted :-(</p>
+<p>Any help would be greatly appreciated!</p>
+<p><strong>Commands and log output</strong> </p>
+<p>I have gone to the mod_tile/renderd status page at /mod_tile/.  It displays correctly but shows 0 tiles have been rendered.</p>
+<p>I have started renderd in the forground to watch its messages.  There where no obvious error messages but there are also no messages displayed when i request tiles.</p>
+<pre> <code>
+chris@www:~$ renderd -f
+renderd[2355]: Rendering daemon started
+renderd[2355]: Initiating reqyest_queue
+renderd[2355]: Parsing section renderd
+renderd[2355]: Parsing render section 0
+renderd[2355]: Parsing section mapnik
+renderd[2355]: Parsing section default
+renderd[2355]: config renderd: unix socketname=/var/run/renderd/renderd.sock
+renderd[2355]: config renderd: num_threads=4
+renderd[2355]: config renderd: num_slaves=0
+renderd[2355]: config renderd: tile_dir=/var/lib/mod_tile
+renderd[2355]: config renderd: stats_file=/var/run/renderd/renderd.stats
+renderd[2355]: config mapnik:  plugins_dir=/usr/lib/mapnik/2.2/input
+renderd[2355]: config mapnik:  font_dir=/usr/share/fonts/truetype/
+renderd[2355]: config mapnik:  font_dir_recurse=1
+renderd[2355]: config renderd(0): Active
+renderd[2355]: config renderd(0): unix socketname=/var/run/renderd/renderd.sock
+renderd[2355]: config renderd(0): num_threads=4
+renderd[2355]: config renderd(0): tile_dir=/var/lib/mod_tile
+renderd[2355]: config renderd(0): stats_file=/var/run/renderd/renderd.stats
+renderd[2355]: config map 0:   name(default) file(/etc/mapnik-osm-carto-data/osm.xml) uri(/osm/) htcp() host()
+renderd[2355]: Initialising unix server socket on /var/run/renderd/renderd.sock
+renderd[2355]: Created server socket 4
+renderd[2355]: Renderd is using mapnik version 2.2.0
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//padauk/Padauk-bold.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//padauk/Padauk.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//padauk/Padauk-bookbold.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//padauk/Padauk-book.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-dejavu/DejaVuSans-Oblique.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-dejavu/DejaVuSans-BoldOblique.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-dejavu/DejaVuSansMono-Oblique.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-dejavu/DejaVuSerifCondensed-BoldItalic.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-dejavu/DejaVuSansCondensed-Bold.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-dejavu/DejaVuSans.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-dejavu/DejaVuSansMono-Bold.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-dejavu/DejaVuSerifCondensed-Italic.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-dejavu/DejaVuSerif-Bold.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-dejavu/DejaVuSansCondensed-BoldOblique.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-dejavu/DejaVuSerif-BoldItalic.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-dejavu/DejaVuSerifCondensed.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-dejavu/DejaVuSerifCondensed-Bold.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-dejavu/DejaVuSansMono-BoldOblique.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-dejavu/DejaVuSansMono.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-dejavu/DejaVuSans-ExtraLight.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-dejavu/DejaVuSans-Bold.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-dejavu/DejaVuSansCondensed-Oblique.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-dejavu/DejaVuSerif-Italic.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-dejavu/DejaVuSerif.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-dejavu/DejaVuSansCondensed.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-khmeros/KhmerOSbattambang.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-khmeros/KhmerOSmuolpali.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-khmeros/KhmerOSmetalchrieng.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-khmeros/KhmerOSfreehand.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-khmeros/KhmerOSmuollight.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-khmeros/KhmerOSmuol.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-khmeros/KhmerOSsiemreap.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-khmeros/KhmerOSfasthand.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-khmeros/KhmerOSbokor.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-khmeros/KhmerOScontent.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//dejavu/DejaVuSans-Oblique.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//dejavu/DejaVuSans-BoldOblique.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//dejavu/DejaVuSansMono-Oblique.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//dejavu/DejaVuSerifCondensed-BoldItalic.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//dejavu/DejaVuSansCondensed-Bold.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//dejavu/DejaVuSans.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//dejavu/DejaVuSansMono-Bold.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//dejavu/DejaVuSerifCondensed-Italic.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//dejavu/DejaVuSerif-Bold.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//dejavu/DejaVuSansCondensed-BoldOblique.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//dejavu/DejaVuSerif-BoldItalic.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//dejavu/DejaVuSerifCondensed.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//dejavu/DejaVuSerifCondensed-Bold.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//dejavu/DejaVuSansMono-BoldOblique.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//dejavu/DejaVuSansMono.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//dejavu/DejaVuSans-ExtraLight.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//dejavu/DejaVuSans-Bold.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//dejavu/DejaVuSansCondensed-Oblique.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//dejavu/DejaVuSerif-Italic.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//dejavu/DejaVuSerif.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//dejavu/DejaVuSansCondensed.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-kannada-fonts/Kedage-t.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-kannada-fonts/Malige-i.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-kannada-fonts/lohit_kn.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-kannada-fonts/Malige-t.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-kannada-fonts/Kedage-i.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-khmeros-core/KhmerOSsys.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-khmeros-core/KhmerOS.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-indic-fonts-core/lohit_bn.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-indic-fonts-core/Pothana2000.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-indic-fonts-core/Vemana.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-indic-fonts-core/gargi.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-indic-fonts-core/lohit_ta.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-indic-fonts-core/MuktiNarrowBold.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-indic-fonts-core/Meera_04.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-indic-fonts-core/Malige-n.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-indic-fonts-core/lohit_hi.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-indic-fonts-core/Kedage-b.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-indic-fonts-core/Rachana_04.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-indic-fonts-core/utkal.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-indic-fonts-core/lohit_gu.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-indic-fonts-core/MuktiNarrow.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-indic-fonts-core/Malige-b.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-indic-fonts-core/Kedage-n.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-indic-fonts-core/Rekha.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//ttf-tamil-fonts/Samyak-Tamil.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//droid/DroidSansJapanese.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//droid/DroidSansArmenian.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//droid/DroidSerif-Regular.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//droid/DroidNaskh-Bold.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//droid/DroidSans-Bold.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//droid/DroidSansEthiopic-Regular.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//droid/DroidSerif-Bold.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//droid/DroidSansHebrew-Regular.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//droid/DroidSansFallbackFull.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//droid/DroidNaskh-Regular.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//droid/DroidSans.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//droid/DroidSerif-BoldItalic.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//droid/DroidSansEthiopic-Bold.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//droid/DroidSansMono.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//droid/DroidSerif-Italic.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//droid/DroidSansThai.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//droid/DroidSansHebrew-Bold.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//droid/DroidSansGeorgian.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//unifont/unifont_sample.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//unifont/unifont.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//arundina/ArundinaSansMono-Oblique.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//arundina/ArundinaSansMono-Bold.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//arundina/ArundinaSerif-Bold.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//arundina/ArundinaSerif.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//arundina/ArundinaSans-BoldOblique.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//arundina/ArundinaSans-Bold.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//arundina/ArundinaSansMono.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//arundina/ArundinaSans-Oblique.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//arundina/ArundinaSans.ttf
+renderd[2355]: DEBUG: Loading font: /usr/share/fonts/truetype//arundina/ArundinaSansMono-BoldOblique.ttf
+Running in foreground mode...
+renderd[2355]: Starting stats thread
+debug: init_storage_backend: initialising file storage backend at: /var/lib/mod_tile
+renderd[2355]: Loading parameterization function for debug: init_storage_backend: initialising file storage backend at: /var/lib/mod_tile
+renderd[2355]: Loading parameterization function for
+
+debug: init_storage_backend: initialising file storage backend at: /var/lib/mod_tile
+renderd[2355]: Loading parameterization function for
+debug: init_storage_backend: initialising file storage backend at: /var/lib/mod_tile
+renderd[2355]: Loading parameterization function for
+
+renderd[2355]: Using web mercator projection settings
+renderd[2355]: Using web mercator projection settings
+renderd[2355]: Using web mercator projection settings
+renderd[2355]: Using web mercator projection settings
+</code></pre>
+<p>ls -la /var/lib/mod_tile shows folder "default" and planet-import-complete; all owned by www-data.</p>
+<pre> <code>
+drwxr-xr-x  3 www-data www-data 4096 Jul 29 19:16 default
+-rw-r--r--  1 www-data www-data    0 Jul 29 22:36 planet-import-complete
+</code></pre>
+<p>Apache 2 shows the following on restart:</p>
+<p><code> </code></p><pre><code>  * Restarting web server apache2                                                [Wed Jul 30 19:04:57.877419 2014] [tile:notice] [pid 2499:tid 140236885788544] Loading tile config default at /osm/ for zooms 0 - 20 from tile directory /var/lib/mod_tile with extension .png and mime type image/png
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+</code></pre><p></p>
+<p>Let me know if there is anything else i can post that would help.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-not_shown" href="/tags/not_shown/" rel="tag" title="see questions tagged 'not_shown'">not_shown</a>
+<a class="post-tag tag-link-renderd" href="/tags/renderd/" rel="tag" title="see questions tagged 'renderd'">renderd</a>
+<a class="post-tag tag-link-mod_tile" href="/tags/mod_tile/" rel="tag" title="see questions tagged 'mod_tile'">mod_tile</a>
+<a class="post-tag tag-link-server" href="/tags/server/" rel="tag" title="see questions tagged 'server'">server</a>
+<a class="post-tag tag-link-tileserver" href="/tags/tileserver/" rel="tag" title="see questions tagged 'tileserver'">tileserver</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>30 Jul '14, 19:20</strong>
+</p>
+<img alt="BobBobson's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ff5ea5be18c6c2bab9d7c1dcbb829bc8?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9346/bobbobson">BobBobson</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="BobBobson has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/35317/">
+                edited
+                <strong>30 Jul '14, 19:21</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-35317">
+</div>
+<div class="comment-tools" id="comment-tools-35317">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-35317-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/35317/local-tile-server-from-packages-404-when-displaying-tiles?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/35317/local-tile-server-from-packages-404-when-displaying-tiles?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/35317/local-tile-server-from-packages-404-when-displaying-tiles?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/35317/local-tile-server-from-packages-404-when-displaying-tiles?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="35323"></a>
+<div class="answer accepted-answer" id="answer-container-35323">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/35323/up/" id="post-35323-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-35323-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/35323/down/" id="post-35323-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/35323/" rel="nofollow" title="BobBobson has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Your renderd claims to serve the default style under /osm:</p>
+<pre><code>renderd[2355]: config map 0:   name(default) file(/etc/mapnik-osm-carto-data/osm.xml) uri(/osm/) htcp() host()
+</code></pre>
+<p>Therefore your tile URL is not /osm_tiles/0/0/0.png but /osm/0/0/0.png.</p>
+<p>If you've done that right and still encounter problems, look at the Apache log file and check if there's maybe a communications problem between mod_tile and renderd.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/35323/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Jul '14, 21:07</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-35323">
+<a name="35325"></a>
+<div class="comment" id="comment-35325">
+<div class="comment-score" id="post-35325-score">2</div>
+<div class="comment-text"><p>Ok, i feel a bit silly now but I'm very happy its working :-) 
+The /osm/ line in the render logs sticks out as clear as day, but I've spent the last two days looking at this and didnt spot it.</p>
+<p>I have updated slippymap accordingly and its working perfectly.  I will post a comment on the tutorial incase the others are  having the same problem.</p>
+<p>Many thanks for your help!</p>
+<p>Bob</p></div>
+<div class="comment-info" id="comment-35325-info">
+<span class="comment-age">(30 Jul '14, 22:14)</span>
+<a class="comment-user userinfo" href="/users/9346/bobbobson">BobBobson</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-35323">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-35323-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/35317/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="KEeTgLRVn6R1A6pNGU3r4MqvHZVuZ9KQ"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

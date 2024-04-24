@@ -1,0 +1,89 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/71442/nominatim-update-suddenly-very-slow">Nominatim update suddenly very slow</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/71442/up/" id="post-71442-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-71442-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/71442/down/" id="post-71442-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/71442/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,<br/>
+We've installed Nominatim with world data on our Kubernetes cluster. It has worked fine for several weeks, but since few days, the update is very very slow (from 4 hours to about 22 hours for the daily update).</p>
+<p>There are no visible errors, but it seems to be stucked on the following requests at the beginning and end of ranks 26 and 30: </p>
+<p>2012915 | nominatim |             | 2019-11-04 09:09:20.100902+00 | active | select geometry_sector,count(<em>) from placex where rank_search = $1 and indexed_status &gt; 0 group by geometry_sector order by geometry_sector<br/>
+ 2049039 | nominatim |             | 2019-11-04 09:09:20.100902+00 | active | select geometry_sector,count(</em>) from placex where rank_search = $1 and indexed_status &gt; 0 group by geometry_sector order by geometry_sector<br/>
+ 2049040 | nominatim |             | 2019-11-04 09:09:20.100902+00 | active | select geometry_sector,count(*) from placex where rank_search = $1 and indexed_status &gt; 0 group by geometry_sector order by geometry_sector</p>
+<p>We currently use Nominatim 3.3.0, postgresql 11.2 (on a separate machine) and postgis 2.5.2<br/>
+Update command : update.php  --import-osmosis --osm2pgsql-cache 5000  </p>
+<p><strong>Postgre:</strong><br/>
+Database is 700GB on SSD<br/>
+cpu: 4*2.3Ghz  <br/>
+memory: 14GB  </p>
+<p><strong>Updater:</strong> <br/>
+cpu: 2*2.3Ghz<br/>
+memory: 8GB    </p>
+<p><strong>Postgre custom parameters:</strong><br/>
+ - "shared_buffers=5GB"<br/>
+ - "effective_cache_size=9GB"<br/>
+ - "maintenance_work_mem=128MB"<br/>
+ - "work_mem=32MB"<br/>
+ - "checkpoint_completion_target=0.9"<br/>
+ - "random_page_cost=1.1"<br/>
+ - "effective_io_concurrency=500" </p>
+<p>Thanks for any idea about why it became suddenly so slow!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-update" href="/tags/update/" rel="tag" title="see questions tagged 'update'">update</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>04 Nov '19, 09:56</strong>
+</p>
+<img alt="web_heredis's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/11eaecb326084f16b4b902fd7867d2e0?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17396/web_heredis">web_heredis</a><br>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="web_heredis has no accepted answers">0%</span>
+</br></br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-71442">
+</div>
+<div class="comment-tools" id="comment-tools-71442">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-71442-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/71442/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="OhqhAogODvEF6Lbsjwp4g8OykBvzDDv1"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

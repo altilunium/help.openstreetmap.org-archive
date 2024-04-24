@@ -1,0 +1,150 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/19525/error-when-try-to-use-nominatim-pgsql-role-www-data-is-not-permitted-to-log-in">error when try to use nominatim pgsql role "www-data" is not permitted to log in</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/19525/up/" id="post-19525-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-19525-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/19525/down/" id="post-19525-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/19525/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>After I installed nominatim when I access <a href="http://localhost/nominatim/search.php">http://localhost/nominatim/search.php</a> I get</p>
+<p>string(19) "pgsql://@/nominatim" object(DB_Error)#2 (8) { ["error_message_prefix"]=&gt; string(0) "" ["mode"]=&gt; int(1) ["level"]=&gt; int(1024) ["code"]=&gt; int(-24) ["message"]=&gt; string(24) "DB Error: connect failed" ["userinfo"]=&gt; string(141) " [nativecode=pg_connect(): Unable to connect to PostgreSQL server: FATAL: role "www-data" is not permitted to log in] </p>
+<p>This deals with www-data role on postrges. But on install I trowed:</p>
+<p>psql -U postgres -c 'create role "www-data"';
+psql -U postgres -d nominatim -c 'GRANT ALL PRIVILEGES ON DATABASE nominatim TO "www-data"';</p>
+<p>Any clue?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-pgsql" href="/tags/pgsql/" rel="tag" title="see questions tagged 'pgsql'">pgsql</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>01 Feb '13, 19:04</strong>
+</p>
+<img alt="mihai%20niculita's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/afa2913bd1ceace5a19edb7f80a43c24?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5532/mihai-niculita">mihai niculita</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mihai niculita has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-19525">
+</div>
+<div class="comment-tools" id="comment-tools-19525">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-19525-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/19525/error-when-try-to-use-nominatim-pgsql-role-www-data-is-not-permitted-to-log-in?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/19525/error-when-try-to-use-nominatim-pgsql-role-www-data-is-not-permitted-to-log-in?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/19525/error-when-try-to-use-nominatim-pgsql-role-www-data-is-not-permitted-to-log-in?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/19525/error-when-try-to-use-nominatim-pgsql-role-www-data-is-not-permitted-to-log-in?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="19530"></a>
+<div class="answer answered-by-owner" id="answer-container-19530">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/19530/up/" id="post-19530-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-19530-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/19530/down/" id="post-19530-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I manged to resolve it by trowing: </p>
+<p>psql -U postgres -c 'ALTER ROLE "www-data" WITH login;';</p>
+<p>So i problem of PostGreSQL role creation.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/19530/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>01 Feb '13, 20:22</strong>
+</p>
+<img alt="mihai%20niculita's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/afa2913bd1ceace5a19edb7f80a43c24?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5532/mihai-niculita">mihai niculita</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mihai niculita has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-19530">
+<a name="19570"></a>
+<div class="comment" id="comment-19570">
+<div class="comment-score" id="post-19570-score">2</div>
+<div class="comment-text"><p>Having "www-data" as a database user raises warning signs to me.</p>
+<p>Remember that postgres users and system users are completely distinct. Your application (nominatim) should have a option to configure which database user is used to connect to the db. If the app doesn't specify anything, the current system user name is used to (try to) connect to the db.</p>
+<p>www-data is typically the system user that runs the web server. It should not, as a whole, be allowed to connect to the db, for security and maintenance reasons.</p></div>
+<div class="comment-info" id="comment-19570-info">
+<span class="comment-age">(04 Feb '13, 09:00)</span>
+<a class="comment-user userinfo" href="/users/867/vincent-de-phily">Vincent de P... ♦</a>
+</div>
+</div>
+<a name="19571"></a>
+<div class="comment" id="comment-19571">
+<div class="comment-score" id="post-19571-score">1</div>
+<div class="comment-text"><p>(continued) Create a "nominatim" db user instead (maybe one exists already), give it access to just your nominatim db, and configure nominatim to use that user when connecting.</p></div>
+<div class="comment-info" id="comment-19571-info">
+<span class="comment-age">(04 Feb '13, 09:04)</span>
+<a class="comment-user userinfo" href="/users/867/vincent-de-phily">Vincent de P... ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-19530">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-19530-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/19525/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="2CMVDMFcAJoGbxK3ld0pci3GgzSM0T8X"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

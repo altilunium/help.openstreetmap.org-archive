@@ -1,0 +1,228 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/53447/finding-multipolygons-with-more-than-one-outer-way-overpass">Finding multipolygons with more than one 'outer' way. Overpass?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/53447/up/" id="post-53447-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-53447-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/53447/down/" id="post-53447-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/53447/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'd like to find multipolygons that have more than one member with the role 'outer'.</p>
+<p>Is there a way to do that with the Overpass API, or would I have to wait for <a href="https://github.com/drolbr/Overpass-API/issues/197">https://github.com/drolbr/Overpass-API/issues/197</a> to get written?</p>
+<p>Would there be any other way to do this?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-relations" href="/tags/relations/" rel="tag" title="see questions tagged 'relations'">relations</a>
+<a class="post-tag tag-link-multipolygon" href="/tags/multipolygon/" rel="tag" title="see questions tagged 'multipolygon'">multipolygon</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>10 Dec '16, 01:16</strong>
+</p>
+<img alt="Stereo's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/aace33beb0d1a608b0763ac8a2404049?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9786/stereo">Stereo</a><br/>
+<span class="score" title="356 reputation points">356</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="13 badges"><span class="bronze">●</span><span class="badgecount">13</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Stereo has one accepted answer">11%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-53447">
+</div>
+<div class="comment-tools" id="comment-tools-53447">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-53447-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/53447/finding-multipolygons-with-more-than-one-outer-way-overpass?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/53447/finding-multipolygons-with-more-than-one-outer-way-overpass?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/53447/finding-multipolygons-with-more-than-one-outer-way-overpass?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/53447/finding-multipolygons-with-more-than-one-outer-way-overpass?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="53453"></a>
+<div class="answer accepted-answer" id="answer-container-53453">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/53453/up/" id="post-53453-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-53453-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/53453/down/" id="post-53453-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/53453/" rel="nofollow" title="Stereo has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>If you are willing to put up with a beta quality program I am working on, you can use <a href="https://github.com/osmcode/osmium-filter">osmium-filter</a>.
+It can do a query like that: osmium-filter-simple <code>INPUTFILE -e '@relation and (@members[@role=="outer"] &gt; 1)' -o OUTPUTFILE</code>. It doesn't support giving you all the ways and nodes needed for these relations yet, if you need that, you can use the <a href="http://osmcode.org/osmium-tool/">Osmium tool</a> (to be more exact, <a href="http://docs.osmcode.org/osmium/latest/osmium-getid.html"><code>osmium getid</code></a>). Other options include writing your own program using libosmium, PyOsmium, or node-osmium (see <a href="http://osmcode.org/).">http://osmcode.org/).</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/53453/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>10 Dec '16, 09:30</strong>
+</p>
+<img alt="Jochen%20Topf's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2d4dfcdcde73aa5e2ffa4a9b3a7cb51d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/112/jochen-topf">Jochen Topf</a><br/>
+<span class="score" title="5244 reputation points"><span class="">5.2k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="50 badges"><span class="silver">●</span><span class="badgecount">50</span></span><span title="74 badges"><span class="bronze">●</span><span class="badgecount">74</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jochen Topf has 32 accepted answers">31%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/53453/">
+                edited
+                <strong>10 Dec '16, 09:34</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-53453">
+<a name="53456"></a>
+<div class="comment" id="comment-53456">
+<div class="comment-score" id="post-53456-score"></div>
+<div class="comment-text"><p>Thank you Jochen, I'll give that a go!</p>
+<p>Would you also happen to have a way of <a href="https://www.openstreetmap.org/user/Stereo/diary/40037">finding old-style multipolygons</a> with it?</p></div>
+<div class="comment-info" id="comment-53456-info">
+<span class="comment-age">(10 Dec '16, 12:56)</span>
+<a class="comment-user userinfo" href="/users/9786/stereo">Stereo</a>
+</div>
+</div>
+<a name="53462"></a>
+<div class="comment" id="comment-53462">
+<div class="comment-score" id="post-53462-score">1</div>
+<div class="comment-text"><p>Have a look at <a href="https://github.com/osmcode/osm-area-tools">https://github.com/osmcode/osm-area-tools</a> . There are tools that can find old-style multipolygons. I use that to create the overlay on <a href="http://area.jochentopf.com/map/index.html">http://area.jochentopf.com/map/index.html</a> for instance. But you can also just download the old-style mps from <a href="http://area.jochentopf.com/">http://area.jochentopf.com/</a> updated daily.</p></div>
+<div class="comment-info" id="comment-53462-info">
+<span class="comment-age">(10 Dec '16, 14:36)</span>
+<a class="comment-user userinfo" href="/users/112/jochen-topf">Jochen Topf</a>
+</div>
+</div>
+<a name="53463"></a>
+<div class="comment" id="comment-53463">
+<div class="comment-score" id="post-53463-score"></div>
+<div class="comment-text"><p>Wow, osmium-filter is impressively fast! It's an exciting tool, and I hope that you'll find time to document it :).</p>
+<p>'@relation and "type"="multipolygon" and (@members[@role=="outer"] &gt; 1)' did the trick.</p></div>
+<div class="comment-info" id="comment-53463-info">
+<span class="comment-age">(10 Dec '16, 14:38)</span>
+<a class="comment-user userinfo" href="/users/9786/stereo">Stereo</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-53453">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-53453-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="80090"></a>
+<div class="answer answered-by-owner" id="answer-container-80090">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80090/up/" id="post-80090-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80090-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/80090/down/" id="post-80090-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I ended up doing it in overpass:</p>
+<pre><code>[out:xml][timeout:25];
+{{geocodeArea:Luxembourg}}-&gt;.searchArea;
+// gather results
+(
+  relation["type"="multipolygon"](if: count_by_role("outer") &gt; 1 )(area.searchArea);
+  relation["type"="multipolygon"](if: count_members() == 1 )(area.searchArea);
+
+);
+// print results
+out meta;
+&gt;;
+out meta qt;
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/80090/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 May '21, 21:44</strong>
+</p>
+<img alt="Stereo's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/aace33beb0d1a608b0763ac8a2404049?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9786/stereo">Stereo</a><br/>
+<span class="score" title="356 reputation points">356</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="13 badges"><span class="bronze">●</span><span class="badgecount">13</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Stereo has one accepted answer">11%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80090">
+</div>
+<div class="comment-tools" id="comment-tools-80090">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80090-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/53447/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="7UjymwUCFNu02P2PFIxQ01NRy6Cmyr4W"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,159 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/11562/column-int_tc_type-does-not-exist">column "int_tc_type" does not exist</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/11562/up/" id="post-11562-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-11562-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/11562/down/" id="post-11562-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/11562/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hey guys! When rendering from PostgreSQL/PostGIS database by Python/Mapnik I receice the following ERROR:
+<a href="http://dpaste.org/s8zIZ/">http://dpaste.org/s8zIZ/</a></p>
+<hr/>
+<pre><code>Traceback (most recent call last):
+File "C:\0A\11\generate_image.py", line 71, in &lt;module&gt;
+mapnik.render(m, im)
+RuntimeError: Postgis Plugin: PSQL error:
+ERROR: column "int_tc_type" does not exist
+LINE 1: SELECT ST_AsBinary("way") AS geom,"int_tc_type" from planet_...
+^
+Full sql was: 'SELECT ST_AsBinary("way") AS geom,"int_tc_type" from planet_osm_roads WHERE "way" &amp;&amp; SetSRID('BOX3D(1127187.934825658 7229086.56980958,1134824.118093661 7236722.753077583)'::box3d, 900913)'
+</code></pre>
+<hr/>
+<p>I took the steps like in <a href="http://switch2osm.org/serving-tiles/manually-building-a-tile-server/">http://switch2osm.org/serving-tiles/manually-building-a-tile-server/</a></p>
+<p>My OS is Windows.</p>
+<p>I imported my africa.osm by osm2pgsql to my database.</p>
+<p>Is it possible, that the whole thing only works with the whole planet_latest.osm?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-column" href="/tags/column/" rel="tag" title="see questions tagged 'column'">column</a>
+<a class="post-tag tag-link-rendering" href="/tags/rendering/" rel="tag" title="see questions tagged 'rendering'">rendering</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+<a class="post-tag tag-link-int_tc_type" href="/tags/int_tc_type/" rel="tag" title="see questions tagged 'int_tc_type'">int_tc_type</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>28 Mar '12, 15:44</strong>
+</p>
+<img alt="MHein's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/cc0198a02af3c41ad04b61e028c3b126?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3139/mhein">MHein</a><br/>
+<span class="score" title="141 reputation points">141</span><span title="11 badges"><span class="badge1">●</span><span class="badgecount">11</span></span><span title="11 badges"><span class="silver">●</span><span class="badgecount">11</span></span><span title="16 badges"><span class="bronze">●</span><span class="badgecount">16</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="MHein has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-11562">
+</div>
+<div class="comment-tools" id="comment-tools-11562">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-11562-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/11562/column-int_tc_type-does-not-exist?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/11562/column-int_tc_type-does-not-exist?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/11562/column-int_tc_type-does-not-exist?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/11562/column-int_tc_type-does-not-exist?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="11577"></a>
+<div class="answer accepted-answer" id="answer-container-11577">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/11577/up/" id="post-11577-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-11577-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/11577/down/" id="post-11577-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/11577/" rel="nofollow" title="MHein has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Most likely the version of osm2psql is too old to work with the current mapnik stylesheet you are using. Try an older stylesheet eg: <a href="https://trac.openstreetmap.org/browser/applications/rendering/mapnik?rev=20000">https://trac.openstreetmap.org/browser/applications/rendering/mapnik?rev=20000</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/11577/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>28 Mar '12, 21:57</strong>
+</p>
+<img alt="Firefishy's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e79628d44a15e95c607f8c5007d0ccd2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/48/firefishy">Firefishy ♦♦</a><br/>
+<span class="score" title="1296 reputation points"><span class="">1.3k</span></span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="36 badges"><span class="silver">●</span><span class="badgecount">36</span></span><span title="52 badges"><span class="bronze">●</span><span class="badgecount">52</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Firefishy has 14 accepted answers">29%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-11577">
+<a name="11586"></a>
+<div class="comment" id="comment-11586">
+<div class="comment-score" id="post-11586-score"></div>
+<div class="comment-text"><p>Thanks, but I don't find any stylesheet "default.style" there (maybe because the server </p>
+<p>seems to be kind of down..) or did you think of the osm.xml?</p>
+<p>Yesterday I downloaded a newer "default.style" to fix another Error </p>
+<p><a href="http://help.openstreetmap.org/questions/11542/error-column-generatorsource-does-not-exist">http://help.openstreetmap.org/questions/11542/error-column-generatorsource-does-not-exist</a> </p>
+<p>How can I fix both of them?
+Is there any possibility to fill in the missing column by hand/manually?
+.. column "length" is also missing ..</p></div>
+<div class="comment-info" id="comment-11586-info">
+<span class="comment-age">(29 Mar '12, 10:17)</span>
+<a class="comment-user userinfo" href="/users/3139/mhein">MHein</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-11577">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-11577-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/11562/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="v4L4syGyx24ION2mpDQTwMcyMBqYF0Iq"/>
+<div style="clear:both">
+</div>
+</form>
+</hr></div>
+</div>
+</div>

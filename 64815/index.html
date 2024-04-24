@@ -1,0 +1,127 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/64815/connection-timeout-in-updatephp-init-updates">connection timeout in update.php --init-updates</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/64815/up/" id="post-64815-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-64815-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/64815/down/" id="post-64815-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/64815/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi, </p>
+<p>Still I met connection timeout error while executing <em>update.php --init-updates</em></p>
+<p><a href="https://github.com/openstreetmap/Nominatim/issues/1083">https://github.com/openstreetmap/Nominatim/issues/1083</a></p>
+<p>Also tried after disabled ipv6, still met the same(<a href="https://stackoverflow.com/questions/4189973/file-get-contents-connection-timed-out">https://stackoverflow.com/questions/4189973/file-get-contents-connection-timed-out</a> ).</p>
+<p>Check my outputs:</p>
+<blockquote>
+<p><strong>php -r 'echo
+file_get_contents("https://download.geofabrik.de/europe/andorra-updates/state.txt");'</strong></p>
+<p>Warning:
+file_get_contents(<a href="https://download.geofabrik.de/europe/andorra-updates/state.txt):">https://download.geofabrik.de/europe/andorra-updates/state.txt):</a>
+failed to open stream: Connection
+timed out in Command line code on line1</p>
+<p><strong>curl
+"https://download.geofabrik.de/europe/andorra-updates/state.txt"</strong>
+ original OSM minutely replication sequence number 3065501
+timestamp=2018-07-19T20\:00\:02Z
+sequenceNumber=1948</p>
+<p><strong>php -m</strong></p>
+<p>[PHP Modules] Core ctype date dom ereg
+fileinfo filter hash iconv intl json
+libxml openssl pcre PDO pdo_pgsql
+pdo_sqlite pgsql Phar posix Reflection
+session SimpleXML SPL sqlite3 standard
+tokenizer xml xmlreader xmlwriter</p>
+<p>[Zend Modules]</p>
+</blockquote>
+<p><a href="https://help.openstreetmap.org/users/150/mtmail">@mtmail</a> </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-update" href="/tags/update/" rel="tag" title="see questions tagged 'update'">update</a>
+<a class="post-tag tag-link-php" href="/tags/php/" rel="tag" title="see questions tagged 'php'">php</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>20 Jul '18, 12:55</strong>
+</p>
+<img alt="Rajavelu_M's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1ffa52ca3632b5a0cf02b51459b7529b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11165/rajavelu_m">Rajavelu_M</a><br/>
+<span class="score" title="253 reputation points">253</span><span title="45 badges"><span class="badge1">●</span><span class="badgecount">45</span></span><span title="48 badges"><span class="silver">●</span><span class="badgecount">48</span></span><span title="58 badges"><span class="bronze">●</span><span class="badgecount">58</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Rajavelu_M has one accepted answer">33%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/64815/">
+                edited
+                <strong>20 Jul '18, 16:58</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-64815">
+<a name="64836"></a>
+<div class="comment" id="comment-64836">
+<div class="comment-score" id="post-64836-score"></div>
+<div class="comment-text"><p>Does the connection timeout always occur or just sometimes? Are you familiar enough with wireshark or tcpdump to compare the failing php connection request against the succeeding curl connection request?</p></div>
+<div class="comment-info" id="comment-64836-info">
+<span class="comment-age">(21 Jul '18, 13:31)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="64851"></a>
+<div class="comment" id="comment-64851">
+<div class="comment-score" id="post-64851-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/158/scai">@scai</a> : This connection timeout always occuring. Sorry i am not familiar with wireshark or tcpdump.</p></div>
+<div class="comment-info" id="comment-64851-info">
+<span class="comment-age">(22 Jul '18, 08:38)</span>
+<a class="comment-user userinfo" href="/users/11165/rajavelu_m">Rajavelu_M</a>
+</div>
+</div>
+<a name="64855"></a>
+<div class="comment" id="comment-64855">
+<div class="comment-score" id="post-64855-score"></div>
+<div class="comment-text"><p>Sounds like a problem caused by PHP. I guess you will find more help at StackOverflow. Specifically ask about the php command <code>file_get_contents()</code> from your question.</p></div>
+<div class="comment-info" id="comment-64855-info">
+<span class="comment-age">(22 Jul '18, 11:20)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-64815">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-64815-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/64815/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="cRKmKtgZljmVtgiT6AqRvCIkLjhNOeRQ"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

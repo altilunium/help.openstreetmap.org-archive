@@ -1,0 +1,332 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/68818/tile-server-randomly-freezes-for-about-10-minutes-at-a-time">Tile server randomly "freezes" for about 10 minutes at a time</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68818/up/" id="post-68818-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68818-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/68818/down/" id="post-68818-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/68818/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Follow-up to my <a href="https://help.openstreetmap.org/questions/68666/tile-server-randomly-freezes-requiring-a-server-restart">previous (bad) question</a>.  I managed to catch one of these freezes and monitor the <code>syslog</code> and server behavior.  The "freeze" does not need a server restart.  It would actually work itself out in about 5-10 minutes.</p>
+<p>First of all, this is <a href="https://i.gyazo.com/9940234404a03e005218db28df6e95b6.png">what I see on the map</a> that is using my tile server.  Requests for (pre-rendered) tiles are all stuck.</p>
+<p>Here's what my <a href="https://i.gyazo.com/6a22f60b6ba19583162f2f750be4d6f1.png">VPS monitoring looks like</a>.  Look at the bottom chart "Bandwidth Public".  As you can see, the server is operating normally and suddenly has a huge drop in outbound bandwidth, which means the server stopped serving tiles.  All other system stats look normal.</p>
+<p>Looking at the syslog, here is the section of output code during the freeze.  The freeze began at around 15:33 and ended about 10 minutes later.  The anomaly code is at 15:37, where there were a bunch of outputs like <code>Created slice User Slice of root</code> and <code>Reached target Sockets</code>.  However the freeze began at 15:33, so 4 minutes before the weird output began.</p>
+<p>During the freeze, there was a 1 minute period at 15:39 when it successfully served some tiles, before freezing up for another 3-4 minutes.  After 15:44, the tile server went back to normal.</p>
+<pre><code>Apr 16 15:33:49 tilerserver2 renderd[2542]: DEBUG: Got command RenderLow fd(12) xml(ajt), z(17), x(36325), y(47623), mime(image/png), options()
+Apr 16 15:33:49 tilerserver2 renderd[2542]: DEBUG: Connection 0, fd 12 closed, now 0 left
+Apr 16 15:33:51 tilerserver2 renderd[2542]: DEBUG: DONE TILE ajt 17 36320-36327 47616-47623 in 2.639 seconds
+Apr 16 15:35:01 tilerserver2 CRON[26475]: (root) CMD (command -v debian-sa1 &gt; /dev/null &amp;&amp; debian-sa1 1 1)
+Apr 16 15:35:01 tilerserver2 CRON[26477]: (root) CMD (if [ -x /etc/munin/plugins/apt_all ]; then /etc/munin/plugins/apt_all update 7200 12 &gt;/dev/null; elif [ -x /etc/munin/plugins/apt ]; then /etc/munin/plugins/apt update 7200 12 &gt;/dev/null; fi)
+Apr 16 15:35:01 tilerserver2 CRON[26478]: (munin) CMD (if [ -x /usr/bin/munin-cron ]; then /usr/bin/munin-cron; fi)
+Apr 16 15:37:56 tilerserver2 systemd[1]: Created slice User Slice of root.
+Apr 16 15:37:56 tilerserver2 systemd[1]: Starting User Manager for UID 0...
+Apr 16 15:37:56 tilerserver2 systemd[1]: Started Session 2590 of user root.
+Apr 16 15:37:56 tilerserver2 systemd[26804]: Reached target Sockets.
+Apr 16 15:37:56 tilerserver2 systemd[26804]: Reached target Timers.
+Apr 16 15:37:56 tilerserver2 systemd[26804]: Reached target Paths.
+Apr 16 15:37:56 tilerserver2 systemd[26804]: Reached target Basic System.
+Apr 16 15:37:56 tilerserver2 systemd[26804]: Reached target Default.
+Apr 16 15:37:56 tilerserver2 systemd[26804]: Startup finished in 30ms.
+Apr 16 15:37:56 tilerserver2 systemd[1]: Started User Manager for UID 0.
+Apr 16 15:38:22 tilerserver2 systemd[1]: Started Session 2591 of user root.
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming connection, fd 12, number 1
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming request with protocol version 2
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got command RenderLow fd(12) xml(ajt), z(17), x(36576), y(47867), mime(image/png), options()
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Connection 0, fd 12 closed, now 0 left
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: START TILE ajt 17 36576-36583 47864-47871, age 3.02 days
+Apr 16 15:39:09 tilerserver2 renderd[2542]: Rendering projected coordinates 17 36576 47864 -&gt; -8854465.356560|5400734.670520 -8852019.371654|5403180.655425 to a 8 x 8 tile
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming connection, fd 12, number 1
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming request with protocol version 2
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got command RenderLow fd(12) xml(ajt), z(17), x(36576), y(47866), mime(image/png), options()
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Connection 0, fd 12 closed, now 0 left
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming connection, fd 12, number 1
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming request with protocol version 2
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got command RenderLow fd(12) xml(ajt), z(17), x(36577), y(47866), mime(image/png), options()
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Connection 0, fd 12 closed, now 0 left
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming connection, fd 12, number 1
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming request with protocol version 2
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got command RenderLow fd(12) xml(ajt), z(17), x(36576), y(47865), mime(image/png), options()
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Connection 0, fd 12 closed, now 0 left
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming connection, fd 12, number 1
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming connection, fd 13, number 2
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming request with protocol version 2
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got command RenderLow fd(12) xml(ajt), z(17), x(36577), y(47868), mime(image/png), options()
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Connection 0, fd 12 closed, now 1 left
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming request with protocol version 2
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got command RenderLow fd(13) xml(ajt), z(17), x(36577), y(47865), mime(image/png), options()
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Connection 0, fd 13 closed, now 0 left
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming connection, fd 12, number 1
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming request with protocol version 2
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got command RenderLow fd(12) xml(ajt), z(17), x(36576), y(47868), mime(image/png), options()
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Connection 0, fd 12 closed, now 0 left
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming connection, fd 12, number 1
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming request with protocol version 2
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got command RenderLow fd(12) xml(ajt), z(17), x(36578), y(47865), mime(image/png), options()
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Connection 0, fd 12 closed, now 0 left
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming connection, fd 12, number 1
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming request with protocol version 2
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got command RenderLow fd(12) xml(ajt), z(17), x(36578), y(47867), mime(image/png), options()
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Connection 0, fd 12 closed, now 0 left
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming connection, fd 12, number 1
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming request with protocol version 2
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got command RenderLow fd(12) xml(ajt), z(17), x(36578), y(47866), mime(image/png), options()
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Connection 0, fd 12 closed, now 0 left
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming connection, fd 12, number 1
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming request with protocol version 2
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got command RenderLow fd(12) xml(ajt), z(17), x(36577), y(47867), mime(image/png), options()
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Connection 0, fd 12 closed, now 0 left
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming connection, fd 12, number 1
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got incoming request with protocol version 2
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Got command RenderLow fd(12) xml(ajt), z(17), x(36578), y(47868), mime(image/png), options()
+Apr 16 15:39:09 tilerserver2 renderd[2542]: DEBUG: Connection 0, fd 12 closed, now 0 left
+Apr 16 15:39:13 tilerserver2 renderd[2542]: DEBUG: DONE TILE ajt 17 36576-36583 47864-47871 in 3.652 seconds
+Apr 16 15:40:01 tilerserver2 CRON[26922]: (root) CMD (if [ -x /etc/munin/plugins/apt_all ]; then /etc/munin/plugins/apt_all update 7200 12 &gt;/dev/null; elif [ -x /etc/munin/plugins/apt ]; then /etc/munin/plugins/apt update 7200 12 &gt;/dev/null; fi)
+Apr 16 15:40:01 tilerserver2 CRON[26923]: (munin) CMD (if [ -x /usr/bin/munin-cron ]; then /usr/bin/munin-cron; fi)
+Apr 16 15:40:34 tilerserver2 systemd[1]: Started Session 2594 of user root.
+Apr 16 15:43:45 tilerserver2 systemd[1]: Started Session 2595 of user root.
+Apr 16 15:44:08 tilerserver2 renderd[2542]: DEBUG: Got incoming connection, fd 12, number 1
+Apr 16 15:44:08 tilerserver2 renderd[2542]: DEBUG: Got incoming request with protocol version 2
+Apr 16 15:44:08 tilerserver2 renderd[2542]: DEBUG: Got command RenderLow fd(12) xml(ajt), z(17), x(36536), y(47857), mime(image/png), options()
+</code></pre>
+<p>Apache2 <code>access.log</code> during a freeze.  There is a gap between 14:01 and 14:06 when server is not taking any requests (the freeze).</p>
+<pre><code>69.158.20.237 - - [23/Apr/2019:14:01:17 +0000] "GET /hot/17/36646/47835.png HTTP/1.1" 200 18392 "https://www.mysite.ca/map/43.651611&amp;-79.360015&amp;17" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36"
+69.158.20.237 - - [23/Apr/2019:14:01:17 +0000] "GET /hot/17/36646/47833.png HTTP/1.1" 200 17406 "https://www.mysite.ca/map/43.651611&amp;-79.360015&amp;17" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36"
+69.158.20.237 - - [23/Apr/2019:14:01:17 +0000] "GET /hot/17/36646/47836.png HTTP/1.1" 200 30092 "https://www.mysite.ca/map/43.651611&amp;-79.360015&amp;17" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36"
+184.175.22.23 - - [23/Apr/2019:14:01:18 +0000] "GET /hot/14/4572/5978.png HTTP/1.1" 200 73673 "https://www.mysite.ca/map/43.658775&amp;-79.464724&amp;13" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36"
+69.158.20.237 - - [23/Apr/2019:14:01:18 +0000] "GET /hot/17/36647/47835.png HTTP/1.1" 200 16931 "https://www.mysite.ca/map/43.653908&amp;-79.353299&amp;17" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36"
+72.139.207.185 - - [23/Apr/2019:14:06:14 +0000] "GET /hot/14/4560/5972.png HTTP/1.1" 200 31375 "https://www.mysite.ca/map/43.741305&amp;-79.805202&amp;14" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36"
+72.139.207.185 - - [23/Apr/2019:14:06:14 +0000] "GET /hot/14/4561/5972.png HTTP/1.1" 200 49864 "https://www.mysite.ca/map/43.741305&amp;-79.805202&amp;14" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36"
+72.139.207.185 - - [23/Apr/2019:14:06:14 +0000] "GET /hot/14/4557/5972.png HTTP/1.1" 200 17749 "https://www.mysite.ca/map/43.741305&amp;-79.805202&amp;14" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36"
+184.175.22.23 - - [23/Apr/2019:14:06:14 +0000] "GET /hot/13/2284/2990.png HTTP/1.1" 200 88895 "https://www.mysite.ca/map/43.666105&amp;-79.444001&amp;14" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36"
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-tiles" href="/tags/tiles/" rel="tag" title="see questions tagged 'tiles'">tiles</a>
+<a class="post-tag tag-link-renderd" href="/tags/renderd/" rel="tag" title="see questions tagged 'renderd'">renderd</a>
+<a class="post-tag tag-link-tileserver" href="/tags/tileserver/" rel="tag" title="see questions tagged 'tileserver'">tileserver</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Apr '19, 17:10</strong>
+</p>
+<img alt="valachio's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b1e3fbb6f31c5e0144e7b18fcd7d5d33?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16323/valachio">valachio</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="9 badges"><span class="silver">●</span><span class="badgecount">9</span></span><span title="13 badges"><span class="bronze">●</span><span class="badgecount">13</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="valachio has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/68818/">
+                edited
+                <strong>23 Apr '19, 16:52</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68818">
+</div>
+<div class="comment-tools" id="comment-tools-68818">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68818-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/68818/tile-server-randomly-freezes-for-about-10-minutes-at-a-time?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/68818/tile-server-randomly-freezes-for-about-10-minutes-at-a-time?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/68818/tile-server-randomly-freezes-for-about-10-minutes-at-a-time?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/68818/tile-server-randomly-freezes-for-about-10-minutes-at-a-time?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="68821"></a>
+<div class="answer" id="answer-container-68821">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68821/up/" id="post-68821-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68821-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/68821/down/" id="post-68821-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Maybe have a look to the load at that moment. I see you have munin running, what do munin graphs look like?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/68821/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>17 Apr '19, 05:58</strong>
+</p>
+<img alt="yvecai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3c7cffe544d6a1c46c97a25b2fdcdedc?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5587/yvecai">yvecai</a><br/>
+<span class="score" title="1481 reputation points"><span class="">1.5k</span></span><span title="12 badges"><span class="silver">●</span><span class="badgecount">12</span></span><span title="26 badges"><span class="bronze">●</span><span class="badgecount">26</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="yvecai has 7 accepted answers">9%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68821">
+<a name="68893"></a>
+<div class="comment" id="comment-68893">
+<div class="comment-score" id="post-68893-score"></div>
+<div class="comment-text"><p>The <a href="https://i.gyazo.com/6a22f60b6ba19583162f2f750be4d6f1.png">system load at the moment is normal</a>.  See the bottom chart (Bandwidth Public).  The dip on the right is when the freeze happened.  All other system stats look normal, apart from a very small spike in CPU.</p>
+<p>I looked through the munin logs.  Is there a particular one I should look at?  There are <code>munin-graph</code>, <code>munin-update</code>, <code>munin-limits</code>, <code>munin-html</code>, <code>munin-node</code>.  I looked through all of them.  I tried to compare the munin logs when during a freeze, and when the tile server was serving normally, I couldn't see a difference in the logs.</p></div>
+<div class="comment-info" id="comment-68893-info">
+<span class="comment-age">(23 Apr '19, 15:48)</span>
+<a class="comment-user userinfo" href="/users/16323/valachio">valachio</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-68821">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68821-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="68844"></a>
+<div class="answer" id="answer-container-68844">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68844/up/" id="post-68844-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68844-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/68844/down/" id="post-68844-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<pre><code>During the freeze, there was a 1 minute period at 15:39 when it successfully served some tiles, before freezing up for another 3-4 minutes. After 15:44, the tile server went back to normal.
+</code></pre>
+<p>Looking at the log, it was serving tiles OK to 15:39 and no requests pending at 15:39, so it's not surprising that things went quiet until 15:44.  IF you were trying to send requests in in that time they weren't reaching apache (or at least not mod_tile).</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/68844/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Apr '19, 01:17</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68844">
+<a name="68892"></a>
+<div class="comment" id="comment-68892">
+<div class="comment-score" id="post-68892-score"></div>
+<div class="comment-text"><p>Sorry for delayed response.</p>
+<p>The website is always serving ~100 users at any point of time, so there is a constant stream of requests coming in.  I was trying to use the website myself at the time and map tiles were not loading.</p>
+<p>If the requests were not reaching Apache/mod_tile at that time, any idea why not?  Did Apache freeze?  Did mod_tile freeze?  Why does the issue resolve itself in 10 minutes?</p></div>
+<div class="comment-info" id="comment-68892-info">
+<span class="comment-age">(23 Apr '19, 15:40)</span>
+<a class="comment-user userinfo" href="/users/16323/valachio">valachio</a>
+</div>
+</div>
+<a name="68894"></a>
+<div class="comment" id="comment-68894">
+<div class="comment-score" id="post-68894-score">2</div>
+<div class="comment-text"><p>I found something.  I looked through Apache2's <code>access.log</code>.  During the freeze, <code>access.log</code> showed no requests during the freeze.  On average there should be about 10 requests per second.</p>
+<p>So it would seem that the requests are not reaching Apache...</p>
+<p>Apache's <code>error.log</code> showed no errors during the freeze</p></div>
+<div class="comment-info" id="comment-68894-info">
+<span class="comment-age">(23 Apr '19, 16:18)</span>
+<a class="comment-user userinfo" href="/users/16323/valachio">valachio</a>
+</div>
+</div>
+<a name="68896"></a>
+<div class="comment" id="comment-68896">
+<div class="comment-score" id="post-68896-score">2</div>
+<div class="comment-text"><p>Then maybe the requests did not reach the server at all: network issue?</p></div>
+<div class="comment-info" id="comment-68896-info">
+<span class="comment-age">(23 Apr '19, 20:51)</span>
+<a class="comment-user userinfo" href="/users/5587/yvecai">yvecai</a>
+</div>
+</div>
+<a name="68898"></a>
+<div class="comment" id="comment-68898">
+<div class="comment-score" id="post-68898-score"></div>
+<div class="comment-text"><p>(at the risk of stating the bleeding obvious) perhaps you could script some web page accesses locally to show up periodically in apache's access log to see if they stop when the server "freezes".  If they don't, it's an external network issue.</p></div>
+<div class="comment-info" id="comment-68898-info">
+<span class="comment-age">(23 Apr '19, 21:23)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="68903"></a>
+<div class="comment" id="comment-68903">
+<div class="comment-score" id="post-68903-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/5587/yvecai">@yvecai</a> The server is running fine during the freeze.  But it does seem any tile requests are being ignored by Apache for some reason...  What is causing Apache to ignore tile requests for 5 minutes at a time, randomly?</p></div>
+<div class="comment-info" id="comment-68903-info">
+<span class="comment-age">(24 Apr '19, 03:24)</span>
+<a class="comment-user userinfo" href="/users/16323/valachio">valachio</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-68844">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68844-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/68818/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="VKzhjRAEJF8DvyiJLNM8jKTj3efaNtOb"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

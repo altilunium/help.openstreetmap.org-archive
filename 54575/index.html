@@ -1,0 +1,176 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/54575/overpass-api-union-of-data-types-with-area-filter">Overpass-api: Union of data types with 'area' filter</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/54575/up/" id="post-54575-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-54575-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/54575/down/" id="post-54575-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/54575/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm failing to get a union of node/way/relation using the area filter. It's returning only the first types (ie node). How do I return all?</p>
+<p><a href="http://overpass-api.de/api/interpreter?data=[out:xml];area[name='London'];(node">http://overpass-api.de/api/interpreter?data=[out:xml];area[name='London'];(node</a><a href="area">'fhrs:id'</a>;way<a href="area">'fhrs:id'</a>;relation<a href="area">'fhrs:id'</a>;);out body;&gt;;out skel qt;"</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass-api" href="/tags/overpass-api/" rel="tag" title="see questions tagged 'overpass-api'">overpass-api</a>
+<a class="post-tag tag-link-area" href="/tags/area/" rel="tag" title="see questions tagged 'area'">area</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>09 Feb '17, 20:19</strong>
+</p>
+<img alt="DaveF's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c9c8b421ad22f51ddd62f23413717036?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1532/davef">DaveF</a><br/>
+<span class="score" title="3264 reputation points"><span class="">3.3k</span></span><span title="84 badges"><span class="badge1">●</span><span class="badgecount">84</span></span><span title="98 badges"><span class="silver">●</span><span class="badgecount">98</span></span><span title="133 badges"><span class="bronze">●</span><span class="badgecount">133</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="DaveF has 17 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-54575">
+</div>
+<div class="comment-tools" id="comment-tools-54575">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-54575-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/54575/overpass-api-union-of-data-types-with-area-filter?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/54575/overpass-api-union-of-data-types-with-area-filter?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/54575/overpass-api-union-of-data-types-with-area-filter?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/54575/overpass-api-union-of-data-types-with-area-filter?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="54578"></a>
+<div class="answer accepted-answer" id="answer-container-54578">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/54578/up/" id="post-54578-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-54578-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/54578/down/" id="post-54578-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/54578/" rel="nofollow" title="DaveF has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The help site seems to have mangled your url. Maybe the Overpass Turbo wizard does what you want?</p>
+<p><a href="http://overpass-turbo.eu/s/mC7">http://overpass-turbo.eu/s/mC7</a></p>
+<p>That's the result of <code>"fhrs:id"=* in London</code> in the Wizard input box.</p>
+<p>Turbo has a special operator to lookup places in Nominatim, but the area syntax works too:</p>
+<p><a href="http://overpass-turbo.eu/s/mC8">http://overpass-turbo.eu/s/mC8</a></p>
+<p>If your url is mostly intact, the main issue is likely that the area filter has to be applied to each query as in the above links.</p>
+<p>If you need the data outside Turbo, the "Export" button provides a range of options.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/54578/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Feb '17, 23:41</strong>
+</p>
+<img alt="maxerickson's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c860445e868ebb21da141635a4aa7b06?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10973/maxerickson">maxerickson</a><br/>
+<span class="score" title="12700 reputation points"><span class="">12.7k</span></span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="83 badges"><span class="silver">●</span><span class="badgecount">83</span></span><span title="176 badges"><span class="bronze">●</span><span class="badgecount">176</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="maxerickson has 93 accepted answers">32%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-54578">
+<a name="54580"></a>
+<div class="comment" id="comment-54580">
+<div class="comment-score" id="post-54580-score"></div>
+<div class="comment-text"><p>Thanks for the reply. Turbo was my starting point, but I want to automate the download process via a windows batch file.</p>
+<p>The Overpass help is quite confusing, but it appears that overpass.api doesn't accept (area.searchArea). It also seems to not like quote marks (") but I haven't worked out why. </p>
+<p>When exported as overpassQL your Turbo routine returns the error: 'Invalid IPv6 numeric address.' (As did my attempts).</p></div>
+<div class="comment-info" id="comment-54580-info">
+<span class="comment-age">(10 Feb '17, 00:17)</span>
+<a class="comment-user userinfo" href="/users/1532/davef">DaveF</a>
+</div>
+</div>
+<a name="54581"></a>
+<div class="comment" id="comment-54581">
+<div class="comment-score" id="post-54581-score"></div>
+<div class="comment-text"><p>The named areas are a feature of Overpass API. The <code>{{geocodeArea:London}}</code> in the first link is an Overpass Turbo feature, but I've swapped it out in the second link (and the "Export" feature on the Turbo website will do that for you anyway). You want to use the "raw data directly from Overpass API" export option to pull the data somewhere else.</p>
+<p><a href="http://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A25%5D%3B%0Aarea%5Bname%3DLondon%5D-%3E.searchArea%3B%0A%28%0A%20%20node%5B%22fhrs%3Aid%22%5D%28area.searchArea%29%3B%0A%20%20way%5B%22fhrs%3Aid%22%5D%28area.searchArea%29%3B%0A%20%20relation%5B%22fhrs%3Aid%22%5D%28area.searchArea%29%3B%0A%29%3B%0Aout%20body%3B%0A%3E%3B%0Aout%20skel%20qt%3B">I just successfully fetched this url using wget</a></p></div>
+<div class="comment-info" id="comment-54581-info">
+<span class="comment-age">(10 Feb '17, 00:57)</span>
+<a class="comment-user userinfo" href="/users/10973/maxerickson">maxerickson</a>
+</div>
+</div>
+<a name="54593"></a>
+<div class="comment" id="comment-54593">
+<div class="comment-score" id="post-54593-score"></div>
+<div class="comment-text"><p>Thanks. Got there in the end with your last example.</p>
+<p>Apologies for my first post's copy/paste but this forum won't format it properly. Trying to post <a href="http://overpass-api.de/api/interpreter?data=[out:xml][timeout:25];area(3600065606);(node['fhrs:id'](area);way['fhrs:id'](area);relation['fhrs:id'](area);">this api call</a>;out center;)  (&lt;Markdown won't create link or code element! it gets confused by the brackets)</p>
+<p>Which I'd extrapolated from <a href="https://help.openstreetmap.org/questions/19063/get-city-nodes-within-a-country-using-overpass-api">This OSM Help Question</a></p>
+<p>As I said I only get the first item (nodes) returned. Is it possible to get it to work, or is your solution the only way?</p></div>
+<div class="comment-info" id="comment-54593-info">
+<span class="comment-age">(10 Feb '17, 14:09)</span>
+<a class="comment-user userinfo" href="/users/1532/davef">DaveF</a>
+</div>
+</div>
+<a name="54595"></a>
+<div class="comment" id="comment-54595">
+<div class="comment-score" id="post-54595-score"></div>
+<div class="comment-text"><p>Yes, it is necessary to either use the named area or to repeat the area statement for each query. The node(area) query overwrites the input set, so the way(area) query looks for areas in the result of the node query, and of course there are none.</p>
+<p>It's possible to explicitly include the area in each query rather than doing it before the query: node(area:3600065606),way(area(3600065606) etc. I find the method using a named set clearer.</p>
+<p>The docs have more about it: <a href="http://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#By_area_.28area.29">http://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#By_area_.28area.29</a></p></div>
+<div class="comment-info" id="comment-54595-info">
+<span class="comment-age">(10 Feb '17, 14:44)</span>
+<a class="comment-user userinfo" href="/users/10973/maxerickson">maxerickson</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-54578">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-54578-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/54575/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="kAGV0QBSdlOvJlAbOjrzqzvQmxEX8Od4"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

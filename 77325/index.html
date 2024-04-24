@@ -1,0 +1,147 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/77325/nominatim-reverse-geocode-city-nearby">nominatim reverse geocode city nearby</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/77325/up/" id="post-77325-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-77325-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/77325/down/" id="post-77325-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/77325/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>i am trying to lookup localized city name from gps position via nominatim reverse call, which works pretty well when user is in town. But when in the middle of nowhere (e.g. user is anchored with his yacht near the coast), nominatim return only the administrative region.
+example:
+<a href="https://nominatim.openstreetmap.org/reverse?format=jsonv2&amp;lat=36.540548&amp;lon=35.742612&amp;zoom=18">https://nominatim.openstreetmap.org/reverse?format=jsonv2&amp;lat=36.540548&amp;lon=35.742612&amp;zoom=18</a>
+the same is returned without reverse:
+<a href="https://nominatim.openstreetmap.org/search?format=jsonv2&amp;q=36.540548,35.742612&amp;zoom=18">https://nominatim.openstreetmap.org/search?format=jsonv2&amp;q=36.540548,35.742612&amp;zoom=18</a>
+What we need is the name of the nearest town. Any suggestions, experiences or hacks (e.g. town of next atm or something) to get that?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-reversegeocoding" href="/tags/reversegeocoding/" rel="tag" title="see questions tagged 'reversegeocoding'">reversegeocoding</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-nearby" href="/tags/nearby/" rel="tag" title="see questions tagged 'nearby'">nearby</a>
+<a class="post-tag tag-link-city" href="/tags/city/" rel="tag" title="see questions tagged 'city'">city</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>30 Oct '20, 14:54</strong>
+</p>
+<img alt="qeepcologne's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/6a6ea04c3737ab2722b2e667aa532757?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19216/qeepcologne">qeepcologne</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="qeepcologne has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-77325">
+</div>
+<div class="comment-tools" id="comment-tools-77325">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-77325-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/77325/nominatim-reverse-geocode-city-nearby?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/77325/nominatim-reverse-geocode-city-nearby?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/77325/nominatim-reverse-geocode-city-nearby?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/77325/nominatim-reverse-geocode-city-nearby?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="77332"></a>
+<div class="answer" id="answer-container-77332">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/77332/up/" id="post-77332-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-77332-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/77332/down/" id="post-77332-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Nominatim, being a reverse geocoder aiming to give you the address for your location, is the wrong tool for this job. </p>
+<p>Overpass is a slightly better tool; it cannot (to my knowledge) give you the "closest" of something but it can give you "nearby things" in a given radius - here, all cities and towns within 50km of the given position:</p>
+<pre><code>node(around:50000,53.6509,6.8310)[place~"^(city|town)$"];
+out geom;
+</code></pre>
+<p>The task of identifying the closest of several results would still be yours to solve, and this solution would, unlike Nominatim, not tell you the administrative hierarchy (i.e. what county/state/country the city is in). </p>
+<p>The best solution would probably be a server that you run yourself, with OSM data imported into a PostGIS database and a small script that would run a nearest-neighbour search in the database and return only the closest place. This would have the added advantage of not relying on servers run by other people.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/77332/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Oct '20, 19:31</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-77332">
+<a name="77566"></a>
+<div class="comment" id="comment-77566">
+<div class="comment-score" id="post-77566-score"></div>
+<div class="comment-text"><p>thanks a lot, i tried with your query on overpass-turbo and results are looking ok.
+We run nominatim (via docker image) on our own server. I used the openstreemap.org url to demonstrate the query to work for everybody, because our server is not public.
+So i have to find out how to run/install nominatim and overpass on the same database via docker.</p></div>
+<div class="comment-info" id="comment-77566-info">
+<span class="comment-age">(16 Nov '20, 08:46)</span>
+<a class="comment-user userinfo" href="/users/19216/qeepcologne">qeepcologne</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-77332">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-77332-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/77325/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="ZPKnkYpsPULZjddHFpWV3LZBUcLwZg0H"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,159 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/53757/how-can-i-use-render_expired-command-to-updata-tiles-from-other-server">How can i use render_expired command to updata tiles from other server?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/53757/up/" id="post-53757-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-53757-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/53757/down/" id="post-53757-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/53757/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>If my rails port and tile server built on two different hosts, called s1 and s2. Now i make an edit at the openstreetmap database on s1, can i use the render_expired command on the s1 host to updata tiles on the s2 host? If it is feasible, how to set the config to make render_expired command renderd the specifiled host and database?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-render_list" href="/tags/render_list/" rel="tag" title="see questions tagged 'render_list'">render_list</a>
+<a class="post-tag tag-link-renderd" href="/tags/renderd/" rel="tag" title="see questions tagged 'renderd'">renderd</a>
+<a class="post-tag tag-link-mod_tile" href="/tags/mod_tile/" rel="tag" title="see questions tagged 'mod_tile'">mod_tile</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>30 Dec '16, 13:36</strong>
+</p>
+<img alt="yuyy's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3522efac952d508cf251cd2590e68ca5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12524/yuyy">yuyy</a><br/>
+<span class="score" title="236 reputation points">236</span><span title="22 badges"><span class="badge1">●</span><span class="badgecount">22</span></span><span title="24 badges"><span class="silver">●</span><span class="badgecount">24</span></span><span title="31 badges"><span class="bronze">●</span><span class="badgecount">31</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="yuyy has one accepted answer">20%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/53757/">
+                edited
+                <strong>03 Jan '17, 02:42</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-53757">
+</div>
+<div class="comment-tools" id="comment-tools-53757">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-53757-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/53757/how-can-i-use-render_expired-command-to-updata-tiles-from-other-server?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/53757/how-can-i-use-render_expired-command-to-updata-tiles-from-other-server?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/53757/how-can-i-use-render_expired-command-to-updata-tiles-from-other-server?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/53757/how-can-i-use-render_expired-command-to-updata-tiles-from-other-server?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="53760"></a>
+<div class="answer" id="answer-container-53760">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/53760/up/" id="post-53760-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-53760-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/53760/down/" id="post-53760-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You'd need to write some code to do that, I think.  The usual mechanism (with a rendering server consuming diffs from OSM.org) is:</p>
+<ol>
+<li>You change some data on osm.org</li>
+<li>That change is written to a diff</li>
+<li>Your rendering server periodically runs "openstreetmap-tiles-update-expire"</li>
+<li>That consumes pending diffs, generates a list of changed tiles and calls render_expired</li>
+</ol>
+<p>That process means that data that has changed on the rails port is used to update the rendering server database <em>and</em> the rendering server can choose to expire (or rerender) the affected tiles.  </p>
+<p>Given that the rails port and rendering server are separate databases anyway, and you'll need to do something to get changed data from one into the other (such as processing diffs) why not just use those diffs to drive rerendering?  I'm sure it would be technically possible to link rerendering to <em>editing</em> instead, but it doesn't actually achieve anything different in the long run.</p>
+<p>If it helps, I have variations on tile expiry scripts <a href="https://github.com/SomeoneElseOSM/mod_tile/blob/master/openstreetmap-tiles-update-expire#L165">here</a> and <a href="https://github.com/SomeoneElseOSM/mod_tile/blob/master/openstreetmap-tiles-update-rerender#L165">here</a> that have a few more comments explaining tile expiry usage.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/53760/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Dec '16, 16:34</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-53760">
+<a name="53774"></a>
+<div class="comment" id="comment-53774">
+<div class="comment-score" id="post-53774-score"></div>
+<div class="comment-text"><p>Sorry, i didn't express well. The rails port and rendering server are separate databases, they also built on separate host, the rails port on the s1 host, and rendering server on the s2 host, can i use the render_expired command on the s1 host to updata tiles on the s2 host?</p></div>
+<div class="comment-info" id="comment-53774-info">
+<span class="comment-age">(31 Dec '16, 12:08)</span>
+<a class="comment-user userinfo" href="/users/12524/yuyy">yuyy</a>
+</div>
+</div>
+<a name="53829"></a>
+<div class="comment" id="comment-53829">
+<div class="comment-score" id="post-53829-score"></div>
+<div class="comment-text"><p>Not easily - it communicates with the renderer via a socket.  Easier to get the list of tiles from s1 to s2 and run render_expired on s2.</p></div>
+<div class="comment-info" id="comment-53829-info">
+<span class="comment-age">(03 Jan '17, 13:03)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-53760">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-53760-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/53757/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="SZuYsKQpeHzqtXvsskeVMG16N5PWxLEd"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,250 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/66159/inner-members-of-some-multipolygon-relation-object-are-not-rendered-by-some-renderers">Inner members of some multipolygon relation object are not rendered by some renderers</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66159/up/" id="post-66159-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66159-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/66159/down/" id="post-66159-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/66159/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have an issue on how some multipolygons are processed by imposm or osm2pqsql.</p>
+<p>The problem arises for rendering mixed leaf type forests mapped with a MP. Let's consider such a MP as:</p>
+<ul>
+<li>relation: landuse=forest, leaf_type=broadleaved, leaf_cycle=deciduous, type=multipolygon</li>
+<li>outer: no tags</li>
+<li>inner1: landuse=forest, leaf_type=needleleaved, leaf_cycle=evergreen</li>
+<li>inner2: landuse=meadow</li>
+<li>inner3: natural=water, water=pond</li>
+</ul>
+<p>Examples of this kind of MP live in OSM <a href="https://www.openstreetmap.org/relation/1653686">here</a> and <a href="https://www.openstreetmap.org/relation/1652966">here</a>.</p>
+<p>I'm using imposm2 for importing OSM data to make some <a href="https://github.com/nobohan/OpenArdenneMap">paper maps</a> using a custom mapping aimed at rendering the leaf_type. However, with this kind of MP, I got blank holes in the forest for inner rings of type "inner1" that specify a different leaf_type than the relation. Inners like inner2 or inner3 are well rendered. This is not really a Mapnik problem since actually the inners of type "inner1" are not imported in my PostGIS DB using imposm2.</p>
+<p>Actually, I'm not the only one to face problem with these kind of MP, since the Transport, the <a href="https://www.openstreetmap.org/way/364040915#map=14/49.7378/5.5572&amp;layers=H">Humanitarian</a> and the OpenCycleMap renderings also show these holes in the MP. I though of a limitation of imposm2 but the Humanitarian rendering is supposed to use osm2pgsql. I didn't check for OpenCycleMap nor the Transport Map.</p>
+<p>The questions:</p>
+<ul>
+<li>
+<p>Is it a limitation of both imposm2
+   and (a old version) of osm2pgsql? Can
+   it be circumvented by a
+   pre-processing of the raw osm data*?</p>
+</li>
+<li>
+<p>Is there a better mapping practice
+   for these MP (that does not trigger
+   JOSM warning)?</p>
+</li>
+</ul>
+<p>Thanks for the support,</p>
+<p>EDIT: <a href="https://help.openstreetmap.org/questions/52242/needleleaved-inner-forest-polygon-not-rendered-rendering-or-modelling-problem">https://help.openstreetmap.org/questions/52242/needleleaved-inner-forest-polygon-not-rendered-rendering-or-modelling-problem</a> is a related question</p>
+<p>juminet</p>
+<p>* Actually if I manually delete the inners of type "inner1" from the relation, it works, but I'd like to find a automatic and better solution!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-rendering" href="/tags/rendering/" rel="tag" title="see questions tagged 'rendering'">rendering</a>
+<a class="post-tag tag-link-imposm" href="/tags/imposm/" rel="tag" title="see questions tagged 'imposm'">imposm</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-relations" href="/tags/relations/" rel="tag" title="see questions tagged 'relations'">relations</a>
+<a class="post-tag tag-link-multipolygon" href="/tags/multipolygon/" rel="tag" title="see questions tagged 'multipolygon'">multipolygon</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>04 Oct '18, 11:16</strong>
+</p>
+<img alt="juminet's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7841360034567cd045edd29245f4d5e4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13975/juminet">juminet</a><br/>
+<span class="score" title="61 reputation points">61</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="juminet has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/66159/">
+                edited
+                <strong>05 Oct '18, 08:36</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66159">
+</div>
+<div class="comment-tools" id="comment-tools-66159">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66159-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/66159/inner-members-of-some-multipolygon-relation-object-are-not-rendered-by-some-renderers?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/66159/inner-members-of-some-multipolygon-relation-object-are-not-rendered-by-some-renderers?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/66159/inner-members-of-some-multipolygon-relation-object-are-not-rendered-by-some-renderers?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/66159/inner-members-of-some-multipolygon-relation-object-are-not-rendered-by-some-renderers?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="66162"></a>
+<div class="answer" id="answer-container-66162">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66162/up/" id="post-66162-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66162-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/66162/down/" id="post-66162-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This is a bit difficult to answer here. If you think that some software isn't doing the right thing, you should open tickets with those pieces of software.</p>
+<p>There was a big change recently moving away from "old-style" multipolygons. The problems you are seeing might be related to that. Either people are using old versions of the software or haven't reimported the data or something like it. But that can not be answered in a general fashion, you have to ask the people developing or running this software.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/66162/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Oct '18, 17:27</strong>
+</p>
+<img alt="Jochen%20Topf's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2d4dfcdcde73aa5e2ffa4a9b3a7cb51d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/112/jochen-topf">Jochen Topf</a><br/>
+<span class="score" title="5244 reputation points"><span class="">5.2k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="50 badges"><span class="silver">●</span><span class="badgecount">50</span></span><span title="74 badges"><span class="bronze">●</span><span class="badgecount">74</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jochen Topf has 32 accepted answers">31%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66162">
+<a name="66642"></a>
+<div class="comment" id="comment-66642">
+<div class="comment-score" id="post-66642-score"></div>
+<div class="comment-text"><p>Hi, there are some link about this <em>"... big change recently moving away from 'old-style' multipolygons"</em>?  It is only a osm2pgsql news or a general OSM community decision?</p></div>
+<div class="comment-info" id="comment-66642-info">
+<span class="comment-age">(03 Nov '18, 12:17)</span>
+<a class="comment-user userinfo" href="/users/14889/ppkrauss">ppKrauss</a>
+</div>
+</div>
+<a name="66644"></a>
+<div class="comment" id="comment-66644">
+<div class="comment-score" id="post-66644-score">1</div>
+<div class="comment-text"><p>This is a general thing, not osm2pgsql specific. You can read about this here: <a href="http://area.jochentopf.com/">http://area.jochentopf.com/</a></p></div>
+<div class="comment-info" id="comment-66644-info">
+<span class="comment-age">(03 Nov '18, 14:09)</span>
+<a class="comment-user userinfo" href="/users/112/jochen-topf">Jochen Topf</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-66162">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66162-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="66163"></a>
+<div class="answer" id="answer-container-66163">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66163/up/" id="post-66163-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66163-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/66163/down/" id="post-66163-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The fact that the Standard rendering does render these inners, but as you wrote Humanitarian / Cycle Map / Transport not, does make it likely this is an issue of older versions of osm2pgsql being used.</p>
+<p>Contacting the developers is probably only really sensible if you know the exact versions of the software being used by the renderings that fail.</p>
+<p>I would definitely not change your tagging / mapping practice to suite a specific renderer or (older) version of an import tool, unless the MP are simply broken and invalid in JOSM, in which case you need to fix them. That doesn't seem likely here though, considering they do render fine in Standard style.</p>
+<p><strong>The solution in your case seems to upgrade your own software stack.</strong></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/66163/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Oct '18, 22:10</strong>
+</p>
+<img alt="mboeringa's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/dc8a1ef54d3e25744ee52d1ad1459a81?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9580/mboeringa">mboeringa</a><br/>
+<span class="score" title="1542 reputation points"><span class="">1.5k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="15 badges"><span class="silver">●</span><span class="badgecount">15</span></span><span title="27 badges"><span class="bronze">●</span><span class="badgecount">27</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mboeringa has 4 accepted answers">9%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/66163/">
+                edited
+                <strong>04 Oct '18, 22:15</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66163">
+<a name="66164"></a>
+<div class="comment" id="comment-66164">
+<div class="comment-score" id="post-66164-score"></div>
+<div class="comment-text"><p>Side note: using a totally different import and rendering software stack based on ArcGIS, I don't see any issue with holes in these multipolygons, this is another indication that the MPs are sound.</p></div>
+<div class="comment-info" id="comment-66164-info">
+<span class="comment-age">(04 Oct '18, 22:15)</span>
+<a class="comment-user userinfo" href="/users/9580/mboeringa">mboeringa</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-66163">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66163-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/66159/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="OZwzo4V1lfEER4emgmJMEIJYg7d7cPYt"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,146 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/74331/direction-of-lanesforwardlanesbackward-with-eg-onewayreverse">Direction of lanes:forward/lanes:backward with (e.g.) oneway=reverse</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/74331/up/" id="post-74331-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-74331-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/74331/down/" id="post-74331-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/74331/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi.
+On the Wiki page of key 'lanes' I read the following: "The key lanes:forward=<em> hereby refers to lanes which direction is equal to the direction of the OSM way, and lanes:backward=</em> to the opposite direction."</p>
+<p>My question is: Does this mean that 'lanes:forward' refers to the direction of which the nodes of the way were listed, or the direction of which you can travel on the way?
+In different terms: For instance, let's say that the way has tag 'oneway'='reverse'. This means that the way of which you can travel on the way (let's call this dirA) is the opposite of how the way was "drawn" (let's call this dirB). Does 'lanes:forward' refer to the number of lanes in direction dirA or in direction dirB? This makes quite a difference for how you would use these numbers.</p>
+<p>Thank you for your help.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-lanes" href="/tags/lanes/" rel="tag" title="see questions tagged 'lanes'">lanes</a>
+<a class="post-tag tag-link-oneway" href="/tags/oneway/" rel="tag" title="see questions tagged 'oneway'">oneway</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>22 Apr '20, 14:34</strong>
+</p>
+<img alt="issibelli's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/305258babc6da7f52cf1d1c2c3a1efd6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18257/issibelli">issibelli</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="issibelli has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-74331">
+</div>
+<div class="comment-tools" id="comment-tools-74331">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-74331-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/74331/direction-of-lanesforwardlanesbackward-with-eg-onewayreverse?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/74331/direction-of-lanesforwardlanesbackward-with-eg-onewayreverse?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/74331/direction-of-lanesforwardlanesbackward-with-eg-onewayreverse?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/74331/direction-of-lanesforwardlanesbackward-with-eg-onewayreverse?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="74332"></a>
+<div class="answer" id="answer-container-74332">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/74332/up/" id="post-74332-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-74332-score" title="current number of votes">
+    6
+</div>
+<a class="ajax-command post-vote down" href="/vote/74332/down/" id="post-74332-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The order of the nodes within the way definition. Not the direction of travel.</p>
+<p>That said, a number of QA tools will tell you that the <a href="https://wiki.openstreetmap.org/wiki/Key:oneway"><code>oneway=-1</code> or <code>oneway=reverse</code> is not desireable</a> and strongly suggest you reverse the order of the nodes in the way and use <code>oneway=yes</code>. If you follow that advice, then on oneway roads the direction of travel and the order of the nodes is the same. But then in that case you also don't need to worry about <code>lanes:backward</code> or <code>lanes:forward</code> either.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/74332/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Apr '20, 15:36</strong>
+</p>
+<img alt="n76's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f60af53a4eba0c21f25c22674fb4a8cc?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5918/n76">n76</a><br/>
+<span class="score" title="10839 reputation points"><span class="">10.8k</span></span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="82 badges"><span class="silver">●</span><span class="badgecount">82</span></span><span title="172 badges"><span class="bronze">●</span><span class="badgecount">172</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="n76 has 48 accepted answers">17%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-74332">
+<a name="74333"></a>
+<div class="comment" id="comment-74333">
+<div class="comment-score" id="post-74333-score"></div>
+<div class="comment-text"><p>Thank you for the quick reply. What do you mean with your last sentence?</p></div>
+<div class="comment-info" id="comment-74333-info">
+<span class="comment-age">(22 Apr '20, 15:43)</span>
+<a class="comment-user userinfo" href="/users/18257/issibelli">issibelli</a>
+</div>
+</div>
+<a name="74334"></a>
+<div class="comment" id="comment-74334">
+<div class="comment-score" id="post-74334-score">2</div>
+<div class="comment-text"><p>the <code>:forward</code> and <code>:reverse</code> tag name suffixes are only needed and used on two way roads. So if travel on the road is restricted to a single direction they are not normally used.</p></div>
+<div class="comment-info" id="comment-74334-info">
+<span class="comment-age">(22 Apr '20, 15:48)</span>
+<a class="comment-user userinfo" href="/users/5918/n76">n76</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-74332">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-74332-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/74331/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="BTnvWPAV2EJPJbslOsVb9O6Bmj3HDijb"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

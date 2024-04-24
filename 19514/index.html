@@ -1,0 +1,188 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/19514/export-of-placenames">Export of Placenames?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/19514/up/" id="post-19514-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-19514-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/19514/down/" id="post-19514-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/19514/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I've done some looking around but can't figure out if this is possible:</p>
+<p>I need a file of placenames in the UK along with their lat/lng. Similar to this:</p>
+<p><a href="http://wiki.openstreetmap.org/wiki/List_of_London_Underground_stations">http://wiki.openstreetmap.org/wiki/List_of_London_Underground_stations</a></p>
+<p>Does such a thing exist?</p>
+<p>Chris.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-export" href="/tags/export/" rel="tag" title="see questions tagged 'export'">export</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>01 Feb '13, 16:15</strong>
+</p>
+<img alt="Chris1970's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8c74f089c047244a08303867c921a833?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5531/chris1970">Chris1970</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Chris1970 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-19514">
+</div>
+<div class="comment-tools" id="comment-tools-19514">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-19514-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/19514/export-of-placenames?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/19514/export-of-placenames?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/19514/export-of-placenames?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/19514/export-of-placenames?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="19568"></a>
+<div class="answer" id="answer-container-19568">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/19568/up/" id="post-19568-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-19568-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/19568/down/" id="post-19568-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>As an example, here's what I did when I wanted all the railway stations in mainland GB.  You'll need to think about what "<code>place=</code>" items you want to keep and amend accordingly.  If you want Northern Ireland as well, then you'll need to include some from an Irish extract too - it might be worth asking another question about that.</p>
+<pre><code>1) osmconvert great_britain.osm.pbf -o=great_britain.o5m
+
+2) osmfilter great_britain.o5m --keep="railway=station" &gt; stations.osm
+
+3) osmconvert stations.osm --all-to-nodes --csv="<a href="/users/260/idoneus">@id</a> <a href="/users/5110/latroc">@lat</a> <a href="/users/1350/longestaugust">@lon</a> railway name" --csv=headline &gt; stations.txt
+
+4) Open stations.txt in your spreadsheet program of choice, and remove lines that don't have "station" in column D
+</code></pre>
+<p>Step (1) is needed because osmfilter doesn't understand pbf (protobuf format) files. You could process as a raw .osm file, but it'd be much bigger.</p>
+<p>Step (4) is a sanity check to get rid of a few bits and pieces.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/19568/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Feb '13, 08:53</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-19568">
+</div>
+<div class="comment-tools" id="comment-tools-19568">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-19568-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="19567"></a>
+<div class="answer" id="answer-container-19567">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/19567/up/" id="post-19567-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-19567-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/19567/down/" id="post-19567-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I'm afraid this probably doesn't readily exist. But for sure it is possible to generate this, although this require the use of more advanced techniques. I could imagine two different approaches:</p>
+<p><strong>Filter the data locally from downloaded data</strong></p>
+<p>First you have to get the country extract for the UK e.g. from <a href="http://download.geofabrik.de/openstreetmap/europe/">Geofabrik</a>. Also you have to get <a href="http://wiki.openstreetmap.org/wiki/Osmosis">Osmosis</a> and familiarize yourself with the usage. Osmosis allows you to extract all place nodes, use something like <code>--tag-filter accept-nodes place=*</code>. This gives you an XML file containing the information, you will have to reformat it somehow to get the list you're looking for.</p>
+<p><strong>Use <a href="http://wiki.openstreetmap.org/wiki/Overpass_API">Overpass API</a> to get the data</strong></p>
+<p>Overpass API allows you to do the filtering directly. Here you'll have to use something like <code>&amp;lt; has-kv k="place" /&amp;gt;</code>. But doing so for all places in the UK might be a bit to large of an request. For an easier interface you could have a look at <a href="http://overpass-turbo.eu/">overpass turbo</a>.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/19567/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Feb '13, 08:38</strong>
+</p>
+<img alt="Ohr's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c79367c8f07471873499bb9e54a3c427?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2920/ohr">Ohr</a><br/>
+<span class="score" title="101 reputation points">101</span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Ohr has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-19567">
+</div>
+<div class="comment-tools" id="comment-tools-19567">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-19567-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/19514/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="QsNm66tSpf6key3BcPitF9JLYWnYgGXO"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

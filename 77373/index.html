@@ -1,0 +1,243 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/77373/overpass-query">Overpass : Query</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/77373/up/" id="post-77373-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-77373-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/77373/down/" id="post-77373-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/77373/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello, <br/>
+A school will have a number of buildings and they will be located close by.  I tried with overpass the query which can select only one of these buildings and skip the rest.  But not Proper working.  Can you tell me the query for that ....<br/>
+<a href="https://overpass-turbo.eu/s/ZEM">https://overpass-turbo.eu/s/ZEM</a><br/>
+<code>
+[out:json]
+[timeout:25];
+way({{bbox}})[amenity=school];
+map_to_area -&gt;.area;
+(
+   (
+    node <a href="{{bbox}}">"building"="school"</a>;
+    way  <a href="{{bbox}}">"building"="school"</a>;
+   )-&gt;.scl;
+   (
+  (
+    node ["building"="school"]<a href="{{bbox}}">"amenity"!~"."</a>;
+    way  ["building"="school"]<a href="{{bbox}}">"amenity"!~"."</a>;
+  );
+  - 
+  (
+    // All nodes+ways with building=school and no amenity=* tag in area
+    node ["building"="school"]<a href="area.area">"amenity"!~"."</a>;
+    way  ["building"="school"]<a href="area.area">"amenity"!~"."</a>;  <br/>
+  );)-&gt;.samp1;
+   (
+    node.samp1(around.scl:100);
+    way.samp1(around.scl:100);
+   )-&gt;.near;
+  (.samp1; - .near;);
+);
+ out center;
+</code></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 Nov '20, 12:11</strong>
+</p>
+<img alt="VIPINDAS%20K's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fc9c2a007c6f81684415bb1f16f2991c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19148/vipindas-k">VIPINDAS K</a><br>
+<span class="score" title="125 reputation points">125</span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="8 badges"><span class="silver">●</span><span class="badgecount">8</span></span><span title="13 badges"><span class="bronze">●</span><span class="badgecount">13</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="VIPINDAS K has no accepted answers">0%</span>
+</br></br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-77373">
+<a name="77374"></a>
+<div class="comment" id="comment-77374">
+<div class="comment-score" id="post-77374-score"></div>
+<div class="comment-text"><p>To start with, the {bbox} you provided there is no amenity=school so your first two lines will return nothing.
+Which building are you attempting to single out?</p></div>
+<div class="comment-info" id="comment-77374-info">
+<span class="comment-age">(03 Nov '20, 12:49)</span>
+<a class="comment-user userinfo" href="/users/1532/davef">DaveF</a>
+</div>
+</div>
+<a name="77377"></a>
+<div class="comment" id="comment-77377">
+<div class="comment-score" id="post-77377-score"></div>
+<div class="comment-text"><p>school building (outside the tag "amenity = school")</p></div>
+<div class="comment-info" id="comment-77377-info">
+<span class="comment-age">(03 Nov '20, 13:38)</span>
+<a class="comment-user userinfo" href="/users/19148/vipindas-k">VIPINDAS K</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-77373">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-77373-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/77373/overpass-query?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/77373/overpass-query?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/77373/overpass-query?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/77373/overpass-query?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="77380"></a>
+<div class="answer" id="answer-container-77380">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/77380/up/" id="post-77380-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-77380-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/77380/down/" id="post-77380-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I /think/ you may have over complicated things. It's unclear if you wan one or all those outside</p>
+<p>Edit:</p>
+<p><a href="https://overpass-turbo.eu/s/ZH6">https://overpass-turbo.eu/s/ZH6</a></p>
+<pre><code>[bbox:{{bbox}}];
+(
+  nw[building=school];
+  -
+  (
+    way[amenity=school];map_to_area;
+    nw(area)[building=school];
+  );
+)-&gt;.Outside;  
+foreach .Outside (
+  way.Outside(around:100);
+  way._(if:count(ways) == 1);
+  out center;
+);
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/77380/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Nov '20, 14:54</strong>
+</p>
+<img alt="DaveF's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c9c8b421ad22f51ddd62f23413717036?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1532/davef">DaveF</a><br>
+<span class="score" title="3264 reputation points"><span class="">3.3k</span></span><span title="84 badges"><span class="badge1">●</span><span class="badgecount">84</span></span><span title="98 badges"><span class="silver">●</span><span class="badgecount">98</span></span><span title="133 badges"><span class="bronze">●</span><span class="badgecount">133</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="DaveF has 17 accepted answers">16%</span>
+</br></br></p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/77380/">
+                edited
+                <strong>03 Nov '20, 17:10</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-77380">
+<a name="77381"></a>
+<div class="comment" id="comment-77381">
+<div class="comment-score" id="post-77381-score"></div>
+<div class="comment-text"><p>This is exactly what is needed.  But select only one school building and deselect the school building around it (within 100 meters).  Is this possible?</p></div>
+<div class="comment-info" id="comment-77381-info">
+<span class="comment-age">(03 Nov '20, 15:07)</span>
+<a class="comment-user userinfo" href="/users/19148/vipindas-k">VIPINDAS K</a>
+</div>
+</div>
+<a name="77382"></a>
+<div class="comment" id="comment-77382">
+<div class="comment-score" id="post-77382-score"></div>
+<div class="comment-text"><p>So you want all school buildings outside the perimeter of the school amenity, that are at least 100m away from other school buildings. Is that correct?</p></div>
+<div class="comment-info" id="comment-77382-info">
+<span class="comment-age">(03 Nov '20, 15:19)</span>
+<a class="comment-user userinfo" href="/users/1532/davef">DaveF</a>
+</div>
+</div>
+<a name="77384"></a>
+<div class="comment" id="comment-77384">
+<div class="comment-score" id="post-77384-score"></div>
+<div class="comment-text"><p>Yes. (Select only one school building within 100 meter and skip the rest)</p></div>
+<div class="comment-info" id="comment-77384-info">
+<span class="comment-age">(03 Nov '20, 15:25)</span>
+<a class="comment-user userinfo" href="/users/19148/vipindas-k">VIPINDAS K</a>
+</div>
+</div>
+<a name="77386"></a>
+<div class="comment" id="comment-77386">
+<div class="comment-score" id="post-77386-score"></div>
+<div class="comment-text"><p>I've updated the routine</p></div>
+<div class="comment-info" id="comment-77386-info">
+<span class="comment-age">(03 Nov '20, 17:11)</span>
+<a class="comment-user userinfo" href="/users/1532/davef">DaveF</a>
+</div>
+</div>
+<a name="77388"></a>
+<div class="comment" id="comment-77388">
+<div class="comment-score" id="post-77388-score"></div>
+<div class="comment-text"><p>Thank you so much for your help .... Let there be 5 school buildings in one place (around 100 meters), select only one of them(and deselect the other school buildings).  This is not possible in this query ... Can you include that too ....</p></div>
+<div class="comment-info" id="comment-77388-info">
+<span class="comment-age">(03 Nov '20, 19:16)</span>
+<a class="comment-user userinfo" href="/users/19148/vipindas-k">VIPINDAS K</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-77380">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-77380-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/77373/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="ygCGee8LMg33Ozd3agtm9tDeSPUfXj6V"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

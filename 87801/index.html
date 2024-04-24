@@ -1,0 +1,135 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/87801/can-us-shopping-centers-be-exported-as-a-shapefile-and-if-so-how">Can U.S. shopping centers be exported as a shapefile and if so, how?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/87801/up/" id="post-87801-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-87801-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/87801/down/" id="post-87801-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/87801/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>New to OSM: Can U.S. shopping centers be exported as a shapefile and if so, how? Thanks!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-shapefile" href="/tags/shapefile/" rel="tag" title="see questions tagged 'shapefile'">shapefile</a>
+<a class="post-tag tag-link-shopping_center" href="/tags/shopping_center/" rel="tag" title="see questions tagged 'shopping_center'">shopping_center</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>06 Sep '23, 14:50</strong>
+</p>
+<img alt="charris801's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/cd8cc4b6b7dbd400ce4f247174534d56?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/23317/charris801">charris801</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="charris801 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-87801">
+</div>
+<div class="comment-tools" id="comment-tools-87801">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-87801-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/87801/can-us-shopping-centers-be-exported-as-a-shapefile-and-if-so-how?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/87801/can-us-shopping-centers-be-exported-as-a-shapefile-and-if-so-how?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/87801/can-us-shopping-centers-be-exported-as-a-shapefile-and-if-so-how?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/87801/can-us-shopping-centers-be-exported-as-a-shapefile-and-if-so-how?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="87806"></a>
+<div class="answer" id="answer-container-87806">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/87806/up/" id="post-87806-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-87806-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/87806/down/" id="post-87806-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>If your question is: "Is there a web site where I can click a few buttons and out comes a shapefile with all US shopping centers" then the answer is no. But if you're willing to invest more time then it is possible.</p>
+<p>The closest you'll get to "a web site where..." is the "Overpass Turbo" service (example: <a href="http://overpass-turbo.eu/s/1zTh)">http://overpass-turbo.eu/s/1zTh)</a> but this requires that you do some research as to which OSM tags you want (malls? supermarkets?), also Overpass Turbo will only output GeoJSON (not shape files but converters exist), and might refuse to run on an area as large as the US - you might have to run it in batches.</p>
+<p>A more robust method is downloading a raw OSM data file that contains data for the US (e.g. from download.geofabrik.de), then run the "osmium" command line program (requires Linux) to filter out the objects of interest (requires the same research about what exactly you want that I mentioned in #1) and then convert them to GeoJSON.</p>
+<p>Alternatively you can import the OSM data into a PostGIS database with osm2pgsql (both PostGIS and osm2pgsql are available on Windows but running on Linux is easier), and then use the standard PostGIS tool "pgsql2shp" to create a shape file based on a SQL query formulated to return all shopping centers. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/87806/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Sep '23, 23:09</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-87806">
+<a name="87818"></a>
+<div class="comment" id="comment-87818">
+<div class="comment-score" id="post-87818-score"></div>
+<div class="comment-text"><p>Great - thank you very much!</p></div>
+<div class="comment-info" id="comment-87818-info">
+<span class="comment-age">(07 Sep '23, 13:44)</span>
+<a class="comment-user userinfo" href="/users/23317/charris801">charris801</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-87806">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-87806-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/87801/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="REE3M29NUOIukGcQKqHUIyCRQmELOvQp"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

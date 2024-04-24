@@ -1,0 +1,211 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/43428/contours-extraction-from-osm-xml">Contours extraction from OSM XML</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/43428/up/" id="post-43428-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-43428-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/43428/down/" id="post-43428-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/43428/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi, I am writing some software to convert contours and produce a contour map, I have downloaded gml data which I have converted to XML, both Osmosis and Splitter reads it correctly, I understand nodes and ways, but I don't get Relations... here is a small extract from my file, this part is for coastline</p>
+<pre><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;osm version="0.6" generator="Osmosis 0.43.1"&gt;
+  &lt;node id="1000000000088199248" version="1" timestamp="2015-06-05T12:12:53:50Z" lat="54.4568954" lon="-3.5692281"/&gt;
+  &lt;node id="1000000000088199249" version="1" timestamp="2015-06-05T12:12:53:50Z" lat="54.4570016" lon="-3.5691505"/&gt;
+  &lt;node id="1000000000088199250" version="1" timestamp="2015-06-05T12:12:53:50Z" lat="54.4569964" lon="-3.5690654"/&gt;
+  &lt;node id="1000000000088199251" version="1" timestamp="2015-06-05T12:12:53:50Z" lat="54.4568735" lon="-3.5689789"/&gt;
+  &lt;node id="1000000000088199252" version="1" timestamp="2015-06-05T12:12:53:50Z" lat="54.4567703" lon="-3.5689611"/&gt;
+  &lt;node id="1000000000088199253" version="1" timestamp="2015-06-05T12:12:53:50Z" lat="54.456821" lon="-3.5690741"/&gt;
+  &lt;node id="1000000000088199254" version="1" timestamp="2015-06-05T12:12:53:50Z" lat="54.4568464" lon="-3.5691275"/&gt;
+  &lt;way id="1000000000088199255" version="5" timestamp="2015-06-05T12:12:53:50Z"&gt;
+    &lt;nd ref="1000000000088199248"/&gt;
+    &lt;nd ref="1000000000088199249"/&gt;
+    &lt;nd ref="1000000000088199250"/&gt;
+    &lt;nd ref="1000000000088199251"/&gt;
+    &lt;nd ref="1000000000088199252"/&gt;
+    &lt;nd ref="1000000000088199253"/&gt;
+    &lt;nd ref="1000000000088199254"/&gt;
+    &lt;nd ref="1000000000088199248"/&gt;
+    &lt;tag k="natural" v="coastline"/&gt;
+  &lt;/way&gt;
+&lt;/osm&gt;
+</code></pre>
+<p>When i produce a map from this there is nothing on it, and the map size isn't what I would expect
+.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-xml" href="/tags/xml/" rel="tag" title="see questions tagged 'xml'">xml</a>
+<a class="post-tag tag-link-contours" href="/tags/contours/" rel="tag" title="see questions tagged 'contours'">contours</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>06 Jun '15, 15:32</strong>
+</p>
+<img alt="Rossendale%20Gary's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1a48846e2865ba49198e0fb8e4064358?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11006/rossendale-gary">Rossendale Gary</a><br/>
+<span class="score" title="141 reputation points">141</span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="9 badges"><span class="silver">●</span><span class="badgecount">9</span></span><span title="17 badges"><span class="bronze">●</span><span class="badgecount">17</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Rossendale Gary has one accepted answer">20%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/43428/">
+                edited
+                <strong>07 Jun '15, 07:24</strong>
+</a>
+</p>
+<img alt="iii's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/49a7d0e0408e9cf2f698faac0f4d837a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4984/iii">iii</a><br/>
+<span class="score" title="4892 reputation points"><span class="">4.9k</span></span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="40 badges"><span class="silver">●</span><span class="badgecount">40</span></span><span title="82 badges"><span class="bronze">●</span><span class="badgecount">82</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-43428">
+<a name="43437"></a>
+<div class="comment" id="comment-43437">
+<div class="comment-score" id="post-43437-score"></div>
+<div class="comment-text"><p>I'm not sure if I understand the point of your question. Which filters did you use on osmosis etc? How do you plan to mix contour lines etc...</p>
+<p>Did you read the wiki already? <a href="https://wiki.openstreetmap.org/wiki/Contours">https://wiki.openstreetmap.org/wiki/Contours</a></p></div>
+<div class="comment-info" id="comment-43437-info">
+<span class="comment-age">(07 Jun '15, 07:28)</span>
+<a class="comment-user userinfo" href="/users/4984/iii">iii</a>
+</div>
+</div>
+<a name="43439"></a>
+<div class="comment" id="comment-43439">
+<div class="comment-score" id="post-43439-score"></div>
+<div class="comment-text"><p>Okay, I am trying to produce my own contour layer, I am writing the software in C#. I have downloaded the european contour and coastline data which is in gml, I have converted it to xml.</p>
+<p>a small file osmosis is happy with, which tells me, I have the main settings in osmosis correct.</p>
+<pre><code>    string processCommand = "java";
+    string processCommandArgs = _splitter;
+    processCommandArgs += "--mixed=true ";
+    processCommandArgs += "--mapid=" + Config.GetMapId(TypeOfMap) + " ";
+    processCommandArgs += "--description=" + Config.GetMapName(TypeOfMap) + " ";
+    processCommandArgs += "--mixed=true ";
+    processCommandArgs += "--max-nodes=5000000 ";
+    processCommandArgs += "--keep-complete=false ";
+    processCommandArgs += "--max-areas=27 ";
+    processCommandArgs += PbfDirectory + PbfFile + " ";
+    processCommandArgs += "--output-dir=" + OutputDirectory;
+</code></pre>
+<p>That is my osmosis command it works perfectly on small clumps of data I have produced, I think the problem is down to how big some of the ways are, some have over 6,000 nodes on them</p></div>
+<div class="comment-info" id="comment-43439-info">
+<span class="comment-age">(07 Jun '15, 08:08)</span>
+<a class="comment-user userinfo" href="/users/11006/rossendale-gary">Rossendale Gary</a>
+</div>
+</div>
+<a name="43440"></a>
+<div class="comment" id="comment-43440">
+<div class="comment-score" id="post-43440-score"></div>
+<div class="comment-text"><p>So you try to extract the coastline only (you call it contours?) This is AFAIK a bit tricky on the geometry level (unclosed polys, multipolygones, ...). So IMHO it's worth to consider using <a href="https://wiki.openstreetmap.org/wiki/Coastline">Coastline</a> dump?</p></div>
+<div class="comment-info" id="comment-43440-info">
+<span class="comment-age">(07 Jun '15, 08:32)</span>
+<a class="comment-user userinfo" href="/users/4984/iii">iii</a>
+</div>
+</div>
+<a name="43441"></a>
+<div class="comment" id="comment-43441">
+<div class="comment-score" id="post-43441-score"></div>
+<div class="comment-text"><p>the downloaded file contains both contours and coastline, I am really after the contours..  </p>
+<p><a href="https://www.ordnancesurvey.co.uk/opendatadownload/products.html">https://www.ordnancesurvey.co.uk/opendatadownload/products.html</a></p>
+<p>The conversions to WSG84 I have done and verified, the problem is somehow I am confusing the splitter. without any meaningful fault report from it. The contours I get are really impressive, it works and it is accurate, the problem I am having is getting all the data through</p></div>
+<div class="comment-info" id="comment-43441-info">
+<span class="comment-age">(07 Jun '15, 09:01)</span>
+<a class="comment-user userinfo" href="/users/11006/rossendale-gary">Rossendale Gary</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-43428">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-43428-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/43428/contours-extraction-from-osm-xml?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/43428/contours-extraction-from-osm-xml?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/43428/contours-extraction-from-osm-xml?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/43428/contours-extraction-from-osm-xml?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="43477"></a>
+<div class="answer answered-by-owner" id="answer-container-43477">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/43477/up/" id="post-43477-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-43477-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/43477/down/" id="post-43477-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Oops, The xml file was spot on, the problem was in my other code used to generate the content for splitter to use.. I now have wonderful contours</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/43477/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Jun '15, 05:45</strong>
+</p>
+<img alt="Rossendale%20Gary's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1a48846e2865ba49198e0fb8e4064358?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11006/rossendale-gary">Rossendale Gary</a><br/>
+<span class="score" title="141 reputation points">141</span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="9 badges"><span class="silver">●</span><span class="badgecount">9</span></span><span title="17 badges"><span class="bronze">●</span><span class="badgecount">17</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Rossendale Gary has one accepted answer">20%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-43477">
+</div>
+<div class="comment-tools" id="comment-tools-43477">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-43477-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/43428/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="q2MeugpJh7lRtDLMNdDg8nRMIWqfIVdS"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

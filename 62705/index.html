@@ -1,0 +1,190 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/62705/no-space-left-on-device-with-setupphp-in-nominatim">No space left on device with setup.php in Nominatim</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/62705/up/" id="post-62705-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-62705-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/62705/down/" id="post-62705-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/62705/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm trying to use the <code>north-america-latest.osm.pbf</code> file, around 40GB. I expect a total disk usage of 400(ish) GB.</p>
+<p><code>./utils/setup.php   --osm-file /3TB/nominatim/north-america-latest.osm.pbf   --all --osm2pgsql-cache 24000 --threads 8 2&gt;&amp;1   | tee setup.log</code></p>
+<p>When running the setup, I get</p>
+<pre><code>./utils/setup.php   --osm-file /3TB/nominatim/north-america-latest.osm.pbf   --all --osm2pgsql-cache 24000 --threads 8 2&gt;&amp;1   | tee setup.log
+2018-03-16 20:35:16 == Create DB
+2018-03-16 20:35:17 == Setup DB
+Postgres version found: 9.6
+Postgis version found: 2.3
+2018-03-16 20:35:19 == WARNING: external UK postcode table not found.
+2018-03-16 20:35:20 == Import data
+osm2pgsql version 0.93.0-dev (64 bit id space)
+
+Using projection SRS 4326 (Latlong)
+NOTICE:  table "place" does not exist, skipping
+Allocating memory for dense node cache
+Allocating dense node cache in one big chunk
+Allocating memory for sparse node cache
+Sharing dense sparse
+Node-cache: cache=24000MB, maxblocks=384000*65536, allocation method=11
+Mid: pgsql, cache=24000
+Setting up table: planet_osm_nodes
+Setting up table: planet_osm_ways
+Setting up table: planet_osm_rels
+
+Reading in file: /3TB/nominatim/north-america-latest.osm.pbf
+Using PBF parser.
+Processing: Node(966941k 786.8k/s) Way(72862k 84.72k/s) Relation(0 0.00/s)COPY_END for COPY planet_osm_ways FROM STDIN;
+ failed: ERROR:  could not extend file "base/292375/295704.6": No space left on device
+HINT:  Check free disk space.
+CONTEXT:  COPY planet_osm_ways, line 15312860
+
+Error occurred, cleaning up
+ERROR: Error executing external command: /srv/nominatim/Nominatim-3.1.0/build/osm2pgsql/osm2pgsql -lsc -O gazetteer --hstore --number-processes 1 -C 24000 -P 5432 -d nominatim /3TB/nominatim/north-america-latest.osm.pbf
+Error executing external command: /srv/nominatim/Nominatim-3.1.0/build/osm2pgsql/osm2pgsql -lsc -O gazetteer --hstore --number-processes 1 -C 24000 -P 5432 -d nominatim /3TB/nominatim/north-america-latest.osm.pbf
+</code></pre>
+<p>I've already created a default tablesplace on the 3TB drive for PostGre, but somehow my (tiny) root partitions gets filled after 30ish minutes. How can I change this apparent tmp path?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-setup.php" href="/tags/setup.php/" rel="tag" title="see questions tagged 'setup.php'">setup.php</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Mar '18, 21:34</strong>
+</p>
+<img alt="otter-in-a-suit's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/5a3b2450568b2e986fe909dcb0f51f63?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14876/otter-in-a-suit">otter-in-a-suit</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="otter-in-a-suit has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-62705">
+</div>
+<div class="comment-tools" id="comment-tools-62705">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-62705-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/62705/no-space-left-on-device-with-setupphp-in-nominatim?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/62705/no-space-left-on-device-with-setupphp-in-nominatim?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/62705/no-space-left-on-device-with-setupphp-in-nominatim?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/62705/no-space-left-on-device-with-setupphp-in-nominatim?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="62707"></a>
+<div class="answer accepted-answer" id="answer-container-62707">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/62707/up/" id="post-62707-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-62707-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/62707/down/" id="post-62707-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/62707/" rel="nofollow" title="otter-in-a-suit has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It looks like your default tablespace setting was ignored. You can tell Nominatim to explicitly move part or all of the database into a different tablespace through its configuration. To move all data, add something like that to your <code>settings/local/php</code>:</p>
+<p><code>@define('CONST_Tablespace_Osm2pgsql_Data', 'bigTS');
+  @define('CONST_Tablespace_Osm2pgsql_Index', 'bigTS');
+  @define('CONST_Tablespace_Place_Data', 'bigTS');
+  @define('CONST_Tablespace_Place_Index', 'bigTS');
+  @define('CONST_Tablespace_Address_Data', 'bigTS');
+  @define('CONST_Tablespace_Address_Index', 'bigTS');
+  @define('CONST_Tablespace_Search_Data', 'bigTS');
+  @define('CONST_Tablespace_Search_Index', 'bigTS');
+  @define('CONST_Tablespace_Aux_Data', 'bigTS');
+  @define('CONST_Tablespace_Aux_Index', 'bigTS');</code></p>
+<p>where <code>bigTS</code> should be replaced by the name of your tablespace. See <code>settings/defaults.php</code> for more information on these settings.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/62707/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>16 Mar '18, 22:37</strong>
+</p>
+<img alt="lonvia's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d888b712d85dee0aa304297f2dc697c7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2921/lonvia">lonvia</a><br/>
+<span class="score" title="6213 reputation points"><span class="">6.2k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="57 badges"><span class="silver">●</span><span class="badgecount">57</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="lonvia has 43 accepted answers">40%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-62707">
+<a name="62886"></a>
+<div class="comment" id="comment-62886">
+<div class="comment-score" id="post-62886-score"></div>
+<div class="comment-text"><p>Hi, </p>
+<p>I'm running into the same problem. Did @Ionvia solution fix the issue? Thanks.</p></div>
+<div class="comment-info" id="comment-62886-info">
+<span class="comment-age">(02 Apr '18, 13:47)</span>
+<a class="comment-user userinfo" href="/users/14937/vipyoung">vipyoung</a>
+</div>
+</div>
+<a name="62981"></a>
+<div class="comment" id="comment-62981">
+<div class="comment-score" id="post-62981-score">1</div>
+<div class="comment-text"><p>Yes, this solved it. Thank you.</p></div>
+<div class="comment-info" id="comment-62981-info">
+<span class="comment-age">(11 Apr '18, 23:08)</span>
+<a class="comment-user userinfo" href="/users/14876/otter-in-a-suit">otter-in-a-suit</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-62707">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-62707-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/62705/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="oU9t2mMFTUfERupxQxF5qHhLlrz6iq5N"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,378 @@
+<meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="../style.css"><div id="CALeft">
+<div class="headNormal">
+<h1><a href="/questions/75449/renderd-issue">Renderd issue</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75449/up/" id="post-75449-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75449-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/75449/down/" id="post-75449-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/75449/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Imported just part of the world using
+ osm2pgsql -d gis --slim -C 1000 --tag-transform-script ~/src/openstreetmap-carto/openstreetmap-carto.lua --hstore ~trent/data/oklahoma-latest.osm.pbf</p>
+<p>no issues. ran fine.</p>
+<p>use renderd
+ An error occurred while loading the map layer 'ajt': Postgis Plugin: ERROR:  relation "icesheet_polygons" does not exist
+LINE 1: SELECT ST_SRID("way") AS srid FROM icesheet_polygons WHERE "...
+                                           ^</p>
+<p>any ideas what I may be missing?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-renderd" href="/tags/renderd/" rel="tag" title="see questions tagged 'renderd'">renderd</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>27 Jun '20, 20:35</strong>
+</p>
+<img alt="Trent's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/cbea797cf56fb87a893b11776614d836?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18601/trent">Trent</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Trent has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-75449">
+<a name="75452"></a>
+<div class="comment" id="comment-75452">
+<div class="comment-score" id="post-75452-score"></div>
+<div class="comment-text"><p>Here is the import </p>
+<p>osm2pgsql -d gis --create --slim -C 1000 --tag-transform-script ~/src/openstreetmap-carto/openstreetmap-carto.lua --hstore ~trent/data/oklahoma-latest.osm.bz2
+osm2pgsql version 1.2.1 (64 bit id space)</p>
+<p>Allocating memory for dense node cache
+Allocating dense node cache in one big chunk
+Allocating memory for sparse node cache
+Sharing dense sparse
+Node-cache: cache=1000MB, maxblocks=16000*65536, allocation method=11
+Mid: pgsql, cache=1000
+Setting up table: planet_osm_nodes
+Setting up table: planet_osm_ways
+Setting up table: planet_osm_rels
+Using lua based tag processing pipeline with script /home/renderaccount/src/openstreetmap-carto/openstreetmap-carto.lua
+Using projection SRS 3857 (Spherical Mercator)
+Setting up table: planet_osm_point
+Setting up table: planet_osm_line
+Setting up table: planet_osm_polygon
+Setting up table: planet_osm_roads</p>
+<p>Reading in file: /home/trent/data/oklahoma-latest.osm.bz2
+Using XML parser.
+Processing: Node(14516k 241.9k/s) Way(1034k 13.98k/s) Relation(7730 1932.50/s)  parse time: 138s
+Node stats: total(14516137), max(7650266568) in 60s
+Way stats: total(1034427), max(819194812) in 74s
+Relation stats: total(12246), max(11228623) in 4s
+Sorting data and creating indexes for planet_osm_point
+Sorting data and creating indexes for planet_osm_line
+Sorting data and creating indexes for planet_osm_polygon
+Sorting data and creating indexes for planet_osm_roads
+Copying planet_osm_roads to cluster by geometry finished
+Creating geometry index on planet_osm_roads
+Copying planet_osm_point to cluster by geometry finished
+Creating geometry index on planet_osm_point
+Creating osm_id index on planet_osm_roads
+Creating indexes on planet_osm_roads finished
+All indexes on planet_osm_roads created in 7s
+Completed planet_osm_roads
+Stopping table: planet_osm_nodes
+Stopped table: planet_osm_nodes in 0s
+Stopping table: planet_osm_ways
+Building index on table: planet_osm_ways
+Creating osm_id index on planet_osm_point
+Creating indexes on planet_osm_point finished
+All indexes on planet_osm_point created in 13s
+Completed planet_osm_point
+Stopping table: planet_osm_rels
+Building index on table: planet_osm_rels
+Stopped table: planet_osm_rels in 1s
+Copying planet_osm_polygon to cluster by geometry finished
+Creating geometry index on planet_osm_polygon
+Creating osm_id index on planet_osm_polygon
+Creating indexes on planet_osm_polygon finished
+All indexes on planet_osm_polygon created in 40s
+Completed planet_osm_polygon
+Stopped table: planet_osm_ways in 79s
+Copying planet_osm_line to cluster by geometry finished
+Creating geometry index on planet_osm_line
+Creating osm_id index on planet_osm_line
+Creating indexes on planet_osm_line finished
+All indexes on planet_osm_line created in 97s
+Completed planet_osm_line</p>
+<p>Osm2pgsql took 237s overall
+node cache: stored: 14516137(100.00%), storage efficiency: 55.33% (dense blocks: 654, sparse nodes: 10439284), hit rate: 100.00%</p></div>
+<div class="comment-info" id="comment-75452-info">
+<span class="comment-age">(28 Jun '20, 01:10)</span>
+<a class="comment-user userinfo" href="/users/18601/trent">Trent</a>
+</div>
+</div>
+<a name="75457"></a>
+<div class="comment" id="comment-75457">
+<div class="comment-score" id="post-75457-score"></div>
+<div class="comment-text"><p>Can you provide more details about what versions of everything you are using?</p></div>
+<div class="comment-info" id="comment-75457-info">
+<span class="comment-age">(28 Jun '20, 11:18)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-75449">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75449-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    4 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/75449/renderd-issue?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/75449/renderd-issue?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/75449/renderd-issue?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/75449/renderd-issue?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="75450"></a>
+<div class="answer" id="answer-container-75450">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75450/up/" id="post-75450-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75450-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/75450/down/" id="post-75450-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>At the risk of stating the bleeding obvious, something has gone wrong with the way that you've loaded the data - the "Shapefile download" section in each of the guides at <a href="https://switch2osm.org"></a><a href="https://switch2osm.org">https://switch2osm.org</a> has changed recently to matches the changes in OSM Carto itself.  I'd rerun the steps from there downwards, keeping an eye on any errors displayed on screen.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/75450/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>27 Jun '20, 21:07</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-75450">
+</div>
+<div class="comment-tools" id="comment-tools-75450">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75450-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="75454"></a>
+<div class="answer answered-by-owner" id="answer-container-75454">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75454/up/" id="post-75454-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75454-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/75454/down/" id="post-75454-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Figured out what I was doing wrong.
+if I use --create on the osm2pgsql and dont rerun the scripts/get-shapefiles.py it will not be in the database.
+that got me past the earlier error.</p>
+<p>now I have this
+renderd[215378]: An error occurred while loading the map layer 'ajt': Postgis Plugin: ERROR:  COALESCE types text and integer cannot be matched
+LINE 15:   ORDER BY COALESCE(layer,0)
+                                   ^
+in executeQuery Full sql was: 'SELECT * FROM (SELECT
+    way,
+    waterway,
+    name,
+    CASE WHEN tags-&gt;'intermittent' IN ('yes')
+      OR tags-&gt;'seasonal' IN ('yes', 'spring', 'summer', 'autumn', 'winter', 'wet_season', 'dry_season')
+      THEN 'yes' ELSE 'no' END AS int_intermittent,
+    CASE WHEN tunnel IN ('yes', 'culvert')
+      OR waterway = 'canal' AND tunnel = 'flooded'
+      THEN 'yes' ELSE 'no' END AS int_tunnel,
+    'no' AS bridge
+  FROM planet_osm_line
+  WHERE waterway IN ('river', 'canal', 'stream', 'drain', 'ditch')
+    AND (bridge IS NULL OR bridge NOT IN ('yes', 'aqueduct'))
+  ORDER BY COALESCE(layer,0)
+) AS water_lines LIMIT 0'
+  encountered during parsing of layer 'water-lines' in Layer at line 7054 of '/home/renderaccount/src/openstreetmap-carto/mapnik.xml'</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/75454/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>28 Jun '20, 04:04</strong>
+</p>
+<img alt="Trent's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/cbea797cf56fb87a893b11776614d836?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18601/trent">Trent</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Trent has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-75454">
+</div>
+<div class="comment-tools" id="comment-tools-75454">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75454-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="75456"></a>
+<div class="answer" id="answer-container-75456">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75456/up/" id="post-75456-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75456-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/75456/down/" id="post-75456-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Did you miss to include the style file in your osm2pgsql call?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/75456/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>28 Jun '20, 09:53</strong>
+</p>
+<img alt="Spiekerooger's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e06ed329df6032df14b5639de4d64782?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17439/spiekerooger">Spiekerooger</a><br/>
+<span class="score" title="3148 reputation points"><span class="">3.1k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="23 badges"><span class="silver">●</span><span class="badgecount">23</span></span><span title="56 badges"><span class="bronze">●</span><span class="badgecount">56</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Spiekerooger has 18 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-75456">
+</div>
+<div class="comment-tools" id="comment-tools-75456">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75456-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="75458"></a>
+<div class="answer answered-by-owner" id="answer-container-75458">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75458/up/" id="post-75458-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75458-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/75458/down/" id="post-75458-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>As @Spekerooger pointed out
+I forgot my style file on import. Thank everyone
+Solved if you forget your style file expect the following</p>
+<p>renderd[215378]: An error occurred while loading the map layer 'ajt': Postgis Plugin: ERROR: COALESCE types text and integer cannot be matched LINE 15: ORDER BY COALESCE(layer,0) ^ in executeQuery Full sql was: 'SELECT * FROM (SELECT way, waterway, name, CASE WHEN tags-&gt;'intermittent' IN ('yes') OR tags-&gt;'seasonal' IN ('yes', 'spring', 'summer', 'autumn', 'winter', 'wet_season', 'dry_season') THEN 'yes' ELSE 'no' END AS int_intermittent, CASE WHEN tunnel IN ('yes', 'culvert') OR waterway = 'canal' AND tunnel = 'flooded' THEN 'yes' ELSE 'no' END AS int_tunnel, 'no' AS bridge FROM planet_osm_line WHERE waterway IN ('river', 'canal', 'stream', 'drain', 'ditch') AND (bridge IS NULL OR bridge NOT IN ('yes', 'aqueduct')) ORDER BY COALESCE(layer,0) ) AS water_lines LIMIT 0'</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/75458/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>28 Jun '20, 11:43</strong>
+</p>
+<img alt="Trent's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/cbea797cf56fb87a893b11776614d836?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18601/trent">Trent</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Trent has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-75458">
+</div>
+<div class="comment-tools" id="comment-tools-75458">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75458-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/75449/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="KjY9bb73ccWNn2ptpvCsNlBw6qSY4RYp"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>
