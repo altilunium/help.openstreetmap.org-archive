@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="dt.css" />
+<script src="j.js"></script>
+<script src="dt.js"></script>
+
+<div id ="c">Please wait... Processing data..</div>
+
+
+<script src="output.json"></script>
+<script>
+
+
+window.onload = function() {
+  
+
+  let keys = Object.keys(a).sort((a, b) => parseInt(b) - parseInt(a));
+
+  var stri = "<table id='mytable'class='display'><thead><tr><td>ID</th><th>Title</th><th>Score</th></thead><tbody>"
+  for (let key of keys){
+  	//console.log(key,a[key])
+  	stri = stri + "<tr><td>"+key+"</td><td><a href='"+key+"'>"+a[key]["title"]+"</td><td>"+a[key]["score"]+"</td></tr>"
+  }
+
+  var cc = document.getElementById("c")
+  stri = stri + "</tbody></table>"
+  cc.innerHTML = stri
+  	
+  let table = new DataTable('#mytable');
+};
+
+</script>
