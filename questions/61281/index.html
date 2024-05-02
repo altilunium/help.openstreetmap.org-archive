@@ -1,0 +1,123 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/61281/watershed-basin-limits-in-osm">Watershed basin limits in OSM?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/61281/up/" id="post-61281-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-61281-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/61281/down/" id="post-61281-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/61281/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello everyone.</p>
+<p>Yesterday I noticed a strange very big lake in the center of Madagascar [<a href="http://www.openstreetmap.org/way/547294938">this polygon</a>]. When inspecting the data, I found that it was supposed to be a watershed basin but was wrongly tagged as <code>landuse=basin</code>. To avoid the rendering of the whole area as a lake/basin, I immediately removed the <code>landuse=basin</code> tag and replaced it with a fixme note.</p>
+<ul>
+<li>By the way I was wondering if
+   there was really a way to add
+   watershed basin limits to
+   OpenStreetMap? (<a href="http://wiki.openstreetmap.org/wiki/Relation:watershed">This proposed relation type</a> takes in waterways (main stream + tributaries) instead of limits)</li>
+<li>What do I do with this
+   polygon: should I let it there as it is or
+   delete it?</li>
+</ul>
+<p>Thanks.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-basin" href="/tags/basin/" rel="tag" title="see questions tagged 'basin'">basin</a>
+<a class="post-tag tag-link-tagging" href="/tags/tagging/" rel="tag" title="see questions tagged 'tagging'">tagging</a>
+<a class="post-tag tag-link-watershed" href="/tags/watershed/" rel="tag" title="see questions tagged 'watershed'">watershed</a>
+<a class="post-tag tag-link-relations" href="/tags/relations/" rel="tag" title="see questions tagged 'relations'">relations</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>20 Dec '17, 05:19</strong>
+</p>
+<img alt="Privatemajory's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/15d45a99f101e06c9e79916af33f8336?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14163/privatemajory">Privatemajory</a><br/>
+<span class="score" title="1125 reputation points"><span class="">1.1k</span></span><span title="14 badges"><span class="badge1">●</span><span class="badgecount">14</span></span><span title="22 badges"><span class="silver">●</span><span class="badgecount">22</span></span><span title="33 badges"><span class="bronze">●</span><span class="badgecount">33</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Privatemajory has 4 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/61281/">
+                edited
+                <strong>20 Dec '17, 05:20</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-61281">
+<a name="61283"></a>
+<div class="comment" id="comment-61283">
+<div class="comment-score" id="post-61283-score"></div>
+<div class="comment-text"><p>It's a good question (and not one that has been asked directly before, although people have asked about watersheds <a href="https://help.openstreetmap.org/search/?q=watershed&amp;Submit=search&amp;t=question">https://help.openstreetmap.org/search/?q=watershed&amp;Submit=search&amp;t=question</a> )</p></div>
+<div class="comment-info" id="comment-61283-info">
+<span class="comment-age">(20 Dec '17, 10:24)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="61284"></a>
+<div class="comment" id="comment-61284">
+<div class="comment-score" id="post-61284-score"></div>
+<div class="comment-text"><p>A web search of "watershed site:<a href="https://lists.openstreetmap.org/pipermail/">https://lists.openstreetmap.org/pipermail/"</a> finds mailing list discussions in the US about it, but surprisingly few.</p></div>
+<div class="comment-info" id="comment-61284-info">
+<span class="comment-age">(20 Dec '17, 10:26)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="61306"></a>
+<div class="comment" id="comment-61306">
+<div class="comment-score" id="post-61306-score">1</div>
+<div class="comment-text"><p>I think in general we should not try to map them. It is possible to find all waterways draining a given basin (either through explicit tags or finding discrete graphs of waterways) and draw a concave hull to create a polygon which will approximate the drainage basin. It should also be possible to post-process these to tessellate the drainage basins over the area.</p></div>
+<div class="comment-info" id="comment-61306-info">
+<span class="comment-age">(20 Dec '17, 22:26)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="61312"></a>
+<div class="comment" id="comment-61312">
+<div class="comment-score" id="post-61312-score"></div>
+<div class="comment-text"><p>But well, natural landscape elements and natural boundaries could also be part of OSM, just like other boundaries, right? Then watersheds can't be separate from hydrography, waterways + springs + watershed limits would be a more complete hydrographic data.</p>
+<p>Using the search suggested by <a href="https://help.openstreetmap.org/users/387/someoneelse">@SomeoneElse</a> above, I found a 2009 topic on OSM-Talk-fr (<a href="https://lists.openstreetmap.org/pipermail/talk-fr/2009-September/014241.html)">https://lists.openstreetmap.org/pipermail/talk-fr/2009-September/014241.html)</a> about adding ridge and thalweg lines to OSM but no one showed interest. This could match here as watersheds follow ridge lines. But I guess it's not interesting enough amongst the OSM community.</p></div>
+<div class="comment-info" id="comment-61312-info">
+<span class="comment-age">(21 Dec '17, 08:51)</span>
+<a class="comment-user userinfo" href="/users/14163/privatemajory">Privatemajory</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-61281">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-61281-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/61281/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="gzJRcW7QLLreNOmZVMOQxNUFijuiVy3w"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

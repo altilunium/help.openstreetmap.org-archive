@@ -1,0 +1,136 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/57030/validate-points-in-a-path-close-to-a-bus-stop">Validate points in a path close to a bus stop</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/57030/up/" id="post-57030-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-57030-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/57030/down/" id="post-57030-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/57030/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi guys 
+I'm a newbie so excuse me if my question could sound stupid...
+I have paths stored. for each path I have point where a user stopped. I need to know if each of that stop point is close to a bus stop. But... they could be quite a lot, so I need to use a single call to overpass api to retreive that validation and I need to receive the validation sapareted for each point (to know which of them is validated and which is not...). I need halp please!!! cheers Gian Luca</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+<a class="post-tag tag-link-bus" href="/tags/bus/" rel="tag" title="see questions tagged 'bus'">bus</a>
+<a class="post-tag tag-link-query" href="/tags/query/" rel="tag" title="see questions tagged 'query'">query</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>12 Jul '17, 09:58</strong>
+</p>
+<img alt="boka70's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/4e5a61ae4d679023b3890f75a1aa811d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13925/boka70">boka70</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="boka70 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/57030/">
+                edited
+                <strong>12 Jul '17, 10:02</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-57030">
+</div>
+<div class="comment-tools" id="comment-tools-57030">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-57030-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/57030/validate-points-in-a-path-close-to-a-bus-stop?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/57030/validate-points-in-a-path-close-to-a-bus-stop?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/57030/validate-points-in-a-path-close-to-a-bus-stop?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/57030/validate-points-in-a-path-close-to-a-bus-stop?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="57050"></a>
+<div class="answer" id="answer-container-57050">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/57050/up/" id="post-57050-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-57050-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/57050/down/" id="post-57050-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>There are some details missing in your question (for example how large the area is that your paths cover and so on), but ok: I would suggest loading your data in to a spatially enabled database (for example Postgresql with postgis), then querying the Overpass-api for all stops in the area (or extracting them from an OSM planet file, depending on how large the area is). Then you should import the stop nodes in to the database.</p>
+<p>Once you've done all that (which includes figuring out the database schema you want to use etc), you can use spatial queries to find for example all of your user stop position that are within a pre-defined distance to a stop and so on.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/57050/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>13 Jul '17, 09:49</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-57050">
+</div>
+<div class="comment-tools" id="comment-tools-57050">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-57050-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/57030/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="mr5YeOMR1Pd5I41DVISIr7ITW4KYslEK"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

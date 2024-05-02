@@ -1,0 +1,91 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/66147/how-to-reduce-disk-usage-on-write-pgsql-with-osmosis">how to reduce disk usage on write-pgsql with osmosis?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66147/up/" id="post-66147-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66147-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/66147/down/" id="post-66147-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/66147/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am using osmosis version 0.44.1 (after simple <code>apt install</code> at UBUNTU 16 LTS) and fresh PostGIS, there are only few relations (and few Gb on PostGIS geometry) but this command use all my ~60Gb of free disk:</p>
+<pre><code>osmosis --read-pbf file=brazil-latest.osm.pbf --tag-filter \
+   accept-relations admin_level=4,boundary=administrative  \
+   --write-pgsql host=localhost database=pgsnapshot \
+   user=postgres password="myPass"  &amp;
+</code></pre>
+<p>How to reduce the disk consume?</p>
+<hr/>
+<p>Example of relation that need: <a href="https://www.openstreetmap.org/relation/298204#map=6/-22.675/-48.625&amp;layers=T">here</a>.</p>
+<hr/>
+<p>Dump of error messages:</p>
+<pre><code>org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+...
+SEVERE: Thread for task 1-read-pbf failed
+org.springframework.dao.DataAccessResourceFailureException: StatementCallback; SQL [CREATE INDEX idx_way_nodes_node_id ON way_nodes USING btree (node_id)]; ERROR: could not extend file "base/340840/351416.1": wrote only 4096 of 8192 bytes at block 167425
+
+  Hint: Check free disk space.; nested exception is org.postgresql.util.PSQLException: ERROR: could not extend file "base/340840/351416.1": wrote only 4096 of 8192 bytes at block 167425
+  Hint: Check free disk space.
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-disk_usage" href="/tags/disk_usage/" rel="tag" title="see questions tagged 'disk_usage'">disk_usage</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 Oct '18, 14:41</strong>
+</p>
+<img alt="ppKrauss's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/6963015ca2c3146e2a2a348b7fcb793b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14889/ppkrauss">ppKrauss</a><br/>
+<span class="score" title="95 reputation points">95</span><span title="19 badges"><span class="badge1">●</span><span class="badgecount">19</span></span><span title="22 badges"><span class="silver">●</span><span class="badgecount">22</span></span><span title="25 badges"><span class="bronze">●</span><span class="badgecount">25</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ppKrauss has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/66147/">
+                edited
+                <strong>03 Oct '18, 16:04</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66147">
+</div>
+<div class="comment-tools" id="comment-tools-66147">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66147-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/66147/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="pYUKuznOI6QjqKVp3vB7MOaeoNpiHWGU"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

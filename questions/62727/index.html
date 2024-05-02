@@ -1,0 +1,94 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/62727/selecting-features-from-the-planet-file">Selecting features from the planet file</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/62727/up/" id="post-62727-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-62727-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/62727/down/" id="post-62727-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/62727/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have dovnloaded "historical" planet file from 2015 year. I need select only some features in the Europe area. As first I used osmosis for this operation:</p>
+<p><em>osmosis --read-xml file="d:\DATA_works\meff2018\planet_2015\planet-151228.osm" --bounding-polygon file="europe.poly" --tf accept-ways highway=</em> --write-xml file="d:\DATA_works\meff2018\planet_2015\all_HWs_2015_europe.osm"*</p>
+<p>But this command selected only nodes from the planet files, not lines.</p>
+<p>So I tried second option - combination of osmfilter and osmconvert commands:</p>
+<p>*osmfilter d:\DATA_works\meff2018\planet_2015\planet-151228.osm --keep="highway= motorway =motorway_link =trunk =trunk_link =primary =primary_link =secondary =secondary_link =tertiary= tertiary_link" -o=e:\data\osm2015\accepted_HWs_world.osm</p>
+<p>osmconvert e:\data\osm2015\accepted_HWs_world.osm -B=europe.poly -o=e:\data\osm2015\accepted_HWs_europe.osm*</p>
+<p>After this, I have file with lines for Europe. But there are ALL highways - not only this, which are mentioned in the --keep option in the osmfilter command.
+Can you tell me what I'm doing wrong, please?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osmconvert" href="/tags/osmconvert/" rel="tag" title="see questions tagged 'osmconvert'">osmconvert</a>
+<a class="post-tag tag-link-selection" href="/tags/selection/" rel="tag" title="see questions tagged 'selection'">selection</a>
+<a class="post-tag tag-link-osmfilter" href="/tags/osmfilter/" rel="tag" title="see questions tagged 'osmfilter'">osmfilter</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+<a class="post-tag tag-link-tags" href="/tags/tags/" rel="tag" title="see questions tagged 'tags'">tags</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>19 Mar '18, 09:30</strong>
+</p>
+<img alt="kope's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/6a954537fae02e15ed5003ded07963ef?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3770/kope">kope</a><br/>
+<span class="score" title="55 reputation points">55</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="kope has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/62727/">
+                edited
+                <strong>19 Mar '18, 10:05</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-62727">
+<a name="62728"></a>
+<div class="comment" id="comment-62728">
+<div class="comment-score" id="post-62728-score"></div>
+<div class="comment-text"><p>at least one problem might be that you have a space between "highway=" and "motorway". This is what I use in a parameter file: </p>
+<p>--keep=highway=motorway =motorway_link =trunk =trunk_link =primary =primary_link =secondary =secondary_link =tertiary =residential =unclassified =pedestrian</p>
+<p>--drop-relations</p></div>
+<div class="comment-info" id="comment-62728-info">
+<span class="comment-age">(19 Mar '18, 11:23)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-62727">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-62727-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/62727/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="vLtkT5AI6rYca0RvpnUKrD0g7AenqBmm"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

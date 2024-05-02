@@ -1,0 +1,182 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/40250/direct-without-http-request-to-nominatim-on-own-server">Direct (without HTTP) request to Nominatim on own server</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/40250/up/" id="post-40250-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-40250-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/40250/down/" id="post-40250-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/40250/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have server with installed Nominatim. I would like to use it without setting up a website. Is it possible to make direct (without using HTTP) request to Nominatim on own server? What I need to do it? Thank you.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-request" href="/tags/request/" rel="tag" title="see questions tagged 'request'">request</a>
+<a class="post-tag tag-link-direct" href="/tags/direct/" rel="tag" title="see questions tagged 'direct'">direct</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>12 Jan '15, 14:09</strong>
+</p>
+<img alt="yaahor's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/aeafd4156483ce12e60c02d426635abe?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10281/yaahor">yaahor</a><br/>
+<span class="score" title="61 reputation points">61</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="8 badges"><span class="bronze">●</span><span class="badgecount">8</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="yaahor has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/40250/">
+                edited
+                <strong>12 Jan '15, 14:36</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-40250">
+</div>
+<div class="comment-tools" id="comment-tools-40250">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-40250-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/40250/direct-without-http-request-to-nominatim-on-own-server?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/40250/direct-without-http-request-to-nominatim-on-own-server?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/40250/direct-without-http-request-to-nominatim-on-own-server?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/40250/direct-without-http-request-to-nominatim-on-own-server?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="40257"></a>
+<div class="answer accepted-answer" id="answer-container-40257">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/40257/up/" id="post-40257-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-40257-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/40257/down/" id="post-40257-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/40257/" rel="nofollow" title="yaahor has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>There is a small command line tool <code>./utils/query.php</code> which you can use to search without using the web interface. It has been written for testing the database, so it is not as powerful as the web API in terms of configuration parameters. It only supports JSON output and no reverse geocoding. But it should provide a good starting point and is easily extendible for your own needs.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/40257/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Jan '15, 16:53</strong>
+</p>
+<img alt="lonvia's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d888b712d85dee0aa304297f2dc697c7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2921/lonvia">lonvia</a><br/>
+<span class="score" title="6213 reputation points"><span class="">6.2k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="57 badges"><span class="silver">●</span><span class="badgecount">57</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="lonvia has 43 accepted answers">40%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-40257">
+</div>
+<div class="comment-tools" id="comment-tools-40257">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-40257-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="40256"></a>
+<div class="answer" id="answer-container-40256">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/40256/up/" id="post-40256-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-40256-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/40256/down/" id="post-40256-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The <a href="https://github.com/twain47/Nominatim/blob/master/lib/Geocode.php">Geocoder that extracts information from Nominatim's database</a> is written in PHP, so you could use that library in your code. Alternatively, you could extract the SQL statements the library uses to use in your own library if you want to reimplement it in another language. In either case you would import the OSM data using <code>osm2pgsql</code> in the same way as a <a href="http://wiki.openstreetmap.org/wiki/Nominatim/Installation">full Nominatim installation</a>.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/40256/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Jan '15, 16:02</strong>
+</p>
+<img alt="Jonathan%20Bennett's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9fe361843971cf8b23dc93517f00b996?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6/jonathan-bennett">Jonathan Ben...</a><br/>
+<span class="score" title="8261 reputation points"><span class="">8.3k</span></span><span title="17 badges"><span class="badge1">●</span><span class="badgecount">17</span></span><span title="85 badges"><span class="silver">●</span><span class="badgecount">85</span></span><span title="108 badges"><span class="bronze">●</span><span class="badgecount">108</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jonathan Bennett has 21 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-40256">
+</div>
+<div class="comment-tools" id="comment-tools-40256">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-40256-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/40250/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="wTYNdnnUMJcYPE6fz1suSTl0jPDGKFSv"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

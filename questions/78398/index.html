@@ -1,0 +1,116 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/78398/duplicate-edge-problem-concluded">Duplicate Edge problem [Concluded]</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/78398/up/" id="post-78398-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-78398-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/78398/down/" id="post-78398-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/78398/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>There's 'Duplicate edge' which is easily resolved by e.g. separating a street from the edge of a square and then there are 'duplicate edge' where a e.g. complex pedestrian area is drawn, one part tagged with a cobblestone pattern, another part tagged as marble covered etc. Another simpler example a pedestrian area, bout 4 meters wide, 150 long joins a square <a href="https://www.openstreetmap.org/way/702458985">https://www.openstreetmap.org/way/702458985</a> . The joining edge is marked as duplicate. It makes no sense to me why 2 in effect basically identical areas cant be sharing edges/nodes. Bar artificially separating them then create a single connect node 'to map around', no solution (and the facepalms are up to be slapped).</p>
+<p>Ref: wiki <a href="https://wiki.openstreetmap.org/wiki/Key:area:highway">https://wiki.openstreetmap.org/wiki/Key:area:highway</a></p>
+<p>BTW, see these areas also often being thrown out as "no feature tag ways".</p>
+<p>Any ideas to resolve these with a note that 'not mapping them details is not an option'. OsmAnd e.g. maps some of these properly like the area:highway=motorway areas.</p>
+<p>cheers</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-duplicate" href="/tags/duplicate/" rel="tag" title="see questions tagged 'duplicate'">duplicate</a>
+<a class="post-tag tag-link-edge" href="/tags/edge/" rel="tag" title="see questions tagged 'edge'">edge</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>18 Jan '21, 15:17</strong>
+</p>
+<img alt="SekeRob's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ed39ace8cbefe3b5c45da98f60f5e34c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8468/sekerob">SekeRob</a><br/>
+<span class="score" title="211 reputation points">211</span><span title="19 badges"><span class="badge1">●</span><span class="badgecount">19</span></span><span title="20 badges"><span class="silver">●</span><span class="badgecount">20</span></span><span title="27 badges"><span class="bronze">●</span><span class="badgecount">27</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SekeRob has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/78398/">
+                edited
+                <strong>18 Jan '21, 18:47</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-78398">
+<a name="78401"></a>
+<div class="comment" id="comment-78401">
+<div class="comment-score" id="post-78401-score">1</div>
+<div class="comment-text"><p>Where are you seeing "duplicate edge" reported as a problem? From the way you describe it, it sounds like usually it is a warning that should be ignored.</p></div>
+<div class="comment-info" id="comment-78401-info">
+<span class="comment-age">(18 Jan '21, 16:00)</span>
+<a class="comment-user userinfo" href="/users/339/edloach">EdLoach ♦</a>
+</div>
+</div>
+<a name="78404"></a>
+<div class="comment" id="comment-78404">
+<div class="comment-score" id="post-78404-score"></div>
+<div class="comment-text"><p>It's a link on the Neis report, under the sub topic of 'routing' Your page: <a href="https://hdyc.neis-one.org/?EdLoach.">https://hdyc.neis-one.org/?EdLoach.</a>  These 'Duplicate Edge' are classed as geometry.</p>
+<p>Been working me bud off to get all those for routing and QA error metric types below 25, just this one and a few more mostly give me the famous 3rd finger. If ignorable, I'll be happy to add these items that are legally 'ignored' to my vertical archive list. Is there some master/cheat list for those?</p>
+<p>thanks for responding.</p></div>
+<div class="comment-info" id="comment-78404-info">
+<span class="comment-age">(18 Jan '21, 17:15)</span>
+<a class="comment-user userinfo" href="/users/8468/sekerob">SekeRob</a>
+</div>
+</div>
+<a name="78405"></a>
+<div class="comment" id="comment-78405">
+<div class="comment-score" id="post-78405-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/8468/sekerob">@SekeRob</a> That's an OSMI error - and I'd agree that it can usually be ignored. I know it's tempting to try and whittle down those OSMI and Osmose errors, but some of those "errors" are badly implemented and/or not actually errors. Don't think of it as a scorecard - no one else is keeping score or judging your mapping based on those errors! (or at least no one SHOULD be)</p></div>
+<div class="comment-info" id="comment-78405-info">
+<span class="comment-age">(18 Jan '21, 18:29)</span>
+<a class="comment-user userinfo" href="/users/12885/gregretro">GregRetro</a>
+</div>
+</div>
+<a name="78406"></a>
+<div class="comment" id="comment-78406">
+<div class="comment-score" id="post-78406-score"></div>
+<div class="comment-text"><p>OK, I'll make my personal list of items to ignore, some like 'island car' truly mind boggling in instances. If using the OSM build-in navigator at least, it's impossible to navigate at times to get somewhere but walk the last mile. Using it at times to find the join where things hang up.</p>
+<p>Have a good evening.</p></div>
+<div class="comment-info" id="comment-78406-info">
+<span class="comment-age">(18 Jan '21, 18:46)</span>
+<a class="comment-user userinfo" href="/users/8468/sekerob">SekeRob</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-78398">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-78398-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/78398/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="PLxLP32tIkX3wNi2SWsae7PL3ceg5TT0"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

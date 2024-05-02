@@ -1,0 +1,214 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/58299/bigmap-image-download-perl-script">BigMap Image Download Perl Script</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/58299/up/" id="post-58299-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-58299-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/58299/down/" id="post-58299-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/58299/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am trying to use the BigMaps to download an image of the entire state of Arkansas at zoom 16.
+If I am lucky enough to get it to actually not crash my browser, I click the "Perl" link which downloads a "mkmap.pl" file. When I run it in CMD with Perl, I get this:
+ - GD Warning: product of memory allocation multiplication would exceed INT_MAX, failing operation
+ - gracefully
+ - Can't call method "colorAllocate" on an undefined value at /perl_tests/arkansas.pl line 11.
+Line 11 in that file reads: 
+ - my $white = $img-&gt;colorAllocate(248,248,248);
+Why is this causing an error? I would think that with this file being directly from BigMaps, it would work immediately. Am I doing something wrong, or is the file causing the error?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-download" href="/tags/download/" rel="tag" title="see questions tagged 'download'">download</a>
+<a class="post-tag tag-link-map" href="/tags/map/" rel="tag" title="see questions tagged 'map'">map</a>
+<a class="post-tag tag-link-image" href="/tags/image/" rel="tag" title="see questions tagged 'image'">image</a>
+<a class="post-tag tag-link-bigmap" href="/tags/bigmap/" rel="tag" title="see questions tagged 'bigmap'">bigmap</a>
+<a class="post-tag tag-link-perl" href="/tags/perl/" rel="tag" title="see questions tagged 'perl'">perl</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>14 Aug '17, 10:57</strong>
+</p>
+<img alt="BobGrey's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/37dad3ff646c63f1eb94bcb2302c4915?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14067/bobgrey">BobGrey</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="BobGrey has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-58299">
+</div>
+<div class="comment-tools" id="comment-tools-58299">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-58299-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/58299/bigmap-image-download-perl-script?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/58299/bigmap-image-download-perl-script?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/58299/bigmap-image-download-perl-script?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/58299/bigmap-image-download-perl-script?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="58300"></a>
+<div class="answer" id="answer-container-58300">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/58300/up/" id="post-58300-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-58300-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/58300/down/" id="post-58300-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The bounding box for Arkansas is roughly from longitude -94.61787 to -89.64224 and latitude 33.00412 to 36.49951. According to <a href="https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames">slippy map tilenames</a> and <a href="http://oms.wff.ch/calc.htm">Tilesname Webcalc</a> this would lead to about 906*774 = 701244 tiles for zoom level 16. Each tile is 256x256 large. The resulting image would have a size of 179518464 x 179518464 pixels. I doubt this is what you really want.</p>
+<p>Also, BigMap and BigMap2 are essentially performing a bulk download and thus violating the <a href="https://operations.osmfoundation.org/policies/tiles/">tile usage policy</a>.</p>
+<p>Maybe you want to tell us what you are trying to achieve. There might be better solutions, for example rendering your own tiles.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/58300/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>14 Aug '17, 13:32</strong>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="scai has 168 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-58300">
+<a name="58314"></a>
+<div class="comment" id="comment-58314">
+<div class="comment-score" id="post-58314-score"></div>
+<div class="comment-text"><p>I am trying to recreate Arkansas on a 1:1 scale. I want to find an image that is can show EVERY road and street in Arkansas, which is only possible on high zoom levels (I found Zoom 15 to be the lowest zoom that still shows the desired detail, but it causes roads close to each other to merge together, such as roads with medians or freeways and their service roads...) If there is a better way to do this, please let me know!
+How do I go about rendering my own tiles? This seems like it will be a good idea, I just don't know what it actually is or how it works...
+Thank you for the reply and pointing out the tile usage policy issue with it. Perhaps downloading 700,000 tiles is actually not a good idea! Sorry about that...</p></div>
+<div class="comment-info" id="comment-58314-info">
+<span class="comment-age">(15 Aug '17, 10:22)</span>
+<a class="comment-user userinfo" href="/users/14067/bobgrey">BobGrey</a>
+</div>
+</div>
+<a name="58316"></a>
+<div class="comment" id="comment-58316">
+<div class="comment-score" id="post-58316-score"></div>
+<div class="comment-text"><p>You can take a look at <a href="https://switch2osm.org/serving-tiles/">https://switch2osm.org/serving-tiles/</a> and <a href="https://wiki.openstreetmap.org/wiki/Rendering.">https://wiki.openstreetmap.org/wiki/Rendering.</a> However it depends on what you want to achieve with this image. Do you want to print it? Do you just want to view it on your desktop computer or on a smartphone?</p></div>
+<div class="comment-info" id="comment-58316-info">
+<span class="comment-age">(15 Aug '17, 11:33)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="58320"></a>
+<div class="comment" id="comment-58320">
+<div class="comment-score" id="post-58320-score">1</div>
+<div class="comment-text"><p>I certainly hope they aren't planning on printing it out. A 1:1 scale map of Arkansas would take up an area the size of... well... Arkansas! :D
+<a href="http://blogs.ubc.ca/clanki/files/2007/04/on-the-impossibility.pdf">http://blogs.ubc.ca/clanki/files/2007/04/on-the-impossibility.pdf</a></p></div>
+<div class="comment-info" id="comment-58320-info">
+<span class="comment-age">(15 Aug '17, 16:47)</span>
+<a class="comment-user userinfo" href="/users/8189/alester">alester</a>
+</div>
+</div>
+<a name="58321"></a>
+<div class="comment" id="comment-58321">
+<div class="comment-score" id="post-58321-score"></div>
+<div class="comment-text"><p>No problem - just print it on the inside of an appropriate <a href="https://en.wikipedia.org/wiki/Menger_sponge">fractal shape</a> and everything will be fine!</p></div>
+<div class="comment-info" id="comment-58321-info">
+<span class="comment-age">(15 Aug '17, 17:05)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="58322"></a>
+<div class="comment" id="comment-58322">
+<div class="comment-score" id="post-58322-score"></div>
+<div class="comment-text"><p>I just want to download it for viewing. I have no intentions on printing.</p></div>
+<div class="comment-info" id="comment-58322-info">
+<span class="comment-age">(16 Aug '17, 01:57)</span>
+<a class="comment-user userinfo" href="/users/14067/bobgrey">BobGrey</a>
+</div>
+</div>
+<a name="58323"></a>
+<div class="comment not_top_scorer" id="comment-58323">
+<div class="comment-score" id="post-58323-score"></div>
+<div class="comment-text"><p>Are you trying to download the rendered map, or the satellite photos?</p></div>
+<div class="comment-info" id="comment-58323-info">
+<span class="comment-age">(16 Aug '17, 07:34)</span>
+<a class="comment-user userinfo" href="/users/13665/dsh4">dsh4</a>
+</div>
+</div>
+<a name="58324"></a>
+<div class="comment not_top_scorer" id="comment-58324">
+<div class="comment-score" id="post-58324-score"></div>
+<div class="comment-text"><p>Downloading/viewing such a single big image isn't really useful. You won't be able to orientate yourself, you won't be able to zoom (because everything will just get blurry when zooming out), you won't be able to search for addresses, calculate routes etc. If you are looking for a desktop software for OSM then take a look at <a href="https://marble.kde.org/">Marble</a>. However it requires an Internet connection (except for some cached tiles, or if you have your own tile server). Unfortunately I can't suggest a good desktop software with offline OSM maps.</p></div>
+<div class="comment-info" id="comment-58324-info">
+<span class="comment-age">(16 Aug '17, 07:52)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="58325"></a>
+<div class="comment not_top_scorer" id="comment-58325">
+<div class="comment-score" id="post-58325-score"></div>
+<div class="comment-text"><p>I don't need maps as of being able to find places, that is what I use Google Maps for. I want a single, large image that can cover ALL of Arkansas on zoom 16. I use such image as a reference base for a project I am working on to re-create the entire state in a virtual environment on a 1:1 scale...</p></div>
+<div class="comment-info" id="comment-58325-info">
+<span class="comment-age">(16 Aug '17, 08:20)</span>
+<a class="comment-user userinfo" href="/users/14067/bobgrey">BobGrey</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-58300">
+<span class="comments-showing">
+            showing 5 of 8
+        </span>
+<a class="show-all-comments-link" href="#">show 3 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-58300-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/58299/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="dHx16vzw18aRNZRibMAn66g3suxeigC1"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

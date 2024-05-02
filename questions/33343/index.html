@@ -1,0 +1,161 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/33343/how-does-mapnik-handle-overlap-problem-during-rendering-dense-dataset">How does Mapnik handle overlap problem during rendering dense dataset</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/33343/up/" id="post-33343-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-33343-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/33343/down/" id="post-33343-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/33343/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi:</p>
+<p>Suppose there are so many features(say they are pois) in a single tile, then how does osm handle the overlap problem?</p>
+<p>I know osm use mapnik as the render engine, and we can set some filters during the rendering at different zoom level, but how about the filter lost the effects?</p>
+<p>For example, in a specified zooom, even we use the filter, there are still some features close to each other, if render all of them, there must be some overlap, so how does osm handle this suitation?<br/>
+</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-rendering" href="/tags/rendering/" rel="tag" title="see questions tagged 'rendering'">rendering</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+<a class="post-tag tag-link-overlap" href="/tags/overlap/" rel="tag" title="see questions tagged 'overlap'">overlap</a>
+<a class="post-tag tag-link-labeling" href="/tags/labeling/" rel="tag" title="see questions tagged 'labeling'">labeling</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 May '14, 06:58</strong>
+</p>
+<img alt="hguser's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8b5f2224482b0bc3648353d36a0c8814?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6517/hguser">hguser</a><br/>
+<span class="score" title="36 reputation points">36</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="hguser has no accepted answers">0%</span>
+</br></p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/33343/">
+                edited
+                <strong>21 May '14, 08:21</strong>
+</a>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-33343">
+</div>
+<div class="comment-tools" id="comment-tools-33343">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-33343-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/33343/how-does-mapnik-handle-overlap-problem-during-rendering-dense-dataset?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/33343/how-does-mapnik-handle-overlap-problem-during-rendering-dense-dataset?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/33343/how-does-mapnik-handle-overlap-problem-during-rendering-dense-dataset?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/33343/how-does-mapnik-handle-overlap-problem-during-rendering-dense-dataset?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="33347"></a>
+<div class="answer accepted-answer" id="answer-container-33347">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/33347/up/" id="post-33347-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-33347-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/33347/down/" id="post-33347-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/33347/" rel="nofollow" title="hguser has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Mapnik, by default, does not draw overlapping features for icons and text symbolizers. So the features in the first layer are drawn first, one-by-one, and if there is no space remaining then they are not drawn.</p>
+<p>This means that the order of the layers, and the order of the features within the layers, are important.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/33347/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 May '14, 11:38</strong>
+</p>
+<img alt="Andy%20Allan's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c3743b1b368f5e209eb8aad30164acc4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3/andy-allan">Andy Allan</a><br/>
+<span class="score" title="12456 reputation points"><span class="">12.5k</span></span><span title="23 badges"><span class="badge1">●</span><span class="badgecount">23</span></span><span title="128 badges"><span class="silver">●</span><span class="badgecount">128</span></span><span title="153 badges"><span class="bronze">●</span><span class="badgecount">153</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Andy Allan has 46 accepted answers">28%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-33347">
+<a name="33374"></a>
+<div class="comment" id="comment-33374">
+<div class="comment-score" id="post-33374-score">1</div>
+<div class="comment-text"><p>Do you mean that mapnik draw all features in  layer A, and it will process overlap for this layer(A), once it start to render the next layer(B),for a given feature from B,mapnik will detect if the place have been taken up by other rendered feature, if not , then render this feature? If so, does it mean that the conflict(overlap) detect just happen between features in the same layer?</p></div>
+<div class="comment-info" id="comment-33374-info">
+<span class="comment-age">(22 May '14, 12:00)</span>
+<a class="comment-user userinfo" href="/users/6517/hguser">hguser</a>
+</div>
+</div>
+<a name="33521"></a>
+<div class="comment" id="comment-33521">
+<div class="comment-score" id="post-33521-score"></div>
+<div class="comment-text"><p>By default mapnik has just one collision detection cache, which records the placements across all the layers (so that e.g. text in the roads layer avoids text from points of interest). It's possible to reset the cache between layers, but that usually leads to poor results.</p></div>
+<div class="comment-info" id="comment-33521-info">
+<span class="comment-age">(28 May '14, 09:23)</span>
+<a class="comment-user userinfo" href="/users/3/andy-allan">Andy Allan</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-33347">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-33347-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/33343/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Cpb0CPbAQv7hXOE0vl8QQawp6t2TRs9u"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

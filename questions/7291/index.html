@@ -1,0 +1,195 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/7291/label-rendering-errors-at-fernvale-qld-australia">label rendering errors at Fernvale, Qld, Australia</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/7291/up/" id="post-7291-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-7291-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/7291/down/" id="post-7291-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/7291/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,
+At this link on the map:
+<a href="http://www.openstreetmap.org/?lat=-27.4395&amp;lon=152.726&amp;zoom=14&amp;layers=M">http://www.openstreetmap.org/?lat=-27.4395&amp;lon=152.726&amp;zoom=14&amp;layers=M</a>
+near Fernvale, there are two label oddities:</p>
+<ol>
+<li>Bottom left - town label Fernvale appears, but the town is also labelled correctly up to the North East already (where the town is)</li>
+<li>Top Right - Lake Manchester label appears, but the actual lake (and it's label) already appear to the South.</li>
+</ol>
+<p>Looking in Potlatch I can't see the source of these spurious labels,
+anyone know what's going on?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-labels" href="/tags/labels/" rel="tag" title="see questions tagged 'labels'">labels</a>
+<a class="post-tag tag-link-rendering" href="/tags/rendering/" rel="tag" title="see questions tagged 'rendering'">rendering</a>
+<a class="post-tag tag-link-australia" href="/tags/australia/" rel="tag" title="see questions tagged 'australia'">australia</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 Aug '11, 00:02</strong>
+</p>
+<img alt="chas66's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/12ac37473087d7d6d667c276a879eec0?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1324/chas66">chas66</a><br/>
+<span class="score" title="220 reputation points">220</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="9 badges"><span class="bronze">●</span><span class="badgecount">9</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="chas66 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-7291">
+</div>
+<div class="comment-tools" id="comment-tools-7291">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-7291-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/7291/label-rendering-errors-at-fernvale-qld-australia?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/7291/label-rendering-errors-at-fernvale-qld-australia?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/7291/label-rendering-errors-at-fernvale-qld-australia?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/7291/label-rendering-errors-at-fernvale-qld-australia?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="7293"></a>
+<div class="answer accepted-answer" id="answer-container-7293">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/7293/up/" id="post-7293-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-7293-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/7293/down/" id="post-7293-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/7293/" rel="nofollow" title="chas66 has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Those labels are from admin boundary relations.</p>
+<p>Specifically <a href="http://www.openstreetmap.org/browse/relation/96375">relation 96375</a> for Fernvale and <a href="http://www.openstreetmap.org/browse/relation/91460">relation 91460</a> for Lake Manchester. Mapnik shows the label with the name in the centre of the boundary polygon. Both are admin level 10, and appear to be imported from Australian Bureau of Statistics data. I'm don't whether whether these are accurate and tagged correctly etc?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/7293/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Aug '11, 01:01</strong>
+</p>
+<img alt="Vclaw's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/aa505c046b1c010e997a7849c6f3dbbe?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/62/vclaw">Vclaw</a><br/>
+<span class="score" title="9217 reputation points"><span class="">9.2k</span></span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="95 badges"><span class="silver">●</span><span class="badgecount">95</span></span><span title="141 badges"><span class="bronze">●</span><span class="badgecount">141</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Vclaw has 41 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-7293">
+</div>
+<div class="comment-tools" id="comment-tools-7293">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-7293-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="7294"></a>
+<div class="answer" id="answer-container-7294">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/7294/up/" id="post-7294-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-7294-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/7294/down/" id="post-7294-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I suspect both labels come from the name of administrative boundaries with those names. A search for "Fernvale" and "Lake Manchester" returned both administrative boundaries. The search returns the rough midpoint of the boundary, which is where it will render the name. (I didn't search far enough to find the ID of the boundaries.)</p>
+<p>This can be common in Australia, as towns often have administrative boundaries. (The boundaries are generally from an import from the ABS.) If you want to you can make the "place" node that also has the town name part of the admin boundary relation, so that it knows to use that node to display the label.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/7294/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Aug '11, 01:02</strong>
+</p>
+<img alt="Ebenezer's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f075add936ab95d2d368f2e48f5ddc22?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/603/ebenezer">Ebenezer</a><br/>
+<span class="score" title="948 reputation points">948</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="11 badges"><span class="silver">●</span><span class="badgecount">11</span></span><span title="21 badges"><span class="bronze">●</span><span class="badgecount">21</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Ebenezer has 2 accepted answers">9%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-7294">
+<a name="7295"></a>
+<div class="comment" id="comment-7295">
+<div class="comment-score" id="post-7295-score"></div>
+<div class="comment-text"><p>e.g. Lake Manchester admin boundary <a href="http://www.openstreetmap.org/?relation=91460">http://www.openstreetmap.org/?relation=91460</a> and Fernvale admin boundary <a href="http://www.openstreetmap.org/?relation=96375">http://www.openstreetmap.org/?relation=96375</a></p></div>
+<div class="comment-info" id="comment-7295-info">
+<span class="comment-age">(25 Aug '11, 01:04)</span>
+<a class="comment-user userinfo" href="/users/603/ebenezer">Ebenezer</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-7294">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-7294-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/7291/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="oP013XRj5jAc2d5sZbOlZ75WrjiVklG0"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

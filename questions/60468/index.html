@@ -1,0 +1,206 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/60468/how-to-use-josm-update-my-own-tile-server">How to use Josm update my own tile server?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/60468/up/" id="post-60468-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-60468-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/60468/down/" id="post-60468-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/60468/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,I build my own tile server on my ubuntu16.04. I import a small area of mapdata to PostgreSQL.Then I use Apache and mod_tile and mapnik to render the tile.finally I use openlayer to display my Web map.
+    I want do some change without update my change to openstreetmap server,just edit my local tile server.I choose install Rais Port.In Josm connecting server option ,I choose :<a href="http://localhost:3000/api.But">http://localhost:3000/api.But</a> after I do some change and upload to my server.I cannot see my changes.
+    How can I edit my local tile server?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-edit" href="/tags/edit/" rel="tag" title="see questions tagged 'edit'">edit</a>
+<a class="post-tag tag-link-tile" href="/tags/tile/" rel="tag" title="see questions tagged 'tile'">tile</a>
+<a class="post-tag tag-link-local" href="/tags/local/" rel="tag" title="see questions tagged 'local'">local</a>
+<a class="post-tag tag-link-serever" href="/tags/serever/" rel="tag" title="see questions tagged 'serever'">serever</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>06 Nov '17, 08:16</strong>
+</p>
+<img alt="gleide's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66e4305afae2faf808a2b600525c4cc9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14367/gleide">gleide</a><br/>
+<span class="score" title="79 reputation points">79</span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="7 badges"><span class="silver">●</span><span class="badgecount">7</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="gleide has one accepted answer">50%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-60468">
+</div>
+<div class="comment-tools" id="comment-tools-60468">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-60468-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/60468/how-to-use-josm-update-my-own-tile-server?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/60468/how-to-use-josm-update-my-own-tile-server?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/60468/how-to-use-josm-update-my-own-tile-server?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/60468/how-to-use-josm-update-my-own-tile-server?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="60472"></a>
+<div class="answer" id="answer-container-60472">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/60472/up/" id="post-60472-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-60472-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/60472/down/" id="post-60472-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Your tile server database (likely a osm2pgsql schema DB) needs to be updated from the data in the rails port database. If it is a small area it probably doesn't make sense to use the minutely diff mechanism for updating, </p>
+<p>Exporting the data in OSM XML format from the rails-port DB can likely be done with osmosis, see <a href="http://wiki.openstreetmap.org/wiki/Osmosis/Detailed_Usage_0.46">http://wiki.openstreetmap.org/wiki/Osmosis/Detailed_Usage_0.46</a> </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/60472/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Nov '17, 09:41</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-60472">
+<a name="60479"></a>
+<div class="comment" id="comment-60479">
+<div class="comment-score" id="post-60479-score"></div>
+<div class="comment-text"><p>Thanks for your help.But I didin't express my question clearly.What I really want to do as following:
+   In Rails Port,there are online editor like iD potlatch2,I want to edit my map and save the change to my local server not the openstreetmap server for some policy limitation.but when I save my change It asked me whether to upload to openstreetmap server,How can I only save my change on my local server but not openstreetmap server.</p></div>
+<div class="comment-info" id="comment-60479-info">
+<span class="comment-age">(06 Nov '17, 14:41)</span>
+<a class="comment-user userinfo" href="/users/14367/gleide">gleide</a>
+</div>
+</div>
+<a name="60487"></a>
+<div class="comment" id="comment-60487">
+<div class="comment-score" id="post-60487-score"></div>
+<div class="comment-text"><p>I completely understood that. If you are using iD on your rails-port instance you are already storing in your local DB, but as explained above wont automatically be reflected in your rendering DB.</p></div>
+<div class="comment-info" id="comment-60487-info">
+<span class="comment-age">(06 Nov '17, 20:40)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-60472">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-60472-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="60477"></a>
+<div class="answer" id="answer-container-60477">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/60477/up/" id="post-60477-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-60477-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/60477/down/" id="post-60477-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Another option, that may be easier than setting up the Rails port locally, is to create the file you want to update in .osc format and throw it at Osmosis.  If you look <a href="https://wiki.openstreetmap.org/wiki/User:SomeoneElse/Ubuntu_1604_tileserver_load#Updating_your_database_as_people_edit_OpenStreetMap">here</a> and at the "openstreetmap-tiles-update-expire" script you can see how that script calls Osmosis with a .osc file.  Create a file in that format (e.g. from JOSM) and call Osmosis with it.</p>
+<p>Also, if you're adding completely new stuff and there's not much of it, you could call osm2pgsql in append mode.  See <a href="https://github.com/SomeoneElseOSM/SomeoneElse-style-legend/blob/master/update_generated_legend.sh#L47">here</a> for an example of that in context.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/60477/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Nov '17, 13:07</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-60477">
+<a name="60480"></a>
+<div class="comment" id="comment-60480">
+<div class="comment-score" id="post-60480-score"></div>
+<div class="comment-text"><p>Thanks for your help.But what I really want to do is not updating my database as people edit OpenStreetMap.What I really want to do as following: In Rails Port,there are online editor like iD potlatch2,I want to edit my map online and save the change to my local server not the openstreetmap server for some policy limitation.
+Ｉ　would really appreciate it if you could help me solve my problem.</p></div>
+<div class="comment-info" id="comment-60480-info">
+<span class="comment-age">(06 Nov '17, 14:48)</span>
+<a class="comment-user userinfo" href="/users/14367/gleide">gleide</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-60477">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-60477-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/60468/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="WffL3JreyxTee9mIiHGcot8ArlVHdvDc"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

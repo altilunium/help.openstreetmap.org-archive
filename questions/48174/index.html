@@ -1,0 +1,234 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/48174/openstreetmap-python-api-bounding-box-request-not-returned-as-python-dictionary">OpenStreetMap Python API Bounding Box Request not Returned as Python Dictionary</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48174/up/" id="post-48174-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48174-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/48174/down/" id="post-48174-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/48174/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Apologies if this is a dense question I am green with OSM.</p>
+<p>When I make an API bounding box call like below:</p>
+<pre><code>import overpass
+
+# bounding box coordinates
+min_long = min(longs)
+min_lat = min(lats)
+max_long = max(longs)
+max_lat = max(lats)
+
+# query overpass within OpenStreetMap
+api = overpass.API()
+map_query = overpass.MapQuery(min_lat,min_long,max_lat,max_long)
+response = api.Get(map_query)
+</code></pre>
+<p>The output is not wrapped in a Python dictionary like <a href="https://help.openstreetmap.org/questions/47075/overpass-api-python-save-tags">here</a>.  The response appears to be xml.  </p>
+<p>Anybody have an idea of what is going on here?  Thanks in advance!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-python" href="/tags/python/" rel="tag" title="see questions tagged 'python'">python</a>
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-overpassapi" href="/tags/overpassapi/" rel="tag" title="see questions tagged 'overpassapi'">overpassapi</a>
+<a class="post-tag tag-link-overpass-api" href="/tags/overpass-api/" rel="tag" title="see questions tagged 'overpass-api'">overpass-api</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Feb '16, 16:46</strong>
+</p>
+<img alt="jlgutenson's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8f93455ec0ee39ebb69fc73f94c04d77?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11990/jlgutenson">jlgutenson</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="jlgutenson has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48174">
+<a name="48180"></a>
+<div class="comment" id="comment-48180">
+<div class="comment-score" id="post-48180-score"></div>
+<div class="comment-text"><p>crosspost: <a href="https://gis.stackexchange.com/questions/180980/openstreetmap-python-api-bounding-box-request">https://gis.stackexchange.com/questions/180980/openstreetmap-python-api-bounding-box-request</a></p></div>
+<div class="comment-info" id="comment-48180-info">
+<span class="comment-age">(16 Feb '16, 18:27)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-48174">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48174-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/48174/openstreetmap-python-api-bounding-box-request-not-returned-as-python-dictionary?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/48174/openstreetmap-python-api-bounding-box-request-not-returned-as-python-dictionary?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/48174/openstreetmap-python-api-bounding-box-request-not-returned-as-python-dictionary?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/48174/openstreetmap-python-api-bounding-box-request-not-returned-as-python-dictionary?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="48175"></a>
+<div class="answer" id="answer-container-48175">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48175/up/" id="post-48175-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48175-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/48175/down/" id="post-48175-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Overpass API supports different <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Language_Guide#Choose_file_format">file formats</a> (currently XML, JSON and CSV). According to a quick search you seem to be using <a href="https://github.com/mvexel/overpass-api-python-wrapper">Overpass API python wrapper</a>. The README explains that you can call <code>Get()</code> with a <code>responseformat</code> parameter for choosing the file format. So try calling <code>api.Get(map_query, responseformat="json")</code>.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/48175/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>16 Feb '16, 16:55</strong>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="scai has 168 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48175">
+<a name="48177"></a>
+<div class="comment" id="comment-48177">
+<div class="comment-score" id="post-48177-score"></div>
+<div class="comment-text"><p>I've seen that.  Interestingly though, I keep getting the error <code>TypeError: Get() got an unexpected keyword argument 'responseformat'</code> for any format type.</p></div>
+<div class="comment-info" id="comment-48177-info">
+<span class="comment-age">(16 Feb '16, 18:16)</span>
+<a class="comment-user userinfo" href="/users/11990/jlgutenson">jlgutenson</a>
+</div>
+</div>
+<a name="48179"></a>
+<div class="comment" id="comment-48179">
+<div class="comment-score" id="post-48179-score"></div>
+<div class="comment-text"><p>I just tried the example from the README with the latest version on GitHub and it works. It even uses "geojson" as default file format. But specifying <code>responseformat="json"</code> or <code>responseformat="xml"</code> also works fine.</p></div>
+<div class="comment-info" id="comment-48179-info">
+<span class="comment-age">(16 Feb '16, 18:26)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="48183"></a>
+<div class="comment" id="comment-48183">
+<div class="comment-score" id="post-48183-score"></div>
+<div class="comment-text"><p>Interesting <a href="http://help.openstreetmap.org/users/158/scai">@scai</a>, are you using version 0.3.1 as well?  Sounds like something with my installation is off.:-/</p></div>
+<div class="comment-info" id="comment-48183-info">
+<span class="comment-age">(16 Feb '16, 18:34)</span>
+<a class="comment-user userinfo" href="/users/11990/jlgutenson">jlgutenson</a>
+</div>
+</div>
+<a name="48184"></a>
+<div class="comment" id="comment-48184">
+<div class="comment-score" id="post-48184-score"></div>
+<div class="comment-text"><p>I'm using the master branch which seems to be 0.3.1 according to <em>__init__.py</em>.</p></div>
+<div class="comment-info" id="comment-48184-info">
+<span class="comment-age">(16 Feb '16, 18:35)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-48175">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48175-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="48185"></a>
+<div class="answer answered-by-owner" id="answer-container-48185">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48185/up/" id="post-48185-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48185-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/48185/down/" id="post-48185-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Turns out the pip installation of the Python Overpass API is different than the current version on github. If anyone else encounters this problem, just install the github version instead.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/48185/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>16 Feb '16, 19:29</strong>
+</p>
+<img alt="jlgutenson's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8f93455ec0ee39ebb69fc73f94c04d77?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11990/jlgutenson">jlgutenson</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="jlgutenson has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48185">
+</div>
+<div class="comment-tools" id="comment-tools-48185">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48185-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/48174/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="JGfX8yu88PG6u3TykKpZfSmDMQATI1tL"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

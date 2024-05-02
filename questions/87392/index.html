@@ -1,0 +1,178 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/87392/ferry-route-not-found-for-motor_vehicle">Ferry route not found for motor_vehicle</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/87392/up/" id="post-87392-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-87392-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/87392/down/" id="post-87392-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/87392/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have a route like this:</p>
+<p><a href="https://www.openstreetmap.org/directions?engine=graphhopper_car&amp;route=52.85652%2C5.70547%3B53.38942%2C5.30609">https://www.openstreetmap.org/directions?engine=graphhopper_car&amp;route=52.85652%2C5.70547%3B53.38942%2C5.30609</a></p>
+<p>It says a route between the two points cannot be found. However, when I look at the ferry route:</p>
+<p><a href="https://www.openstreetmap.org/way/40118831">https://www.openstreetmap.org/way/40118831</a></p>
+<p>It says: motor_vehicles:yes</p>
+<p>The route only seems to work by bicycle, not even on foot, while that also says yes. Am I missing something here, or is this an issue with OSM?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-ferry" href="/tags/ferry/" rel="tag" title="see questions tagged 'ferry'">ferry</a>
+<a class="post-tag tag-link-motor_vehicle" href="/tags/motor_vehicle/" rel="tag" title="see questions tagged 'motor_vehicle'">motor_vehicle</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>26 Jun '23, 07:33</strong>
+</p>
+<img alt="JesseKoper's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1562f208082e6af0e48be53864749019?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/23109/jessekoper">JesseKoper</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="JesseKoper has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-87392">
+</div>
+<div class="comment-tools" id="comment-tools-87392">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-87392-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/87392/ferry-route-not-found-for-motor_vehicle?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/87392/ferry-route-not-found-for-motor_vehicle?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/87392/ferry-route-not-found-for-motor_vehicle?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/87392/ferry-route-not-found-for-motor_vehicle?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="87394"></a>
+<div class="answer accepted-answer" id="answer-container-87394">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/87394/up/" id="post-87394-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-87394-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/87394/down/" id="post-87394-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/87394/" rel="nofollow" title="JesseKoper has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The ferry route looks fine but various elements leading to or from the ferry route don't.</p>
+<p>There is a <a href="https://www.openstreetmap.org/node/9804585643">gate</a> that doesn't have any access tags. Many routers treat this as <code>access=no</code>. Other gates do have <code>access=permissive</code> set instead.</p>
+<p>There is a <a href="https://www.openstreetmap.org/way/463535985">way</a> that has a <code>foot=no</code> tag. The <a href="https://www.openstreetmap.org/way/555811659">adjacent way</a> has <code>access=no</code> with <code>bicycle=yes</code> set but no <code>foot=yes</code>. It also has a <a href="https://www.openstreetmap.org/node/5362039292">gate</a> with missing access tags (this also applies to other gates in this area, like <a href="https://www.openstreetmap.org/node/1286942350">this one</a> and the others next to it).</p>
+<p>Try to fix all those access tags and the routing will probably work. Keep in mind that routers take quite a while to update their data (days, sometimes even weeks).</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/87394/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>26 Jun '23, 08:31</strong>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="scai has 168 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/87394/">
+                edited
+                <strong>26 Jun '23, 08:33</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-87394">
+<a name="87395"></a>
+<div class="comment" id="comment-87395">
+<div class="comment-score" id="post-87395-score"></div>
+<div class="comment-text"><p>Thanks, I'll give it a try!</p></div>
+<div class="comment-info" id="comment-87395-info">
+<span class="comment-age">(26 Jun '23, 10:50)</span>
+<a class="comment-user userinfo" href="/users/23109/jessekoper">JesseKoper</a>
+</div>
+</div>
+<a name="87403"></a>
+<div class="comment" id="comment-87403">
+<div class="comment-score" id="post-87403-score"></div>
+<div class="comment-text"><p>I've made some changes like you suggested, this seems to work since I can now use the following route which did not work before as I recall: <a href="https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&amp;route=53.1752%2C5.4142%3B53.3892%2C5.3056#map=11/53.2820/5.2879">https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&amp;route=53.1752%2C5.4142%3B53.3892%2C5.3056#map=11/53.2820/5.2879</a></p>
+<p>I need this route to work for GraphHopper specifically though, is this something that just takes time to process for different systems, or is it likely there is a difference between the two for road acceptance that causes this?</p></div>
+<div class="comment-info" id="comment-87403-info">
+<span class="comment-age">(28 Jun '23, 21:37)</span>
+<a class="comment-user userinfo" href="/users/23109/jessekoper">JesseKoper</a>
+</div>
+</div>
+<a name="87404"></a>
+<div class="comment" id="comment-87404">
+<div class="comment-score" id="post-87404-score">1</div>
+<div class="comment-text"><p>The time it takes to update the routing data is different for each service. I don't know the update interval of OSRM, however, it is not unusual if it takes a little bit longer than others.</p></div>
+<div class="comment-info" id="comment-87404-info">
+<span class="comment-age">(29 Jun '23, 11:39)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="87427"></a>
+<div class="comment" id="comment-87427">
+<div class="comment-score" id="post-87427-score">1</div>
+<div class="comment-text"><p>Thanks, it's working now!</p></div>
+<div class="comment-info" id="comment-87427-info">
+<span class="comment-age">(04 Jul '23, 08:56)</span>
+<a class="comment-user userinfo" href="/users/23109/jessekoper">JesseKoper</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-87394">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-87394-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/87392/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="qxSpyZZOMmqf2jdu4Fo6q04UrFqeXOgV"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

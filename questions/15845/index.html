@@ -1,0 +1,140 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/15845/choose-regions-during-the-import-of-a-country-into-nominatim-database">Choose regions during the import of a country into nominatim database.</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/15845/up/" id="post-15845-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-15845-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/15845/down/" id="post-15845-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/15845/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi!</p>
+<p>Is there any possibility to have an overview during the import of an osm file (./utils/update.php --import-file germany.osm)? Which regions/nodes/relations are imported?</p>
+<p>What I want to do: to import only some regions from germany, which are near the border with the Netherlands. But I do not what to import every regions one after another (like bavaria.osm), because I know that are available to download like this.
+I have to use the hole germany.osm and from this file, during the import, to choose which regions I need and which not.</p>
+<p>Thank you!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-regions" href="/tags/regions/" rel="tag" title="see questions tagged 'regions'">regions</a>
+<a class="post-tag tag-link-import" href="/tags/import/" rel="tag" title="see questions tagged 'import'">import</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>06 Sep '12, 14:03</strong>
+</p>
+<img alt="RoxanaO's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2f496486f3d04cfe5b6d1d8ce9b660af?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4362/roxanao">RoxanaO</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="RoxanaO has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-15845">
+</div>
+<div class="comment-tools" id="comment-tools-15845">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-15845-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/15845/choose-regions-during-the-import-of-a-country-into-nominatim-database?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/15845/choose-regions-during-the-import-of-a-country-into-nominatim-database?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/15845/choose-regions-during-the-import-of-a-country-into-nominatim-database?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/15845/choose-regions-during-the-import-of-a-country-into-nominatim-database?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="15878"></a>
+<div class="answer answered-by-owner" id="answer-container-15878">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/15878/up/" id="post-15878-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-15878-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/15878/down/" id="post-15878-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I found the solution. 
+Using the JOSM program, I selected the needed bounding box (which included the wanted regions), got the minlon, minlat, maxlon, maxlat. With this in update.php I added to the command from line 226: 
+--bbox minlon,minlat,maxlon,maxlat</p>
+<p>Ex: <code>$sCMD = CONST_Osm2pgsql_Binary.' --bbox 5.5480957,50.6738352,9.140625,53.8265967 -klas -C 2000 -O gazetteer -d '.$aDSNInfo['database'].' '.$sTemporaryFile;</code></p>
+<p>And then use the command: <code>./utils/update.php --import-file /media/9804A73C04A71BEE/OSMnominatim/pbf/germany.osm </code></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/15878/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>07 Sep '12, 10:03</strong>
+</p>
+<img alt="RoxanaO's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2f496486f3d04cfe5b6d1d8ce9b660af?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4362/roxanao">RoxanaO</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="RoxanaO has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/15878/">
+                edited
+                <strong>07 Sep '12, 10:03</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-15878">
+</div>
+<div class="comment-tools" id="comment-tools-15878">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-15878-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/15845/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="nh7nooPhJpc8LbD07wa3LNxEpIyl0tAX"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

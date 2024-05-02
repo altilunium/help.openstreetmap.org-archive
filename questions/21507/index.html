@@ -1,0 +1,148 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/21507/no-house-numbers-in-my-nominatim-geocoding">no house numbers in my Nominatim geocoding</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/21507/up/" id="post-21507-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-21507-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/21507/down/" id="post-21507-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/21507/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>I have set up Nominatim according to the wiki, and indexed Arizona data that I got from <a href="http://download.geofabrik.de/north-america/us/arizona-latest.osm.pbf">here</a>. Now when I try to geocode addresses, no results contain house numbers. E.g. <a href="http://nominatim.openstreetmap.org/search?format=json&amp;addressdetails=1&amp;q=100%20Easy%20St,%20Carefree,%20AZ%2085377">this query</a> is geocoded successfully with the public Nominatim service and contains a house number. Running it against my Nomatim set up only resolves the street. What do I have to do to also index house numbers in my Nomatim instance? Is there a more detailed writeup about how Nomatim works internally? I took a look at the resulted database schema and it is not straight forward to understand.</p>
+<p>Thanks, Kosnstantin</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-housenumbers" href="/tags/housenumbers/" rel="tag" title="see questions tagged 'housenumbers'">housenumbers</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-geocoding" href="/tags/geocoding/" rel="tag" title="see questions tagged 'geocoding'">geocoding</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>13 Apr '13, 16:36</strong>
+</p>
+<img alt="konstantin's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/680bc1d9127776b4acb2e6af485a6869?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4888/konstantin">konstantin</a><br/>
+<span class="score" title="61 reputation points">61</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="konstantin has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-21507">
+</div>
+<div class="comment-tools" id="comment-tools-21507">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-21507-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/21507/no-house-numbers-in-my-nominatim-geocoding?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/21507/no-house-numbers-in-my-nominatim-geocoding?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/21507/no-house-numbers-in-my-nominatim-geocoding?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/21507/no-house-numbers-in-my-nominatim-geocoding?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="21516"></a>
+<div class="answer" id="answer-container-21516">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/21516/up/" id="post-21516-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-21516-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/21516/down/" id="post-21516-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It is possible that the results are coming from the TIGER data that Nominatim uses as a fallback, not from OSM data.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/21516/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+<div class="community-wiki">
+        This answer is marked "community wiki".
+        
+    </div>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>14 Apr '13, 05:06</strong>
+</p>
+<img alt="pnorman's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/5634c46072077e10f5b7c0da9b4bbb62?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/290/pnorman">pnorman</a><br/>
+<span class="score" title="2352 reputation points"><span class="">2.4k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="21 badges"><span class="silver">●</span><span class="badgecount">21</span></span><span title="40 badges"><span class="bronze">●</span><span class="badgecount">40</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="pnorman has 9 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-21516">
+<a name="21529"></a>
+<div class="comment" id="comment-21529">
+<div class="comment-score" id="post-21529-score"></div>
+<div class="comment-text"><p>If i read <a href="http://wiki.openstreetmap.org/wiki/TIGER">http://wiki.openstreetmap.org/wiki/TIGER</a> correctly, TIGER data has been imported into OSM in 2005. That means it would be part of the Arizona data that I downloaded and indexed. Or am I missing something?</p></div>
+<div class="comment-info" id="comment-21529-info">
+<span class="comment-age">(14 Apr '13, 22:09)</span>
+<a class="comment-user userinfo" href="/users/4888/konstantin">konstantin</a>
+</div>
+</div>
+<a name="21574"></a>
+<div class="comment" id="comment-21574">
+<div class="comment-score" id="post-21574-score">2</div>
+<div class="comment-text"><p>You need the TIGER address data (as opposed to street data which is the one that has been imported into OSM). The process to add this data to your database is described in <a href="https://help.openstreetmap.org/questions/12150/missing-house-numbers-in-local-nominatim-instance">this question</a>.</p></div>
+<div class="comment-info" id="comment-21574-info">
+<span class="comment-age">(16 Apr '13, 08:26)</span>
+<a class="comment-user userinfo" href="/users/2921/lonvia">lonvia</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-21516">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-21516-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/21507/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="bvNBkVFTCmyK9h1k9vgfgKOtkEDEGjRW"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

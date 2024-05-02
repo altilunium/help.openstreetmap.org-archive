@@ -1,0 +1,244 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/76200/place_id-help-with-partially-wrong-information">place_id help with partially wrong information</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/76200/up/" id="post-76200-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-76200-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/76200/down/" id="post-76200-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/76200/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm new to OSM and am using it to perform a GPS coordinates to Address Query. A few of the queries come back incorrect which I would like to fix, the physical location on the map looks correct in the editor, but the query result is not. How do I bring up the place ID for editing which I guess is where I need to look for the incorrect data?
+The place_id is 102283291 which is returned after a GPS query at a hospital site in New Zealand. The Hospital name is correct, but most of the address is incorrect which I'd like to edit.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-place_id" href="/tags/place_id/" rel="tag" title="see questions tagged 'place_id'">place_id</a>
+<a class="post-tag tag-link-editor" href="/tags/editor/" rel="tag" title="see questions tagged 'editor'">editor</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>19 Aug '20, 00:27</strong>
+</p>
+<img alt="sheppy99's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b5ce48feb9a545b262f72bc02821ef5f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18853/sheppy99">sheppy99</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="sheppy99 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/76200/">
+                edited
+                <strong>19 Aug '20, 00:27</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-76200">
+</div>
+<div class="comment-tools" id="comment-tools-76200">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-76200-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/76200/place_id-help-with-partially-wrong-information?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/76200/place_id-help-with-partially-wrong-information?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/76200/place_id-help-with-partially-wrong-information?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/76200/place_id-help-with-partially-wrong-information?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="76205"></a>
+<div class="answer" id="answer-container-76205">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/76205/up/" id="post-76205-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-76205-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/76205/down/" id="post-76205-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It appears that you have stumbled on a bug in Nominatim; the address of that hospital seems to have some random bits in it that make no sense. I have reported that to the Nominatim admin asking to look into it.</p>
+<p>Generally speaking:</p>
+<p>Sometimes an object in OSM has an explicit address (i.e. we record "this object has this housenumber, this street, this postal code, this city"). This is described here: <a href="https://wiki.openstreetmap.org/wiki/Proposed_features/House_numbers/Karlsruhe_Schema.">https://wiki.openstreetmap.org/wiki/Proposed_features/House_numbers/Karlsruhe_Schema.</a> If such tags are wrong they can simply be corrected on the object itself.</p>
+<p>More often than not, and this is also the case here, at least some parts of an address will be inferred - e.g. the post code from a post code boundary, the city name from a city boundary and so on. In these cases, if that data is wrong, it is good good to fix the incorrect polygons as they will apply to more than just that one object.</p>
+<p>A <code>place_id</code> is always specific to one particular instance of the Nominatim geocoder. Your place id comes from OSM's Nominatim instance: <a href="https://nominatim.openstreetmap.org/ui/details.html?place_id=102283291">https://nominatim.openstreetmap.org/ui/details.html?place_id=102283291</a> and you can see how the address is constructed there. It starts with "North Island" because there apparently was pedestrian area by that name encompassing the hospital; this seems to be an issue with Nominatim since there isn't (any longer) a "pedestrian area" tag on NZ's North Island. Probably this was a glitch in the data that has been fixed in the data a while ago and Nominatim hasn't updated. From this initial problem follow a couple other mis-assignments that make little sense. But normally, in a non-buggy scenario, you would find in this list a proper hierarchy going from the suburb or city quarter up to the country.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/76205/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Aug '20, 09:16</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/76205/">
+                edited
+                <strong>19 Aug '20, 09:16</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-76205">
+<a name="76206"></a>
+<div class="comment" id="comment-76206">
+<div class="comment-score" id="post-76206-score">1</div>
+<div class="comment-text"><p>Fixed in the Nominatim database. Unfortunately I slightly overdid it and removed the hospital as well. What was the name of the hospital again?</p></div>
+<div class="comment-info" id="comment-76206-info">
+<span class="comment-age">(19 Aug '20, 09:51)</span>
+<a class="comment-user userinfo" href="/users/2921/lonvia">lonvia</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-76205">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-76205-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="76224"></a>
+<div class="answer answered-by-owner" id="answer-container-76224">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/76224/up/" id="post-76224-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-76224-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/76224/down/" id="post-76224-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Thanks very much for the insight. From casual observation of a few malformed address lookups that have long since left the logs I'd guess there are a few of these in that suburb.
+After I wrote the initial reply I see that the bug has been fixed - thanks!
+Currently
+<a href="https://wiki.openstreetmap.org/wiki/Proposed_features/House_numbers/Karlsruhe_Schema.">https://wiki.openstreetmap.org/wiki/Proposed_features/House_numbers/Karlsruhe_Schema.</a> 
+takes me to an empty page, and 
+<a href="https://nominatim.openstreetmap.org/ui/details.html?place_id=102283291">https://nominatim.openstreetmap.org/ui/details.html?place_id=102283291</a>
+returns
+Error fetching results from /details.php?place_id=102283291&amp;addressdetails=1&amp;hierarchy=0&amp;group_hierarchy=1&amp;polygon_geojson=1&amp;format=json
+Is that correct?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/76224/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Aug '20, 23:38</strong>
+</p>
+<img alt="sheppy99's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b5ce48feb9a545b262f72bc02821ef5f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18853/sheppy99">sheppy99</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="sheppy99 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/76224/">
+                edited
+                <strong>19 Aug '20, 23:43</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-76224">
+<a name="76225"></a>
+<div class="comment" id="comment-76225">
+<div class="comment-score" id="post-76225-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/2921/lonvia">@lonvia</a> It was 'North Shore Hospital'</p></div>
+<div class="comment-info" id="comment-76225-info">
+<span class="comment-age">(19 Aug '20, 23:41)</span>
+<a class="comment-user userinfo" href="/users/18853/sheppy99">sheppy99</a>
+</div>
+</div>
+<a name="76228"></a>
+<div class="comment" id="comment-76228">
+<div class="comment-score" id="post-76228-score">1</div>
+<div class="comment-text"><p>As said above, I accidentally deleted the hospital from the Nominatim database which is why you got the error. Now reinstated: <a href="https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&amp;osmid=58379525">https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&amp;osmid=58379525</a></p></div>
+<div class="comment-info" id="comment-76228-info">
+<span class="comment-age">(20 Aug '20, 07:53)</span>
+<a class="comment-user userinfo" href="/users/2921/lonvia">lonvia</a>
+</div>
+</div>
+<a name="76245"></a>
+<div class="comment" id="comment-76245">
+<div class="comment-score" id="post-76245-score"></div>
+<div class="comment-text"><p>Thanks very much, its working now</p></div>
+<div class="comment-info" id="comment-76245-info">
+<span class="comment-age">(20 Aug '20, 21:43)</span>
+<a class="comment-user userinfo" href="/users/18853/sheppy99">sheppy99</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-76224">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-76224-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/76200/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="cvdteMZ8A2LNIQcLmTFQ1pqKbQSKBsTB"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

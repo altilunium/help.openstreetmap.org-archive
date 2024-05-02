@@ -1,0 +1,149 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/80758/is-it-possible-to-download-the-german-freeways-and-import-them-into-geolyers-in-after-effects">Is it possible to download the German freeways and import them into Geolyers in After effects?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80758/up/" id="post-80758-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80758-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/80758/down/" id="post-80758-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/80758/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am completly new to OSM, please excuse my dumb questions. I am supposed to animate the freeways in the German state of Hessen in After Effects with the plugin Geolyers. With animate I mean drawing the freeways on the map one after the other. So I need the information as shapes or even better as paths. Ideally in seperate files for each freeway and not one single file.</p>
+<p>In geolayers it is very simple to connect two points with a path that follows the actual roads, so the  geospatial  information seems to be there. So far I haven`t found a way to download the freeways by their names (A49, A7 and so on).</p>
+<p>I know that some people use QGIS to download OSM information and export them as KML oder Geojson. The tutorials I found on youtube did not cover how to solve my problem.</p>
+<p>Thanks for your help.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-freeway" href="/tags/freeway/" rel="tag" title="see questions tagged 'freeway'">freeway</a>
+<a class="post-tag tag-link-download" href="/tags/download/" rel="tag" title="see questions tagged 'download'">download</a>
+<a class="post-tag tag-link-geolyers" href="/tags/geolyers/" rel="tag" title="see questions tagged 'geolyers'">geolyers</a>
+<a class="post-tag tag-link-germany" href="/tags/germany/" rel="tag" title="see questions tagged 'germany'">germany</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>28 Jun '21, 10:54</strong>
+</p>
+<img alt="Zupppp's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b8090a8c3265804a9850bc091790f270?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20426/zupppp">Zupppp</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Zupppp has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80758">
+</div>
+<div class="comment-tools" id="comment-tools-80758">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80758-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/80758/is-it-possible-to-download-the-german-freeways-and-import-them-into-geolyers-in-after-effects?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/80758/is-it-possible-to-download-the-german-freeways-and-import-them-into-geolyers-in-after-effects?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/80758/is-it-possible-to-download-the-german-freeways-and-import-them-into-geolyers-in-after-effects?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/80758/is-it-possible-to-download-the-german-freeways-and-import-them-into-geolyers-in-after-effects?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="80764"></a>
+<div class="answer" id="answer-container-80764">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80764/up/" id="post-80764-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80764-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/80764/down/" id="post-80764-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can use Overpass Turbo to query for the motorways. Either one by one like this:</p>
+<pre><code>[out:json][timeout:25];
+// fetch area “hassia” to search in
+{{geocodeArea:hassia}}-&gt;.searchArea;
+// gather results
+(
+  // query part for: “motorway”
+  way["highway"="motorway"][ref="A 5"](area.searchArea);
+);
+// print results
+out geom;
+</code></pre>
+<p>or all Hassian ones at once by removing the <code>[ref="A 5"]</code> piece.</p>
+<p>I have no idea what format you can use to process the data so you might need to play a bit with the different output formats available from Overpass Turbo.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/80764/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>28 Jun '21, 17:06</strong>
+</p>
+<img alt="TZorn's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ddebc8d5f4e0458413eacf65e36561a9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10133/tzorn">TZorn</a><br/>
+<span class="score" title="12350 reputation points"><span class="">12.3k</span></span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="64 badges"><span class="silver">●</span><span class="badgecount">64</span></span><span title="225 badges"><span class="bronze">●</span><span class="badgecount">225</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="TZorn has 63 accepted answers">15%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/80764/">
+                edited
+                <strong>28 Jun '21, 17:07</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80764">
+</div>
+<div class="comment-tools" id="comment-tools-80764">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80764-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/80758/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="OsyQFHekf6uyvIkbLGccYjRTnOtmG8HF"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

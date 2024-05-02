@@ -1,0 +1,167 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/83413/import-osm-relation-into-umap">Import OSM Relation into Umap</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/83413/up/" id="post-83413-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-83413-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/83413/down/" id="post-83413-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/83413/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm trying to use OSM and UMap to create a custom map showing my organization's region/territory. It's described as a list of US Counties, plus an additional fixed distance beyond those counties. Ideally each county would show as its boundary, and then I could create lines for the additional distance.</p>
+<p>When I search in OSM for one of the counties (DuPage County), I get precisely what I'd like : <a href="https://www.openstreetmap.org/relation/1800060">https://www.openstreetmap.org/relation/1800060</a> . When I search for the same county in uMap, I just get a point marker at the city which contains the county seat of government. I don't see any way to bring up an associated boundary.</p>
+<p>All my attempts to import data from OSM, in order to show county boundaries, have failed.</p>
+<p>I'm probably in over my head trying to do this, but any hints would be appreciated.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-umap" href="/tags/umap/" rel="tag" title="see questions tagged 'umap'">umap</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-import" href="/tags/import/" rel="tag" title="see questions tagged 'import'">import</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>08 Feb '22, 17:14</strong>
+</p>
+<img alt="Greater%20Chicago%20IWW's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/876414122b45c9013a136c676465fc0f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/21393/greater-chicago-iww">Greater Chic...</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Greater Chicago IWW has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-83413">
+</div>
+<div class="comment-tools" id="comment-tools-83413">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-83413-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/83413/import-osm-relation-into-umap?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/83413/import-osm-relation-into-umap?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/83413/import-osm-relation-into-umap?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/83413/import-osm-relation-into-umap?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="83416"></a>
+<div class="answer accepted-answer" id="answer-container-83416">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/83416/up/" id="post-83416-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-83416-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/83416/down/" id="post-83416-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/83416/" rel="nofollow" title="Greater Chicago IWW has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Search in uMap is fairly basic, and will give only markers.</p>
+<p>But you can import linear data in two ways :</p>
+<ol>
+<li><a href="https://wiki.openstreetmap.org/wiki/UMap/Guide/Import_data_with_Overpass">Dynamically load data through overpass</a></li>
+<li>Download your data otherwise, and import it once.</li>
+</ol>
+<p>In your case, as the data should never change, I would go on solution 2, to reduce the load on the servers. </p>
+<p>Here are the details :</p>
+<ol>
+<li>Got to overpass-turbo, to build a query like <a href="http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A25%5D%3B%20%0A(%20%0A%20%20rel(1800060)%3B%0A)%3B%0A%0Aout%20body%3B%0A%3E%3B%0Aout%20skel%20qt%3B%0A&amp;C=41.83973;-88.08857;11">this one</a></li>
+<li>I put only the county you cited, but you can add as many as you want with more <code>rel(#county_id);</code> in the parenthesizes, they create a union.</li>
+<li>Then click Run, to check that it's what you want.</li>
+<li>Click Export, then download (GPX is a fairly standard format, others are possible).</li>
+<li>In uMap, click on the up arrow, in the right menu <img alt="import data" src="https://wiki.openstreetmap.org/w/images/5/5e/Icon-upload.png"/> (see this <a href="https://wiki.openstreetmap.org/wiki/UMap/Guide/Import_data_files">guide</a> for details), choose your file, the same format as when downloading, a new layer... </li>
+<li>And click import !</li>
+<li>Then you can change the settings of the layer, one useful with this kind of data is in "Advanced properties", "simplify", it will make displaying at lower zoom faster.</li>
+</ol>
+<p>Hope this helps, please ask if you need more assistance.</p>
+<p>Regards.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/83416/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Feb '22, 19:21</strong>
+</p>
+<img alt="H_mlet's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9434692e9afccaf03af5acf20b3a3279?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13231/h_mlet">H_mlet</a><br/>
+<span class="score" title="5443 reputation points"><span class="">5.4k</span></span><span title="17 badges"><span class="silver">●</span><span class="badgecount">17</span></span><span title="81 badges"><span class="bronze">●</span><span class="badgecount">81</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="H_mlet has 40 accepted answers">13%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-83416">
+<a name="83437"></a>
+<div class="comment" id="comment-83437">
+<div class="comment-score" id="post-83437-score">1</div>
+<div class="comment-text"><p>Thanks for the well crafted answer H_mlet. Overpass-turbo really like a Rosetta Stone for my mapping needs.</p>
+<p>Here's what I was able to get done in short order after your answer:</p>
+<p><a href="http://u.osmfr.org/m/715212/">http://u.osmfr.org/m/715212/</a></p></div>
+<div class="comment-info" id="comment-83437-info">
+<span class="comment-age">(10 Feb '22, 00:41)</span>
+<a class="comment-user userinfo" href="/users/21393/greater-chicago-iww">Greater Chic...</a>
+</div>
+</div>
+<a name="83438"></a>
+<div class="comment" id="comment-83438">
+<div class="comment-score" id="post-83438-score">1</div>
+<div class="comment-text"><p>Yeah, uMap is pretty neat. Sometime a bit quirky, and sadly unmaintained, but still great!</p></div>
+<div class="comment-info" id="comment-83438-info">
+<span class="comment-age">(10 Feb '22, 06:46)</span>
+<a class="comment-user userinfo" href="/users/13231/h_mlet">H_mlet</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-83416">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-83416-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/83413/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="3Di9dfZ2zaSCMEQGhGsgnunrBPtY4O3P"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

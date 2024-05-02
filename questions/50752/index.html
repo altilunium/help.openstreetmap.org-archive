@@ -1,0 +1,205 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/50752/how-do-i-get-route_master-and-its-children-via-overpass-ql-in-overpass-turbo">How do I get route_master (and its children) via Overpass QL in overpass-turbo?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/50752/up/" id="post-50752-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-50752-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/50752/down/" id="post-50752-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/50752/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi, I am new to OSM and trying to understand Overpass QL so editing of public Transport data in JOSM will be easier in the future.</p>
+<p>My Question is, why this Overpass QL query won't give me any data, not even <a href="https://www.openstreetmap.org/relation/1729861">the data I just added myself</a>?</p>
+<pre><code>[out:json];
+(
+  relation["type"="route_master"]["route_master"="bus"](51.3649215, 9.2642212, 51.7134161, 9.810791);
+);
+rel(r);
+way(r);
+out meta qt;
+</code></pre>
+<p>As far as I think, this query works this way:</p>
+<ol>
+<li>I ask for json-data (but xml won't work, either)</li>
+<li>I like to get all relations in the bounding box which carry the tags type=route_master and route_master=bus</li>
+<li>from that I recursively ask for all child-relations</li>
+<li>and from that for child ways</li>
+<li>(and even if I ask for child nodes, I won't get any data)</li>
+<li>and then I print the result (with all data there is, geographically ordered (whatever this means) )</li>
+</ol>
+<p>So whats wrong with that query (or the data I added previously). Could anybody explain it to me?</p>
+<p>P.S.: I just had to type this once again, because the wait for email-validation (after creating a new account) didn't seem to keep this question pending, but instead deleted it.
+P.P.S.: It is denglish I am writing. If there is a native english speaker here who cares for educating his or hers language: I am listening.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-route_master" href="/tags/route_master/" rel="tag" title="see questions tagged 'route_master'">route_master</a>
+<a class="post-tag tag-link-bus" href="/tags/bus/" rel="tag" title="see questions tagged 'bus'">bus</a>
+<a class="post-tag tag-link-route" href="/tags/route/" rel="tag" title="see questions tagged 'route'">route</a>
+<a class="post-tag tag-link-relations" href="/tags/relations/" rel="tag" title="see questions tagged 'relations'">relations</a>
+<a class="post-tag tag-link-overpass-ql" href="/tags/overpass-ql/" rel="tag" title="see questions tagged 'overpass-ql'">overpass-ql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>09 Jul '16, 11:14</strong>
+</p>
+<img alt="jannefleischer's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9783c8591af9a852805e5d69c461e828?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12531/jannefleischer">jannefleischer</a><br/>
+<span class="score" title="46 reputation points">46</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="jannefleischer has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-50752">
+</div>
+<div class="comment-tools" id="comment-tools-50752">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-50752-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/50752/how-do-i-get-route_master-and-its-children-via-overpass-ql-in-overpass-turbo?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/50752/how-do-i-get-route_master-and-its-children-via-overpass-ql-in-overpass-turbo?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/50752/how-do-i-get-route_master-and-its-children-via-overpass-ql-in-overpass-turbo?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/50752/how-do-i-get-route_master-and-its-children-via-overpass-ql-in-overpass-turbo?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="50753"></a>
+<div class="answer accepted-answer" id="answer-container-50753">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/50753/up/" id="post-50753-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-50753-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/50753/down/" id="post-50753-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/50753/" rel="nofollow" title="jannefleischer has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Tricky question ... :)</p>
+<p>Master relations don't have any geometry on their own. That's why your query won't find anything for a given bounding box in step 2 already. I'm not sure if that's a bug or not, at least it doesn't work right now (<a href="https://github.com/drolbr/Overpass-API/issues/293">Github issue opened</a>).</p>
+<p>I have changed that part of your query to include the network "NVV" and effectively turned it into a global scale query for route_master relations. That's purely a performance tweak to reduce the number of relevant master relations from 21862 down to 64.</p>
+<p>Now, instead of applying the bounding box filter to the master relation, I'm using the individual bus routes via <code>(rel(r){{bbox}})</code> for that purpose. As those bus routes all have their proper geometry information, using the bounding box as a filter shouldn't be an issue anymore.</p>
+<p><a href="http://overpass-turbo.eu/s/hdA">overpass turbo link</a></p>
+<pre><code>[out:json];
+relation["type"="route_master"]["route_master"="bus"][network="NVV"];
+(rel(r)({{bbox}});&gt;;);
+out meta;
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/50753/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Jul '16, 11:39</strong>
+</p>
+<img alt="mmd's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/264d84ab05b942224b05960903eba7a7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8708/mmd">mmd</a><br/>
+<span class="score" title="5682 reputation points"><span class="">5.7k</span></span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="53 badges"><span class="silver">●</span><span class="badgecount">53</span></span><span title="88 badges"><span class="bronze">●</span><span class="badgecount">88</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mmd has 44 accepted answers">37%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/50753/">
+                edited
+                <strong>09 Jul '16, 12:26</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-50753">
+<a name="50755"></a>
+<div class="comment" id="comment-50755">
+<div class="comment-score" id="post-50755-score">2</div>
+<div class="comment-text"><p>Thanks for your immediate response. I had my problems with the first revision of your answer, but now I think I understood. The problem is, that, since the relation master_route do not contain any geometries, I can't filter it with a bounding box. So I first have to get the sub-routes (tag: route) and use the bounding-box filter over those.</p>
+<p>Thanks for pointing this out to me. It wasn't that trivial as I expected it to be, after all. :)</p>
+<p>The wizard provides a template called (in german) „Hauptroute" which does it wrong, too. Reported it: <a href="https://github.com/tyrasd/overpass-turbo/issues/254">https://github.com/tyrasd/overpass-turbo/issues/254</a></p></div>
+<div class="comment-info" id="comment-50755-info">
+<span class="comment-age">(09 Jul '16, 12:28)</span>
+<a class="comment-user userinfo" href="/users/12531/jannefleischer">jannefleischer</a>
+</div>
+</div>
+<a name="51476"></a>
+<div class="comment" id="comment-51476">
+<div class="comment-score" id="post-51476-score"></div>
+<div class="comment-text"><p>Just a note: this answer helped me create a query to render a relation and it's subrelations (queried by master relation ID): <a href="http://overpass-turbo.eu/s/hTR">http://overpass-turbo.eu/s/hTR</a></p></div>
+<div class="comment-info" id="comment-51476-info">
+<span class="comment-age">(17 Aug '16, 10:20)</span>
+<a class="comment-user userinfo" href="/users/10142/joost-schouppe">joost schouppe</a>
+</div>
+</div>
+<a name="51481"></a>
+<div class="comment" id="comment-51481">
+<div class="comment-score" id="post-51481-score"></div>
+<div class="comment-text"><p><a href="http://help.openstreetmap.org/users/10142/joost-schouppe">@joost schouppe</a>: <code>(relation(2099432);&gt;&gt;;);out body;</code> would be the usual approach, as you already have a relation id.</p></div>
+<div class="comment-info" id="comment-51481-info">
+<span class="comment-age">(17 Aug '16, 11:53)</span>
+<a class="comment-user userinfo" href="/users/8708/mmd">mmd</a>
+</div>
+</div>
+<a name="51482"></a>
+<div class="comment" id="comment-51482">
+<div class="comment-score" id="post-51482-score"></div>
+<div class="comment-text"><p>I noticed it does make a small difference: it also returns the tagged nodes that are members of the ways of the relations, whereas the other approach just returns member relations.</p></div>
+<div class="comment-info" id="comment-51482-info">
+<span class="comment-age">(17 Aug '16, 12:00)</span>
+<a class="comment-user userinfo" href="/users/10142/joost-schouppe">joost schouppe</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-50753">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-50753-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/50752/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="AKM95lbhL55E2kd3vQMa2U1EhRelFoS5"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

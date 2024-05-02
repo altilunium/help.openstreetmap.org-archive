@@ -1,0 +1,414 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/46518/issues-with-st_intersects-for-node-geometry-in-way-geometry">Issues with ST_INTERSECTS for node geometry in way geometry</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/46518/up/" id="post-46518-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-46518-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/46518/down/" id="post-46518-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/46518/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello</p>
+<p>I am trying to work with the full history file. I've used Mazderminds scripts to load an excerpt into a Postgres database. </p>
+<p>Some spatial queries are giving me the results I expect, however I've found that none of nodes intersect the ways. </p>
+<p>For example using way id : 3565059, version 5 and node id 17543678, version 5 MUST intersect. However ST_INTERSECTS returns FALSE. </p>
+<p>On the same query using ST_DWITHIN returns TRUE using parameter of 0.1 metres, but FALSE with any greater precision. </p>
+<p>Has anyone else encountered the same issue or can shed some light on this problem ?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>10 Nov '15, 22:38</strong>
+</p>
+<img alt="Sam75's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e812dbc1b44368299ea35a9a0a0f2b20?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11675/sam75">Sam75</a><br/>
+<span class="score" title="71 reputation points">71</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Sam75 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/46518/">
+                edited
+                <strong>10 Nov '15, 22:40</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-46518">
+</div>
+<div class="comment-tools" id="comment-tools-46518">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-46518-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/46518/issues-with-st_intersects-for-node-geometry-in-way-geometry?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/46518/issues-with-st_intersects-for-node-geometry-in-way-geometry?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/46518/issues-with-st_intersects-for-node-geometry-in-way-geometry?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/46518/issues-with-st_intersects-for-node-geometry-in-way-geometry?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="46913"></a>
+<div class="answer answered-by-owner" id="answer-container-46913">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/46913/up/" id="post-46913-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-46913-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/46913/down/" id="post-46913-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I believe the problem lies in the fact the point geometry in the database created by MaZdermind's scripts is rounded to 6 decimal places, while the vertices in the line geometry is not rounded. The below query on a full history extract on nepal shows this. In the results  ST_INTERSECTS will return True on record 2. The remainder returns False, but returns True using a max resolution of 0.000001 m and ST_DWITHIN.</p>
+<p>The actual precision of the node_point geometry on the OSM database can be manually verified through the URL(openstreetmap.org/node/...(way id)../history)and paging down to the corresponding version number. Equally the point can be confirmed and being part of a way by the same method. </p>
+<pre><code> --Create a function to find the closest vertex in a linestring to a given point (<a href="http://gis.stackexchange.com/questions/111711/find-the-closest-line-vertex-from-the-linestring-using-postgis)">http://gis.stackexchange.com/questions/111711/find-the-closest-line-vertex-from-the-linestring-using-postgis)</a>
+
+CREATE OR REPLACE FUNCTION ST_AsMultiPoint(geometry) RETURNS geometry AS  'SELECT ST_Union((d).geom) FROM ST_DumpPoints($1) AS d;'LANGUAGE sql IMMUTABLE STRICT COST 10;
+
+--Select a subset of data from a full history node table
+
+WITH pointsub as (Select * FROM hist_point LIMIT 600) ,
+
+--Find records in the full history way table (hist_line) where the nodes subset is 0.000001 metres from the way (hist_line). Add condition on time stamp creation to make sure you have found points in the lines. Display the vertex in the linestring which is closest to that point, compare against point geom
+
+results1 as (SELECT hist_line.id line_id,pointsub.id point_id,pointsub.version point_version,hist_line.version,ST_AsText(ST_ClosestPoint(ST_AsMultiPoint(hist_line.geom), pointsub.geom)) closest_vertex_in_line,ST_AsText(pointsub.geom) point_geom
+FROM hist_line,pointsub WHERE ST_DWITHIN(pointsub.geom, hist_line.geom,0.000001)AND hist_line.valid_from = pointsub.valid_from),
+
+--As there are many versions of the lines. select 1 instance of the line where the geometry relates to each unique point
+
+results2 as (SELECT *,ROW_NUMBER() OVER(PARTITION by results1.point_id) as rn FROM results1)
+
+SELECT results2.point_id,results2.point_version,results2.line_id,
+results2.line_version,results2.point_geom,results2.closest_vertex_in_line 
+FROM results2 WHERE rn = 1
+</code></pre>
+<p><img alt="alt text" src="http://help.openstreetmap.org/upfiles/Issues-with-St_intersects_tCg8JYe.png"/></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/46913/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Nov '15, 22:52</strong>
+</p>
+<img alt="Sam75's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e812dbc1b44368299ea35a9a0a0f2b20?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11675/sam75">Sam75</a><br/>
+<span class="score" title="71 reputation points">71</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Sam75 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/46913/">
+                edited
+                <strong>15 Dec '15, 10:02</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-46913">
+<a name="46939"></a>
+<div class="comment" id="comment-46939">
+<div class="comment-score" id="post-46939-score"></div>
+<div class="comment-text"><p>We used to have a similar issue with osm2pgsql that I fixed a couple of years back. If you don't reproject on import I don't really see a reason for rounding in the first place (in case of osm2pgsql you would typically reproject resulting in many digits of nonsense so rounding is sensible).</p></div>
+<div class="comment-info" id="comment-46939-info">
+<span class="comment-age">(02 Dec '15, 18:58)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+<a name="46940"></a>
+<div class="comment" id="comment-46940">
+<div class="comment-score" id="post-46940-score"></div>
+<div class="comment-text"><p>Thanks for the comment Simon.The above data is unprojected (at import). Can you help me fix this bug? In order to identify rollbacks I need the full precision. Perhaps, could you give me a clue where abouts to look in the sea of scripts for Madzermind's importer tool and the Osmium framework they are built upon ?</p></div>
+<div class="comment-info" id="comment-46940-info">
+<span class="comment-age">(02 Dec '15, 22:09)</span>
+<a class="comment-user userinfo" href="/users/11675/sam75">Sam75</a>
+</div>
+</div>
+<a name="46948"></a>
+<div class="comment" id="comment-46948">
+<div class="comment-score" id="post-46948-score">1</div>
+<div class="comment-text"><p>This will need some glaring at the code in question, I'll see if joto can help before we waste too much time.</p></div>
+<div class="comment-info" id="comment-46948-info">
+<span class="comment-age">(03 Dec '15, 14:00)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-46913">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-46913-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="46529"></a>
+<div class="answer" id="answer-container-46529">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/46529/up/" id="post-46529-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-46529-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/46529/down/" id="post-46529-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I would regard this as much more likely to be a question about PostGIS processing. There are numerous examples of problems with queries of this kind on GIS Stackinfo &amp; Stackinfo. Various generic techniques can be used to mitigate against such issue: such as forcing valdity st_makevalid and checkgeometry, checking validity st_isvalid, pre-snapping objects with st_snap. </p>
+<p>Also remember that there is no guarantee that any given polygon OSM way or relation at a particular time will make always be well formed for PostGIS. I <a href="http://sk53-osm.blogspot.co.uk/2011/02/exploration-of-bad-polygons.html">wrote something</a> about this a while back.</p>
+<p>More detail of what you are doing may help as well. I presume these queries are against hist_view_line etc. as described MaZdermind's <a href="https://github.com/MaZderMind/osm-history-renderer">write-up</a> on github.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/46529/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>11 Nov '15, 10:37</strong>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br/>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SK53 has 121 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-46529">
+<a name="46538"></a>
+<div class="comment" id="comment-46538">
+<div class="comment-score" id="post-46538-score"></div>
+<div class="comment-text"><p>Thanks for the response. As I believe the problem is related to the underlying data or the transformation I hoped to have more success on this forum than stackoverflow. But I do appreciate this forum is weighted towards contributions, rather than consumption.</p>
+<p>The queries are from hist_point against hist_line. I am doing some analysis on rollbacks and looking to see which rolled back nodes haved effected which ways. Spatial queries within the tables work perfectly, the issue arises on queries between tables.</p></div>
+<div class="comment-info" id="comment-46538-info">
+<span class="comment-age">(12 Nov '15, 09:27)</span>
+<a class="comment-user userinfo" href="/users/11675/sam75">Sam75</a>
+</div>
+</div>
+<a name="46539"></a>
+<div class="comment" id="comment-46539">
+<div class="comment-score" id="post-46539-score">1</div>
+<div class="comment-text"><p>Well the other place is against MaZdermind's repo. This is a fairly involved technical area, and relatively few people have a setup which can test the issue. Certainly, I'd only really start to worry if it wasnt resolved with the techniques I suggest.</p></div>
+<div class="comment-info" id="comment-46539-info">
+<span class="comment-age">(12 Nov '15, 12:06)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-46529">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-46529-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="46953"></a>
+<div class="answer" id="answer-container-46953">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/46953/up/" id="post-46953-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-46953-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/46953/down/" id="post-46953-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I suspect line 106 here <a href="https://github.com/MaZderMind/osm-history-renderer/blob/master/importer/handler.hpp">https://github.com/MaZderMind/osm-history-renderer/blob/master/importer/handler.hpp</a> is the culprit. This sets the total number of decimal places used and setting that to 8 would cause exactly the results you see above.</p>
+<p>Removing "&lt;&lt; std::setprecision(8)" and reimporting should fix the issue.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/46953/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Dec '15, 16:38</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-46953">
+<a name="46963"></a>
+<div class="comment" id="comment-46963">
+<div class="comment-score" id="post-46963-score"></div>
+<div class="comment-text"><p>Many thanks for looking at this Simon. Unfortunately I had already tried your suggestion,  &lt;&lt; std::setprecision(8)" can also be found in line 260 of handler file and line 48 of the geombuilder file. Changing the precision or removing any of these lines, does not change the output format, the point geom remains rounded to precision 8 (or 6 decimal places - I have not imported files that with geometries above 100 degrees longitude). The linestring vertices precision are as per the url of the node. Any advice from Jochen Topf?</p></div>
+<div class="comment-info" id="comment-46963-info">
+<span class="comment-age">(03 Dec '15, 21:09)</span>
+<a class="comment-user userinfo" href="/users/11675/sam75">Sam75</a>
+</div>
+</div>
+<a name="46964"></a>
+<div class="comment" id="comment-46964">
+<div class="comment-score" id="post-46964-score"></div>
+<div class="comment-text"><p>Did you reimport? The rounding is done when writing to the database (I would suggest testing on a small extract naturally). Jochen is not aware of any rounding in OSMIUM (but the tools in question are using a very old version in any case).</p></div>
+<div class="comment-info" id="comment-46964-info">
+<span class="comment-age">(03 Dec '15, 21:11)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+<a name="46967"></a>
+<div class="comment not_top_scorer" id="comment-46967">
+<div class="comment-score" id="post-46967-score"></div>
+<div class="comment-text"><p>Correct, amended script(s) and dropped existing tables and reimported. For good measure I set up a fresh database.  I am aware it uses the older version of OSMIUM. There were two warnings when unpacking osmium regarding the xml tag on the doxyfile, I was given the option to update or remove, I chose to update. Since Madzermind's application is based on the original OSMIUM I assume it is best not to play with that. When you fixed the bug in OSM2PGSQL was it as simple as resetting a precision parameter ?</p></div>
+<div class="comment-info" id="comment-46967-info">
+<span class="comment-age">(03 Dec '15, 22:13)</span>
+<a class="comment-user userinfo" href="/users/11675/sam75">Sam75</a>
+</div>
+</div>
+<a name="46971"></a>
+<div class="comment not_top_scorer" id="comment-46971">
+<div class="comment-score" id="post-46971-score"></div>
+<div class="comment-text"><p>Do you think it could be something in the WKB writer : <a href="http://geos.osgeo.org/doxygen/WKBWriter_8h_source.html">http://geos.osgeo.org/doxygen/WKBWriter_8h_source.html</a> and its point class dependency <a href="http://geos.osgeo.org/doxygen/Point_8h_source.html.">http://geos.osgeo.org/doxygen/Point_8h_source.html.</a></p></div>
+<div class="comment-info" id="comment-46971-info">
+<span class="comment-age">(03 Dec '15, 23:48)</span>
+<a class="comment-user userinfo" href="/users/11675/sam75">Sam75</a>
+</div>
+</div>
+<a name="46973"></a>
+<div class="comment not_top_scorer" id="comment-46973">
+<div class="comment-score" id="post-46973-score"></div>
+<div class="comment-text"><p>Looking at line 117 it writes out WKT and IMHO that should be correct if you remove the setPrecision, what -dows- look wrong there is the SRID spec, given that you should be writing lat lon, but maybe I missed something.</p></div>
+<div class="comment-info" id="comment-46973-info">
+<span class="comment-age">(04 Dec '15, 13:33)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+<a name="46981"></a>
+<div class="comment not_top_scorer" id="comment-46981">
+<div class="comment-score" id="post-46981-score"></div>
+<div class="comment-text"><p>I don't have a reason or good enough understanding to disagree with your rationale, but removing lines of code with setprecision definitely does not work for me. Nonetheless, many thanks for your efforts, it's much appreciated.</p></div>
+<div class="comment-info" id="comment-46981-info">
+<span class="comment-age">(04 Dec '15, 20:56)</span>
+<a class="comment-user userinfo" href="/users/11675/sam75">Sam75</a>
+</div>
+</div>
+<a name="46982"></a>
+<div class="comment not_top_scorer" id="comment-46982">
+<div class="comment-score" id="post-46982-score"></div>
+<div class="comment-text"><p>Not fully understanding your problem, but the <em>default</em> precision in C++ is (often? always?) 6. So removing <code>std::setprecision()</code> doesn't necessarily lead to a higher precision. Instead it might be necessary to increase the specified precision or even add <code>std::setprecision()</code> at some places. So in this specific case <code>std::setprecision(8)</code> was not meant to lower the precision but to raise it instead.</p></div>
+<div class="comment-info" id="comment-46982-info">
+<span class="comment-age">(04 Dec '15, 22:18)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="46983"></a>
+<div class="comment not_top_scorer" id="comment-46983">
+<div class="comment-score" id="post-46983-score"></div>
+<div class="comment-text"><p>Thanks, I have also tried raising the precision, and tried std ::setprecision() just now, again no change. This line of code can't be causing the bug.</p></div>
+<div class="comment-info" id="comment-46983-info">
+<span class="comment-age">(04 Dec '15, 22:33)</span>
+<a class="comment-user userinfo" href="/users/11675/sam75">Sam75</a>
+</div>
+</div>
+<a name="46988"></a>
+<div class="comment" id="comment-46988">
+<div class="comment-score" id="post-46988-score">1</div>
+<div class="comment-text"><p>IMHO one us will actually have to install the software and test .. will however take a couple of days.</p></div>
+<div class="comment-info" id="comment-46988-info">
+<span class="comment-age">(05 Dec '15, 00:18)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+<a name="47297"></a>
+<div class="comment" id="comment-47297">
+<div class="comment-score" id="post-47297-score">3</div>
+<div class="comment-text"><p>setprecision(8) is not enough. You need 7 digits after the decimal point to get the full precision OSM supports, plus 3 digits before it, makes 10. So setprecision(10) should be correct. Removing the setprecision() will get you the default of 6 which is definitely not enough.</p></div>
+<div class="comment-info" id="comment-47297-info">
+<span class="comment-age">(27 Dec '15, 16:28)</span>
+<a class="comment-user userinfo" href="/users/112/jochen-topf">Jochen Topf</a>
+</div>
+</div>
+<a name="47304"></a>
+<div class="comment" id="comment-47304">
+<div class="comment-score" id="post-47304-score">1</div>
+<div class="comment-text"><p>Many thanks Simon, Alex and Jochen. Increasing setprecision solves the problem. I had failed with earlier attempts as I had not remade the executable file after amending the 'setprecision' in the handler and geombuilder files. As Jochen says setprecision(10) allows for the full OSM precision.</p></div>
+<div class="comment-info" id="comment-47304-info">
+<span class="comment-age">(28 Dec '15, 22:41)</span>
+<a class="comment-user userinfo" href="/users/11675/sam75">Sam75</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-46953">
+<span class="comments-showing">
+            showing 5 of 11
+        </span>
+<a class="show-all-comments-link" href="#">show 6 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-46953-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/46518/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="lnFlTORbKBpJLGMx0VM7aRTWaaeIeiuK"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

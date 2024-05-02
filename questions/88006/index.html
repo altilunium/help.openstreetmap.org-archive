@@ -1,0 +1,497 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/88006/nominatim-database-update-error">Nominatim database update error</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/88006/up/" id="post-88006-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-88006-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/88006/down/" id="post-88006-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/88006/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Periodicly i update the Nominatim database with the command: nominatim replication.</p>
+<p>And untill now that always worked correctly. But last time i did the process exited with this error (see image).</p>
+<p>psycopg2.errors.InternalError_: line_substring: 1st arg isn't a line
+CONTEXT:  PL/pgSQL function osmline_update() line 113 at assignment</p>
+<p><a href="https://www.imgpaste.net/image/KUowAY">https://www.imgpaste.net/image/KUowAY</a></p>
+<p>When i restart the update process it will start the process again and apperently stop again at the same point. </p>
+<p>Is there a way to update the database past this date or any other suggestion how to fix this ? </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Nov '23, 01:09</strong>
+</p>
+<img alt="TrackTrace's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/83ec59f9a0f82dc7c8ff3393a7586e32?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/22893/tracktrace">TrackTrace</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="TrackTrace has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/88006/">
+                edited
+                <strong>16 Nov '23, 01:20</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-88006">
+<a name="88139"></a>
+<div class="comment" id="comment-88139">
+<div class="comment-score" id="post-88139-score"></div>
+<div class="comment-text"><p>Hi Ole, </p>
+<p>Actually i did not find a solution. If no one can come up with a solution here i will rebuild the complete database. </p></div>
+<div class="comment-info" id="comment-88139-info">
+<span class="comment-age">(11 Jan, 00:01)</span>
+<a class="comment-user userinfo" href="/users/22893/tracktrace">TrackTrace</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-88006">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-88006-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    7 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/88006/nominatim-database-update-error?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/88006/nominatim-database-update-error?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/88006/nominatim-database-update-error?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/88006/nominatim-database-update-error?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="88124"></a>
+<div class="answer" id="answer-container-88124">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/88124/up/" id="post-88124-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-88124-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/88124/down/" id="post-88124-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I have exactly the same problem. Did you manage to get it running again?
+Thanks! Ole.</p>
+<p>Setup: nominatim 4.2 with docker-compose</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/88124/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Jan, 12:30</strong>
+</p>
+<img alt="o_gardiner's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/13820df4f4f1e48fa7f5fa1190e5af80?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/23589/o_gardiner">o_gardiner</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="o_gardiner has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-88124">
+</div>
+<div class="comment-tools" id="comment-tools-88124">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-88124-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="88141"></a>
+<div class="answer" id="answer-container-88141">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/88141/up/" id="post-88141-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-88141-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/88141/down/" id="post-88141-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hi TrackTrace,</p>
+<p>Thanks for your response. Before rebuilding the complete database I wanted to check if an update to a newer version of Nominatim might help. Which version are you using?</p>
+<p>Thanks,
+Ole.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/88141/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>11 Jan, 09:58</strong>
+</p>
+<img alt="o_gardiner's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/13820df4f4f1e48fa7f5fa1190e5af80?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/23589/o_gardiner">o_gardiner</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="o_gardiner has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-88141">
+</div>
+<div class="comment-tools" id="comment-tools-88141">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-88141-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="88142"></a>
+<div class="answer answered-by-owner" id="answer-container-88142">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/88142/up/" id="post-88142-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-88142-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/88142/down/" id="post-88142-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hi Ole, </p>
+<p>Im on 4.2.2</p>
+<p>I see that there have been five major updates since then 4.2.2 <a href="https://nominatim.org/release-history/">https://nominatim.org/release-history/</a></p>
+<p>Actually till now i did not really bother to much since the nominatim server kept working (without the updated database). By the way i have build the Europe database and You ?</p>
+<p>Since the database update process seemed rather slow in the past i was still wondering if updating the database periodicly was really the best option. But now that you also have the same issue i will spend some time on it to see if updating nominatim can solve the problem. </p>
+<p>Since i run nominatim on a virtualbox ubuntu server i will clone (server is about 650 GB) and then update it to see if it works (so that even if updating nominatim breaks the server i would still have the working original server).</p>
+<p>P.s.
+Meaby you are interested to get in touch since we seem to have the same interest.</p>
+<p>Follow up:</p>
+<p>Did clone the server. When i now try to update nominatim it states.</p>
+<p>nominatim admin --migrate</p>
+<p>2024-01-11 12:07:22: Using project directory: /var/lib/postgresql</p>
+<p>2024-01-11 12:07:22: Checking for necessary database migrations</p>
+<p>2024-01-11 12:07:22: Database already at latest version (4.2.2-0)</p>
+<p>I did download the latest update and put it in the /srv/nominatim directory where i originally installed 4.2.2 from. </p>
+<p>I now have in this directory: 
+/srv/nominatim
+Build
+Nominatim-4.2.2<br/>
+Nominatim-4.2.2.tar.bz2<br/>
+Nominatim-4.3.2.tar.bz2 (should i unpack this ?)</p>
+<p>I did run the command: nominatim admin --migrate 
+From both /srv/nominatim and /srv/nominatim/build</p>
+<p>From both i get the same result:</p>
+<p>2024-01-11 12:07:22: Using project directory: /var/lib/postgresql</p>
+<p>2024-01-11 12:07:22: Checking for necessary database migrations</p>
+<p>2024-01-11 12:07:22: Database already at latest version (4.2.2-0)</p>
+<p>Did unpack: tar xf Nominatim-4.3.2.tar.bz2
+Did Run the command nominatim admin --migrate from: /srv/nominatim/Nominatim-4.3.2directory with same result</p>
+<p>Using project directory: /srv/nominatim/Nominatim-4.3.2</p>
+<p>Checking for necessary database migrations</p>
+<p>Database already at latest version (4.2.2-0)</p>
+<p>Anyone has tips ?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/88142/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>11 Jan, 10:40</strong>
+</p>
+<img alt="TrackTrace's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/83ec59f9a0f82dc7c8ff3393a7586e32?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/22893/tracktrace">TrackTrace</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="TrackTrace has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/88142/">
+                edited
+                <strong>11 Jan, 11:32</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-88142">
+</div>
+<div class="comment-tools" id="comment-tools-88142">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-88142-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="88152"></a>
+<div class="answer answered-by-owner" id="answer-container-88152">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/88152/up/" id="post-88152-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-88152-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/88152/down/" id="post-88152-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Meaby we can get a reply here: </p>
+<p><a href="https://github.com/osm-search/Nominatim/issues/3299">https://github.com/osm-search/Nominatim/issues/3299</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/88152/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>14 Jan, 02:32</strong>
+</p>
+<img alt="TrackTrace's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/83ec59f9a0f82dc7c8ff3393a7586e32?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/22893/tracktrace">TrackTrace</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="TrackTrace has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/88152/">
+                edited
+                <strong>14 Jan, 02:36</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-88152">
+</div>
+<div class="comment-tools" id="comment-tools-88152">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-88152-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="88154"></a>
+<div class="answer" id="answer-container-88154">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/88154/up/" id="post-88154-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-88154-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/88154/down/" id="post-88154-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hi TrackTrace,</p>
+<p>Thanks for your detailed answer! I'm using nominatim in a docker context, so updating should not be too difficult. The only thing that makes me hesitate is that we are running a custom dataset (Germany, Netherlands, Denmark, Austria) which I would prefer not to have to manually setup again.
+Did I understand your latest follow-up correctly in that an update did not help? Or ist the database update issue resolved now?</p>
+<p>Btw, we are using nominatim to extract hierarchical geo information for a database of addresses which are being displayed on a map.</p>
+<p>Cheers, Ole.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/88154/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>15 Jan, 08:29</strong>
+</p>
+<img alt="o_gardiner's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/13820df4f4f1e48fa7f5fa1190e5af80?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/23589/o_gardiner">o_gardiner</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="o_gardiner has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-88154">
+</div>
+<div class="comment-tools" id="comment-tools-88154">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-88154-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="88178"></a>
+<div class="answer answered-by-owner" id="answer-container-88178">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/88178/up/" id="post-88178-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-88178-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/88178/down/" id="post-88178-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hi Ole,</p>
+<p>Actually i used this suggestion.</p>
+<p>Downloading and unpacking the *.tar.bz2 isn't enough. You need to build and install Nominatim (<a href="https://nominatim.org/release-docs/latest/admin/Installation/#building-nominatim).">https://nominatim.org/release-docs/latest/admin/Installation/#building-nominatim).</a> Then nominatim --version should print the new version. With the new version you can run nominatim admin --migrate</p>
+<p>After that it gave me issues where the user had not enough write acces. So still was not able to try it with an updated version. Did you try anything ?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/88178/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Jan, 23:50</strong>
+</p>
+<img alt="TrackTrace's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/83ec59f9a0f82dc7c8ff3393a7586e32?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/22893/tracktrace">TrackTrace</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="TrackTrace has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-88178">
+</div>
+<div class="comment-tools" id="comment-tools-88178">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-88178-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="88187"></a>
+<div class="answer" id="answer-container-88187">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/88187/up/" id="post-88187-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-88187-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/88187/down/" id="post-88187-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hi TrackTrace,</p>
+<p>Sorry for not getting back to you earlier. I plan to update nominatim within the next days or so and check if this solves the issue. I will keep you updated :)</p>
+<p>Best, Ole</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/88187/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>23 Jan, 08:32</strong>
+</p>
+<img alt="o_gardiner's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/13820df4f4f1e48fa7f5fa1190e5af80?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/23589/o_gardiner">o_gardiner</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="o_gardiner has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-88187">
+</div>
+<div class="comment-tools" id="comment-tools-88187">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-88187-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/88006/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="7A39iSQ82ysTXyAeCXEo9nuvZsx0swA1"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,248 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/18290/how-to-source-a-changeset-after-its-closed">How to source=* a changeset after its closed?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/18290/up/" id="post-18290-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-18290-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/18290/down/" id="post-18290-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/18290/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have been source=* my elements, but for this changeset I decided to try putting the source attribution in the changeset instead.  lo and behold I forgot to source my changeset.  How can I select all members of a changeset to simply make another changeset with a source=Bing?  Looks like I got 43 ways to attribute...</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-source" href="/tags/source/" rel="tag" title="see questions tagged 'source'">source</a>
+<a class="post-tag tag-link-missing" href="/tags/missing/" rel="tag" title="see questions tagged 'missing'">missing</a>
+<a class="post-tag tag-link-mistake" href="/tags/mistake/" rel="tag" title="see questions tagged 'mistake'">mistake</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>08 Dec '12, 14:51</strong>
+</p>
+<img alt="j_smurfy's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/391dd37726bc8eadfad6c66c0e114928?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5134/j_smurfy">j_smurfy</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="j_smurfy has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-18290">
+</div>
+<div class="comment-tools" id="comment-tools-18290">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-18290-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/18290/how-to-source-a-changeset-after-its-closed?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/18290/how-to-source-a-changeset-after-its-closed?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/18290/how-to-source-a-changeset-after-its-closed?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/18290/how-to-source-a-changeset-after-its-closed?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="18345"></a>
+<div class="answer accepted-answer" id="answer-container-18345">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/18345/up/" id="post-18345-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-18345-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/18345/down/" id="post-18345-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/18345/" rel="nofollow" title="j_smurfy has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>As said by Simon, you can't in the current state of the API, add a source tag to a previous changeset. The only overkill solution would be to revert (cancel) your changeset and re-do it with the correct source tag.</p>
+<p>That's why your best option would be to add the source tag to all object modified in your changeset, and to do that :</p>
+<ul>
+<li>Open JOSM</li>
+<li>Download the whole zone (if possible)</li>
+<li>ctrl+F to find</li>
+<li>changeset:your changeset number</li>
+<li>find</li>
+<li>Add your source tag (it will add on all object selected)</li>
+</ul>
+<p>(I guess it might not work on objects modified since your changeset)</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/18345/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>10 Dec '12, 22:53</strong>
+</p>
+<img alt="sly's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0137f3597f9ca0efbda5c3b1e2678aa7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3436/sly">sly</a><br/>
+<span class="score" title="290 reputation points">290</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="9 badges"><span class="bronze">●</span><span class="badgecount">9</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="sly has one accepted answer">25%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/18345/">
+                edited
+                <strong>10 Dec '12, 22:55</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-18345">
+<a name="18350"></a>
+<div class="comment" id="comment-18350">
+<div class="comment-score" id="post-18350-score"></div>
+<div class="comment-text"><p>sly, looks like it worked.  First time using JOSM, too.  Thanks!</p></div>
+<div class="comment-info" id="comment-18350-info">
+<span class="comment-age">(11 Dec '12, 02:36)</span>
+<a class="comment-user userinfo" href="/users/5134/j_smurfy">j_smurfy</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-18345">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-18345-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="18297"></a>
+<div class="answer" id="answer-container-18297">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/18297/up/" id="post-18297-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-18297-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/18297/down/" id="post-18297-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Changeset tags can't be changed/added currently after creating the changeset (and there are no plans to add such a facility).</p>
+<p>BTW it should be source=bing imagery or similar (IMHO), assuming you were actually using their aerial imagery.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/18297/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Dec '12, 19:04</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/18297/">
+                edited
+                <strong>09 Dec '12, 10:32</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-18297">
+<a name="18298"></a>
+<div class="comment" id="comment-18298">
+<div class="comment-score" id="post-18298-score">4</div>
+<div class="comment-text"><p>source=Bing is the recommended (and commonly used) source tag for changesets made using Bing aerial imagery. See e.g. <a href="http://wiki.openstreetmap.org/wiki/Bing#Source_tag">Bing#Source_tag</a> in the wiki, but also other pages.</p></div>
+<div class="comment-info" id="comment-18298-info">
+<span class="comment-age">(08 Dec '12, 19:15)</span>
+<a class="comment-user userinfo" href="/users/14/tordanik">Tordanik</a>
+</div>
+</div>
+<a name="18308"></a>
+<div class="comment" id="comment-18308">
+<div class="comment-score" id="post-18308-score"></div>
+<div class="comment-text"><p>The wiki is littered with references of tag=astericks, I used that notation in my question. I am not placing source=astericks if that is what you mean. 
+Also I understand changesets are permanent and perhaps I should rephrase the question.  What I really mean is 'How do I select ALL elements from a previous changeset?'  Or 'How do I make a changeset referencing another changeset?'  Or 'Can I simultaneaously rollback/delete a changeset and copy its contents for editing, saving as new changeset?'  I just need to duplicate a changeset's contents, add the tag, and save out a new changeset.Thanks!</p></div>
+<div class="comment-info" id="comment-18308-info">
+<span class="comment-age">(09 Dec '12, 02:00)</span>
+<a class="comment-user userinfo" href="/users/5134/j_smurfy">j_smurfy</a>
+</div>
+</div>
+<a name="18309"></a>
+<div class="comment" id="comment-18309">
+<div class="comment-score" id="post-18309-score"></div>
+<div class="comment-text"><p>About the only way to acheive what you want to do, is to add a source tag after the fact to the ways you created and further add a note tag explaining that it should have already been on the original changeset. I personally however would consider that massive overkill and would just leave the data as it is and try to do better next time.</p></div>
+<div class="comment-info" id="comment-18309-info">
+<span class="comment-age">(09 Dec '12, 10:35)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+<a name="18397"></a>
+<div class="comment" id="comment-18397">
+<div class="comment-score" id="post-18397-score"></div>
+<div class="comment-text"><p>For example: I use source=Bing dated 2008
+It allows others to justify changing my entries based on newer data which could even include newer Bing imagery in years to come.</p></div>
+<div class="comment-info" id="comment-18397-info">
+<span class="comment-age">(12 Dec '12, 12:26)</span>
+<a class="comment-user userinfo" href="/users/716/dcp">dcp</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-18297">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-18297-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/18290/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="rLsMGysUISUa4S8cN9vSbx61gePyZ2dq"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

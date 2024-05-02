@@ -1,0 +1,174 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/34790/mbtiles-file-sans-png-images-to-use-for-geocoding-with-carmen">MBTiles file sans PNG images to use for geocoding (with carmen)</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/34790/up/" id="post-34790-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-34790-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/34790/down/" id="post-34790-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/34790/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Carmen does geocoding and is known to handle OSM data (and TIGER). If I want to geocode addresses in Germany, what are the steps?</p>
+<p>I've found so far:</p>
+<ul>
+<li>resources <a href="http://giswiki.hsr.ch/MBTiles">http://giswiki.hsr.ch/MBTiles</a></li>
+<li>suggestions how to create a regular MBTiles file with all rendered images inside</li>
+<li>tools <a href="http://maperitive.net/docs/Commands/GenerateMBTiles.html">http://maperitive.net/docs/Commands/GenerateMBTiles.html</a> and <a href="https://github.com/mapbox/mbutil">https://github.com/mapbox/mbutil</a></li>
+<li>related questions, like <a href="https://help.openstreetmap.org/questions/24828/how-can-i-easily-convert-osm-to-mbtiles-with-default-styles">https://help.openstreetmap.org/questions/24828/how-can-i-easily-convert-osm-to-mbtiles-with-default-styles</a>  and <a href="http://stackoverflow.com/questions/23965409/how-do-i-download-mbtiles-project-data-from-my-mapbox-account">http://stackoverflow.com/questions/23965409/how-do-i-download-mbtiles-project-data-from-my-mapbox-account</a></li>
+</ul>
+<p>But I'll only do geocoding, and do not need GB of PNG images.</p>
+<p>Maybe the easiest way is still to spend XX hours of fat server power to generate the images and then just delete the images-table from the MBTiles file (since it's sqlite-based)?</p>
+<p>But there ought to be a better way.
+And, if allowed, I'd be happy to reward a less than XX hours solution :-)</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-sqlite" href="/tags/sqlite/" rel="tag" title="see questions tagged 'sqlite'">sqlite</a>
+<a class="post-tag tag-link-carmen" href="/tags/carmen/" rel="tag" title="see questions tagged 'carmen'">carmen</a>
+<a class="post-tag tag-link-mbtiles" href="/tags/mbtiles/" rel="tag" title="see questions tagged 'mbtiles'">mbtiles</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>10 Jul '14, 08:09</strong>
+</p>
+<img alt="sesam's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1566633c958fd7cd2925e25390e33ff3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9216/sesam">sesam</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="sesam has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/34790/">
+                edited
+                <strong>10 Jul '14, 08:25</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-34790">
+<a name="34794"></a>
+<div class="comment" id="comment-34794">
+<div class="comment-score" id="post-34794-score">1</div>
+<div class="comment-text"><p>Would it be possible to explain the reason why you're looking at the mbtiles approach when you're interested in geocoding?  Apologies if I'm completely missing the point here...</p></div>
+<div class="comment-info" id="comment-34794-info">
+<span class="comment-age">(10 Jul '14, 11:25)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="34795"></a>
+<div class="comment" id="comment-34795">
+<div class="comment-score" id="post-34795-score">1</div>
+<div class="comment-text"><p>Yes. I need to geocode massive amounts of addresses, as well as support users doing searches. Can't pay several thousand dollars, not even hundreds of dollars per month. So no services/API:s are fast/cheap enough. Carmen is fast like Google and open source, so I'm trying to get data to use with Carmen.</p></div>
+<div class="comment-info" id="comment-34795-info">
+<span class="comment-age">(10 Jul '14, 11:29)</span>
+<a class="comment-user userinfo" href="/users/9216/sesam">sesam</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-34790">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-34790-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/34790/mbtiles-file-sans-png-images-to-use-for-geocoding-with-carmen?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/34790/mbtiles-file-sans-png-images-to-use-for-geocoding-with-carmen?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/34790/mbtiles-file-sans-png-images-to-use-for-geocoding-with-carmen?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/34790/mbtiles-file-sans-png-images-to-use-for-geocoding-with-carmen?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="34796"></a>
+<div class="answer" id="answer-container-34796">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/34796/up/" id="post-34796-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-34796-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/34796/down/" id="post-34796-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Well as I understand it (purely from reading the github readme!), <a href="https://github.com/mapbox/carmen">Carmen</a> depends on vector tiles, so mbtiles based on image tiles won't be useful.  I'd start by going through the various vector tile presentations at <a href="https://sotm-eu.org/">SOTM-EU</a>, but be aware it's not exactly a "mature technology" yet.  See the links from <a href="https://github.com/mapbox/mapnik-vector-tile">here</a> too.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/34796/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+<div class="community-wiki">
+        This answer is marked "community wiki".
+        
+    </div>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>10 Jul '14, 11:36</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-34796">
+<a name="34798"></a>
+<div class="comment" id="comment-34798">
+<div class="comment-score" id="post-34798-score"></div>
+<div class="comment-text"><p>Thanks! I have trouble digging up anything on sotm-eu.org; tried search and quick-reading the summaries at <a href="https://sotm-eu.org/en/program">https://sotm-eu.org/en/program</a> so now looking through the mapnik-vector-tile repo. In the carmen repo, "openstreetmap" is mentioned once (a config of which features to import) and that might also be a place to look. Digging further...</p></div>
+<div class="comment-info" id="comment-34798-info">
+<span class="comment-age">(10 Jul '14, 12:46)</span>
+<a class="comment-user userinfo" href="/users/9216/sesam">sesam</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-34796">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-34796-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/34790/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="TvD8rO4gGELATYuLcNQa7xDK7cisd4xK"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

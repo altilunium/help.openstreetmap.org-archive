@@ -1,0 +1,151 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/81517/how-to-map-complicated-intersection-so-cyclists-can-cross-it">How to map complicated intersection so cyclists can cross it</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/81517/up/" id="post-81517-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-81517-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/81517/down/" id="post-81517-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/81517/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I recently stumbled upon a situation where I'm a bit unsure how to properly represent it in OSM.</p>
+<p>It's about this intersection:
+<a href="https://www.openstreetmap.org/#map=19/54.86651/11.11583">https://www.openstreetmap.org/#map=19/54.86651/11.11583</a></p>
+<p>I noticed using osmand that it would not route me across that intersection from south to north. It's not an osmand issue, but an issue with the data.</p>
+<p>The streets from north and south (Tårs Landvej) split up into 1-directional streets before the intersection and end in the west-east street (Spodsbjergvej) at slightly different locations. This is in line with the situation on the ground.</p>
+<p>The problem now is this: On the west-east street (Spodsbjergvej) cycling is forbidden (and dangerous), so it's correctly tagged with "bicycle:no". However it is absolutely possible to cross this intersection in north/south direction, that is even part of some local cycling routes. But for the routing this means you have to cross a few meters on the larger road with "bicycle:no", so a routing software will not route bicycles through this.</p>
+<p>I'm wondering how to best adress this. One option would be splitting the west-east roat (Spodsbjergvej) both at the left and right entrypoints of Tårs Landvej and changing the piece between to "bicycle:yes". Would that be a good way?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-intersection" href="/tags/intersection/" rel="tag" title="see questions tagged 'intersection'">intersection</a>
+<a class="post-tag tag-link-mapping" href="/tags/mapping/" rel="tag" title="see questions tagged 'mapping'">mapping</a>
+<a class="post-tag tag-link-cycle" href="/tags/cycle/" rel="tag" title="see questions tagged 'cycle'">cycle</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>27 Aug '21, 09:44</strong>
+</p>
+<img alt="hanno's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b56f02655a9de3d7197ee0518f76f814?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20690/hanno">hanno</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="hanno has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-81517">
+</div>
+<div class="comment-tools" id="comment-tools-81517">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-81517-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/81517/how-to-map-complicated-intersection-so-cyclists-can-cross-it?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/81517/how-to-map-complicated-intersection-so-cyclists-can-cross-it?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/81517/how-to-map-complicated-intersection-so-cyclists-can-cross-it?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/81517/how-to-map-complicated-intersection-so-cyclists-can-cross-it?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="81518"></a>
+<div class="answer" id="answer-container-81518">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/81518/up/" id="post-81518-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-81518-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/81518/down/" id="post-81518-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This is ultimately a false precision issue that tends to afflict junction mappers - London, for example, is full of cases like this.</p>
+<p>There is no need to map the "wiggle" between the north and south streets. It is a straight-across turn; anyone driving or cycling across this turn would continue straight on without having to make a left-then-right manoeuvre. The entrances/exits are expressly flared to permit this to happen.</p>
+<p>A better way of mapping this would be to map the topology (i.e. the highway ways) with a straight-across intersection, and then to use <a href="https://wiki.openstreetmap.org/wiki/Key:area:highway">area:highway</a> to record the exact geometry of the junction. That conveys all the information without suggesting misleading manoeuvres to drivers or cyclists.</p>
+<p>(The wiggle is a form of traffic calming, to slow drivers on the approach to the junction and prevent them going straight across without stopping. I could see some logic in having a dedicated <code>traffic_calming</code> tag for this but I don't believe one's ever been proposed.)</p>
+<p>Martin Lucas-Smith from CycleStreets touched on some related issues in a talk at SOTM 2019 in <a href="https://www.youtube.com/watch?v=pMCnEFzjPD8">https://www.youtube.com/watch?v=pMCnEFzjPD8</a> .</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/81518/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>27 Aug '21, 10:21</strong>
+</p>
+<img alt="Richard's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/08324717c25d6067fa4ff23ef37d455f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5/richard">Richard ♦</a><br/>
+<span class="score" title="30902 reputation points"><span class="">30.9k</span></span><span title="44 badges"><span class="badge1">●</span><span class="badgecount">44</span></span><span title="279 badges"><span class="silver">●</span><span class="badgecount">279</span></span><span title="412 badges"><span class="bronze">●</span><span class="badgecount">412</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Richard has 98 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/81518/">
+                edited
+                <strong>27 Aug '21, 10:21</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-81518">
+<a name="81519"></a>
+<div class="comment" id="comment-81519">
+<div class="comment-score" id="post-81519-score">1</div>
+<div class="comment-text"><p>The east west highway here might be divided long enough to justify separately mapped carriageways? In which case there would be enough wiggle room to include the chicane and have the north-south roads continue through.</p></div>
+<div class="comment-info" id="comment-81519-info">
+<span class="comment-age">(27 Aug '21, 13:38)</span>
+<a class="comment-user userinfo" href="/users/4426/insertuser">InsertUser</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-81518">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-81518-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/81517/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="KIpC5ysJ12zUxyvgpfv5mx4I9DTwq1VK"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,254 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/12956/adding-addresses-properly">Adding Addresses Properly</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/12956/up/" id="post-12956-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-12956-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/12956/down/" id="post-12956-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/12956/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm new to OSM, but thought I would get started by contributing some small fixes to areas around where I live. I added some address components to the Mormon temples near my house to make searching for their locations easier. It seemed to work fine for the Jordan River Utah Temple (the address that is returned by searching for it on OSM.org is the correct address), but searching for the Oquirrh Mountain Utah Temple returns an incorrect address. The address that is returned incorrectly indicates that the temple is off a street called Country Crossing Court, although the building number is correct.</p>
+<p>I added the address components in the exact same way for both place (I think). Did I do something wrong here? What do I need to do to correct this?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-address" href="/tags/address/" rel="tag" title="see questions tagged 'address'">address</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 May '12, 18:40</strong>
+</p>
+<img alt="sterlinggp's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/301d6ff1c2c557b2b90386286b29248a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3682/sterlinggp">sterlinggp</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="sterlinggp has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-12956">
+</div>
+<div class="comment-tools" id="comment-tools-12956">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-12956-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/12956/adding-addresses-properly?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/12956/adding-addresses-properly?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/12956/adding-addresses-properly?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/12956/adding-addresses-properly?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="12967"></a>
+<div class="answer accepted-answer" id="answer-container-12967">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/12967/up/" id="post-12967-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-12967-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/12967/down/" id="post-12967-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/12967/" rel="nofollow" title="sterlinggp has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Nominatim has its own database, which is updated regularly from the OSM main DB. It may lag by a few days, so this is probably the reason.</p>
+<p>The address information of Oquirrh Mountain Utah Temple looks correct (it says "11022 South 4000 West, South Jordan, Utah, 84095-5797, United States of America").</p>
+<p>Looking at the history of Oquirrh Mountain Utah Temple, you can see that the address was only added on Fri, 25 May 2012. At <a href="http://nominatim.openstreetmap.org/">http://nominatim.openstreetmap.org/</a> you can see how current the Nominatim data is. As of this writing, it says "Data: 2012/05/25", so it may not yet have processed all changes from 25 May, which would explain the wrong result.</p>
+<p>Check back in a few days, the problem should be resolved.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/12967/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>26 May '12, 09:35</strong>
+</p>
+<img alt="sleske's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/6c2dd6a39d3f38f1bb47a8c1fe8325e2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/666/sleske">sleske</a><br/>
+<span class="score" title="4090 reputation points"><span class="">4.1k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="56 badges"><span class="silver">●</span><span class="badgecount">56</span></span><span title="78 badges"><span class="bronze">●</span><span class="badgecount">78</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="sleske has 19 accepted answers">24%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-12967">
+<a name="13114"></a>
+<div class="comment" id="comment-13114">
+<div class="comment-score" id="post-13114-score"></div>
+<div class="comment-text"><p>Update (May 29): Nominatim still reports the address incorrectly. This starts to look like a real bug in Nominatim. I'll try to keep an eye on it.</p></div>
+<div class="comment-info" id="comment-13114-info">
+<span class="comment-age">(30 May '12, 08:43)</span>
+<a class="comment-user userinfo" href="/users/666/sleske">sleske</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-12967">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-12967-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="13102"></a>
+<div class="answer" id="answer-container-13102">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/13102/up/" id="post-13102-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-13102-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/13102/down/" id="post-13102-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Nominatim works by linking addresses to their related street.  In the case of 'Oquirrh Mountain Utah Temple' it is linked to a street of '4000 West' but there is no street with that name anywhere close to this temple.</p>
+<p>If the street name is added to the appropriate unnamed road nearby the problem should resolve itself.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/13102/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>29 May '12, 23:57</strong>
+</p>
+<img alt="twain's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bda08a105bb6a4a606d47c1b27187fac?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4/twain">twain</a><br/>
+<span class="score" title="2381 reputation points"><span class="">2.4k</span></span><span title="25 badges"><span class="silver">●</span><span class="badgecount">25</span></span><span title="38 badges"><span class="bronze">●</span><span class="badgecount">38</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="twain has 15 accepted answers">40%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-13102">
+<a name="13110"></a>
+<div class="comment" id="comment-13110">
+<div class="comment-score" id="post-13110-score"></div>
+<div class="comment-text"><p>As far as I can tell, the street '4000 West' is named properly (and is just a dozen or so meters away from the building itself). A Nominatim search for '4000 West' yields a point on the street many miles north of the temple. I'm not sure if this is the reason, but '4000 West' starts up in the north, vanishes for a little while, then reappears before it passes by the temple. I'm not sure what to do to correct this, though.</p></div>
+<div class="comment-info" id="comment-13110-info">
+<span class="comment-age">(30 May '12, 02:03)</span>
+<a class="comment-user userinfo" href="/users/3682/sterlinggp">sterlinggp</a>
+</div>
+</div>
+<a name="13120"></a>
+<div class="comment" id="comment-13120">
+<div class="comment-score" id="post-13120-score">2</div>
+<div class="comment-text"><p>You are right - I didn't look far enough up the road to see the label.  I suspect you have found an issue with nominatim and very long roads.  I'll investigate properly and see if I can find the cause.</p></div>
+<div class="comment-info" id="comment-13120-info">
+<span class="comment-age">(30 May '12, 12:04)</span>
+<a class="comment-user userinfo" href="/users/4/twain">twain</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-13102">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-13102-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="12957"></a>
+<div class="answer" id="answer-container-12957">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/12957/up/" id="post-12957-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-12957-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/12957/down/" id="post-12957-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>If you are using the Nominatim Search Engine, don't worry to much if results seems to be a bit wrong -&gt; maybe your OSM data is correct though.</p>
+<p>Have a look at <a href="http://help.openstreetmap.org">http://help.openstreetmap.org</a> and do a search there for "nominatim" ... there are already several issues about Nominatim results.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/12957/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 May '12, 19:21</strong>
+</p>
+<img alt="stephan75's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/245b73d4390c3408fe3c6da759b9897f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/99/stephan75">stephan75</a><br/>
+<span class="score" title="12642 reputation points"><span class="">12.6k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="56 badges"><span class="silver">●</span><span class="badgecount">56</span></span><span title="210 badges"><span class="bronze">●</span><span class="badgecount">210</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="stephan75 has 37 accepted answers">6%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-12957">
+</div>
+<div class="comment-tools" id="comment-tools-12957">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-12957-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/12956/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="xR7xADIokIGEWE1DnUYalTkOLlUaknxI"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

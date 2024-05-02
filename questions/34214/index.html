@@ -1,0 +1,184 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/34214/osmconvert-gives-back-no-adress-city-street-and-housenumber-not-in-15000-result-records">osmconvert gives back no adress: city, street and housenumber - not in 15000 result-records</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/34214/up/" id="post-34214-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-34214-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/34214/down/" id="post-34214-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/34214/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>hello dear osm-experts</p>
+<p>with <strong>an update: scroll down</strong> the key question is, how can we write the request: that takes up the adress-tags correctly: <a href="http://wiki.openstreetmap.org/wiki/Key:addr">http://wiki.openstreetmap.org/wiki/Key:addr</a></p>
+<p>while trying to gather information about european schools - note i try it with different approaches 
+with the target-goal to gather </p>
+<pre><code>name
+adress
+long
+lat
+and town, street, housenumber information
+and then - if possible website -adress
+</code></pre>
+<p><strong>spain:</strong> 10000 Records</p>
+<pre><code>wget <a href="http://download.geofabrik.de/europe/spain-latest.osm.pbf">http://download.geofabrik.de/europe/spain-latest.osm.pbf</a>
+./osmconvert spain-latest.osm.pbf -o=spain.o5m
+./osmfilter spain.o5m --keep="amenity=school" -o=spain-schools.o5m
+./osmconvert spain-schools.o5m --all-to-nodes -o=spain-schools_nodes.o5m
+./osmfilter spain-schools_nodes.o5m --keep="amenity=school" -o=spain-schools-results.o5m
+./osmconvert spain-schools-results.o5m --csv="name addr:city website" -o=spain-schools-results.csv
+</code></pre>
+<p><strong>netherlands</strong> 3000 Records</p>
+<pre><code>wget <a href="http://download.geofabrik.de/europe/netherlands-latest.osm.pbf">http://download.geofabrik.de/europe/netherlands-latest.osm.pbf</a>
+./osmconvert netherlands-latest.osm.pbf -o=dutch.o5m
+./osmfilter dutch.o5m --keep="amenity=school" -o=dutch-schools.o5m
+./osmconvert dutch-schools.o5m --all-to-nodes -o=dutch-schools_nodes.o5m
+./osmfilter dutch-schools_nodes.o5m --keep="amenity=school" -o=dutch-schools-results.o5m
+./osmconvert dutch-schools-results.o5m --csv="name addr:city website" -o=dutch-schools-results.csv
+</code></pre>
+<p>interesting: i can get the name of the school, and sometimes the website - but never a street ...what goes wrong here.</p>
+<p>besides the missing street i also miss the long and lat information </p>
+<p>can any body help out here. thanks in advance</p>
+<p>by the way - any chance to store the data in a db!? </p>
+<p><strong>update</strong> <a href="/users/8708/mmd"><a href="/users/8708/mmd">@mmd</a></a>: let us compare the lines: - see this thread - with the code:<br/>
+</p>
+<pre><code>./osmconvert dutch-schools-results.o5m --csv="name addr:city website" -o=dutch-schools-results.csv
+</code></pre>
+<p>and see the code you mentioend - in the formerly thread</p>
+<pre><code>./osmconvert restaurant_2.o5m --csv="<a href="/users/260/idoneus">@id</a> <a href="/users/1350/longestaugust">@lon</a> <a href="/users/5110/latroc">@lat</a> shop name  addr:street addr:housenumber addr:city website email" --csv-headline -o=restaurant_2.csv
+</code></pre>
+<p>comment: sure thing, this so called "restaurant" -code has an <strong>extra</strong> space - subsequently it had to fail - there were no streets no housenumbers and cities 
+thread: <a href="https://help.openstreetmap.org/questions/32434/address-tags-in-a-very-simple-osmconvert-filter-task">https://help.openstreetmap.org/questions/32434/address-tags-in-a-very-simple-osmconvert-filter-task</a></p>
+<p>so - i am not convinced - since i do not see an similar error!?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-osmconvert" href="/tags/osmconvert/" rel="tag" title="see questions tagged 'osmconvert'">osmconvert</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-tagging" href="/tags/tagging/" rel="tag" title="see questions tagged 'tagging'">tagging</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Jun '14, 12:10</strong>
+</p>
+<img alt="say_hello_to_the_world's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bf4d2d8660e82c4a7387b7d2a8a8cfcd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8644/say_hello_to_the_world">say_hello_to...</a><br/>
+<span class="score" title="19 reputation points">19</span><span title="23 badges"><span class="badge1">●</span><span class="badgecount">23</span></span><span title="24 badges"><span class="silver">●</span><span class="badgecount">24</span></span><span title="27 badges"><span class="bronze">●</span><span class="badgecount">27</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="say_hello_to_the_world has no accepted answers">0%</span>
+</br></p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/34214/">
+                edited
+                <strong>21 Jun '14, 22:37</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-34214">
+<a name="34218"></a>
+<div class="comment" id="comment-34218">
+<div class="comment-score" id="post-34218-score">2</div>
+<div class="comment-text"><p>When you don't provide addr:street in your osmconvert "--csv" string, why would you expect it to show up in your result?</p>
+<p>Your --csv="name addr:city website" does not match your requirements. Please revisit some of your previous posts, you've already got that right at some point in time.</p>
+<p>BTW: cross posted here: <a href="http://forum.openstreetmap.org/viewtopic.php?pid=430746#p430746">http://forum.openstreetmap.org/viewtopic.php?pid=430746#p430746</a></p></div>
+<div class="comment-info" id="comment-34218-info">
+<span class="comment-age">(21 Jun '14, 12:50)</span>
+<a class="comment-user userinfo" href="/users/8708/mmd">mmd</a>
+</div>
+</div>
+<a name="34230"></a>
+<div class="comment" id="comment-34230">
+<div class="comment-score" id="post-34230-score"></div>
+<div class="comment-text"><p>thx for the hints - i appreciate any and all help. btw: regarding the crosspost: the other thread is an answer (!!) in a THREAD (!) - somewhat self-reliying... - this thread. so - i am sorry for this! and now i try to figure out how to solve the issues. Again thanks</p></div>
+<div class="comment-info" id="comment-34230-info">
+<span class="comment-age">(21 Jun '14, 17:32)</span>
+<a class="comment-user userinfo" href="/users/8644/say_hello_to_the_world">say_hello_to...</a>
+</div>
+</div>
+<a name="34231"></a>
+<div class="comment" id="comment-34231">
+<div class="comment-score" id="post-34231-score"></div>
+<div class="comment-text"><p>i try to find the thread where i gladly was able to hit the point and was able to provide all what is needed to get the full -dataset.</p></div>
+<div class="comment-info" id="comment-34231-info">
+<span class="comment-age">(21 Jun '14, 17:34)</span>
+<a class="comment-user userinfo" href="/users/8644/say_hello_to_the_world">say_hello_to...</a>
+</div>
+</div>
+<a name="34235"></a>
+<div class="comment" id="comment-34235">
+<div class="comment-score" id="post-34235-score"></div>
+<div class="comment-text"><p>hello dear mmd - thank your for the reply, the hints and the offered help,. At the moment i do not see the significant parts that interlink the two threads. in other words if we compare the code - you mention then we can see in the so called restaurant-request (formerly request) a space near name. but in this thread - the school-thread i cannot see such a space. Subsequently i cannot see where you find the link between the both issues. But perhaps i hae to rethink all and to look at the code again - i will come back tomorrow. Meanwhwile many thaks for all you do and did. thx</p></div>
+<div class="comment-info" id="comment-34235-info">
+<span class="comment-age">(21 Jun '14, 22:23)</span>
+<a class="comment-user userinfo" href="/users/8644/say_hello_to_the_world">say_hello_to...</a>
+</div>
+</div>
+<a name="34236"></a>
+<div class="comment not_top_scorer" id="comment-34236">
+<div class="comment-score" id="post-34236-score"></div>
+<div class="comment-text"><p>see the update in the threadstart - there i have a synopsis of both lines - the formerly written restaurant-request and the actual school-request. they are not similar. but - i think i have to look at all tomorrow. - i come back tomorrow... greetings sayhello</p></div>
+<div class="comment-info" id="comment-34236-info">
+<span class="comment-age">(21 Jun '14, 22:25)</span>
+<a class="comment-user userinfo" href="/users/8644/say_hello_to_the_world">say_hello_to...</a>
+</div>
+</div>
+<a name="34237"></a>
+<div class="comment" id="comment-34237">
+<div class="comment-score" id="post-34237-score">3</div>
+<div class="comment-text"><p>You complain that your dutch-schools query never returns a street. So why don't you add "addr:street" to your --csv string, as you did for your restaurant query. It's really not that difficult, is it?</p></div>
+<div class="comment-info" id="comment-34237-info">
+<span class="comment-age">(21 Jun '14, 22:39)</span>
+<a class="comment-user userinfo" href="/users/8708/mmd">mmd</a>
+</div>
+</div>
+<a name="34240"></a>
+<div class="comment not_top_scorer" id="comment-34240">
+<div class="comment-score" id="post-34240-score"></div>
+<div class="comment-text"><p>hello mmd - thanks for revisiting this thread - and for your continued help. i will rework the dutch-schools-request with the renewed request-line. pps i come back and will let you know the results- have a great day. ;-)</p></div>
+<div class="comment-info" id="comment-34240-info">
+<span class="comment-age">(22 Jun '14, 07:13)</span>
+<a class="comment-user userinfo" href="/users/8644/say_hello_to_the_world">say_hello_to...</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-34214">
+<span class="comments-showing">
+            showing 5 of 7
+        </span>
+<a class="show-all-comments-link" href="#">show 2 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-34214-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/34214/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="QV5BTbRCCqgmwzwDJbfK6waI1BKgmVkr"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

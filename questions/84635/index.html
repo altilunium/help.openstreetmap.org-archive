@@ -1,0 +1,147 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/84635/is-it-possible-to-recover-from-a-failed-osm2pgsql-import">Is it possible to recover from a failed osm2pgsql import?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/84635/up/" id="post-84635-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-84635-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/84635/down/" id="post-84635-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/84635/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>After a week of importing, I hit an error due to an unrelated db issue.
+Is it in any way possible to pick up and continue the last ~3 hours of the relations import?</p>
+<pre><code>Reading in file: /osm/data/planet-220516.osm.pbf
+Using PBF parser.
+Processing: Node(7685383k 248.6k/s) Way(858972k 2.10k/s) Relation(9501590 59.22/s)WARNING:  terminating connection because of crash of another server process
+DETAIL:  The postmaster has commanded this server process to roll back the current transaction and exit, because another server process exited abnormally and possibly corrupted shared memory.
+HINT:  In a moment you should be able to reconnect to the database and repeat your command.
+WARNING:  terminating connection because of crash of another server process
+DETAIL:  The postmaster has commanded this server process to roll back the current transaction and exit, because another server process exited abnormally and possibly corrupted shared memory.
+HINT:  In a moment you should be able to reconnect to the database and repeat your command.
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  result COPY_END for planet_osm_polygon failed: SSL SYSCALL error: EOF detected
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-recovery" href="/tags/recovery/" rel="tag" title="see questions tagged 'recovery'">recovery</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>31 May '22, 09:33</strong>
+</p>
+<img alt="JamesPep's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/4f56517242a58c6e37c6421d4b874893?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/21835/jamespep">JamesPep</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="JamesPep has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-84635">
+</div>
+<div class="comment-tools" id="comment-tools-84635">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-84635-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/84635/is-it-possible-to-recover-from-a-failed-osm2pgsql-import?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/84635/is-it-possible-to-recover-from-a-failed-osm2pgsql-import?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/84635/is-it-possible-to-recover-from-a-failed-osm2pgsql-import?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/84635/is-it-possible-to-recover-from-a-failed-osm2pgsql-import?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="84645"></a>
+<div class="answer accepted-answer" id="answer-container-84645">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/84645/up/" id="post-84645-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-84645-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/84645/down/" id="post-84645-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/84645/" rel="nofollow" title="JamesPep has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>No, unfortunately it is not possible to pick up where the import crashed.</p>
+<p>Note that one week for the import seems to be on the long side. Have you read the chapters on tuning the database in the manual? <a href="https://osm2pgsql.org/doc/manual.html#tuning-the-postgresql-server">https://osm2pgsql.org/doc/manual.html#tuning-the-postgresql-server</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/84645/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>01 Jun '22, 08:15</strong>
+</p>
+<img alt="Jochen%20Topf's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2d4dfcdcde73aa5e2ffa4a9b3a7cb51d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/112/jochen-topf">Jochen Topf</a><br/>
+<span class="score" title="5244 reputation points"><span class="">5.2k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="50 badges"><span class="silver">●</span><span class="badgecount">50</span></span><span title="74 badges"><span class="bronze">●</span><span class="badgecount">74</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jochen Topf has 32 accepted answers">31%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-84645">
+<a name="84674"></a>
+<div class="comment" id="comment-84674">
+<div class="comment-score" id="post-84674-score"></div>
+<div class="comment-text"><p>It's painfully slow, but it's on one of those new AWS RDS Aurora-Postgreql "serverless" instance, so I'm not sure how to tune it.</p></div>
+<div class="comment-info" id="comment-84674-info">
+<span class="comment-age">(02 Jun '22, 10:30)</span>
+<a class="comment-user userinfo" href="/users/21835/jamespep">JamesPep</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-84645">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-84645-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/84635/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="eMCcBiJZAZX6FKTFwunLO85DyaP82XmJ"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,190 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/31688/nominatim-encoding">nominatim encoding</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/31688/up/" id="post-31688-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-31688-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/31688/down/" id="post-31688-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/31688/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi</p>
+<p>I'm consuming the web service of nominatim to reverse geocoding in my .NET Application but the xml I get in my String variable is not the same as I see in the browser and accents the spoils me and makes me strange characters when using coordinates in asia</p>
+<p>Any idea???</p>
+<p>Thanks</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-encoding" href="/tags/encoding/" rel="tag" title="see questions tagged 'encoding'">encoding</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>19 Mar '14, 15:02</strong>
+</p>
+<img alt="kintela's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2bad034f9416115824ad216468f7878f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8528/kintela">kintela</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="kintela has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/31688/">
+                edited
+                <strong>19 Mar '14, 16:07</strong>
+</a>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-31688">
+<a name="31691"></a>
+<div class="comment" id="comment-31691">
+<div class="comment-score" id="post-31691-score"></div>
+<div class="comment-text"><p>Could you give some examples (of the code that fails, the data that you're expecting, and the data that you get back)?</p></div>
+<div class="comment-info" id="comment-31691-info">
+<span class="comment-age">(19 Mar '14, 15:11)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="31693"></a>
+<div class="comment" id="comment-31693">
+<div class="comment-score" id="post-31693-score"></div>
+<div class="comment-text"><p>Of course.
+For example this request <a href="http://nominatim.openstreetmap.org/reverse?format=xml&amp;lat=50,9683209807591&amp;lon=2,57099452814137&amp;zoom=18&amp;addressdetails=1">http://nominatim.openstreetmap.org/reverse?format=xml&amp;lat=50,9683209807591&amp;lon=2,57099452814137&amp;zoom=18&amp;addressdetails=1</a></p>
+<p>The result: D 70, farm, Bettencourt-Rivière, Amiens, Somme, Picardía, Francia metropolitana, 80890, Francia</p>
+<p>But in my C# code</p>
+<p>public string Inversa(double latitud, double longitud)
+        {
+            WebClient webClient = new WebClient();</p>
+<pre><code>        try
+        {
+
+            string cadena = "http://nominatim.openstreetmap.org/reverse?format=xml&amp;lat=" + Convert.ToString(latitud) + "&amp;lon=" + Convert.ToString(longitud) + "&amp;zoom=18&amp;addressdetails=1";
+
+            string result = webClient.DownloadString(cadena);
+
+            return result;
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+</code></pre>
+<p>I get: D 70, farm, Bettencourt-RiviÃ¨re, Amiens, Somme, Picardie, France mÃ©tropolitaine, 80890, France</p>
+<p>Thanks</p></div>
+<div class="comment-info" id="comment-31693-info">
+<span class="comment-age">(19 Mar '14, 15:17)</span>
+<a class="comment-user userinfo" href="/users/8528/kintela">kintela</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-31688">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-31688-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/31688/nominatim-encoding?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/31688/nominatim-encoding?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/31688/nominatim-encoding?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/31688/nominatim-encoding?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="31697"></a>
+<div class="answer" id="answer-container-31697">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/31697/up/" id="post-31697-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-31697-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/31697/down/" id="post-31697-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Nominatim always returns its results in UTF-8 encoding. It looks like you are trying to interpret the result using some windows encoding. According to <a href="http://stackoverflow.com/questions/4716470/webclient-downloadstring-returns-string-with-peculiar-characters">this stackoverflow question</a> you need to set <code>webClient.Encoding = System.Text.Encoding.UTF8</code> to enforce the correct encoding.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/31697/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Mar '14, 15:40</strong>
+</p>
+<img alt="lonvia's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d888b712d85dee0aa304297f2dc697c7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2921/lonvia">lonvia</a><br/>
+<span class="score" title="6213 reputation points"><span class="">6.2k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="57 badges"><span class="silver">●</span><span class="badgecount">57</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="lonvia has 43 accepted answers">40%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-31697">
+<a name="31698"></a>
+<div class="comment" id="comment-31698">
+<div class="comment-score" id="post-31698-score"></div>
+<div class="comment-text"><p>Hi.</p>
+<p>This must be done before using the web client.DownloadString</p>
+<p>webClient.Encoding = Encoding.UTF8;</p>
+<p>Thanks</p></div>
+<div class="comment-info" id="comment-31698-info">
+<span class="comment-age">(19 Mar '14, 15:58)</span>
+<a class="comment-user userinfo" href="/users/8528/kintela">kintela</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-31697">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-31697-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/31688/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="IFukwvw5FUAStn2F98QmnwuAcPGd6uzv"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,217 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/73498/duplicate-key-error-when-appending-diffs-with-osm2pgsql">Duplicate key error when appending diffs with osm2pgsql</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/73498/up/" id="post-73498-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-73498-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/73498/down/" id="post-73498-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/73498/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>I imported a planet pbf with osm2pgsql using this command line:</p>
+<p>osm2pgsql -c -k -d &lt;dbname&gt; -s -G -K -U &lt;user&gt; -W -H &lt;host&gt; -S &lt;custom.style&gt; planet-200224.osm.pbf</p>
+<p>I'm now trying to update with minutely diffs and keep getting duplicate key errors no matter what settings I try. The command line for diffs is:</p>
+<p>osmosis --rri workingDirectory=/mnt/OSM/osmosis-minutely/ --sc --wxc - | osm2pgsql -a -k -d &lt;dbname&gt; -P 5432 -s -G -K -U &lt;user&gt; -W -H &lt;host&gt; -S custom.style -</p>
+<p>I'm using 64-bit osm2pgsql (v 1.2.1). I've tried adding swap space, specifying multiple -C values (2000 up to 16000), number of processes from 1 to 8, importing 60 seconds at a time up to 1 hour, always the same error.</p>
+<p>The error I'm getting is this:</p>
+<p><img alt="alt text" src="https://help.openstreetmap.org/upfiles/Screen_Shot_2020-03-12_at_3.42.57_PM.png"/></p>
+<p>Thanks in advance for any assistance.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-planet" href="/tags/planet/" rel="tag" title="see questions tagged 'planet'">planet</a>
+<a class="post-tag tag-link-diff" href="/tags/diff/" rel="tag" title="see questions tagged 'diff'">diff</a>
+<a class="post-tag tag-link-pbf" href="/tags/pbf/" rel="tag" title="see questions tagged 'pbf'">pbf</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>12 Mar '20, 22:42</strong>
+</p>
+<img alt="skmoore's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3d2f621468caf19f818a4efaf77c4a0e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14104/skmoore">skmoore</a><br/>
+<span class="score" title="25 reputation points">25</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="skmoore has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/73498/">
+                edited
+                <strong>12 Mar '20, 22:43</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-73498">
+<a name="73509"></a>
+<div class="comment" id="comment-73509">
+<div class="comment-score" id="post-73509-score"></div>
+<div class="comment-text"><p>Is there any danger in removing the unique constraint on the id column from the nodes/ways/rels tables in Postgres to work around this?</p></div>
+<div class="comment-info" id="comment-73509-info">
+<span class="comment-age">(13 Mar '20, 23:09)</span>
+<a class="comment-user userinfo" href="/users/14104/skmoore">skmoore</a>
+</div>
+</div>
+<a name="73510"></a>
+<div class="comment" id="comment-73510">
+<div class="comment-score" id="post-73510-score"></div>
+<div class="comment-text"><p>What's in the change file that you get the error with?</p></div>
+<div class="comment-info" id="comment-73510-info">
+<span class="comment-age">(13 Mar '20, 23:42)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="73511"></a>
+<div class="comment" id="comment-73511">
+<div class="comment-score" id="post-73511-score"></div>
+<div class="comment-text"><p>I get it with any change file. Whether its minutely/hourly, etc. I have it scheduled with cron and I've let it run for several hours, get the same error for each changeset.</p>
+<p>I have seen it successfully process a minutely diff a couple of times though, which is weird. That makes me think it's more of a RAM issue on the server, but there appears to plenty of free RAM...</p>
+<p>It's a 4 core 16gb ec2 instance connecting to an RDS Postgres instance.</p></div>
+<div class="comment-info" id="comment-73511-info">
+<span class="comment-age">(13 Mar '20, 23:45)</span>
+<a class="comment-user userinfo" href="/users/14104/skmoore">skmoore</a>
+</div>
+</div>
+<a name="73512"></a>
+<div class="comment" id="comment-73512">
+<div class="comment-score" id="post-73512-score"></div>
+<div class="comment-text"><p>(perhaps I should have been more precise in the question).  </p>
+<p>What data is there in the change file that is interpreted as a duplicate key?</p></div>
+<div class="comment-info" id="comment-73512-info">
+<span class="comment-age">(13 Mar '20, 23:47)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="73513"></a>
+<div class="comment" id="comment-73513">
+<div class="comment-score" id="post-73513-score"></div>
+<div class="comment-text"><p>Seems to almost always be a node (think I saw an error on a way a couple times). I've checked the nodes table in the database for several of the duplicate features, some exist there and some do not.</p></div>
+<div class="comment-info" id="comment-73513-info">
+<span class="comment-age">(13 Mar '20, 23:49)</span>
+<a class="comment-user userinfo" href="/users/14104/skmoore">skmoore</a>
+</div>
+</div>
+<a name="73514"></a>
+<div class="comment not_top_scorer" id="comment-73514">
+<div class="comment-score" id="post-73514-score"></div>
+<div class="comment-text"><p>For example, the last time I ran it I got this error, the node is question does not exist in the Postgres database:</p>
+<p>Processing: Node(170k 0.2k/s) Way(0k 0.00k/s) Relation(0 0.00/s)DB writer thread failed due to ERROR: result COPY_END for planet_osm_nodes failed: ERROR:  duplicate key value violates unique constraint "planet_osm_nodes_pkey"
+DETAIL:  Key (id)=(33442470) already exists.
+CONTEXT:  COPY planet_osm_nodes, line 40</p></div>
+<div class="comment-info" id="comment-73514-info">
+<span class="comment-age">(13 Mar '20, 23:55)</span>
+<a class="comment-user userinfo" href="/users/14104/skmoore">skmoore</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-73498">
+<span class="comments-showing">
+            showing 5 of 6
+        </span>
+<a class="show-all-comments-link" href="#">show 1 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-73498-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/73498/duplicate-key-error-when-appending-diffs-with-osm2pgsql?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/73498/duplicate-key-error-when-appending-diffs-with-osm2pgsql?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/73498/duplicate-key-error-when-appending-diffs-with-osm2pgsql?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/73498/duplicate-key-error-when-appending-diffs-with-osm2pgsql?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="73523"></a>
+<div class="answer" id="answer-container-73523">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/73523/up/" id="post-73523-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-73523-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/73523/down/" id="post-73523-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You need to remove duplicates from the change file before importing into osm2pgsql. In osmosis the relevant option is called <a href="https://wiki.openstreetmap.org/wiki/Osmosis/Detailed_Usage_0.47#--simplify-change_.28--simc.29"><code>--simplify-change</code> (<code>--simc</code>)</a>. So your command line should be this:</p>
+<pre><code>osmosis --rri workingDirectory=/mnt/OSM/osmosis-minutely/ --simc --wxc - | ...
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/73523/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>15 Mar '20, 10:46</strong>
+</p>
+<img alt="lonvia's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d888b712d85dee0aa304297f2dc697c7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2921/lonvia">lonvia</a><br/>
+<span class="score" title="6213 reputation points"><span class="">6.2k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="57 badges"><span class="silver">●</span><span class="badgecount">57</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="lonvia has 43 accepted answers">40%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-73523">
+<a name="73563"></a>
+<div class="comment" id="comment-73563">
+<div class="comment-score" id="post-73563-score"></div>
+<div class="comment-text"><p>Interesting, that seems to have worked but I don't recall needing that option in the past. Thanks so much for your help!</p></div>
+<div class="comment-info" id="comment-73563-info">
+<span class="comment-age">(17 Mar '20, 06:06)</span>
+<a class="comment-user userinfo" href="/users/14104/skmoore">skmoore</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-73523">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-73523-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/73498/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="lGYCfTXNaiOP7HMrk0DNEjjASkqxp10c"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,222 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/5389/merging-2-countries-with-osm2pgsql">Merging 2 countries with osm2pgsql</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/5389/up/" id="post-5389-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-5389-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/5389/down/" id="post-5389-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/5389/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   2
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have some issues while i try to append new country (Ukraine) to already imported one (US).</p>
+<p>First I created db with US OSM data:</p>
+<pre><code>osm2pgsql -l --create --database gis --username gis --prefix planet --slim --cache 2048 united_states.osm.bz2
+</code></pre>
+<p>Then I tried to append ukraine.osm.bz2:</p>
+<pre><code>osm2pgsql -l --append --database gis --username gis --prefix planet --slim --cache 2048 ukraine.osm.bz2
+</code></pre>
+<p>And received:</p>
+<pre><code>Going over pending relations
+COPY_END for COPY planet_rels FROM STDIN;
+ failed: ERROR:  duplicate key value violates unique constraint "planet_rels_pkey"
+CONTEXT:  COPY planet_rels, line 61: "60189     1       481     {27503927,96165454,96165453,62055667,43761343,100453556,43764881,62055669,44097114,77755..."
+</code></pre>
+<p>Files with countries were taken from <a href="http://download.cloudmade.com">download.cloudmade.com</a></p>
+<p>What is wrong in my actions and is there any way to import 2 countries information into DB?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>26 May '11, 12:57</strong>
+</p>
+<img alt="bestic2's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d74db3d2cab53a21a0d231a84d55d174?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1449/bestic2">bestic2</a><br/>
+<span class="score" title="66 reputation points">66</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="bestic2 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-5389">
+</div>
+<div class="comment-tools" id="comment-tools-5389">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-5389-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/5389/merging-2-countries-with-osm2pgsql?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/5389/merging-2-countries-with-osm2pgsql?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/5389/merging-2-countries-with-osm2pgsql?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/5389/merging-2-countries-with-osm2pgsql?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="5390"></a>
+<div class="answer accepted-answer" id="answer-container-5390">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/5390/up/" id="post-5390-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-5390-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/5390/down/" id="post-5390-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/5390/" rel="nofollow" title="bestic2 has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The relation in your error message is the border of the Russian Federation:</p>
+<p><a href="http://www.openstreetmap.org/browse/relation/60189">http://www.openstreetmap.org/browse/relation/60189</a></p>
+<p>which shares ways such as </p>
+<p><a href="http://www.openstreetmap.org/browse/way/50752242">http://www.openstreetmap.org/browse/way/50752242</a></p>
+<p>with the border of the USA.</p>
+<p>I am not an expert, but suspect you might need to use Osmosis to merge the two files first and then import using osm2pgsql in one go. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/5390/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>26 May '11, 13:49</strong>
+</p>
+<img alt="EdLoach's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f25a8392e12ed696b16554b3d08e4e2b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/339/edloach">EdLoach ♦</a><br/>
+<span class="score" title="19478 reputation points"><span class="">19.5k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="156 badges"><span class="silver">●</span><span class="badgecount">156</span></span><span title="280 badges"><span class="bronze">●</span><span class="badgecount">280</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="EdLoach has 93 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-5390">
+<a name="5391"></a>
+<div class="comment" id="comment-5391">
+<div class="comment-score" id="post-5391-score">1</div>
+<div class="comment-text"><p>Thanks! It's really 1 common relation between 2 countries - 60189 id in planet_rels. I temporary dropped constraint before appending and all goes well</p></div>
+<div class="comment-info" id="comment-5391-info">
+<span class="comment-age">(26 May '11, 15:43)</span>
+<a class="comment-user userinfo" href="/users/1449/bestic2">bestic2</a>
+</div>
+</div>
+<a name="40581"></a>
+<div class="comment" id="comment-40581">
+<div class="comment-score" id="post-40581-score"></div>
+<div class="comment-text"><p>Can both of you please share ways how to do this (<a href="http://help.openstreetmap.org/users/339/edloach">@EdLoach</a> how to use Osmosis for that, bestic2 how to temporarily drop the constraints)? I’ve got <a href="https://help.openstreetmap.org/questions/40580/how-much-disc-space-do-the-exports-use">similar issues</a>…</p></div>
+<div class="comment-info" id="comment-40581-info">
+<span class="comment-age">(24 Jan '15, 21:23)</span>
+<a class="comment-user userinfo" href="/users/10376/mirabilos">mirabilos</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-5390">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-5390-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="54745"></a>
+<div class="answer" id="answer-container-54745">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/54745/up/" id="post-54745-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-54745-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/54745/down/" id="post-54745-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Use <a href="https://wiki.openstreetmap.org/wiki/Osmconvert">osmconvert</a>.</p>
+<p>You have 2 choices:</p>
+<p>1) Merge new region file with existing map file:</p>
+<p><code>osmconvert new_region.pbf --out-o5m | osmconvert.exe - already_loaded_map.pbf -o=map_with_new_region.pbf</code> </p>
+<p>and then load merged file to postgreSQL with cleaning database:</p>
+<p><code>osm2pgsql --create ... map_with_new_region.pbf</code></p>
+<p>2) Or separate already existing data from new region file using:</p>
+<p><code>osmconvert new_region.pbf -o=new_region.o5m</code></p>
+<p><code>osmconvert already_loaded_map.pbf -o=already_loaded_map.o5m</code></p>
+<p><code>osmconvert new_region.o5m --subtract already_loaded_map.o5m -o=new_region_cleaned.o5m</code></p>
+<p><code>osmconvert new_region_cleaned.o5m -o=new_region_cleaned.pbf</code></p>
+<p>And then you can just append new file to PostgreSQL using:</p>
+<p><code>osm2pgsql --append ...  new_region_cleaned.pbf</code></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/54745/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>20 Feb '17, 10:18</strong>
+</p>
+<img alt="ReckyXXX's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/36e2f34616e97c8a7f49b03c7915eb60?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13372/reckyxxx">ReckyXXX</a><br/>
+<span class="score" title="46 reputation points">46</span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ReckyXXX has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-54745">
+</div>
+<div class="comment-tools" id="comment-tools-54745">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-54745-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/5389/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="j6IVVwDmqudap7hLLQFQ94KYzXRNMofP"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

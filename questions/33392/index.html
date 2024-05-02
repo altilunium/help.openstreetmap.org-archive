@@ -1,0 +1,234 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/33392/osmconvert-request-runs-into-disc-limit-how-to-proceed">osmconvert - request runs into disc limit - how to proceed</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/33392/up/" id="post-33392-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-33392-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/33392/down/" id="post-33392-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/33392/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>hello dear osm-experts</p>
+<p>fairly new to osm - i tried to run the following code </p>
+<pre><code>./osmconvert baden-wuerttemberg-latest.osm.pbf --all-to-nodes -o=baden-wuerttembergrestaurants.o5m
+./osmfilter baden-wuerttembergrestaurants.o5m --keep="amenity=restaurant" -o=baden-wuerttembergrestaurants_2.o5m
+./osmconvert baden-wuerttembergrestaurants_2.o5m --csv="<a href="/users/260/idoneus"><a href="/users/260/idoneus">@id</a></a> <a href="/users/1350/longestaugust"><a href="/users/1350/longestaugust">@lon</a></a> <a href="/users/5110/latroc"><a href="/users/5110/latroc">@lat</a></a> restaurant:name addr:street addr:housenumber addr:city website email" 
+--csv-headline -o=badenwuerttembergrestaurant_2.csv
+</code></pre>
+<p>the terminal gave back the following results - see the complain  not enough space</p>
+<pre><code>martin@linux-70ce:~&gt; cd osmosis/
+martin@linux-70ce:~/osmosis&gt; ./osmconvert baden-wuerttemberg-latest.osm.pbf --all-to-nodes -o=baden-wuerttembergrestaurants.o5m
+osmconvert Error: not enough space. Increase --max-objects=
+martin@linux-70ce:~/osmosis&gt; ./osmfilter baden-wuerttembergrestaurants.o5m --keep="amenity=restaurant" -o=baden-wuerttembergrestaurants_2.o5m
+osmfilter Warning: unexpected end of input file: baden-wuerttembergrestaurants.o5m
+martin@linux-70ce:~/osmosis&gt; ./osmconvert baden-wuerttembergrestaurants_2.o5m --csv="<a href="/users/260/idoneus"><a href="/users/260/idoneus">@id</a></a> <a href="/users/1350/longestaugust"><a href="/users/1350/longestaugust">@lon</a></a> <a href="/users/5110/latroc"><a href="/users/5110/latroc">@lat</a></a> restaurant:name addr:street addr:housenumber addr:city website email" --csv-headline -o=badenwuerttembergrestaurant_2.csv
+martin@linux-70ce:~/osmosis&gt; cd..
+martin@linux-70ce:~&gt; mv *.osm.pbf ~/osmosis
+</code></pre>
+<p>well what can i do - how to limit the request to get results....</p>
+<p><strong>update:</strong> </p>
+<p>well i think i have to try out Parameter --max-objects=50000000 but i am not sure how!? </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osmconvert" href="/tags/osmconvert/" rel="tag" title="see questions tagged 'osmconvert'">osmconvert</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-linux" href="/tags/linux/" rel="tag" title="see questions tagged 'linux'">linux</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>23 May '14, 03:56</strong>
+</p>
+<img alt="say_hello_to_the_world's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bf4d2d8660e82c4a7387b7d2a8a8cfcd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8644/say_hello_to_the_world">say_hello_to...</a><br/>
+<span class="score" title="19 reputation points">19</span><span title="23 badges"><span class="badge1">●</span><span class="badgecount">23</span></span><span title="24 badges"><span class="silver">●</span><span class="badgecount">24</span></span><span title="27 badges"><span class="bronze">●</span><span class="badgecount">27</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="say_hello_to_the_world has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/33392/">
+                edited
+                <strong>23 May '14, 14:01</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-33392">
+<a name="33396"></a>
+<div class="comment" id="comment-33396">
+<div class="comment-score" id="post-33396-score"></div>
+<div class="comment-text"><p>Duplicated question: <a href="https://gis.stackexchange.com/questions/97767/osmconvert-gives-back-complains-about-disc-space">https://gis.stackexchange.com/questions/97767/osmconvert-gives-back-complains-about-disc-space</a></p></div>
+<div class="comment-info" id="comment-33396-info">
+<span class="comment-age">(23 May '14, 07:34)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-33392">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-33392-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/33392/osmconvert-request-runs-into-disc-limit-how-to-proceed?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/33392/osmconvert-request-runs-into-disc-limit-how-to-proceed?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/33392/osmconvert-request-runs-into-disc-limit-how-to-proceed?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/33392/osmconvert-request-runs-into-disc-limit-how-to-proceed?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="33397"></a>
+<div class="answer" id="answer-container-33397">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/33397/up/" id="post-33397-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-33397-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/33397/down/" id="post-33397-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Did you try increasing max-objects <a href="http://manpages.ubuntu.com/manpages/trusty/man1/osmconvert.1.html">as suggested by the documentation</a>?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/33397/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>23 May '14, 09:19</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-33397">
+<a name="33415"></a>
+<div class="comment" id="comment-33415">
+<div class="comment-score" id="post-33415-score"></div>
+<div class="comment-text"><p>many many thanks <strong>update:</strong> </p>
+<p>well i think i have to try out Parameter --max-objects=50000000 but i am not sure how!?</p></div>
+<div class="comment-info" id="comment-33415-info">
+<span class="comment-age">(23 May '14, 14:01)</span>
+<a class="comment-user userinfo" href="/users/8644/say_hello_to_the_world">say_hello_to...</a>
+</div>
+</div>
+<a name="33474"></a>
+<div class="comment" id="comment-33474">
+<div class="comment-score" id="post-33474-score">1</div>
+<div class="comment-text"><p>Just append it to your <code>osmconvert</code> call. You already pass various other parameters.</p></div>
+<div class="comment-info" id="comment-33474-info">
+<span class="comment-age">(26 May '14, 09:26)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-33397">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-33397-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="33512"></a>
+<div class="answer" id="answer-container-33512">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/33512/up/" id="post-33512-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-33512-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/33512/down/" id="post-33512-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hello!</p>
+<p>You of course can use --max-objects parameter to increase the number of allowed objects – as suggested previously. Additional help is available via osmconvert's help function: --help</p>
+<p>In my opinion, the better way in this case would be to <em>first</em> filter and <em>then</em> convert to .csv. This should work faster and there would be no need for applying any --max-objects parameter:</p>
+<ul>
+<li>Convert baden-wuerttemberg-latest.osm.pbf to .o5m (osmconvert)</li>
+<li>Filter restaurants (osmfilter)</li>
+<li>Convert to .csv (osmconvert)</li>
+</ul>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/33512/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>27 May '14, 19:49</strong>
+</p>
+<img alt="Marqqs's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3b5b4abfedd46928c7cd0d5cbf907ed3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4540/marqqs">Marqqs</a><br/>
+<span class="score" title="448 reputation points">448</span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="10 badges"><span class="bronze">●</span><span class="badgecount">10</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Marqqs has 2 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-33512">
+</div>
+<div class="comment-tools" id="comment-tools-33512">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-33512-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/33392/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="fsUtrB58i15BrjvYrMzhi7IqXYDTVubl"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

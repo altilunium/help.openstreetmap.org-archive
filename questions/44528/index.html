@@ -1,0 +1,279 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/44528/how-do-i-convert-osmpbf-or-osmbz2-to-mbtiles-via-command-line">How do I convert .osm.pbf or .osm.bz2 to .mbtiles via command line</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44528/up/" id="post-44528-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44528-score" title="current number of votes">
+    -1
+</div>
+<a class="ajax-command post-vote down" href="/vote/44528/down/" id="post-44528-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/44528/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>How do I convert .osm.pbf or .osm.bz2
+<a href="http://download.geofabrik.de/africa-latest.osm.bz2.">http://download.geofabrik.de/africa-latest.osm.bz2.</a> to Geo .tiff via commandline?  I want is end results to convert files to .mbtiles.  If I have Geo .tiff I can convert using Gdal to .mbtiles easily.
+This is the response I got from the guys at geofabrik.de.</p>
+<pre><code> This is not so easy. You will want to have different zoom levels
+ generated, so it is better to go osm-&gt;mbtiles directly without GDAL and
+ GeoTiff. However, osm-&gt;mbtiles requires map rendering and style
+ information. If it is for a small area, you can probably use Maperitive
+ for this (unsure if it has a command line). Otherwise you will need to
+ import OSM data into a PostGIS database, and then you can use e.g.
+ Tilemill to batch-process
+</code></pre>
+<p>(Credits Frederik Ramm)</p>
+<p>Can someone translate this?  How do I import OSM data into PostGIS database. 
+Reference: <a href="http://wiki.openstreetmap.org/wiki/Osm2pgsql">http://wiki.openstreetmap.org/wiki/Osm2pgsql</a></p>
+<pre><code>osm2pgsql -s -U postgres -d nameofdatabase /file/path/toosm/fileorpbf/name.osm
+</code></pre>
+<p>Will this work for .OSM.PBF?</p>
+<p>How do I use a Tilemill to do a batch process?  What is the commandline arguments?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap" href="/tags/openstreetmap/" rel="tag" title="see questions tagged 'openstreetmap'">openstreetmap</a>
+<a class="post-tag tag-link-tilemill" href="/tags/tilemill/" rel="tag" title="see questions tagged 'tilemill'">tilemill</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-gdal" href="/tags/gdal/" rel="tag" title="see questions tagged 'gdal'">gdal</a>
+<a class="post-tag tag-link-mbtiles" href="/tags/mbtiles/" rel="tag" title="see questions tagged 'mbtiles'">mbtiles</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>30 Jul '15, 03:43</strong>
+</p>
+<img alt="Chathu's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/614e3e56882743b78234c816965f4040?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11301/chathu">Chathu</a><br/>
+<span class="score" title="20 reputation points">20</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Chathu has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44528">
+</div>
+<div class="comment-tools" id="comment-tools-44528">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44528-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/44528/how-do-i-convert-osmpbf-or-osmbz2-to-mbtiles-via-command-line?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/44528/how-do-i-convert-osmpbf-or-osmbz2-to-mbtiles-via-command-line?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/44528/how-do-i-convert-osmpbf-or-osmbz2-to-mbtiles-via-command-line?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/44528/how-do-i-convert-osmpbf-or-osmbz2-to-mbtiles-via-command-line?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="44537"></a>
+<div class="answer" id="answer-container-44537">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44537/up/" id="post-44537-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44537-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/44537/down/" id="post-44537-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>As Frederick / woodpeck points out this is not easy and contains multiple steps:</p>
+<ol>
+<li>rendering OSM geodata to rasterdata</li>
+<li>converting map rasterdata to mbtiles</li>
+</ol>
+<p>I'm not familar if Tilemill/<a href="https://www.mapbox.com/mapbox-studio/#linux">Mapbox studio</a> can handle both steps. But this platform runs completely online and without any CLI preprocessing.</p>
+<p>Usually you pick an <a href="https://wiki.openstreetmap.org/wiki/Rendering#Popular">desktop renderer</a> as Maperitive (or the full <a href="https://switch2osm.org/serving-tiles/">OSM rendering stack</a>) and convert the resulting tiles structure to <a href="https://wiki.openstreetmap.org/wiki/MBTiles">MBtiles</a> (no idea which tool to use).<br/>
+Anyway, you should start with an pretty small area! An whole continent doesn't sound like a good idea for usual hardware!</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/44537/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Jul '15, 10:14</strong>
+</p>
+<img alt="iii's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/49a7d0e0408e9cf2f698faac0f4d837a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4984/iii">iii</a><br/>
+<span class="score" title="4892 reputation points"><span class="">4.9k</span></span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="40 badges"><span class="silver">●</span><span class="badgecount">40</span></span><span title="82 badges"><span class="bronze">●</span><span class="badgecount">82</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="iii has 16 accepted answers">10%</span>
+</br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44537">
+</div>
+<div class="comment-tools" id="comment-tools-44537">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44537-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="44538"></a>
+<div class="answer" id="answer-container-44538">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44538/up/" id="post-44538-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44538-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/44538/down/" id="post-44538-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The best guide to setting up osm2pgsql etc. is probably the <a href="https://switch2osm.org/serving-tiles/manually-building-a-tile-server-14-04/">switch2osm</a> guide.  You can point TileMill at the database that you set up using those instructions.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/44538/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Jul '15, 10:24</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44538">
+<a name="44555"></a>
+<div class="comment" id="comment-44555">
+<div class="comment-score" id="post-44555-score"></div>
+<div class="comment-text"><p><a href="http://help.openstreetmap.org/users/387/someoneelse">@Someoneelse</a> can you let me know how to point TileMill to this database?</p></div>
+<div class="comment-info" id="comment-44555-info">
+<span class="comment-age">(31 Jul '15, 02:56)</span>
+<a class="comment-user userinfo" href="/users/11301/chathu">Chathu</a>
+</div>
+</div>
+<a name="44597"></a>
+<div class="comment" id="comment-44597">
+<div class="comment-score" id="post-44597-score"></div>
+<div class="comment-text"><p>Mapbox's "use TileMill with a database" instructions are here:</p>
+<p><a href="https://www.mapbox.com/tilemill/docs/guides/postgis-work/">https://www.mapbox.com/tilemill/docs/guides/postgis-work/</a></p>
+<p>But that's probably only needed if you're setting up a TileMill project from scratch.  If you're using an existing stylesheet and your database is called "gis" I'd imagine things will "just work" as far as database access is concerned</p></div>
+<div class="comment-info" id="comment-44597-info">
+<span class="comment-age">(03 Aug '15, 17:23)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-44538">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44538-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="81372"></a>
+<div class="answer" id="answer-container-81372">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/81372/up/" id="post-81372-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-81372-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/81372/down/" id="post-81372-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can create MBTiles from any .osm.pbf file using this tool - <a href="https://github.com/systemed/tilemaker">https://github.com/systemed/tilemaker</a></p>
+<ol>
+<li>
+<p>Download .osm.pbf file from <a href="https://download.geofabrik.de/">Geofabric</a>. To download for a custom area, you can use <a href="https://protomaps.com/extracts">Protomaps</a> or <a href="https://extract.bbbike.org/">BBBike Extract</a></p>
+</li>
+<li>
+<p>Download <a href="https://github.com/systemed/tilemaker/releases">tilemaker</a></p>
+</li>
+<li>
+<p>Execute the following command</p>
+</li>
+</ol>
+<p><code>tilemaker --input netherlands.osm.pbf --output netherlands.mbtiles --process resources/process-openmaptiles.lua --config resources/config-openmaptiles.json</code></p>
+<p>You can read more about it in this blog post - <a href="https://blog.kleunen.nl/blog/tilemaker-generate-map">https://blog.kleunen.nl/blog/tilemaker-generate-map</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/81372/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Aug '21, 19:47</strong>
+</p>
+<img alt="protos29's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/79e65eed0a4d543a7229550d59f0e309?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20659/protos29">protos29</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="protos29 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-81372">
+</div>
+<div class="comment-tools" id="comment-tools-81372">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-81372-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/44528/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="yoqVjBfjtf0FIH5yLwaIfdIS5x0XC82y"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

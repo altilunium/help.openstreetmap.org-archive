@@ -1,0 +1,308 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/50435/duplicate-town-names">Duplicate Town names</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/50435/up/" id="post-50435-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-50435-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/50435/down/" id="post-50435-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/50435/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi installed OSM via the guide you prove and I am using the British Isles pack from geofabrick. </p>
+<p>I have an issue where duplicate town names appear on different levels of zoom, please seem below for an example. Anyone seen this before?</p>
+<p><img alt="alt text" src="http://i64.tinypic.com/24m7whi.jpg"/></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-duplicate" href="/tags/duplicate/" rel="tag" title="see questions tagged 'duplicate'">duplicate</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>24 Jun '16, 14:01</strong>
+</p>
+<img alt="Mike1704's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3148bcd7e636cb9da66405667a29691c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12464/mike1704">Mike1704</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Mike1704 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/50435/">
+                edited
+                <strong>24 Jun '16, 14:17</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-50435">
+<a name="50436"></a>
+<div class="comment" id="comment-50436">
+<div class="comment-score" id="post-50436-score"></div>
+<div class="comment-text"><p>Can you explain which "guide" and which "British Isles pack"?</p></div>
+<div class="comment-info" id="comment-50436-info">
+<span class="comment-age">(24 Jun '16, 14:22)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="50439"></a>
+<div class="comment" id="comment-50439">
+<div class="comment-score" id="post-50439-score">1</div>
+<div class="comment-text"><p>This guide</p>
+<p><a href="https://switch2osm.org/serving-tiles/manually-building-a-tile-server-14-04/">https://switch2osm.org/serving-tiles/manually-building-a-tile-server-14-04/</a></p>
+<p>Then the british isle map pack on this page </p>
+<p><a href="http://download.geofabrik.de/europe.html">http://download.geofabrik.de/europe.html</a></p></div>
+<div class="comment-info" id="comment-50439-info">
+<span class="comment-age">(24 Jun '16, 14:49)</span>
+<a class="comment-user userinfo" href="/users/12464/mike1704">Mike1704</a>
+</div>
+</div>
+<a name="50441"></a>
+<div class="comment" id="comment-50441">
+<div class="comment-score" id="post-50441-score"></div>
+<div class="comment-text"><p>The word "pack" does not appear on <a href="http://download.geofabrik.de/europe.html">http://download.geofabrik.de/europe.html</a> .  Do you mean you downloaded <a href="http://download.geofabrik.de/europe/british-isles-latest.osm.pbf">http://download.geofabrik.de/europe/british-isles-latest.osm.pbf</a> ?</p>
+<p>What "osm2pgsql" command did you use and what were the last 5 or so lines of output?</p></div>
+<div class="comment-info" id="comment-50441-info">
+<span class="comment-age">(24 Jun '16, 14:59)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="50442"></a>
+<div class="comment" id="comment-50442">
+<div class="comment-score" id="post-50442-score"></div>
+<div class="comment-text"><p>Yes that's correct, the following command was used. </p>
+<p>osm2pgsql --slim -d gis -C 10000 --number-processes 3 /usr/local/share/maps/planet/british-isles-latest.osm.pbf </p>
+<p>Thanks</p></div>
+<div class="comment-info" id="comment-50442-info">
+<span class="comment-age">(24 Jun '16, 15:08)</span>
+<a class="comment-user userinfo" href="/users/12464/mike1704">Mike1704</a>
+</div>
+</div>
+<a name="50443"></a>
+<div class="comment" id="comment-50443">
+<div class="comment-score" id="post-50443-score"></div>
+<div class="comment-text"><p>Since you were loading "british-isles-latest.osm.pbf" not "planet-latest.osm.pbf" at least the last part of the command would have been different.</p>
+<p>What were the last 5 or so lines of output?</p></div>
+<div class="comment-info" id="comment-50443-info">
+<span class="comment-age">(24 Jun '16, 15:11)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="50444"></a>
+<div class="comment not_top_scorer" id="comment-50444">
+<div class="comment-score" id="post-50444-score"></div>
+<div class="comment-text"><p>I don't have a copy of the last 5 or so line of output, unless osm2pgsql has a history option?</p></div>
+<div class="comment-info" id="comment-50444-info">
+<span class="comment-age">(24 Jun '16, 15:35)</span>
+<a class="comment-user userinfo" href="/users/12464/mike1704">Mike1704</a>
+</div>
+</div>
+<a name="50445"></a>
+<div class="comment not_top_scorer" id="comment-50445">
+<div class="comment-score" id="post-50445-score"></div>
+<div class="comment-text"><p>I was just trying to figure out whether it had actually completed successfully.</p></div>
+<div class="comment-info" id="comment-50445-info">
+<span class="comment-age">(24 Jun '16, 15:40)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="50446"></a>
+<div class="comment not_top_scorer" id="comment-50446">
+<div class="comment-score" id="post-50446-score"></div>
+<div class="comment-text"><p>Ah okay, wondering if it's worth trying to use a different style sheet? That could be the issue.</p></div>
+<div class="comment-info" id="comment-50446-info">
+<span class="comment-age">(24 Jun '16, 16:16)</span>
+<a class="comment-user userinfo" href="/users/12464/mike1704">Mike1704</a>
+</div>
+</div>
+<a name="50448"></a>
+<div class="comment not_top_scorer" id="comment-50448">
+<div class="comment-score" id="post-50448-score"></div>
+<div class="comment-text"><p>You're right - the stylesheet seems to be rendering everything with a name.  I've put this in a separate answer to try and avoid confusion.</p></div>
+<div class="comment-info" id="comment-50448-info">
+<span class="comment-age">(24 Jun '16, 17:23)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-50435">
+<span class="comments-showing">
+            showing 5 of 9
+        </span>
+<a class="show-all-comments-link" href="#">show 4 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-50435-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/50435/duplicate-town-names?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/50435/duplicate-town-names?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/50435/duplicate-town-names?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/50435/duplicate-town-names?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="50447"></a>
+<div class="answer" id="answer-container-50447">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/50447/up/" id="post-50447-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-50447-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/50447/down/" id="post-50447-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It's a stylesheet problem.  I've loaded the data I've got here into OSMBright and I'm seeing extra Warringtons too.  I'm guessing one might be the <a href="http://www.openstreetmap.org/way/38387597">NaPTAN pay scale area</a>.  There are 5 names in that area - <a href="http://overpass-turbo.eu/s/gXV">this query</a> shows them.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/50447/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>24 Jun '16, 17:16</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-50447">
+</div>
+<div class="comment-tools" id="comment-tools-50447">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-50447-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="50437"></a>
+<div class="answer" id="answer-container-50437">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/50437/up/" id="post-50437-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-50437-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/50437/down/" id="post-50437-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>From a <a href="https://www.openstreetmap.org/search?query=warrington%2C%20uk#map=12/53.4017/-2.5616">search on the main osm site</a>, there appear to be a few Warringtons that may appear at different zoom levels in the area: <br/>
+<a href="https://www.openstreetmap.org/relation/147278">Relation: Warrington (147278)</a> <br/>
+<a href="https://www.openstreetmap.org/node/17409843#map=15/53.3906/-2.5942">Node: Warrington (17409843)</a> <br/>
+<a href="https://www.openstreetmap.org/node/3123294008#map=15/53.3944/-2.5972">Railway Station Node: Warrington (3123294008)</a> <br/>
+and two Results from GeoNames <br/>
+<a href="https://www.openstreetmap.org/#map=12/53.39254/-2.58024">Warrington</a> , United Kingdom <br/>
+<a href="https://www.openstreetmap.org/#map=12/53.41667/-2.58333">Warrington</a> , United Kingdom.<br/>
+[edit]  ... but the main osm site shows one Warrington, so not normal to show several.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/50437/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>24 Jun '16, 14:37</strong>
+</p>
+<img alt="nevw's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e5674dd96938593e0af5130dfffe0f90?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7380/nevw">nevw</a><br/>
+<span class="score" title="9843 reputation points"><span class="">9.8k</span></span><span title="26 badges"><span class="badge1">●</span><span class="badgecount">26</span></span><span title="90 badges"><span class="silver">●</span><span class="badgecount">90</span></span><span title="178 badges"><span class="bronze">●</span><span class="badgecount">178</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="nevw has 32 accepted answers">9%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/50437/">
+                edited
+                <strong>24 Jun '16, 15:08</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-50437">
+<a name="50438"></a>
+<div class="comment" id="comment-50438">
+<div class="comment-score" id="post-50438-score"></div>
+<div class="comment-text"><p>This is an issue for other areas also, are you saying this is normal? </p>
+<p>Thanks</p></div>
+<div class="comment-info" id="comment-50438-info">
+<span class="comment-age">(24 Jun '16, 14:41)</span>
+<a class="comment-user userinfo" href="/users/12464/mike1704">Mike1704</a>
+</div>
+</div>
+<a name="50440"></a>
+<div class="comment" id="comment-50440">
+<div class="comment-score" id="post-50440-score"></div>
+<div class="comment-text"><p>It's not normal.  "british-isles-latest.osm.pbf" will have the Relation, Node and Railway Station in it - it's the same data that's used to create the "standard" stle on OpenStreetMap.Org, where only one Warrington appears, as per:</p>
+<p><a href="https://a.tile.openstreetmap.org/12/2018/1326.png">https://a.tile.openstreetmap.org/12/2018/1326.png</a></p>
+<p>The "osmbright" stylesheet is different, and will cause a different rendering, but I can't explain the extra Warringtons.</p></div>
+<div class="comment-info" id="comment-50440-info">
+<span class="comment-age">(24 Jun '16, 14:57)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-50437">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-50437-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/50435/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="EPARcCNbTVoAhy2cFFs0xuAtuVxCmolk"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

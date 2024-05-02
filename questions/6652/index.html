@@ -1,0 +1,195 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/6652/when-the-edited-changes-will-appear-permanent">When the edited changes will appear permanent</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/6652/up/" id="post-6652-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-6652-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/6652/down/" id="post-6652-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/6652/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   2
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I edited some stuffs recently in the city of Sao Jose dos Campos, Brazil. After what time those additons will appear in the View mode ?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-changes" href="/tags/changes/" rel="tag" title="see questions tagged 'changes'">changes</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>28 Jul '11, 13:51</strong>
+</p>
+<img alt="ok2pen's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/30d51d566faa53d6c04ea15433d520a9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1826/ok2pen">ok2pen</a><br/>
+<span class="score" title="46 reputation points">46</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ok2pen has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-6652">
+<a name="6664"></a>
+<div class="comment" id="comment-6664">
+<div class="comment-score" id="post-6664-score">1</div>
+<div class="comment-text"><p>The tile rendering process was impacted by a hardware fault on the server this week, so it may be that your changes appeared more slowly than usual.</p></div>
+<div class="comment-info" id="comment-6664-info">
+<span class="comment-age">(28 Jul '11, 15:26)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-6652">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-6652-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/6652/when-the-edited-changes-will-appear-permanent?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/6652/when-the-edited-changes-will-appear-permanent?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/6652/when-the-edited-changes-will-appear-permanent?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/6652/when-the-edited-changes-will-appear-permanent?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="6660"></a>
+<div class="answer" id="answer-container-6660">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/6660/up/" id="post-6660-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-6660-score" title="current number of votes">
+    6
+</div>
+<a class="ajax-command post-vote down" href="/vote/6660/down/" id="post-6660-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>All changes that you upload are instantly and permanently in the map (map-database). For renderings it depends how often the renderer imports data from the main database (and how frequently it re-renders the map).</p>
+<p>Mapnik generally (if there is no problem) takes around one minute to get aware of the new data and some more minutes to render the high-zoom-tiles (z15-18). There are different mechanisms in place to deal with tile-expiry (re-rendering of old tiles). One important factor is if the map is actually looked at.</p>
+<p>Generally this depends on the map, the activity in the system and on the zoom level. If you added something that is rendered (i.e. there is a rendering rule for it) it will usually appear shortly (some minutes) afterwards on the main mapnik map and with a little delay on tiles@home/osmarender. But sometimes the servers suffer from many parallel requests and might no be able to cope with all rendering request.</p>
+<p>Low-zoom-tiles are re-rendered less frequently because they take far longer to calculate (they contain more data). I might take up to a month or so until you can see you additions in lower zoom levels.</p>
+<p>If you're under the impression that your tile somehow skipped the re-rendering process (this happens when the rendering queue is full), you can also manually request a re-render by calling the tile and add "/dirty" to it like this:
+<a href="http://tile.openstreetmap.org/7/63/42.png/dirty">http://tile.openstreetmap.org/7/63/42.png/dirty</a></p>
+<p>You can see the current status of the mapnik rendering server here:
+<a href="http://munin.openstreetmap.org/openstreetmap/yevaud.openstreetmap/index.html#renderd">http://munin.openstreetmap.org/openstreetmap/yevaud.openstreetmap/index.html#renderd</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/6660/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>28 Jul '11, 14:30</strong>
+</p>
+<img alt="dieterdreist's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f09c0b7a655fed386e070e036e2da248?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/936/dieterdreist">dieterdreist</a><br/>
+<span class="score" title="3677 reputation points"><span class="">3.7k</span></span><span title="11 badges"><span class="badge1">●</span><span class="badgecount">11</span></span><span title="35 badges"><span class="silver">●</span><span class="badgecount">35</span></span><span title="67 badges"><span class="bronze">●</span><span class="badgecount">67</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="dieterdreist has 4 accepted answers">3%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/6660/">
+                edited
+                <strong>28 Jul '11, 15:27</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-6660">
+</div>
+<div class="comment-tools" id="comment-tools-6660">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-6660-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="6658"></a>
+<div class="answer" id="answer-container-6658">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/6658/up/" id="post-6658-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-6658-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/6658/down/" id="post-6658-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I did some edits 14 hours ago and most of it appears at all zoom levels</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/6658/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>28 Jul '11, 14:26</strong>
+</p>
+<img alt="andy%20mackey's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/efa7ca36d4499200879223dc5ad5ecac?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/644/andy-mackey">andy mackey</a><br/>
+<span class="score" title="13238 reputation points"><span class="">13.2k</span></span><span title="87 badges"><span class="badge1">●</span><span class="badgecount">87</span></span><span title="143 badges"><span class="silver">●</span><span class="badgecount">143</span></span><span title="285 badges"><span class="bronze">●</span><span class="badgecount">285</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="andy mackey has 37 accepted answers">4%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-6658">
+</div>
+<div class="comment-tools" id="comment-tools-6658">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-6658-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/6652/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="f91CWmMVbvAxU0Ucqo8v8zjtpdvad5Q0"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

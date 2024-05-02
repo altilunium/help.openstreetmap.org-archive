@@ -1,0 +1,226 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/68912/osm-postgresql-query-does-not-show-all-hospitals">OSM postgresql query does not show all hospitals?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68912/up/" id="post-68912-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68912-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/68912/down/" id="post-68912-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/68912/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>I have OSM dataset on Postgresql via osm2pgsql. Now I am trying to query all public buildings in UK such as hospitals, schools, fire stations and churches. In order to do that, I use something like this query:</p>
+<pre><code>SELECT *
+FROM planet_osm_point pop
+WHERE pop.amenity IN ('hospital','fire_station','place_of_worship','school')
+</code></pre>
+<p>By looking at the results, it just extracts some of the hospitals. I can see the red plus logo for hospitals that I also know that they exist there. But it does not show them in the query results. </p>
+<p>How can I include all of these buildings?</p>
+<p>Here is the example picture: <a href="https://imgur.com/a/jjTlZ4N">https://imgur.com/a/jjTlZ4N</a> </p>
+<p>Blue color is from the results. But the red circle hsopitals are not included in the query results.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap" href="/tags/openstreetmap/" rel="tag" title="see questions tagged 'openstreetmap'">openstreetmap</a>
+<a class="post-tag tag-link-hospital" href="/tags/hospital/" rel="tag" title="see questions tagged 'hospital'">hospital</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>24 Apr '19, 10:18</strong>
+</p>
+<img alt="sypolt's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/5c933e9eefe555dc498e2ec55f744728?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16588/sypolt">sypolt</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="sypolt has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/68912/">
+                edited
+                <strong>24 Apr '19, 10:21</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68912">
+</div>
+<div class="comment-tools" id="comment-tools-68912">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68912-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/68912/osm-postgresql-query-does-not-show-all-hospitals?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/68912/osm-postgresql-query-does-not-show-all-hospitals?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/68912/osm-postgresql-query-does-not-show-all-hospitals?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/68912/osm-postgresql-query-does-not-show-all-hospitals?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="68913"></a>
+<div class="answer" id="answer-container-68913">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68913/up/" id="post-68913-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68913-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/68913/down/" id="post-68913-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The problem likely is that you're missing those hospitals mapped as areas. You have to run the same query on planet_osm_polygon as well, or you could construct a "union" query that gives you the centrepoints of polygons in addition to the points.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/68913/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>24 Apr '19, 10:32</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68913">
+<a name="68914"></a>
+<div class="comment" id="comment-68914">
+<div class="comment-score" id="post-68914-score"></div>
+<div class="comment-text"><p>Thank you for your answer. I tried this. I got the amenity = 'hospital' from polygon table and unioned all with the points. It only gives a few more hospitals. Still, I see many red plus signs that are not included in the query result.</p></div>
+<div class="comment-info" id="comment-68914-info">
+<span class="comment-age">(24 Apr '19, 10:41)</span>
+<a class="comment-user userinfo" href="/users/16588/sypolt">sypolt</a>
+</div>
+</div>
+<a name="68915"></a>
+<div class="comment" id="comment-68915">
+<div class="comment-score" id="post-68915-score">2</div>
+<div class="comment-text"><p>Your next step needs to be to find out the node, way or relation ID of a hospital that you're missing and query your database for it.  If you can give an example object ID that you are missing people will be able to offer more help.</p></div>
+<div class="comment-info" id="comment-68915-info">
+<span class="comment-age">(24 Apr '19, 11:25)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="68916"></a>
+<div class="comment" id="comment-68916">
+<div class="comment-score" id="post-68916-score"></div>
+<div class="comment-text"><p>Thank you. May I ask how I can find node/way id? For example, I know this particular hospital does not appear in the results: "St thomas hospital, London". So I queried the points which have the name of "%St Thomas%". And there are results for surrounding bus stops and bike parking around the hospital. But still, there is no results for the hospital.</p></div>
+<div class="comment-info" id="comment-68916-info">
+<span class="comment-age">(24 Apr '19, 11:57)</span>
+<a class="comment-user userinfo" href="/users/16588/sypolt">sypolt</a>
+</div>
+</div>
+<a name="68917"></a>
+<div class="comment" id="comment-68917">
+<div class="comment-score" id="post-68917-score"></div>
+<div class="comment-text"><p>This would be <a href="https://www.openstreetmap.org/way/122227536">way 122227536</a>. This information can be obtained by using the search function or the query features tool (button 11 at <a href="https://wiki.openstreetmap.org/wiki/Browsing">Browsing</a>).</p></div>
+<div class="comment-info" id="comment-68917-info">
+<span class="comment-age">(24 Apr '19, 12:11)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="68918"></a>
+<div class="comment" id="comment-68918">
+<div class="comment-score" id="post-68918-score"></div>
+<div class="comment-text"><p>As an example, here's what I did to check that it was in a local database:</p>
+<pre><code>psql -c "select osm_id,name from planet_osm_polygon where osm_id = '122227536'" gis
+</code></pre>
+<p>I got back:</p>
+<pre><code>  osm_id   |                              name
+-----------+-----------------------------------------------------------------
+ 122227536 | St Thomas' Hospital (Guy's and St Thomas' NHS Foundation Trust)
+(1 row)
+</code></pre></div>
+<div class="comment-info" id="comment-68918-info">
+<span class="comment-age">(24 Apr '19, 12:47)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="68919"></a>
+<div class="comment not_top_scorer" id="comment-68919">
+<div class="comment-score" id="post-68919-score"></div>
+<div class="comment-text"><p>Thank you for providing the osm_id. I found this osm id only in "planet_osm_ways" table. And this table has these columns: nodes, tags, pending. And Pending = True for this hospital. What does that mean? Do I use an older version of OSM maybe?</p></div>
+<div class="comment-info" id="comment-68919-info">
+<span class="comment-age">(24 Apr '19, 13:11)</span>
+<a class="comment-user userinfo" href="/users/16588/sypolt">sypolt</a>
+</div>
+</div>
+<a name="68920"></a>
+<div class="comment not_top_scorer" id="comment-68920">
+<div class="comment-score" id="post-68920-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/16588/sypolt">@sypolt</a> I think you need to tell us what you actually did.  Did the import process actually complete?</p></div>
+<div class="comment-info" id="comment-68920-info">
+<span class="comment-age">(24 Apr '19, 13:14)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="68921"></a>
+<div class="comment not_top_scorer" id="comment-68921">
+<div class="comment-score" id="post-68921-score"></div>
+<div class="comment-text"><p>Yes. So I downloaded this dataset: download.geofabrik.de/europe/british-isles.html. and then used osm2pgsql to import to database. The process was completed. I did this task a long time ago.</p></div>
+<div class="comment-info" id="comment-68921-info">
+<span class="comment-age">(24 Apr '19, 13:19)</span>
+<a class="comment-user userinfo" href="/users/16588/sypolt">sypolt</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-68913">
+<span class="comments-showing">
+            showing 5 of 8
+        </span>
+<a class="show-all-comments-link" href="#">show 3 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68913-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/68912/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="m5JZ7n0VbqWHveUTlG2psqayQnBqzFwR"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

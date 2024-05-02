@@ -1,0 +1,105 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/43244/problems-installing-nominatim-relations-and-functions-not-found">Problems installing Nominatim: relations and functions not found</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/43244/up/" id="post-43244-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-43244-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/43244/down/" id="post-43244-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/43244/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have problems installing nominatim. I run the installation process by this sentence:</p>
+<pre><code>/usr/src/Nominatim-2.3.1$ /usr/src/Nominatim-2.2.0/utils/setup.php --osm-file /home/carto/spain-latest.osm --all --osm2pgsql-cache 18000 2&gt;&amp;1
+</code></pre>
+<p>I iniatilly thought it was right and the installation went ok. It araised an error called "missing relation search_blank_name" at the end of installation, but the data was there and I was able to work with it from my own scripts. However, when trying to use Nominatim when searching problmes are there and I can't use search tool. I already did a question and the sugestion for debuging with "debug=1" help mi to realized it was a problem of functions not found, functions that were suposed to be generated when installing nominatim. So I debug deeper the install process and I detected many problems of tables and functions not found. The first ones are the following:</p>
+<pre><code>    2015-05-21 17:36:59 CEST ERROR:  no existe la tabla «import_status»
+2015-05-21 17:36:59 CEST SENTENCIA:  drop table import_status;
+2015-05-21 17:36:59 CEST ERROR:  no existe la tabla «import_osmosis_log»
+2015-05-21 17:36:59 CEST SENTENCIA:  drop table import_osmosis_log;
+2015-05-21 17:37:00 CEST ERROR:  no existe la tabla «import_npi_log»
+2015-05-21 17:37:00 CEST SENTENCIA:  drop table import_npi_log;
+2015-05-21 17:37:02 CEST ERROR:  no existe la secuencia «seq_word»
+2015-05-21 17:37:02 CEST SENTENCIA:  DROP SEQUENCE seq_word;
+2015-05-21 17:37:06 CEST ERROR:  no existe la tabla «country»
+2015-05-21 17:37:06 CEST SENTENCIA:  drop table country;
+2015-05-21 17:37:06 CEST ERROR:  no existe la relación «worldboundaries» en cará    cter 171
+2015-05-21 17:37:06 CEST SENTENCIA:  insert into country select iso3166::varchar    (2), 'name:en'-&gt;cntry_name, null,
+          ST_Transform(geometryn(the_geom, generate_series(1, numgeometries(the_    geom))), 4326) from worldboundaries;
+2015-05-21 17:37:06 CEST ERROR:  no existe la tabla «placex»
+2015-05-21 17:37:06 CEST SENTENCIA:  drop table placex;
+</code></pre>
+<p>I have tried this process many times with the spanish dataset and reduced versions of it by regional entities. The results are the same.</p>
+<p>Can anyone help me to debug deeeper or point what I am doing wrong?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-problem" href="/tags/problem/" rel="tag" title="see questions tagged 'problem'">problem</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-installation" href="/tags/installation/" rel="tag" title="see questions tagged 'installation'">installation</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>27 May '15, 08:48</strong>
+</p>
+<img alt="Juanma%20MR's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8ff71fc907067296fbfac86e637faa50?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10983/juanma-mr">Juanma MR</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Juanma MR has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-43244">
+<a name="43280"></a>
+<div class="comment" id="comment-43280">
+<div class="comment-score" id="post-43280-score"></div>
+<div class="comment-text"><p>I am still trying to find a solution to this.</p>
+<p>I tried again another installation and the results are the same. When trying to use the nominatim search it says:</p>
+<p>"function make_standard_name not found"</p>
+<p>Afterwards, I have tried as follows:</p>
+<p>"./utils/setup.php --create-functions"</p>
+<p>But it did not add the functions.</p>
+<p>I also tried updating using the same file and it did not through any error, but this process do not create missing functions:</p>
+<p>"./utils/update.php --osm-file my_osm_file"</p>
+<p>I am trying to debug localy to see where is it failing but making setup.php to work in local is another challenge for me. I want to make the install process to work propperly as ot havin gwarranties of the data being imported propperly is frightening.</p>
+<p>Is there an alternative way to import data for nominatim, as imposm or any other method?</p></div>
+<div class="comment-info" id="comment-43280-info">
+<span class="comment-age">(28 May '15, 13:35)</span>
+<a class="comment-user userinfo" href="/users/10983/juanma-mr">Juanma MR</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-43244">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-43244-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/43244/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="dv07IPhxHPZqtFjyYNqugLnqauF9K3XA"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

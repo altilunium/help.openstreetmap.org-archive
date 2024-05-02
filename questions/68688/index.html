@@ -1,0 +1,294 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/68688/draw-between-2-points-along-the-road">Draw between 2 points along the road</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68688/up/" id="post-68688-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68688-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/68688/down/" id="post-68688-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/68688/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi there!</p>
+<p>I have collected bus GPS data and I want to draw a route of that bus according to that GPS data on a map. I tried to use available services that provide Directions API. But there I can either choose car, bicycle or pedestrian as a travel mode, and those services try to avoid some places, where the bus definitely goes, but it is either not allowed to driver there by car or the route under construction. Pedestrian type doesn't work for me because the services draw a route next to the road, but not over it. What I basically want is to draw a line on the road between multiple GPS points, but I don't want any "smart" functions that such services provide. </p>
+<p>Don't you have any suggestions how it can be done? E.g. get a pice of road where GPS coordinate point to.</p>
+<p>UPD:</p>
+<p>Here is the example how direction services draw a route and how it should be. Blue line is how the mapbox draws the route. Red line is where the actual route is located.</p>
+<p><img alt="alt text" src="https://help.openstreetmap.org/upfiles/screenshot_XxVHH0q.png"/></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-directions" href="/tags/directions/" rel="tag" title="see questions tagged 'directions'">directions</a>
+<a class="post-tag tag-link-route" href="/tags/route/" rel="tag" title="see questions tagged 'route'">route</a>
+<a class="post-tag tag-link-road" href="/tags/road/" rel="tag" title="see questions tagged 'road'">road</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>07 Apr '19, 17:16</strong>
+</p>
+<img alt="RokrVPV's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/77c6e568f61b2067b0fe11ab760cac9f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16506/rokrvpv">RokrVPV</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="RokrVPV has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/68688/">
+                edited
+                <strong>07 Apr '19, 19:53</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68688">
+<a name="68689"></a>
+<div class="comment" id="comment-68689">
+<div class="comment-score" id="post-68689-score">1</div>
+<div class="comment-text"><p>Sorry, it's not immediately clear what your end goal is here and how it involves OpenStreetMap.</p>
+<p>Are you trying to add a bus route to OSM and then create a map from that data that shows the route?</p>
+<p>Are you trying to find a router that will get you from A to B using public transport data?  That's unlikely to be OSM-based as although bus routes may be in OSM actual timetables won't be.</p></div>
+<div class="comment-info" id="comment-68689-info">
+<span class="comment-age">(07 Apr '19, 17:27)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="68692"></a>
+<div class="comment" id="comment-68692">
+<div class="comment-score" id="post-68692-score"></div>
+<div class="comment-text"><p>"Are you trying to add a bus route to OSM and then create a map from that data that shows the route?" - yes. </p>
+<p>What I have is GPS coordinates of a bus that traveled along its route. Now I want to use these coordinates to draw a bus route. Finally, I would like to have an encoded polyline of the route so that later I could use this polyline to show the route on a map. </p>
+<p>To achieve this, I tried several Directions API services like mapbox or graphhopper, but they don't always draw a route correctly, because some roads are not accessible by car. Instead, they try to navigate around such roads. I will upload picture to the post to show what I want.</p>
+<p>I believe that OSM has stored roads as a data. So what I am thinking about now is e.g. try to get a polyline of a part of the road by GPS coordinate and then glue these polylines together to get the whole route. Or maybe there is a way to force such Directions services to draw what I want. I also know that OSM has bus routes, but they contain partially old or wrong data so I can't use it.</p></div>
+<div class="comment-info" id="comment-68692-info">
+<span class="comment-age">(07 Apr '19, 19:47)</span>
+<a class="comment-user userinfo" href="/users/16506/rokrvpv">RokrVPV</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-68688">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68688-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/68688/draw-between-2-points-along-the-road?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/68688/draw-between-2-points-along-the-road?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/68688/draw-between-2-points-along-the-road?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/68688/draw-between-2-points-along-the-road?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="68696"></a>
+<div class="answer accepted-answer" id="answer-container-68696">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68696/up/" id="post-68696-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68696-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/68696/down/" id="post-68696-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/68696/" rel="nofollow" title="RokrVPV has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You have two options:</p>
+<ol>
+<li>Simply draw your GPX track onto a map. This can be done with standalone programs like those mentioned by Gys de Jongh or with QGIS, and alternatively with online services like UMap. The advantage is that this shows exactly the path you have recorded. The disadvantage is that it does not take the road network into account at all, so if you have some recording errors or missing points, your track will not follow the road nicely.</li>
+<li>Use a "track matching" software that finds the most likely route travelled by a vehicle when you have a GPS track as input. Popular routing engines like GraphHopper an OSRM offer this feature, but as you have already seen, when you use the standard routing profiles they will refuse to route over roads that are not allowed for cars. But if you install the software yourself then you have full control over the routing profile, and you could for example take the car profile and remove all the rules about "do not use a road that is only for buses" and so on. For example, in OSRM the code in <a href="https://github.com/Project-OSRM/osrm-backend/blob/master/profiles/car.lua#L82">https://github.com/Project-OSRM/osrm-backend/blob/master/profiles/car.lua#L82</a> means that everything with access=psv will not be considered; if you drop that line, the router will consider such roads as well. (You might need to make a few more changes than this to achive the desired result but it's a start). </li>
+</ol>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/68696/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>07 Apr '19, 23:38</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68696">
+<a name="68736"></a>
+<div class="comment" id="comment-68736">
+<div class="comment-score" id="post-68736-score"></div>
+<div class="comment-text"><p>That is an option, thanks! I'll need to dig into it.</p></div>
+<div class="comment-info" id="comment-68736-info">
+<span class="comment-age">(09 Apr '19, 20:02)</span>
+<a class="comment-user userinfo" href="/users/16506/rokrvpv">RokrVPV</a>
+</div>
+</div>
+<a name="69036"></a>
+<div class="comment" id="comment-69036">
+<div class="comment-score" id="post-69036-score"></div>
+<div class="comment-text"><p>Marking the answer as a correct. I was able to do that was suggested by <a href="https://help.openstreetmap.org/users/104/frederik-ramm"></a><a href="https://help.openstreetmap.org/users/104/frederik-ramm">@Frederik</a> in the 2nd point. The only problem I see now is that when I set overview=full for route service, the points are a bit shifted from their correct location and don't point to roads, but next to it. But I am able to construct a route if use geometry from each step by setting steps=true in the request.</p></div>
+<div class="comment-info" id="comment-69036-info">
+<span class="comment-age">(01 May '19, 21:17)</span>
+<a class="comment-user userinfo" href="/users/16506/rokrvpv">RokrVPV</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-68696">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68696-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="68694"></a>
+<div class="answer" id="answer-container-68694">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68694/up/" id="post-68694-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68694-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/68694/down/" id="post-68694-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>(answering the points in the comment "What I have is GPS coordinates...")</p>
+<p>Once you've added a bus route to OSM you'll be able to create a map that shows that bus route on it.  The route will get added to OSM as a relation, and whatever you use to create a map will need to display that.  See for example <a href="https://www.openstreetmap.org/relation/332069">this example</a> on the OSM website.</p>
+<p>It doesn't make sense to expect a router (foot, car, or bicycle) to follow a bus route.</p>
+<p>Depending on what sort of "map" you're creating you'll need to do something different to display relation data.  I wrote <a href="https://www.openstreetmap.org/user/SomeoneElse/diary/38988">this diary entry</a> ages ago about doing it in a style similar to OSM's OSM Carto style.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/68694/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>07 Apr '19, 21:40</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68694">
+</div>
+<div class="comment-tools" id="comment-tools-68694">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68694-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="68691"></a>
+<div class="answer" id="answer-container-68691">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68691/up/" id="post-68691-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68691-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/68691/down/" id="post-68691-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hi RokrVPV,
+you can do that in BaseCamp <a href="https://www8.garmin.com/support/download_details.jsp?id=4435">https://www8.garmin.com/support/download_details.jsp?id=4435</a> or in QMapShack <a href="https://bitbucket.org/maproom/qmapshack/wiki/Home">https://bitbucket.org/maproom/qmapshack/wiki/Home</a> There you can draw whatever you want, or even just import your Gpx trace, and print your map. What you want is not possible in Openstreet map. Here buroutes must follow established roads and not Gpx traces. You can use your Gpx trace only as a guide to edit the bus route. If the roads are not present yet, you have to draw those first from an opensource. Bus routes are not for the faint of heart though : <a href="https://wiki.openstreetmap.org/wiki/Buses">https://wiki.openstreetmap.org/wiki/Buses</a></p>
+<p>Gys</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/68691/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>07 Apr '19, 19:00</strong>
+</p>
+<img alt="Gys%20de%20Jongh's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/5c3b258ebdc5943f1ab6008f146e7f7c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8791/gys-de-jongh">Gys de Jongh</a><br/>
+<span class="score" title="713 reputation points">713</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="14 badges"><span class="bronze">●</span><span class="badgecount">14</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Gys de Jongh has 5 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68691">
+<a name="68735"></a>
+<div class="comment" id="comment-68735">
+<div class="comment-score" id="post-68735-score"></div>
+<div class="comment-text"><p>Thanks! I'll have a look at these tools.</p></div>
+<div class="comment-info" id="comment-68735-info">
+<span class="comment-age">(09 Apr '19, 19:59)</span>
+<a class="comment-user userinfo" href="/users/16506/rokrvpv">RokrVPV</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-68691">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68691-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/68688/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="c0XhzMSh26fdORPCbyziWj1xdIkgVmbl"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

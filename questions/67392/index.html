@@ -1,0 +1,150 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/67392/poi-data-from-osm-as-markers-on-leaflet">POI data from OSM as markers on leaflet</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/67392/up/" id="post-67392-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-67392-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/67392/down/" id="post-67392-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/67392/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi guys, I've got a simple question and would be great to have some starting information on how to get this going. I'm a newbie here with OSM and searched the forums across different platforms, but just can'T find a simple starting point. So here's what I need:</p>
+<ul>
+<li>user goes to map on my website and selects a button f.e. 'clothing shops'</li>
+<li>map shows a marker on all clothing shops. </li>
+</ul>
+<p>And that's it. </p>
+<p>I'm using leaflet to get the map on my website and that works, though what I need to figure out is how to get OSM data of the amenities. (preferably through php, java or http request) Then the part of adding markers on the map is easy, and if needed with clustering. </p>
+<p>ps: in case anybody knows a better platform for this purpose then leaflet it would be great to know about.</p>
+<p>Thanks a bunch!  </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-marker" href="/tags/marker/" rel="tag" title="see questions tagged 'marker'">marker</a>
+<a class="post-tag tag-link-leaflet" href="/tags/leaflet/" rel="tag" title="see questions tagged 'leaflet'">leaflet</a>
+<a class="post-tag tag-link-amenity" href="/tags/amenity/" rel="tag" title="see questions tagged 'amenity'">amenity</a>
+<a class="post-tag tag-link-poi" href="/tags/poi/" rel="tag" title="see questions tagged 'poi'">poi</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>30 Dec '18, 19:07</strong>
+</p>
+<img alt="tijmenheid's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/89858e1d0e500ae658bf8cf7fc4964c9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16106/tijmenheid">tijmenheid</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="11 badges"><span class="bronze">●</span><span class="badgecount">11</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="tijmenheid has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-67392">
+</div>
+<div class="comment-tools" id="comment-tools-67392">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-67392-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/67392/poi-data-from-osm-as-markers-on-leaflet?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/67392/poi-data-from-osm-as-markers-on-leaflet?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/67392/poi-data-from-osm-as-markers-on-leaflet?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/67392/poi-data-from-osm-as-markers-on-leaflet?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="67400"></a>
+<div class="answer accepted-answer" id="answer-container-67400">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/67400/up/" id="post-67400-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-67400-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/67400/down/" id="post-67400-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/67400/" rel="nofollow" title="tijmenheid has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can query OSM via the <a href="http://overpass-api.de/">Overpass API</a>.
+A quick search gave me</p>
+<ul>
+<li>a <a href="https://gist.github.com/tyrasd/45e4a6a44c734497e82ccaae16a9c9ea">minimalistic example</a></li>
+<li>a <a href="https://github.com/GuillaumeAmat/leaflet-overpass-layer">Leaflet Overpass layer</a></li>
+</ul>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/67400/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>31 Dec '18, 06:51</strong>
+</p>
+<img alt="escada's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/813a136afe7d4c95fd5bccdd78705e0e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5390/escada">escada</a><br/>
+<span class="score" title="19043 reputation points"><span class="">19.0k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="166 badges"><span class="silver">●</span><span class="badgecount">166</span></span><span title="302 badges"><span class="bronze">●</span><span class="badgecount">302</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="escada has 97 accepted answers">21%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-67400">
+<a name="67402"></a>
+<div class="comment" id="comment-67402">
+<div class="comment-score" id="post-67402-score"></div>
+<div class="comment-text"><p>Thanks a bunch mate, the minimalistic sample should have all I need. </p>
+<p>Later I hope with some more experience to know where to find these things easier myself too. Habt ne gute rutsch!</p></div>
+<div class="comment-info" id="comment-67402-info">
+<span class="comment-age">(31 Dec '18, 11:39)</span>
+<a class="comment-user userinfo" href="/users/16106/tijmenheid">tijmenheid</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-67400">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-67400-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/67392/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="xnk5S53EtX8hDuqMWlSaiOdbbq4z9G0n"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

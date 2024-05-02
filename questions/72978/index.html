@@ -1,0 +1,100 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/72978/filtering-footprints-to-given-bounding-box">Filtering footprints to given bounding box</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/72978/up/" id="post-72978-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-72978-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/72978/down/" id="post-72978-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/72978/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi, </p>
+<p>I'm trying to get footprints with landuse tag within sample bounding box with query below:</p>
+<pre><code>[out:json][timeout:180];
+(
+  way(poly:"50.859515 18.568600 50.859515 18.580753 50.862946 18.580753 50.862946 18.568600 50.859515 18.568600")["landuse"];(._;&gt;;);
+  relation(poly:"50.859515 18.568600 50.859515 18.580753 50.862946 18.580753 50.862946 18.568600 50.859515 18.568600")["landuse"];(._;&gt;;);
+);
+out body;
+</code></pre>
+<p>Unfortunately, returned ways are out of my bounding box, as shown on the picture below (bbox is approximately red square) so the question is how to filter results to retrieve data only in my bounding box range?</p>
+<p><img alt="alt text" src="https://help.openstreetmap.org/upfiles/example1.png"/></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-filter" href="/tags/filter/" rel="tag" title="see questions tagged 'filter'">filter</a>
+<a class="post-tag tag-link-filtering" href="/tags/filtering/" rel="tag" title="see questions tagged 'filtering'">filtering</a>
+<a class="post-tag tag-link-bbox" href="/tags/bbox/" rel="tag" title="see questions tagged 'bbox'">bbox</a>
+<a class="post-tag tag-link-bounding-polygon" href="/tags/bounding-polygon/" rel="tag" title="see questions tagged 'bounding-polygon'">bounding-polygon</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>10 Feb '20, 13:19</strong>
+</p>
+<img alt="dnstankiewicz's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/36ab6acd0d62af564e7cabec38df12da?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17886/dnstankiewicz">dnstankiewicz</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="dnstankiewicz has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-72978">
+<a name="72980"></a>
+<div class="comment" id="comment-72980">
+<div class="comment-score" id="post-72980-score">1</div>
+<div class="comment-text"><p>Would you actually want area objects that are completely contained in the bounding box only? If you are simply going to do your work within the bounding box, you are supposed to further process this data elsewhere.</p></div>
+<div class="comment-info" id="comment-72980-info">
+<span class="comment-age">(10 Feb '20, 13:35)</span>
+<a class="comment-user userinfo" href="/users/16887/kovoschiz">Kovoschiz</a>
+</div>
+</div>
+<a name="72998"></a>
+<div class="comment" id="comment-72998">
+<div class="comment-score" id="post-72998-score"></div>
+<div class="comment-text"><p>Hi, I need to do following steps:
+1. provide bounding box to my algorithm
+2. it downloads data from OSM and filter only landuse in (forest,farmland)
+3. union all territory with this tags
+4. apply another algorithm to solar panel placement</p>
+<p>Any suggestions on how to keep only territories within bounding box and then union it into one shape? Thanks for help!</p></div>
+<div class="comment-info" id="comment-72998-info">
+<span class="comment-age">(11 Feb '20, 08:47)</span>
+<a class="comment-user userinfo" href="/users/17886/dnstankiewicz">dnstankiewicz</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-72978">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-72978-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/72978/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="FUGF7AmbikvjdLyN7MBBp1jwmPXofeBN"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

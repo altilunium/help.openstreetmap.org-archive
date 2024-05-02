@@ -1,0 +1,295 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/32644/determining-speed-limits-for-given-route">Determining speed limits for given route</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/32644/up/" id="post-32644-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-32644-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/32644/down/" id="post-32644-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/32644/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am trying to develop an application, which finds a route between two points, and displays current speed limits as you drive.</p>
+<p>So far I managed to use OSRM API ( <a href="http://project-osrm.org/">http://project-osrm.org/</a> ) to get a route geometry (as a list of coordinates) and driving directions (as simple instructions, not correlated with OSM objects). I am also aware, that some ways in OSM provide numeric values of speed limits in their tags. What I don't know is how to cherry-pick the needed ways from Overpass API (ideally without any excessive data) and how to associate my route geometry with proper limits. Or maybe there is an other, more comprehensive tool capable of satisfying my needs?</p>
+<p>Thank you in advance for any help!</p>
+<p><strong>EDIT: I already received a great answer for my problem, but out of curiosity I would also appreciate a solution which does not involve interfering in OSRM API</strong></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-ways" href="/tags/ways/" rel="tag" title="see questions tagged 'ways'">ways</a>
+<a class="post-tag tag-link-osrm" href="/tags/osrm/" rel="tag" title="see questions tagged 'osrm'">osrm</a>
+<a class="post-tag tag-link-maxspeed" href="/tags/maxspeed/" rel="tag" title="see questions tagged 'maxspeed'">maxspeed</a>
+<a class="post-tag tag-link-limit" href="/tags/limit/" rel="tag" title="see questions tagged 'limit'">limit</a>
+<a class="post-tag tag-link-routing" href="/tags/routing/" rel="tag" title="see questions tagged 'routing'">routing</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 Apr '14, 23:13</strong>
+</p>
+<img alt="soul123's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f436d9f64b0c453c0186ba7ba1517e0f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8732/soul123">soul123</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="soul123 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/32644/">
+                edited
+                <strong>29 Sep '16, 09:38</strong>
+</a>
+</p>
+<img alt="nevw's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e5674dd96938593e0af5130dfffe0f90?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7380/nevw">nevw</a><br/>
+<span class="score" title="9843 reputation points"><span class="">9.8k</span></span><span title="26 badges"><span class="badge1">●</span><span class="badgecount">26</span></span><span title="90 badges"><span class="silver">●</span><span class="badgecount">90</span></span><span title="178 badges"><span class="bronze">●</span><span class="badgecount">178</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-32644">
+</div>
+<div class="comment-tools" id="comment-tools-32644">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-32644-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/32644/determining-speed-limits-for-given-route?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/32644/determining-speed-limits-for-given-route?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/32644/determining-speed-limits-for-given-route?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/32644/determining-speed-limits-for-given-route?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="32648"></a>
+<div class="answer accepted-answer" id="answer-container-32648">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/32648/up/" id="post-32648-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-32648-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/32648/down/" id="post-32648-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/32648/" rel="nofollow" title="soul123 has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It may be easier to do this by setting up your own instance of OSRM. You can then return the speed limit as part of the turn-by-turn directions, rather than just the road number.</p>
+<p>You would typically do this in the Lua profile of your OSRM instance. In way_function, after way.name has been set to the ref/name, add code such as this:</p>
+<pre><code>if maxspeed&gt;0 then way.name=way.name.."|"..maxspeed end
+</code></pre>
+<p>In other words, if there's a maxspeed value for the way, append it to the way name, separated by a | symbol.</p>
+<p>You can then parse this value in your JavaScript (or other) client.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/32648/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>26 Apr '14, 12:18</strong>
+</p>
+<img alt="Richard's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/08324717c25d6067fa4ff23ef37d455f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5/richard">Richard ♦</a><br/>
+<span class="score" title="30902 reputation points"><span class="">30.9k</span></span><span title="44 badges"><span class="badge1">●</span><span class="badgecount">44</span></span><span title="279 badges"><span class="silver">●</span><span class="badgecount">279</span></span><span title="412 badges"><span class="bronze">●</span><span class="badgecount">412</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Richard has 98 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/32648/">
+                edited
+                <strong>26 Apr '14, 12:18</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-32648">
+<a name="32659"></a>
+<div class="comment" id="comment-32659">
+<div class="comment-score" id="post-32659-score"></div>
+<div class="comment-text"><p>Thank you for this answer, it's great and accurate!</p></div>
+<div class="comment-info" id="comment-32659-info">
+<span class="comment-age">(26 Apr '14, 13:22)</span>
+<a class="comment-user userinfo" href="/users/8732/soul123">soul123</a>
+</div>
+</div>
+<a name="52224"></a>
+<div class="comment" id="comment-52224">
+<div class="comment-score" id="post-52224-score"></div>
+<div class="comment-text"><p>How is this solved in the last version of API (Version 5). Let's say if we want to use the default car profile, what exactly should be changed to get the speed limits too? Where exactly should the speed limits appear in the resulting JSON? Thanks</p></div>
+<div class="comment-info" id="comment-52224-info">
+<span class="comment-age">(26 Sep '16, 16:50)</span>
+<a class="comment-user userinfo" href="/users/12818/pksk88">pksk88</a>
+</div>
+</div>
+<a name="54887"></a>
+<div class="comment" id="comment-54887">
+<div class="comment-score" id="post-54887-score"></div>
+<div class="comment-text"><p>Hi - sorry to "me too", but I'm also looking for a method to do this in the current API. The car.lua profile files appear to be substantially different from the those in the answers suggested so far.
+Many thanks.</p></div>
+<div class="comment-info" id="comment-54887-info">
+<span class="comment-age">(02 Mar '17, 14:05)</span>
+<a class="comment-user userinfo" href="/users/13413/andyc">AndyC</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-32648">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-32648-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="52295"></a>
+<div class="answer" id="answer-container-52295">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/52295/up/" id="post-52295-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-52295-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/52295/down/" id="post-52295-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>For the current version of API I used this temporary solution, analogous to the above mentioned. Using the car.lua profile you may insert the maxspeed attribute as part of other attributes. This could be done on multiple places. I added the </p>
+<pre><code>local maxspeed = parse_maxspeed( way:get_value_by_key("maxspeed") )
+</code></pre>
+<p>on line 430 and then on line 446 changed the code to</p>
+<pre><code>result.ref = ref.."|"..maxspeed
+</code></pre>
+<p>This is a very simple way but not really standard. I would like to create a separate JSON attribute for maxspeed in the response of API. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/52295/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>29 Sep '16, 08:05</strong>
+</p>
+<img alt="pksk88's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e7b6aab57b354bb4867304cd404610f5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12818/pksk88">pksk88</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="pksk88 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-52295">
+</div>
+<div class="comment-tools" id="comment-tools-52295">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-52295-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="62892"></a>
+<div class="answer" id="answer-container-62892">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/62892/up/" id="post-62892-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-62892-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/62892/down/" id="post-62892-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hey!
+Is there a similar solution for the current version? I really don't know where to put the suggested lines of code. Or respectively how to modify them to either adding the maxspeed attribute to another attribute or creating a new attribute in the output. That would be of great help for me - many thanks in advance.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/62892/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Apr '18, 19:12</strong>
+</p>
+<img alt="jandoh's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/154d82054ffb4710f4c703546505f04c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14941/jandoh">jandoh</a><br/>
+<span class="score" title="1 reputation points">1</span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="jandoh has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-62892">
+<a name="62893"></a>
+<div class="comment" id="comment-62893">
+<div class="comment-score" id="post-62893-score">1</div>
+<div class="comment-text"><p>I'm not an expert on the current OSRM API profiles, but it might be worth asking the developers at <a href="https://github.com/Project-OSRM/osrm-backend/issues">https://github.com/Project-OSRM/osrm-backend/issues</a> (you'll need a Github account).</p></div>
+<div class="comment-info" id="comment-62893-info">
+<span class="comment-age">(03 Apr '18, 19:19)</span>
+<a class="comment-user userinfo" href="/users/5/richard">Richard ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-62892">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-62892-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/32644/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="H2wSHD7skpOzA7cwKZgno3aM5xIx4843"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

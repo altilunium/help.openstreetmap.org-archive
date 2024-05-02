@@ -1,0 +1,137 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/41600/how-to-split-up-osm-8x8-meta-file-into-64-single-tiles">How to split up osm 8x8 meta file into 64 single tiles</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/41600/up/" id="post-41600-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-41600-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/41600/down/" id="post-41600-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/41600/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I use <code>tirex</code>/<code>renderd</code> together with <code>mapnik</code> to generate a custom styled OSM map. This results in meta files like <code>/var/lib/tirex/tiles/mapnik/4/0/0/0/0/128.meta</code> consisting of 8x8 single tiles. These files are normally delivered by apache's <code>mod_tile</code>. My problem is that I do not have <code>mod_tile</code> available on the production server. </p>
+<p>I there a way to generate the normal single <code>/z/x/y.png</code> files from these meta files, so that the OSM map can be delivered by just any normal http server? Say, either as part of tirex or mapnik, or as a post rendering script or similar?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-tileserver" href="/tags/tileserver/" rel="tag" title="see questions tagged 'tileserver'">tileserver</a>
+<a class="post-tag tag-link-tirex" href="/tags/tirex/" rel="tag" title="see questions tagged 'tirex'">tirex</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+<a class="post-tag tag-link-mod_tile" href="/tags/mod_tile/" rel="tag" title="see questions tagged 'mod_tile'">mod_tile</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>10 Mar '15, 10:56</strong>
+</p>
+<img alt="jnachtigall's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/42c22f7724a32aa2d2e19609d8e7f1b1?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10639/jnachtigall">jnachtigall</a><br/>
+<span class="score" title="101 reputation points">101</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="8 badges"><span class="bronze">●</span><span class="badgecount">8</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="jnachtigall has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-41600">
+</div>
+<div class="comment-tools" id="comment-tools-41600">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-41600-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/41600/how-to-split-up-osm-8x8-meta-file-into-64-single-tiles?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/41600/how-to-split-up-osm-8x8-meta-file-into-64-single-tiles?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/41600/how-to-split-up-osm-8x8-meta-file-into-64-single-tiles?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/41600/how-to-split-up-osm-8x8-meta-file-into-64-single-tiles?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="41608"></a>
+<div class="answer accepted-answer" id="answer-container-41608">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/41608/up/" id="post-41608-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-41608-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/41608/down/" id="post-41608-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/41608/" rel="nofollow" title="jnachtigall has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Not having mod_tile available means that you will have to generate all tiles beforehand. You could do that by running mod_tile on a different server and then using a tile downloader to download PNG tiles from your server, or you could make metatiles and then use <a href="https://github.com/openstreetmap/mod_tile/tree/master/extra">meta2tile</a> to convert to PNG. Be careful with the huge numbers of files this may create though - on file systems with a large block size having so many files can easily fill up your disk.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/41608/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>10 Mar '15, 13:15</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-41608">
+<a name="49993"></a>
+<div class="comment" id="comment-49993">
+<div class="comment-score" id="post-49993-score"></div>
+<div class="comment-text"><p>... and many numbers of small tiles can also exhaust the available inodes too (depending on the filesystem you're using).</p></div>
+<div class="comment-info" id="comment-49993-info">
+<span class="comment-age">(03 Jun '16, 15:14)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-41608">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-41608-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/41600/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="5N2Wi8As75SkihU90I1NqkhUQS11hVff"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

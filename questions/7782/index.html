@@ -1,0 +1,170 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/7782/compiling-osmium-on-ubuntu">Compiling osmium on Ubuntu</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/7782/up/" id="post-7782-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-7782-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/7782/down/" id="post-7782-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/7782/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Following <a href="http://wiki.openstreetmap.org/wiki/Osmium/Quick_Start">http://wiki.openstreetmap.org/wiki/Osmium/Quick_Start</a> on Ubuntu 10.04 LTS with libprotobuf-dev installed gives lots of "/usr/bin/ld: cannot find -lprotobuf-lite" errors.</p>
+<p>OSM-binary can be compiled using the non-Debian/Ubuntu instructions (e.g. make instead of debuild), but make osmium/examples still fails looking for -lprotobuf-lite</p>
+<p>Changing LDFLAGS on line 26 of Makefile to /usr/lib doesn't seem to help</p>
+<pre><code>user@ireem:~$ ls  /usr/lib/libprotobuf*
+/usr/lib/libprotobuf-c.a         /usr/lib/libprotobuf-lite.so.5
+/usr/lib/<a href="http://libprotobuf-c.so">libprotobuf-c.so</a>        /usr/lib/libprotobuf-lite.so.5.0.0
+/usr/lib/libprotobuf-c.so.0      /usr/lib/<a href="http://libprotobuf.so">libprotobuf.so</a>
+/usr/lib/libprotobuf-c.so.0.0.0  /usr/lib/libprotobuf.so.5
+/usr/lib/<a href="http://libprotobuf.la">libprotobuf.la</a>          /usr/lib/libprotobuf.so.5.0.0
+
+user@ireem:~/osm/osmium/libosmpbf/osmium/examples$ make clean
+rm -f *.o core osmium_sizeof osmium_debug osmium_stats osmium_find_bbox osmium_time osmium_progress osmium_convert osmium_toogr osmium_toshape nodedensity
+user@ireem:~/osm/osmium/libosmpbf/osmium/examples$ make
+g++ -g -Wall -Wextra -Wredundant-decls -Wdisabled-optimization -pedantic -Wctor-dtor-privacy -Wnon-virtual-dtor -Woverloaded-virtual -Wsign-promo -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -I../include -DOSMIUM_WITH_OUTPUT_OSM_XML -I/usr/include/libxml2 -o osmium_sizeof osmium_sizeof.cpp -L/usr/lib -lexpat -lpthread -lz -lprotobuf-lite -losmpbf -lxml2
+/usr/bin/ld: cannot find -lprotobuf-lite
+collect2: ld returned 1 exit status
+make: *** [osmium_sizeof] Error 1
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osmium" href="/tags/osmium/" rel="tag" title="see questions tagged 'osmium'">osmium</a>
+<a class="post-tag tag-link-c++" href="/tags/c%252B%252B/" rel="tag" title="see questions tagged 'c++'">c++</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>11 Sep '11, 13:33</strong>
+</p>
+<img alt="OJW's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3e44debd67415e7aa7759c83b829be6a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/370/ojw">OJW</a><br/>
+<span class="score" title="151 reputation points">151</span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="8 badges"><span class="silver">●</span><span class="badgecount">8</span></span><span title="15 badges"><span class="bronze">●</span><span class="badgecount">15</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="OJW has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/7782/">
+                edited
+                <strong>11 Sep '11, 13:42</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-7782">
+</div>
+<div class="comment-tools" id="comment-tools-7782">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-7782-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/7782/compiling-osmium-on-ubuntu?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/7782/compiling-osmium-on-ubuntu?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/7782/compiling-osmium-on-ubuntu?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/7782/compiling-osmium-on-ubuntu?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="7783"></a>
+<div class="answer accepted-answer" id="answer-container-7783">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/7783/up/" id="post-7783-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-7783-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/7783/down/" id="post-7783-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/7783/" rel="nofollow" title="OJW has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You seem to be missing <code>/usr/lib/<a href="http://libprotobuf-lite.so">libprotobuf-lite.so</a></code>. Do this:</p>
+<p><code>cd /usr/lib</code></p>
+<p><code>ln -s libprotobuf-lite.so.5 <a href="http://libprotobuf-lite.so">libprotobuf-lite.so</a></code></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/7783/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>11 Sep '11, 13:46</strong>
+</p>
+<img alt="Derick%20Rethans's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/4837c9b51f52c9a5accf528cd9729812?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/808/derick-rethans">Derick Rethans</a><br/>
+<span class="score" title="247 reputation points">247</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Derick Rethans has one accepted answer">50%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-7783">
+<a name="7785"></a>
+<div class="comment" id="comment-7785">
+<div class="comment-score" id="post-7785-score">1</div>
+<div class="comment-text"><p>Note that this seems to be a bug in the Ubuntu libprotobuf-dev package as it should contain that link but doesn't - this should really be reported to the maintainer of that package.</p></div>
+<div class="comment-info" id="comment-7785-info">
+<span class="comment-age">(11 Sep '11, 14:50)</span>
+<a class="comment-user userinfo" href="/users/1/tomh">TomH ♦♦</a>
+</div>
+</div>
+<a name="7786"></a>
+<div class="comment" id="comment-7786">
+<div class="comment-score" id="post-7786-score"></div>
+<div class="comment-text"><p>TomH: OK, <a href="https://bugs.launchpad.net/ubuntu/+source/protobuf-c/+bug/847065">https://bugs.launchpad.net/ubuntu/+source/protobuf-c/+bug/847065</a></p></div>
+<div class="comment-info" id="comment-7786-info">
+<span class="comment-age">(11 Sep '11, 15:41)</span>
+<a class="comment-user userinfo" href="/users/370/ojw">OJW</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-7783">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-7783-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/7782/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Hdt5dvJn69JSR7P36yxqi9hu06OA3CWc"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,277 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/49754/does-overpass-handle-requests-sequentially">Does overpass handle request's sequentially?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/49754/up/" id="post-49754-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-49754-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/49754/down/" id="post-49754-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/49754/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have this local setup of overpass in a 32core 16Gb-ram server.
+My requests are not processing parallel, when i trigger multiple threads of the same request, the total time taken is = (time taken to complete one request * no of threads).
+Can someone point me towards what am missing here!!
+So i would like to know if overpass handle's requests parallel or sequential ?</p>
+<p>Tnx in advance 
+- AG</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpassapi" href="/tags/overpassapi/" rel="tag" title="see questions tagged 'overpassapi'">overpassapi</a>
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>20 May '16, 10:13</strong>
+</p>
+<img alt="Arun%20Gowtham's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/dfcf9d391ca68ff816e8f9f8ec9f3fc4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11860/arun-gowtham">Arun Gowtham</a><br/>
+<span class="score" title="0 reputation points">0</span><span title="11 badges"><span class="badge1">●</span><span class="badgecount">11</span></span><span title="11 badges"><span class="silver">●</span><span class="badgecount">11</span></span><span title="14 badges"><span class="bronze">●</span><span class="badgecount">14</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Arun Gowtham has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/49754/">
+                edited
+                <strong>20 May '16, 11:15</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-49754">
+</div>
+<div class="comment-tools" id="comment-tools-49754">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-49754-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/49754/does-overpass-handle-requests-sequentially?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/49754/does-overpass-handle-requests-sequentially?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/49754/does-overpass-handle-requests-sequentially?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/49754/does-overpass-handle-requests-sequentially?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="49755"></a>
+<div class="answer" id="answer-container-49755">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/49755/up/" id="post-49755-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-49755-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/49755/down/" id="post-49755-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>As you can see in the <a href="https://overpass-api.de/munin/localdomain/localhost.localdomain/osm_db_request_count.html">munin stats for the official server</a>, the server handles about 400-700 requests/minute. That for sure wouldn't be possible by processing a single request at a time. Also, the CPU utilization clearaly shows that all 8 cores all completely used up.</p>
+<p>Conclusion: processing is parallel by default, each request is handled by a different Apache CGI process up to a certain limit. </p>
+<p>Note that there's a limit of one request per IP at the same time on the official instance. That most likely doesn't apply if you're running your own instance, unless you set it up explicitly.</p>
+<p>Unless you're adding more detail on your setup and your query, it's impossible to tell what kind of issues your might see on your local instance. It might also be that you're hitting some I/O limit or experiencing CPU saturation, too many parallel requests for your machine, internal scalability issues in the dispatcher, wrong/insufficient configuration of your web server, your load driver may not work properly. There are literally dozens of different influencing factors.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/49755/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>20 May '16, 11:40</strong>
+</p>
+<img alt="mmd's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/264d84ab05b942224b05960903eba7a7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8708/mmd">mmd</a><br/>
+<span class="score" title="5682 reputation points"><span class="">5.7k</span></span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="53 badges"><span class="silver">●</span><span class="badgecount">53</span></span><span title="88 badges"><span class="bronze">●</span><span class="badgecount">88</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mmd has 44 accepted answers">37%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/49755/">
+                edited
+                <strong>20 May '16, 11:41</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-49755">
+<a name="49756"></a>
+<div class="comment" id="comment-49756">
+<div class="comment-score" id="post-49756-score"></div>
+<div class="comment-text"><p>thanx for the info <a href="http://help.openstreetmap.org/users/8708/mmd">@mmd</a> 
+I'll debug my web server configuration's and look for issues anywhere else.</p></div>
+<div class="comment-info" id="comment-49756-info">
+<span class="comment-age">(20 May '16, 12:03)</span>
+<a class="comment-user userinfo" href="/users/11860/arun-gowtham">Arun Gowtham</a>
+</div>
+</div>
+<a name="49757"></a>
+<div class="comment" id="comment-49757">
+<div class="comment-score" id="post-49757-score"></div>
+<div class="comment-text"><p>hi <a href="http://help.openstreetmap.org/users/8708/mmd"></a><a href="http://help.openstreetmap.org/users/8708/mmd">@mmd</a></p>
+<p>Here's the case am trying to solve:</p>
+<p>My query: [out:json];area[name='Tamil Nadu'];node(area)[amenity='atm'];out count;</p>
+<p>The time taken for this single request is :</p>
+<p>1 new Thread started</p>
+<p>Time taken for req :1 : 1936 (ms) </p>
+<p>Whereas when i trigger 10 threads of the same request i get such result,</p>
+<p>10 new Threads started</p>
+<p>Time taken for req :1 : 1870 (ms)</p>
+<p>Time taken for req :7 : 1869 (ms)</p>
+<p>Time taken for req :2 : 1870 (ms) </p>
+<p>Time taken for req :3 : 1870 (ms) </p>
+<p>Time taken for req :8 : 1868 (ms) </p>
+<p>Time taken for req :6 : 1869 (ms) </p>
+<p>Time taken for req :5 : 1947 (ms) </p>
+<p>Time taken for req :10 : 3588 (ms) </p>
+<p>Time taken for req :4 : 3590 (ms) </p>
+<p>Time taken for req :9 : 3950 (ms) </p>
+<p>Is this normal, what i am expecting is all those 10 requests should have completed approximately around 1870 (ms), but it took additional time.</p>
+<p>When i increase the thread count, say to 50, the total time taken goes upto 14 seconds.</p>
+<p>When increased ever further to 500, i start to get 504 error's for nearly 370 of the requests and the time taken for entire set including the errors is 35 seconds</p>
+<p>Please help me sort out this issue, is this functionality normal or have i configured wrong?! :(</p>
+<p>Thanks-AG</p></div>
+<div class="comment-info" id="comment-49757-info">
+<span class="comment-age">(20 May '16, 12:39)</span>
+<a class="comment-user userinfo" href="/users/11860/arun-gowtham">Arun Gowtham</a>
+</div>
+</div>
+<a name="49760"></a>
+<div class="comment" id="comment-49760">
+<div class="comment-score" id="post-49760-score"></div>
+<div class="comment-text"><p>So it seems to scale fine up to 7 requests in parallel. Your system has 8 cores and surely has some other minor stuff to do while processing your requests. The remaining 3 requests take twice as long since they have to wait for the other requests to finish. Sounds fine to me. However I don't know any internals about Overpass. But just bumping up the allowed number of threads will usually have a negative impact on the system since they will also introduce additional overhead and will lead to processing more quests in parallel than the system can handle, slowing down each individual request.</p></div>
+<div class="comment-info" id="comment-49760-info">
+<span class="comment-age">(20 May '16, 14:21)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="49761"></a>
+<div class="comment" id="comment-49761">
+<div class="comment-score" id="post-49761-score"></div>
+<div class="comment-text"><p><a href="http://help.openstreetmap.org/users/158/scai">@scai</a> actually my machine is 32 core cpu...</p></div>
+<div class="comment-info" id="comment-49761-info">
+<span class="comment-age">(20 May '16, 14:25)</span>
+<a class="comment-user userinfo" href="/users/11860/arun-gowtham">Arun Gowtham</a>
+</div>
+</div>
+<a name="49762"></a>
+<div class="comment" id="comment-49762">
+<div class="comment-score" id="post-49762-score"></div>
+<div class="comment-text"><p>Oh, sorry. I've taken the 8 cores mentioned in mmd's answer for your system. Anyway, as already explained by mmd there can be multiple other reasons like limited I/O. You can for example check your wa (=wait) in <code>top</code>.</p></div>
+<div class="comment-info" id="comment-49762-info">
+<span class="comment-age">(20 May '16, 14:31)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="49763"></a>
+<div class="comment not_top_scorer" id="comment-49763">
+<div class="comment-score" id="post-49763-score"></div>
+<div class="comment-text"><p>yeah,i get you, i just wanted to know if what i stated above is not normal in overpass, so that i would start to debug elsewhere..</p></div>
+<div class="comment-info" id="comment-49763-info">
+<span class="comment-age">(20 May '16, 14:35)</span>
+<a class="comment-user userinfo" href="/users/11860/arun-gowtham">Arun Gowtham</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-49755">
+<span class="comments-showing">
+            showing 5 of 6
+        </span>
+<a class="show-all-comments-link" href="#">show 1 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-49755-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="75335"></a>
+<div class="answer" id="answer-container-75335">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75335/up/" id="post-75335-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75335-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/75335/down/" id="post-75335-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>We were facing the same problem, using an unofficial Docker image. It probably had a bug in its Nginx configuration. Updating this image solved it.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/75335/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>15 Jun '20, 15:06</strong>
+</p>
+<img alt="flogoe's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/6ddb3ffa68da77e22f967daac3e2ea40?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16793/flogoe">flogoe</a><br/>
+<span class="score" title="76 reputation points">76</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="flogoe has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-75335">
+</div>
+<div class="comment-tools" id="comment-tools-75335">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75335-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/49754/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Ac3PSEPuNvoqmva2kFARorUoWzXO1WIV"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

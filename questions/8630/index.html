@@ -1,0 +1,213 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/8630/osmosis-stops-with-error-insert-or-update-on-table-current_way_nodes-violates-foreign-key-constraint-current_way_nodes_node_id_fkey">Osmosis stops with error: insert or update on table "current_way_nodes" violates foreign key constraint "current_way_nodes_node_id_fkey"</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/8630/up/" id="post-8630-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-8630-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/8630/down/" id="post-8630-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/8630/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I successfully installed the rail port following the official tutorial on ubuntu but i can't import my country in my db. Somewhere else i read that this is not the user's fault but more of an inconsistency in my .osm file. But if so, then how can i avoid it? Is there a way to make osmosis ignore these errors. How do other people install the rail port with such things going on?
+</p><pre><code>INFO: Pipeline executing, waiting for completion.
+    Oct 25, 2011 10:01:41 AM org.openstreetmap.osmosis.core.pipeline.common.ActiveTaskManager waitForCompletion
+SEVERE: Thread for task 1-read-xml-0.6 failed
+org.openstreetmap.osmosis.core.OsmosisRuntimeException: Unable to load current way nodes.
+    at org.openstreetmap.osmosis.apidb.v0_6.ApidbWriter.populateCurrentWays(ApidbWriter.java:975)
+    at org.openstreetmap.osmosis.apidb.v0_6.ApidbWriter.populateCurrentTables(ApidbWriter.java:1026)
+    at org.openstreetmap.osmosis.apidb.v0_6.ApidbWriter.complete(ApidbWriter.java:1051)
+    at org.openstreetmap.osmosis.xml.v0_6.XmlReader.run(XmlReader.java:110)
+    at java.lang.Thread.run(Thread.java:679)
+Caused by: org.postgresql.util.PSQLException: ERROR: insert or update on table "current_way_nodes" violates foreign key constraint "current_way_nodes_node_id_fkey"
+  Detail: Key (node_id)=(26069636) is not present in table "current_nodes".
+    at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2062)
+    at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1795)
+    at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:257)
+    at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:479)
+    at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:367)
+    at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:360)
+    at org.openstreetmap.osmosis.apidb.v0_6.ApidbWriter.populateCurrentWays(ApidbWriter.java:972)
+    ... 4 more
+Oct 25, 2011 10:01:41 AM org.openstreetmap.osmosis.core.Osmosis main
+SEVERE: Execution aborted.
+org.openstreetmap.osmosis.core.OsmosisRuntimeException: One or more tasks failed.
+    at org.openstreetmap.osmosis.core.pipeline.common.Pipeline.waitForCompletion(Pipeline.java:146)
+    at org.openstreetmap.osmosis.core.Osmosis.run(Osmosis.java:92)
+    at org.openstreetmap.osmosis.core.Osmosis.main(Osmosis.java:37)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke(Method.java:616)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchStandard(Launcher.java:329)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:239)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:409)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:352)
+    at org.codehaus.classworlds.Launcher.main(Launcher.java:31)</code></pre> <p></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+<a class="post-tag tag-link-error" href="/tags/error/" rel="tag" title="see questions tagged 'error'">error</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 Oct '11, 08:18</strong>
+</p>
+<img alt="alexz's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/dc9b01669c0702f230fa57c384b947a8?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2226/alexz">alexz</a><br/>
+<span class="score" title="225 reputation points">225</span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="22 badges"><span class="silver">●</span><span class="badgecount">22</span></span><span title="26 badges"><span class="bronze">●</span><span class="badgecount">26</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="alexz has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/8630/">
+                edited
+                <strong>26 Oct '11, 07:45</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-8630">
+</div>
+<div class="comment-tools" id="comment-tools-8630">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-8630-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/8630/osmosis-stops-with-error-insert-or-update-on-table-current_way_nodes-violates-foreign-key-constraint-current_way_nodes_node_id_fkey?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/8630/osmosis-stops-with-error-insert-or-update-on-table-current_way_nodes-violates-foreign-key-constraint-current_way_nodes_node_id_fkey?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/8630/osmosis-stops-with-error-insert-or-update-on-table-current_way_nodes-violates-foreign-key-constraint-current_way_nodes_node_id_fkey?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/8630/osmosis-stops-with-error-insert-or-update-on-table-current_way_nodes-violates-foreign-key-constraint-current_way_nodes_node_id_fkey?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="8663"></a>
+<div class="answer" id="answer-container-8663">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/8663/up/" id="post-8663-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-8663-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/8663/down/" id="post-8663-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It's an inconsistency in your .osm file, as you put in your question.</p>
+<p>The most likely cause of this is that you have an extract which was created with the standard osmosis settings - which means that if a way references nodes outside of the bbox requested, the extra nodes are not included and so the extract has "incomplete" ways. Or the same thing with relations.</p>
+<p>See the <a href="http://wiki.openstreetmap.org/wiki/Osmosis/Detailed_Usage#Area_Filtering_Tasks">Detailed Usage</a> description of the bbox tasks of osmosis for more details.</p>
+<p>To solve this, you will either need to obtain an extract with completed ways and relations, or make your own with the "completeWays" and "completeRelations" flags set to true. Alternatively, you can use the "clipIncompleteEntities" to alter the ways and relations in order that they won't refer to missing entities.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/8663/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>26 Oct '11, 09:47</strong>
+</p>
+<img alt="Andy%20Allan's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c3743b1b368f5e209eb8aad30164acc4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3/andy-allan">Andy Allan</a><br/>
+<span class="score" title="12456 reputation points"><span class="">12.5k</span></span><span title="23 badges"><span class="badge1">●</span><span class="badgecount">23</span></span><span title="128 badges"><span class="silver">●</span><span class="badgecount">128</span></span><span title="153 badges"><span class="bronze">●</span><span class="badgecount">153</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Andy Allan has 46 accepted answers">28%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-8663">
+<a name="8665"></a>
+<div class="comment" id="comment-8665">
+<div class="comment-score" id="post-8665-score"></div>
+<div class="comment-text"><p>Thanks i'll try that as soon as possible. Meanwhile, i can add that i was importing a country downloaded from <a href="http://cloudmade.com">cloudmade.com</a> . Do you happen to know if they practice such things as not including the extra nodes?</p></div>
+<div class="comment-info" id="comment-8665-info">
+<span class="comment-age">(26 Oct '11, 10:16)</span>
+<a class="comment-user userinfo" href="/users/2226/alexz">alexz</a>
+</div>
+</div>
+<a name="8667"></a>
+<div class="comment" id="comment-8667">
+<div class="comment-score" id="post-8667-score">1</div>
+<div class="comment-text"><p>I believe that's the case. You can try downloading from <a href="http://www.geofabrik.de">www.geofabrik.de</a> instead - the extracts from there have completeWays set to true.</p></div>
+<div class="comment-info" id="comment-8667-info">
+<span class="comment-age">(26 Oct '11, 10:48)</span>
+<a class="comment-user userinfo" href="/users/3/andy-allan">Andy Allan</a>
+</div>
+</div>
+<a name="8668"></a>
+<div class="comment" id="comment-8668">
+<div class="comment-score" id="post-8668-score"></div>
+<div class="comment-text"><p>I beleve geofabrik uses <em>clipIncompleteEntities</em> set and not <em>completeWays</em>. This means that you can not export the geofabrik data back to OSM.</p></div>
+<div class="comment-info" id="comment-8668-info">
+<span class="comment-age">(26 Oct '11, 11:25)</span>
+<a class="comment-user userinfo" href="/users/131/gnonthgol">Gnonthgol ♦</a>
+</div>
+</div>
+<a name="8670"></a>
+<div class="comment" id="comment-8670">
+<div class="comment-score" id="post-8670-score">1</div>
+<div class="comment-text"><p>That's not the case - I checked with frederik before posting, and that matches what he's previously said on the mailing lists.</p></div>
+<div class="comment-info" id="comment-8670-info">
+<span class="comment-age">(26 Oct '11, 11:59)</span>
+<a class="comment-user userinfo" href="/users/3/andy-allan">Andy Allan</a>
+</div>
+</div>
+<a name="8671"></a>
+<div class="comment" id="comment-8671">
+<div class="comment-score" id="post-8671-score"></div>
+<div class="comment-text"><p>Geofabrik has moved the planet splitting from osmosis to a program called 'history-splitter'.</p></div>
+<div class="comment-info" id="comment-8671-info">
+<span class="comment-age">(26 Oct '11, 12:13)</span>
+<a class="comment-user userinfo" href="/users/2221/ajoessen">ajoessen</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-8663">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-8663-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/8630/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="PRnUL75lWtW2IdfIHedfCytvcr2Eyahk"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

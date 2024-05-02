@@ -1,0 +1,160 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/47852/overpass-turbo-how-to-fetch-an-inverted-or-negative-result-within-a-given-administrative-area">Overpass Turbo: how to fetch an inverted or negative result within a given administrative area</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/47852/up/" id="post-47852-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-47852-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/47852/down/" id="post-47852-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/47852/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have entered 'prow_ref like "Binfield Heath"' into Overpass Turbo wizard that returns all results of the key 'prow_ref' containing the value 'Binfield Heath', which is my local civil parish.  This serves me well.  However, it is of greater use if I can query those Public Rights of Way with values public_footpath|public_bridleway|restricted_byway|byway_open_to_all_traffic|public_right_of_way that do not have the key 'prow_ref' but within a given named parish, or admin_level 10 boundary, not a bounding box. </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-boundaries" href="/tags/boundaries/" rel="tag" title="see questions tagged 'boundaries'">boundaries</a>
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 Feb '16, 10:16</strong>
+</p>
+<img alt="silver%20mapper's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ffcc41f13929627742b4936ec178c6f1?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2110/silver-mapper">silver mapper</a><br/>
+<span class="score" title="256 reputation points">256</span><span title="26 badges"><span class="badge1">●</span><span class="badgecount">26</span></span><span title="27 badges"><span class="silver">●</span><span class="badgecount">27</span></span><span title="35 badges"><span class="bronze">●</span><span class="badgecount">35</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="silver mapper has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-47852">
+</div>
+<div class="comment-tools" id="comment-tools-47852">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-47852-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/47852/overpass-turbo-how-to-fetch-an-inverted-or-negative-result-within-a-given-administrative-area?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/47852/overpass-turbo-how-to-fetch-an-inverted-or-negative-result-within-a-given-administrative-area?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/47852/overpass-turbo-how-to-fetch-an-inverted-or-negative-result-within-a-given-administrative-area?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/47852/overpass-turbo-how-to-fetch-an-inverted-or-negative-result-within-a-given-administrative-area?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="47853"></a>
+<div class="answer" id="answer-container-47853">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/47853/up/" id="post-47853-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-47853-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/47853/down/" id="post-47853-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You need to use the <a href="http://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Difference">overpass difference operator</a>.</p>
+<p>So first need to query the big set (with all ways in the admin area), then query the smaller set (all ways that also have 'prow_ref' in that area), and finally apply the difference and output it.</p>
+<p>See the example:</p>
+<pre><code>area["name"="xxx"]["admin_level"=8]-&gt;.a;
+(
+  way["highway"](area.a);
+  -way["highway"]["prow_ref"](area.a);
+);
+out geom;
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/47853/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Feb '16, 11:14</strong>
+</p>
+<img alt="Sanderd17's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1fe9a0c696a5000fb304ababea9f83af?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/280/sanderd17">Sanderd17</a><br/>
+<span class="score" title="1111 reputation points"><span class="">1.1k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="16 badges"><span class="silver">●</span><span class="badgecount">16</span></span><span title="37 badges"><span class="bronze">●</span><span class="badgecount">37</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Sanderd17 has 15 accepted answers">31%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-47853">
+<a name="47864"></a>
+<div class="comment" id="comment-47864">
+<div class="comment-score" id="post-47864-score"></div>
+<div class="comment-text"><p>I thank you for your prompt reply.
+The result includes all way types, regrettably, not ways with with values public_footpath|public_bridleway|restricted_byway|byway_open_to_all_traffic|public_right_of_way only.</p></div>
+<div class="comment-info" id="comment-47864-info">
+<span class="comment-age">(03 Feb '16, 12:46)</span>
+<a class="comment-user userinfo" href="/users/2110/silver-mapper">silver mapper</a>
+</div>
+</div>
+<a name="47868"></a>
+<div class="comment" id="comment-47868">
+<div class="comment-score" id="post-47868-score"></div>
+<div class="comment-text"><p>It's only an example query. I don't know how ways like restricted_bridleway are tagged in your area, you should look that up, then you can change the <code>["highway']</code> selector in something else like <code>["highway"="bridleway"]</code>. But as this question seems to focus on finding the "negative" or difference, that's what I gave as answer.</p></div>
+<div class="comment-info" id="comment-47868-info">
+<span class="comment-age">(03 Feb '16, 12:52)</span>
+<a class="comment-user userinfo" href="/users/280/sanderd17">Sanderd17</a>
+</div>
+</div>
+<a name="47869"></a>
+<div class="comment" id="comment-47869">
+<div class="comment-score" id="post-47869-score"></div>
+<div class="comment-text"><p>For info, a restricted byway would normally be tagged "designation=restricted_byway".  It's a specific access allowance that allows non-motorised traffic, so a horse and cart is OK but e.g. a moped isn't.</p></div>
+<div class="comment-info" id="comment-47869-info">
+<span class="comment-age">(03 Feb '16, 13:21)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-47853">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-47853-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/47852/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="teHQfu1GmxNPeRF4d6aKqvYAI9OLhyea"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

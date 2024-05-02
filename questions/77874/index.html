@@ -1,0 +1,95 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/77874/using-osmosis-update-osm-planet-extreamly-slow">Using osmosis update OSM Planet extreamly slow.</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/77874/up/" id="post-77874-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-77874-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/77874/down/" id="post-77874-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/77874/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<ul>
+<li>osmosis version: 0.46-2</li>
+<li>osm2pgsql version: 0.94</li>
+<li>Ubuntu version: 18.04.2</li>
+</ul>
+<p>PostgreSQL config:</p>
+<ul>
+<li>shared_buffers = 12G</li>
+<li>work_mem = 1000MB</li>
+<li>effective_io_concurrency = 2</li>
+<li>fsync = on</li>
+<li>autovacuum = on</li>
+<li>effective_cache_size = 12GB</li>
+<li>maintenance_work_mem = 2GB</li>
+</ul>
+<p>Using osmosis to update the planet osm database. Based on this tutorial:<a href="https://wiki.openstreetmap.org/wiki/User:SomeoneElse/Ubuntu_1804_tileserver_load#Updating_your_database_as_people_edit_OpenStreetMap">Updating your database as people edit OpenStreetMap</a></p>
+<p>I modified the <strong>osm2pgsql</strong> script in <strong>mod_tile/openstreetmap-tiles-update-expire</strong> to this</p>
+<p><code>osm2pgsql -slim -a --flat-nodes /node.cache --cache 3000 -e 13-20 &lt;database config, user, host etc&gt; -o /dirty_tiles /changes.osc.gz</code></p>
+<p>Is the "<strong>-e</strong> (expire tiles)" slows down the importing? If I only want to update the database but don't want to update the image tiles, can I just remove the <strong>-e</strong> and <strong>-o</strong> argument?</p>
+<p><img alt="alt text" src="https://help.openstreetmap.org/upfiles/2020-12-09_12-57-19.jpg"/></p>
+<p>You can see the processing speed is really slow!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-planet" href="/tags/planet/" rel="tag" title="see questions tagged 'planet'">planet</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+<a class="post-tag tag-link-mod_tile" href="/tags/mod_tile/" rel="tag" title="see questions tagged 'mod_tile'">mod_tile</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>09 Dec '20, 18:52</strong>
+</p>
+<img alt="Yingcai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/40e60a70ee29b8df762ecd6168503655?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19356/yingcai">Yingcai</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Yingcai has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/77874/">
+                edited
+                <strong>09 Dec '20, 18:56</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-77874">
+</div>
+<div class="comment-tools" id="comment-tools-77874">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-77874-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/77874/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="HKISL8E4eiGmYkJogB8LyO9yqOPEv9tp"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

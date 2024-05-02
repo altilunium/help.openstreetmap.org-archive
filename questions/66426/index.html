@@ -1,0 +1,161 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/66426/openstreetmap-without-country-boundaries">OpenStreetmap without country boundaries</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66426/up/" id="post-66426-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66426-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/66426/down/" id="post-66426-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/66426/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>I am using OSM with open layers, following is the code snippet. It loads the default world map.</p>
+<p>How can I load the OSM which does not have any country/city labels and country boundaries? I believe there should be some option to do that.</p>
+<pre><code>var map = new ol.Map({
+    target: 'map',
+    layers: [
+      new ol.layer.Tile({
+        source: new ol.source.OSM()
+      })
+    ],
+    view: new ol.View({
+      center: ol.proj.fromLonLat([72.41, 18.82]),
+      zoom: 6
+    })
+  });
+</code></pre>
+<p>Any help is much appreciated.</p>
+<p>Atul</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap" href="/tags/openstreetmap/" rel="tag" title="see questions tagged 'openstreetmap'">openstreetmap</a>
+<a class="post-tag tag-link-maps" href="/tags/maps/" rel="tag" title="see questions tagged 'maps'">maps</a>
+<a class="post-tag tag-link-map" href="/tags/map/" rel="tag" title="see questions tagged 'map'">map</a>
+<a class="post-tag tag-link-boundaries" href="/tags/boundaries/" rel="tag" title="see questions tagged 'boundaries'">boundaries</a>
+<a class="post-tag tag-link-country" href="/tags/country/" rel="tag" title="see questions tagged 'country'">country</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>23 Oct '18, 12:25</strong>
+</p>
+<img alt="Atul%20S's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/5e50c9edcf83e1ca9686e10db544679d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15725/atul-s">Atul S</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Atul S has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66426">
+</div>
+<div class="comment-tools" id="comment-tools-66426">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66426-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/66426/openstreetmap-without-country-boundaries?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/66426/openstreetmap-without-country-boundaries?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/66426/openstreetmap-without-country-boundaries?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/66426/openstreetmap-without-country-boundaries?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="66427"></a>
+<div class="answer" id="answer-container-66427">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66427/up/" id="post-66427-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66427-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/66427/down/" id="post-66427-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You need to find a set of map tiles that doesn't have borders or create one yourself, or use a vector tile map source with a corresponding style.</p>
+<p>The long version: what you are currently doing is loading server side generated small (normally 256x256 pixel size) map images. These are pre-generate in one style and for that reason cannot be changed on the fly. To get around this you can either use a set of tiles without borders (you would have to google if you can find if something like that is available) or use vector tiles with a corresponding rendering style that doesn't show borders. Vector tiles contain preprocessed OSM data that then is rendered (that is turned in to a bitmap) locally on the clients computer. This allows the styling to be client specific and more flexible.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/66427/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>23 Oct '18, 12:29</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/66427/">
+                edited
+                <strong>23 Oct '18, 12:34</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66427">
+<a name="66428"></a>
+<div class="comment" id="comment-66428">
+<div class="comment-score" id="post-66428-score">1</div>
+<div class="comment-text"><p>An example map style that doesn't show country boundaries at medium and high zooms is <a href="https://wiki.openstreetmap.org/wiki/User:SomeoneElse/Ubuntu_1804_tileserver_load">this one</a>.  If you'd prefer to use a different map style you can, but you'll to edit it so that administrative boundaries aren't shown.  If you'd like to do this with OSM's standard style then you can use their <a href="https://github.com/gravitystorm/openstreetmap-carto/blob/master/DOCKER.md">docker container</a> created for map design.</p></div>
+<div class="comment-info" id="comment-66428-info">
+<span class="comment-age">(23 Oct '18, 12:34)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-66427">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66427-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/66426/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="F9rImDMXZqbGuOCgO0i9tlfyyYtsl6aW"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

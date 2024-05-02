@@ -1,0 +1,150 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/48349/not-correct-content-of-nameen-column">Not correct content of 'name:en' column</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48349/up/" id="post-48349-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48349-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/48349/down/" id="post-48349-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/48349/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello everyone.</p>
+<p>I have installed my own osm tile server. I osmcarto style and mapnik for rendering tiles.</p>
+<p>Now I want to add English names to the city, that are not in English. For example: from <a href="http://www.openstreetmap.org/#map=6/29.191/112.291" title="title">Chineese</a> to <a href="http://www.openstreetmap.org/#map=6/29.191/112.291&amp;layers=Q" title="title">English and Chineese</a>.</p>
+<p>I know, that I need to create <strong>'name:en' column</strong> to take english names from there.</p>
+<p>For import I use osm2psql tool and there command is:</p>
+<pre><code>osm2pgsql -z 'name:en' -c --slim -d gis -C 1600 --number-processes 2 /path/to/file.
+</code></pre>
+<p>After import I have <em>""=&gt;"Saint Petersburg"</em> in <strong>'name:en' column</strong> instead of <em>Saint Petersburg</em>.</p>
+<p>If I use <em>'-k'</em> key while importing, I will get <strong>tags column</strong> with the following content: </p>
+<p><em>"ref:en"=&gt;"SPE", "ref:ru"=&gt;"СПБ", "name:ab"=&gt;"Санқт-Петербург", "name:de"=&gt;"Sankt Petersburg", "name:en"=&gt;"Saint Petersburg", "name:os"=&gt;"Бетъырбух", "name:ru"=&gt;"Санкт-Петербург", "wikipedia"=&gt;"ru:Санкт-Петербург", "okato:user"=&gt;"40000000000", "official_status"=&gt;"ru:город федерального значения"</em></p>
+<p>So, why in <strong>name:en</strong> column I've got some extra symbols?</p>
+<p>And where I should make changes to see the both city names?</p>
+<p>Thanks for help!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-import" href="/tags/import/" rel="tag" title="see questions tagged 'import'">import</a>
+<a class="post-tag tag-link-multilingual" href="/tags/multilingual/" rel="tag" title="see questions tagged 'multilingual'">multilingual</a>
+<a class="post-tag tag-link-carto" href="/tags/carto/" rel="tag" title="see questions tagged 'carto'">carto</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-english" href="/tags/english/" rel="tag" title="see questions tagged 'english'">english</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 Feb '16, 10:40</strong>
+</p>
+<img alt="Bobinho's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b747822a88415ab0a0e16accce9fa477?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11871/bobinho">Bobinho</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Bobinho has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48349">
+</div>
+<div class="comment-tools" id="comment-tools-48349">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48349-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/48349/not-correct-content-of-nameen-column?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/48349/not-correct-content-of-nameen-column?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/48349/not-correct-content-of-nameen-column?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/48349/not-correct-content-of-nameen-column?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="48350"></a>
+<div class="answer" id="answer-container-48350">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48350/up/" id="post-48350-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48350-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/48350/down/" id="post-48350-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You appear to have misunderstood the -z flag. This merely allows one to rename the (or create an additional) hstore column. It does not add the requested tag. So what you are seeing is the raw hstore data (all tags as key=&gt;value pairs).</p>
+<p>To achieve what you want it is necessary to edit the style files used by osm2pgsql. Normally you will use default.style (see here <a href="https://github.com/openstreetmap/osm2pgsql/blob/master/default.style),">https://github.com/openstreetmap/osm2pgsql/blob/master/default.style),</a> and modify this to add an extra line similar to the one for "name" replacing "name" with "name:en".</p>
+<p>It is probably best to create this as a distinct style and apply it using the -S flag when you execute osm2pgsql.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/48350/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Feb '16, 11:12</strong>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br/>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SK53 has 121 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48350">
+<a name="48352"></a>
+<div class="comment" id="comment-48352">
+<div class="comment-score" id="post-48352-score">1</div>
+<div class="comment-text"><p>Thank you! After using -S flag "name:en" column is correct.
+Where else I should make changes to display both city names like: Zürich (Zurich)?</p></div>
+<div class="comment-info" id="comment-48352-info">
+<span class="comment-age">(25 Feb '16, 11:44)</span>
+<a class="comment-user userinfo" href="/users/11871/bobinho">Bobinho</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-48350">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48350-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/48349/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="QHiMYAOuFmHIeRW8rdPKBCZZZvu9rsiU"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

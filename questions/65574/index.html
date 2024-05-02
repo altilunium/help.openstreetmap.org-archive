@@ -1,0 +1,143 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/65574/can-the-maps-for-a-region-be-shown-differently-when-accessed-from-different-countries">Can the maps for a region be shown differently when accessed from different countries?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/65574/up/" id="post-65574-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-65574-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/65574/down/" id="post-65574-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/65574/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Due to political reasons, geographic maps of different countries show up differently in different countries.
+For example the map of India that shows up would not be accepted in India , esp govt organizations. Google has a technique of showing this. So the Google map identifies the source country and accordingly displays a map.
+Does OSM have similar capability?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-access" href="/tags/access/" rel="tag" title="see questions tagged 'access'">access</a>
+<a class="post-tag tag-link-country" href="/tags/country/" rel="tag" title="see questions tagged 'country'">country</a>
+<a class="post-tag tag-link-boundary" href="/tags/boundary/" rel="tag" title="see questions tagged 'boundary'">boundary</a>
+<a class="post-tag tag-link-different" href="/tags/different/" rel="tag" title="see questions tagged 'different'">different</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>27 Aug '18, 09:22</strong>
+</p>
+<img alt="steven%20zhao's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c76b6ebf26ce4cfb5f39ab24c55e20da?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15585/steven-zhao">steven zhao</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="steven zhao has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-65574">
+</div>
+<div class="comment-tools" id="comment-tools-65574">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-65574-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/65574/can-the-maps-for-a-region-be-shown-differently-when-accessed-from-different-countries?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/65574/can-the-maps-for-a-region-be-shown-differently-when-accessed-from-different-countries?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/65574/can-the-maps-for-a-region-be-shown-differently-when-accessed-from-different-countries?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/65574/can-the-maps-for-a-region-be-shown-differently-when-accessed-from-different-countries?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="65575"></a>
+<div class="answer" id="answer-container-65575">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/65575/up/" id="post-65575-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-65575-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/65575/down/" id="post-65575-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This requires two parts:</p>
+<ul>
+<li>first, OSM would have to have a way to record what needs to be shown - e.g. "government of India requires this boundary to be shown, government of China requires this other boundary to be shown". There is currently no established way in OSM to tag this.</li>
+<li>second, the OSM tile server would have to detect where you come from (this is already done to some degree) and then generate a map that matches your local requirements. This is currently not possible because there is only one set of world-wide tiles that is generated for everyone.</li>
+</ul>
+<p>For the time being, people who want a different-looking map for political reasons (or any other reasons) have to create their own, replacing the OSM data source with something else where needed, like for example the map on <a href="https://openstreetmap.in">www.openstreetmap.in</a>.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/65575/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>27 Aug '18, 10:47</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/65575/">
+                edited
+                <strong>27 Aug '18, 10:59</strong>
+</a>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-65575">
+</div>
+<div class="comment-tools" id="comment-tools-65575">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-65575-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/65574/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="VI1hvaAZoMvSlhUllRGkmyrBgjH61YkD"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

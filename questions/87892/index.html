@@ -1,0 +1,198 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/87892/how-to-download-country-and-other-boundaries-and-work-out-what-boundaries-a-node-is-in">How to download country and other boundaries and work out what boundaries a node is in</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/87892/up/" id="post-87892-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-87892-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/87892/down/" id="post-87892-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/87892/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi, I want to write a desktop application that allows visually impaired users to browse the world.  The user starts at country level with one country having the focus.  The user can then use keystrokes to find bordering countries with audio feedback on the direction to that country and its distance.  The user can jump to a neighbouring country and so navigate the world.  Could also apply to oceans.</p>
+<p>The user can choose to go down an administrative level and use the same process to navigate within a country.  For examples, states in the US or counties in the UK.  And again, could apply to the seas that make up oceans.</p>
+<p>I also want to load cities and towns and other points of interest.  These could be nodes like a railway station), a way (like a river) or a polygon (like a national park).</p>
+<p>I have a little experience with OSM as I've written an application that lets the user navigate roads / highways by moving from intersection to intersection.  For this I download nodes and ways to my application on the fly using an overpass query.  As the user moves near the edge of the current data then more data is downloaded.</p>
+<p>I was thinking of using a similar approach for my world navigating application but I have a couple of major problems.</p>
+<p>Firstly, I can't work out what the query is to download boundary data for a country or internal administrative areas.  I really struggle with the overpass API.  I've also read that country boundaries on OSM include maritime boundaries and not the physical border of the land.  And I only really need quite low res data.</p>
+<p>Secondly, I have a query that downloads all the cities and towns in a country but then to work out what areas / polygons they are in sounds like a computationally heavy task to do on the fly.</p>
+<p>So is my approach a good one or is there a better approach?  Is doing it on the fly sensible or am I better off building a database?  I mean, I could probably pack quite a lot of useful data into 10Mb.
+And is OSM a good source of boundary data?  If it is, please can someone help with suitable overpass queries.  And if not, what are alternatives?</p>
+<p>I haven't yet written a line of code for this project although I'm very excited about it since it may lead to me being able to explore the world in a way I can't currently do any other way.  So any help much appreciated.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-boundaries" href="/tags/boundaries/" rel="tag" title="see questions tagged 'boundaries'">boundaries</a>
+<a class="post-tag tag-link-country" href="/tags/country/" rel="tag" title="see questions tagged 'country'">country</a>
+<a class="post-tag tag-link-borders" href="/tags/borders/" rel="tag" title="see questions tagged 'borders'">borders</a>
+</div>
+<div class="post-controls" id="question-controls">
+<div class="community-wiki">
+        This question is marked "community wiki".
+        
+    </div>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>11 Oct '23, 19:55</strong>
+</p>
+<img alt="Chessel's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a7c7c42b3ace9de1b7d8fd5592ece3ee?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/23392/chessel">Chessel</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Chessel has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-87892">
+</div>
+<div class="comment-tools" id="comment-tools-87892">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-87892-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/87892/how-to-download-country-and-other-boundaries-and-work-out-what-boundaries-a-node-is-in?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/87892/how-to-download-country-and-other-boundaries-and-work-out-what-boundaries-a-node-is-in?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/87892/how-to-download-country-and-other-boundaries-and-work-out-what-boundaries-a-node-is-in?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/87892/how-to-download-country-and-other-boundaries-and-work-out-what-boundaries-a-node-is-in?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="87910"></a>
+<div class="answer" id="answer-container-87910">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/87910/up/" id="post-87910-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-87910-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/87910/down/" id="post-87910-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Downloading country boundaries with overpass is quite simple:
+<a href="https://overpass-turbo.eu/s/1C5x">https://overpass-turbo.eu/s/1C5x</a> 
+but the amount of data is enormous, since all details are contained in the data.</p>
+<p>Subunits can be loaded by setting the appropriate admin_level: 4 = states, 6 = counties, 8 = cities.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/87910/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>17 Oct '23, 15:43</strong>
+</p>
+<img alt="fx99's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/4a9f7e2c19add83a72dabcd00693cf93?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/49/fx99">fx99</a><br/>
+<span class="score" title="196 reputation points">196</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="fx99 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-87910">
+</div>
+<div class="comment-tools" id="comment-tools-87910">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-87910-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="87911"></a>
+<div class="answer answered-by-owner" id="answer-container-87911">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/87911/up/" id="post-87911-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-87911-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/87911/down/" id="post-87911-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Many thanks for your reply.
+So forgive me but I couldn't follow the example to download Luxembourg's border.  Can I highlight that I am blind so Overpasss turbo isn't that obvious a thing for me to use as I don't see the graphical output.
+The active part of the query seems to be:
+nwr["admin_level"="2"]["boundary"="administrative"]<a href="{{bbox}}">"int_name"="Luxembourg"</a>;
+When I have used the overpass API to date I start a URL with:
+<a href="http://overpass-api.de/api/interpreter?data=">http://overpass-api.de/api/interpreter?data=</a>
+So I pasted the active part of the query to the end of this and added 'out;'
+The complete thing is:
+<a href="http://overpass-api.de/api/interpreter?data=nwr[">http://overpass-api.de/api/interpreter?data=nwr["admin_level"="2"]["boundary"="administrative"]</a><a href="{{bbox}}">"int_name"="Luxembourg"</a>;out;
+And I paste this into my favourite browser.  I get a parse error though.
+Where am I going wrong?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/87911/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>17 Oct '23, 19:54</strong>
+</p>
+<img alt="Chessel's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a7c7c42b3ace9de1b7d8fd5592ece3ee?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/23392/chessel">Chessel</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Chessel has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-87911">
+</div>
+<div class="comment-tools" id="comment-tools-87911">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-87911-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/87892/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="1wOZzMkfrDj07lD5igMzqaFfDI2YJMl8"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

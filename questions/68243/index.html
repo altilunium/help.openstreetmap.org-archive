@@ -1,0 +1,168 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/68243/osm-black-and-white-https-err_cert_common_name_invalid">OSM Black and White https - ERR_CERT_COMMON_NAME_INVALID</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68243/up/" id="post-68243-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68243-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/68243/down/" id="post-68243-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/68243/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm using the tileserver <a href="https://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png">https://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png</a> in leaflet for a project. 
+I'm getting the following error on some of the tiles:</p>
+<p><code>GET <a href="https://b.tiles.wmflabs.org/bw-mapnik/9/266/170.png">https://b.tiles.wmflabs.org/bw-mapnik/9/266/170.png</a> net::ERR_CERT_COMMON_NAME_INVALID</code></p>
+<p>It appears that the error only occurs on tiles loaded from the b subdomain.</p>
+<p>The error can be reproduced by replacing {s} in the link above with a, b, c and open the urls in a browser. The b url will raise the error, and the a and c urls will not.</p>
+<p>For now I bypassed the problem by using the url "https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png".</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-tiles" href="/tags/tiles/" rel="tag" title="see questions tagged 'tiles'">tiles</a>
+<a class="post-tag tag-link-tileserver" href="/tags/tileserver/" rel="tag" title="see questions tagged 'tileserver'">tileserver</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>04 Mar '19, 10:03</strong>
+</p>
+<img alt="mvbaalen's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/38990dfcb2b656db7063cc5bd6f0574e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16360/mvbaalen">mvbaalen</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mvbaalen has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68243">
+</div>
+<div class="comment-tools" id="comment-tools-68243">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68243-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/68243/osm-black-and-white-https-err_cert_common_name_invalid?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/68243/osm-black-and-white-https-err_cert_common_name_invalid?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/68243/osm-black-and-white-https-err_cert_common_name_invalid?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/68243/osm-black-and-white-https-err_cert_common_name_invalid?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="68251"></a>
+<div class="answer" id="answer-container-68251">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68251/up/" id="post-68251-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68251-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/68251/down/" id="post-68251-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You'll need to talk to the people in charge of that server (Wikimedia, not OpenStreetMap).  A relevant help article is <a href="https://stackoverflow.com/questions/2115611/wildcard-ssl-on-sub-subdomain">here</a>.  Wikimedia have tried to use a wildcard certificate, but it's not working for sub-sub-domains.</p>
+<p>OpenStreetMap does it correctly for local tiles - <a href="https://a.tile.openstreetmap.org/9/253/166.png">here's</a> an example (click on the "lock" icon to get to the certificate details).  OSM is just using a regular certificate for "tile.openstreetmap.org", which works fine.</p>
+<p>Other reasons why you might not want to use these tiles include that they are very old (from <a href="https://c.tiles.wmflabs.org/bw-mapnik/9/266/170.png/status">2015</a>).</p>
+<p>Also note that all of "a", "b" and "c" have the same problems for me - I suspect that you've accepted an exception for 2 of them.</p>
+<p>EDIT: Wikimedia have now removed these old tiles completely.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/68251/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Mar '19, 13:04</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/68251/">
+                edited
+                <strong>18 Mar '19, 18:48</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68251">
+<a name="68359"></a>
+<div class="comment" id="comment-68359">
+<div class="comment-score" id="post-68359-score"></div>
+<div class="comment-text"><p>Thank you for your answer. 
+I think I switch back to the default osm tileserver and use css to make the tiles black and white.</p></div>
+<div class="comment-info" id="comment-68359-info">
+<span class="comment-age">(12 Mar '19, 07:55)</span>
+<a class="comment-user userinfo" href="/users/16360/mvbaalen">mvbaalen</a>
+</div>
+</div>
+<a name="68424"></a>
+<div class="comment" id="comment-68424">
+<div class="comment-score" id="post-68424-score">1</div>
+<div class="comment-text"><p>Looks like Wikimedia have readded those tiles. I saw they were gone for a while, but now they are back.</p></div>
+<div class="comment-info" id="comment-68424-info">
+<span class="comment-age">(19 Mar '19, 14:42)</span>
+<a class="comment-user userinfo" href="/users/16424/kwkelly">kwkelly</a>
+</div>
+</div>
+<a name="68425"></a>
+<div class="comment" id="comment-68425">
+<div class="comment-score" id="post-68425-score">1</div>
+<div class="comment-text"><p>I still wouldn't use them.  <a href="https://b.tiles.wmflabs.org/bw-mapnik/9/266/170.png/status">https://b.tiles.wmflabs.org/bw-mapnik/9/266/170.png/status</a> says "Tile is clean. Last rendered at Fri Apr 10 09:00:52 2015".  Newer tiles sources are available.</p></div>
+<div class="comment-info" id="comment-68425-info">
+<span class="comment-age">(19 Mar '19, 14:49)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-68251">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68251-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/68243/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="l7H2p98csHUKVDgkWQTmI6dvq5Ee74xF"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

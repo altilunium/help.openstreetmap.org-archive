@@ -1,0 +1,158 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/51355/error-while-installing-overpass-api-on-ubuntu-1604">Error while installing Overpass API on Ubuntu 16.04</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/51355/up/" id="post-51355-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-51355-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/51355/down/" id="post-51355-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/51355/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,
+someone can help me? I can't install OSM</p>
+<pre>:~$ lsb_release -a
+Distributor ID: Ubuntu
+Description:    Ubuntu 16.04.1 LTS
+Release:    16.04
+Codename:   xenial
+</pre>
+<pre>cd /mnt/data/
+sudo mkdir openstreetmap
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get autoremove
+sudo apt-get install g++ make expat libexpat1-dev zlib1g-dev
+cd /mnt/data/openstreetmap
+wget <a href="http://dev.overpass-api.de/releases/osm-3s_v0.7.52.tar.gz">http://dev.overpass-api.de/releases/osm-3s_v0.7.52.tar.gz</a>
+tar xvfz osm-3s_v*.tar.gz
+export EXEC_DIR=/mnt/data/openstreetmap/osm-3s_v0.7.52
+mkdir db
+export DB_DIR=/mnt/data/openstreetmap/db
+export PLANET_FILE=/mnt/data/openstreetmap/planet_file
+mkdir replicate
+export REPLICATE_DIR=/mnt/data/openstreetmap/replicate
+cd osm-3s_v*
+./configure CXXFLAGS="-O3" --prefix=$EXEC_DIR
+make
+make install
+....
+.....
+....
+
+Makefile:1101: fallo en las instrucciones para el objetivo 'install-dist_testbinSCRIPTS'
+make[2]: *** [install-dist_testbinSCRIPTS] Error 1
+make[2]: se sale del directorio '/mnt/data/openstreetmap/osm-3s_v0.7.52/test-bin'
+Makefile:1350: fallo en las instrucciones para el objetivo 'install-am'
+make[1]: *** [install-am] Error 2
+make[1]: se sale del directorio '/mnt/data/openstreetmap/osm-3s_v0.7.52/test-bin'
+Makefile:1496: fallo en las instrucciones para el objetivo 'install-recursive'
+make: *** [install-recursive] Error 1
+</pre>
+<p>Thanks in advance</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpassapi" href="/tags/overpassapi/" rel="tag" title="see questions tagged 'overpassapi'">overpassapi</a>
+<a class="post-tag tag-link-installation" href="/tags/installation/" rel="tag" title="see questions tagged 'installation'">installation</a>
+<a class="post-tag tag-link-ubuntu" href="/tags/ubuntu/" rel="tag" title="see questions tagged 'ubuntu'">ubuntu</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>11 Aug '16, 19:00</strong>
+</p>
+<img alt="arcadio%20ortega's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/304bf9b97689c5eb6191600403aaf65b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12643/arcadio-ortega">arcadio ortega</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="arcadio ortega has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/51355/">
+                edited
+                <strong>11 Aug '16, 21:05</strong>
+</a>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-51355">
+<a name="51356"></a>
+<div class="comment" id="comment-51356">
+<div class="comment-score" id="post-51356-score"></div>
+<div class="comment-text"><p>Can you provide English messages and the <em>full</em> output of the failing command?</p></div>
+<div class="comment-info" id="comment-51356-info">
+<span class="comment-age">(11 Aug '16, 19:11)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="51358"></a>
+<div class="comment" id="comment-51358">
+<div class="comment-score" id="post-51358-score"></div>
+<div class="comment-text"><p>Your title is quite misleading. Can you change it to Overpass API, assuming that's what you were planning to install when talking about "installing OSM"?</p>
+<p>Also I don't recommend running plain 0.7.52 due to some 64bit issue. If you're not comfortable patching the sources yourself or running a pre-release version, you need to wait for the next release. There's no other workaround available at this time.</p></div>
+<div class="comment-info" id="comment-51358-info">
+<span class="comment-age">(11 Aug '16, 20:54)</span>
+<a class="comment-user userinfo" href="/users/8708/mmd">mmd</a>
+</div>
+</div>
+<a name="51363"></a>
+<div class="comment" id="comment-51363">
+<div class="comment-score" id="post-51363-score">1</div>
+<div class="comment-text"><p><a href="http://help.openstreetmap.org/users/8708/mmd">@mmd</a> I've changed title and tags.</p></div>
+<div class="comment-info" id="comment-51363-info">
+<span class="comment-age">(12 Aug '16, 08:35)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="51374"></a>
+<div class="comment" id="comment-51374">
+<div class="comment-score" id="post-51374-score"></div>
+<div class="comment-text"><p>I tried on i386 and amd64 with the same result.
+Yes I managed to install the osm-3s_v0.7.4.tar.gz release.
+I think the problem is osm-3s_v0.7.52.tar.gz with 16.04.
+I will wait for a new release.
+Thanks</p></div>
+<div class="comment-info" id="comment-51374-info">
+<span class="comment-age">(12 Aug '16, 16:39)</span>
+<a class="comment-user userinfo" href="/users/12643/arcadio-ortega">arcadio ortega</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-51355">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-51355-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/51355/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="VUDunDSbZU6xOSGDRDskrleqpynuIWj8"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

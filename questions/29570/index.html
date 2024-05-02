@@ -1,0 +1,135 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/29570/naming-a-wood-with-different-types-of-trees">Naming a wood with different types of trees</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/29570/up/" id="post-29570-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-29570-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/29570/down/" id="post-29570-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/29570/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>It is not uncommon for a named area of woodland to consist of parcels or compartments of different tree types. When these consist of solid blocks of coniferous trees on the one hand, and of broad-leaved deciduous trees on the other, it does not seem to be straightforward to map the complete wood without duplicating the name. The example I have in mind is <a href="http://www.openstreetmap.org/#map=16/53.1127/-4.1162">Coed Victoria, Llanberis</a>, which consists of oak woodland on the south and spruce plantations to the north.</p>
+<p>Has anyone got better ideas of how to map such places than my current attempt?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-one_feature_rule" href="/tags/one_feature_rule/" rel="tag" title="see questions tagged 'one_feature_rule'">one_feature_rule</a>
+<a class="post-tag tag-link-woodland" href="/tags/woodland/" rel="tag" title="see questions tagged 'woodland'">woodland</a>
+<a class="post-tag tag-link-name" href="/tags/name/" rel="tag" title="see questions tagged 'name'">name</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 Jan '14, 17:47</strong>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br/>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SK53 has 121 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-29570">
+</div>
+<div class="comment-tools" id="comment-tools-29570">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-29570-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/29570/naming-a-wood-with-different-types-of-trees?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/29570/naming-a-wood-with-different-types-of-trees?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/29570/naming-a-wood-with-different-types-of-trees?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/29570/naming-a-wood-with-different-types-of-trees?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="29571"></a>
+<div class="answer" id="answer-container-29571">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/29571/up/" id="post-29571-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-29571-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/29571/down/" id="post-29571-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>For starters, I wouldn't distinguish them by using landuse=forest for one and natural=wood for the other, unless you really have just the west parcel used for forestry / harvesting (or whatever your position on the <a href="http://wiki.openstreetmap.org/wiki/Tag:natural=wood#Notes">wood/forest debate</a> may be).</p>
+<p>To me, the cleanest way to represent this is a multipolygon relation containing two outer ways. Put the common tags (name=Coed Victoria, source:name=*, natural=wood) on the multipolygon, and the differing tags (wood=*, deciduous=*, coniferous=*) on the individual ways.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/29571/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Jan '14, 18:55</strong>
+</p>
+<img alt="Vincent%20de%20Phily's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d20f86db9a6f03cb070e9fbaaf0b7228?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/867/vincent-de-phily">Vincent de P... ♦</a><br/>
+<span class="score" title="17304 reputation points"><span class="">17.3k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="152 badges"><span class="silver">●</span><span class="badgecount">152</span></span><span title="249 badges"><span class="bronze">●</span><span class="badgecount">249</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Vincent de Phily has 64 accepted answers">19%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-29571">
+<a name="29572"></a>
+<div class="comment" id="comment-29572">
+<div class="comment-score" id="post-29572-score"></div>
+<div class="comment-text"><p>Actually I throroughly agree with your first point. Totally on the wood side!</p></div>
+<div class="comment-info" id="comment-29572-info">
+<span class="comment-age">(03 Jan '14, 19:54)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-29571">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-29571-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/29570/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="lJgq2PeR1rsfM0MCJvXf7rh2vIlpWwsh"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

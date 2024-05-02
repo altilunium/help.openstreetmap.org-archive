@@ -1,0 +1,123 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/74021/cant-find-province-should-i-use-admin_level-in-nominatim-python">Can't find province, should I use admin_level in Nominatim Python?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/74021/up/" id="post-74021-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-74021-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/74021/down/" id="post-74021-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/74021/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi!</p>
+<p>I am using geopy Nominatim in python to retrieve city names, province and regions of some postcodes.
+I have been able to get accurate city names using coutry_codes, but now I am having problems with provinces.</p>
+<p>The problem is that I don't have the province in my raw['address'] field. I learned that I should use admin_level = 6 to get the province in my output but I don't know how to use it.</p>
+<p>This is the code:</p>
+<pre><code>from geopy.geocoders import Nominatim
+from geopy.extra.rate_limiter import RateLimiter
+geolocator = Nominatim()
+geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)
+
+Locations = pd.read_csv("geoloc1.csv", delimiter = ';')
+for index, row in Locations.iterrows():
+time.sleep(1)
+country = np.where(countries == row['NAZIONE'])[0][0] # Finding the index of the corresponding country
+country = switch_country(country) # Finding the correct code for the country
+#print(nazione)
+
+if country == 'it':
+    loca = geocode(query = row['CAP'], country_codes = country, addressdetails = True, language = 'it,en')
+    try:
+        row['PROVINCIA'] = loca.raw['address']['county']
+    except:
+        row['PROVINCIA'] = '_'
+    try:
+        row['REGIONE'] = loca.raw['address']['state']
+    except:
+        row['REGIONE'] = '_'
+loca = geocode(query = row['CAP'], country_codes = country, addressdetails = True, language = 'it,en')
+try:
+    row['LOCATION'] = loca.raw['address']['city']
+    Cities.append(loca.raw['address'])
+except:
+    try:
+        row['LOCATION'] = loca.raw['address']['hamlet']
+        Cities.append(loca.raw['address'])
+    except:
+        try:
+            row['LOCATION'] = loca.raw['address']['village']
+            Cities.append(loca.raw['address'])
+        except:
+            row['LOCATION'] = '_'
+            Cities.append(loca)
+
+Output = Output.append(row)
+</code></pre>
+<p>How can I use admin_level = 6 to get the province name in my raw['address']?</p>
+<p>Thanks,
+Carlotta.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-python" href="/tags/python/" rel="tag" title="see questions tagged 'python'">python</a>
+<a class="post-tag tag-link-boundaries" href="/tags/boundaries/" rel="tag" title="see questions tagged 'boundaries'">boundaries</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-city" href="/tags/city/" rel="tag" title="see questions tagged 'city'">city</a>
+<a class="post-tag tag-link-admin_level" href="/tags/admin_level/" rel="tag" title="see questions tagged 'admin_level'">admin_level</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>06 Apr '20, 08:03</strong>
+</p>
+<img alt="Carlotta's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/dba77ed68b48f13134f0ade205307d59?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18109/carlotta">Carlotta</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="9 badges"><span class="bronze">●</span><span class="badgecount">9</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Carlotta has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/74021/">
+                edited
+                <strong>07 Apr '20, 14:57</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-74021">
+</div>
+<div class="comment-tools" id="comment-tools-74021">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-74021-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/74021/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="rZz8yTVHxmsvUp45PlIs3CyZmAKyK5ZN"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

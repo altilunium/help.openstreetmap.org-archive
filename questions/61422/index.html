@@ -1,0 +1,161 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/61422/nominatim-error-my-bad-with-import-what-now">nominatim - error (my bad) with import. What now?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/61422/up/" id="post-61422-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-61422-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/61422/down/" id="post-61422-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/61422/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello there, happy new year.</p>
+<p>During update (I manually update every 6-12 months) my disk was full so import failed.</p>
+<p>My postgres nominatim-db is fine (?). How should I continue? It is a problem if I re-import from geofabrik and index?</p>
+<p>(To gain space I used compression in btrfs. 100GiB free out of 0bytes free! Some optimization is missing from postgres?)</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-import" href="/tags/import/" rel="tag" title="see questions tagged 'import'">import</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-geofabrik" href="/tags/geofabrik/" rel="tag" title="see questions tagged 'geofabrik'">geofabrik</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>30 Dec '17, 21:04</strong>
+</p>
+<img alt="RandomGreekTracker's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f24afa65ec173a0eda40f0ad1e6733e3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11541/randomgreektracker">RandomGreekT...</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="RandomGreekTracker has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-61422">
+</div>
+<div class="comment-tools" id="comment-tools-61422">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-61422-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/61422/nominatim-error-my-bad-with-import-what-now?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/61422/nominatim-error-my-bad-with-import-what-now?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/61422/nominatim-error-my-bad-with-import-what-now?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/61422/nominatim-error-my-bad-with-import-what-now?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="61459"></a>
+<div class="answer accepted-answer" id="answer-container-61459">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/61459/up/" id="post-61459-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-61459-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/61459/down/" id="post-61459-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/61459/" rel="nofollow" title="RandomGreekTracker has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>As long as the database is not corrupted, you can simply restart the updates and they will pick up where they errored the last time. Check the Postgres log files for errors.</p>
+<p>However, if you really only update once every 6-12 months, I strongly recommend that you simply drop the database and reimport from scratch every time. The database will remain much smaller (updates tend to bloat the database), you can update to newer versions of Nominatim (recent versions create a much smaller database), and you can use the <code>--drop</code> option during import which frees a lot of space on your disk once the import is finished.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/61459/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Jan '18, 11:44</strong>
+</p>
+<img alt="lonvia's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d888b712d85dee0aa304297f2dc697c7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2921/lonvia">lonvia</a><br/>
+<span class="score" title="6213 reputation points"><span class="">6.2k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="57 badges"><span class="silver">●</span><span class="badgecount">57</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="lonvia has 43 accepted answers">40%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-61459">
+<a name="61487"></a>
+<div class="comment" id="comment-61487">
+<div class="comment-score" id="post-61487-score"></div>
+<div class="comment-text"><p>Thank you. I don't see any fatal messages in /var/log/postgreslq-X.log but I am newbie in postgresql.</p>
+<p>In that case I have to build a second database, switch to second db and then delete the first. Maybe too complicated to my project, unless the gains are too high. Do you know (approx.) the difference in speed and size?</p>
+<p>Currently I use compression with btrfs and it seems fine.</p>
+<pre><code>compsize /db-eu-9.5/
+Processed 8177 files, 7262783 regular extents (9635308 refs), 19 inline.
+Type       Perc     Disk Usage   Uncompressed Referenced
+Data        42%      142G         334G         292G
+none       100%       56G          56G          54G
+zlib        30%       86G         278G         237G
+
+du -hs /db-eu-9.5/ 
+293G    /db-eu-9.5/
+</code></pre>
+<p>Here we have a compression party</p>
+<pre><code>compsize /flat-nodes-eu 
+Type       Perc     Disk Usage   Uncompressed Referenced  
+Data        48%      1.6G         3.3G         2.4G       
+none       100%      1.4G         1.4G         1.4G       
+zlib         9%      181M         1.8G         981M
+
+ls -lh /flat-nodes-eu 
+-rw------- 1 postgres postgres 39G Ιαν   4 23:06 /flat-nodes-eu
+</code></pre></div>
+<div class="comment-info" id="comment-61487-info">
+<span class="comment-age">(04 Jan '18, 21:08)</span>
+<a class="comment-user userinfo" href="/users/11541/randomgreektracker">RandomGreekT...</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-61459">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-61459-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/61422/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="OFUvDna0NRMQfTbKJ0bs7zl2updKrFIV"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

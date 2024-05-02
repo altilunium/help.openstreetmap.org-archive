@@ -1,0 +1,116 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/57287/where-is-the-maxspeed-for-a-local-nominatim-install">Where Is The Maxspeed For A Local Nominatim Install?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/57287/up/" id="post-57287-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-57287-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/57287/down/" id="post-57287-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/57287/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have installed my own instance of Nominatim. I followed the instructions per the openmap Nominatim docs. I imported north-america-latest.osm.pbf into my database. </p>
+<p>All went well with installation, however, when I query the information i need (i.e. using extratags=1) on my server I do not get a maxspeed returned in the extratags. I have tried querying multiple records and none have the maxspeed tag. When I query <a href="http://nominatim.openstreetmap.org">http://nominatim.openstreetmap.org</a> I get maxspeed returned. </p>
+<p>Examples: <a href="http://nominatim.openstreetmap.org/reverse?format=json&amp;lat=28.5383331&amp;lon=-82.3792121&amp;zoom=18&amp;addressdetails=1&amp;extratags=1">http://nominatim.openstreetmap.org/reverse?format=json&amp;lat=28.5383331&amp;lon=-82.3792121&amp;zoom=18&amp;addressdetails=1&amp;extratags=1</a></p>
+<p>Returns:</p>
+<pre><code>{"place_id":"105669388","licence":"Data © OpenStreetMap contributors, ODbL 1.0. http:\/\/www.openstreetmap.org\/copyright","osm_type":"way","osm_id":"158732182","lat":"28.5382777","lon":"-82.3808788","display_name":"Cortez Boulevard, Brooksville, Hernando County, Florida, 34603, United States of America","address":{"road":"Cortez Boulevard","village":"Brooksville","county":"Hernando County","state":"Florida","postcode":"34603","country":"United States of America","country_code":"us"},"extratags":{"hgv":"designated","lanes":"2","oneway":"yes","surface":"asphalt",**"maxspeed":"50 mph"**},"boundingbox":["28.5381558","28.5427913","-82.3938975","-82.3680374"]}
+</code></pre>
+<p>My local instance: <a href="http://192.168.1.75/nominatim/reverse?format=json&amp;lat=28.5383331&amp;lon=-82.3792121&amp;zoom=18&amp;addressdetails=1&amp;extratags=1">http://192.168.1.75/nominatim/reverse?format=json&amp;lat=28.5383331&amp;lon=-82.3792121&amp;zoom=18&amp;addressdetails=1&amp;extratags=1</a></p>
+<pre><code>{"place_id":"23114698","licence":"Data © OpenStreetMap contributors, ODbL 1.0. http:\/\/www.openstreetmap.org\/copyright","osm_type":"way","osm_id":"158732182","lat":"28.5382777","lon":"-82.3808788","display_name":"Cortez Boulevard, Brooksville, Hernando County, Florida, 34603, United States of America","address":{"road":"Cortez Boulevard","village":"Brooksville","county":"Hernando County","state":"Florida","postcode":"34603","country":"United States of America","country_code":"us"},**"extratags":{}**,"boundingbox":["28.5381558","28.5427913","-82.3938975","-82.3680374"]}
+</code></pre>
+<p>My question is where can I get a the maxspeed for Nominatim records in my local database? Is there a separate osm.pbf file containing this? Would I be able to obtain the maxspeed by re-importing the data using --hstore or adding "node,way maxspeed text linear" to the default.style?</p>
+<p>Thanks</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-maxspeed" href="/tags/maxspeed/" rel="tag" title="see questions tagged 'maxspeed'">maxspeed</a>
+<a class="post-tag tag-link-data" href="/tags/data/" rel="tag" title="see questions tagged 'data'">data</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>26 Jul '17, 17:12</strong>
+</p>
+<img alt="ddd_ddd's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/73f2644bddbee6cc29ad4d358f6e3d0c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13985/ddd_ddd">ddd_ddd</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ddd_ddd has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/57287/">
+                edited
+                <strong>26 Jul '17, 18:43</strong>
+</a>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-57287">
+<a name="57291"></a>
+<div class="comment" id="comment-57291">
+<div class="comment-score" id="post-57291-score"></div>
+<div class="comment-text"><p>What version of postgresql do you use?</p></div>
+<div class="comment-info" id="comment-57291-info">
+<span class="comment-age">(26 Jul '17, 19:57)</span>
+<a class="comment-user userinfo" href="/users/2921/lonvia">lonvia</a>
+</div>
+</div>
+<a name="57302"></a>
+<div class="comment" id="comment-57302">
+<div class="comment-score" id="post-57302-score"></div>
+<div class="comment-text"><p>I am using 9.6.</p></div>
+<div class="comment-info" id="comment-57302-info">
+<span class="comment-age">(27 Jul '17, 01:43)</span>
+<a class="comment-user userinfo" href="/users/13985/ddd_ddd">ddd_ddd</a>
+</div>
+</div>
+<a name="57304"></a>
+<div class="comment" id="comment-57304">
+<div class="comment-score" id="post-57304-score"></div>
+<div class="comment-text"><p>And which version of Nominatim?</p></div>
+<div class="comment-info" id="comment-57304-info">
+<span class="comment-age">(27 Jul '17, 08:27)</span>
+<a class="comment-user userinfo" href="/users/2921/lonvia">lonvia</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-57287">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-57287-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/57287/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="q63N8rG5WnQfzHBxAHRrJYRQn0PgTHkL"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

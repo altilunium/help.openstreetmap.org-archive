@@ -1,0 +1,147 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/74107/road-signs">Road Signs</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/74107/up/" id="post-74107-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-74107-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/74107/down/" id="post-74107-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/74107/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Where do you put the road signs, mainly stop signs? Do you put them where the sign exists or next to the post on the road? For the stop sign, do you put the stop sign on the intersection even if the sign is a meter or two back?<br/>
+<br/>
+==========+===========<br/>
+.....................|<br/>
+.....................!.....◘<br/>
+.....................|<br/>
+.....................|<br/>
+.....................|<br/>
+KEY&gt; |-Side Road   ==-Main Road   ...-Nothing<br/>
+<br/>
+<br/>
+So, do you put it at "◘", "!," or "+," I'm sorry if the lines don't line up :)</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-stopsign" href="/tags/stopsign/" rel="tag" title="see questions tagged 'stopsign'">stopsign</a>
+<a class="post-tag tag-link-road" href="/tags/road/" rel="tag" title="see questions tagged 'road'">road</a>
+<a class="post-tag tag-link-signs" href="/tags/signs/" rel="tag" title="see questions tagged 'signs'">signs</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>12 Apr '20, 09:59</strong>
+</p>
+<img alt="Timbot4x4's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b5868b476e46281d48855dc281357d01?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18120/timbot4x4">Timbot4x4</a><br/>
+<span class="score" title="101 reputation points">101</span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="14 badges"><span class="silver">●</span><span class="badgecount">14</span></span><span title="18 badges"><span class="bronze">●</span><span class="badgecount">18</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Timbot4x4 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-74107">
+</div>
+<div class="comment-tools" id="comment-tools-74107">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-74107-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/74107/road-signs?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/74107/road-signs?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/74107/road-signs?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/74107/road-signs?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="74113"></a>
+<div class="answer" id="answer-container-74113">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/74113/up/" id="post-74113-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-74113-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/74113/down/" id="post-74113-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I don't usually map stop (or giveway) signs by themselves as signs by the side of the road. I guess that would be the good thing to do for completeness. But it adds no functionality: Routers and navigation apps will not find or process them and no renderer I know of will display them. Though I suppose some renderer somewhere might or might in the future.</p>
+<p>What I do map is the effect of the sign on the road. I'll put a node on the way at the point where the driver is to stop or yield and tag it with both <code>highway=stop|giveway</code> and <code>direction=forward|backward</code>.</p>
+<p>The reason for this is, in my opinion, the primary reason for mapping stop and giveway signs is for routing and driving directions.</p>
+<p>Routers and navigation apps will not find or process signs that are place beside the road in OSM. They will, or at least should, find and process nodes with <code>highway=stop|giveway|traffic_signals</code> tagging on the ways. They can then use this information to better pick a route and/or give directions to a driver.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/74113/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Apr '20, 17:46</strong>
+</p>
+<img alt="n76's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f60af53a4eba0c21f25c22674fb4a8cc?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5918/n76">n76</a><br/>
+<span class="score" title="10839 reputation points"><span class="">10.8k</span></span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="82 badges"><span class="silver">●</span><span class="badgecount">82</span></span><span title="172 badges"><span class="bronze">●</span><span class="badgecount">172</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="n76 has 48 accepted answers">17%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-74113">
+<a name="87284"></a>
+<div class="comment" id="comment-87284">
+<div class="comment-score" id="post-87284-score"></div>
+<div class="comment-text"><p>I'd add that I find it acceptable to map 4-way stop signs at the intersection point itself (with <code>direction=both</code>) rather than putting four separate stop signs at each incoming way. Edit: I also see some areas that have the sign mapped on the side of the road in addition to the point on the way. This, however, violates the 'one feature, one element' principle.</p></div>
+<div class="comment-info" id="comment-87284-info">
+<span class="comment-age">(21 May '23, 00:49)</span>
+<a class="comment-user userinfo" href="/users/23027/ybungalobill">ybungalobill</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-74113">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-74113-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/74107/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="CdpG2UTsCr8Z1EHSQ96uIt8ytbScKLSy"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

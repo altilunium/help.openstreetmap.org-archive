@@ -1,0 +1,233 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/40162/how-to-trace-and-export-a-road-segment-for-input-elsewhere">How to trace and export a road segment for input elsewhere?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/40162/up/" id="post-40162-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-40162-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/40162/down/" id="post-40162-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/40162/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>How can I trace a segment of a road and export it as a file (.kml, .shp, etc.) for import into CartoDB or some other map?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-export" href="/tags/export/" rel="tag" title="see questions tagged 'export'">export</a>
+<a class="post-tag tag-link-road" href="/tags/road/" rel="tag" title="see questions tagged 'road'">road</a>
+<a class="post-tag tag-link-trace" href="/tags/trace/" rel="tag" title="see questions tagged 'trace'">trace</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>08 Jan '15, 20:37</strong>
+</p>
+<img alt="ChuckSherman's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/afa10ab05d63fdba13efb1bbe36fb906?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10297/chucksherman">ChuckSherman</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ChuckSherman has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-40162">
+<a name="40181"></a>
+<div class="comment" id="comment-40181">
+<div class="comment-score" id="post-40181-score"></div>
+<div class="comment-text"><p>I appreciate the answers, but I'm still floundering. What I want to do is extract the geocoordinates of a stretch of road, say  one mile from point A to point B, so I can add it as a layer to CartoDB (combined with a few other bits of road, eventually) that I will highlight in my CartoDB visualization in a different color. How to I mark the section of road I want? How do I export just that part of the map (with georeferencing).  Am I being clear yet?</p></div>
+<div class="comment-info" id="comment-40181-info">
+<span class="comment-age">(09 Jan '15, 20:00)</span>
+<a class="comment-user userinfo" href="/users/10297/chucksherman">ChuckSherman</a>
+</div>
+</div>
+<a name="40199"></a>
+<div class="comment" id="comment-40199">
+<div class="comment-score" id="post-40199-score"></div>
+<div class="comment-text"><p>The answer is to pull the data required out using something like geoJSON from Overpass as SimonPoole described. You need some means of identifying the specific features you require, such as names, OSM identifiers or some other combination. If OSM features do not precisely match your needs you will need to edit the data (for instance in QGIS). An indication of your level of OSM knowledge may help in providing more information, but most of these tasks have multiple answers on this site.</p></div>
+<div class="comment-info" id="comment-40199-info">
+<span class="comment-age">(10 Jan '15, 17:42)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-40162">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-40162-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/40162/how-to-trace-and-export-a-road-segment-for-input-elsewhere?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/40162/how-to-trace-and-export-a-road-segment-for-input-elsewhere?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/40162/how-to-trace-and-export-a-road-segment-for-input-elsewhere?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/40162/how-to-trace-and-export-a-road-segment-for-input-elsewhere?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="40172"></a>
+<div class="answer" id="answer-container-40172">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/40172/up/" id="post-40172-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-40172-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/40172/down/" id="post-40172-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>OpenStreetMap data is, as the name says, open data provided under an open license, there is no need to trace over a map to extract the data. </p>
+<p>If you simply want to get the geometry of a small number of roads you could for example use <a href="http://overpass-turbo.eu/">http://overpass-turbo.eu/</a> to extract the geometry in geoJSON or other formats. AFAIK CartoDB supports OSM format data in some form directly so likely you don't even have to do that.</p>
+<p>Currently there is no (IMHO) reasonable way to directly do what you want, so it would likely boil down to:</p>
+<ul>
+<li>exporting the required road segments to an editable format (kml, gpx, geoJSON)</li>
+<li>trimming to the exact length you want</li>
+<li>importing in to CartoDB</li>
+</ul>
+<p>There are at least a dozen variants how you could do this. For example besides what I've already outlined you could simply download the area in JOSM, merge/split the road in question till it has the reuired length and then export as GPX, but likely all will require you to learn something about the OSM data format and available tools.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/40172/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Jan '15, 23:07</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/40172/">
+                edited
+                <strong>10 Jan '15, 13:27</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-40172">
+<a name="40182"></a>
+<div class="comment" id="comment-40182">
+<div class="comment-score" id="post-40182-score"></div>
+<div class="comment-text"><p>my comment is mis-posted as an answer, below.</p></div>
+<div class="comment-info" id="comment-40182-info">
+<span class="comment-age">(09 Jan '15, 20:11)</span>
+<a class="comment-user userinfo" href="/users/10297/chucksherman">ChuckSherman</a>
+</div>
+</div>
+<a name="40184"></a>
+<div class="comment" id="comment-40184">
+<div class="comment-score" id="post-40184-score"></div>
+<div class="comment-text"><p><a href="http://help.openstreetmap.org/users/10297/chucksherman">@ChuckSherman</a>: not any more, right?</p></div>
+<div class="comment-info" id="comment-40184-info">
+<span class="comment-age">(09 Jan '15, 20:24)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-40172">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-40172-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="40173"></a>
+<div class="answer" id="answer-container-40173">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/40173/up/" id="post-40173-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-40173-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/40173/down/" id="post-40173-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>depending on the length of the road, you can also just navigate to the area on the map, and click the export button at the top of the page which will let you downland a .osm file of the map area</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/40173/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Jan '15, 23:38</strong>
+</p>
+<img alt="DaCor's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9f0faef4659de616c82f448ff3f4e8e2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5669/dacor">DaCor</a><br/>
+<span class="score" title="1339 reputation points"><span class="">1.3k</span></span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="11 badges"><span class="silver">●</span><span class="badgecount">11</span></span><span title="29 badges"><span class="bronze">●</span><span class="badgecount">29</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="DaCor has one accepted answer">2%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-40173">
+<a name="40183"></a>
+<div class="comment" id="comment-40183">
+<div class="comment-score" id="post-40183-score"></div>
+<div class="comment-text"><p>my comment is mis-posted as an answer, below.</p></div>
+<div class="comment-info" id="comment-40183-info">
+<span class="comment-age">(09 Jan '15, 20:12)</span>
+<a class="comment-user userinfo" href="/users/10297/chucksherman">ChuckSherman</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-40173">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-40173-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/40162/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="LDGpvrIMKQU7b6ymBfpi8VFl2VNUnY2J"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

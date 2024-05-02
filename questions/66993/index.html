@@ -1,0 +1,161 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/66993/overpass-query-to-find-newly-added-features-or-changes-in-tag-value">Overpass query to find newly added features or changes in tag value</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66993/up/" id="post-66993-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66993-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/66993/down/" id="post-66993-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/66993/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi Everyone, </p>
+<p>I am curious if Overpass is able to query features that were added or have changes in tag value. </p>
+<p>For example, I wanna see how many oneway tags were added for a given month. Likewise seeing also if there are any changes in the tag value. </p>
+<p>This is the current code i am using.
+[diff: "2018-05-30T15:00:00Z","2018-06-30T15:00:00Z"][out:xml][timeout:25];(way<a href="{{bbox}}">"oneway"</a>;);out body;&gt;;out skel qt;</p>
+<p>This query gives anything that is touched but does not always pertain to added oneway tag. it can be any change to the segment tagged oneway. </p>
+<p>Any thoughts about this?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>30 Nov '18, 01:02</strong>
+</p>
+<img alt="mapsbyjujubee's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3aff6e35f2fe591cfa7e3f779064d363?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15012/mapsbyjujubee">mapsbyjujubee</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mapsbyjujubee has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66993">
+</div>
+<div class="comment-tools" id="comment-tools-66993">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66993-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/66993/overpass-query-to-find-newly-added-features-or-changes-in-tag-value?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/66993/overpass-query-to-find-newly-added-features-or-changes-in-tag-value?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/66993/overpass-query-to-find-newly-added-features-or-changes-in-tag-value?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/66993/overpass-query-to-find-newly-added-features-or-changes-in-tag-value?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="67014"></a>
+<div class="answer" id="answer-container-67014">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/67014/up/" id="post-67014-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-67014-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/67014/down/" id="post-67014-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can further filter the results of your query to only those with actual changes of the "oneway" tag with the <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#The_block_statement_compare">compare</a> statement, see also blog post section <a href="https://dev.overpass-api.de/blog/sliced_time_and_space.html#compare">Sliced Time and Space - Comparing Diffs</a>:</p>
+<pre><code>[adiff:"2018-05-30T15:00:00Z","2018-06-30T15:00:00Z"];
+way["oneway"]({{bbox}});
+compare(delta:t["oneway"]);
+out meta geom;
+</code></pre>
+<p><em><a href="http://overpass-turbo.eu/s/Eai">Overpass Turbo</a></em></p>
+<p>adiff results in the <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Augmented_Diffs#Contained_data">Augmented Diff</a> format can also be visualized in achavi (better shows create/modify/delete) by exporting the data into a file with "Export" &gt; "download raw OSM data" and drag&amp;drop onto the map at <a href="https://overpass-api.de/achavi/">https://overpass-api.de/achavi/</a>.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/67014/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Nov '18, 18:16</strong>
+</p>
+<img alt="ikonor's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f92748c8fa508a936bcf2169b30cabf6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2012/ikonor">ikonor</a><br/>
+<span class="score" title="1286 reputation points"><span class="">1.3k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="11 badges"><span class="silver">●</span><span class="badgecount">11</span></span><span title="19 badges"><span class="bronze">●</span><span class="badgecount">19</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ikonor has 4 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-67014">
+<a name="67030"></a>
+<div class="comment" id="comment-67030">
+<div class="comment-score" id="post-67030-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/2012/ikonor"></a><a href="https://help.openstreetmap.org/users/2012/ikonor">@ikonor</a> This is awesome thank you!<br/>
+Just a follow-up question will be possible to add USER here as well to this query?
+I tried running the code below but it's giving me false positives. Now that I answer the time question I wanna see if I can associate it with USER and see what changes a USER or a group of user has done to a specific tag. is that possible?</p>
+<p>[adiff:"2018-05-30T15:00:00Z","2018-06-30T15:00:00Z"];
+way<a>"oneway"</a>({{bbox}});
+compare(delta:t["oneway"]);
+out meta geom;</p></div>
+<div class="comment-info" id="comment-67030-info">
+<span class="comment-age">(01 Dec '18, 20:43)</span>
+<a class="comment-user userinfo" href="/users/15012/mapsbyjujubee">mapsbyjujubee</a>
+</div>
+</div>
+<a name="67040"></a>
+<div class="comment" id="comment-67040">
+<div class="comment-score" id="post-67040-score"></div>
+<div class="comment-text"><p>I fear there is no proper way to filter adiff results by user. There is a user/uid filter [1], but that's weird and does not do what you would expect in an adiff query (e.g. misses deletes/tag removals), because what you would want is to filter the "new" objects in the adiff output, not the data in each timestamp query.</p>
+<p>[1] <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#By_user_.28user.2C_uid.29">https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#By_user_.28user.2C_uid.29</a></p></div>
+<div class="comment-info" id="comment-67040-info">
+<span class="comment-age">(02 Dec '18, 13:41)</span>
+<a class="comment-user userinfo" href="/users/2012/ikonor">ikonor</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-67014">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-67014-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/66993/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="BRuM0uCQbqW0ieiycadL0SdaY6cqXrzg"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

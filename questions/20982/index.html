@@ -1,0 +1,246 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/20982/extract-road-network-data-from-niedersachsen-latestosmpbf">Extract road network data from niedersachsen-latest.osm.pbf</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/20982/up/" id="post-20982-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-20982-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/20982/down/" id="post-20982-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/20982/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,
+I want to extract the road network data (coodinates of street and street name) from niedersachsen-latest.osm.pbf.</p>
+<p>I first tried to convert the file into .sm format using Osmosis.
+I installed Osmosis on windows xp. I tried to convert niedersachsen-latest.osm.pbf to niedersachsen.osm usingthe command:
+osmosis --read-xml file=niedersachsen-latest.osm.pbf --write-xml file=niedersachsen.osm
+But I am getting error:</p>
+<p>C:\Programme\osmosis-latest\bin&gt;osmosis --read-xml file=niedersachsen-latest.osm
+.pbf --write-xml file=niedersachsen.osm
+26.03.2013 12:07:22 org.openstreetmap.osmosis.core.Osmosis run
+INFO: Osmosis Version 0.42
+26.03.2013 12:07:22 org.java.plugin.registry.xml.ManifestParser &lt;init&gt;
+INFO: got SAX parser factory - org.apache.xerces.jaxp.SAXParserFactoryImpl@1a8c4
+e7
+26.03.2013 12:07:22 org.java.plugin.registry.xml.PluginRegistryImpl configure
+INFO: configured, stopOnError=false, isValidating=true
+26.03.2013 12:07:22 org.java.plugin.registry.xml.PluginRegistryImpl register
+INFO: plug-in and fragment descriptors registered - 1
+26.03.2013 12:07:22 org.java.plugin.standard.StandardPluginManager activatePlugi
+n
+INFO: plug-in started - org.openstreetmap.osmosis.core.plugin.Core@0.42.0
+26.03.2013 12:07:22 org.openstreetmap.osmosis.core.Osmosis run
+INFO: Preparing pipeline.
+26.03.2013 12:07:22 org.openstreetmap.osmosis.core.Osmosis run
+INFO: Launching pipeline execution.
+26.03.2013 12:07:22 org.openstreetmap.osmosis.core.Osmosis run
+INFO: Pipeline executing, waiting for completion.
+26.03.2013 12:07:22 org.openstreetmap.osmosis.core.pipeline.common.ActiveTaskMan
+ager waitForCompletion
+SCHWERWIEGEND: Thread for task 1-read-xml failed
+org.openstreetmap.osmosis.core.OsmosisRuntimeException: Unable to parse xml file
+ niedersachsen-latest.osm.pbf.  publicId=(null), systemId=(null), lineNumber=1,
+columnNumber=1.
+        at org.openstreetmap.osmosis.xml.v0_6.XmlReader.run(XmlReader.java:116)
+        at java.lang.Thread.run(Unknown Source)
+Caused by: org.xml.sax.SAXParseException: Content is not allowed in prolog.
+        at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Un
+known Source)
+        at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)</p>
+<pre><code>    at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+    at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+    at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+    at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+    at org.apache.xerces.impl.XMLDocumentScannerImpl$PrologDispatcher.dispat
+</code></pre>
+<p>ch(Unknown Source)
+        at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Un
+known Source)
+        at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+        at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+        at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+        at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+        at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Sour
+ce)
+        at org.apache.xerces.jaxp.SAXParserImpl.parse(Unknown Source)
+        at javax.xml.parsers.SAXParser.parse(Unknown Source)
+        at org.openstreetmap.osmosis.xml.v0_6.XmlReader.run(XmlReader.java:111)
+        ... 1 more
+26.03.2013 12:07:22 org.openstreetmap.osmosis.core.Osmosis main
+SCHWERWIEGEND: Execution aborted.
+org.openstreetmap.osmosis.core.OsmosisRuntimeException: One or more tasks failed
+.
+        at org.openstreetmap.osmosis.core.pipeline.common.Pipeline.waitForComple
+tion(Pipeline.java:146)
+        at org.openstreetmap.osmosis.core.Osmosis.run(Osmosis.java:92)
+        at org.openstreetmap.osmosis.core.Osmosis.main(Osmosis.java:37)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+        at java.lang.reflect.Method.invoke(Unknown Source)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.launchStandard(Laun
+cher.java:329)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.jav
+a:239)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(La
+uncher.java:409)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:
+352)
+        at org.codehaus.classworlds.Launcher.main(Launcher.java:47)</p>
+<p>After converting it into .osm file I want to extract the road network data from it.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-routes" href="/tags/routes/" rel="tag" title="see questions tagged 'routes'">routes</a>
+<a class="post-tag tag-link-extract" href="/tags/extract/" rel="tag" title="see questions tagged 'extract'">extract</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-coordinates" href="/tags/coordinates/" rel="tag" title="see questions tagged 'coordinates'">coordinates</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>26 Mar '13, 11:11</strong>
+</p>
+<img alt="tfarooqi's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f5d31b13d0fced1a8297e7d9e9385a53?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5892/tfarooqi">tfarooqi</a><br/>
+<span class="score" title="30 reputation points">30</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="10 badges"><span class="bronze">●</span><span class="badgecount">10</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="tfarooqi has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-20982">
+</div>
+<div class="comment-tools" id="comment-tools-20982">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-20982-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/20982/extract-road-network-data-from-niedersachsen-latestosmpbf?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/20982/extract-road-network-data-from-niedersachsen-latestosmpbf?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/20982/extract-road-network-data-from-niedersachsen-latestosmpbf?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/20982/extract-road-network-data-from-niedersachsen-latestosmpbf?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="20984"></a>
+<div class="answer accepted-answer" id="answer-container-20984">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/20984/up/" id="post-20984-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-20984-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/20984/down/" id="post-20984-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/20984/" rel="nofollow" title="tfarooqi has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I think that you will need to use "read-pbf" to read a PBF file.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/20984/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>26 Mar '13, 11:17</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-20984">
+<a name="20987"></a>
+<div class="comment" id="comment-20987">
+<div class="comment-score" id="post-20987-score"></div>
+<div class="comment-text"><p>Its working, thanks a lot.
+Can you suggest the command to extract the start and end coordinates of a link/Street alon with street's name?</p></div>
+<div class="comment-info" id="comment-20987-info">
+<span class="comment-age">(26 Mar '13, 11:44)</span>
+<a class="comment-user userinfo" href="/users/5892/tfarooqi">tfarooqi</a>
+</div>
+</div>
+<a name="20988"></a>
+<div class="comment" id="comment-20988">
+<div class="comment-score" id="post-20988-score">1</div>
+<div class="comment-text"><p>You're probably better off asking a separate question with a few more details of what you're trying to do.  The answer to <a href="https://help.openstreetmap.org/questions/19213/osm-xml-into-graph">this question</a> my help (although that's essentially doing the reverse of what you're attempting).</p></div>
+<div class="comment-info" id="comment-20988-info">
+<span class="comment-age">(26 Mar '13, 11:53)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="20989"></a>
+<div class="comment" id="comment-20989">
+<div class="comment-score" id="post-20989-score"></div>
+<div class="comment-text"><p>I am using this querry to extract road network used by cars:
+osmosis --read-xml niedersachsen.osm  --tf accept-ways highway=* --tf reject-ways highway=pedestrian,footway,steps,cycleway,bridleway --tf reject-relations --used-node --write-xml niedersachsen_roadnetwork.osm</p>
+<p>But still I need to find the start and end coordinates of the street and street name, Any suggestions?</p></div>
+<div class="comment-info" id="comment-20989-info">
+<span class="comment-age">(26 Mar '13, 11:58)</span>
+<a class="comment-user userinfo" href="/users/5892/tfarooqi">tfarooqi</a>
+</div>
+</div>
+<a name="20992"></a>
+<div class="comment" id="comment-20992">
+<div class="comment-score" id="post-20992-score"></div>
+<div class="comment-text"><p>I have raised it as a seperate question: 
+<a href="https://help.openstreetmap.org/questions/20990/to-find-the-start-and-end-coordinates-of-the-street-and-street-name-using-osmosis">https://help.openstreetmap.org/questions/20990/to-find-the-start-and-end-coordinates-of-the-street-and-street-name-using-osmosis</a></p></div>
+<div class="comment-info" id="comment-20992-info">
+<span class="comment-age">(26 Mar '13, 12:23)</span>
+<a class="comment-user userinfo" href="/users/5892/tfarooqi">tfarooqi</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-20984">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-20984-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/20982/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="s2NKkL2hcxD6apUDJgPipp3s2yH7NiB9"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

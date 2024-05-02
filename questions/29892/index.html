@@ -1,0 +1,160 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/29892/how-can-i-get-osmosis-to-use-more-than-two-cpuscores">How can I get osmosis to use more than two CPUs/cores?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/29892/up/" id="post-29892-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-29892-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/29892/down/" id="post-29892-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/29892/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>The simplest version of the command I'm using is (pretty formatting for easier reading - it's usually one line):</p>
+<pre><code>osmosis --read-pbf-fast file="north-america-latest.osm.pbf" 
+        --bounding-polygon file="holyoke_ma.poly" --write-xml file="holyoke_ma.osm"
+</code></pre>
+<p>I get more complex by adding <code>--tee ##</code> with <code>##</code> being the number of files being read/written. So that's something like (pretty formatting for easier reading - it's usually one line):</p>
+<pre><code>osmosis --read-pbf-fast file="north-america-latest.osm.pbf" --tee 4 
+        --bounding-polygon file="city1.poly" --write-xml file="city1.osm"
+        --bounding-polygon file="city2.poly" --write-xml file="city2.osm"
+        --bounding-polygon file="city3.poly" --write-xml file="city3.osm"
+        --bounding-polygon file="city4.poly" --write-xml file="city4.osm"
+</code></pre>
+<p>I've tried adding <code>workers=##</code> to the mix, with <code>##</code> being the number of cores on the server. That results in something like (pretty formatting for easier reading - it's usually one line):</p>
+<pre><code>osmosis --read-pbf-fast workers=4 file="north-america-latest.osm.pbf" --tee 4 
+        --bounding-polygon file="city1.poly" --write-xml file="city1.osm"
+        --bounding-polygon file="city2.poly" --write-xml file="city2.osm"
+        --bounding-polygon file="city3.poly" --write-xml file="city3.osm"
+        --bounding-polygon file="city4.poly" --write-xml file="city4.osm"
+</code></pre>
+<p>In any of my attempts, with 2 or more cores, the process tops out at nearly 200% CPU use (when viewed in <code>top</code>). When viewed in <code>mpstat -P ALL</code> (which you can get after running <code>apt-get install sysstat</code>), there's one CPU that usually sits at about 20-30%, and the others are mostly idle.</p>
+<p>I verified that I can get a process to use all cores (4 in this case) by running <code>sysbench --test=cpu --cpu-max-prime=20000 --num-threads=4 run</code> (which you can get after running <code>apt-get install sysbench</code>) ... This would spike the process to 400% (when viewed in <code>top</code>).</p>
+<ul>
+<li>How do I get <code>osmosis</code> to use all of the available CPUs/cores?</li>
+<li>Where (if anywhere) should <code>--buffer</code> entries be placed? Before the <code>--bounding-polygon</code> flag? Before the <code>--write-xml</code> flag?</li>
+<li>Should I keep a limit to my <code>--tee</code> usage? Does that tie to the number of cores at all? Sometimes I have hundreds (up to a thousand or so) of <code>.poly</code> files to process - can I put them all into a single <code>osmosis</code> command with a very large <code>tee</code> value?</li>
+</ul>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-pbf" href="/tags/pbf/" rel="tag" title="see questions tagged 'pbf'">pbf</a>
+<a class="post-tag tag-link-polygon" href="/tags/polygon/" rel="tag" title="see questions tagged 'polygon'">polygon</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Jan '14, 19:12</strong>
+</p>
+<img alt="JamesChevalier's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0ada7b97d85873855231744286452af4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7201/jameschevalier">JamesChevalier</a><br/>
+<span class="score" title="151 reputation points">151</span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="7 badges"><span class="silver">●</span><span class="badgecount">7</span></span><span title="13 badges"><span class="bronze">●</span><span class="badgecount">13</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="JamesChevalier has one accepted answer">25%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-29892">
+</div>
+<div class="comment-tools" id="comment-tools-29892">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-29892-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/29892/how-can-i-get-osmosis-to-use-more-than-two-cpuscores?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/29892/how-can-i-get-osmosis-to-use-more-than-two-cpuscores?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/29892/how-can-i-get-osmosis-to-use-more-than-two-cpuscores?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/29892/how-can-i-get-osmosis-to-use-more-than-two-cpuscores?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="29893"></a>
+<div class="answer" id="answer-container-29893">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/29893/up/" id="post-29893-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-29893-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/29893/down/" id="post-29893-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I would suggest to place one "buffer" before and after each --bounding-polygon directive. I haven't tried more than about 50 "tee" threads but I guess more would still be possible - but keep in mind that the number of "point in polygon" checks that osmosis has to make is the size of your input file multiplied by the number of --bounding-polygon threads you're using - each object will be checked against all (thousands of) polygons. Therefore it is more efficient to first divide up your input file into a couple of smaller regions and extract your files from them. </p>
+<p>Here's an <a href="http://blog.geofabrik.de/?p=75">older blog entry</a> that describes how we used to run the Geofabrik extracts. We nowadays use the <a href="https://github.com/MaZderMind/osm-history-splitter">history splitter</a> which offers better performance when doing a large number of polygon splits at once.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/29893/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>16 Jan '14, 19:26</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-29893">
+<a name="29894"></a>
+<div class="comment" id="comment-29894">
+<div class="comment-score" id="post-29894-score"></div>
+<div class="comment-text"><p>Thanks! (I actually came across your blog post the other day, and thought about contacting you directly).
+I've mostly used a country OSM file (like germany-latest.osm.pbf), but I did run some tests with a 'state' level file (like brandenburg-latest.osm.pbf). Those definitely finished quicker, but still didn't make full use of the CPU.
+I'll try again with your suggestion of <code>buffer</code> placement.</p></div>
+<div class="comment-info" id="comment-29894-info">
+<span class="comment-age">(16 Jan '14, 19:37)</span>
+<a class="comment-user userinfo" href="/users/7201/jameschevalier">JamesChevalier</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-29893">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-29893-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/29892/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="ZU5zDm32DjGgJrGUVtLdi0X67OjH0k0u"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

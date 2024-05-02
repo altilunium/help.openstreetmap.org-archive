@@ -1,0 +1,158 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/68631/how-to-remove-a-repeated-not-duplicate-node-present-in-a-same-way">How to remove a repeated (not duplicate) node present in a same way?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68631/up/" id="post-68631-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68631-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/68631/down/" id="post-68631-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/68631/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am working on importing a number of ways obtained as a result of vectorizing of a raster map. Because of the nature of the source data and as a result of chosen curve smoothing algorithm there are many cases when a single way intersects itself. In general, self-intersection has no automatic resolution in e.g. JOSM and requires human intervention, which in my case would be many hundreds of edits.</p>
+<p>However, in my case it is always a very specific type of self-intersection that should rather be described as a "self-touching way". Let me illustrate it.</p>
+<p><img alt="intersection" src="https://help.openstreetmap.org/upfiles/self-touching.JPG"/></p>
+<p>On the image above pay attention that there is a node an the intersection point, at direction of individual segments make it so that the right part of the "eight"-like figure touches the left part of it in that point. So it is not two duplicate notes (different IDs but same coordinates) but rather a single node (the same ID) that is present two times in a same way. Inspecting the OSM XML confirms this observation.</p>
+<p>An algorithmic solution that is possible in this case is to remove one occurrence of that repeating node from the way. The result of such transformation for my example is below:</p>
+<p><img alt="split" src="https://help.openstreetmap.org/upfiles/split.JPG"/></p>
+<p>This transformation reaches the goal of preserving a "waistline" in the eight-shaped polygon, only making it slightly "thicker". This is an acceptable approximation given the resolution of the original raster data and noise already present in it.</p>
+<p>The same effect can be achieved manually: a) duplicate the node, b) delete one of the copied nodes.</p>
+<p>Such a solution is fine for my application and is guaranteed to create no new self-intersections because of the way the polygon is oriented (orientation of the top circle and the bottom circle always match).</p>
+<p>I can come up with a solution that involves scripted editing of the underlying OSM-XML (see my own answer below). But I wonder <strong>if there are solutions to do it automatically without the need to export to OSM format, e.g. directly in the JOSM editor.</strong></p>
+<p><em>P.S.</em> An alternative solution is to create two independent ways touching each other at the central node (upper circle and a lower circle). It is a bit harder to do when editing an XML in a sense that new ways have to be allocated, but is also acceptable for me if there are ready tools to do that.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-josm" href="/tags/josm/" rel="tag" title="see questions tagged 'josm'">josm</a>
+<a class="post-tag tag-link-self-intersection" href="/tags/self-intersection/" rel="tag" title="see questions tagged 'self-intersection'">self-intersection</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>04 Apr '19, 09:40</strong>
+</p>
+<img alt="Atakua's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0b00a1d4f3b4a6a9ce38c875c482aba1?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16489/atakua">Atakua</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Atakua has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68631">
+</div>
+<div class="comment-tools" id="comment-tools-68631">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68631-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/68631/how-to-remove-a-repeated-not-duplicate-node-present-in-a-same-way?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/68631/how-to-remove-a-repeated-not-duplicate-node-present-in-a-same-way?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/68631/how-to-remove-a-repeated-not-duplicate-node-present-in-a-same-way?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/68631/how-to-remove-a-repeated-not-duplicate-node-present-in-a-same-way?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="68632"></a>
+<div class="answer answered-by-owner" id="answer-container-68632">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68632/up/" id="post-68632-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68632-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/68632/down/" id="post-68632-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>My own solution so far is to export the JOSM layer into an OSM XML file. Then to use a scripted language capable of processing XML (Python or any other really) to open the file and do the following.</p>
+<ul>
+<li>For each way check if there are repeating node IDs ("ref" tag) included into it.</li>
+<li>If there are such repetitions, keep only one of them</li>
+<li>Make an exception for the first and the last node reference in the way. For closed ways their IDs are the same.</li>
+</ul>
+<p>As I mentioned already, applying such script requires exporting data from JOSM, processing it and then 
+reopening it in JOSM for further processing and uploading to the database.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/68632/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Apr '19, 09:46</strong>
+</p>
+<img alt="Atakua's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0b00a1d4f3b4a6a9ce38c875c482aba1?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16489/atakua">Atakua</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Atakua has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68632">
+<a name="68637"></a>
+<div class="comment" id="comment-68637">
+<div class="comment-score" id="post-68637-score">1</div>
+<div class="comment-text"><p>Has your import actually gone through this process <a href="https://wiki.openstreetmap.org/wiki/Import/Guidelines">https://wiki.openstreetmap.org/wiki/Import/Guidelines</a> ?</p></div>
+<div class="comment-info" id="comment-68637-info">
+<span class="comment-age">(04 Apr '19, 10:50)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+<a name="68639"></a>
+<div class="comment" id="comment-68639">
+<div class="comment-score" id="post-68639-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/2053/simonpoole">@SimonPoole</a> Steps 1 to 3 of that processes are done, now at step 4 "Documentation". Tracked by me and others here: <a href="https://wiki.openstreetmap.org/wiki/WikiProject_Sweden/naturvardsverket_import">https://wiki.openstreetmap.org/wiki/WikiProject_Sweden/naturvardsverket_import</a> . Resolution of technical issues to understand if it is at all doable, which this question is actually about, is being done in parallel.</p></div>
+<div class="comment-info" id="comment-68639-info">
+<span class="comment-age">(04 Apr '19, 11:16)</span>
+<a class="comment-user userinfo" href="/users/16489/atakua">Atakua</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-68632">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68632-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/68631/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="hYa7i2NZv55jagCkuimrUEQ4nhBWqnm4"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

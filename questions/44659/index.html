@@ -1,0 +1,121 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/44659/tls-is-buggy">[closed] TLS is buggy</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44659/up/" id="post-44659-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44659-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/44659/down/" id="post-44659-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/44659/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Not a question, but a hint for people who may fix this. Feel free to move this comment to any other place, where you think it belongs.</p>
+<p>Loading
+</p><pre><a href="https://osm.org">https://osm.org</a></pre>
+brings some TLS related problems. First one: The certificate CN is wrong. This is annoying, but passable. Major one: Only the standard map and MapQuest Open work, when you forbid loading cleartext content on TLS websites – which is generally a good idea. For example the bicycle map is included via
+<pre><a href="http://a.tile.thunderforest.com/cycle/…,">http://a.tile.thunderforest.com/cycle/…,</a></pre>
+although
+<pre><a href="https://a.tile.thunderforest.com/cycle/…">https://a.tile.thunderforest.com/cycle/…</a></pre>
+would work as well. Unnecessarily, to be able to use the bicycle map, I have to instruct my browser to transmit HTTP requests in an HTTPS context.<p></p>
+<p>Maybe you want to fix this, as it should be not such a big deal.<br/>
+Greets<br/>
+Torsten</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-tls" href="/tags/tls/" rel="tag" title="see questions tagged 'tls'">tls</a>
+<a class="post-tag tag-link-osm.org" href="/tags/osm.org/" rel="tag" title="see questions tagged 'osm.org'">osm.org</a>
+<a class="post-tag tag-link-https" href="/tags/https/" rel="tag" title="see questions tagged 'https'">https</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>07 Aug '15, 17:57</strong>
+</p>
+<img alt="6sH3Hpz2's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/17d7c4948584ec6a9b39e72dad1da85c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11341/6sh3hpz2">6sH3Hpz2</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="6sH3Hpz2 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/44659/">
+                closed
+                <strong>07 Aug '15, 18:53</strong>
+</a>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44659">
+<a name="44662"></a>
+<div class="comment" id="comment-44662">
+<div class="comment-score" id="post-44662-score">1</div>
+<div class="comment-text"><p>Regarding the first issue: <a href="https://osm.org">https://osm.org</a> is not an official OSM domain so there is nothing OSM can do about it. The second issue sounds like it can be fixed so try to report it at <a href="https://github.com/openstreetmap/openstreetmap-website">https://github.com/openstreetmap/openstreetmap-website</a></p></div>
+<div class="comment-info" id="comment-44662-info">
+<span class="comment-age">(08 Aug '15, 08:43)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="44683"></a>
+<div class="comment" id="comment-44683">
+<div class="comment-score" id="post-44683-score"></div>
+<div class="comment-text"><p>whois lists OSMF as the admin organization for osm.org it doesn't get much more official than that.</p></div>
+<div class="comment-info" id="comment-44683-info">
+<span class="comment-age">(10 Aug '15, 01:08)</span>
+<a class="comment-user userinfo" href="/users/17/mvexel">mvexel</a>
+</div>
+</div>
+<a name="44685"></a>
+<div class="comment" id="comment-44685">
+<div class="comment-score" id="post-44685-score"></div>
+<div class="comment-text"><p>Interesting. It has been an unofficial domain in the past IIRC.</p></div>
+<div class="comment-info" id="comment-44685-info">
+<span class="comment-age">(10 Aug '15, 07:24)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-44659">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44659-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<div class="question-status" style="margin-bottom:15px">
+<h3>
+                The question has been closed for the following reason "Not a question" by
+                <a href="/users/387/someoneelse">SomeoneElse</a>
+                 07 Aug '15, 18:53
+            </h3>
+</div>
+<form action="/questions/44659/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="sAXSf7CAIMJhIenl4R3pUM9xBlm0DDmN"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

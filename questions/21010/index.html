@@ -1,0 +1,208 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/21010/exchanging-tilemill-mapnik-datasource-static-data-postgis">Exchanging TileMill (Mapnik) datasource: static data / PostGIS</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/21010/up/" id="post-21010-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-21010-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/21010/down/" id="post-21010-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/21010/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have the following use case:</p>
+<p>A graphic designer is assigned to design a map style. This style should later be deployed on a PostGIS (osm2pgsql) / Mapnik / Tirex based tile server stack.</p>
+<p>So far I found TileMill to be a great tool for designing the map.</p>
+<p>While on the production server, the OSM data would be served from PostGIS, on the designers computer I want to avoid the PostGIS setup. I even want to avoid to run the PostGIS server before the design is finished.</p>
+<p><strong>Is it possible to design a map using TileMill on base of a simple OSM export (SHP File?) and to directly use the same style on a PostGIS based server?</strong></p>
+<p>I guess I could change all the data source settings in the tilemill definition by hand - but the process should be as automatic as possible so the design could be continuously improved and applied again.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-shp" href="/tags/shp/" rel="tag" title="see questions tagged 'shp'">shp</a>
+<a class="post-tag tag-link-tilemill" href="/tags/tilemill/" rel="tag" title="see questions tagged 'tilemill'">tilemill</a>
+<a class="post-tag tag-link-design" href="/tags/design/" rel="tag" title="see questions tagged 'design'">design</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>26 Mar '13, 20:55</strong>
+</p>
+<img alt="AddisMap_Alexander's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9ac1de0d402dfdf47bd4c4d664156c64?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/80/addismap_alexander">AddisMap_Ale...</a><br/>
+<span class="score" title="1120 reputation points"><span class="">1.1k</span></span><span title="31 badges"><span class="badge1">●</span><span class="badgecount">31</span></span><span title="40 badges"><span class="silver">●</span><span class="badgecount">40</span></span><span title="62 badges"><span class="bronze">●</span><span class="badgecount">62</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="AddisMap_Alexander has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/21010/">
+                edited
+                <strong>26 Mar '13, 21:01</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-21010">
+</div>
+<div class="comment-tools" id="comment-tools-21010">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-21010-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/21010/exchanging-tilemill-mapnik-datasource-static-data-postgis?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/21010/exchanging-tilemill-mapnik-datasource-static-data-postgis?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/21010/exchanging-tilemill-mapnik-datasource-static-data-postgis?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/21010/exchanging-tilemill-mapnik-datasource-static-data-postgis?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="21012"></a>
+<div class="answer" id="answer-container-21012">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/21012/up/" id="post-21012-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-21012-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/21012/down/" id="post-21012-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You could potentially do an osm2pgsql or imposm import, then export all tables into shape files, and let the designer work on those; that could then be changed by a simple script if you go into production. However shapefile sources are less flexible than database sources; you cannot do WHERE clauses or ORDER BY (for example, when drawing city labels you might want to draw those with larger population first). The lack of WHERE clauses can be compensated by filter rules but that will lead to a less efficient style. </p>
+<p>Having direct access to a database (through a port forward if necessary) will make things more complex during design but will also give a more efficient result.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/21012/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>26 Mar '13, 21:16</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-21012">
+<a name="21029"></a>
+<div class="comment" id="comment-21029">
+<div class="comment-score" id="post-21029-score">1</div>
+<div class="comment-text"><p>Yes, it's an answer to the question, and pretty much what I would have said too.</p></div>
+<div class="comment-info" id="comment-21029-info">
+<span class="comment-age">(27 Mar '13, 17:09)</span>
+<a class="comment-user userinfo" href="/users/3/andy-allan">Andy Allan</a>
+</div>
+</div>
+<a name="21030"></a>
+<div class="comment" id="comment-21030">
+<div class="comment-score" id="post-21030-score"></div>
+<div class="comment-text"><p>I am not really familiar with this, so perhaps it is a silly comment. But would potentially using a sqlite db work on the designers computer? Hopefully that would be much easier to set up than the full postgis / postgresql and gives similar functionality.</p>
+<p>Otherwise, yes, I'd agree, giving the designer access to a remote postgis db over the network (or via a VM) probably seems like the most appropriate solution in this situation</p></div>
+<div class="comment-info" id="comment-21030-info">
+<span class="comment-age">(27 Mar '13, 17:32)</span>
+<a class="comment-user userinfo" href="/users/65/apmon">apmon</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-21012">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-21012-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="21011"></a>
+<div class="answer answered-by-owner" id="answer-container-21011">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/21011/up/" id="post-21011-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-21011-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/21011/down/" id="post-21011-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p><em>self-answer - but I hope for simpler ones:</em></p>
+<p>One pragmatic solution would be to provide the designer with a PostGIS installation, for example in a Virtual machine to do the designing.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/21011/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>26 Mar '13, 20:57</strong>
+</p>
+<img alt="AddisMap_Alexander's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9ac1de0d402dfdf47bd4c4d664156c64?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/80/addismap_alexander">AddisMap_Ale...</a><br/>
+<span class="score" title="1120 reputation points"><span class="">1.1k</span></span><span title="31 badges"><span class="badge1">●</span><span class="badgecount">31</span></span><span title="40 badges"><span class="silver">●</span><span class="badgecount">40</span></span><span title="62 badges"><span class="bronze">●</span><span class="badgecount">62</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="AddisMap_Alexander has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-21011">
+</div>
+<div class="comment-tools" id="comment-tools-21011">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-21011-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/21010/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="J3Qo4RFs6GSMrwaqE1J1MS010dd60L5H"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

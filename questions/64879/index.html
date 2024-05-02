@@ -1,0 +1,176 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/64879/get-all-bicycle-infrastructure-for-a-city">Get all bicycle infrastructure for a city</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/64879/up/" id="post-64879-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-64879-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/64879/down/" id="post-64879-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/64879/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am trying to write a query to get all bike lanes to display on a map for my project. I want to display all types of bike lanes(shared ,dedicated,tracks etc)</p>
+<blockquote>
+<p>[out:json][timeout:25]; // gather
+results (   // query part for:
+“cycleway=*”</p>
+<p>// sharrow<br/>
+way<a href="{{bbox}}">"cycleway"="shared_lane"</a> ;</p>
+<p>// CONVENTIONAL BICYCLE LANE   //
+lane on both sides of the street<br/>
+way<a href="{{bbox}}">"cycleway"="lane"</a>;</p>
+<p>// lane on either side<br/>
+way<a href="{{bbox}}">"cycleway:left"</a>;<br/>
+way<a href="{{bbox}}">"cycleway:right"</a>;</p>
+<p>// dedicated bikeways<br/>
+way<a href="{{bbox}}">"highway"="cycleway"</a>;</p>
+<p>way<a href="{{bbox}}">"bicycle"="designated"</a>;</p>
+<p>); out body;</p>
+<blockquote>
+<p>; out skel qt;</p>
+</blockquote>
+</blockquote>
+<p>Am I missing some parameters because I am not getting the same map as open cycle maps. I understand that the open cycle maps is displaying cycling routes as well. So I added the parameter</p>
+<blockquote>
+<p>relation<a href="{{bbox}}">"route"="bicycle"</a>;</p>
+</blockquote>
+<p>But I am not very sure about what a relation is. Also it gives a lot of overlapping paths. Are all bile paths covered under a relation? Also from my understanding, this relation also has routes which would not necessarily go through a bike path. Coming back to my original question, are there any other parameters that I can add to my query to get all bike paths?</p>
+<p>I found this query on overpass turbo:</p>
+<blockquote>
+<p>/<em> This shows the cycleway and
+cycleroute network.
+</em>/</p>
+<p>[out:json];</p>
+<p>(   // get cycle route relatoins<br/>
+relation<a href="{{bbox}}">route=bicycle</a>;<br/>
+// get cycleways<br/>
+way<a href="{{bbox}}">highway=cycleway</a>;<br/>
+way[highway=path]<a href="{{bbox}}">bicycle=designated</a>;
+);</p>
+<p>out body;</p>
+<blockquote>
+<p>; out skel qt;</p>
+</blockquote>
+</blockquote>
+<p>But this doesn't show info about the paths like shares, one way, left,right. I want all these parameters as well to segregate the diff types of bicycle paths</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpassapi" href="/tags/overpassapi/" rel="tag" title="see questions tagged 'overpassapi'">overpassapi</a>
+<a class="post-tag tag-link-bikemap" href="/tags/bikemap/" rel="tag" title="see questions tagged 'bikemap'">bikemap</a>
+<a class="post-tag tag-link-bikepath" href="/tags/bikepath/" rel="tag" title="see questions tagged 'bikepath'">bikepath</a>
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+<a class="post-tag tag-link-overpass-ql" href="/tags/overpass-ql/" rel="tag" title="see questions tagged 'overpass-ql'">overpass-ql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>23 Jul '18, 23:21</strong>
+</p>
+<img alt="isj126's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c164cc6fe024972bdbe1d1d20525ee41?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15424/isj126">isj126</a><br/>
+<span class="score" title="36 reputation points">36</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="isj126 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-64879">
+</div>
+<div class="comment-tools" id="comment-tools-64879">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-64879-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/64879/get-all-bicycle-infrastructure-for-a-city?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/64879/get-all-bicycle-infrastructure-for-a-city?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/64879/get-all-bicycle-infrastructure-for-a-city?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/64879/get-all-bicycle-infrastructure-for-a-city?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="64898"></a>
+<div class="answer" id="answer-container-64898">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/64898/up/" id="post-64898-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-64898-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/64898/down/" id="post-64898-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Bicycle routes are a list of ways (which could be normal streets, cycleways and so on) that are part of the route, not directly infrastructure itself.</p>
+<p>To get all cycle infrastructure you will need to retrieve at least:</p>
+<ul>
+<li>all roads that have additional tags indicating cycle infrastructure (cycleway=lane and cycleway=track)</li>
+<li>all highway=cycleway</li>
+<li>all highway=footway and highway=path that allow bicycle use or are intended for such (bicycle=yes, bicycle=designated, bicycle=official)</li>
+</ul>
+<p>You will probably further need to de-duplicate roads from the first point that actually have separately mapped infrastructure from the last two items.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/64898/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>24 Jul '18, 21:57</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-64898">
+</div>
+<div class="comment-tools" id="comment-tools-64898">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-64898-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/64879/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="eKiFwswwKNvBUdUBS6qiwJa5X1dVkXgj"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

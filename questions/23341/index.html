@@ -1,0 +1,155 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/23341/closed-no-results-on-nominatim-search">[closed] No results on Nominatim search</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/23341/up/" id="post-23341-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-23341-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/23341/down/" id="post-23341-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/23341/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi guys, I just installed Nominatim on my Ubuntu 12.04 (personal OSM server for offline use). I'm wondering why I got no result when peforming a search on search.php ?! I checked in the nominatim DB and there's data... Here's the log I get at the end of my import: </p>
+<p><code>Reanalysing database... NOTICE: no notnull values, invalid stats ANALYZE Jun 12, 2013 2:41:08 PM org.openstreetmap.osmosis.core.Osmosis run INFO: Osmosis Version 0.40.1 Jun 12, 2013 2:41:08 PM org.openstreetmap.osmosis.core.Osmosis run INFO: Preparing pipeline. Jun 12, 2013 2:41:08 PM org.openstreetmap.osmosis.core.Osmosis run INFO: Launching pipeline execution. Jun 12, 2013 2:41:08 PM org.openstreetmap.osmosis.core.Osmosis run INFO: Pipeline executing, waiting for completion. Jun 12, 2013 2:41:08 PM org.openstreetmap.osmosis.core.Osmosis run INFO: Pipeline complete. Jun 12, 2013 2:41:08 PM org.openstreetmap.osmosis.core.Osmosis run INFO: Total execution time: 373 milliseconds. PHP Warning: file_get_contents(<a href="http://www.openstreetmap.org/api/0.6/node/2340848120/1):">http://www.openstreetmap.org/api/0.6/node/2340848120/1):</a> failed to open stream: Network is unreachable in /home/lucas/src/Nominatim/utils/setup.php on line 524 PHP Notice: Undefined offset: 1 in /home/lucas/src/Nominatim/utils/setup.php on line 526 PHP Warning: file_get_contents(<a href="http://planet.openstreetmap.org/replication/minute/?C=M;O=D):">http://planet.openstreetmap.org/replication/minute/?C=M;O=D):</a> failed to open stream: Network is unreachable in /home/lucas/src/Nominatim/utils/setup.php on line 531 PHP Notice: Undefined variable: aRepMatch in /home/lucas/src/Nominatim/utils/setup.php on line 543 PHP Warning: file_get_contents(<a href="http://planet.openstreetmap.org/replication/minute/?C=M;O=D):">http://planet.openstreetmap.org/replication/minute/?C=M;O=D):</a> failed to open stream: Network is unreachable in /home/lucas/src/Nominatim/utils/setup.php on line 544 PHP Notice: Undefined variable: aRepMatch in /home/lucas/src/Nominatim/utils/setup.php on line 554 PHP Warning: file_get_contents(<a href="http://planet.openstreetmap.org/replication/minute/?C=M;O=D):">http://planet.openstreetmap.org/replication/minute/?C=M;O=D):</a> failed to open stream: Network is unreachable in /home/lucas/src/Nominatim/utils/setup.php on line 555 PHP Notice: Undefined variable: aRepMatch in /home/lucas/src/Nominatim/utils/setup.php on line 565 Getting state file: <a href="http://planet.openstreetmap.org/replication/minute/.state.txt">http://planet.openstreetmap.org/replication/minute/.state.txt</a> PHP Warning: file_get_contents(<a href="http://planet.openstreetmap.org/replication/minute/.state.txt):">http://planet.openstreetmap.org/replication/minute/.state.txt):</a> failed to open stream: Network is unreachable in /home/lucas/src/Nominatim/utils/setup.php on line 567 ERROR: unable to obtain state file unable to obtain state file</code> </p>
+<p>However, these lines seem to be referring only to the "updating" process handled by Nominatim. By the way, I'm using a proxy. Thanks, Lucas</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-xml" href="/tags/xml/" rel="tag" title="see questions tagged 'xml'">xml</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-searching" href="/tags/searching/" rel="tag" title="see questions tagged 'searching'">searching</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>13 Jun '13, 15:14</strong>
+</p>
+<img alt="Kalu06's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/4015aaa7dcb688fc988901e4caaac771?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6605/kalu06">Kalu06</a><br/>
+<span class="score" title="140 reputation points">140</span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="8 badges"><span class="silver">●</span><span class="badgecount">8</span></span><span title="15 badges"><span class="bronze">●</span><span class="badgecount">15</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Kalu06 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/23341/">
+                edited
+                <strong>14 Jun '13, 15:16</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-23341">
+<a name="23364"></a>
+<div class="comment" id="comment-23364">
+<div class="comment-score" id="post-23364-score"></div>
+<div class="comment-text"><p>I know nothing about Nominatim (except how to spell it), but in order to give those that do a chance I suggest that you read the link below and edit a few more details into the question:</p>
+<p><a href="http://www.joelonsoftware.com/articles/fog0000000029.html">http://www.joelonsoftware.com/articles/fog0000000029.html</a></p></div>
+<div class="comment-info" id="comment-23364-info">
+<span class="comment-age">(14 Jun '13, 09:44)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="23365"></a>
+<div class="comment" id="comment-23365">
+<div class="comment-score" id="post-23365-score">1</div>
+<div class="comment-text"><p>That's true. I'm going to edit my post right away.</p></div>
+<div class="comment-info" id="comment-23365-info">
+<span class="comment-age">(14 Jun '13, 09:49)</span>
+<a class="comment-user userinfo" href="/users/6605/kalu06">Kalu06</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-23341">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-23341-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/23341/closed-no-results-on-nominatim-search?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/23341/closed-no-results-on-nominatim-search?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/23341/closed-no-results-on-nominatim-search?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/23341/closed-no-results-on-nominatim-search?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="23368"></a>
+<div class="answer answered-by-owner" id="answer-container-23368">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/23368/up/" id="post-23368-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-23368-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/23368/down/" id="post-23368-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I figured it out! </p>
+<p>Actually, I realized that setup.php was failing during the 'osmosis-init'. 
+I run <code>./utils/setup.php --index --create-search-indices</code> (after the <code>setup.php --all</code> who failed) and now everything is working great!</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/23368/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>14 Jun '13, 10:55</strong>
+</p>
+<img alt="Kalu06's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/4015aaa7dcb688fc988901e4caaac771?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6605/kalu06">Kalu06</a><br/>
+<span class="score" title="140 reputation points">140</span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="8 badges"><span class="silver">●</span><span class="badgecount">8</span></span><span title="15 badges"><span class="bronze">●</span><span class="badgecount">15</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Kalu06 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-23368">
+</div>
+<div class="comment-tools" id="comment-tools-23368">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-23368-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/23341/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="n3B29JiE4A1UxZRYmRJ3FeTSYrtYncmg"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,189 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/28748/problem-with-nominatim-own-server">Problem with nominatim own server</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/28748/up/" id="post-28748-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-28748-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/28748/down/" id="post-28748-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/28748/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I've downloaded the osm virtual machine here:</p>
+<p><a href="http://wiki.openstreetmap.org/wiki/Virtual_machine_image">http://wiki.openstreetmap.org/wiki/Virtual_machine_image</a></p>
+<p>...and patched the local.php file (for the "declaration allowed only at the start of the document" error). It appears to be working fine, except for the following issue:</p>
+<p>I understand there are two ways to query for an address:</p>
+<pre><code> q=&lt;query&gt;
+   Query string to search for.  Alternatively can be entered as:
+</code></pre>
+<p>and</p>
+<pre><code> street=&lt;housenumber&gt; &lt;streetname&gt;
+ city=&lt;city&gt;
+ county=&lt;county&gt;
+ state=&lt;state&gt;
+ country=&lt;country&gt;
+ postalcode=&lt;postalcode&gt;
+   (experimental) Alternative query string format for structured requests. 
+   Structured requests are faster and require less server resources. 
+   DO NOT COMBINE WITH q=&lt;query&gt; PARAMETER.
+</code></pre>
+<p>However, the first way works, and the second one gets me no results. I thought it could be a problem with the address formatting but if I use the same query on the public nominatim server (instead of my own) I get results.</p>
+<p>Check the public server output:</p>
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;searchresults timestamp='Wed, 04 Dec 13 05:50:52 +0000' attribution='Data ?? OpenStreetMap contributors, ODbL 1.0. <a href="http://www.openstreetmap.org/copyright'">http://www.openstreetmap.org/copyright'</a> querystring='andes 1479, montevideo, montevideo, uruguay' polygon='false' exclude_place_ids='96424832,57980898,70445266' more_url='http://nominatim.openstreetmap.org/search?format=xml&amp;amp;exclude_place_ids=96424832,57980898,70445266&amp;amp;q=andes+1479%2C+montevideo%2C+montevideo%2C+uruguay'&gt;
+&lt;place place_id='96424832' osm_type='way' osm_id='179061638' place_rank='26' boundingbox="-34.9064064025879,-34.9008026123047,-56.1986999511719,-56.1981239318848" lat='-34.9035605' lon='-56.1984301' display_name='Andes, Ciudad Vieja, Montevideo, 11100, Uruguay' class='highway' type='residential' importance='0.9'/&gt;&lt;place place_id='57980898' osm_type='way' osm_id='78105349' place_rank='26' boundingbox="-34.9114799499512,-34.9064025878906,-56.198127746582,-56.1972122192383" lat='-34.9092104' lon='-56.1978327' display_name='Andes, Barrio Sur, Montevideo, 11100, Uruguay' class='highway' type='residential' importance='0.9'/&gt;&lt;place place_id='70445266' osm_type='way' osm_id='112698692' place_rank='26' boundingbox="-34.8365058898926,-34.8350563049316,-55.9612350463867,-55.9585113525391" lat='-34.8357171' lon='-55.9597648' display_name='Andes, Solymar, Ciudad de la Costa, Canelones, Uruguay' class='highway' type='residential' importance='0.7'/&gt;&lt;/searchresults&gt;
+</code></pre>
+<p>and my local server output:</p>
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;searchresults timestamp='Wed, 04 Dec 13 05:50:59 +0000' attribution='Data ?? OpenStreetMap contributors, ODbL 1.0. <a href="http://www.openstreetmap.org/copyright'">http://www.openstreetmap.org/copyright'</a> querystring='' polygon='false' more_url='http://localhost/nominatim/search?format=xml&amp;amp;exclude_place_ids=&amp;amp;accept-language=&amp;amp;q='&gt;
+&lt;/searchresults&gt;
+</code></pre>
+<p>In both cases, I'm using the same query:</p>
+<pre><code>http://&lt;public server or private server&gt;/search?format=xml&amp;street=andes+1479&amp;city=montevideo&amp;county=&amp;state=montevideo&amp;country=uruguay&amp;postalcode=
+</code></pre>
+<p>I don't know if it has something to do; but the virtual server need some minor "corrections" (?); one if to edit the local.php file (I did it) but the other one, downloading and replacing the get-coastlines.sh file, can't did it (can't overwrite existing file, and I don't have root password)</p>
+<p>I appreciate any help! Regards!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-private_server" href="/tags/private_server/" rel="tag" title="see questions tagged 'private_server'">private_server</a>
+<a class="post-tag tag-link-results" href="/tags/results/" rel="tag" title="see questions tagged 'results'">results</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>04 Dec '13, 06:04</strong>
+</p>
+<img alt="leos79's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3875f3961eb0b69618914bf29ab6ef45?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7943/leos79">leos79</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="leos79 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-28748">
+</div>
+<div class="comment-tools" id="comment-tools-28748">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-28748-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/28748/problem-with-nominatim-own-server?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/28748/problem-with-nominatim-own-server?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/28748/problem-with-nominatim-own-server?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/28748/problem-with-nominatim-own-server?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="28750"></a>
+<div class="answer accepted-answer" id="answer-container-28750">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/28750/up/" id="post-28750-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-28750-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/28750/down/" id="post-28750-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/28750/" rel="nofollow" title="leos79 has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This virtual image is from the end of 2012 and contains a Nominatim version that is neither capable of handling <a href="https://wiki.openstreetmap.org/wiki/64-bit_Identifiers">64-bit node IDs</a> nor supports the structured search that you're attempting. The <a href="http://wiki.openstreetmap.org/wiki/Virtual_machine_image">virtual image wiki page</a> also contains a big red warning message at the beginning which you seem to have missed somehow.</p>
+<p>This means that the current virtual image is of little use. Newer versions of Nominatim can handle 64-bit node IDs but this would require you to update the Nominatim version contained in the virtual image (and possible other software, too), the wiki also contains <a href="http://wiki.openstreetmap.org/wiki/Nominatim/Installation">Nominatim installation instructions</a>.</p>
+<p>And if you really need a root password (<code>sudo</code> should be enough for everything) then you can set/change it via <code>sudo passwd</code>.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/28750/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Dec '13, 08:25</strong>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="scai has 168 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/28750/">
+                edited
+                <strong>04 Dec '13, 08:58</strong>
+</a>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-28750">
+<a name="28780"></a>
+<div class="comment" id="comment-28780">
+<div class="comment-score" id="post-28780-score">1</div>
+<div class="comment-text"><p>thanks scai for your answer! So, this one is the last virtual server available? I'll try to make one of my own. And the root thing would be for replacing a file; I got a mesagge saying I don't have permission to do thath and I thought it was due to user permissions. I'm not a linux guy, I'm a software developer for windows environment, the closes things I know to linux is DOS and googling-for-stuff-when-required.</p></div>
+<div class="comment-info" id="comment-28780-info">
+<span class="comment-age">(04 Dec '13, 18:00)</span>
+<a class="comment-user userinfo" href="/users/7943/leos79">leos79</a>
+</div>
+</div>
+<a name="28781"></a>
+<div class="comment" id="comment-28781">
+<div class="comment-score" id="post-28781-score">1</div>
+<div class="comment-text"><p>And about the red warning; I didn't missed it. I thought if the virtual server was still there that maybe it still worked; I've decided to download it and give it a try. I didn't know the OSM data's date and neither that structured search it's a 2013 improvement (maybe it's specified somewhere; that would be what I've missed). Thank you very much, again!</p></div>
+<div class="comment-info" id="comment-28781-info">
+<span class="comment-age">(04 Dec '13, 18:02)</span>
+<a class="comment-user userinfo" href="/users/7943/leos79">leos79</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-28750">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-28750-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/28748/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="a7mPpsdWtnvuvjbMcRVcC4GFDUQqepyV"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

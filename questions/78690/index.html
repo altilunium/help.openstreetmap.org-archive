@@ -1,0 +1,186 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/78690/count-number-of-nwr-per-each-of-the-input-sets">Count number of NWR per each of the input sets</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/78690/up/" id="post-78690-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-78690-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/78690/down/" id="post-78690-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/78690/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have the follow Overpass Turbo query, and I would count number of NWR per each of the input sets.  That is:
+1) number of NWR for Trader Joe's
+2) number of NWR for Safeway
+I tried many times, and still not sure how to make it, can someone help please?
+[out:json][timeout:60];
+(nwr<a>brand="Trader Joe's"</a>;)-&gt;.TJ;
+(nwr<a>brand="Safeway"</a>;)-&gt;.SW;
+(.TJ; .SW;);
+out skel center count;</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-count" href="/tags/count/" rel="tag" title="see questions tagged 'count'">count</a>
+<a class="post-tag tag-link-inputset" href="/tags/inputset/" rel="tag" title="see questions tagged 'inputset'">inputset</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>06 Feb '21, 07:53</strong>
+</p>
+<img alt="steve_nonego's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/56979805fc55fa852c0708ba4abd8809?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19687/steve_nonego">steve_nonego</a><br/>
+<span class="score" title="10 reputation points">10</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="steve_nonego has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-78690">
+</div>
+<div class="comment-tools" id="comment-tools-78690">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-78690-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/78690/count-number-of-nwr-per-each-of-the-input-sets?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/78690/count-number-of-nwr-per-each-of-the-input-sets?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/78690/count-number-of-nwr-per-each-of-the-input-sets?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/78690/count-number-of-nwr-per-each-of-the-input-sets?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="78691"></a>
+<div class="answer" id="answer-container-78691">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/78691/up/" id="post-78691-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-78691-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/78691/down/" id="post-78691-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can use the <strong>make</strong> statement to create your own <em>count</em> elements:</p>
+<pre><code>[out:json][timeout:60]; 
+nwr[brand="Trader Joe's"];
+
+make count brand = set(t["brand"]), 
+           total = count(nwr);
+out;
+
+nwr[brand="Safeway"];
+
+make count brand = set(t["brand"]), 
+           total = count(nwr);
+out;
+</code></pre>
+<p>For further information:
+<a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#The_statement_make">https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#The_statement_make</a></p>
+<p>See also this <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_API_by_Example#Count_Pharmacies_per_County_.28updated_0.7.54.29">example</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/78691/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Feb '21, 09:37</strong>
+</p>
+<img alt="MarcoR's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9c8957ccf79025bf749665ebec2bdfa2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6765/marcor">MarcoR</a><br/>
+<span class="score" title="687 reputation points">687</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="8 badges"><span class="silver">●</span><span class="badgecount">8</span></span><span title="20 badges"><span class="bronze">●</span><span class="badgecount">20</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="MarcoR has 5 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-78691">
+<a name="78713"></a>
+<div class="comment" id="comment-78713">
+<div class="comment-score" id="post-78713-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/6765/marcor"></a><a href="https://help.openstreetmap.org/users/6765/marcor">@MarcoR</a>  Thanks for you solution, it does what I expected!</p>
+<p>I look up the links you recommend, yet I still not fully understand the query.  Can you help me to understand the following?</p>
+<p>For:
+nwr<a>brand="Trader Joe's"</a>;</p>
+<p>make count brand = set(t["brand"]), 
+           total = count(nwr);
+out;</p>
+<p>1) We didn't give the nwr[] a input set name, so it's automatically assume the set( ) is refer to the one above?</p>
+<p>2) I look up the examples, it also use t["xxxx"], what is the t refer to? tag?</p>
+<p>Last but not least, I slightly modified the query as:</p>
+<p>[out:json][timeout:60]; </p>
+<p>nwr<a>brand="Trader Joe's"</a>;
+make count category = set("Number of Trader's"), 
+           total = count(nwr);
+out;</p>
+<p>nwr<a>brand="Safeway"</a>;
+make count brand = set("Number of Safeway"), 
+           total = count(nwr);
+out;</p></div>
+<div class="comment-info" id="comment-78713-info">
+<span class="comment-age">(07 Feb '21, 19:33)</span>
+<a class="comment-user userinfo" href="/users/19687/steve_nonego">steve_nonego</a>
+</div>
+</div>
+<a name="78721"></a>
+<div class="comment" id="comment-78721">
+<div class="comment-score" id="post-78721-score">1</div>
+<div class="comment-text"><p>You are welcome ;)</p>
+<p>1) The input set, if not specified, is the default one: <em>_</em>; as far as I undestand, nwr[…], doesn't have an input set as all it does is searching data in the map database, but it has an output set, which is <em>_</em>; this set is used as input set by the following command (make …); the next nwr[…] overwrites the default set with the new results so that the following 'make' statament can calculate the proper results;</p>
+<p>2) t["xxx"] returns the value of the tag "xxx"; see <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Tag_Value_and_Generic_Value_Operators">https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Tag_Value_and_Generic_Value_Operators</a></p>
+<p>Hope this helps!</p></div>
+<div class="comment-info" id="comment-78721-info">
+<span class="comment-age">(08 Feb '21, 09:38)</span>
+<a class="comment-user userinfo" href="/users/6765/marcor">MarcoR</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-78691">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-78691-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/78690/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="IAaaluRnLPpuJWeTiCCwrjOcj3X8w8Dz"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

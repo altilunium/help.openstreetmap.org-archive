@@ -1,0 +1,216 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/38985/how-to-get-all-addrstreet-addrhousenumber-addrcity">How to get all addr:street addr:housenumber addr:city ?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/38985/up/" id="post-38985-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-38985-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/38985/down/" id="post-38985-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/38985/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi! I'm need to get all street name, house number and city. I'm using osmconvert with the next query:
+    osmconvert chile-latest.osm --csv="addr:street addr:housenumber addr:city" -o=1.csv</p>
+<p>The problem is I can't get every street and house number, for example, if I get all lat and long, I can get 7.000.000 records, but when I use below query, I can get just 5.000 records. If i look at the map, show a lot more than what I can get.
+How I can get all the street name, house number and city?
+Thanks!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osmconvert" href="/tags/osmconvert/" rel="tag" title="see questions tagged 'osmconvert'">osmconvert</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>01 Dec '14, 18:33</strong>
+</p>
+<img alt="patriciodilet's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/02e87dbe453ed7f88a9f1ba87f6a248e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10090/patriciodilet">patriciodilet</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="patriciodilet has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-38985">
+<a name="39007"></a>
+<div class="comment" id="comment-39007">
+<div class="comment-score" id="post-39007-score">1</div>
+<div class="comment-text"><p>do you have the same "error if you try your query on another raw OSM file from another area in the world? for example Luxembourg or similar?</p>
+<p>Maybe in the result file you only have elements that have all three tags with any value, any all others are skipped?</p></div>
+<div class="comment-info" id="comment-39007-info">
+<span class="comment-age">(02 Dec '14, 17:20)</span>
+<a class="comment-user userinfo" href="/users/99/stephan75">stephan75</a>
+</div>
+</div>
+<a name="39060"></a>
+<div class="comment" id="comment-39060">
+<div class="comment-score" id="post-39060-score"></div>
+<div class="comment-text"><p>Maybe you want to run osmconvert with the additional parameter --all-to-nodes</p></div>
+<div class="comment-info" id="comment-39060-info">
+<span class="comment-age">(04 Dec '14, 22:13)</span>
+<a class="comment-user userinfo" href="/users/8708/mmd">mmd</a>
+</div>
+</div>
+<a name="39062"></a>
+<div class="comment" id="comment-39062">
+<div class="comment-score" id="post-39062-score"></div>
+<div class="comment-text"><p>"if I get all lat and long, I can get 7.000.000 records"</p>
+<p>That sounds a lot - I suspect that this includes <em>every node</em> in Chile, not just those places that have addresses (every park bench, every tree, every node of every way that makes up every road, etc.)</p></div>
+<div class="comment-info" id="comment-39062-info">
+<span class="comment-age">(04 Dec '14, 22:59)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-38985">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-38985-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/38985/how-to-get-all-addrstreet-addrhousenumber-addrcity?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/38985/how-to-get-all-addrstreet-addrhousenumber-addrcity?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/38985/how-to-get-all-addrstreet-addrhousenumber-addrcity?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/38985/how-to-get-all-addrstreet-addrhousenumber-addrcity?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="39080"></a>
+<div class="answer" id="answer-container-39080">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/39080/up/" id="post-39080-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-39080-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/39080/down/" id="post-39080-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Using your slightly modified command (with the file being from December 5th)</p>
+<pre><code>osmconvert chile-latest.osm.pbf  --csv="addr:street addr:housenumber addr:city" -o=1.csv
+</code></pre>
+<p>I get a file with 235.934 lines which each contains a more or less address (sometimes only a street name or a housenumber)</p>
+<p>In short: works for me. (at least it seems so)</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/39080/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>05 Dec '14, 14:51</strong>
+</p>
+<img alt="malenki's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a18e2b8eb41515c09bb66159941584bf?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/583/malenki">malenki</a><br/>
+<span class="score" title="4713 reputation points"><span class="">4.7k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="46 badges"><span class="silver">●</span><span class="badgecount">46</span></span><span title="83 badges"><span class="bronze">●</span><span class="badgecount">83</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="malenki has 10 accepted answers">6%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-39080">
+</div>
+<div class="comment-tools" id="comment-tools-39080">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-39080-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="70099"></a>
+<div class="answer" id="answer-container-70099">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/70099/up/" id="post-70099-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-70099-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/70099/down/" id="post-70099-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>How you did it in overpass-turbo?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/70099/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>16 Jul '19, 14:54</strong>
+</p>
+<img alt="Sterben_123's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/769f93fa803088a3bbd1921f2da6a761?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16929/sterben_123">Sterben_123</a><br/>
+<span class="score" title="1 reputation points">1</span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Sterben_123 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-70099">
+<a name="70101"></a>
+<div class="comment" id="comment-70101">
+<div class="comment-score" id="post-70101-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/16929/sterben_123">@Sterben_123</a>: Please create a new question for your issue.</p></div>
+<div class="comment-info" id="comment-70101-info">
+<span class="comment-age">(16 Jul '19, 16:45)</span>
+<a class="comment-user userinfo" href="/users/10133/tzorn">TZorn</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-70099">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-70099-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/38985/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="7nW25VrUXCQkgvUWnEHAju6ri60BsSYR"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

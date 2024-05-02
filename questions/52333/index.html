@@ -1,0 +1,166 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/52333/how-to-query-more-than-once-every-2-3min-to-overpassapi">how to query more than once every 2-3min to overpass.api?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/52333/up/" id="post-52333-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-52333-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/52333/down/" id="post-52333-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/52333/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have an application with leaflet and overpass.api written in javascript. I use overpass-layer plugin to query to OSM data. My problem , when i query 2 times to overpass.api i get an Too Many request error.</p>
+<p><a href="http://overpass-api.de/api/status">http://overpass-api.de/api/status</a>
+ status shows me that there is a limitation. There is 1 available slot, and after i send a request my IP is blocked for a time period (30sec-3min). Why is my IP banned already after 1 query? And why for so long?.</p>
+<p>in <a href="http://wiki.openstreetmap.org/wiki/Overpass_API">wiki</a> there stands <a href="http://overpass-api.de/api/">http://overpass-api.de/api/</a> :</p>
+<blockquote>
+<p>"Both servers have a total capacity of
+about 1.000.000 requests per day. You
+can safely assume that you don't
+disturb other users when you do less
+than 10.000 queries per day or
+download less than 5 GB data per day."</p>
+</blockquote>
+<p>Need to query more than just once in 3 min. How can i achieve that?</p>
+<p><a href="http://overpass-api.de/api/interpreter?data=[out:json];%20area[name=%22Mannheim%22]-%3E.a;(%20node(area.a)[%22man_made%22=%22works%22];way(area.a)[%22man_made%22=%22works%22];relation(area.a)[%22man_made%22=%22works%22];);out%20body;%3E;out%20skel%20qt;">this</a> is an example query i sent with my application.</p>
+<p>I just created the biggest query possible with my application slot is available after 5min when i use this query:</p>
+<pre><code>area[name="Berlin"]-&gt;.a;
+
+(node(area.a)["landuse"="industrial"]["name"];
+way(area.a)["landuse"="industrial"]["name"];
+relation(area.a)["landuse"="industrial"]["name"];
+
+node(area.a)["landuse"="industrial"]["phone"];
+way(area.a)["landuse"="industrial"]["phone"];
+relation(area.a)["landuse"="industrial"]["phone"];
+
+node(area.a)["landuse"="industrial"]["contact:phone"];
+way(area.a)["landuse"="industrial"]["contact:phone"];
+relation(area.a)["landuse"="industrial"]["contact:phone"];
+
+node(area.a)["landuse"="industrial"]["website"];
+way(area.a)["landuse"="industrial"]["website"];
+relation(area.a)["landuse"="industrial"]["website"];
+
+node(area.a)["building"="industrial"]["name"];
+way(area.a)["building"="industrial"]["name"];
+relation(area.a)["building"="industrial"]["name"];
+
+node(area.a)["building"="industrial"]["phone"];
+way(area.a)["building"="industrial"]["phone"];
+relation(area.a)["building"="industrial"]["phone"];
+
+node(area.a)["building"="industrial"]["contact:phone"];
+way(area.a)["building"="industrial"]["contact:phone"];
+relation(area.a)["building"="industrial"]["contact:phone"];
+
+node(area.a)["building"="industrial"]["website"];
+way(area.a)["building"="industrial"]["website"];
+relation(area.a)["building"="industrial"]["website"];
+);
+out body;
+&gt;;
+out skel qt;
+</code></pre>
+<p><strong>It gives me all tags with name, phone,contact:phone,website
+for landuse=industrial and building=industrial</strong></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-leaflet" href="/tags/leaflet/" rel="tag" title="see questions tagged 'leaflet'">leaflet</a>
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-javascript" href="/tags/javascript/" rel="tag" title="see questions tagged 'javascript'">javascript</a>
+<a class="post-tag tag-link-overpass-api" href="/tags/overpass-api/" rel="tag" title="see questions tagged 'overpass-api'">overpass-api</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>02 Oct '16, 22:04</strong>
+</p>
+<img alt="JsonKh's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fdd97ceec9f9544f1c9d7c57b1ee9707?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12840/jsonkh">JsonKh</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="JsonKh has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/52333/">
+                edited
+                <strong>03 Oct '16, 12:39</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-52333">
+<a name="52334"></a>
+<div class="comment" id="comment-52334">
+<div class="comment-score" id="post-52334-score"></div>
+<div class="comment-text"><p>Your example appears to be data returned by the query not the query.</p></div>
+<div class="comment-info" id="comment-52334-info">
+<span class="comment-age">(03 Oct '16, 09:12)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="52335"></a>
+<div class="comment" id="comment-52335">
+<div class="comment-score" id="post-52335-score"></div>
+<div class="comment-text"><p><a href="http://help.openstreetmap.org/users/647/sk53">@SK53</a>: the query is in the link's URL</p></div>
+<div class="comment-info" id="comment-52335-info">
+<span class="comment-age">(03 Oct '16, 10:00)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+<a name="52336"></a>
+<div class="comment" id="comment-52336">
+<div class="comment-score" id="post-52336-score"></div>
+<div class="comment-text"><p>So it is, but that requires more effort on my part to cut paste &amp; format!</p></div>
+<div class="comment-info" id="comment-52336-info">
+<span class="comment-age">(03 Oct '16, 10:08)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="52400"></a>
+<div class="comment" id="comment-52400">
+<div class="comment-score" id="post-52400-score">1</div>
+<div class="comment-text"><p>This related question contains possibly usefull feedback: <a href="https://help.openstreetmap.org/questions/52384">https://help.openstreetmap.org/questions/52384</a></p></div>
+<div class="comment-info" id="comment-52400-info">
+<span class="comment-age">(07 Oct '16, 19:46)</span>
+<a class="comment-user userinfo" href="/users/12850/alexvanderlinden">alexvanderli...</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-52333">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-52333-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/52333/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Put5hIdlzvxGinU8HUP18NGuPA7Y0XZY"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

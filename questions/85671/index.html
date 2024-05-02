@@ -1,0 +1,75 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/85671/ountry-names-are-not-displayed-on-the-map">Сountry names are not displayed on the map</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/85671/up/" id="post-85671-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-85671-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/85671/down/" id="post-85671-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/85671/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I`m trying to create map which has several layers. One of them consist of country borders (admin_level = 2,3), country name and region names. I use data of coordinates of Armenia and China from <a href="https://download.geofabrik.de/asia.html.">https://download.geofabrik.de/asia.html.</a> I succesfully consolidated these countries with Osmosis 0.40.1.:</p>
+<pre><code>osmosis --read-pbf armenia-latest.osm.pbf --read-pbf china-latest.osm.pbf --merge --write-pbf ArChina.osm.pbf
+</code></pre>
+<p>And extracted border with admin_level = 2,3:</p>
+<pre><code>osmosis --read-pbf ArChina.osm.pbf --tf accept-relation boundary=administrative admin_level=2,3 --tf reject-ways admin_level=5,6,7,8,9 --used-way idTrackerType=Dynamic --tf reject-nodes admin_level=4,5,6,7,8,9 --tf reject-nodes place=village,town,suburb,city --used-node idTrackerType=Dynamic --write-xml ArChinaBord1.osm
+</code></pre>
+<p>Then I converted it to .osm.pbf with Osmosis.</p>
+<p>I understand that I didn't remove all the nodes such as bus stops, natural objects, etc. That`s not the problem.</p>
+<p>The problem is - when I`ve launched this map on Ubuntu server - I saw the borders of 2 countries, region names of both of them and only 1 country name (Armenia). I was trying to zoom in and zoom out, but it didn't help. Сhina name is not showing at all.</p>
+<p>I checked ArChinaBord1.osm (consolidated file with Armenia and China borders, names). The xml structure of Armenia and China names (node with place=country) is the same, but only one name is shown.</p>
+<p>Could you give me some advice, how it could be fixed?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-countryname" href="/tags/countryname/" rel="tag" title="see questions tagged 'countryname'">countryname</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Sep '22, 08:56</strong>
+</p>
+<img alt="Ives111's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9c50686cfab696ad0f304e44256c319d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/22249/ives111">Ives111</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Ives111 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-85671">
+</div>
+<div class="comment-tools" id="comment-tools-85671">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-85671-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/85671/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="2qmb5GkyiIvPEtsYLBnSu1i9ArOMJSDl"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

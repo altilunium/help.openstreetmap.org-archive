@@ -1,0 +1,226 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/45185/osmosis-data-not-found">OSMOSIS data not found</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/45185/up/" id="post-45185-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-45185-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/45185/down/" id="post-45185-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/45185/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi all,</p>
+<p>I am very new to this and just managed to install OSMOSIS.  I am trying to test run a small data extract, but it files finding the data</p>
+<p>osmosis --read-pbf moldova-latest.osm.pbf --bounding-box top=47.0 left=28.0 bottom=46.0 right=29.0 --write-pbf cut.pbf</p>
+<p>Does this bring the Moldova file from the internet or do I need to place the file in a certain folder.</p>
+<p>Any help greatly appreciated</p>
+<p>Many thanks</p>
+<p>Jon</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-extract" href="/tags/extract/" rel="tag" title="see questions tagged 'extract'">extract</a>
+<a class="post-tag tag-link-data" href="/tags/data/" rel="tag" title="see questions tagged 'data'">data</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>11 Sep '15, 11:45</strong>
+</p>
+<img alt="Jon2709's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad7df450e9cbc9f0133014ef50c8bcf0?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11458/jon2709">Jon2709</a><br/>
+<span class="score" title="36 reputation points">36</span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="8 badges"><span class="bronze">●</span><span class="badgecount">8</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jon2709 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-45185">
+<a name="45186"></a>
+<div class="comment" id="comment-45186">
+<div class="comment-score" id="post-45186-score"></div>
+<div class="comment-text"><p>Your command line is looking for moldova-latest.osm.pbf in the directory that you are currently in.</p></div>
+<div class="comment-info" id="comment-45186-info">
+<span class="comment-age">(11 Sep '15, 11:46)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="45187"></a>
+<div class="comment" id="comment-45187">
+<div class="comment-score" id="post-45187-score"></div>
+<div class="comment-text"><p>Thanks, but now I get another error failed to initialise Osmosis pbf serializer</p>
+<p>I think I will try with the planet.pbf</p></div>
+<div class="comment-info" id="comment-45187-info">
+<span class="comment-age">(11 Sep '15, 11:54)</span>
+<a class="comment-user userinfo" href="/users/11458/jon2709">Jon2709</a>
+</div>
+</div>
+<a name="45188"></a>
+<div class="comment" id="comment-45188">
+<div class="comment-score" id="post-45188-score"></div>
+<div class="comment-text"><p>Don't try the planet until a small extract works.  You'll need to provide more information (what OS you're using, how did you install osmosis etc.) to get more meaningful help.</p></div>
+<div class="comment-info" id="comment-45188-info">
+<span class="comment-age">(11 Sep '15, 11:56)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="45189"></a>
+<div class="comment" id="comment-45189">
+<div class="comment-score" id="post-45189-score"></div>
+<div class="comment-text"><p>Using windows 7 enterprise</p>
+<p>Downloaded the latest OSMOSIS file, and had to change the batch file plexus-classworlds-2.4.jar to plexus-classworlds-2.5.2.jar to get OSMOSIS working on my PC</p>
+<p>The point of this task is that I use ESRI software and I have built various models to extract OSM data into ESRI Geeodatabases and to merge the OSM Shapefiles (that contain labels) with the database.  I want to play with the .pbf formats to see what other useful info/metadata is available and see on the tags work. </p>
+<p>I will most likely stay with the ESRI model that have for extracting .osm data.  But I would like to have OSMOSIS working</p>
+<p>Thanks for the help!</p></div>
+<div class="comment-info" id="comment-45189-info">
+<span class="comment-age">(11 Sep '15, 12:02)</span>
+<a class="comment-user userinfo" href="/users/11458/jon2709">Jon2709</a>
+</div>
+</div>
+<a name="45192"></a>
+<div class="comment" id="comment-45192">
+<div class="comment-score" id="post-45192-score">1</div>
+<div class="comment-text"><p>It's not just you and it's not just a problem with our wiki page.  As currently packaged osmosis doesn't work on Windows.  There's the plexus-classworlds change that you spotted, but also clearly something else (and not just that the readme is wrong).</p>
+<p>What I've done in the past on Windows is just ignore osmosis' bizarre packaging attempt and set the CLASSPATH manually.  That may work, but requires more knowledge of Java than users ought to need.</p>
+<p>I'll have a look at it if time permits today - but with a bit of luck somebody somewhere may have a distribution that actually works.</p></div>
+<div class="comment-info" id="comment-45192-info">
+<span class="comment-age">(11 Sep '15, 12:53)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="45195"></a>
+<div class="comment not_top_scorer" id="comment-45195">
+<div class="comment-score" id="post-45195-score"></div>
+<div class="comment-text"><p>Many thanks, looking forward to it.  If you do find a solution please email me on jonathan.mccloskey1@btinternet.com</p>
+<p>best</p>
+<p>jon</p></div>
+<div class="comment-info" id="comment-45195-info">
+<span class="comment-age">(11 Sep '15, 13:03)</span>
+<a class="comment-user userinfo" href="/users/11458/jon2709">Jon2709</a>
+</div>
+</div>
+<a name="45199"></a>
+<div class="comment not_top_scorer" id="comment-45199">
+<div class="comment-score" id="post-45199-score"></div>
+<div class="comment-text"><p>I've tidied up the readme and the batch file to make them more likely to work in most cases.  See <a href="https://github.com/SomeoneElseOSM/osmosis/releases/tag/0.44.1.5">https://github.com/SomeoneElseOSM/osmosis/releases/tag/0.44.1.5</a> .</p>
+<p>Try the zip file at <a href="https://github.com/SomeoneElseOSM/osmosis/releases/download/0.44.1.5/osmosis-0.44.1-5-gc2a8a69-SNAPSHOT.zip">https://github.com/SomeoneElseOSM/osmosis/releases/download/0.44.1.5/osmosis-0.44.1-5-gc2a8a69-SNAPSHOT.zip</a> .  I've added a pbf example to the readme - if it still doesn't work post the full command line here.  FWIW it works for me on Windows now when run with a Java version that identifies as "Java(TM) SE Runtime Environment (build 1.8.0_60-b27)".</p></div>
+<div class="comment-info" id="comment-45199-info">
+<span class="comment-age">(11 Sep '15, 16:57)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="45235"></a>
+<div class="comment not_top_scorer" id="comment-45235">
+<div class="comment-score" id="post-45235-score"></div>
+<div class="comment-text"><p>Many thanks!!</p></div>
+<div class="comment-info" id="comment-45235-info">
+<span class="comment-age">(14 Sep '15, 10:04)</span>
+<a class="comment-user userinfo" href="/users/11458/jon2709">Jon2709</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-45185">
+<span class="comments-showing">
+            showing 5 of 8
+        </span>
+<a class="show-all-comments-link" href="#">show 3 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-45185-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/45185/osmosis-data-not-found?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/45185/osmosis-data-not-found?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/45185/osmosis-data-not-found?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/45185/osmosis-data-not-found?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="45200"></a>
+<div class="answer" id="answer-container-45200">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/45200/up/" id="post-45200-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-45200-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/45200/down/" id="post-45200-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>For this type of operation I would strongly suggest using <a href="http://wiki.openstreetmap.org/wiki/Osmconvert">osmconvert</a>. </p>
+<p>Osmosis has had issues with its Windows distribution for at least <a href="http://forum.openstreetmap.org/viewtopic.php?id=4039">6 years</a>. As SomeoneElse shows they can be fixed, but there are other less painful routes.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/45200/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>11 Sep '15, 17:06</strong>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br/>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SK53 has 121 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-45200">
+<a name="45233"></a>
+<div class="comment" id="comment-45233">
+<div class="comment-score" id="post-45233-score"></div>
+<div class="comment-text"><p>Thanks, yes came across osmconvert and being using this.</p></div>
+<div class="comment-info" id="comment-45233-info">
+<span class="comment-age">(14 Sep '15, 09:12)</span>
+<a class="comment-user userinfo" href="/users/11458/jon2709">Jon2709</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-45200">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-45200-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/45185/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Jkpvv4fBmX2NrhRNDSGDlvDzXABAC4Sb"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

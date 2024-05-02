@@ -1,0 +1,108 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/44962/pink-tiles-and-empty-varlibmod_tiles-folder">Pink tiles and empty /var/lib/mod_tiles folder</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44962/up/" id="post-44962-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44962-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/44962/down/" id="post-44962-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/44962/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>I have used my spare time the last week to set up a tile server, but I am getting tired of seeing pink tiles, so I hope someone here can help me.</p>
+<p>The setup is as follows:
+I have rented a Virtual server. It runs ubuntu 14.04.</p>
+<p>On the server I host some of my domains. One of these domains is <a href="http://lamhauge.dk">lamhauge.dk</a>.
+In my setup file for lamhauge.dk under /etc/apache2/sites-available I have set  '/var/www/osm' as "Document root".</p>
+<p>I have renamed slipperymap.html to index.htm, and changed the coordinates to be my danish hometown.</p>
+<p>This means that if you enter the domain <a href="http://lamhauge.dk">lamhauge.dk</a>, you see a map - or rather, you see a lot of pink tiles. The mapnik map works fine.</p>
+<p>I have followed the guide on <a href="https://switch2osm.org/serving-tiles/building-a-tile-server-from-packages/.">https://switch2osm.org/serving-tiles/building-a-tile-server-from-packages/.</a>
+I have imported the danish map only.
+None of the installations or imports has given error messages.</p>
+<p>The only problem I can find is that the /var/lib/mod_tile directory is empty. When I do a 'ls -la /var/lib/mod_tile/' I get this result:</p>
+<pre><code>total 8
+drwxrwxrwx  2 www-data www-data 4096 aug 24 21:14 .
+drwxr-xr-x 52 root     root     4096 aug 24 18:28 ..
+-rwxrwxrwx  1 www-data www-data    0 aug 25 23:05 planet-import-complete
+</code></pre>
+<p>I hope someone can give me an idea of what is wrong...</p>
+<p>Thanks
+David</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-pink" href="/tags/pink/" rel="tag" title="see questions tagged 'pink'">pink</a>
+<a class="post-tag tag-link-tiles" href="/tags/tiles/" rel="tag" title="see questions tagged 'tiles'">tiles</a>
+<a class="post-tag tag-link-empty" href="/tags/empty/" rel="tag" title="see questions tagged 'empty'">empty</a>
+<a class="post-tag tag-link-mod_tile" href="/tags/mod_tile/" rel="tag" title="see questions tagged 'mod_tile'">mod_tile</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>29 Aug '15, 08:10</strong>
+</p>
+<img alt="DLamhauge's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/35111ee49793d56171926788b6728899?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11415/dlamhauge">DLamhauge</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="DLamhauge has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44962">
+<a name="44972"></a>
+<div class="comment" id="comment-44972">
+<div class="comment-score" id="post-44972-score"></div>
+<div class="comment-text"><p>Hello David,</p>
+<p>without knowing a solution for you I recommend to search for "pink" on this FAQ site, because "pink tiles" are a typical error I have read years before.</p>
+<p>Or do an internet search about "OSM pink tiles" or similar.</p></div>
+<div class="comment-info" id="comment-44972-info">
+<span class="comment-age">(30 Aug '15, 15:05)</span>
+<a class="comment-user userinfo" href="/users/99/stephan75">stephan75</a>
+</div>
+</div>
+<a name="44999"></a>
+<div class="comment" id="comment-44999">
+<div class="comment-score" id="post-44999-score"></div>
+<div class="comment-text"><p>Thank for your recommendation, Stephan75.
+I have read numerous post after searching for "pink tiles", "mod_tile", "dir empty" and the like.
+I have tried to put "Header set Access-Control-Allow-Origin "*" " in the config file as someone suggested, but nothing seems to help.</p></div>
+<div class="comment-info" id="comment-44999-info">
+<span class="comment-age">(31 Aug '15, 17:19)</span>
+<a class="comment-user userinfo" href="/users/11415/dlamhauge">DLamhauge</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-44962">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44962-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/44962/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="8FAXKC7D7xEBvbZ2tZStnSFmKFEYToWP"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

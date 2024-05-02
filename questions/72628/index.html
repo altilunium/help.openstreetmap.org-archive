@@ -1,0 +1,86 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/72628/how-to-limit-query-to-parts-of-highways-strictly-inside-an-area-or-use-boundary-as-polygon">How to limit query to parts of highways strictly inside an area or use boundary as polygon</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/72628/up/" id="post-72628-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-72628-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/72628/down/" id="post-72628-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/72628/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I want to perform some analyses on the cycleways in my town. To do this I exported the cycleways using the following overpass query:</p>
+<pre><code>[out:json];
+area[name="Segrate"];
+way["highway"="cycleway"](area);
+(._;&gt;;);
+out;
+</code></pre>
+<p>I noticed that some of the returned cycleways are <strong>outside</strong> of the town, which is very clear if you run <a href="http://overpass-turbo.eu/s/Q0Z">this query, in which I also draw the town boundaries</a>.</p>
+<p>It appears that if the cycleway has a part inside the area and one outside, also the outer part is included in the query response.</p>
+<ul>
+<li>Is there a way to limit the response of the query regarding a area, to the parts of the highways strictly inside that area?</li>
+<li>Alternatively, how can I use the boundaries as a polygon to limit the returned highways at the nodes that are inside?</li>
+</ul>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-boundary" href="/tags/boundary/" rel="tag" title="see questions tagged 'boundary'">boundary</a>
+<a class="post-tag tag-link-area" href="/tags/area/" rel="tag" title="see questions tagged 'area'">area</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>22 Jan '20, 21:29</strong>
+</p>
+<img alt="livmilan's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/45814029815083fa610e054e4c079a3f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17767/livmilan">livmilan</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="livmilan has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/72628/">
+                edited
+                <strong>22 Jan '20, 21:30</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-72628">
+</div>
+<div class="comment-tools" id="comment-tools-72628">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-72628-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/72628/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="hLTUMHwf60oM6BoHjTE5xjsoJOdxllMw"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

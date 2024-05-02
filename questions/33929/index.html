@@ -1,0 +1,143 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/33929/how-to-perfom-a-request-with-different-values-for-the-location-area">how to perfom a request with different values for the location / area</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/33929/up/" id="post-33929-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-33929-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/33929/down/" id="post-33929-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/33929/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>new to osm - and all the corresponding things like requests done with overpass and thelike </p>
+<p>update: this thread is related to the thread <a href="https://help.openstreetmap.org/questions/33926/osm-overpass-api-with-php-simplexml-minor-changes-to-the-parser">https://help.openstreetmap.org/questions/33926/osm-overpass-api-with-php-simplexml-minor-changes-to-the-parser</a></p>
+<p>where i perform a request to the overpass-API-endpoint. All goes well - but i want to have </p>
+<p>a. the results stored within a mysql-database
+b.  perform a request with another area-definition.... </p>
+<p>see more at the above mentioned thread:</p>
+<p>how to perform a request - note i do them with PHP</p>
+<pre><code>$query = 'node
+  ["amenity"~".*"]
+  (38.415938460513274,16.06338500976562,39.52205163048525,17.51220703125);
+out;';
+</code></pre>
+<p>what if i replace this with the following</p>
+<pre><code>$query = 'node
+  ["addr:postcode"~"RM12"]
+  (51.5557914,0.2118915,51.5673083,0.2369398);
+   node
+  (around:1000)
+  ["amenity"~"fast_food"];
+           out;';
+</code></pre>
+<p>cf: <a href="http://wiki.openstreetmap.org/wiki/Xapi">http://wiki.openstreetmap.org/wiki/Xapi</a></p>
+<p>well can i enter values for countries as well 
+what if i want to have all schools from a certain country:<br/>
+</p>
+<pre><code>$query = 'node
+  ["addr:country"~"Brasil"]
+   node
+  ["amenity"~"school"];
+           out;';
+</code></pre>
+<p><strong>question</strong> - can i do like mentioned above - can i perfom such requests?</p>
+<p>please set me straight if my question is not concise and concrete enough</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-xapi" href="/tags/xapi/" rel="tag" title="see questions tagged 'xapi'">xapi</a>
+<a class="post-tag tag-link-php" href="/tags/php/" rel="tag" title="see questions tagged 'php'">php</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-mysql" href="/tags/mysql/" rel="tag" title="see questions tagged 'mysql'">mysql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>12 Jun '14, 21:29</strong>
+</p>
+<img alt="say_hello_to_the_world's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bf4d2d8660e82c4a7387b7d2a8a8cfcd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8644/say_hello_to_the_world">say_hello_to...</a><br/>
+<span class="score" title="19 reputation points">19</span><span title="23 badges"><span class="badge1">●</span><span class="badgecount">23</span></span><span title="24 badges"><span class="silver">●</span><span class="badgecount">24</span></span><span title="27 badges"><span class="bronze">●</span><span class="badgecount">27</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="say_hello_to_the_world has no accepted answers">0%</span>
+</br></p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/33929/">
+                edited
+                <strong>12 Jun '14, 22:28</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-33929">
+<a name="33930"></a>
+<div class="comment" id="comment-33930">
+<div class="comment-score" id="post-33930-score"></div>
+<div class="comment-text"><p>Are you trying to use XAPI or Overpass?  You've referenced the XAPI wiki page and are quoting what looks like overpass queries.  Also, you've not said what (this time) your end goal is.</p>
+<p>It might help to take a step back and document somewhere (perhaps on a personal wiki page?) what you're trying to do, why you're trying to do it, what you've tried so far, what you expected to happen, and what actually did happen.</p>
+<p>This page here is about software bug reporting:</p>
+<p><a href="http://www.joelonsoftware.com/articles/fog0000000029.html">http://www.joelonsoftware.com/articles/fog0000000029.html</a></p>
+<p>but you might find it helpful all the same.</p></div>
+<div class="comment-info" id="comment-33930-info">
+<span class="comment-age">(12 Jun '14, 21:56)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="33933"></a>
+<div class="comment" id="comment-33933">
+<div class="comment-score" id="post-33933-score"></div>
+<div class="comment-text"><p>update: thank you for the respond! this thread is related to the thread <a href="https://help.openstreetmap.org/questions/33926/osm-overpass-api-with-php-simplexml-minor-changes-to-the-parser">https://help.openstreetmap.org/questions/33926/osm-overpass-api-with-php-simplexml-minor-changes-to-the-parser</a></p>
+<p>where i perform a request to the overpass-API-endpoint. All goes well - but i want to have </p>
+<p>a. the results stored within a mysql-database
+b.  perform a request with another area-definition.... </p>
+<p>see more at the above mentioned thread:</p></div>
+<div class="comment-info" id="comment-33933-info">
+<span class="comment-age">(12 Jun '14, 22:29)</span>
+<a class="comment-user userinfo" href="/users/8644/say_hello_to_the_world">say_hello_to...</a>
+</div>
+</div>
+<a name="33937"></a>
+<div class="comment" id="comment-33937">
+<div class="comment-score" id="post-33937-score"></div>
+<div class="comment-text"><p>hello dear SomeQoneElse - again me. well since i am learing while working with the scripts i have create a wiki-page - here i collect all the ideas and good things that i collect in the internet. see the above mentioned question - in other words - rephrased <a href="http://wiki.openstreetmap.org/wiki/PHP_und_Overpass">http://wiki.openstreetmap.org/wiki/PHP_und_Overpass</a></p>
+<p>love to hear from you. Dont hesitate to add your ideas - either here or at the wikipage</p></div>
+<div class="comment-info" id="comment-33937-info">
+<span class="comment-age">(12 Jun '14, 23:51)</span>
+<a class="comment-user userinfo" href="/users/8644/say_hello_to_the_world">say_hello_to...</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-33929">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-33929-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/33929/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="9k3FeHoGPQtUAmVPUzJgZwqcKxrMUTHU"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

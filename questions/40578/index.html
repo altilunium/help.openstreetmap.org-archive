@@ -1,0 +1,189 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/40578/how-to-convert-osm-geometries-to-other-coordinate-reference-systems">How to convert OSM geometries to other coordinate reference systems?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/40578/up/" id="post-40578-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-40578-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/40578/down/" id="post-40578-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/40578/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi everyone,</p>
+<p>I haven't found any useable source on the web which tells me how to convert data from OSM which I have imported with osm2pgsql into my postGIS database to another coordinate reference Systems (CRS) like UTM or lat/Long. How can I do this task with the integrated functions in the postGIS database or vice versa, how to convert data from another database with e.g. UTM coordinates to the format OSM is using?</p>
+<p>Thanks,
+Stefan aka nordie69 </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-conversion" href="/tags/conversion/" rel="tag" title="see questions tagged 'conversion'">conversion</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+<a class="post-tag tag-link-coordinates" href="/tags/coordinates/" rel="tag" title="see questions tagged 'coordinates'">coordinates</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>24 Jan '15, 20:47</strong>
+</p>
+<img alt="nordie69's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/194bd6ccac093a55e95c4b66f9baadf4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10255/nordie69">nordie69</a><br/>
+<span class="score" title="45 reputation points">45</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="nordie69 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-40578">
+</div>
+<div class="comment-tools" id="comment-tools-40578">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-40578-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/40578/how-to-convert-osm-geometries-to-other-coordinate-reference-systems?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/40578/how-to-convert-osm-geometries-to-other-coordinate-reference-systems?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/40578/how-to-convert-osm-geometries-to-other-coordinate-reference-systems?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/40578/how-to-convert-osm-geometries-to-other-coordinate-reference-systems?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="40587"></a>
+<div class="answer" id="answer-container-40587">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/40587/up/" id="post-40587-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-40587-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/40587/down/" id="post-40587-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Unless you have specified a different CRS upon import (using the <code>-l</code> or <code>-E</code>), your import is in EPSG:3857 a.k.a EPSG:900913. To convert to a different CRS, use the PostGIS ST_Transform method:</p>
+<pre><code>SELECT name, ST_AsText(ST_Transform(way, 4326))
+FROM planet_osm_point
+WHERE amenity='pub';
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/40587/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Jan '15, 00:40</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-40587">
+</div>
+<div class="comment-tools" id="comment-tools-40587">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-40587-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="40588"></a>
+<div class="answer" id="answer-container-40588">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/40588/up/" id="post-40588-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-40588-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/40588/down/" id="post-40588-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Use standard PostGIS function <code>st_transform(geometry,EPSG#)</code>. Using <code>ST_Setsrid</code> is useful to ensure the DB knows which co-ordinate system it is using. It is relatively easy to alter the standard table to add additional geometry columns, but the tables may not then be suitable for updates.</p>
+<p>osm2pgsql allows the specification of the desired co-ordinate system as a flag on input. I'd use this if working predominantly in one co-ordinate system.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/40588/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Jan '15, 00:44</strong>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br/>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SK53 has 121 accepted answers">22%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/40588/">
+                edited
+                <strong>13 Mar '15, 16:08</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-40588">
+</div>
+<div class="comment-tools" id="comment-tools-40588">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-40588-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/40578/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="0OjywPTlzyvlNi7Hxl9JYKUSEzGJnghr"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

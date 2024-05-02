@@ -1,0 +1,125 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/70447/unable-to-open-file-for-writing-importing-updated">Unable to open file for writing. Importing updated</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/70447/up/" id="post-70447-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-70447-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/70447/down/" id="post-70447-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/70447/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>"Unable to open file for writing."</p>
+<p>Does anyone know where I can find out why an update will not apply</p>
+<p>Command-line that was being run was</p>
+<p><strong>osmosis --read-replication-interval workingDirectory=/var/lib/mod_tile/.osmosis --simplify-change --write-xml-change /var/lib/mod_tile/changes.osc.gz</strong></p>
+<pre>Aug 21, 2019 9:40:12 AM org.openstreetmap.osmosis.core.Osmosis run
+INFO: Osmosis Version 0.46
+Aug 21, 2019 9:40:12 AM org.java.plugin.registry.xml.ManifestParser &lt;init&gt;
+INFO: got SAX parser factory - org.apache.xerces.jaxp.SAXParserFactoryImpl@1e397ed7
+Aug 21, 2019 9:40:12 AM org.java.plugin.registry.xml.PluginRegistryImpl configure
+INFO: configured, stopOnError=false, isValidating=true
+Aug 21, 2019 9:40:12 AM org.java.plugin.registry.xml.PluginRegistryImpl register
+INFO: plug-in and fragment descriptors registered - 1
+Aug 21, 2019 9:40:12 AM org.java.plugin.standard.StandardPluginManager activatePlugin
+INFO: plug-in started - org.openstreetmap.osmosis.core.plugin.Core@0.46.0 (active/total: 1 of 1)
+Aug 21, 2019 9:40:12 AM org.openstreetmap.osmosis.core.Osmosis run
+INFO: Preparing pipeline.
+Aug 21, 2019 9:40:12 AM org.openstreetmap.osmosis.core.Osmosis run
+INFO: Launching pipeline execution.
+Aug 21, 2019 9:40:12 AM org.openstreetmap.osmosis.core.Osmosis run
+INFO: Pipeline executing, waiting for completion.
+Aug 21, 2019 9:43:41 AM org.openstreetmap.osmosis.core.pipeline.common.ActiveTaskManager waitForCompletion
+SEVERE: Thread for task 1-read-replication-interval failed
+org.openstreetmap.osmosis.core.OsmosisRuntimeException: Unable to open file for writing.
+    at org.openstreetmap.osmosis.xml.common.BaseXmlWriter.initialize(BaseXmlWriter.java:161)
+    at org.openstreetmap.osmosis.xml.v0_6.XmlChangeWriter.process(XmlChangeWriter.java:56)
+    at org.openstreetmap.osmosis.set.v0_6.impl.ChangeSimplifierImpl.flushCurrentChanges(ChangeSimplifierImpl.java:60)
+    at org.openstreetmap.osmosis.set.v0_6.impl.ChangeSimplifierImpl.process(ChangeSimplifierImpl.java:88)
+    at org.openstreetmap.osmosis.core.sort.v0_6.SortedHistoryChangePipeValidator.process(SortedHistoryChangePipeValidator.java:71)
+    at org.openstreetmap.osmosis.set.v0_6.ChangeSimplifier.process(ChangeSimplifier.java:50)
+    at org.openstreetmap.osmosis.core.sort.v0_6.ChangeSorter.complete(ChangeSorter.java:69)
+    at org.openstreetmap.osmosis.replication.v0_6.ReplicationDownloader.processComplete(ReplicationDownloader.java:116)
+    at org.openstreetmap.osmosis.replication.v0_6.BaseReplicationDownloader.runImpl(BaseReplicationDownloader.java:280)
+    at org.openstreetmap.osmosis.replication.v0_6.BaseReplicationDownloader.run(BaseReplicationDownloader.java:350)
+    at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.io.FileNotFoundException: /var/lib/mod_tile/changes.osc.gz (Permission denied)
+    at java.base/java.io.FileOutputStream.open0(Native Method)
+    at java.base/java.io.FileOutputStream.open(FileOutputStream.java:298)
+    at java.base/java.io.FileOutputStream.&lt;init&gt;(FileOutputStream.java:237)
+    at java.base/java.io.FileOutputStream.&lt;init&gt;(FileOutputStream.java:187)
+    at org.openstreetmap.osmosis.xml.common.BaseXmlWriter.initialize(BaseXmlWriter.java:148)
+    ... 10 more
+
+Aug 21, 2019 9:43:41 AM org.openstreetmap.osmosis.core.Osmosis main
+SEVERE: Execution aborted.
+org.openstreetmap.osmosis.core.OsmosisRuntimeException: One or more tasks failed.
+    at org.openstreetmap.osmosis.core.pipeline.common.Pipeline.waitForCompletion(Pipeline.java:146)
+    at org.openstreetmap.osmosis.core.Osmosis.run(Osmosis.java:92)
+    at org.openstreetmap.osmosis.core.Osmosis.main(Osmosis.java:37)
+    at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchStandard(Launcher.java:330)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:238)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+    at org.codehaus.classworlds.Launcher.main(Launcher.java:47)
+</pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap" href="/tags/openstreetmap/" rel="tag" title="see questions tagged 'openstreetmap'">openstreetmap</a>
+<a class="post-tag tag-link-open" href="/tags/open/" rel="tag" title="see questions tagged 'open'">open</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+<a class="post-tag tag-link-file" href="/tags/file/" rel="tag" title="see questions tagged 'file'">file</a>
+<a class="post-tag tag-link-writing" href="/tags/writing/" rel="tag" title="see questions tagged 'writing'">writing</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Aug '19, 11:04</strong>
+</p>
+<img alt="Karl_G's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/38e6d558e7e337c63ce2551c30287e3e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17070/karl_g">Karl_G</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Karl_G has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-70447">
+</div>
+<div class="comment-tools" id="comment-tools-70447">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-70447-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/70447/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="ut1g7w92JdiXc8hKykjg0BPUa5pfhIqy"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

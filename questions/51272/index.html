@@ -1,0 +1,219 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/51272/cant-get-local-osm-api-server-to-return-any-map-data">Can't get local OSM API server to return any map data</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/51272/up/" id="post-51272-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-51272-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/51272/down/" id="post-51272-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/51272/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm trying to set up my own Rails Port OSM API server as my application needs to make a very large number of map queries.</p>
+<p>I finally have everything looking like it should work but when I query a region of the map that has been populated from a .osm file using osm2pgsql I just get the wrapper nodes with no actual content returned. It's as though the region I'm querying has not been populated with data.</p>
+<p>The details:</p>
+<p>I'm using an Ubuntu 16.04 running on a Virtual Machine.</p>
+<p>I followed all steps described here: <a href="https://github.com/openstreetmap/openstreetmap-website/blob/master/INSTALL.md">https://github.com/openstreetmap/openstreetmap-website/blob/master/INSTALL.md</a> . But I had to change a few things due to version and package name changes. So I ended up installing these:</p>
+<pre><code>sudo apt-get install ruby libruby ruby-dev \
+                 libmagickwand-dev libxml2-dev libxslt1-dev nodejs \
+                 apache2 apache2-dev build-essential git-core \
+                 postgresql postgresql-contrib libpq-dev postgresql-server-dev-all \
+                 libsasl2-dev imagemagick
+sudo gem install bundler
+</code></pre>
+<p>I got error messages later on in the process regarding not having svgo installed, so I also ended up installing this to get rid of the errors:</p>
+<pre><code>sudo apt-get install npm
+sudo npm install -g svgo
+
+# and due to <a href="https://github.com/nodejs/node-v0.x-archive/issues/3911">https://github.com/nodejs/node-v0.x-archive/issues/3911</a> :
+sudo ln -s /usr/bin/nodejs /usr/bin/node
+</code></pre>
+<p>To fix some other errors I got when trying to run osm2pgsql I found I had to add PostGIS support to database:</p>
+<pre><code>psql -U &lt;user&gt; &lt;database&gt;
+e.g. psql -U myusername openstreetmap
+at prompt type:
+    CREATE EXTENSION postgis;
+    \q      // to exit
+</code></pre>
+<p>I got hold of the Bonn, Germany .osm.bz2 file from  mapzen.com/data/metro-extracts/</p>
+<p>I populated this into the database:</p>
+<pre><code>osm2pgsql -s -U myusername -d openstreetmap bonn_germany.osm.bz2
+</code></pre>
+<p>I carefully examined the log generated and there were no errors and the import seemed to be successful.</p>
+<p>I started the Rails Port webserver:
+    bundle exec rails server</p>
+<p>From a webpage on the same PC I did a REST query for a small region that is inside Bonn:</p>
+<pre><code>localhost:3000/api/0.6/map?bbox=7.0974,50.7321,7.0982,50.7325
+</code></pre>
+<p>I got a response so I know the server is running, but the response just contained the following:</p>
+<pre><code>   &lt;osm version="0.6" generator="OpenStreetMap server" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/"&gt;
+
+        &lt;bounds minlat="50.7321" minlon="7.0974" maxlat="50.7325" maxlon="7.0982"&gt;
+
+    &lt;/osm&gt;
+</code></pre>
+<p>So I'm just getting the wrapper nodes with no data for the region inside the bounding box.</p>
+<p>If I make the same query to the public server:</p>
+<pre><code>www.openstreetmap.com/api/0.6/map?bbox=7.0974,50.7321,7.0982,50.7325
+</code></pre>
+<p>Then I get a long list of nodes and ways from inside the bounding box as expected.</p>
+<p>Any idea what I am doing wrong?</p>
+<p>Thanks</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-api" href="/tags/api/" rel="tag" title="see questions tagged 'api'">api</a>
+<a class="post-tag tag-link-local" href="/tags/local/" rel="tag" title="see questions tagged 'local'">local</a>
+<a class="post-tag tag-link-empty" href="/tags/empty/" rel="tag" title="see questions tagged 'empty'">empty</a>
+<a class="post-tag tag-link-server" href="/tags/server/" rel="tag" title="see questions tagged 'server'">server</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>06 Aug '16, 01:45</strong>
+</p>
+<img alt="techtonic's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1f7eee70781fe255c6080ea67ac5e216?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12620/techtonic">techtonic</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="techtonic has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/51272/">
+                edited
+                <strong>06 Aug '16, 01:54</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-51272">
+<a name="51275"></a>
+<div class="comment" id="comment-51275">
+<div class="comment-score" id="post-51275-score"></div>
+<div class="comment-text"><p>Setting up a rails port just for a number of map calls seems to be quite a lot of overhead to me. I would possibly suggest to set up your own Overpass API instance and use the <a href="https://github.com/drolbr/Overpass-API/blob/master/src/cgi-bin/map">map call</a> available there. I may be a bit biased, though... Can you shed some light on how many calls you're planning to run per minute and what your coverage area looks like?</p></div>
+<div class="comment-info" id="comment-51275-info">
+<span class="comment-age">(06 Aug '16, 08:14)</span>
+<a class="comment-user userinfo" href="/users/8708/mmd">mmd</a>
+</div>
+</div>
+<a name="51288"></a>
+<div class="comment" id="comment-51288">
+<div class="comment-score" id="post-51288-score"></div>
+<div class="comment-text"><p><a href="http://help.openstreetmap.org/users/8708/mmd">@mmd</a> I need to perform a map query to get the nodes and ways (not interested in image tiles) on an array of approx 2km x 2km tiles covering most of central Europe. Plus we need to edit the database locally using other GIS tools in ways that would not be beneficial to the OSM community, so it would not be right to do it to the public copy. I am definitely looking at Overpass as a possibility for reading the finished map in a more efficient manner. I'm kinda new to OSM so still trying to figure out what is possible.</p></div>
+<div class="comment-info" id="comment-51288-info">
+<span class="comment-age">(07 Aug '16, 07:16)</span>
+<a class="comment-user userinfo" href="/users/12620/techtonic">techtonic</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-51272">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-51272-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/51272/cant-get-local-osm-api-server-to-return-any-map-data?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/51272/cant-get-local-osm-api-server-to-return-any-map-data?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/51272/cant-get-local-osm-api-server-to-return-any-map-data?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/51272/cant-get-local-osm-api-server-to-return-any-map-data?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="51286"></a>
+<div class="answer" id="answer-container-51286">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/51286/up/" id="post-51286-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-51286-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/51286/down/" id="post-51286-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The rails port uses a database schema that is different from osm2pgsql's, hence osm2pgsql is the wrong tool to use if you want to populate a database for use with the rails port. You must use osmosis with the "APIDB" schema instead.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/51286/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Aug '16, 21:30</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-51286">
+<a name="51289"></a>
+<div class="comment" id="comment-51289">
+<div class="comment-score" id="post-51289-score"></div>
+<div class="comment-text"><p>Thanks, I was not aware of that and it sounds like a probable cause of my problem. I did try using Osmosis to import a few times but had trouble getting it to connect to the postgresql database. I will try again when I get back to work next week.</p></div>
+<div class="comment-info" id="comment-51289-info">
+<span class="comment-age">(07 Aug '16, 07:20)</span>
+<a class="comment-user userinfo" href="/users/12620/techtonic">techtonic</a>
+</div>
+</div>
+<a name="51309"></a>
+<div class="comment" id="comment-51309">
+<div class="comment-score" id="post-51309-score"></div>
+<div class="comment-text"><p>I finally got osmosis to connect to database by removing password requirement from pg_hba.conf. Importing the same .osm file with osmosis works and now I am getting valid data returned :)
+Thanks for the help!</p></div>
+<div class="comment-info" id="comment-51309-info">
+<span class="comment-age">(08 Aug '16, 21:02)</span>
+<a class="comment-user userinfo" href="/users/12620/techtonic">techtonic</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-51286">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-51286-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/51272/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="SLNo7vQRNdMevIKIB5RgYz3LYA0la3Tt"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

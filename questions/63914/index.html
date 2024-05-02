@@ -1,0 +1,129 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/63914/state-is-missing-in-search">State is missing in search</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/63914/up/" id="post-63914-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-63914-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/63914/down/" id="post-63914-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/63914/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I installed a local nominatim database with North and Central America version 3.1.0 with tiger data.  Most of my searches are working correctly, however, Quebec and Ontario are not being returned as states.  Searching for them directly just shows a point with no boundaries.  All other Canadian states are working as expected.
+I found an older post that had directions to run the following script:
+./utils/update.php --import-relation 61549 --index
+However this script returns an error.  I feel its probably due to being outdated.
+Is there any other way to get the missing states into my database?
+Thanks</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-state" href="/tags/state/" rel="tag" title="see questions tagged 'state'">state</a>
+<a class="post-tag tag-link-missing" href="/tags/missing/" rel="tag" title="see questions tagged 'missing'">missing</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>31 May '18, 16:07</strong>
+</p>
+<img alt="delongboy's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ab285a0245d5b262667b4eb333f7eea2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15194/delongboy">delongboy</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="delongboy has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-63914">
+</div>
+<div class="comment-tools" id="comment-tools-63914">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-63914-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/63914/state-is-missing-in-search?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/63914/state-is-missing-in-search?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/63914/state-is-missing-in-search?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/63914/state-is-missing-in-search?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="64063"></a>
+<div class="answer answered-by-owner" id="answer-container-64063">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/64063/up/" id="post-64063-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-64063-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/64063/down/" id="post-64063-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>So I found the fix for this.  I edited the update.php and ran the script and it works properly now.
+Line 161 sets $sContentURLsModifyXMLstr which is never used, I changed it to $sContentURL which is used everywhere else and it works now.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/64063/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Jun '18, 18:54</strong>
+</p>
+<img alt="delongboy's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ab285a0245d5b262667b4eb333f7eea2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15194/delongboy">delongboy</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="delongboy has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-64063">
+</div>
+<div class="comment-tools" id="comment-tools-64063">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-64063-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/63914/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="xOKLU3AIe0amzKpDlMnPKpOJZ72v2eqG"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

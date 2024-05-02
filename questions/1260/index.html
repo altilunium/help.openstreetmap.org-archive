@@ -1,0 +1,213 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/1260/how-to-create-fake-timestamps-with-gpsbabel">How to create fake timestamps with gpsbabel?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1260/up/" id="post-1260-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1260-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/1260/down/" id="post-1260-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/1260/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am trying to use the below command to process some NMEA files, but it's resulting in <code>trackfilter-init: Track points badly ordered (timestamp)!</code></p>
+<pre><code>../gpsbabel/gpsbabel \
+    -i nmea -f $DATE.nmea \
+    -x track,pack,sdistance=0.5k,faketime=f19780705200000+2 \
+    -x transform,wpt=trk,del \
+    -x radius,distance=20K,lat=-31.995815,lon=115.73512,nosort,exclude \
+    -x transform,trk=wpt,del \
+    -o gpx -F $DATE.gpx
+</code></pre>
+<p>Can anyone shed some light on what I'm doing wrong?</p>
+<p>Thanks!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-gpsbabel" href="/tags/gpsbabel/" rel="tag" title="see questions tagged 'gpsbabel'">gpsbabel</a>
+<a class="post-tag tag-link-timestamps" href="/tags/timestamps/" rel="tag" title="see questions tagged 'timestamps'">timestamps</a>
+<a class="post-tag tag-link-faketime" href="/tags/faketime/" rel="tag" title="see questions tagged 'faketime'">faketime</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>22 Oct '10, 02:10</strong>
+</p>
+<img alt="samwilson's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/51b9455e1dba4db831de473436c989f9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/67/samwilson">samwilson</a><br/>
+<span class="score" title="336 reputation points">336</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="samwilson has one accepted answer">20%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1260">
+</div>
+<div class="comment-tools" id="comment-tools-1260">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1260-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/1260/how-to-create-fake-timestamps-with-gpsbabel?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/1260/how-to-create-fake-timestamps-with-gpsbabel?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/1260/how-to-create-fake-timestamps-with-gpsbabel?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/1260/how-to-create-fake-timestamps-with-gpsbabel?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="1264"></a>
+<div class="answer answered-by-owner" id="answer-container-1264">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1264/up/" id="post-1264-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1264-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/1264/down/" id="post-1264-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Okay, I've got it all sorted.  It seems a bit hacky, so if anyone's got any suggestions I'm open to them.</p>
+<pre><code>../gpsbabel/gpsbabel \
+    -D -w -t \
+    -i nmea -f $DATE.nmea \
+    -x track,faketime=f19700101000001+1 \
+    -x track,faketime=19700101000001 \
+    -x track,move=+1s \
+    -x track,pack,sdistance=3k \
+    -x transform,wpt=trk,del \
+    -x radius,distance=20K,lat=-31.995815,lon=115.73512,nosort,exclude \
+    -x transform,trk=wpt,del \
+    -o gpx -F $DATE.gpx
+</code></pre>
+<p>This </p>
+<ul>
+<li>modifies all timestamps (the two <code>faketime</code> filters are because the first one removes the <code>&lt;time&gt;</code> element from the first trackpoint; weird);</li>
+<li>then splits into separate track segments where points are more than 3km apart;</li>
+<li>and lastly deletes everything within 20km of (roughly) the mouth of the Swan River (i.e. metro stuff that is already well-mapped).</li>
+</ul>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/1264/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Oct '10, 05:20</strong>
+</p>
+<img alt="samwilson's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/51b9455e1dba4db831de473436c989f9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/67/samwilson">samwilson</a><br/>
+<span class="score" title="336 reputation points">336</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="samwilson has one accepted answer">20%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1264">
+</div>
+<div class="comment-tools" id="comment-tools-1264">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1264-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="1262"></a>
+<div class="answer" id="answer-container-1262">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1262/up/" id="post-1262-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1262-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/1262/down/" id="post-1262-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It is suggested to use </p>
+<p>-x track,start=19700101000000</p>
+<p>to start a track file timestamp at 1970 Jan 01, 00:00:00 in the new OpenStreetMap book by Jonathan Bennett.  This example is from a free chapter, here.</p>
+<p><a href="http://www.packtpub.com/article/openstreetmap-gathering-data-using-gps">http://www.packtpub.com/article/openstreetmap-gathering-data-using-gps</a></p>
+<p>Both new OSM books are worth having.  <a href="http://weait.com/content/two-new-osm-books">http://weait.com/content/two-new-osm-books</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/1262/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Oct '10, 02:47</strong>
+</p>
+<img alt="Richard%20Weait's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d90ea04df82d77f534659f08894dd889?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/66/richard-weait">Richard Weait</a><br/>
+<span class="score" title="3044 reputation points"><span class="">3.0k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="34 badges"><span class="silver">●</span><span class="badgecount">34</span></span><span title="52 badges"><span class="bronze">●</span><span class="badgecount">52</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Richard Weait has 8 accepted answers">17%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1262">
+<a name="1263"></a>
+<div class="comment" id="comment-1263">
+<div class="comment-score" id="post-1263-score"></div>
+<div class="comment-text"><p>I saw that page, but I think <code>start</code> is just to tell it to ignore times before that date.  I tried whittling down my command, and am getting <code>'faketime=f19700101000000' is an unknown option to track.</code>  So I think I might just give up on changing the timestamps!</p></div>
+<div class="comment-info" id="comment-1263-info">
+<span class="comment-age">(22 Oct '10, 03:13)</span>
+<a class="comment-user userinfo" href="/users/67/samwilson">samwilson</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-1262">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1262-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/1260/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="l6keJKHoc3bNxoUGcc1LTx58FkL18QyW"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

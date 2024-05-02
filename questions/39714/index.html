@@ -1,0 +1,229 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/39714/marking-more-than-one-way">marking more than one way</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/39714/up/" id="post-39714-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-39714-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/39714/down/" id="post-39714-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/39714/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi!</p>
+<p>I found some links like:</p>
+<pre><code><a href="http://www.openstreetmap.org/?way=273332264">http://www.openstreetmap.org/?way=273332264</a>
+</code></pre>
+<p>which mark a part of a street. So I was wondering how to mark the whole street or maybe several streets and I found in the wiki:</p>
+<p>Get way by ID - which describes what I get from the above url, because when it is entered in the browser it's rewritten by the server to</p>
+<pre><code><a href="http://www.openstreetmap.org/way/273332264">http://www.openstreetmap.org/way/273332264</a>
+</code></pre>
+<p>I looked further and found</p>
+<p>Get ways describing the url as being </p>
+<pre><code>/ways?ways=id1,id2,id3...
+</code></pre>
+<p>But I couldn't figure out how to apply this to "my" street which would be</p>
+<pre><code><a href="http://www.openstreetmap.org/ways?ways=273332264,273332263,33527209,142030348,33239773,22889305,273332262,190065022,273332252,257255152,273332271,273332270,273332266,208884097,129032431,273332260,273332259,273332269,273332265,273332261,273332267,273332258,273332268">http://www.openstreetmap.org/ways?ways=273332264,273332263,33527209,142030348,33239773,22889305,273332262,190065022,273332252,257255152,273332271,273332270,273332266,208884097,129032431,273332260,273332259,273332269,273332265,273332261,273332267,273332258,273332268</a>
+</code></pre>
+<p>Unfortunately this did not work as expected. Is there another way to get this accomplished?</p>
+<p>There is alsready a kind soul in Germany who set up a server which allows this (plus more), but I'd also like to know how this would be possible directly on openstreetmaps.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-ways" href="/tags/ways/" rel="tag" title="see questions tagged 'ways'">ways</a>
+<a class="post-tag tag-link-marker" href="/tags/marker/" rel="tag" title="see questions tagged 'marker'">marker</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>19 Dec '14, 09:45</strong>
+</p>
+<img alt="5keeve's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9dee2e9d5d58bbfbb91dc20ac401da3b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10202/5keeve">5keeve</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="5keeve has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-39714">
+<a name="39715"></a>
+<div class="comment not_top_scorer" id="comment-39715">
+<div class="comment-score" id="post-39715-score"></div>
+<div class="comment-text"><p>Can you provide a little bit more information? Where did you read about <em>/ways?ways=id1,id2,id3...</em>? Which server are you talking about already supports this? And why do you want to display multiple ways on openstreetmap.org directly?</p></div>
+<div class="comment-info" id="comment-39715-info">
+<span class="comment-age">(19 Dec '14, 09:56)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="39718"></a>
+<div class="comment" id="comment-39718">
+<div class="comment-score" id="post-39718-score">1</div>
+<div class="comment-text"><p>As a general question, I think that it's quite a good one - "Euskirchener Straße" I suspect has a logical beginning and an end that encompass many OSM ways (split because of different other tags).  Most such streets won't be tied together by a relation, so a "name search based on bounding box" would be needed - but how to know how big to make the bounding box?  It's like the "graph" questions that sometimes get asked here, in reverse.</p></div>
+<div class="comment-info" id="comment-39718-info">
+<span class="comment-age">(19 Dec '14, 11:11)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="39720"></a>
+<div class="comment" id="comment-39720">
+<div class="comment-score" id="post-39720-score">2</div>
+<div class="comment-text"><blockquote>
+<p>Where did you read about /ways?ways=id1,id2,id3...</p>
+</blockquote>
+<p>Sorry! Completely forgot to give the link. <a href="http://wiki.openstreetmap.org/wiki/API_v0.4#Get_ways">http://wiki.openstreetmap.org/wiki/API_v0.4#Get_ways</a></p>
+<blockquote>
+<p>Which server are you talking about already supports this?</p>
+</blockquote>
+<p>No clue. Just read it in the documentation and found the similarity to the first link I gave.</p>
+<blockquote>
+<p>And why do you want to display multiple ways on openstreetmap.org directly?</p>
+</blockquote>
+<p>To get an overview. I need to prepare a children's charity project here in Germany for January and so wanted to plot the streets I assigned to the groups.</p></div>
+<div class="comment-info" id="comment-39720-info">
+<span class="comment-age">(19 Dec '14, 11:48)</span>
+<a class="comment-user userinfo" href="/users/10202/5keeve">5keeve</a>
+</div>
+</div>
+<a name="39721"></a>
+<div class="comment" id="comment-39721">
+<div class="comment-score" id="post-39721-score">1</div>
+<div class="comment-text"><p>Regarding searching for a street: That wasn't really my issue as I already have a good list of the ways belonging to the streets</p>
+<pre><code><a href="http://regio-osm.de/listofstreets/evaluation?title=D%C3%BCren&amp;country=Bundesrepublik%20Deutschland">http://regio-osm.de/listofstreets/evaluation?title=D%C3%BCren&amp;country=Bundesrepublik%20Deutschland</a>
+</code></pre>
+<p>The issue is more of visualizing (a group of) streets.</p>
+<p>Judging from the API documentation I thought I found a way - but it seems to be not supported :(</p></div>
+<div class="comment-info" id="comment-39721-info">
+<span class="comment-age">(19 Dec '14, 11:48)</span>
+<a class="comment-user userinfo" href="/users/10202/5keeve">5keeve</a>
+</div>
+</div>
+<a name="39722"></a>
+<div class="comment" id="comment-39722">
+<div class="comment-score" id="post-39722-score">4</div>
+<div class="comment-text"><p><a href="http://help.openstreetmap.org/users/10202/5keeve">@5keeve</a> that's actually quite an old version of the API; try looking at <a href="http://wiki.openstreetmap.org/wiki/API_v0.6">http://wiki.openstreetmap.org/wiki/API_v0.6</a> (or more likely, other services such as Overpass)</p></div>
+<div class="comment-info" id="comment-39722-info">
+<span class="comment-age">(19 Dec '14, 12:13)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="39723"></a>
+<div class="comment not_top_scorer" id="comment-39723">
+<div class="comment-score" id="post-39723-score"></div>
+<div class="comment-text"><p>Did so:</p>
+<p><a href="http://wiki.openstreetmap.org/wiki/API_v0.6#Multi_fetch:">http://wiki.openstreetmap.org/wiki/API_v0.6#Multi_fetch:</a><em>GET</em>.2Fapi.2F0.6.2F.5Bnodes.7Cways.7Crelations.5D.3F.23parameters</p>
+<p>Looks the same</p>
+<pre><code>.../ways?ways=id1,id2,...
+</code></pre></div>
+<div class="comment-info" id="comment-39723-info">
+<span class="comment-age">(19 Dec '14, 12:27)</span>
+<a class="comment-user userinfo" href="/users/10202/5keeve">5keeve</a>
+</div>
+</div>
+<a name="39724"></a>
+<div class="comment" id="comment-39724">
+<div class="comment-score" id="post-39724-score">2</div>
+<div class="comment-text"><p>Besides having looked at the wrong API version: This is really just the API and not the website documentation. Moreover for visualizing you should not use the website directly but instead some framework such as Leaflet or OpenLayers. It is also possible that uMap will suit your needs.</p>
+<p><em>edit:</em></p>
+<p>It <em>does</em> work, but just for the <em>API</em> calls which just return raw data without visualization. See this working example: <a href="http://www.openstreetmap.org/api/0.6/ways?ways=1234,2345">http://www.openstreetmap.org/api/0.6/ways?ways=1234,2345</a></p></div>
+<div class="comment-info" id="comment-39724-info">
+<span class="comment-age">(19 Dec '14, 12:28)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-39714">
+<span class="comments-showing">
+            showing 5 of 7
+        </span>
+<a class="show-all-comments-link" href="#">show 2 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-39714-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/39714/marking-more-than-one-way?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/39714/marking-more-than-one-way?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/39714/marking-more-than-one-way?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/39714/marking-more-than-one-way?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="39725"></a>
+<div class="answer" id="answer-container-39725">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/39725/up/" id="post-39725-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-39725-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/39725/down/" id="post-39725-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I guess this <strong>isn't possible</strong> as currently osm.org has just permalinks to basic OSM objects (nodes, ways, relations, notes).
+Maybe you it's useful to send links of our <strong>geocoder</strong> (Nominatim) instead? For example  the mentioned Euskirchener Straße <a href="http://nominatim.openstreetmap.org/details.php?place_id=150696442">http://nominatim.openstreetmap.org/details.php?place_id=150696442</a></p>
+<p>But be aware that finding a complete list of street-segements isn't that trivial and AFAIK osm.org website currently has a focus on mappers/contributors and isn't tuned for perfectly satisfaction of consumers ;-)</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/39725/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Dec '14, 12:32</strong>
+</p>
+<img alt="iii's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/49a7d0e0408e9cf2f698faac0f4d837a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4984/iii">iii</a><br/>
+<span class="score" title="4892 reputation points"><span class="">4.9k</span></span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="40 badges"><span class="silver">●</span><span class="badgecount">40</span></span><span title="82 badges"><span class="bronze">●</span><span class="badgecount">82</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="iii has 16 accepted answers">10%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-39725">
+</div>
+<div class="comment-tools" id="comment-tools-39725">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-39725-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/39714/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="L1d2f2uCKPikk6LYvTCEg8g6dJ2GajwV"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

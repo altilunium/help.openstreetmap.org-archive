@@ -1,0 +1,136 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/81933/how-to-map-closed-bank-branch-that-still-offers-atm-service">How to map closed bank branch that still offers ATM service?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/81933/up/" id="post-81933-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-81933-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/81933/down/" id="post-81933-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/81933/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have a former bank branch office in the area that was closed down but still offers ATM and other self service activities like account statement printing and a post box from the same place.
+Should this be changed from amenity=bank to amenity=atm or should the state better be represented as amenity=bank with opening hours of 24/7 closed - which might confuse people regarding the status of the ATM?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-atm" href="/tags/atm/" rel="tag" title="see questions tagged 'atm'">atm</a>
+<a class="post-tag tag-link-bank" href="/tags/bank/" rel="tag" title="see questions tagged 'bank'">bank</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>24 Sep '21, 14:52</strong>
+</p>
+<img alt="ReinerB's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f2526e8e6ebcf38aefa6460b8b3b58c8?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20825/reinerb">ReinerB</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ReinerB has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-81933">
+</div>
+<div class="comment-tools" id="comment-tools-81933">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-81933-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/81933/how-to-map-closed-bank-branch-that-still-offers-atm-service?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/81933/how-to-map-closed-bank-branch-that-still-offers-atm-service?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/81933/how-to-map-closed-bank-branch-that-still-offers-atm-service?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/81933/how-to-map-closed-bank-branch-that-still-offers-atm-service?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="81939"></a>
+<div class="answer accepted-answer" id="answer-container-81939">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/81939/up/" id="post-81939-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-81939-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/81939/down/" id="post-81939-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/81939/" rel="nofollow" title="ReinerB has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I would recommend against keeping it as <code>amenity=bank</code> and setting it to always closed. If a data consumer doesn't utilize the opening_hours tag (the main OSM map rendering is one example), this tagging would make it look like an active bank.</p>
+<p>IMO, you should change the bank to closed:amenity=bank, so other mappers can see the status and won't inadvertently re-map the bank as being open. You can then add new nodes for the <code>amenity=atm</code> and <code>amenity=post_box</code>. Maybe also add a note to the ATM for the benefit of other mappers explaining that the ATM is still operational, even though the bank isn't.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/81939/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>24 Sep '21, 17:20</strong>
+</p>
+<img alt="alester's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/087bb38ba920baadf1df9dfc473208ec?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8189/alester">alester</a><br/>
+<span class="score" title="6631 reputation points"><span class="">6.6k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="66 badges"><span class="silver">●</span><span class="badgecount">66</span></span><span title="100 badges"><span class="bronze">●</span><span class="badgecount">100</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="alester has 37 accepted answers">28%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-81939">
+<a name="81940"></a>
+<div class="comment" id="comment-81940">
+<div class="comment-score" id="post-81940-score">2</div>
+<div class="comment-text"><p>I take it by post box you mean a place for delivering letters intended for the bank, not a post box offering a generic postal collection. Please don't use amenity=post_box for such things. I think letter_box is sometimes used for delivery points.</p></div>
+<div class="comment-info" id="comment-81940-info">
+<span class="comment-age">(24 Sep '21, 18:07)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-81939">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-81939-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/81933/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="NGn2qZUiVpBoyZOojUHpbFob9UOYG66P"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

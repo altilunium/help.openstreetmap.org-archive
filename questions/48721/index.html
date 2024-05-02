@@ -1,0 +1,123 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/48721/overpass-query-to-retrieve-train-line-with-station-names">[closed] Overpass query to retrieve train line with station names?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48721/up/" id="post-48721-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48721-score" title="current number of votes">
+    -1
+</div>
+<a class="ajax-command post-vote down" href="/vote/48721/down/" id="post-48721-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/48721/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm no OSM/Overpass expert, and need to draw a map on Umap by retrieving train lines from OSM, along with the names of the stations.</p>
+<p>I googled for this, searched the archives, but still can't figure out how to build the right query in OverpassTurbo.</p>
+<p>How should I edit the following query to include station names?</p>
+<pre><code>[out:json][timeout:25];
+(
+  relation["network"="SomeTrainNetwork"]["ref"="TrainLineReference"]({{bbox}});
+);
+
+out body;
+&gt;;
+out skel qt;
+</code></pre>
+<p>Thank you.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>17 Mar '16, 12:48</strong>
+</p>
+<img alt="Shohreh's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/222fc1ad4f1993620a21cb57fa816f16?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3711/shohreh">Shohreh</a><br/>
+<span class="score" title="85 reputation points">85</span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="13 badges"><span class="silver">●</span><span class="badgecount">13</span></span><span title="18 badges"><span class="bronze">●</span><span class="badgecount">18</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Shohreh has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/48721/">
+                closed
+                <strong>17 Mar '16, 22:29</strong>
+</a>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48721">
+<a name="48725"></a>
+<div class="comment" id="comment-48725">
+<div class="comment-score" id="post-48725-score">2</div>
+<div class="comment-text"><p>Crossposting from <a href="http://forum.openstreetmap.org/viewtopic.php?id=54031">http://forum.openstreetmap.org/viewtopic.php?id=54031</a></p>
+<p>Be aware that crossposting is lowering the chance of getting good answers!</p>
+<p>What did you try from that forum answer????</p></div>
+<div class="comment-info" id="comment-48725-info">
+<span class="comment-age">(17 Mar '16, 16:32)</span>
+<a class="comment-user userinfo" href="/users/99/stephan75">stephan75</a>
+</div>
+</div>
+<a name="48726"></a>
+<div class="comment" id="comment-48726">
+<div class="comment-score" id="post-48726-score"></div>
+<div class="comment-text"><p>Not much, because it makes no sense to a newbie like me. Which is why I asked here too. What's wrong with that?</p></div>
+<div class="comment-info" id="comment-48726-info">
+<span class="comment-age">(17 Mar '16, 21:17)</span>
+<a class="comment-user userinfo" href="/users/3711/shohreh">Shohreh</a>
+</div>
+</div>
+<a name="48727"></a>
+<div class="comment" id="comment-48727">
+<div class="comment-score" id="post-48727-score"></div>
+<div class="comment-text"><p>meta <a href="http://help.openstreetmap.org/users/3711/shohreh"></a><a href="http://help.openstreetmap.org/users/3711/shohreh">@Shohreh</a>: crossposting wastes resources (the people who are spending their time to help) because of dulicate work and scatters the collected information/answers across several places (relevant for others in the future with the same question). Please do not do it (unless for very special reason with clear links between each post).</p></div>
+<div class="comment-info" id="comment-48727-info">
+<span class="comment-age">(17 Mar '16, 22:24)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-48721">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48721-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<div class="question-status" style="margin-bottom:15px">
+<h3>
+                The question has been closed for the following reason "Duplicate Question. Please stay at the original location and continue there." by
+                <a href="/users/5179/aseerel4c26">aseerel4c26</a>
+                 17 Mar '16, 22:29
+            </h3>
+</div>
+<form action="/questions/48721/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="5D93eEaIx2gmjO9kMCfERAYcPWPrBiqM"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

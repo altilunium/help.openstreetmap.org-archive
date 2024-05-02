@@ -1,0 +1,159 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/19914/overpass-polygon-query">Overpass: polygon query</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/19914/up/" id="post-19914-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-19914-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/19914/down/" id="post-19914-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/19914/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I want to create a polygon-query with the points of the following query:</p>
+<pre><code>&lt;osm-script&gt;
+  &lt;union into="_"&gt;
+    &lt;id-query into="_" ref="134816256" type="way"/&gt;
+    &lt;id-query into="_" ref="95661967" type="way"/&gt;
+    &lt;id-query into="_" ref="201062997" type="way"/&gt;
+    &lt;id-query into="_" ref="95675717" type="way"/&gt;
+    &lt;id-query into="_" ref="96007270" type="way"/&gt;
+    &lt;id-query into="_" ref="96007267" type="way"/&gt;
+    &lt;id-query into="_" ref="95663153" type="way"/&gt;
+  &lt;/union&gt;
+  &lt;recurse from="_" into="_" type="down"/&gt;
+  &lt;print from="_" limit="" mode="body" order="id"/&gt;
+&lt;/osm-script&gt;
+</code></pre>
+<p>Can I directly insert the output-nodes of the first query into a polygon query?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-polygon" href="/tags/polygon/" rel="tag" title="see questions tagged 'polygon'">polygon</a>
+<a class="post-tag tag-link-query" href="/tags/query/" rel="tag" title="see questions tagged 'query'">query</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>13 Feb '13, 14:39</strong>
+</p>
+<img alt="Mattes_tili's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2c52393df51ceb5327c1e19e3b0efbfe?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5617/mattes_tili">Mattes_tili</a><br/>
+<span class="score" title="146 reputation points">146</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="11 badges"><span class="bronze">●</span><span class="badgecount">11</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Mattes_tili has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/19914/">
+                edited
+                <strong>13 Feb '13, 15:36</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-19914">
+</div>
+<div class="comment-tools" id="comment-tools-19914">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-19914-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/19914/overpass-polygon-query?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/19914/overpass-polygon-query?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/19914/overpass-polygon-query?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/19914/overpass-polygon-query?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="19927"></a>
+<div class="answer accepted-answer" id="answer-container-19927">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/19927/up/" id="post-19927-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-19927-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/19927/down/" id="post-19927-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/19927/" rel="nofollow" title="Mattes_tili has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>EDIT: This is possible since a couple of years, see <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#By_polygon_.28poly.29">here</a>.</p>
+<hr/>
+<p>No, I'm sorry this isn' possible so far. You would have to receive the coordinates and then form a polygon query out of them.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/19927/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>14 Feb '13, 12:51</strong>
+</p>
+<img alt="Roland%20Olbricht's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fcfdb0825826fd13d2ff0d83d58819c6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3480/roland-olbricht">Roland Olbricht</a><br/>
+<span class="score" title="6666 reputation points"><span class="">6.7k</span></span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="64 badges"><span class="silver">●</span><span class="badgecount">64</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Roland Olbricht has 40 accepted answers">36%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/19927/">
+                edited
+                <strong>03 May '19, 12:45</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-19927">
+</div>
+<div class="comment-tools" id="comment-tools-19927">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-19927-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/19914/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="coUPB63nIe0ADfjQEWRJuNXNJpInsRIs"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

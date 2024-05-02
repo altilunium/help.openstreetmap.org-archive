@@ -1,0 +1,165 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/60524/rate-limits-for-heavy-usage-nominatim-custom-instance">Rate Limits for heavy usage Nominatim custom instance</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/60524/up/" id="post-60524-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-60524-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/60524/down/" id="post-60524-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/60524/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi ,</p>
+<p>We run our own nominatim instance because we make heavy use for a custom gps system. ( 14 Million aprox requests per day, that is 10,000 clients requesting reverse geocoding every 1 minute  )  ,  Could someone please point me to the reference documents or explain me how the connection buckets constants affect my rate limits etc . I want to have no limits on requests per second , per ip , etc. It seems that after a couple of hours the nominatim server stops working , but all the cpu , memory metrics etc are fine . We have even tried  with super size configuration ( We run it on Amazon web services ). </p>
+<p>Thanks</p>
+<p>This are found in /settings/settings.php</p>
+<pre><code> // Connection buckets to rate limit people being nasty
+    @define('CONST_ConnectionBucket_MemcacheServerAddress', false);
+    @define('CONST_ConnectionBucket_MemcacheServerPort', 11211);
+    @define('CONST_ConnectionBucket_MaxBlockList', 100);
+    @define('CONST_ConnectionBucket_LeakRate', 1);
+    @define('CONST_ConnectionBucket_BlockLimit', 10);
+    @define('CONST_ConnectionBucket_WaitLimit', 6);
+    @define('CONST_ConnectionBucket_MaxSleeping', 10);
+    @define('CONST_ConnectionBucket_Cost_Reverse', 1);
+    @define('CONST_ConnectionBucket_Cost_Search', 2);
+    @define('CONST_ConnectionBucket_Cost_Details', 3);
+    @define('CONST_ConnectionBucket_Cost_Status', 1);
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-config" href="/tags/config/" rel="tag" title="see questions tagged 'config'">config</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-rates" href="/tags/rates/" rel="tag" title="see questions tagged 'rates'">rates</a>
+<a class="post-tag tag-link-limits" href="/tags/limits/" rel="tag" title="see questions tagged 'limits'">limits</a>
+<a class="post-tag tag-link-heavy_usage" href="/tags/heavy_usage/" rel="tag" title="see questions tagged 'heavy_usage'">heavy_usage</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>09 Nov '17, 18:18</strong>
+</p>
+<img alt="GUIMO's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1c09d5877ba75bd717c9d58103237ac5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14415/guimo">GUIMO</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="GUIMO has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/60524/">
+                edited
+                <strong>09 Nov '17, 20:36</strong>
+</a>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-60524">
+</div>
+<div class="comment-tools" id="comment-tools-60524">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-60524-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/60524/rate-limits-for-heavy-usage-nominatim-custom-instance?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/60524/rate-limits-for-heavy-usage-nominatim-custom-instance?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/60524/rate-limits-for-heavy-usage-nominatim-custom-instance?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/60524/rate-limits-for-heavy-usage-nominatim-custom-instance?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="60529"></a>
+<div class="answer" id="answer-container-60529">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/60529/up/" id="post-60529-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-60529-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/60529/down/" id="post-60529-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You need to provide a memcached server to enable rate limiting. If you have a line like this</p>
+<pre><code>@define('CONST_ConnectionBucket_MemcacheServerAddress', false);
+</code></pre>
+<p>then rate limiting is off (which is the default). Also note that the rate limiting code has been completely removed since Nominatim 3.0.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/60529/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>10 Nov '17, 08:16</strong>
+</p>
+<img alt="lonvia's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d888b712d85dee0aa304297f2dc697c7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2921/lonvia">lonvia</a><br/>
+<span class="score" title="6213 reputation points"><span class="">6.2k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="57 badges"><span class="silver">●</span><span class="badgecount">57</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="lonvia has 43 accepted answers">40%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-60529">
+<a name="60602"></a>
+<div class="comment" id="comment-60602">
+<div class="comment-score" id="post-60602-score"></div>
+<div class="comment-text"><p>It means that by default it is not applying any rate limit and my issue is somewhere else. Thanks for your knowledge</p></div>
+<div class="comment-info" id="comment-60602-info">
+<span class="comment-age">(13 Nov '17, 22:41)</span>
+<a class="comment-user userinfo" href="/users/14415/guimo">GUIMO</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-60529">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-60529-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/60524/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="ohTYQQAar23iqf0Cmjn0ARDvssPzRjAo"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

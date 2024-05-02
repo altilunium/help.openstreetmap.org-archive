@@ -1,0 +1,326 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/15442/detection-of-intersections-in-the-maps">Detection of Intersections in the maps</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/15442/up/" id="post-15442-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-15442-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/15442/down/" id="post-15442-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/15442/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello all </p>
+<p>I am trying to write a program in c++ to automatically detect the roads on a selected area of the map. I was able to do detect the roads from the Ways and tags attached to them. But I could not find any specific tag that is related to an intersection between two roads. Only thing close to is a traffic signal tag. I was wondering if any one know more authentic way to determine the intersections. Hope my question was not ambiguous. </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-intersection" href="/tags/intersection/" rel="tag" title="see questions tagged 'intersection'">intersection</a>
+<a class="post-tag tag-link-road" href="/tags/road/" rel="tag" title="see questions tagged 'road'">road</a>
+<a class="post-tag tag-link-tags" href="/tags/tags/" rel="tag" title="see questions tagged 'tags'">tags</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>23 Aug '12, 13:56</strong>
+</p>
+<img alt="jawadch's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/73bfa9669a927682b021cd4e2132047c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4040/jawadch">jawadch</a><br/>
+<span class="score" title="121 reputation points">121</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="jawadch has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/15442/">
+                edited
+                <strong>23 Aug '12, 13:57</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-15442">
+</div>
+<div class="comment-tools" id="comment-tools-15442">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-15442-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/15442/detection-of-intersections-in-the-maps?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/15442/detection-of-intersections-in-the-maps?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/15442/detection-of-intersections-in-the-maps?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/15442/detection-of-intersections-in-the-maps?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="15443"></a>
+<div class="answer accepted-answer" id="answer-container-15443">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/15443/up/" id="post-15443-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-15443-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/15443/down/" id="post-15443-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/15443/" rel="nofollow" title="jawadch has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>In the OSM XML for a way, you'll see data such as:</p>
+<pre><code>  &lt;nd ref="322896584"/&gt;
+</code></pre>
+<p>That indicates a node that is part of your way.  If that exists in two ways, those ways join.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/15443/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>23 Aug '12, 14:00</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-15443">
+<a name="15445"></a>
+<div class="comment" id="comment-15445">
+<div class="comment-score" id="post-15445-score"></div>
+<div class="comment-text"><p>I checked it and it is true for the case in which two streets are intersecting. But is it also true for the case when on street e.g. a residential is ending in a main street?</p></div>
+<div class="comment-info" id="comment-15445-info">
+<span class="comment-age">(23 Aug '12, 14:03)</span>
+<a class="comment-user userinfo" href="/users/4040/jawadch">jawadch</a>
+</div>
+</div>
+<a name="15447"></a>
+<div class="comment" id="comment-15447">
+<div class="comment-score" id="post-15447-score">1</div>
+<div class="comment-text"><p>Yes, it should be.  If not, someone hasn't joined the roads properly, as described <a href="http://help.openstreetmap.org/questions/1022/what-are-the-most-common-mapping-mistakes-that-other-users-make/1023">here</a>.</p></div>
+<div class="comment-info" id="comment-15447-info">
+<span class="comment-age">(23 Aug '12, 14:05)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="15448"></a>
+<div class="comment" id="comment-15448">
+<div class="comment-score" id="post-15448-score"></div>
+<div class="comment-text"><p>Thanks a lot. I should be able to detect it now.</p></div>
+<div class="comment-info" id="comment-15448-info">
+<span class="comment-age">(23 Aug '12, 14:08)</span>
+<a class="comment-user userinfo" href="/users/4040/jawadch">jawadch</a>
+</div>
+</div>
+<a name="15452"></a>
+<div class="comment not_top_scorer" id="comment-15452">
+<div class="comment-score" id="post-15452-score"></div>
+<div class="comment-text"><p>If one way street is going from south to north(longitude will be increasing) will the node references in the Way of that street will be such that the longitude of the first node ref is minimum and the longitude of the last node ref will be max. In short are the node ref in Way of "one way" roads along the direction of that road?</p></div>
+<div class="comment-info" id="comment-15452-info">
+<span class="comment-age">(23 Aug '12, 14:52)</span>
+<a class="comment-user userinfo" href="/users/4040/jawadch">jawadch</a>
+</div>
+</div>
+<a name="15453"></a>
+<div class="comment" id="comment-15453">
+<div class="comment-score" id="post-15453-score">2</div>
+<div class="comment-text"><p>Yes - <a href="http://www.openstreetmap.org/browse/way/8123741">here</a>'s a stretch of oneway road (it has the tag "oneway=yes" and runs from south to north).  The <a href="http://www.openstreetmap.org/browse/node/326365">first node</a> is at the south end and the <a href="http://www.openstreetmap.org/browse/node/252410326">end node</a> is at the north end.  As you can see, the references of the nodes may vary (later nodes have higher reference numbers) but the order of nodes in the way will be in the order that they appear on the ground.</p></div>
+<div class="comment-info" id="comment-15453-info">
+<span class="comment-age">(23 Aug '12, 15:09)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="15455"></a>
+<div class="comment not_top_scorer" id="comment-15455">
+<div class="comment-score" id="post-15455-score"></div>
+<div class="comment-text"><p>Thanks a lot again :)</p></div>
+<div class="comment-info" id="comment-15455-info">
+<span class="comment-age">(23 Aug '12, 15:23)</span>
+<a class="comment-user userinfo" href="/users/4040/jawadch">jawadch</a>
+</div>
+</div>
+<a name="15458"></a>
+<div class="comment" id="comment-15458">
+<div class="comment-score" id="post-15458-score">3</div>
+<div class="comment-text"><p>As an addidtion to the oneway issue, there are also other tags (although not much used). oneway=-1 means the nodes are ordered in opposite direction (when the way goes from S to N, the nodes are oredered from N to S)</p>
+<p>And some discouraged alternatives like "true" and "reversed" instead of "yes" and "-1": <a href="http://wiki.openstreetmap.org/wiki/Oneway">http://wiki.openstreetmap.org/wiki/Oneway</a></p></div>
+<div class="comment-info" id="comment-15458-info">
+<span class="comment-age">(23 Aug '12, 16:29)</span>
+<a class="comment-user userinfo" href="/users/280/sanderd17">Sanderd17</a>
+</div>
+</div>
+<a name="32271"></a>
+<div class="comment not_top_scorer" id="comment-32271">
+<div class="comment-score" id="post-32271-score"></div>
+<div class="comment-text"><p>I have extracted the intersections that I need, my question is how to detect each twe adjacent intersection so I can define an adge to connect them and create a connected graph of inresection nodes. Thank you in advance for helps</p></div>
+<div class="comment-info" id="comment-32271-info">
+<span class="comment-age">(10 Apr '14, 12:45)</span>
+<a class="comment-user userinfo" href="/users/8650/angeasg">Angeasg</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-15443">
+<span class="comments-showing">
+            showing 5 of 8
+        </span>
+<a class="show-all-comments-link" href="#">show 3 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-15443-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="32270"></a>
+<div class="answer" id="answer-container-32270">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/32270/up/" id="post-32270-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-32270-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/32270/down/" id="post-32270-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I have extracted the intersections that I need, my question is how to detect each twe adjacent intersection so I can define an adge to connect them and create a connected graph of inresection nodes. 
+Thank you in advance for helps</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/32270/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+<div class="community-wiki">
+        This answer is marked "community wiki".
+        
+    </div>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>10 Apr '14, 12:45</strong>
+</p>
+<img alt="Angeasg's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9b153a8a544d4db806cfe0e8228350f0?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8650/angeasg">Angeasg</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Angeasg has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-32270">
+<a name="32274"></a>
+<div class="comment" id="comment-32274">
+<div class="comment-score" id="post-32274-score"></div>
+<div class="comment-text"><p>You might do better asking a new question describing what you're trying to do rather than asking a new question in an answer to an old one :)</p></div>
+<div class="comment-info" id="comment-32274-info">
+<span class="comment-age">(10 Apr '14, 13:08)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-32270">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-32270-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="56777"></a>
+<div class="answer" id="answer-container-56777">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/56777/up/" id="post-56777-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-56777-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/56777/down/" id="post-56777-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hi,, can y send me the code ? I need to do the same and return the name os intersection, but I dont know how.. Tanks..</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/56777/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>27 Jun '17, 13:19</strong>
+</p>
+<img alt="mneto's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/225f82d24943afac1db51fce7782cad9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13868/mneto">mneto</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mneto has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-56777">
+</div>
+<div class="comment-tools" id="comment-tools-56777">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-56777-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/15442/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="0epQHowcPyjpFAn56wqTJtEtNpgIFj5w"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

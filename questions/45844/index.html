@@ -1,0 +1,149 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/45844/error-reading-style-file-when-loading-osm-data-into-postgis-using-osm2pgsql">Error reading style file when loading osm data into postgis using osm2pgsql</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/45844/up/" id="post-45844-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-45844-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/45844/down/" id="post-45844-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/45844/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>When I used osm2pgsql to load OpenStreetMap data into my postgis, I got the error message:Error reading style file line 1(fields = 1). I really don't know how to deal with it. Beg your help! Thanks very much!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-default.style" href="/tags/default.style/" rel="tag" title="see questions tagged 'default.style'">default.style</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>12 Oct '15, 03:46</strong>
+</p>
+<img alt="kandifa's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b8177741baf1dfabbe85b830c5c9efce?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11568/kandifa">kandifa</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="kandifa has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-45844">
+<a name="45845"></a>
+<div class="comment" id="comment-45845">
+<div class="comment-score" id="post-45845-score"></div>
+<div class="comment-text"><p>It would help if you could add the full line of the osm2pgsql command you're using (and on what OS).</p></div>
+<div class="comment-info" id="comment-45845-info">
+<span class="comment-age">(12 Oct '15, 08:54)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-45844">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-45844-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/45844/error-reading-style-file-when-loading-osm-data-into-postgis-using-osm2pgsql?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/45844/error-reading-style-file-when-loading-osm-data-into-postgis-using-osm2pgsql?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/45844/error-reading-style-file-when-loading-osm-data-into-postgis-using-osm2pgsql?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/45844/error-reading-style-file-when-loading-osm-data-into-postgis-using-osm2pgsql?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="64524"></a>
+<div class="answer" id="answer-container-64524">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/64524/up/" id="post-64524-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-64524-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/64524/down/" id="post-64524-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I have the same problem. I tried to load *.pbf file via osm2pgsql. I copied the command from site, but when I replaced filename, I deleted one parametr.</p>
+<p>Commnd from site:</p>
+<p>C:&gt;osm2pgsql -d gis -U postgres -W -H localhost -P 5432 -s -S C:\osm2pgsql\default.style RU-MOW.osm.pbf</p>
+<p>My command:</p>
+<p>osm2pgsql -d gis -U postgres -W -H localhost -P 5432 -s -S C:\RU-MOW.osm.pbf <br/>
+Instead of style-file I specify pbf, and get the error:<br/>
+Osm2pgsql Error reading style file line 2 (fields=1)</p>
+<p>correct command:</p>
+<p>C:&gt;osm2pgsql -d gis -U postgres -W -H localhost -P 5432 -s -S C:\osm2pgsql-bin\default.style C:\osm.pbf</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/64524/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Jul '18, 09:41</strong>
+</p>
+<img alt="Vladimir-554455's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0057104086ce3464c15c1291a4338827?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15344/vladimir-554455">Vladimir-554455</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Vladimir-554455 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/64524/">
+                edited
+                <strong>04 Jul '18, 09:46</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-64524">
+</div>
+<div class="comment-tools" id="comment-tools-64524">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-64524-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/45844/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="g6njE9MQ8bSgIxQxDZrtec1diilfid5z"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

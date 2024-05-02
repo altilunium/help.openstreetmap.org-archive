@@ -1,0 +1,184 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/68256/how-to-get-unique-results-from-overpass-json">How to get unique results from Overpass JSON?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68256/up/" id="post-68256-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68256-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/68256/down/" id="post-68256-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/68256/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello, on <a href="http://overpass-turbo.eu">Overpass</a> when I make query and ask for "raw data directly from Overpass API" I get a JSON that contains some extra data that I do not need. For example see the following query:</p>
+<p><code>[out:json][timeout:600];
+(
+    node["shop"="e-cigarette"];&gt;;
+    way["shop"="e-cigarette"];&gt;;
+    relation["shop"="e-cigarette"];&gt;;
+);
+out;</code> </p>
+<p>I would like to get all nodes/way/relation that have tag <code>shop</code> and value <code>e-cigarette</code>, so in this way I should get the count of all shop in the world that sell e-cigarettes. </p>
+<p>But I get a lot of extra data, such as nodes that are a part of way/relation and ways that are a part of relation and relations theirself as well. So, is it possibile to get just one occurence for every "entity" (node or way or relation) that has some given properties? How to reach that?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpassapi" href="/tags/overpassapi/" rel="tag" title="see questions tagged 'overpassapi'">overpassapi</a>
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-json" href="/tags/json/" rel="tag" title="see questions tagged 'json'">json</a>
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+<a class="post-tag tag-link-query" href="/tags/query/" rel="tag" title="see questions tagged 'query'">query</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>04 Mar '19, 18:00</strong>
+</p>
+<img alt="Andreanovenove's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/50334ab2e351e4f5af1917f7f6ef8dc8?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9763/andreanovenove">Andreanovenove</a><br/>
+<span class="score" title="126 reputation points">126</span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="11 badges"><span class="silver">●</span><span class="badgecount">11</span></span><span title="18 badges"><span class="bronze">●</span><span class="badgecount">18</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Andreanovenove has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68256">
+</div>
+<div class="comment-tools" id="comment-tools-68256">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68256-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/68256/how-to-get-unique-results-from-overpass-json?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/68256/how-to-get-unique-results-from-overpass-json?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/68256/how-to-get-unique-results-from-overpass-json?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/68256/how-to-get-unique-results-from-overpass-json?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="68269"></a>
+<div class="answer accepted-answer" id="answer-container-68269">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68269/up/" id="post-68269-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68269-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/68269/down/" id="post-68269-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/68269/" rel="nofollow" title="Andreanovenove has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Remove "&gt;;" from every line and you should get what you request.</p>
+<p>That statement substantially means "get all the objects referenced by the one you have found". For more info: <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Recurse_down_.28.3E.29">https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Recurse_down_.28.3E.29</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/68269/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>05 Mar '19, 10:44</strong>
+</p>
+<img alt="MarcoR's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9c8957ccf79025bf749665ebec2bdfa2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6765/marcor">MarcoR</a><br/>
+<span class="score" title="687 reputation points">687</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="8 badges"><span class="silver">●</span><span class="badgecount">8</span></span><span title="20 badges"><span class="bronze">●</span><span class="badgecount">20</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="MarcoR has 5 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68269">
+<a name="68277"></a>
+<div class="comment" id="comment-68277">
+<div class="comment-score" id="post-68277-score"></div>
+<div class="comment-text"><p>Thank you for your reply. Yes, it works, but I would like to get a couple of coordinates for every point (node/way/relation). I know that a way or relation could have several coordinates, do you know if is it possible to get just one couple of lat and lon for every object? Then every object should have "type", "id", "lat", "lon" and "tags".</p></div>
+<div class="comment-info" id="comment-68277-info">
+<span class="comment-age">(05 Mar '19, 18:23)</span>
+<a class="comment-user userinfo" href="/users/9763/andreanovenove">Andreanovenove</a>
+</div>
+</div>
+<a name="68282"></a>
+<div class="comment" id="comment-68282">
+<div class="comment-score" id="post-68282-score">1</div>
+<div class="comment-text"><p>Try <code>out center;</code> instead of <code>out</code>.</p>
+<p>It calculates the center of the bounding box of the feature or so, so it might not work if you want a better centroid than that.</p></div>
+<div class="comment-info" id="comment-68282-info">
+<span class="comment-age">(05 Mar '19, 19:46)</span>
+<a class="comment-user userinfo" href="/users/10973/maxerickson">maxerickson</a>
+</div>
+</div>
+<a name="68283"></a>
+<div class="comment" id="comment-68283">
+<div class="comment-score" id="post-68283-score"></div>
+<div class="comment-text"><p>I did see it, from here: <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Standalone_queries.">https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Standalone_queries.</a> Do you know what does the note mean? "Note: The center point is not guaranteed to lie inside the polygon". Anyway it seems to work but I have to double check it. Thank you so much for your help!</p></div>
+<div class="comment-info" id="comment-68283-info">
+<span class="comment-age">(05 Mar '19, 20:06)</span>
+<a class="comment-user userinfo" href="/users/9763/andreanovenove">Andreanovenove</a>
+</div>
+</div>
+<a name="68286"></a>
+<div class="comment" id="comment-68286">
+<div class="comment-score" id="post-68286-score"></div>
+<div class="comment-text"><p>That's what maxerickson was talking about. Think about an object shaped like a horseshoe. The centre of the bounding box would be in the middle of the open area, not inside the actual area of the object.</p></div>
+<div class="comment-info" id="comment-68286-info">
+<span class="comment-age">(05 Mar '19, 21:45)</span>
+<a class="comment-user userinfo" href="/users/8189/alester">alester</a>
+</div>
+</div>
+<a name="68304"></a>
+<div class="comment" id="comment-68304">
+<div class="comment-score" id="post-68304-score"></div>
+<div class="comment-text"><p>Oh, I see. The horseshoe example opens my mind about the meaning of that note. Thank you. Do you know a way to get just the first couple of coordinates or any of the nodes' coordinates corrisponding to a way/relation instead of calculated center?</p></div>
+<div class="comment-info" id="comment-68304-info">
+<span class="comment-age">(06 Mar '19, 17:22)</span>
+<a class="comment-user userinfo" href="/users/9763/andreanovenove">Andreanovenove</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-68269">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68269-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/68256/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Ap7XHnfpxKjBPk8l3C43neqQ8yaVcnvx"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

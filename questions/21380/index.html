@@ -1,0 +1,163 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/21380/error-importing-tiger-2011-data-into-nominatim">Error importing tiger 2011 data into nominatim</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/21380/up/" id="post-21380-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-21380-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/21380/down/" id="post-21380-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/21380/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>When trying to import the the Tiger 2011 data into nominatim, I get the following parse error:</p>
+<pre><code>./utils/imports.php --parse-tiger-2011 data/tiger/ftp2.census.gov/geo/tiger/TIGER2011/EDGES
+Processing 01001...
+  File "/usr/src/nominatim/utils/tigerAddressImport.py", line 3340
+    raise KeyError, 'missing FIPS code', fips
+                  ^
+SyntaxError: invalid syntax
+Failed parse (/usr/src/nominatim/data/tiger/ftp2.census.gov/geo/tiger/TIGER2011/EDGES/tl_2011_01001_edges.zip)
+</code></pre>
+<p>I am following the directions from the answer to this question:
+<a href="https://help.openstreetmap.org/questions/12150/missing-house-numbers-in-local-nominatim-instance">https://help.openstreetmap.org/questions/12150/missing-house-numbers-in-local-nominatim-instance</a></p>
+<p>Does this still work?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-tiger" href="/tags/tiger/" rel="tag" title="see questions tagged 'tiger'">tiger</a>
+<a class="post-tag tag-link-import" href="/tags/import/" rel="tag" title="see questions tagged 'import'">import</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>11 Apr '13, 00:24</strong>
+</p>
+<img alt="montanalow's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/705d24784cee7f6cddc6a1e4211513cc?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6106/montanalow">montanalow</a><br/>
+<span class="score" title="40 reputation points">40</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="montanalow has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-21380">
+</div>
+<div class="comment-tools" id="comment-tools-21380">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-21380-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/21380/error-importing-tiger-2011-data-into-nominatim?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/21380/error-importing-tiger-2011-data-into-nominatim?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/21380/error-importing-tiger-2011-data-into-nominatim?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/21380/error-importing-tiger-2011-data-into-nominatim?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="21405"></a>
+<div class="answer" id="answer-container-21405">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/21405/up/" id="post-21405-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-21405-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/21405/down/" id="post-21405-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It still works. Make sure that you use python 2.x and not python 3.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/21405/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>11 Apr '13, 14:07</strong>
+</p>
+<img alt="lonvia's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d888b712d85dee0aa304297f2dc697c7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2921/lonvia">lonvia</a><br/>
+<span class="score" title="6213 reputation points"><span class="">6.2k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="57 badges"><span class="silver">●</span><span class="badgecount">57</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="lonvia has 43 accepted answers">40%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-21405">
+<a name="21406"></a>
+<div class="comment" id="comment-21406">
+<div class="comment-score" id="post-21406-score">2</div>
+<div class="comment-text"><p>Thanks, I was use using python 3, and that was the problem.  Works perfect with python 2.</p></div>
+<div class="comment-info" id="comment-21406-info">
+<span class="comment-age">(11 Apr '13, 14:33)</span>
+<a class="comment-user userinfo" href="/users/6106/montanalow">montanalow</a>
+</div>
+</div>
+<a name="21429"></a>
+<div class="comment" id="comment-21429">
+<div class="comment-score" id="post-21429-score"></div>
+<div class="comment-text"><p>I just finished the import, and it looks like FIPS codes &gt; 60000 are not handled by tigerAddressImport.py, so they generate they same error, even though there is tiger EDGE data.</p>
+<p>It looks like FIPS 60010 is American Somoa (not one of the 50 states), so I'm guessing this is intended behavior.</p></div>
+<div class="comment-info" id="comment-21429-info">
+<span class="comment-age">(12 Apr '13, 01:23)</span>
+<a class="comment-user userinfo" href="/users/6106/montanalow">montanalow</a>
+</div>
+</div>
+<a name="21438"></a>
+<div class="comment" id="comment-21438">
+<div class="comment-score" id="post-21438-score"></div>
+<div class="comment-text"><p>Indeed, that is a known limitation. It should only be a matter of adding the FIPS codes in tigerAddressImport.py to make it work.</p></div>
+<div class="comment-info" id="comment-21438-info">
+<span class="comment-age">(12 Apr '13, 07:04)</span>
+<a class="comment-user userinfo" href="/users/2921/lonvia">lonvia</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-21405">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-21405-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/21380/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="UrjtLiELMJs5x6ho1pPxbfIiHwIjPtGy"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

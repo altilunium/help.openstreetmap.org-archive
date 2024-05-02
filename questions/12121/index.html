@@ -1,0 +1,272 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/12121/scraping-open-street-map-for-uk-street-names">Scraping Open Street Map for UK street names</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/12121/up/" id="post-12121-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-12121-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/12121/down/" id="post-12121-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/12121/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi, </p>
+<p>I am looking to compile a list of UK street names for an infographic project. Would it be possible to scrape the OSM for every street name, and output that data into a spreadsheet? If anyone out there can help with this I'd be very grateful. </p>
+<p>Thanks, </p>
+<p>Chris</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-scraping" href="/tags/scraping/" rel="tag" title="see questions tagged 'scraping'">scraping</a>
+<a class="post-tag tag-link-street" href="/tags/street/" rel="tag" title="see questions tagged 'street'">street</a>
+<a class="post-tag tag-link-data" href="/tags/data/" rel="tag" title="see questions tagged 'data'">data</a>
+<a class="post-tag tag-link-names" href="/tags/names/" rel="tag" title="see questions tagged 'names'">names</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>18 Apr '12, 11:26</strong>
+</p>
+<img alt="chrishall's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c90386cf05f399429028d31a6c3785ad?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3399/chrishall">chrishall</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="chrishall has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-12121">
+</div>
+<div class="comment-tools" id="comment-tools-12121">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-12121-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/12121/scraping-open-street-map-for-uk-street-names?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/12121/scraping-open-street-map-for-uk-street-names?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/12121/scraping-open-street-map-for-uk-street-names?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/12121/scraping-open-street-map-for-uk-street-names?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="12122"></a>
+<div class="answer" id="answer-container-12122">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/12122/up/" id="post-12122-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-12122-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/12122/down/" id="post-12122-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>We reserve the word "scraping" for people who, to our dismay, write clumsy scripts that make tons of individual requests against our API or web site. Don't do that - we're an open data project and we make our data available for download!</p>
+<p>Grab a data extract for the UK e.g. from the <a href="http://download.geofabrik.de/">Geofabrik download server</a>, then use a program like <a href="http://wiki.openstreetmap.org/wiki/Osmosis">Osmosis</a> to filter out only highways:</p>
+<pre><code>osmosis --read-pbf file.osm.pbf --tf accept-ways highway=\* --write-xml myfile.osm
+</code></pre>
+<p>From the resulting XML file, extract all names - easiest on Linux with something like</p>
+<pre><code>grep 'k="name"' myfile.osm | cut -d\" -f4
+</code></pre>
+<p>and you have your list. (If you prefer DBF files to XML, you could probably download the shp.zip file from the download server and simply open the roads.dbf file.)</p>
+<p>Caveats:</p>
+<ol>
+<li>
+<p>This procedure will yield names for everything tagged "highway", including cycleways, footways, steps, roundabouts.</p>
+</li>
+<li>
+<p>This procedure does not allow you to count how often each name occurs in reality, because a road may consist of several parts in OSM, so the same road might feature multiple times in your file. Should you want to eliminate such double mentions, some programming or GIS magic will be required.</p>
+</li>
+</ol>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/12122/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>18 Apr '12, 11:41</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/12122/">
+                edited
+                <strong>18 Apr '12, 11:49</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-12122">
+<a name="12125"></a>
+<div class="comment" id="comment-12125">
+<div class="comment-score" id="post-12125-score"></div>
+<div class="comment-text"><p>Frederik, </p>
+<p>Thanks for coming back to me. Apologies re. 'scraping', I'm not looking to inconvenience anyone!</p>
+<p>The second point you make is probably the most relevant - and thanks for bringing it to my attention. I'm not sure I know how to solve this myself - can you help, or recommend anyone who can? If it's time-consuming work I'm willing to pay for the research/make an appropriate donation. </p>
+<p>Many thanks, </p>
+<p>Chris</p></div>
+<div class="comment-info" id="comment-12125-info">
+<span class="comment-age">(18 Apr '12, 11:54)</span>
+<a class="comment-user userinfo" href="/users/3399/chrishall">chrishall</a>
+</div>
+</div>
+<a name="12126"></a>
+<div class="comment" id="comment-12126">
+<div class="comment-score" id="post-12126-score"></div>
+<div class="comment-text"><p>It seems like the data set mentioned by Richard and Ed would conveniently circumvent this problem!</p></div>
+<div class="comment-info" id="comment-12126-info">
+<span class="comment-age">(18 Apr '12, 11:59)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-12122">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-12122-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="12123"></a>
+<div class="answer" id="answer-container-12123">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/12123/up/" id="post-12123-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-12123-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/12123/down/" id="post-12123-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It might be better to start with something like OS OpenData, particularly the Locator dataset I think.</p>
+<p><a href="http://www.ordnancesurvey.co.uk/oswebsite/products/os-locator/index.html">http://www.ordnancesurvey.co.uk/oswebsite/products/os-locator/index.html</a></p>
+<p>As yet, OpenStreetMap does not have as comprehensive a coverage as the OS data.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/12123/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>18 Apr '12, 11:44</strong>
+</p>
+<img alt="EdLoach's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f25a8392e12ed696b16554b3d08e4e2b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/339/edloach">EdLoach ♦</a><br/>
+<span class="score" title="19478 reputation points"><span class="">19.5k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="156 badges"><span class="silver">●</span><span class="badgecount">156</span></span><span title="280 badges"><span class="bronze">●</span><span class="badgecount">280</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="EdLoach has 93 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-12123">
+</div>
+<div class="comment-tools" id="comment-tools-12123">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-12123-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="12124"></a>
+<div class="answer" id="answer-container-12124">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/12124/up/" id="post-12124-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-12124-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/12124/down/" id="post-12124-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>OpenStreetMap is arguably not the best data source for your application. You would be better served by using <a href="http://www.ordnancesurvey.co.uk/oswebsite/products/os-locator/">OS Locator</a>, from the Ordnance Survey OpenData release, which has a better licence, a simpler file format, more consistent data, and is more complete.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/12124/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>18 Apr '12, 11:44</strong>
+</p>
+<img alt="Richard's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/08324717c25d6067fa4ff23ef37d455f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5/richard">Richard ♦</a><br/>
+<span class="score" title="30902 reputation points"><span class="">30.9k</span></span><span title="44 badges"><span class="badge1">●</span><span class="badgecount">44</span></span><span title="279 badges"><span class="silver">●</span><span class="badgecount">279</span></span><span title="412 badges"><span class="bronze">●</span><span class="badgecount">412</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Richard has 98 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-12124">
+</div>
+<div class="comment-tools" id="comment-tools-12124">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-12124-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/12121/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="HucgUMHF4kJAMBx0ZmBXrTSWDYFplkcT"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

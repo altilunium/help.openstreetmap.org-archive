@@ -1,0 +1,131 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/11336/osm2pgsql-coordinates">OSM2PGSQL coordinates</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/11336/up/" id="post-11336-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-11336-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/11336/down/" id="post-11336-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/11336/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello!</p>
+<p>I have all the XML data into PostGres DB using OSM2PGSQL. I get the coordinates of a node and what I get is the next:</p>
+<p>471196104, -858385498 (it is in Washington)</p>
+<p>I dont know the format of the this coordinates and how to convert it.
+I would like to have coordinates in a "normal" format, I mean something like this: 41.347187,2.0309942</p>
+<p>Thank you for the help in advance</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-coordinates" href="/tags/coordinates/" rel="tag" title="see questions tagged 'coordinates'">coordinates</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>19 Mar '12, 18:34</strong>
+</p>
+<img alt="aruizga7's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/15d8349c5774d9702b147a72c3b9fdf9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3134/aruizga7">aruizga7</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="aruizga7 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-11336">
+</div>
+<div class="comment-tools" id="comment-tools-11336">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-11336-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/11336/osm2pgsql-coordinates?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/11336/osm2pgsql-coordinates?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/11336/osm2pgsql-coordinates?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/11336/osm2pgsql-coordinates?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="11338"></a>
+<div class="answer accepted-answer" id="answer-container-11338">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/11338/up/" id="post-11338-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-11338-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/11338/down/" id="post-11338-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/11338/" rel="nofollow" title="aruizga7 has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The coordinates you got is in spherical mercator projection. osm2pgsql transforms all the coordinates to mercator before inserting them to the database. To get the coordinates in another projection use the function <a href="http://www.postgis.org/documentation/manual-1.5/ST_Transform.html">ST_Transform</a> in postgis.</p>
+<p>The standard latlon coordinates you want is <a href="http://spatialreference.org/ref/epsg/4326/">EPSG:4326</a> and spherical mercator is <a href="http://spatialreference.org/ref/sr-org/6864/">EPSG:3857</a>.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/11338/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Mar '12, 19:12</strong>
+</p>
+<img alt="Gnonthgol's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/44a4438f0146dfd898e24c221fd28b58?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/131/gnonthgol">Gnonthgol ♦</a><br/>
+<span class="score" title="13750 reputation points"><span class="">13.8k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="103 badges"><span class="silver">●</span><span class="badgecount">103</span></span><span title="198 badges"><span class="bronze">●</span><span class="badgecount">198</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Gnonthgol has 57 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-11338">
+</div>
+<div class="comment-tools" id="comment-tools-11338">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-11338-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/11336/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="FWSq7r3ZMl09iDCFZAkFxGIO3Yi3xDX1"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

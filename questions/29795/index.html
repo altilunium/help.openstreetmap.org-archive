@@ -1,0 +1,136 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/29795/how-to-know-the-connectorids-for-indoor-osm-vertical-passage">How to know the connector:ids for indoor OSM (vertical passage)?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/29795/up/" id="post-29795-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-29795-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/29795/down/" id="post-29795-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/29795/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi all,
+we currently are modelling an indoor osm map following the <a href="http://wiki.openstreetmap.org/wiki/IndoorOSM">Indoor Schema</a>. There is also a part in which <a href="http://wiki.openstreetmap.org/wiki/IndoorOSM#Modeling_connections_between_different_levels">vertical passages</a> are described. It connects the doors of elevators, stairs and others with the doors above and below it. That means you have to know the doors' ids of both "neighboring" doors. The connection is done by the tag connector:ids:</p>
+<pre><code>
+      &lt;node id='-245' action='modify' visible='true' lat='52.39349018473089' lon='13.130163004646104'&gt;
+      &lt;tag k='connector:ids' v='&lt;id_door_above&gt;, &lt;id_door_below&gt;' /&gt;
+      &lt;tag k='door' v='yes' /&gt;
+   &lt;/node&gt;
+</code></pre>
+<p>We model our buildings in JOSM. JOSM gives negative IDs to each new element and those IDs will be replaced by positive ones when the data gets uploads. The IDs in the tag (written by hand) won't be replaced which makes the file inconsistent. (Though I cannot verify at the moment because currently I'm not allowed to upload any indoor data for legal reasons).</p>
+<p>A solution would be to upload the floors one after the other, but to me it doesn't seem to be a good solution.</p>
+<p>Has anyone ever run into this problem? Have I missed to read the best practice?</p>
+<p>Thank you for your time and any help!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-josm" href="/tags/josm/" rel="tag" title="see questions tagged 'josm'">josm</a>
+<a class="post-tag tag-link-indoor" href="/tags/indoor/" rel="tag" title="see questions tagged 'indoor'">indoor</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>13 Jan '14, 12:07</strong>
+</p>
+<img alt="Henry%20Moews's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/34c0a69c5e95a6e56de49aa65cf845e6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8128/henry-moews">Henry Moews</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Henry Moews has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-29795">
+</div>
+<div class="comment-tools" id="comment-tools-29795">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-29795-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/29795/how-to-know-the-connectorids-for-indoor-osm-vertical-passage?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/29795/how-to-know-the-connectorids-for-indoor-osm-vertical-passage?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/29795/how-to-know-the-connectorids-for-indoor-osm-vertical-passage?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/29795/how-to-know-the-connectorids-for-indoor-osm-vertical-passage?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="29796"></a>
+<div class="answer" id="answer-container-29796">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/29796/up/" id="post-29796-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-29796-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/29796/down/" id="post-29796-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Do not, under any circumstances, use the IDs of other objects in tag values. This is asking for trouble - IDs could change at any time, e.g. if someone were to delete and re-create an object.</p>
+<p>Instead, use relations to model links between objects. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/29796/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>13 Jan '14, 12:13</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-29796">
+</div>
+<div class="comment-tools" id="comment-tools-29796">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-29796-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/29795/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="4xsCyH7BGqhlIh0D7zxvmq4O4zIYUc7f"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

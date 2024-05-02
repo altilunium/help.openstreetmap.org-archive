@@ -1,0 +1,72 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/66603/conflation-of-3rd-party-data-to-local-osm-planet-database-postgresql">Conflation of 3rd Party Data to Local OSM Planet Database (PostgreSQL)</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/66603/up/" id="post-66603-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-66603-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/66603/down/" id="post-66603-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/66603/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am seeking advice for a workflow solution to accomplish the conflation of 3rd party (e.g., government/private) data (.shp) into a local PostgreSQL/PostGIS database of the entire planet running on an in-house server. </p>
+<p>I have become fluent with applying daily OSM changesets using Osmosis and Osm2pgsql.  I am currently keeping our database up to date by appending the daily .osc changefiles to the database.  This is working great, and I am comfortable with the osm2pgsql --append command.</p>
+<p>In my initial research for available conflation methodologies/tools (e.g., JOSM, Hootenany), it looks like these tools do a great job at conflation with manual review of conflicts in a GUI environment (this is what we want!) but then they just upload the changesets directly to OSM servers to update the public map.  </p>
+<p>In our project, we will be working with sensitive/confidential data that absolutely cannot go public.  Hence, our local planetary OSM Postgres server, and the need to produce a local changefile for appending vs. an OSM.org changeset upload.</p>
+<p>Is it currently possible with any existing tooling to conflate to/compare against a local PostgreSQL database on the planetary scale, and after conflating/conflict resolution, locally export a standard changefile that would go through the normal osm2pgsql --append process, like applying a daily diff?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-changefile" href="/tags/changefile/" rel="tag" title="see questions tagged 'changefile'">changefile</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+<a class="post-tag tag-link-conflation" href="/tags/conflation/" rel="tag" title="see questions tagged 'conflation'">conflation</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>31 Oct '18, 15:15</strong>
+</p>
+<img alt="mykol404's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bbd0e184c8bbe03544aefb4e57ac5ccd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15726/mykol404">mykol404</a><br/>
+<span class="score" title="36 reputation points">36</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mykol404 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-66603">
+</div>
+<div class="comment-tools" id="comment-tools-66603">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-66603-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/66603/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="sGsq9aFxFN0A3cBWkNCZJOL8S1LSH7t7"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

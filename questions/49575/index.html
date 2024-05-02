@@ -1,0 +1,79 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/49575/issue-importing-planetosm-file-with-osm2pgsql">Issue importing planet.osm file with osm2pgsql</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/49575/up/" id="post-49575-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-49575-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/49575/down/" id="post-49575-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/49575/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm currently trying to import an osm planet file into my GIS render DB using osm2pgsql and the import keeps failing at the same point.</p>
+<p>I ran pgtune prior to running the ingest.
+I have autovac set to off</p>
+<p>I'm running a linux server with 16 cores and 64 GB ram.<br/>
+postgresql 9.2
+osm2pgsql 0.86</p>
+<p>I have run the following with 16GB, 24GB and 40GB Cache using 4 processors.</p>
+<p>nohup time osm2pgsql --create --proj 3857 --style /usr/local/share/osm2pgsql/default.style -j --slim -C 40000 --number-processes 4 --database gis /home/centos/APIdbplanet.osm</p>
+<p>Each time I get the following error:</p>
+<p>node cache: stored: 3180786074(100.00%), storage efficiency: 83.61% (dense blocks: 434757, sparse nodes: 121306150), hit rate: -nan%
+Osm2pgsql failed due to ERROR: CREATE INDEX planet_osm_ways_nodes ON planet_osm_ways USING gin (nodes) WITH (FASTUPDATE=OFF) ;
+failed: ERROR: invalid memory alloc request size 2013265920</p>
+<p>I have a hard time thinking that this is a memory issue.  Any help would be great. Thanks.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-planet" href="/tags/planet/" rel="tag" title="see questions tagged 'planet'">planet</a>
+<a class="post-tag tag-link-import" href="/tags/import/" rel="tag" title="see questions tagged 'import'">import</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>04 May '16, 15:26</strong>
+</p>
+<img alt="Cellington's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/943c484e8c04680902357de8f080dcc0?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12265/cellington">Cellington</a><br/>
+<span class="score" title="216 reputation points">216</span><span title="9 badges"><span class="badge1">●</span><span class="badgecount">9</span></span><span title="10 badges"><span class="silver">●</span><span class="badgecount">10</span></span><span title="15 badges"><span class="bronze">●</span><span class="badgecount">15</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Cellington has no accepted answers">0%</span>
+</br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-49575">
+</div>
+<div class="comment-tools" id="comment-tools-49575">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-49575-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/49575/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="nXiJubgQIaTY1DtLTTEfOnXS3DDyGsYq"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

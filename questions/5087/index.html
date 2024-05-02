@@ -1,0 +1,128 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/5087/cross-referencing">Cross referencing</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/5087/up/" id="post-5087-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-5087-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/5087/down/" id="post-5087-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/5087/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Silly question perhaps - is there any obvious way to map between an OS MasterMap TOID and an OSM building equivilant i.e. removing the need for using licenced content?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-mastermap" href="/tags/mastermap/" rel="tag" title="see questions tagged 'mastermap'">mastermap</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>10 May '11, 10:19</strong>
+</p>
+<img alt="Angusmac's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2c31e1f9d35b1947c23d5a5b1d20f8aa?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1352/angusmac">Angusmac</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Angusmac has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-5087">
+</div>
+<div class="comment-tools" id="comment-tools-5087">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-5087-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/5087/cross-referencing?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/5087/cross-referencing?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/5087/cross-referencing?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/5087/cross-referencing?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="5089"></a>
+<div class="answer" id="answer-container-5089">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/5089/up/" id="post-5089-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-5089-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/5089/down/" id="post-5089-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Simple answer NO </p>
+<p>The longer answer is much more involved, complex, and intriguing. So I can't do it justice here, just a few salient points.</p>
+<p>I doubt if anyone has tagged an object in OSM with a <a href="http://en.wikipedia.org/wiki/TOID">TOID</a>, and as OSM contains data sourced from or derived from Ordnance Survey Open Data it's not clear that the conditions of the <a href="http://www.dnf.org/images/uploads/guides/TOID_royalty_free_use_policy_v101.pdf">royalty-free usage policy</a> can be met. </p>
+<p>It might be possible to keep a separate database relating OSM object ids to TOIDs. The main problem is that the OSM object ids are not persistent. </p>
+<p>Most people rely on spatial location for relating entities from different systems. There is a small amount about this on the <a href="http://wiki.openstreetmap.org/wiki/Conflation">OSM wiki</a> </p>
+<p>External IDs have been retained for objects in other parts of the world (e.g., <a href="http://wiki.openstreetmap.org/wiki/TIGER">TIGER</a> Line, <a href="http://wiki.openstreetmap.org/wiki/NHD">NHD</a> reach codes), but it is not entirely clear whether this policy was useful. In fact for the TIGER data it is pretty clear that it wasn't. In general I think this has been done "so that we can update the data in the future", whereas the main valid usage is to be able to link the OSM geographical data set with other data (e.g., rainfall, water levels, flow rates, train timetables, traffic volumes etc).</p>
+<p>It's conceivable that someone might develop a system for persistent OSM IDs, perhaps for an easily managed subset such as road data. Given OSM's freeform tagging the hard bit is deciding what primitives should be used. The mechanism to manage the persistent IDs (even though that will probably require some manual intervention) is a lot easier to conceive. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/5089/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>10 May '11, 10:50</strong>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br/>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SK53 has 121 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-5089">
+</div>
+<div class="comment-tools" id="comment-tools-5089">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-5089-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/5087/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="E1AhchfoxHQ2w6zFwymy0Yu95XIu8jVP"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

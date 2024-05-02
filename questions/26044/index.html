@@ -1,0 +1,208 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/26044/how-to-download-all-values-for-one-key">How to download all values for one key?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/26044/up/" id="post-26044-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-26044-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/26044/down/" id="post-26044-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/26044/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi</p>
+<p>I am working on a <a href="https://github.com/ypid/opening_hours.js/tree/master">parser for the opening_hours tag</a>. I would like to download all 209.722 values <a href="http://taginfo.openstreetmap.org/search?q=opening_hours">taginfo</a> to search over them with regular expressions and to run the parser on all values.</p>
+<p>I already tried <a href="http://www.overpass-api.de/api/xapi_meta?">http://www.overpass-api.de/api/xapi_meta?</a><em>[opening_hours=</em>] but it returns "runtime error: Query timed out in "query" at line 3 after 181 seconds.". Does anyone know a second possibility without downloading the planet ;) </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-opening_hours" href="/tags/opening_hours/" rel="tag" title="see questions tagged 'opening_hours'">opening_hours</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>01 Sep '13, 18:19</strong>
+</p>
+<img alt="ypid's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b0829ba878989db13885728a5ae8f2bd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7277/ypid">ypid</a><br/>
+<span class="score" title="106 reputation points">106</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ypid has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-26044">
+</div>
+<div class="comment-tools" id="comment-tools-26044">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-26044-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/26044/how-to-download-all-values-for-one-key?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/26044/how-to-download-all-values-for-one-key?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/26044/how-to-download-all-values-for-one-key?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/26044/how-to-download-all-values-for-one-key?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="26045"></a>
+<div class="answer answered-by-owner" id="answer-container-26045">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/26045/up/" id="post-26045-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-26045-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/26045/down/" id="post-26045-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>All right. I found a way using the <a href="http://taginfo.openstreetmap.org/taginfo/apidoc#api_4_key_values">API from taginfo</a>: <a href="http://taginfo.openstreetmap.org/api/4/key/values?key=opening_hours">http://taginfo.openstreetmap.org/api/4/key/values?key=opening_hours</a></p>
+<p>You might not want to open this in a browser ;) The returned json is currently 8 Megabyte in size.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/26045/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>01 Sep '13, 18:25</strong>
+</p>
+<img alt="ypid's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b0829ba878989db13885728a5ae8f2bd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7277/ypid">ypid</a><br/>
+<span class="score" title="106 reputation points">106</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ypid has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/26045/">
+                edited
+                <strong>08 Sep '13, 10:59</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-26045">
+<a name="26081"></a>
+<div class="comment" id="comment-26081">
+<div class="comment-score" id="post-26081-score">1</div>
+<div class="comment-text"><p>taginfo also lets you download its .sqlite files which you can then open and search offline.</p></div>
+<div class="comment-info" id="comment-26081-info">
+<span class="comment-age">(02 Sep '13, 20:50)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="26194"></a>
+<div class="comment" id="comment-26194">
+<div class="comment-score" id="post-26194-score"></div>
+<div class="comment-text"><p>Thanks but I am already quite lucky with the way it works. I now have written a simple <a href="https://github.com/ypid/opening_hours.js/blob/feature/regex_search">regex parser</a> which is also integrated with the opening_hours parser (should be easy to adopted for other keys, projects or just to search over some keys). The nice thing with the one API query per key is that I could also integrate it nicely with the <a href="https://github.com/ypid/opening_hours.js/blob/feature/Makefile">Makefile</a> :)</p></div>
+<div class="comment-info" id="comment-26194-info">
+<span class="comment-age">(08 Sep '13, 11:07)</span>
+<a class="comment-user userinfo" href="/users/7277/ypid">ypid</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-26045">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-26045-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="26046"></a>
+<div class="answer" id="answer-container-26046">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/26046/up/" id="post-26046-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-26046-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/26046/down/" id="post-26046-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can increase the timeout of the Overpass API, see the <a href="http://wiki.openstreetmap.org/wiki/Overpass_API#Osm-Script">Osm-Script</a> section and the <em>timeout</em> attribute.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/26046/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>01 Sep '13, 18:26</strong>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="scai has 168 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-26046">
+<a name="26048"></a>
+<div class="comment" id="comment-26048">
+<div class="comment-score" id="post-26048-score">1</div>
+<div class="comment-text"><p>Thanks. But after thinking about it, taginfo seems to be the much better source because taginfo already works with this kind of information and has it in an optimized format I guess (at least the download was much faster).</p></div>
+<div class="comment-info" id="comment-26048-info">
+<span class="comment-age">(01 Sep '13, 18:56)</span>
+<a class="comment-user userinfo" href="/users/7277/ypid">ypid</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-26046">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-26046-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/26044/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="2uu5GdBwahamxUEQgNExKDQJWJMa8Hfs"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

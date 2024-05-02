@@ -1,0 +1,229 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/9901/which-wgs84-datum">which WGS84 datum?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/9901/up/" id="post-9901-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-9901-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/9901/down/" id="post-9901-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/9901/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>HI- a few general quesitons:</p>
+<ol>
+<li>
+<p>all of the information about OSM references WGS84 as the datum, is this meant to be the WGS84(G1150) datum? which is the current realization of WGS84 or some older version?<br/>
+</p>
+</li>
+<li>
+<p>What happens if a user uploads data into OSM having collected it in another datum, say NAD83 for example.  Does OSM automatically convert that to WGS84?</p>
+</li>
+<li>
+<p>Is there any information available about how OSM computes/stores positional information for vectors when multiple users measure the same road or building?<br/>
+</p>
+</li>
+</ol>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-datum" href="/tags/datum/" rel="tag" title="see questions tagged 'datum'">datum</a>
+<a class="post-tag tag-link-wgs84" href="/tags/wgs84/" rel="tag" title="see questions tagged 'wgs84'">wgs84</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>11 Jan '12, 19:42</strong>
+</p>
+<img alt="rockfordz's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a9d82fc316a7dceaa56056fdf9a66110?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2638/rockfordz">rockfordz</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="rockfordz has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-9901">
+</div>
+<div class="comment-tools" id="comment-tools-9901">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-9901-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/9901/which-wgs84-datum?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/9901/which-wgs84-datum?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/9901/which-wgs84-datum?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/9901/which-wgs84-datum?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="9904"></a>
+<div class="answer" id="answer-container-9904">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/9904/up/" id="post-9904-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-9904-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/9904/down/" id="post-9904-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<ol>
+<li>If you like. The different versions are not that different. Normally you lose more precision in the quantification of the coordinates then by using the wrong version of the datum. (And way more by using inaccurate measuring devices like a GPS.)</li>
+<li>The API does not have an option of specifying a datum and any coordinates will be interpreted as WGS84. If a user uploads in the wrong datum it will not be converted. This is normally not a problem since any format the API supports (GPX, OSM) uses WGS84 and the error will therefore be in the converters.</li>
+<li>The database stores GPX traces separately from vector data and all conversion between them is done by hand. The traces are a guide to the user when entering vector data and there are no automatic computation of vector data from the traces.</li>
+</ol>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/9904/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>11 Jan '12, 21:26</strong>
+</p>
+<img alt="Gnonthgol's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/44a4438f0146dfd898e24c221fd28b58?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/131/gnonthgol">Gnonthgol ♦</a><br/>
+<span class="score" title="13750 reputation points"><span class="">13.8k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="103 badges"><span class="silver">●</span><span class="badgecount">103</span></span><span title="198 badges"><span class="bronze">●</span><span class="badgecount">198</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Gnonthgol has 57 accepted answers">16%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/9904/">
+                edited
+                <strong>20 Jan '12, 03:08</strong>
+</a>
+</p>
+<img alt="Ebenezer's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f075add936ab95d2d368f2e48f5ddc22?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/603/ebenezer">Ebenezer</a><br/>
+<span class="score" title="948 reputation points">948</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="11 badges"><span class="silver">●</span><span class="badgecount">11</span></span><span title="21 badges"><span class="bronze">●</span><span class="badgecount">21</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-9904">
+</div>
+<div class="comment-tools" id="comment-tools-9904">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-9904-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="9929"></a>
+<div class="answer" id="answer-container-9929">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/9929/up/" id="post-9929-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-9929-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/9929/down/" id="post-9929-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Please anyone feel free to correct me if I am wrong, but this is my understanding.</p>
+<p>The WGS-84 datum is supposed to be centred at the earth's centre of mass and aligned with its axis of rotation. Satellite-based systems can determine those parameters to an accuracy of millimetres. It is also necessary to define, arbitrarily, the location of 0° of longitude (the Greenwich meridian). Since WGS-84 was defined (in 1984), the thing that has most affected its accuracy is tectonic plate movement (continental drift), which has altered the position of some major land masses by a significant fraction of a metre. That has resulted in several derived datums being specified, tied to significant land masses (North America, Europe, etc.). The re-specification of WGS-84 itself has, I think, resulted in changes of only fractions of a millimetre.</p>
+<p>A good hand-held GPS receiver, operating under ideal conditions, can fix its position to within one or two metres. Under trees or near tall buildings, they are nowhere near that good. I have not heard of anyone using anything more accurate to add data to OSM, so it would appear that the consequences of the movement of the land relative to WGS-84 (away from major earthquakes) are about one order of magnitude smaller than the accuracy that can be expected from most OSM data, and the consequences of the re-specification of the WGS-84 datum are trivial. That is to say, we don't need to worry just yet.</p>
+<p>As far as I know, positions in GPX files are always referred to WGS-84, and any device that writes a GPX file should convert locations to that datum, even if the device holds the information internally in some other form.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/9929/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Jan '12, 22:41</strong>
+</p>
+<img alt="Madryn's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c81fd17cde8b2747629b78bdef81a202?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2591/madryn">Madryn</a><br/>
+<span class="score" title="2241 reputation points"><span class="">2.2k</span></span><span title="36 badges"><span class="badge1">●</span><span class="badgecount">36</span></span><span title="51 badges"><span class="silver">●</span><span class="badgecount">51</span></span><span title="81 badges"><span class="bronze">●</span><span class="badgecount">81</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Madryn has 5 accepted answers">13%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-9929">
+<a name="9939"></a>
+<div class="comment" id="comment-9939">
+<div class="comment-score" id="post-9939-score"></div>
+<div class="comment-text"><p>The horizontal difference between WGS84(transit or original) and WGS84(G1150) is 1.6 meters on the east coast of the US, computed using HTDP from the National Geodetic Survey.  So, when using coordinate data from OSM it would be helpful to know exactly what datum the data is tied to so this bias could be accounted for.</p></div>
+<div class="comment-info" id="comment-9939-info">
+<span class="comment-age">(13 Jan '12, 15:21)</span>
+<a class="comment-user userinfo" href="/users/2638/rockfordz">rockfordz</a>
+</div>
+</div>
+<a name="10049"></a>
+<div class="comment" id="comment-10049">
+<div class="comment-score" id="post-10049-score">1</div>
+<div class="comment-text"><p>I suppose the pragmatic answer is that OSM uses whatever datum the GPS currently uses, as I suspect that few contributors have access to a more accurate source of information. I don't really have the knowlege to take this discussion much further, but I would be grateful if anyone could tell me whether G1150 is a re-specification of the WGS84 datum itself or of a reference frame derived from it.</p></div>
+<div class="comment-info" id="comment-10049-info">
+<span class="comment-age">(18 Jan '12, 20:14)</span>
+<a class="comment-user userinfo" href="/users/2591/madryn">Madryn</a>
+</div>
+</div>
+<a name="10082"></a>
+<div class="comment" id="comment-10082">
+<div class="comment-score" id="post-10082-score">1</div>
+<div class="comment-text"><p>See <a href="http://www.sxbluegps.com/world-about-datum.html">http://www.sxbluegps.com/world-about-datum.html</a> - GPS currently uses WGS84(G1150), so a GPS receiver with no differential correction will use WGS84(G1150). This version of WGS84 is the latest, and started in 2002, so I think it is fair to say that OSM probably uses it. :)</p></div>
+<div class="comment-info" id="comment-10082-info">
+<span class="comment-age">(20 Jan '12, 03:17)</span>
+<a class="comment-user userinfo" href="/users/603/ebenezer">Ebenezer</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-9929">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-9929-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/9901/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="zBve1XBvjmRYU7WYtogFW8PAG8M5tNkI"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

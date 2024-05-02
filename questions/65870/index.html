@@ -1,0 +1,190 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/65870/hospital-wards">Hospital wards</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/65870/up/" id="post-65870-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-65870-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/65870/down/" id="post-65870-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/65870/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hospitals in my city are organized as following:</p>
+<ul>
+<li>they are typically located in several smaller buildings, each having their own number (building 1, building 5A and so on). "Building #1" goes into the name, right?</li>
+<li>each building holds one or more wards. For example: building number 1 holds surgical ward and hepatology ward. How do I tag these? I've put that into name: "Building #1 - wards: surgical, hepatology" - but this doesn't feel right</li>
+<li>when you have an emergency you go to a reception room where they put you on a stretcher if necessary and transfer you to the doctor. I've seen <a href="https://wiki.openstreetmap.org/wiki/Proposed_features/Tag:emergency%3Demergency_ward_entrance">this proposed feature</a> in the wiki but it doesn't seem to be implemented - not even autocompletion in iD knows about this tag. What's the right way to tag it? It's the most crucial information in life threatening situations and it's not always obvious where this entrance is.</li>
+</ul>
+<p>Any idea about this, or maybe someone could point me to a properly tagged hospital with all that information?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-hospital" href="/tags/hospital/" rel="tag" title="see questions tagged 'hospital'">hospital</a>
+<a class="post-tag tag-link-emergency" href="/tags/emergency/" rel="tag" title="see questions tagged 'emergency'">emergency</a>
+<a class="post-tag tag-link-tagging" href="/tags/tagging/" rel="tag" title="see questions tagged 'tagging'">tagging</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>12 Sep '18, 18:08</strong>
+</p>
+<img alt="wawg's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8d38646cc88f2d7d0e2c5a0536dd340e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15669/wawg">wawg</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="wawg has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-65870">
+</div>
+<div class="comment-tools" id="comment-tools-65870">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-65870-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/65870/hospital-wards?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/65870/hospital-wards?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/65870/hospital-wards?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/65870/hospital-wards?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="65914"></a>
+<div class="answer accepted-answer" id="answer-container-65914">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/65914/up/" id="post-65914-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-65914-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/65914/down/" id="post-65914-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/65914/" rel="nofollow" title="wawg has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>WRT to "wards" I would suggest using SIT (<a href="https://wiki.openstreetmap.org/wiki/Simple_Indoor_Tagging">Simple Indoor Tagging</a>) if you really want to go in to so much detail.</p>
+<p>Entrances should be nodes tagged with "entrance=yes" (not with entrance=emergency that is for emergency exits) and potentially an appropriate name.</p>
+<p>There is likely no harm in adding a emergency=emergency_ward_entrance tag to the entrance, but I wouldn't expect any rendering of it on its own.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/65914/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>16 Sep '18, 08:53</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/65914/">
+                edited
+                <strong>16 Sep '18, 09:05</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-65914">
+</div>
+<div class="comment-tools" id="comment-tools-65914">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-65914-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="65924"></a>
+<div class="answer" id="answer-container-65924">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/65924/up/" id="post-65924-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-65924-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/65924/down/" id="post-65924-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>A building number should go into a <em>ref</em> and not into a <em>name</em> in my opinion. Emergency ward entrances are for example rendered in <a href="https://wambachers-osm.website/emergency/">Wambacher's emergency map</a>.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/65924/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>16 Sep '18, 19:46</strong>
+</p>
+<img alt="TZorn's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ddebc8d5f4e0458413eacf65e36561a9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10133/tzorn">TZorn</a><br/>
+<span class="score" title="12350 reputation points"><span class="">12.3k</span></span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="64 badges"><span class="silver">●</span><span class="badgecount">64</span></span><span title="225 badges"><span class="bronze">●</span><span class="badgecount">225</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="TZorn has 63 accepted answers">15%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-65924">
+</div>
+<div class="comment-tools" id="comment-tools-65924">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-65924-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/65870/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="E7WxaZS64YBRrRED6XaTWuKbVdyX6pm7"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

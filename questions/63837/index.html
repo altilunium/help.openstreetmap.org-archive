@@ -1,0 +1,168 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/63837/postgress-gis-cordinates-query">postgress gis cordinates query</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/63837/up/" id="post-63837-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-63837-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/63837/down/" id="post-63837-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/63837/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I imported OSM data using osm2pgsql osm (slim) to gis posetgres
+Now I want to get all roads close to a point.
+I use this query:</p>
+<pre><code>SELECT * FROM planet_osm_line
+ORDER BY ST_SetSrid(way, 4326) &lt;-&gt; ST_SetSrid(ST_Point(48.8523,2.3466), 4326) LIMIT 20;
+</code></pre>
+<p>Its give me results but from a point much southeast then the point I asked (center of Paris)
+I think that something with the  SRID but can't find the problem.</p>
+<p>Any ideas? Thanks</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-query" href="/tags/query/" rel="tag" title="see questions tagged 'query'">query</a>
+<a class="post-tag tag-link-gis" href="/tags/gis/" rel="tag" title="see questions tagged 'gis'">gis</a>
+<a class="post-tag tag-link-postgress" href="/tags/postgress/" rel="tag" title="see questions tagged 'postgress'">postgress</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>29 May '18, 11:56</strong>
+</p>
+<img alt="altopalo's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/53c4a40bd104f3de1bbc6ccb735e52eb?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14437/altopalo">altopalo</a><br/>
+<span class="score" title="53 reputation points">53</span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="10 badges"><span class="silver">●</span><span class="badgecount">10</span></span><span title="13 badges"><span class="bronze">●</span><span class="badgecount">13</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="altopalo has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/63837/">
+                edited
+                <strong>29 May '18, 11:57</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-63837">
+</div>
+<div class="comment-tools" id="comment-tools-63837">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-63837-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/63837/postgress-gis-cordinates-query?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/63837/postgress-gis-cordinates-query?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/63837/postgress-gis-cordinates-query?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/63837/postgress-gis-cordinates-query?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="63840"></a>
+<div class="answer accepted-answer" id="answer-container-63840">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/63840/up/" id="post-63840-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-63840-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/63840/down/" id="post-63840-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/63840/" rel="nofollow" title="altopalo has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You want to</p>
+<pre><code>SELECT * FROM planet_osm_line
+ORDER BY way &lt;-&gt; ST_Transform(ST_SetSrid(ST_Point(48.8523,2.3466), 4326), 3857) LIMIT 20;
+</code></pre>
+<p>Your query would only work if you had used -l (ell) during import.</p>
+<p>Caveat: Your query does not necessarily give you the results in the order "nearest to farthest" because you are using a projected coordinate system; you can experiment by having PostGIS give you the ST_Distance of <code>st_transform(way,4326)::geography</code> and <code>ST_Point(48.8523,2.3466)::geography</code> to see this. It is possible that a way that is exactly 50.1 metres north of your point is displayed before a way that is exactly 49.9 metres east.</p>
+<p>(edit: removed a suggestion to use ST_DWITHIN, as I see that the KNN operator is already index-aware.)</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/63840/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>29 May '18, 13:03</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/63840/">
+                edited
+                <strong>29 May '18, 13:07</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-63840">
+<a name="63865"></a>
+<div class="comment" id="comment-63865">
+<div class="comment-score" id="post-63865-score"></div>
+<div class="comment-text"><p>Tn'x, great help.
+For what I need, I don't really need the nearest order , just some roads around a point.
+I think I'll use the ST_DWITHIN as you suggest to get all roars in some distance from point instead.</p></div>
+<div class="comment-info" id="comment-63865-info">
+<span class="comment-age">(30 May '18, 11:14)</span>
+<a class="comment-user userinfo" href="/users/14437/altopalo">altopalo</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-63840">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-63840-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/63837/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="9LIoTIURQPEeVlZlW6kLDp3at9i7dN6k"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

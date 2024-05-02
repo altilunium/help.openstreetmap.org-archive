@@ -1,0 +1,167 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/65238/is-it-possible-to-make-sure-mapnik-22-allways-render-complete-tiles">Is it possible to make sure Mapnik (2.2) allways render complete tiles?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/65238/up/" id="post-65238-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-65238-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/65238/down/" id="post-65238-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/65238/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi</p>
+<p>I have imported whole europe into database. 
+When I select a bounding box that covers whole norway, and start pre-rendering the tiles, I see that last tile(s) vertically within the bounding box only get the map renderd in it's upper part. </p>
+<p>It looks like this:</p>
+<p><img alt="alt text" src="https://help.openstreetmap.org/upfiles/620.png"/></p>
+<p>I would like to be able to render map on the whole tile - the data for the map is in the database. If no map data in the database, then this partly rendered tile would be okay though.</p>
+<p>This has probably to do with my values for bbox in generate_tiles.py (and extent in the xml file), which currently is like this:</p>
+<p>in generate_tiles.py:
+<code>
+bbox = (3.98,57.69,32.23,71.46)
+</code></p>
+<p>in xml file:
+<code>
+&lt;parameter name="extent"&gt;443052,7902476,3587827,11561422&lt;/parameter&gt;
+</code> </p>
+<p>So, is it possible to make sure values used for bbox and extent are such that I allways get renderd complete tiles? If so, how do I do this?
+If not possible to control using bbox and extent, is there any other way to handle this in Mapnik (2.2)?</p>
+<p>Or perhaps there is a way to tell Mapnik to render complete tiles, as long as there is data available i database to do so?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-tiles" href="/tags/tiles/" rel="tag" title="see questions tagged 'tiles'">tiles</a>
+<a class="post-tag tag-link-render" href="/tags/render/" rel="tag" title="see questions tagged 'render'">render</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>09 Aug '18, 15:15</strong>
+</p>
+<img alt="MapViking's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0da1f043b943c87172fb4dc60f017440?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15399/mapviking">MapViking</a><br/>
+<span class="score" title="56 reputation points">56</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="MapViking has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/65238/">
+                edited
+                <strong>17 Aug '18, 11:10</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-65238">
+<a name="65390"></a>
+<div class="comment" id="comment-65390">
+<div class="comment-score" id="post-65390-score"></div>
+<div class="comment-text"><p>If someone know if there is a solution to the above question, please tell me. </p></div>
+<div class="comment-info" id="comment-65390-info">
+<span class="comment-age">(16 Aug '18, 22:58)</span>
+<a class="comment-user userinfo" href="/users/15399/mapviking">MapViking</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-65238">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-65238-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/65238/is-it-possible-to-make-sure-mapnik-22-allways-render-complete-tiles?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/65238/is-it-possible-to-make-sure-mapnik-22-allways-render-complete-tiles?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/65238/is-it-possible-to-make-sure-mapnik-22-allways-render-complete-tiles?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/65238/is-it-possible-to-make-sure-mapnik-22-allways-render-complete-tiles?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="65519"></a>
+<div class="answer" id="answer-container-65519">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/65519/up/" id="post-65519-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-65519-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/65519/down/" id="post-65519-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I guess you will have to indicate the boundaries of your extent and bbox aligned with the tile boundaries (i.e. add some buffer to fill up the tile).</p>
+<p>Update: try to be generous with the extent and add some buffer. IIRR, mapnik will render any tile that is even just partly within your bounding box (i.e. it will render usually slightly more than what you ask for), but might clip the content to the extent you provide.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/65519/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Aug '18, 22:33</strong>
+</p>
+<img alt="dieterdreist's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f09c0b7a655fed386e070e036e2da248?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/936/dieterdreist">dieterdreist</a><br/>
+<span class="score" title="3677 reputation points"><span class="">3.7k</span></span><span title="11 badges"><span class="badge1">●</span><span class="badgecount">11</span></span><span title="35 badges"><span class="silver">●</span><span class="badgecount">35</span></span><span title="67 badges"><span class="bronze">●</span><span class="badgecount">67</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="dieterdreist has 4 accepted answers">3%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/65519/">
+                edited
+                <strong>22 Aug '18, 22:44</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-65519">
+</div>
+<div class="comment-tools" id="comment-tools-65519">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-65519-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/65238/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="IxFebiaAvZORK4LwtmSPr834zFsQMJqs"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

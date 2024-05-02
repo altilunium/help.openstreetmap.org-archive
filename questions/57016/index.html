@@ -1,0 +1,179 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/57016/using-a-barrier-to-keep-drivingwalking-directions-inside-a-cemetery">Using a barrier to keep driving/walking directions inside a cemetery</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/57016/up/" id="post-57016-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-57016-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/57016/down/" id="post-57016-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/57016/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am trying to render combination wall and fence barrier around a cemetery so that directions supplied to a specific lat/long combination of a grave will be directed inside the cemetery on existing paths/roads.  When the grave is closer to an outside road, directions given take the user to the closest place on the external road and expect the person can access the location walking from the road.  In many cases this is not the case - a significant wall or fence exists that cannot be "crossed".  Other times, the road is very unsafe to park on (high speed or no shoulder) and the person should be directed inside the cemetery for access.  I have tried creating a barrier around most of a cemetery (Cypress Lawn Memorial Park in Colma CA) and I cannot see that rendered after 3 days (<a href="http://product.itoworld.com/map/49?lon=-122.45707&amp;lat=37.67196&amp;zoom=15)">http://product.itoworld.com/map/49?lon=-122.45707&amp;lat=37.67196&amp;zoom=15)</a> while I can see a barrier not far away behind a Home Depot store (to the northwest of the cemetery).  Secondly, when trying directions to other nearby places with fences, the behavior doesn't seem to do what I am trying anyway.  The goal is that a person is directed to enter the cemetery main entrance and the use the internal roads to get to the closest spot to the lat/long and walk the remaining distance.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-directions" href="/tags/directions/" rel="tag" title="see questions tagged 'directions'">directions</a>
+<a class="post-tag tag-link-routing" href="/tags/routing/" rel="tag" title="see questions tagged 'routing'">routing</a>
+<a class="post-tag tag-link-barrier" href="/tags/barrier/" rel="tag" title="see questions tagged 'barrier'">barrier</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>11 Jul '17, 18:39</strong>
+</p>
+<img alt="Ken%20Oates's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/56cab5e65d1f5909c697ed988f7d8f2a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13924/ken-oates">Ken Oates</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Ken Oates has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-57016">
+<a name="57017"></a>
+<div class="comment" id="comment-57017">
+<div class="comment-score" id="post-57017-score">1</div>
+<div class="comment-text"><p>I don't understand the problem. If the roads inside the cemetary are properly mapped then routing engines should work as expected, e.g. in this case: <a href="http://www.openstreetmap.org/directions?engine=graphhopper_car&amp;route=37.6659%2C-122.4561%3B37.6680%2C-122.4588">http://www.openstreetmap.org/directions?engine=graphhopper_car&amp;route=37.6659%2C-122.4561%3B37.6680%2C-122.4588</a></p></div>
+<div class="comment-info" id="comment-57017-info">
+<span class="comment-age">(11 Jul '17, 18:53)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="57018"></a>
+<div class="comment" id="comment-57018">
+<div class="comment-score" id="post-57018-score">3</div>
+<div class="comment-text"><p>Presumably routes like <a href="http://www.openstreetmap.org/directions?engine=graphhopper_car&amp;route=37.66590%2C-122.45610%3B37.66701%2C-122.45955#map=17/37.66615/-122.45796">http://www.openstreetmap.org/directions?engine=graphhopper_car&amp;route=37.66590%2C-122.45610%3B37.66701%2C-122.45955#map=17/37.66615/-122.45796</a> are the issue.</p>
+<p>The general purpose routing engines on OSM.org won't account for a barrier or wall that isn't connected to a highway that is a possible route. They tend to be car focused on don't focus on pedestrian convenience at the end of the route.</p>
+<p>Such questions also come up when routing to a school or something like that where there is no established way to hint where in the school grounds would be the best place to stop a vehicle.</p></div>
+<div class="comment-info" id="comment-57018-info">
+<span class="comment-age">(11 Jul '17, 19:01)</span>
+<a class="comment-user userinfo" href="/users/10973/maxerickson">maxerickson</a>
+</div>
+</div>
+<a name="57019"></a>
+<div class="comment" id="comment-57019">
+<div class="comment-score" id="post-57019-score"></div>
+<div class="comment-text"><p>Yes, maxerickson has the problem nailed.  Here is more clarification, but probably isn't necessary at this point.</p>
+<p>The first image is the type of routing I am looking for.  The user is at the entrance of the cemetery and the red point is where the grave is.  It routes correctly through the cemetery because the destination lat/long is closer to the internal road than the external one (Collins Avenue)
+<a href="https://www.openstreetmap.org/directions?engine=graphhopper_foot&amp;route=37.67329%2C-122.45447%3B37.67321%2C-122.45735#map=17/37.67294/-122.45423">https://www.openstreetmap.org/directions?engine=graphhopper_foot&amp;route=37.67329%2C-122.45447%3B37.67321%2C-122.45735#map=17/37.67294/-122.45423</a></p>
+<p>If the grave location is moved just slightly closer to the edge of the cemetery, the person is routed outside to Collins Drive.  There are businesses on Collins between the road and the cemetery as well as a high concrete wall separating the back of the businesses from the cemetery.  There is no way to get from Collins to the cemetery.
+<a href="https://www.openstreetmap.org/directions?engine=graphhopper_foot&amp;route=37.67329%2C-122.45447%3B37.67332%2C-122.45734#map=18/37.67399/-122.45613">https://www.openstreetmap.org/directions?engine=graphhopper_foot&amp;route=37.67329%2C-122.45447%3B37.67332%2C-122.45734#map=18/37.67399/-122.45613</a></p>
+<p>So, does anyone have a some solution suggestions?  Thanks!</p></div>
+<div class="comment-info" id="comment-57019-info">
+<span class="comment-age">(11 Jul '17, 19:17)</span>
+<a class="comment-user userinfo" href="/users/13924/ken-oates">Ken Oates</a>
+</div>
+</div>
+<a name="57020"></a>
+<div class="comment" id="comment-57020">
+<div class="comment-score" id="post-57020-score">2</div>
+<div class="comment-text"><p>perhaps you could add the path ? It seems to me that there is a path in that corner of the cemetery.
+A general purpose router will bring you as close as possible over the existing paths, it does not know about walls around the area.</p></div>
+<div class="comment-info" id="comment-57020-info">
+<span class="comment-age">(11 Jul '17, 20:05)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-57016">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-57016-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/57016/using-a-barrier-to-keep-drivingwalking-directions-inside-a-cemetery?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/57016/using-a-barrier-to-keep-drivingwalking-directions-inside-a-cemetery?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/57016/using-a-barrier-to-keep-drivingwalking-directions-inside-a-cemetery?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/57016/using-a-barrier-to-keep-drivingwalking-directions-inside-a-cemetery?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="57022"></a>
+<div class="answer" id="answer-container-57022">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/57022/up/" id="post-57022-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-57022-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/57022/down/" id="post-57022-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The "sane" solution is to implement routing on areas (which could then take barriers etc in to account), this is not the highest priority with the routing engine developers, but it is an known issue. The stop gap measure is to add fake paths, but that is not particularly satisfactory.</p>
+<p>PS: this is a largish issue for indoor routing too.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/57022/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>11 Jul '17, 22:58</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-57022">
+<a name="57188"></a>
+<div class="comment" id="comment-57188">
+<div class="comment-score" id="post-57188-score"></div>
+<div class="comment-text"><p>Thank you everyone for the suggestions.  Agreed the best solution would be to have the routing engine take info consideration barriers, etc. that exist between the closest road/path and the destination lat/long.  I put in my vote to put this on the priority list.</p>
+<p>The not so great practical solution of building "false" paths to cause the routing engine to produce the desired result is what I have chosen to do.  The goal would be that when barriers are taken into consideration, these false paths will be removed.</p></div>
+<div class="comment-info" id="comment-57188-info">
+<span class="comment-age">(19 Jul '17, 21:31)</span>
+<a class="comment-user userinfo" href="/users/13924/ken-oates">Ken Oates</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-57022">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-57022-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/57016/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Q83pQHLwpiiOgiQke1QYvQPuKcQcmx5j"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

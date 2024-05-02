@@ -1,0 +1,153 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/87192/overpass-some-issue-with-wrong-order-of-points-to-make-polygon">overpass: some issue with wrong order of points to make polygon</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/87192/up/" id="post-87192-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-87192-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/87192/down/" id="post-87192-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/87192/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am running this query on overpass-turbo </p>
+<pre><code>[out:json][timeout:25];
+rel(223133);
+(
+  rel(r);
+);
+rel(1250951);
+
+out geom;
+</code></pre>
+<p>and I have received this polygon.</p>
+<p><a href="https://i.stack.imgur.com/0V8Rv.png"><img alt="enter image description here" src="https://i.stack.imgur.com/0V8Rv.png"/></a></p>
+<p>but when I process this data my Image is like this :</p>
+<p><a href="https://i.stack.imgur.com/IDgjd.png"><img alt="enter image description here" src="https://i.stack.imgur.com/IDgjd.png"/></a></p>
+<p>I am using dot net core and this is my query</p>
+<pre><code>foreach (var m in geoElement.members)
+{
+    if (m is { type: "way", role: "outer" })
+    {
+        foreach (var g in m.geometry)
+        {
+            Coordinate coordinate = new Coordinate(g.lon, g.lat);
+            coordinates.Add(coordinate);
+        }
+    }
+
+}
+var shell = new LinearRing(coordinates.ToArray());
+
+var p = new Polygon(shell);
+        var serializer = GeoJsonSerializer.Create();
+        using var stringWriter = new StringWriter();
+        using var jsonWriter = new JsonTextWriter(stringWriter);
+
+        serializer.Serialize(jsonWriter, p);
+        var geoJson = stringWriter.ToString();
+        return geoJson;
+</code></pre>
+<p>First I added all geometries lat and lng into a coordinate list and finally, I make a polygon and at the end I make a GeoJson.</p>
+<p>can someone guild me on what tips exist here?</p>
+<p>I downloaded GeoJson file from Overpass and I checked with my made GeoJson.there is so different from points. I don't know why? how can I make GeoJson like an overpass downloaded file?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-geojson" href="/tags/geojson/" rel="tag" title="see questions tagged 'geojson'">geojson</a>
+<a class="post-tag tag-link-overpassturbo" href="/tags/overpassturbo/" rel="tag" title="see questions tagged 'overpassturbo'">overpassturbo</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>30 Apr '23, 19:00</strong>
+</p>
+<img alt="alt2020's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3016a8114f68eb431594ee9ec890c246?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19938/alt2020">alt2020</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="alt2020 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-87192">
+<a name="87194"></a>
+<div class="comment" id="comment-87194">
+<div class="comment-score" id="post-87194-score"></div>
+<div class="comment-text"><p>First off, this query will return the same data as yours:</p>
+<pre><code>[out:json];
+rel(1250951);
+out geom;
+</code></pre>
+<p>I've used a couple of osmtogeojson converters &amp; they all output as expected.
+Is GeoJsonSerializer an internal command?</p></div>
+<div class="comment-info" id="comment-87194-info">
+<span class="comment-age">(30 Apr '23, 20:14)</span>
+<a class="comment-user userinfo" href="/users/1532/davef">DaveF</a>
+</div>
+</div>
+<a name="87195"></a>
+<div class="comment" id="comment-87195">
+<div class="comment-score" id="post-87195-score"></div>
+<div class="comment-text"><p>(following on from the conversation elsewhere)</p>
+<p>I think that you're assuming that your "foreach" will get you the OSM ways in the "correct" order (sequentially around the relation).  This isn't guaranteed.  There is probably some multipolygon code out there for your language; I'd be tempted to borrow from that :)</p></div>
+<div class="comment-info" id="comment-87195-info">
+<span class="comment-age">(30 Apr '23, 20:21)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="87196"></a>
+<div class="comment" id="comment-87196">
+<div class="comment-score" id="post-87196-score"></div>
+<div class="comment-text"><p>Did u get the correct answer? <a href="https://help.openstreetmap.org/users/1532/davef"></a><a href="https://help.openstreetmap.org/users/1532/davef">@DaveF</a></p></div>
+<div class="comment-info" id="comment-87196-info">
+<span class="comment-age">(30 Apr '23, 22:17)</span>
+<a class="comment-user userinfo" href="/users/19938/alt2020">alt2020</a>
+</div>
+</div>
+<a name="87197"></a>
+<div class="comment" id="comment-87197">
+<div class="comment-score" id="post-87197-score"></div>
+<div class="comment-text"><p>the output of query, first geometry is <code>"geometry": [
+         { "lat": 38.2591626, "lon": 33.1844776 },</code> but if u download Geojson the first coordinate is <code>[
+              33.0320818,
+              38.1524781
+            ],</code> . as you can see there is a difference here <a href="https://help.openstreetmap.org/users/1532/davef">@DaveF</a></p></div>
+<div class="comment-info" id="comment-87197-info">
+<span class="comment-age">(30 Apr '23, 22:22)</span>
+<a class="comment-user userinfo" href="/users/19938/alt2020">alt2020</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-87192">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-87192-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/87192/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="veJ4XS0m4sUZvOYwtSmxCze5DZNWj4fi"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

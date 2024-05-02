@@ -1,0 +1,280 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/3403/easiest-way-to-render-maps-with-custom-language">Easiest way to render maps with custom language?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/3403/up/" id="post-3403-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-3403-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/3403/down/" id="post-3403-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/3403/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm looking to make maps for printing, but would need to have all names in english since some of our staff don't read arabic.</p>
+<p>I've looked around online, but I haven't found any (sufficiently easy) way of achieving this, and would really appreciate some pointers on which way to go.</p>
+<p>I've dabbled with different renderers, but the only one I've achieved a decent worklflow with is Maperetive. I run WinXP and have little experience with nix-commandline environments. </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-maperetive" href="/tags/maperetive/" rel="tag" title="see questions tagged 'maperetive'">maperetive</a>
+<a class="post-tag tag-link-rendering" href="/tags/rendering/" rel="tag" title="see questions tagged 'rendering'">rendering</a>
+<a class="post-tag tag-link-language" href="/tags/language/" rel="tag" title="see questions tagged 'language'">language</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>27 Feb '11, 08:48</strong>
+</p>
+<img alt="riyaah's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/df2fd17be9ca696157dcaa547d6ca98e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/935/riyaah">riyaah</a><br/>
+<span class="score" title="51 reputation points">51</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="riyaah has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-3403">
+</div>
+<div class="comment-tools" id="comment-tools-3403">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-3403-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/3403/easiest-way-to-render-maps-with-custom-language?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/3403/easiest-way-to-render-maps-with-custom-language?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/3403/easiest-way-to-render-maps-with-custom-language?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/3403/easiest-way-to-render-maps-with-custom-language?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="3418"></a>
+<div class="answer accepted-answer" id="answer-container-3418">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/3418/up/" id="post-3418-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-3418-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/3418/down/" id="post-3418-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/3418/" rel="nofollow" title="riyaah has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You say you've tried Maperitive, but you don't explain why it didn't fit your needs. 
+Making Maperitive render English names is really quite simple: add a new line in the default rules (under the "properties" section):</p>
+<pre><code>text : @any([[name:en]], int_name, name)
+</code></pre>
+<p>(make sure it's a tab indent and not spaces). This will ensure English names will be used as default ones (but you can override this in any rule later). If English name is not defined, it will look for international name or a default name (which would probably be in Arabic).</p>
+<p><a href="http://maperitive.net/docs/manual/Properties/Text.html"></a><a href="http://maperitive.net/docs/manual/Properties/Text.html"></a><a href="http://maperitive.net/docs/manual/Properties/Text.html">http://maperitive.net/docs/manual/Properties/Text.html</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/3418/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>27 Feb '11, 17:18</strong>
+</p>
+<img alt="Breki's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/591340f954c00c8208d5ffe668f50a05?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/118/breki">Breki</a><br/>
+<span class="score" title="2040 reputation points"><span class="">2.0k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="18 badges"><span class="silver">●</span><span class="badgecount">18</span></span><span title="43 badges"><span class="bronze">●</span><span class="badgecount">43</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Breki has 5 accepted answers">10%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/3418/">
+                edited
+                <strong>27 Feb '11, 19:36</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-3418">
+<a name="3419"></a>
+<div class="comment" id="comment-3419">
+<div class="comment-score" id="post-3419-score">2</div>
+<div class="comment-text"><p>To improve this, you could additionally render int_name if name:en is empty.</p></div>
+<div class="comment-info" id="comment-3419-info">
+<span class="comment-age">(27 Feb '11, 17:32)</span>
+<a class="comment-user userinfo" href="/users/936/dieterdreist">dieterdreist</a>
+</div>
+</div>
+<a name="3421"></a>
+<div class="comment" id="comment-3421">
+<div class="comment-score" id="post-3421-score"></div>
+<div class="comment-text"><p>Thank you! I don't know why I didn't see this in the Maperetive book, I looked around for quite a while!</p></div>
+<div class="comment-info" id="comment-3421-info">
+<span class="comment-age">(27 Feb '11, 17:54)</span>
+<a class="comment-user userinfo" href="/users/935/riyaah">riyaah</a>
+</div>
+</div>
+<a name="3428"></a>
+<div class="comment" id="comment-3428">
+<div class="comment-score" id="post-3428-score"></div>
+<div class="comment-text"><p><a href="/users/936/dieterdreist/">@dieterdreist</a> good suggestion, I've updated my answer</p></div>
+<div class="comment-info" id="comment-3428-info">
+<span class="comment-age">(27 Feb '11, 19:37)</span>
+<a class="comment-user userinfo" href="/users/118/breki">Breki</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-3418">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-3418-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="3429"></a>
+<div class="answer" id="answer-container-3429">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/3429/up/" id="post-3429-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-3429-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/3429/down/" id="post-3429-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Another option would be to preprocess the data using <a href="http://wiki.openstreetmap.org/wiki/Osmosis">Osmosis</a> with the <a href="http://wiki.openstreetmap.org/wiki/Osmosis/TagTransform">TagTransform</a> plugin. eg you could write rules to copy anything in the name:en or int_name tag to the name tag.</p>
+<p>This can output in .osm format, which you can then use as input for any of the usual rendering software (Maperitive, Mapnik, Mkgmap etc), and you don't have to change any of the rendering rules.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/3429/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>27 Feb '11, 20:05</strong>
+</p>
+<img alt="Vclaw's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/aa505c046b1c010e997a7849c6f3dbbe?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/62/vclaw">Vclaw</a><br/>
+<span class="score" title="9217 reputation points"><span class="">9.2k</span></span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="95 badges"><span class="silver">●</span><span class="badgecount">95</span></span><span title="141 badges"><span class="bronze">●</span><span class="badgecount">141</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Vclaw has 41 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-3429">
+</div>
+<div class="comment-tools" id="comment-tools-3429">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-3429-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="3416"></a>
+<div class="answer" id="answer-container-3416">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/3416/up/" id="post-3416-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-3416-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/3416/down/" id="post-3416-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I can tell you for mapnik: simply update your tables. First overwrite the name field in your database with int_name if it is not empty, this is a fallback:</p>
+<p>UPDATE planet_osm_point SET name=int_name WHERE int_name IS NOT NULL;</p>
+<p>then overwrite again with name:en where present:</p>
+<p>UPDATE planet_osm_point SET name="name:en" WHERE "name:en" IS NOT NULL;</p>
+<p>in order to be able to do this, you will have to add int_name and name:en before importing to standard.style in your osm2pgsql-folder. If you want to keep the original name field content you would have to make a copy of the column before (but your question doesn't sound like).
+Repeat this command for all 4 relevant tables (point, polygon, line, roads). Afterwards you might want to delete the now obsolete columns name_int and name:en to save space.</p>
+<p>This procedure is the simplest (especially if you are not planning to apply diffs) but of course you could also modify your rendering rules for every occurence of name.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/3416/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>27 Feb '11, 16:26</strong>
+</p>
+<img alt="dieterdreist's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f09c0b7a655fed386e070e036e2da248?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/936/dieterdreist">dieterdreist</a><br/>
+<span class="score" title="3677 reputation points"><span class="">3.7k</span></span><span title="11 badges"><span class="badge1">●</span><span class="badgecount">11</span></span><span title="35 badges"><span class="silver">●</span><span class="badgecount">35</span></span><span title="67 badges"><span class="bronze">●</span><span class="badgecount">67</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="dieterdreist has 4 accepted answers">3%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-3416">
+<a name="3422"></a>
+<div class="comment" id="comment-3422">
+<div class="comment-score" id="post-3422-score"></div>
+<div class="comment-text"><p>Personally, I would tend to add views using CASE WHEN or COALESCE statements (e.g., CREATE VIEW osm_planet_way_nameen AS SELECT a.*, CASE WHEN ... FROM osm_planet_way). It is not hugely difficult to d global search and replace for this type of change in the mapnik XML. I would also use the hstore option on osm2pgsql to make all tags available during the load. In this way the data can be refreshed without having to repeat DML statements like UPDATE.</p></div>
+<div class="comment-info" id="comment-3422-info">
+<span class="comment-age">(27 Feb '11, 18:05)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-3416">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-3416-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/3403/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="o9JPUhjYXLioSAxcZDTiHbb3aA7wvBCS"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

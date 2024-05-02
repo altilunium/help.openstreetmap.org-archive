@@ -1,0 +1,136 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/55030/cant-find-a-particular-value-already-tried-nominatim-overpass-turbo-and-taginfo">Can't find a particular value (already tried Nominatim, Overpass Turbo and TagInfo)</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/55030/up/" id="post-55030-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-55030-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/55030/down/" id="post-55030-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/55030/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Please, have a look at the center of <a href="https://www.openstreetmap.org/#map=12/19.2881/-99.6518">this map</a>. Turs out someone added "plantel dr. ángel ma. garibay kintana" to <em>something</em> that apparently has some inherent admin_level value that makes it show up at zoom 10, blocking out the name of the city below it ("Toluca de Lerdo"), which happens to be a capital city.</p>
+<p>This is flat-out wrong but for the love of me, I can't find the element that has such value in order to fix it. I have already tried Nominatim, Overpass Turbo and TagInfo, but they don't return any results if I query the whole string.</p>
+<p>If I split the string, say, "garibay kintana", they do return a couple of elements but they seem to have correct information, or at least neither of them appear to be the element I look for. If I try to search for "plantel dr.", nothing comes up.</p>
+<p>What's a good way to find out what element is causing this?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-search" href="/tags/search/" rel="tag" title="see questions tagged 'search'">search</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>13 Mar '17, 06:34</strong>
+</p>
+<img alt="Absay's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/37882972d0db7a93230b8e5e7fdbabc3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13441/absay">Absay</a><br/>
+<span class="score" title="61 reputation points">61</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Absay has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-55030">
+</div>
+<div class="comment-tools" id="comment-tools-55030">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-55030-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/55030/cant-find-a-particular-value-already-tried-nominatim-overpass-turbo-and-taginfo?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/55030/cant-find-a-particular-value-already-tried-nominatim-overpass-turbo-and-taginfo?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/55030/cant-find-a-particular-value-already-tried-nominatim-overpass-turbo-and-taginfo?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/55030/cant-find-a-particular-value-already-tried-nominatim-overpass-turbo-and-taginfo?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="55035"></a>
+<div class="answer" id="answer-container-55035">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/55035/up/" id="post-55035-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-55035-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/55035/down/" id="post-55035-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>A couple of months ago someone (probably accidentally) changed the name of the node for the city of Toluca de Lerdo to "plantel dr. ángel ma. garibay kintana". This was spotted and corrected a while back: however the relevant tiles (levels 12 and lower) have not yet been re-rendered. A reasonable way to cross-check is to view other available renderings on the main OSM site. If they all show something then it's likely to still be in the database; if they show different things then one is probably looking at artefacts associated with the different re-rendering algorithms.</p>
+<p>You can see the change in the history here: <a href="https://www.openstreetmap.org/node/269914302/history#map=11/19.2925/-99.6569">https://www.openstreetmap.org/node/269914302/history#map=11/19.2925/-99.6569</a></p>
+<p>So no need to tear your hair out continuing to look for it!</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/55035/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>13 Mar '17, 14:10</strong>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br/>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SK53 has 121 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-55035">
+<a name="55040"></a>
+<div class="comment" id="comment-55040">
+<div class="comment-score" id="post-55040-score"></div>
+<div class="comment-text"><p>Thanks. I knew it couldn't be there anymore if the DB searchers where not returning relevant results and other renderers weren't showing it, but I couldn't explain the fact the map was still rendering such information. A follow-up question: when are those tiles going to re-render?</p></div>
+<div class="comment-info" id="comment-55040-info">
+<span class="comment-age">(13 Mar '17, 17:38)</span>
+<a class="comment-user userinfo" href="/users/13441/absay">Absay</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-55035">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-55035-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/55030/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="z9vpz4E0fkFn4Mx1Z3J8lhWxCZCdGTDI"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

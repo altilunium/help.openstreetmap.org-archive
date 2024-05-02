@@ -1,0 +1,193 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/76552/what-do-we-mark-after-a-fire-emergency-on-openstreetmap">What do we mark after a fire emergency, on Openstreetmap?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/76552/up/" id="post-76552-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-76552-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/76552/down/" id="post-76552-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/76552/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Right now there are unfortunately numerous fires that have threatened or burned up cities here in Oregon.
+<a href="https://www.msn.com/en-us/news/us/oregon-fire-evacuation-map-update-as-83-000-medford-residents-forced-to-flee-homes/ar-BB18RvEu?ocid=uxbndlbing">https://www.msn.com/en-us/news/us/oregon-fire-evacuation-map-update-as-83-000-medford-residents-forced-to-flee-homes/ar-BB18RvEu?ocid=uxbndlbing</a></p>
+<p>With many businesses and homes that have buildings burned down, closed, or both, I wonder what is the best way we can best notify everyone relying on Openstreetmap/Osmand. Is there a way one can mark temporarily closed for an entire area? And is there a tag that can be added as burned down vs permanently deleting a node or building area? :(</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-fire" href="/tags/fire/" rel="tag" title="see questions tagged 'fire'">fire</a>
+<a class="post-tag tag-link-nodes" href="/tags/nodes/" rel="tag" title="see questions tagged 'nodes'">nodes</a>
+<a class="post-tag tag-link-removal" href="/tags/removal/" rel="tag" title="see questions tagged 'removal'">removal</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>11 Sep '20, 04:31</strong>
+</p>
+<img alt="123maps's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ff5b5dcb43315c9b07de2d9261ad2d2a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18956/123maps">123maps</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="123maps has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-76552">
+</div>
+<div class="comment-tools" id="comment-tools-76552">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-76552-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/76552/what-do-we-mark-after-a-fire-emergency-on-openstreetmap?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/76552/what-do-we-mark-after-a-fire-emergency-on-openstreetmap?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/76552/what-do-we-mark-after-a-fire-emergency-on-openstreetmap?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/76552/what-do-we-mark-after-a-fire-emergency-on-openstreetmap?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="76559"></a>
+<div class="answer accepted-answer" id="answer-container-76559">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/76559/up/" id="post-76559-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-76559-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/76559/down/" id="post-76559-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/76559/" rel="nofollow" title="123maps has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p><strong>Destroyed buildings:</strong> Use a lifecycle prefix on the <code>building=*</code> tag, as InsertUser says. </p>
+<p><strong>Amenities (,shops, etc) co-tagged directly on the building way:</strong> Delete the amenity-specific tags, optionally add a lifecycle prefix on the main tag (eg <code>destroyed:amenity=restaurant</code>). Consider tagging old_name=* -- if people still refer to the site by the previous name. </p>
+<p><strong>Amenities etc mapped as a node inside a destroyed building:</strong> Delete node or use lifecycle prefix on the main tag.</p>
+<p>(Possible edge case: Some amenities, churches for example, may continue to function in ad-hoc accommodations on the previous site.)</p>
+<p>~~~</p>
+<p>As far as I know, there's no standard way to mark a temporary closure for an entire area, but you can close the roads in that area...</p>
+<p><strong>Closed road you expect to reopen within a few weeks:</strong> Don't change road access, possibly add a note or fixme explaining the temporary closure and asking for a resurvey to confirm the re-opening. </p>
+<p><strong>Closed road you expect to reopen after several weeks:</strong> Add a <a href="https://wiki.openstreetmap.org/wiki/Conditional_restrictions">conditional access</a> tag like <code>conditional:access=no @ (2020 Sep 1-2020 Nov 15)</code>. This is an imperfect solution for two reasons -- First, data consumers will need to specifically be looking for the conditional access tag, and many of them do not. Second, you have to choose a re-opening date... but don't worry if it's not exactly right, you can remove it if you overestimated the length of the closure and revise it if you underestimated.</p>
+<p><strong>Indefinitely closed road:</strong> Tag <code>access=no</code> and add a fixme asking for resurvey.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/76559/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>11 Sep '20, 20:55</strong>
+</p>
+<img alt="jmapb's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/977d95e2184a885d9a01fb3297225872?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14350/jmapb">jmapb</a><br/>
+<span class="score" title="3387 reputation points"><span class="">3.4k</span></span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="33 badges"><span class="silver">●</span><span class="badgecount">33</span></span><span title="61 badges"><span class="bronze">●</span><span class="badgecount">61</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="jmapb has 22 accepted answers">22%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/76559/">
+                edited
+                <strong>11 Sep '20, 20:56</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-76559">
+</div>
+<div class="comment-tools" id="comment-tools-76559">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-76559-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="76555"></a>
+<div class="answer" id="answer-container-76555">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/76555/up/" id="post-76555-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-76555-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/76555/down/" id="post-76555-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Short term closures <a href="https://wiki.openstreetmap.org/wiki/Good_practice#Don.27t_map_temporary_events_and_temporary_features">aren't normally mapped</a> in OSM.</p>
+<p>Recently destroyed buildings etc. can be tagged with a <a href="https://wiki.openstreetmap.org/wiki/Lifecycle_prefix">lifecycle prefix</a> like <code>destroyed:</code> or <code>ruins:</code> as appropriate. If all traces of an object have been removed they should normally be deleted as they are no longer verifiable on the ground, however if they are still shown in aerial imagery it is usually acceptable to leave them with a <code>destroyed:</code> or <code>demolished:</code> prefix until the next update.  </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/76555/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>11 Sep '20, 10:04</strong>
+</p>
+<img alt="InsertUser's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ec8a0cf213f9797ad1c1ae2c28c2332d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4426/insertuser">InsertUser</a><br/>
+<span class="score" title="11005 reputation points"><span class="">11.0k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="69 badges"><span class="silver">●</span><span class="badgecount">69</span></span><span title="185 badges"><span class="bronze">●</span><span class="badgecount">185</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="InsertUser has 73 accepted answers">19%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-76555">
+</div>
+<div class="comment-tools" id="comment-tools-76555">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-76555-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/76552/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="W5pMJ6M9WkHPkEFxGDjTysNlQGfxt2o4"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

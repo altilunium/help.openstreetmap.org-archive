@@ -1,0 +1,134 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/12554/is-there-a-web-service-exposed-to-get-all-cities-in-a-country">Is there a web service exposed to get all cities in a country</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/12554/up/" id="post-12554-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-12554-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/12554/down/" id="post-12554-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/12554/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Is it possible to get all cities of a country from OSM using a web service? I need this in order to use in a combo box (fill the combo box with city names when user selects a country) Thanks in advance.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-cities" href="/tags/cities/" rel="tag" title="see questions tagged 'cities'">cities</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>05 May '12, 10:02</strong>
+</p>
+<img alt="sewdil's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8f25d6294309a98aa20ad63a312aa8c8?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3252/sewdil">sewdil</a><br/>
+<span class="score" title="6 reputation points">6</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="sewdil has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-12554">
+</div>
+<div class="comment-tools" id="comment-tools-12554">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-12554-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/12554/is-there-a-web-service-exposed-to-get-all-cities-in-a-country?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/12554/is-there-a-web-service-exposed-to-get-all-cities-in-a-country?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/12554/is-there-a-web-service-exposed-to-get-all-cities-in-a-country?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/12554/is-there-a-web-service-exposed-to-get-all-cities-in-a-country?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="12559"></a>
+<div class="answer accepted-answer" id="answer-container-12559">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/12559/up/" id="post-12559-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-12559-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/12559/down/" id="post-12559-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/12559/" rel="nofollow" title="sewdil has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>No. OpenStreetMap has the raw data from which you could extract such a list yourself, but there's no ready-made web service that does that for you. </p>
+<p>It is possible to go a little way in your direction with the <a href="http://wiki.openstreetmap.org/wiki/Overpass_API">Overpass API</a>; this allows you to ask for "all objects tagged <code>place=city</code> within the boundary described by the OpenStreetMap relation with the ID x". This requires that you first find out which relation you are interested in.</p>
+<p>Say you wanted to find all cities in Moldova. <a href="http://www.google.com/search?q=openstreetmap+relation+moldova&amp;ie=utf-8&amp;oe=utf-8&amp;client=ubuntu&amp;channel=fs">Google</a> can be used to find out that the relation id you are looking for is 58974. Add 3600000000 to that number and use the following Overpass query:</p>
+<pre><code>&lt;query type="node"&gt;
+  &lt;has-kv k="place" v="city"/&gt;
+  &lt;area-query ref="3600058974"/&gt;
+&lt;/query&gt;
+&lt;print mode="body"/&gt;
+</code></pre>
+<p>This returns the OSM XML for all city nodes in Moldova.</p>
+<p>However, requesting such information live from the database every time you need it is a terrible waste of time; you really want to compute such a list ahead of time and then use that. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/12559/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>05 May '12, 11:17</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-12559">
+</div>
+<div class="comment-tools" id="comment-tools-12559">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-12559-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/12554/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="EidRXbMxQ6mMrbyHqbJcuGLcfdivQUtu"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

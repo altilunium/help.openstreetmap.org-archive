@@ -1,0 +1,147 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/79607/trying-to-find-a-weight-restriction-thats-influencing-osrm-routing-decision">Trying to find a weight restriction that's influencing OSRM routing decision</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/79607/up/" id="post-79607-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-79607-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/79607/down/" id="post-79607-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/79607/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi all,</p>
+<p>I am experimenting with the "Open Source Routing Machine" (OSRM) and it's profiles. Currently I am facing a phenomenom I discovered running OSRM via docker in my custom setup: A route changes noticeably if the weight of the vehicle is changed in the car.lua profile.</p>
+<p>So I think that somewhere in the route there must be a node/way/relation with restrictions of weigth, which causes the discrepancy. How can I search for weight restrictions in a route? Or does anyone has a alternative explanation for the discrepancy?</p>
+<p>The affected route starts in Burghasungen and ends in Melsungen. Both locations are cities in Hessen, Germany. Using the OSM routing service with default car.lua you can see the route here:
+<a href="https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&amp;route=51.3246%2C9.2777%3B51.1298%2C9.5437#map=10/51.2391/9.1763">https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&amp;route=51.3246%2C9.2777%3B51.1298%2C9.5437#map=10/51.2391/9.1763</a></p>
+<p>In my setup the discrepancy looks like this:
+<img alt="alt text" src="https://help.openstreetmap.org/upfiles/route.png"/></p>
+<p>Even with the weight of 6000 kg I would expect the route to continue up to the end of A44 and not to leave the A44 premature (A44 should be tagged highway=motorway). </p>
+<p>I case you wonder what my motivation is: Actually I would like to use a profile called "truck soft", which <a href="https://github.com/Project-OSRM/osrm-profiles-contrib/tree/master/5/21/truck-soft">can be found here</a>. This truck profile uses car.lua as default and changes different aspects. But using this truck profile I discovered the above described discrepancy. Thus I stepped back, took the default car.lua and tried to applied the changes one after another. By this I found out, that only changing the "vehicle_weight" (leaving the rest untouched!) leads to the differing route. The data I used is the sub region Hessen <a href="http://download.geofabrik.de/europe/germany/hessen-latest.osm.pbf">kindly provided by Geofabrik</a>. Interesting additional detail: Using an older dataset, which is round about 4,5 years old, the route does not change on different weights.</p>
+<p>Thanks and greetings,
+rebos</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osrm" href="/tags/osrm/" rel="tag" title="see questions tagged 'osrm'">osrm</a>
+<a class="post-tag tag-link-truck.lua" href="/tags/truck.lua/" rel="tag" title="see questions tagged 'truck.lua'">truck.lua</a>
+<a class="post-tag tag-link-car.lua" href="/tags/car.lua/" rel="tag" title="see questions tagged 'car.lua'">car.lua</a>
+<a class="post-tag tag-link-weight" href="/tags/weight/" rel="tag" title="see questions tagged 'weight'">weight</a>
+<a class="post-tag tag-link-restriction" href="/tags/restriction/" rel="tag" title="see questions tagged 'restriction'">restriction</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>11 Apr '21, 16:02</strong>
+</p>
+<img alt="osmrebos's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/8b492a48055eb8eb8fa8cc10a91bfd83?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20040/osmrebos">osmrebos</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="osmrebos has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-79607">
+</div>
+<div class="comment-tools" id="comment-tools-79607">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-79607-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/79607/trying-to-find-a-weight-restriction-thats-influencing-osrm-routing-decision?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/79607/trying-to-find-a-weight-restriction-thats-influencing-osrm-routing-decision?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/79607/trying-to-find-a-weight-restriction-thats-influencing-osrm-routing-decision?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/79607/trying-to-find-a-weight-restriction-thats-influencing-osrm-routing-decision?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="79609"></a>
+<div class="answer" id="answer-container-79609">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/79609/up/" id="post-79609-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-79609-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/79609/down/" id="post-79609-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Maxweight of <a href="https://www.openstreetmap.org/way/34287495">way 34287495</a> and a few other ways on the eastbound carriageway appear to be tagged as 3.5, with the default unit being metric tonnes. <a href="https://www.openstreetmap.org/changeset/70382652">Changeset 70382652</a> also has the comment "A44 gesperrt 3,5 ton " so I assume this is not accidental. </p>
+<p>Found via an overpass turbo <a href="https://overpass-turbo.eu/s/1605">query</a> on the <a href="https://wiki.openstreetmap.org/wiki/Key:maxweight">maxweight</a> tag. </p>
+<p>As always, please be sure to check on site, or with very recent street level imagery before making any changes to the mapped data. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/79609/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>11 Apr '21, 17:59</strong>
+</p>
+<img alt="InsertUser's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ec8a0cf213f9797ad1c1ae2c28c2332d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4426/insertuser">InsertUser</a><br/>
+<span class="score" title="11005 reputation points"><span class="">11.0k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="69 badges"><span class="silver">●</span><span class="badgecount">69</span></span><span title="185 badges"><span class="bronze">●</span><span class="badgecount">185</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="InsertUser has 73 accepted answers">19%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-79609">
+<a name="79610"></a>
+<div class="comment" id="comment-79610">
+<div class="comment-score" id="post-79610-score">2</div>
+<div class="comment-text"><p>My curiosity got the better of me: <a href="https://www.hna.de/lokales/kreis-kassel/sperrung-fuer-lastkraftwagen-ueber-3-5-tonnen-voraussichtlich-ab-januar-umleitung-ueber-a-49-10789570.html">here's an article</a> about the change.</p></div>
+<div class="comment-info" id="comment-79610-info">
+<span class="comment-age">(11 Apr '21, 18:05)</span>
+<a class="comment-user userinfo" href="/users/4426/insertuser">InsertUser</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-79609">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-79609-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/79607/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="T917inoEcVsHzf0pXa0Fwg5d7REZ6i7Z"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

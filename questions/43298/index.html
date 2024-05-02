@@ -1,0 +1,475 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/43298/compare-values-with-overpass">Compare values with Overpass</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/43298/up/" id="post-43298-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-43298-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/43298/down/" id="post-43298-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/43298/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'd like to find Objects where certain Keys have the same value. Irish streets normally have two names, one in Irish and one in English. In osm the have three tags for that, name, name:en and name:ga. I'd like to find all objects having all three tags where name doesn't match with name:en or name:ga.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-comparison" href="/tags/comparison/" rel="tag" title="see questions tagged 'comparison'">comparison</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>29 May '15, 08:17</strong>
+</p>
+<img alt="Ogmios's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7ef3a3c25492438c9f0e5a548a36fa07?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6268/ogmios">Ogmios</a><br/>
+<span class="score" title="766 reputation points">766</span><span title="20 badges"><span class="badge1">●</span><span class="badgecount">20</span></span><span title="26 badges"><span class="silver">●</span><span class="badgecount">26</span></span><span title="39 badges"><span class="bronze">●</span><span class="badgecount">39</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Ogmios has 3 accepted answers">25%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-43298">
+</div>
+<div class="comment-tools" id="comment-tools-43298">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-43298-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    5 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/43298/compare-values-with-overpass?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/43298/compare-values-with-overpass?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/43298/compare-values-with-overpass?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/43298/compare-values-with-overpass?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="43316"></a>
+<div class="answer accepted-answer" id="answer-container-43316">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/43316/up/" id="post-43316-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-43316-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/43316/down/" id="post-43316-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/43316/" rel="nofollow" title="Ogmios has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It's not possible with Overpass API today, but with a bit of post-processing you can get the results in a few minutes.</p>
+<p>The Overpass QL query below returns relevant nodes/way/rel having a name, name:en and name:ga tag in CSV output format (tab separator character). </p>
+<p>To get the data, just click on the following overpass turbo link: <a href="http://overpass-turbo.eu/s/9FN">http://overpass-turbo.eu/s/9FN</a> and then hit "Export" -&gt; "raw data directly from Overpass API". This should automatically open LibreOffice or Excel, depending on your local machine. When importing the CSV file, make sure to specify "tab" as separator character.</p>
+<p>There are only 11120 rows returned by the query, about 300 of them match your search criterion.
+Just add a formula to all rows to compare different names and you're probably all set.</p>
+<pre><code>[timeout:1800]
+[bbox:51.08282186160976,-12.8759765625,55.986091533808384,-1.86767578125]
+[out:csv(::id, ::type, name, "name:en", "name:ga")];
+
+( node[name]["name:en"]["name:ga"];
+  way[name]["name:en"]["name:ga"];
+  rel[name]["name:en"]["name:ga"];
+);
+out;
+</code></pre>
+<p>Overpass QL result in CSV format, as returned by Overpass API:</p>
+<pre><code><a href="http://help.openstreetmap.org/users/260/idoneus">@id</a> @type   name    name:en name:ga
+661291  node    Sutton  Sutton  Cill Fhionntain
+661448  node    Killester   Killester   Cill Easra
+661999  node    Glenageary  Glenageary  Gleann na Caorach
+662088  node    Booterstown Booterstown Baile an Bhóthair
+664528  node    Shankill    Shankill    Seanchill
+665844  node    Cowper  Cowper  Cúipéar
+666663  node    Milltown    Milltown    Baile An Mhuilinn
+12646992    node    Carrickmines    Carrickmines    Carraig Mhaighin
+12647002    node    Carrickmines    Carrickmines    Carraig Mhaighin
+12647038    node    Cherrywood  Cherrywood  Coill na Silíní
+19223931    node    Windy Arbour    Windy Arbour    Na Glasáin
+26608599    node    Cork Airport    Cork Airport    Aerfort Chorcaí
+26608601    node    Shannon Airport Shannon Airport Aerfort na Sionainne
+28650950    node    Cooanmore Point Cooanmore Point Gob an Chuain Mhóir
+28652693    node    Killaspug Point Killaspug Point Rinn Chill Easpaig
+
+[...]
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/43316/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>29 May '15, 16:53</strong>
+</p>
+<img alt="mmd's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/264d84ab05b942224b05960903eba7a7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8708/mmd">mmd</a><br/>
+<span class="score" title="5682 reputation points"><span class="">5.7k</span></span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="53 badges"><span class="silver">●</span><span class="badgecount">53</span></span><span title="88 badges"><span class="bronze">●</span><span class="badgecount">88</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mmd has 44 accepted answers">37%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/43316/">
+                edited
+                <strong>31 May '15, 17:15</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-43316">
+</div>
+<div class="comment-tools" id="comment-tools-43316">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-43316-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="43321"></a>
+<div class="answer" id="answer-container-43321">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/43321/up/" id="post-43321-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-43321-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/43321/down/" id="post-43321-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Overpass isn't the only tool out there. Here's an alternative :</p>
+<ul>
+<li>Install <a href="http://www.gaia-gis.it/gaia-sins/">spatialite</a> using your platform's prefered install method</li>
+<li>download a <a href="http://download.geofabrik.de/europe/ireland-and-northern-ireland.html">country extract from geofabrik</a></li>
+<li>import the extract into an sqlite db using spatialite "spatialite_osm_raw -o input.pbf -d output.sqlite -jo"</li>
+<li>enter the database: "sqlite3 output.sqlite"</li>
+<li>run this query: "select t1.way_id,t1.v,t2.v,t3.v from osm_way_tags t1 left join osm_way_tags t2 on (t1.way_id=t2.way_id) left join osm_way_tags t3 on (t1.way_id=t3.way_id) where t1.k='name' and t2.k='name:ga' and t3.k='name:en' and t1.v &lt;&gt; t2.v and t1.v &lt;&gt; t3.v;"</li>
+</ul>
+<p>This give a result like this:</p>
+<pre><code>4934506|Suir Road Bridge|Bóthar na Siúire|Suir Road
+4934592|Macartney Bridge|Sráid Bhagóid Íochtarach|Baggot Street Lower
+4934663|Rialto Bridge|Cuarbóthar Theas|South Circular Road
+13769663|School Lane|Ascaill Na gCrann|Trees Avenue
+16315628|Trimleston Gardens|Gairdíní Baile Trimble|Trimbleston Garde
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/43321/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>29 May '15, 18:21</strong>
+</p>
+<img alt="Vincent%20de%20Phily's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d20f86db9a6f03cb070e9fbaaf0b7228?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/867/vincent-de-phily">Vincent de P... ♦</a><br/>
+<span class="score" title="17304 reputation points"><span class="">17.3k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="152 badges"><span class="silver">●</span><span class="badgecount">152</span></span><span title="249 badges"><span class="bronze">●</span><span class="badgecount">249</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Vincent de Phily has 64 accepted answers">19%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/43321/">
+                edited
+                <strong>29 May '15, 18:22</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-43321">
+<a name="43322"></a>
+<div class="comment" id="comment-43322">
+<div class="comment-score" id="post-43322-score"></div>
+<div class="comment-text"><p>That looks good. I will definately try it. Thanks.</p></div>
+<div class="comment-info" id="comment-43322-info">
+<span class="comment-age">(29 May '15, 18:23)</span>
+<a class="comment-user userinfo" href="/users/6268/ogmios">Ogmios</a>
+</div>
+</div>
+<a name="43338"></a>
+<div class="comment" id="comment-43338">
+<div class="comment-score" id="post-43338-score">1</div>
+<div class="comment-text"><p>Downloading an extract (100MB) and creating an sqlite db from it (= 2,x GB(!)) seems a bit heavy to me for 11000 relevant objects.</p>
+<p>As an alternative to using a Geofabrik country extract, I'd really recommend to start with a small Overpass extract instead: <a href="http://overpass-turbo.eu/s/9FQ">http://overpass-turbo.eu/s/9FQ</a> -&gt; Export -&gt; raw data directly from Overpass API. The download will be around 12MB uncompressed OSM data (query takes about 1 minute), the resulting sqlite DB file size will be just 19MB.</p>
+<p>Also, it would be good to have some sql statements for nodes and relations as well to make the example complete.</p></div>
+<div class="comment-info" id="comment-43338-info">
+<span class="comment-age">(31 May '15, 17:23)</span>
+<a class="comment-user userinfo" href="/users/8708/mmd">mmd</a>
+</div>
+</div>
+<a name="43340"></a>
+<div class="comment" id="comment-43340">
+<div class="comment-score" id="post-43340-score"></div>
+<div class="comment-text"><p>Didn't have an estimate of the number of matches until you wrote your answer. Overpass and spatialite are both great tools with strenghts and weaknesses, it's good to know them both.</p></div>
+<div class="comment-info" id="comment-43340-info">
+<span class="comment-age">(31 May '15, 21:39)</span>
+<a class="comment-user userinfo" href="/users/867/vincent-de-phily">Vincent de P... ♦</a>
+</div>
+</div>
+<a name="59356"></a>
+<div class="comment" id="comment-59356">
+<div class="comment-score" id="post-59356-score"></div>
+<div class="comment-text"><p>You don't have to install it now - just use the Wikidata+OSM sparql query - answer below :)</p></div>
+<div class="comment-info" id="comment-59356-info">
+<span class="comment-age">(06 Sep '17, 08:35)</span>
+<a class="comment-user userinfo" href="/users/13140/nyuriks">nyuriks</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-43321">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-43321-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="67452"></a>
+<div class="answer" id="answer-container-67452">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/67452/up/" id="post-67452-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-67452-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/67452/down/" id="post-67452-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>For those searching for a solution via internet search:</p>
+<p>It's now possible within Overpass:</p>
+<p><a href="http://overpass-turbo.eu/s/EYC">http://overpass-turbo.eu/s/EYC</a></p>
+<pre><code>// return keys that don't have same values
+[bbox:{{bbox}}];
+nwr[highway=footway][name]["name:en"]["name:ga"]
+(if: t["name"] != t["name:en"] &amp;&amp; t["name"] != t["name:ga"]); 
+out geom;
+</code></pre>
+<p>I'm sure it can be developed further.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/67452/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Jan '19, 21:39</strong>
+</p>
+<img alt="DaveF's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c9c8b421ad22f51ddd62f23413717036?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1532/davef">DaveF</a><br/>
+<span class="score" title="3264 reputation points"><span class="">3.3k</span></span><span title="84 badges"><span class="badge1">●</span><span class="badgecount">84</span></span><span title="98 badges"><span class="silver">●</span><span class="badgecount">98</span></span><span title="133 badges"><span class="bronze">●</span><span class="badgecount">133</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="DaveF has 17 accepted answers">16%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/67452/">
+                edited
+                <strong>04 Jan '19, 21:41</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-67452">
+</div>
+<div class="comment-tools" id="comment-tools-67452">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-67452-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="43310"></a>
+<div class="answer" id="answer-container-43310">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/43310/up/" id="post-43310-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-43310-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/43310/down/" id="post-43310-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I can't answer your query but are you aware that we have our own instance of overpass at <a href="http://overpass-turbo.openstreetmap.ie/">http://overpass-turbo.openstreetmap.ie/</a></p>
+<p>There are some folks in the Irish chatroom who might be able to assist also</p>
+<p><a href="http://wiki.openstreetmap.org/wiki/WikiProject_Ireland#Contacting_Irish_Mappers">http://wiki.openstreetmap.org/wiki/WikiProject_Ireland#Contacting_Irish_Mappers</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/43310/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>29 May '15, 14:56</strong>
+</p>
+<img alt="DaCor's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9f0faef4659de616c82f448ff3f4e8e2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5669/dacor">DaCor</a><br/>
+<span class="score" title="1339 reputation points"><span class="">1.3k</span></span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="11 badges"><span class="silver">●</span><span class="badgecount">11</span></span><span title="29 badges"><span class="bronze">●</span><span class="badgecount">29</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="DaCor has one accepted answer">2%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-43310">
+<a name="43317"></a>
+<div class="comment" id="comment-43317">
+<div class="comment-score" id="post-43317-score"></div>
+<div class="comment-text"><p>Thats neat but it throws an error with my query: "Error: runtime error: open64: 111 Connection refused /home/roles/overpass/db//osm3s_v0.7.52_osm_base Dispatcher_Client::3"</p></div>
+<div class="comment-info" id="comment-43317-info">
+<span class="comment-age">(29 May '15, 17:06)</span>
+<a class="comment-user userinfo" href="/users/6268/ogmios">Ogmios</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-43310">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-43310-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="59309"></a>
+<div class="answer" id="answer-container-59309">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/59309/up/" id="post-59309-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-59309-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/59309/down/" id="post-59309-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can use <a href="https://wiki.openstreetmap.org/wiki/Wikidata%2BOSM_SPARQL_query_service">OSM+Wikidata service</a> to find it.</p>
+<pre><code>#defaultView:Map
+SELECT ?osmid ?name ?nameen ?namega ?loc {
+  # subjects must have all 3 tags: name, name:en, name:ga
+  ?osmid osmt:name ?name ;
+         osmt:name:en ?nameen ;
+         osmt:name:ga ?namega .
+
+  # "name" is not the same as "name:ga" or "name:en"
+  FILTER (?name != ?nameen &amp;&amp; ?name != ?namega)
+
+  # Limit to those that are within 500km around Ireland "center"
+  # The center is taken from Wikidata Q27 (Ireland), P625 (location)
+  wd:Q27 wdt:P625 ?irelandCenter .
+  SERVICE wikibase:around {
+    ?osmid osmm:loc ?loc .
+    bd:serviceParam wikibase:center ?irelandCenter .
+    bd:serviceParam wikibase:radius "500" .
+  }
+} LIMIT 100
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/59309/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Sep '17, 08:08</strong>
+</p>
+<img alt="nyuriks's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d46d9a8875ccdaa0b3b39bf485df3ead?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13140/nyuriks">nyuriks</a><br/>
+<span class="score" title="71 reputation points">71</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="nyuriks has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/59309/">
+                edited
+                <strong>06 Sep '17, 08:34</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-59309">
+</div>
+<div class="comment-tools" id="comment-tools-59309">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-59309-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/43298/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="cOChpy2dSNz37Nx32ZnGauw41Gd2PeAP"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

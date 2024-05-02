@@ -1,0 +1,149 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/81070/converting-pbf-to-geojson-with-osmium">Converting .pbf to .geojson with osmium</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/81070/up/" id="post-81070-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-81070-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/81070/down/" id="post-81070-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/81070/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I've downloaded the United States .osm.pbf from Geofabrik. To convert the map data from .osm.pbf to GeoJSON, I used the following osmium command:<br/>
+<code>osmium export UNITED_STATES.pbf -o UNITED_STATES.geojson --index-type dense_file_array</code></p>
+<p>The output GeoJSON appears to only contain points (e.g trees, buildings, powerlines) and no roads/polygons.</p>
+<p>The progress bar in the terminal indicates that osmium has finished.</p>
+<p>Do I need to include extra arguments to export other geometries?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osmium" href="/tags/osmium/" rel="tag" title="see questions tagged 'osmium'">osmium</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>23 Jul '21, 15:48</strong>
+</p>
+<img alt="tussiez's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1bc0081b72746240873e79d9b62e4d6f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20540/tussiez">tussiez</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="tussiez has no accepted answers">0%</span>
+</br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-81070">
+</div>
+<div class="comment-tools" id="comment-tools-81070">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-81070-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/81070/converting-pbf-to-geojson-with-osmium?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/81070/converting-pbf-to-geojson-with-osmium?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/81070/converting-pbf-to-geojson-with-osmium?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/81070/converting-pbf-to-geojson-with-osmium?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="81071"></a>
+<div class="answer accepted-answer" id="answer-container-81071">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/81071/up/" id="post-81071-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-81071-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/81071/down/" id="post-81071-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/81071/" rel="nofollow" title="tussiez has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The program isn't finished when the progress bar is finished but when the program is finished. The progress bar is, unfortunately, not working that great for <code>osmium export</code>. I suspect when you wait for the program to actually finish, you'll see all the data in the file.</p>
+<p>Also: When using <code>dense_file_array</code>, you should add a file name: <code>--index-type dense_file_array,nodes.dat</code>. Otherwise the data goes into a file that you can't see which can be confusing.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/81071/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>23 Jul '21, 16:36</strong>
+</p>
+<img alt="Jochen%20Topf's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2d4dfcdcde73aa5e2ffa4a9b3a7cb51d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/112/jochen-topf">Jochen Topf</a><br/>
+<span class="score" title="5244 reputation points"><span class="">5.2k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="50 badges"><span class="silver">●</span><span class="badgecount">50</span></span><span title="74 badges"><span class="bronze">●</span><span class="badgecount">74</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jochen Topf has 32 accepted answers">31%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-81071">
+<a name="81072"></a>
+<div class="comment" id="comment-81072">
+<div class="comment-score" id="post-81072-score"></div>
+<div class="comment-text"><p>I'll wait longer.
+When adding the file name to <code>dense_file_array</code>, osmium throws an argument error.<br/>
+<code>Unknown index type 'dense_file_array,index.dat'. Use --show-index-types or -I to get a list.</code></p></div>
+<div class="comment-info" id="comment-81072-info">
+<span class="comment-age">(23 Jul '21, 19:14)</span>
+<a class="comment-user userinfo" href="/users/20540/tussiez">tussiez</a>
+</div>
+</div>
+<a name="81073"></a>
+<div class="comment" id="comment-81073">
+<div class="comment-score" id="post-81073-score"></div>
+<div class="comment-text"><p>Then your osmium is too old. There was a bug in osmium a while back but that has been fixed.</p></div>
+<div class="comment-info" id="comment-81073-info">
+<span class="comment-age">(23 Jul '21, 20:55)</span>
+<a class="comment-user userinfo" href="/users/112/jochen-topf">Jochen Topf</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-81071">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-81071-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/81070/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="HAto2n6fasgxiQyxCFwnAix0WvsTgEmy"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

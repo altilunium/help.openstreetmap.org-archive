@@ -1,0 +1,89 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/57417/optimising-overpass-api-ql-request">optimising overpass API QL request</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/57417/up/" id="post-57417-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-57417-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/57417/down/" id="post-57417-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/57417/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello everyone, the query below works. I would have liked to optimize it so as to accelerate the result. Can you help me ? Thank you in advance. Mathieu</p>
+<pre><code><a href="http://overpass.mydevicexxx.com/api/interpreter?data=[out:json][timeout:25];(node(around:1000,48.84203354,2.790979589)[">http://overpass.mydevicexxx.com/api/interpreter?data=[out:json][timeout:25];(node(around:1000,48.84203354,2.790979589)["name"~"."]["amenity"="parking"]-&gt;.b;node(around:1000,48.84203354,2.790979589)["name"~"."]["amenity"="school"]-&gt;.c;node(around:500,48.84203354,2.790979589)["name"~"."]["amenity"="townhall"]-&gt;.d;way(around:500,48.84203354,2.790979589)["name"~"."]["amenity"="townhall"]-&gt;.d;relation(around:500,48.84203354,2.790979589)["name"~"."]["amenity"="townhall"]-&gt;.d;node(around:500,48.84203354,2.790979589)["name"~"."]["railway"="subway_entrance"]-&gt;.f;node(around:500,48.84203354,2.790979589)["name"~"."]["railway"="tram_stop"]-&gt;.g;node(around:1000,48.84203354,2.790979589)["name"~"."]["tourism"="museum"]-&gt;.h;node(around:500,48.84203354,2.790979589)["name"~"."]["highway"="bus_stop"]-&gt;.j;node(around:500,48.84203354,2.790979589)["name"~"."]["leisure"="park"]-&gt;.k;way(around:500,48.84203354,2.790979589)["name"~"."]["leisure"="park"]-&gt;.k;relation(around:500,48.84203354,2.790979589)["name"~"."]["leisure"="park"]-&gt;.k;);.b</a> out qt tags 1;&gt;;.c out qt tags 1;&gt;;.d out qt tags 1;&gt;;.f out qt tags 1;&gt;;.g out qt tags 1;&gt;;.h out qt tags 1;&gt;;.j out qt tags 1;&gt;;.k out qt tags 1;
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-optimization" href="/tags/optimization/" rel="tag" title="see questions tagged 'optimization'">optimization</a>
+<a class="post-tag tag-link-request" href="/tags/request/" rel="tag" title="see questions tagged 'request'">request</a>
+<a class="post-tag tag-link-ql" href="/tags/ql/" rel="tag" title="see questions tagged 'ql'">ql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>01 Aug '17, 18:24</strong>
+</p>
+<img alt="mdk83's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7bb03db977326117a75fb9a84b79f3e1?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13770/mdk83">mdk83</a><br/>
+<span class="score" title="25 reputation points">25</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mdk83 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/57417/">
+                edited
+                <strong>02 Aug '17, 07:41</strong>
+</a>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-57417">
+<a name="57421"></a>
+<div class="comment" id="comment-57421">
+<div class="comment-score" id="post-57421-score"></div>
+<div class="comment-text"><p>You can already simplify your query a bit by using "<code>|</code>" in queries, which acts like "a or b" -&gt; "a|b", and "<code>~</code>" (tilde) instead of "<code>=</code>". For example: <code>["amenity"~"parking|school"]</code> -- Not sure how much that will speed up the process though and what your desired result should look like.</p></div>
+<div class="comment-info" id="comment-57421-info">
+<span class="comment-age">(01 Aug '17, 20:52)</span>
+<a class="comment-user userinfo" href="/users/14015/chrki">chrki</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-57417">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-57417-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/57417/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="mkgqn4bmAStkaz69JFUGbAZddWuAMhJX"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

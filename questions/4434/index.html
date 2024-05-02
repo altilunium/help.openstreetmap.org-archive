@@ -1,0 +1,127 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/4434/overlapping-polygons-">overlapping polygons - ?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/4434/up/" id="post-4434-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-4434-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/4434/down/" id="post-4434-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/4434/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am new here, so please bear with me: I am trying to fix a series of buildings that have somehow become "members" of a landuse multipolygon (making for strange rendering in some circumstances) - I would like to extract them as independant elements. Yet should I do so, if I understand correctly, I cannot just place the building over the land-use multipolygon, I must cut a hole in it the same shape of the building, then place the building over the hole - is this correct? Or is there a simpler solution?</p>
+<p>Thanks in advance,</p>
+<p>ThePromenader.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-building" href="/tags/building/" rel="tag" title="see questions tagged 'building'">building</a>
+<a class="post-tag tag-link-landuse" href="/tags/landuse/" rel="tag" title="see questions tagged 'landuse'">landuse</a>
+<a class="post-tag tag-link-overlap" href="/tags/overlap/" rel="tag" title="see questions tagged 'overlap'">overlap</a>
+<a class="post-tag tag-link-multipolygon" href="/tags/multipolygon/" rel="tag" title="see questions tagged 'multipolygon'">multipolygon</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>12 Apr '11, 18:48</strong>
+</p>
+<img alt="ThePromenader's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52a6a6b11937c74b955186933f651b8c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1148/thepromenader">ThePromenader</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ThePromenader has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-4434">
+</div>
+<div class="comment-tools" id="comment-tools-4434">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-4434-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/4434/overlapping-polygons-?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/4434/overlapping-polygons-?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/4434/overlapping-polygons-?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/4434/overlapping-polygons-?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="4436"></a>
+<div class="answer" id="answer-container-4436">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/4436/up/" id="post-4436-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-4436-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/4436/down/" id="post-4436-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>In general you shouldn't simply place objects "over" larger objects if they replace larger object. So you create a small <code>landuse=industrial</code> area on top of a large town with <code>landuse=residential</code> but use the multipolygon hole-with-fill methode you mentioned. Buildings however often don't really displace the landuse. So you don't have to cut tons of little hole in the <code>landuse=residential</code> area to place little <code>building=yes</code> areas.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/4436/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Apr '11, 19:57</strong>
+</p>
+<img alt="petschge's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/465f344e31e8ba1be0e0401414815db0?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8/petschge">petschge</a><br/>
+<span class="score" title="8279 reputation points"><span class="">8.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="73 badges"><span class="silver">●</span><span class="badgecount">73</span></span><span title="98 badges"><span class="bronze">●</span><span class="badgecount">98</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="petschge has 29 accepted answers">21%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-4436">
+</div>
+<div class="comment-tools" id="comment-tools-4436">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-4436-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/4434/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="XST3OA2oUMjKOkkf2CYmXZjGL2eKPYQT"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,96 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/45292/slow-apache-while-tirex-master-running">Slow Apache while tirex-master running</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/45292/up/" id="post-45292-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-45292-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/45292/down/" id="post-45292-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/45292/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I currently have only Europe in the database plus contours.
+Rendering is fairly quick, even on the levels with contours.
+But when a tirex-master is running, apache becomes very slow. Not just mod_tile serving cached tiles, but also the web fronted of munin (e.g.).</p>
+<p>System:
+Hardware: IBM Blade x3650, 16 Cores Octa 2.4,  54GB Ram, 500GB SSDs, 5TB Raid HDs.
+Software: Debian Jessie, postgres 9.4, Mapnik 3.0.4, apache 2.4, latest postgis, mod_tile, tirex, etc.</p>
+<p>Any pointers would be appreciated!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-apache" href="/tags/apache/" rel="tag" title="see questions tagged 'apache'">apache</a>
+<a class="post-tag tag-link-tirex" href="/tags/tirex/" rel="tag" title="see questions tagged 'tirex'">tirex</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+<a class="post-tag tag-link-mod_tile" href="/tags/mod_tile/" rel="tag" title="see questions tagged 'mod_tile'">mod_tile</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Sep '15, 17:20</strong>
+</p>
+<img alt="cmyk's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/19a86a52d87d89c5585abfc7c62159cf?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11473/cmyk">cmyk</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="cmyk has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-45292">
+<a name="45294"></a>
+<div class="comment" id="comment-45294">
+<div class="comment-score" id="post-45294-score"></div>
+<div class="comment-text"><p>Can you at least narrow it down to whether it is CPU or I/O related? <code>top</code> should  provide this information.</p></div>
+<div class="comment-info" id="comment-45294-info">
+<span class="comment-age">(16 Sep '15, 17:43)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="45295"></a>
+<div class="comment" id="comment-45295">
+<div class="comment-score" id="post-45295-score"></div>
+<div class="comment-text"><p>CPU is not it. It's at 500% with 10 Cores. And I/O (iotop) doesn't look like it's bottlenecked.</p>
+<p>top - 18:54:50 up 5 days, 10:04,  4 users,  load average: 6.44, 6.24, 4.83
+Tasks:  84 total,   7 running,  77 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 50.1 us, 12.8 sy,  0.0 ni, 37.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem:  56623104 total, 55610008 used,  1013096 free,        0 buffers
+KiB Swap:  1228800 total,   522032 used,   706768 free. 26371032 cached Mem</p></div>
+<div class="comment-info" id="comment-45295-info">
+<span class="comment-age">(16 Sep '15, 17:53)</span>
+<a class="comment-user userinfo" href="/users/11473/cmyk">cmyk</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-45292">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-45292-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/45292/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="03HkMTosCo9r1fUfRlKzuKVcTS5Kf47x"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

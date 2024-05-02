@@ -1,0 +1,187 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/51943/an-empty-first-highway-name-output-when-running-osm-length-2pl-to-calculate-road-length">An empty first highway name output when running osm-length-2.pl to calculate road length</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/51943/up/" id="post-51943-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-51943-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/51943/down/" id="post-51943-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/51943/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>I am using osm-length-2.pl script to summarize road length of a country.
+The script is working well except it outputs the first type of highway with an empty name:</p>
+<p>highway length sums (metres):</p>
+<pre><code>                  38856413m
+track              7762817m
+secondary          1941725m
+residential        1747145m
+service            1315326m
+path               1080010m
+primary             927921m
+footway             881391m
+...
+TOTAL             56823848m
+</code></pre>
+<p>Does anyone have this issue?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-highway_name" href="/tags/highway_name/" rel="tag" title="see questions tagged 'highway_name'">highway_name</a>
+<a class="post-tag tag-link-osm-length" href="/tags/osm-length/" rel="tag" title="see questions tagged 'osm-length'">osm-length</a>
+</div>
+<div class="post-controls" id="question-controls">
+<div class="community-wiki">
+        This question is marked "community wiki".
+        
+    </div>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>08 Sep '16, 04:34</strong>
+</p>
+<img alt="trungnk's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/91e7b688c24bfa1a86b1b30c66098fa8?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12757/trungnk">trungnk</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="trungnk has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/51943/">
+                edited
+                <strong>08 Sep '16, 04:45</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-51943">
+</div>
+<div class="comment-tools" id="comment-tools-51943">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-51943-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/51943/an-empty-first-highway-name-output-when-running-osm-length-2pl-to-calculate-road-length?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/51943/an-empty-first-highway-name-output-when-running-osm-length-2pl-to-calculate-road-length?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/51943/an-empty-first-highway-name-output-when-running-osm-length-2pl-to-calculate-road-length?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/51943/an-empty-first-highway-name-output-when-running-osm-length-2pl-to-calculate-road-length?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="51944"></a>
+<div class="answer" id="answer-container-51944">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/51944/up/" id="post-51944-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-51944-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/51944/down/" id="post-51944-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The script sums up the lengths of all ways, not only highways, and the first number is the length of all non-highway ways. I have modified the script in SVN to stop doing that, so if you check out a new version the first line will be gone.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/51944/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Sep '16, 09:46</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-51944">
+<a name="51950"></a>
+<div class="comment" id="comment-51950">
+<div class="comment-score" id="post-51950-score"></div>
+<div class="comment-text"><p>Thanks Frederik. I can see the filters are updated. From osm highway definition almost covers all the type of road.
+Do the non-highways ways you mentioned are relations?</p></div>
+<div class="comment-info" id="comment-51950-info">
+<span class="comment-age">(09 Sep '16, 00:53)</span>
+<a class="comment-user userinfo" href="/users/12757/trungnk">trungnk</a>
+</div>
+</div>
+<a name="51951"></a>
+<div class="comment" id="comment-51951">
+<div class="comment-score" id="post-51951-score">1</div>
+<div class="comment-text"><p>Ways and relations are different things, see <a href="https://wiki.openstreetmap.org/wiki/Elements">elements</a>. Non-highway ways can be buildings, landuses, water bodies, forests, parks, railways, walls and fences, ways for  administrative boundaries and so on.</p></div>
+<div class="comment-info" id="comment-51951-info">
+<span class="comment-age">(09 Sep '16, 07:47)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="51965"></a>
+<div class="comment" id="comment-51965">
+<div class="comment-score" id="post-51965-score"></div>
+<div class="comment-text"><p>So the non-highway ways are not ways. They take a significant amount of length when the script calculates length of roads. Thus when comparing to the statistic data obtainted we see there are a half kilometres amout deducted after removing non-highways "things"</p></div>
+<div class="comment-info" id="comment-51965-info">
+<span class="comment-age">(09 Sep '16, 13:55)</span>
+<a class="comment-user userinfo" href="/users/12757/trungnk">trungnk</a>
+</div>
+</div>
+<a name="51966"></a>
+<div class="comment" id="comment-51966">
+<div class="comment-score" id="post-51966-score">1</div>
+<div class="comment-text"><p>They are ways, <a href="https://wiki.openstreetmap.org/wiki/Way">OSM ways</a> :)</p></div>
+<div class="comment-info" id="comment-51966-info">
+<span class="comment-age">(09 Sep '16, 14:25)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-51944">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-51944-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/51943/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="obLVKgnGoaYdXEgdOCmz8AMG8kksKqPy"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,197 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/69504/find-nearest-cities-to-set-of-airports">Find nearest cities to set of airports</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/69504/up/" id="post-69504-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-69504-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/69504/down/" id="post-69504-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/69504/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am using the following query to get all the airports in Manitoba that have an IATA or ICAO code associated with them (maybe not the most efficient code, so feel free to suggest something better):</p>
+<pre><code>[out:json][timeout:25];
+area["name"="Manitoba"]-&gt;.a;
+
+(
+  node(area.a)["aeroway"="aerodrome"]["iata"];
+  way(area.a)["aeroway"="aerodrome"]["iata"];
+  relation(area.a)["aeroway"="aerodrome"]["iata"];
+
+  node(area.a)["aeroway"="aerodrome"]["icao"];
+  way(area.a)["aeroway"="aerodrome"]["icao"];
+  relation(area.a)["aeroway"="aerodrome"]["icao"];
+)-&gt;.airports;
+
+.airports out center;
+</code></pre>
+<p>What I'd like to do now is, for each of those airports, find the nearest city (or town or whatever) to the airport.  How can I do that?  The end result would ideally be some JSON structure that gave me something like the following:</p>
+<pre><code>[
+  {
+    "id": 7932149,
+    "center": {
+      "lat": 49.9104284,
+      "lon": -97.2381871
+    },
+    "iata": "YWG",
+    "icao": "CYWG",
+    "name": "Winnipeg James Armstrong Richardson International Airport",
+    "nearest_city": {
+      "id": "123456",
+      "name": "Winnipeg",
+      "center": {
+        "lat": 49.9,
+        "lon": -97.0,
+      },
+      "admin_level": 8,
+      "type": "city"
+    }
+  },
+  ... more entries ...
+]
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-nearest" href="/tags/nearest/" rel="tag" title="see questions tagged 'nearest'">nearest</a>
+<a class="post-tag tag-link-airport" href="/tags/airport/" rel="tag" title="see questions tagged 'airport'">airport</a>
+<a class="post-tag tag-link-cities" href="/tags/cities/" rel="tag" title="see questions tagged 'cities'">cities</a>
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>06 Jun '19, 18:10</strong>
+</p>
+<img alt="cviebrock_ppn's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/490fceb89fb30e037a4a78fd09d6fd3e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16759/cviebrock_ppn">cviebrock_ppn</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="cviebrock_ppn has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-69504">
+<a name="70749"></a>
+<div class="comment" id="comment-70749">
+<div class="comment-score" id="post-70749-score"></div>
+<div class="comment-text"><p>Did you find a solutions for this?</p></div>
+<div class="comment-info" id="comment-70749-info">
+<span class="comment-age">(12 Sep '19, 13:59)</span>
+<a class="comment-user userinfo" href="/users/17175/javisst">Javisst</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-69504">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-69504-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/69504/find-nearest-cities-to-set-of-airports?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/69504/find-nearest-cities-to-set-of-airports?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/69504/find-nearest-cities-to-set-of-airports?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/69504/find-nearest-cities-to-set-of-airports?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="72478"></a>
+<div class="answer" id="answer-container-72478">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/72478/up/" id="post-72478-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-72478-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/72478/down/" id="post-72478-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This doesn't fully return the nearest, but should get you started:</p>
+<pre><code>[out:json];
+area[name=Manitoba];
+nwr(area)[aeroway=aerodrome][~"iata|icao"~"."]-&gt;.airports;
+
+foreach.airports-&gt;.elem(
+  nwr(around.elem:100000)[place=city];
+  out geom;
+);
+
+.airports out center;
+
+{{style: 
+node [aeroway]{color:green;fill-color:green; symbol-size:5}
+node [place]{color:red;fill-color:red; symbol-size:20;fill-opacity:0.5}
+way [place]{color:red; opacity:0.5}
+relation [place]{color:red; opacity:0.5}
+}}
+</code></pre>
+<p><a href="https://overpass-turbo.eu/s/PFZ">https://overpass-turbo.eu/s/PFZ</a></p>
+<p>The third line is just a concentration of your routine. It uses regular expressions (~ means 'something like') </p>
+<p>It then loops through each airport &amp; finds any city with the specified distance (in metres).</p>
+<p>T oget the nearest you'll have to perform some post processing. </p>
+<p>PS I'm not convinced the <code>admin</code> ways should have <code>place</code> tags</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/72478/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Jan '20, 16:39</strong>
+</p>
+<img alt="DaveF's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c9c8b421ad22f51ddd62f23413717036?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1532/davef">DaveF</a><br/>
+<span class="score" title="3264 reputation points"><span class="">3.3k</span></span><span title="84 badges"><span class="badge1">●</span><span class="badgecount">84</span></span><span title="98 badges"><span class="silver">●</span><span class="badgecount">98</span></span><span title="133 badges"><span class="bronze">●</span><span class="badgecount">133</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="DaveF has 17 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-72478">
+</div>
+<div class="comment-tools" id="comment-tools-72478">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-72478-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/69504/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="2FREXw2L6iJ553DJ1IM6uQAIl8pKuU7o"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,135 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/32012/how-do-i-import-edit-history-into-a-postgis-database">How do I Import edit history into a PostGIS database?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/32012/up/" id="post-32012-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-32012-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/32012/down/" id="post-32012-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/32012/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I need to store the editing history of a region in a PostGIS database for statistical analysis. Correct me if I am wrong, but my understanding is Osmosis only writes the current versions to the database and does not include the history of the elements. Is there any other tool that can help me store the necessary information to a database?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+<a class="post-tag tag-link-data" href="/tags/data/" rel="tag" title="see questions tagged 'data'">data</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+<a class="post-tag tag-link-analysis" href="/tags/analysis/" rel="tag" title="see questions tagged 'analysis'">analysis</a>
+<a class="post-tag tag-link-history" href="/tags/history/" rel="tag" title="see questions tagged 'history'">history</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>31 Mar '14, 01:06</strong>
+</p>
+<img alt="vr3690's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ce2105c628f0492c916ba08fab8455d4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8445/vr3690">vr3690</a><br/>
+<span class="score" title="66 reputation points">66</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="11 badges"><span class="bronze">●</span><span class="badgecount">11</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="vr3690 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-32012">
+<a name="32016"></a>
+<div class="comment" id="comment-32016">
+<div class="comment-score" id="post-32016-score">1</div>
+<div class="comment-text"><p>Your question assumes you will be able to do the analysis you need in PostGIS, but it's far from clear that this is possible. Perhaps rephrase your question to include what your goal is, rather than just one step of your process?</p></div>
+<div class="comment-info" id="comment-32016-info">
+<span class="comment-age">(31 Mar '14, 10:55)</span>
+<a class="comment-user userinfo" href="/users/6/jonathan-bennett">Jonathan Ben...</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-32012">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-32012-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/32012/how-do-i-import-edit-history-into-a-postgis-database?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/32012/how-do-i-import-edit-history-into-a-postgis-database?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/32012/how-do-i-import-edit-history-into-a-postgis-database?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/32012/how-do-i-import-edit-history-into-a-postgis-database?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="32019"></a>
+<div class="answer" id="answer-container-32019">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/32019/up/" id="post-32019-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-32019-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/32019/down/" id="post-32019-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>If you don't need relations, try Peter Körner's <a href="https://github.com/MaZderMind/osm-history-renderer">history tools</a>. The history importer creates a full-history database in an osm2pgsql-like format that is already quite useful for some kinds of statistical analysis.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/32019/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>31 Mar '14, 12:59</strong>
+</p>
+<img alt="lonvia's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d888b712d85dee0aa304297f2dc697c7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2921/lonvia">lonvia</a><br/>
+<span class="score" title="6213 reputation points"><span class="">6.2k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="57 badges"><span class="silver">●</span><span class="badgecount">57</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="lonvia has 43 accepted answers">40%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-32019">
+</div>
+<div class="comment-tools" id="comment-tools-32019">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-32019-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/32012/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="uyBTUkhzr1l0SowFnnfDkgtzUijtadtT"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

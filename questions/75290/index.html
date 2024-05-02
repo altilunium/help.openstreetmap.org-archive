@@ -1,0 +1,164 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/75290/why-osm-is-not-rendering-on-secure-urls">Why OSM is not rendering on secure URLs?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75290/up/" id="post-75290-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75290-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/75290/down/" id="post-75290-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/75290/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello Everyone!</p>
+<p>I am a beginner in using openstreet maps. I have encountered an issue with my website i.e. when I am loading my website with secure https then the maps have stopped loading. While it was working fine with http.</p>
+<p>This is my code:
+&lt;script&gt;
+                // initialize Leaflet
+                var greenIcon = L.icon({
+                    iconUrl: 'cloud.png',
+                    iconSize: [30, 20]
+                });
+                var map = L.map('map').setView({
+                    lon: 67.022095,
+                    lat: 24.926294
+                }, 10);</p>
+<pre><code>            // add the OpenStreetMap tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&amp;copy; &lt;a href="https://openstreetmap.org/copyright"&gt;OpenStreetMap contributors&lt;/a&gt;'
+            }).addTo(map);
+
+            // show the scale bar on the lower left corner
+            L.control.scale().addTo(map);
+
+            var data = &lt;?php echo JSON_encode($donnees); ?&gt;;
+
+            console.log(data[0].lat);
+            for (var i = 0; i &lt; data.length; i++) {
+                //data[i].name
+                L.marker({
+                    lon: data[i].lng,
+                    lat: data[i].lat
+                }, {
+                    icon: greenIcon
+                }).bindPopup("&lt;b&gt;Location Name: &lt;/b&gt;" + data[i].name + "&lt;br&gt; &lt;b&gt;Number of Fans: &lt;/b&gt;"+ data[i].count_fan").addTo(map);
+            }
+        &lt;/script&gt;
+</code></pre>
+<p>This is the error:
+Mixed Content: The page at 'https://...' was loaded over HTTPS, but requested an insecure stylesheet 'http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css'. This request has been blocked; the content must be served over HTTPS.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-ssl" href="/tags/ssl/" rel="tag" title="see questions tagged 'ssl'">ssl</a>
+<a class="post-tag tag-link-https" href="/tags/https/" rel="tag" title="see questions tagged 'https'">https</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>11 Jun '20, 11:14</strong>
+</p>
+<img alt="Mahnoor%20Atiq's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9667d3d17221e7c3ee3de480ee747b16?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18538/mahnoor-atiq">Mahnoor Atiq</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Mahnoor Atiq has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-75290">
+</div>
+<div class="comment-tools" id="comment-tools-75290">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75290-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/75290/why-osm-is-not-rendering-on-secure-urls?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/75290/why-osm-is-not-rendering-on-secure-urls?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/75290/why-osm-is-not-rendering-on-secure-urls?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/75290/why-osm-is-not-rendering-on-secure-urls?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="75291"></a>
+<div class="answer" id="answer-container-75291">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/75291/up/" id="post-75291-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-75291-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/75291/down/" id="post-75291-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Somewhere in your html (not in the snippet in your question) you have a reference to <a href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css">http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css</a> , which is http not https (and is a <em>very</em> old version of leaflet).</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/75291/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+<div class="community-wiki">
+        This answer is marked "community wiki".
+        
+    </div>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>11 Jun '20, 11:55</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-75291">
+</div>
+<div class="comment-tools" id="comment-tools-75291">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-75291-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/75290/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="K62zgvuZBNMWY7YTnI6g8DFgthiNVDIv"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,117 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/36152/my-is-overpass-server-is-running-slowly-after-re-populating-the-database">My is Overpass server is running slowly after re-populating the database</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/36152/up/" id="post-36152-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-36152-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/36152/down/" id="post-36152-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/36152/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi all, </p>
+<p>I have just populated the full planet file into my database (on top of an existing UK database install) and I'm now having some problems:</p>
+<ol>
+<li>Calling an <code>is_in</code> area query does not return any results for any new areas my database should now cover. It still returns the old UK areas however, but this leads me onto my second problem (possibly the same problem!)</li>
+<li>An <code>is_in</code> area call (in the UK or otherwise) does not return any admin_level 1 or 2 information, like it does on the Overpass API public server. This didn't happen pre-full planet installation but I assumed this was due to only having the UK installed, not multiple countries. </li>
+<li>The server now runs really slow! When it was just the UK, the server would process requests in a matter of milliseconds, now, since installing the planet, it takes 4-5 SECONDS to process a request! The RAM usage has escalated from ~75% while idle to ~99%. This happened before to me from populating a full UK install on top of an England only install on a different server. Restarting the server does not help. </li>
+</ol>
+<p>The planet file I used is <a href="http://ftp.heanet.ie/mirrors/openstreetmap.org/planet/planet-latest.osm.bz2">http://ftp.heanet.ie/mirrors/openstreetmap.org/planet/planet-latest.osm.bz2</a></p>
+<p>I am baffled on this one and have no idea how to overcome it besides completely reinstalling the planet database. Is there a better way to solve this? 
+Thanks! </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpassapi" href="/tags/overpassapi/" rel="tag" title="see questions tagged 'overpassapi'">overpassapi</a>
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-private_server" href="/tags/private_server/" rel="tag" title="see questions tagged 'private_server'">private_server</a>
+<a class="post-tag tag-link-slow" href="/tags/slow/" rel="tag" title="see questions tagged 'slow'">slow</a>
+<a class="post-tag tag-link-error" href="/tags/error/" rel="tag" title="see questions tagged 'error'">error</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 Aug '14, 14:31</strong>
+</p>
+<img alt="gmeister4's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/5abb2932327bb97ee8a2abc3c14caa8c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8446/gmeister4">gmeister4</a><br/>
+<span class="score" title="60 reputation points">60</span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="8 badges"><span class="silver">●</span><span class="badgecount">8</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="gmeister4 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/36152/">
+                edited
+                <strong>31 Mar '15, 20:38</strong>
+</a>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-36152">
+<a name="36153"></a>
+<div class="comment" id="comment-36153">
+<div class="comment-score" id="post-36153-score"></div>
+<div class="comment-text"><p>You didn't mention the Overpass API version you're using and how you're importing the data. Did you see any kind of warning/error message during the import?</p>
+<p>Anyway, I'd recommend a fresh start, i.e. dump the current db or use a different db directory for the new import.</p></div>
+<div class="comment-info" id="comment-36153-info">
+<span class="comment-age">(25 Aug '14, 14:50)</span>
+<a class="comment-user userinfo" href="/users/8708/mmd">mmd</a>
+</div>
+</div>
+<a name="36154"></a>
+<div class="comment" id="comment-36154">
+<div class="comment-score" id="post-36154-score"></div>
+<div class="comment-text"><p>Oh sorry about that, I'm running version 0.7.4. I downloaded the planet .bz2 then executed the <code>init_osm3s.sh</code> script to build into the same directory of the original database. There were no error messages. I read on the wiki that you should be able to update the DB this way. Was it wrong to merge the database directory into an existing one? I guess this means that this method for updating part of the database is not recommended. All other queries I tested worked apart from the area search. Thanks for the advice!</p></div>
+<div class="comment-info" id="comment-36154-info">
+<span class="comment-age">(25 Aug '14, 15:52)</span>
+<a class="comment-user userinfo" href="/users/8446/gmeister4">gmeister4</a>
+</div>
+</div>
+<a name="42084"></a>
+<div class="comment" id="comment-42084">
+<div class="comment-score" id="post-42084-score"></div>
+<div class="comment-text"><p>judging from the question text of <a href="/questions/36464/">overpass-api-area-query-does-not-recognise-all-areas</a> this particular "slow" problem may be solved. <a href="http://help.openstreetmap.org/users/8446/gmeister4"></a><a href="http://help.openstreetmap.org/users/8446/gmeister4">@gmeister4</a>: Is it? How exactly?</p>
+<p>If possible, please focus on one problem per question here on this help site (for more usefulness to other users with similar problems), unless you think that the problems may be due to the same reason, of course.</p></div>
+<div class="comment-info" id="comment-42084-info">
+<span class="comment-age">(31 Mar '15, 20:42)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-36152">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-36152-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/36152/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="dMlhvidwg2BjfXinZSZN1ARQcXcj6t0A"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

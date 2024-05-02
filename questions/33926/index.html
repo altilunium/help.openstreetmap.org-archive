@@ -1,0 +1,221 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/33926/osm-overpass-api-with-php-simplexml-minor-changes-to-the-parser">OSM Overpass API with PHP SimpleXML :: minor changes to the parser</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/33926/up/" id="post-33926-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-33926-score" title="current number of votes">
+    -1
+</div>
+<a class="ajax-command post-vote down" href="/vote/33926/down/" id="post-33926-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/33926/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>new to the work with PHPSimpleXML so do not bear with me for askin newby questions.</p>
+<p>This is derived from here: <a href="http://stackoverflow.com/questions/16129184/osm-data-parsing-to-get-the-nodes-with-child">http://stackoverflow.com/questions/16129184/osm-data-parsing-to-get-the-nodes-with-child</a></p>
+<p>I want to filter the data to get the nodes with special category. Here is sample of the OSM data I want to get the whole schools within an area. The first script runs well - but now i want to refine the search and add more tags. Finally i want to store all into the MySQL-db</p>
+<p>So we need to make some XML parsing with PHP:</p>
+<p>The following is a little OSM Overpass API example with PHP SimpleXML</p>
+<pre><code>&lt;?php
+/**
+ * OSM Overpass API with PHP SimpleXML / XPath
+ *
+ * PHP Version: 5.4 - Can be back-ported to 5.3 by using 5.3 Array-Syntax (not PHP 5.4's square brackets)
+ */
+
+//
+// 1.) Query an OSM Overpass API Endpoint
+//
+
+$query = 'node
+  ["amenity"~".*"]
+  (38.415938460513274,16.06338500976562,39.52205163048525,17.51220703125);
+out;';
+
+$context = stream_context_create(['http' =&gt; [
+    'method'  =&gt; 'POST',
+    'header' =&gt; ['Content-Type: application/x-www-form-urlencoded'],
+    'content' =&gt; 'data=' . urlencode($query),
+]]);
+
+# please do not stress this service, this example is for demonstration purposes only.
+$endpoint = 'http://overpass-api.de/api/interpreter';
+libxml_set_streams_context($context);
+$start = microtime(true);
+
+$result = simplexml_load_file($endpoint);
+printf("Query returned %2\$d node(s) and took %1\$.5f seconds.\n\n", microtime(true) - $start, count($result-&gt;node));
+
+//
+// 2.) Work with the XML Result
+//
+
+# get all school nodes with xpath
+$xpath = '//node[tag[<a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim">@k</a></a></a></a></a> = "amenity" and <a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski">@v</a></a></a></a></a> = "school"]]';
+$schools = $result-&gt;xpath($xpath);
+printf("%d School(s) found:\n", count($schools));
+foreach ($schools as $index =&gt; $school)
+{
+    # Get the name of the school (if any), again with xpath
+    list($name) = $school-&gt;xpath('tag[<a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim">@k</a></a></a></a></a> = "name"]/<a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski">@v</a></a></a></a></a>') + ['(unnamed)'];
+    printf("#%02d: ID:%' -10s  [%s,%s]  %s\n", $index, $school['id'], $school['lat'], $school['lon'], $name);
+}
+
+?&gt;
+</code></pre>
+<p>The second part is more interesting. That is querying the XML data you have already. This is most easily done with xpath, the used PHP XML library is based on libxml which supports XPath 1.0 which covers the various querying needs very well. The following example lists all schools and tries to obtain their names as well. I have not covered translations yet because my sample data didn't have those, but you can also look for all kind of names including translations and just prefer a specific one):</p>
+<p>The key point here are the xpath queries. Two are used, the first one to get the nodes that have certain tags. I think this is the most interesting one for you:</p>
+<pre><code>//node[tag[<a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim">@k</a></a></a></a></a> = "amenity" and <a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski">@v</a></a></a></a></a> = "school"]]
+</code></pre>
+<p>This line says: Give me all node elements that have a tag element inside which has the k attribute value "amenity" and the v attribute value "school". This is the condition you have to filter out those nodes that are tagged with amenity school. Further on xpath is used again, now relative to those school nodes to see if there is a name and if so to fetch it:</p>
+<pre><code>tag[<a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim">@k</a></a></a></a></a> = "name"]/<a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski">@v</a></a></a></a></a>'
+</code></pre>
+<p>This line says: Relative to the current node, give me the v attribute from a tag element that as the k attribute value "name". As you can see, some parts are again similar to the line before. I think you can both adopt them to your needs.
+Because not all school nodes have a name, a default string is provided for display purposes by adding it to the (then empty) result array:</p>
+<pre><code>list($name) = $school-&gt;xpath('tag[<a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim"><a href="/users/51/ktim">@k</a></a></a></a></a> = "name"]/<a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski">@v</a></a></a></a></a>') + ['(unnamed)'];
+                                                    ^^^^^^^^^^^^^^^
+                                                Provide Default Value
+</code></pre>
+<p>so far so good: <strong>note</strong>. i need to have the adress-data, of the school with </p>
+<p>cf <a href="http://wiki.openstreetmap.org/wiki/Key:addr">http://wiki.openstreetmap.org/wiki/Key:addr</a></p>
+<p>and even more important</p>
+<p>cf <a href="http://wiki.openstreetmap.org/wiki/Key:contact">http://wiki.openstreetmap.org/wiki/Key:contact</a></p>
+<pre><code>contact:phone 
+contact:fax     
+contact:website 
+contact:email
+</code></pre>
+<p>btw. here my results for that code-example:</p>
+<pre><code>martin@linux-70ce:~/php&gt; 
+martin@linux-70ce:~/php&gt; php osm1.php
+Query returned 1691 node(s) and took 3.34569 seconds.
+
+23 School(s) found:
+#00: ID:332534486   [39.5017565,16.2721899]  Scuola Primaria
+#01: ID:1428094278  [39.3320912,16.1862820]  (unnamed)
+#02: ID:1822746784  [38.9075566,16.5776597]  (unnamed)
+#03: ID:1822755951  [38.9120272,16.5713431]  (unnamed)
+#04: ID:1903859699  [38.6830409,16.5522243]  Liceo Scientifico Statale A. Guarasci
+#05: ID:2002566438  [39.1349460,16.0736446]  (unnamed)
+#06: ID:2056891127  [39.4106679,16.8254844]  (unnamed)
+#07: ID:2056892999  [39.4124687,16.8286119]  (unnamed)
+#08: ID:2272010226  [39.4481717,16.2894353]  SCUOLA DELL'INFANZIA SAN FRANCESCO
+#09: ID:2272017152  [39.4502366,16.2807664]  Scuola Media
+#10: ID:2358307794  [39.5015031,16.3905965]  I.I.S.S. Liceo Statale V. Iulia
+#11: ID:2358307796  [39.4926280,16.3853662]  Liceo Classico
+#12: ID:2358307797  [39.4973761,16.3858275]  Scuola Media
+#13: ID:2358307800  [39.5015527,16.3941156]  I.T.C. e per Geometri
+#14: ID:2358307801  [39.4983862,16.3807796]  Istituto Professionale
+#15: ID:2358344885  [39.4854617,16.3832419]  Istituto Tecnico Statale Commerciale G. Falcone
+martin@linux-70ce:~/php&gt;
+</code></pre>
+<p>note. i need to have the adress-data, of the shool with </p>
+<p>and even more important <a href="http://wiki.openstreetmap.org/wiki/Key:contact">http://wiki.openstreetmap.org/wiki/Key:contact</a></p>
+<pre><code>contact:phone 
+contact:fax     
+contact:website 
+contact:email
+</code></pre>
+<p>How to add this .. into the query? and how to finally store all into the MySQL-db?</p>
+<p><strong>update</strong>: can i rework like so: </p>
+<pre><code>$xml = file_get_contents($url);
+$data = new SimpleXMLElement($xml);
+
+$data variable contains the following:
+
+SimpleXMLElement Object
+(
+    [@attributes] =&gt; Array
+        (
+            [timestamp] =&gt; Sat, 15 Jun 13 20:02:13 +0000
+            [attribution] =&gt; Data ÂŠ OpenStreetMap contributors, ODbL 1.0. <a href="http://www.openstreetmap.org/copyright">http://www.openstreetmap.org/copyright</a>
+            [querystring] =&gt; Bucharest-Romania
+            [polygon] =&gt; false
+            [exclude_place_ids] =&gt; 331526
+            [more_url] =&gt; <a href="http://nominatim.openstreetmap.org/search?format=xml&amp;exclude_place_ids=331526&amp;q=Bucharest-Romania">http://nominatim.openstreetmap.org/search?format=xml&amp;exclude_place_ids=331526&amp;q=Bucharest-Romania</a>
+        )
+
+    [place] =&gt; SimpleXMLElement Object
+        (
+            [@attributes] =&gt; Array
+                (
+                    [place_id] =&gt; 331526
+                    [osm_type] =&gt; node
+                    [osm_id] =&gt; 96209423
+                    [place_rank] =&gt; 15
+                    [boundingbox] =&gt; 44.4361381530762,44.4361419677734,26.1027431488037,26.1027450561523
+                    [lat] =&gt; 44.436139
+                    [lon] =&gt; 26.1027436
+                    [display_name] =&gt; BucureČti, Sector 2, Bucuresti, RomĂ˘nia, European Union
+                    [class] =&gt; place
+                    [type] =&gt; city
+                    [importance] =&gt; 0.73231672860554
+                    [icon] =&gt; <a href="http://nominatim.openstreetmap.org/images/mapicons/poi_place_city.p.20.png">http://nominatim.openstreetmap.org/images/mapicons/poi_place_city.p.20.png</a>
+                )
+
+        )
+
+)
+</code></pre>
+<p>look forward to hear from you</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-mysql" href="/tags/mysql/" rel="tag" title="see questions tagged 'mysql'">mysql</a>
+<a class="post-tag tag-link-export" href="/tags/export/" rel="tag" title="see questions tagged 'export'">export</a>
+<a class="post-tag tag-link-parsing" href="/tags/parsing/" rel="tag" title="see questions tagged 'parsing'">parsing</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>12 Jun '14, 20:15</strong>
+</p>
+<img alt="say_hello_to_the_world's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bf4d2d8660e82c4a7387b7d2a8a8cfcd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8644/say_hello_to_the_world">say_hello_to...</a><br/>
+<span class="score" title="19 reputation points">19</span><span title="23 badges"><span class="badge1">●</span><span class="badgecount">23</span></span><span title="24 badges"><span class="silver">●</span><span class="badgecount">24</span></span><span title="27 badges"><span class="bronze">●</span><span class="badgecount">27</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="say_hello_to_the_world has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/33926/">
+                edited
+                <strong>13 Jun '14, 09:43</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-33926">
+</div>
+<div class="comment-tools" id="comment-tools-33926">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-33926-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/33926/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="YnENGIusPfOX30FtXCF49Yo5oBY2xFzI"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

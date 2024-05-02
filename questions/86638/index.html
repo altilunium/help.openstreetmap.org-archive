@@ -1,0 +1,124 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/86638/how-can-we-display-parcel-outlines-or-boundaries-on-openstreetmap">How can we display parcel outlines or boundaries on OpenStreetMap?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/86638/up/" id="post-86638-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-86638-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/86638/down/" id="post-86638-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/86638/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Please help provide an example of how to display third-party information on top of OSM for displaying parcel boundaries. Any link with a sample for example will be helpful. I have also attached an image.<img alt="Image with parcel boundaries" src="https://help.openstreetmap.org/upfiles/openstreet_with_boundaries.jpg"/></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-map-with-parcel" href="/tags/map-with-parcel/" rel="tag" title="see questions tagged 'map-with-parcel'">map-with-parcel</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>07 Feb '23, 11:35</strong>
+</p>
+<img alt="vijaypandeychetu's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9cacdc2caa368cfa3c8eb73574d850be?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/22679/vijaypandeychetu">vijaypandeyc...</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="vijaypandeychetu has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-86638">
+</div>
+<div class="comment-tools" id="comment-tools-86638">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-86638-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/86638/how-can-we-display-parcel-outlines-or-boundaries-on-openstreetmap?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/86638/how-can-we-display-parcel-outlines-or-boundaries-on-openstreetmap?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/86638/how-can-we-display-parcel-outlines-or-boundaries-on-openstreetmap?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/86638/how-can-we-display-parcel-outlines-or-boundaries-on-openstreetmap?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="86639"></a>
+<div class="answer" id="answer-container-86639">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/86639/up/" id="post-86639-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-86639-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/86639/down/" id="post-86639-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This depends on what medium you want to use - the techniques you would use for a browser map are different from those you would use for a printed map or maybe an app. </p>
+<p>One option for a browser-based solution is to use the popular "Leaflet" library to display an OSM map (when accessing OSM's severs, always honour the <a href="https://operations.osmfoundation.org/policies/tiles/">Tile Usage Policy</a>) and then draw your parcel polygons on top. The source of the parcel polygons could e.g. be a GeoJSON file that you have created. See here for an example that does this: <a href="https://www.igismap.com/add-load-geojson-file-point-polyline-polygon-map-leaflet-js/">https://www.igismap.com/add-load-geojson-file-point-polyline-polygon-map-leaflet-js/</a></p>
+<p>If you have a very large number of polygons to draw, you will want to implement a server-side filter (so that the Leaflet library can request from the server only those polygons needed for the current map view, not the whole data set). This could be a simple PostGIS database or something like GeoServer (both Open Source).</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/86639/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>07 Feb '23, 12:24</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-86639">
+</div>
+<div class="comment-tools" id="comment-tools-86639">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-86639-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/86638/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="JffAUsFflgM4uiWYTIdv3xNzivsWrcfG"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

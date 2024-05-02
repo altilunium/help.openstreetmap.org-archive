@@ -1,0 +1,151 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/10478/exporting-osm-tiles">Exporting OSM Tiles</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/10478/up/" id="post-10478-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-10478-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/10478/down/" id="post-10478-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/10478/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am interested using a slippy map to download OSM tiles. In doing so, I intend to stay within OSM tile usage policies (such as setting up my own tile server, or renting space from a commercial server) for high volume use).</p>
+<p>I noticed the official <a href="http://openstreetmaps.org">openstreetmaps.org</a> slippy map has an 'export' tab, grabbing sections of map at a given zoom level. I have a few questions about this:</p>
+<ul>
+<li>How would I deploy a slippy map with the 'export' tab enabled?</li>
+<li>When exporting a tile layer (say, Mapnik) to an image format (jpeg or png) how is the bounding box determined? Is the export function grabbing the nearest whole tiles (grabbing extra tile area) or is it generating an image that aligns with the users' view window, cut to the pixel?</li>
+<li>Is there an API sufficient to allow me to trigger this command programatically over a series of zoom levels, with the same bounding box?</li>
+</ul>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-extract" href="/tags/extract/" rel="tag" title="see questions tagged 'extract'">extract</a>
+<a class="post-tag tag-link-export" href="/tags/export/" rel="tag" title="see questions tagged 'export'">export</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>07 Feb '12, 23:24</strong>
+</p>
+<img alt="benford's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3704877a9e7005245fb52ad23d3a553f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2764/benford">benford</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="benford has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-10478">
+</div>
+<div class="comment-tools" id="comment-tools-10478">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-10478-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/10478/exporting-osm-tiles?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/10478/exporting-osm-tiles?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/10478/exporting-osm-tiles?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/10478/exporting-osm-tiles?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="10480"></a>
+<div class="answer accepted-answer" id="answer-container-10480">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/10480/up/" id="post-10480-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-10480-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/10480/down/" id="post-10480-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/10480/" rel="nofollow" title="benford has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The export tab is a complex beast that does a number of technologically very different things.</p>
+<p>For "Mapnik" style raster images, the request is forwarded to code that runs on the tile server, where a Mapnik installation and an up-to-date osm2pgsql-generated OSM database are available to generate custom renderings. This will not export tiles in any way, but render the precise rectangle in the precise resolution chosen. To mimick that, you would have to have the same technology in place. Essentially you could use <a href="http://generate_image.py">generate_image.py</a> or <a href="http://trac.mapnik.org/wiki/Nik2Img">nik2img.py</a>  to simulate what goes on there; I would also suggest these command line utilities as your "API to allow you to trigger this command programmatically".</p>
+<p>For raster images in the soon-to-be-removed "Osmarender" style, the backend will indeed use existing tiles and paste them into an image, cropping it to match the requested area. I don't know the exact implementation but it is bound to be something like the scripts featured on the <a href="http://wiki.openstreetmap.org/wiki/Static_map_images">Static map images</a> page on the Wiki. Those scripts are also what you would use if you had your own tile server and wanted to create static "pasted tiles" images of that.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/10480/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Feb '12, 10:16</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-10480">
+<a name="11060"></a>
+<div class="comment" id="comment-11060">
+<div class="comment-score" id="post-11060-score"></div>
+<div class="comment-text"><p>That's just what I was looking for, thanks. Would there be a publicly available source from which I can download the mentioned python scripts?</p></div>
+<div class="comment-info" id="comment-11060-info">
+<span class="comment-age">(08 Mar '12, 16:55)</span>
+<a class="comment-user userinfo" href="/users/2764/benford">benford</a>
+</div>
+</div>
+<a name="11061"></a>
+<div class="comment" id="comment-11061">
+<div class="comment-score" id="post-11061-score"></div>
+<div class="comment-text"><p><a href="http://svn.openstreetmap.org/applications/rendering/mapnik/">http://svn.openstreetmap.org/applications/rendering/mapnik/</a> or <a href="http://code.google.com/p/mapnik-utils/wiki/Nik2Img,">http://code.google.com/p/mapnik-utils/wiki/Nik2Img,</a> respectively.</p></div>
+<div class="comment-info" id="comment-11061-info">
+<span class="comment-age">(08 Mar '12, 18:44)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-10480">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-10480-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/10478/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="juxgF7OOQcvLGQDNXjDifptrqZigrZKW"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

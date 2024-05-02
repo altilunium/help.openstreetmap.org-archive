@@ -1,0 +1,253 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/78929/determine-if-location-is-east-or-west-of-a-river">Determine if location is east or west of a river</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/78929/up/" id="post-78929-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-78929-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/78929/down/" id="post-78929-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/78929/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have a big list of locations with their coordinates in a city that is fully divided by a river that's running from north to south. 
+Now I want to determine for each location if it is located east or west of that river. 
+If it was possible to get the coordinates of the river in a granular enough manner, I could achieve that goal by comparing coordinates between location and the river.</p>
+<p>I have not found a way to get these coordinates so far. I'm new to OSM, however, and would be thrilled if someone could point me in the right direction here.  </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-river" href="/tags/river/" rel="tag" title="see questions tagged 'river'">river</a>
+<a class="post-tag tag-link-coordinates" href="/tags/coordinates/" rel="tag" title="see questions tagged 'coordinates'">coordinates</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>18 Feb '21, 14:55</strong>
+</p>
+<img alt="RedAlakazam's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/88e2e6e0cf86ece948ac915f94d3c640?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19758/redalakazam">RedAlakazam</a><br/>
+<span class="score" title="91 reputation points">91</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="8 badges"><span class="bronze">●</span><span class="badgecount">8</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="RedAlakazam has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/78929/">
+                edited
+                <strong>18 Feb '21, 14:56</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-78929">
+</div>
+<div class="comment-tools" id="comment-tools-78929">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-78929-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/78929/determine-if-location-is-east-or-west-of-a-river?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/78929/determine-if-location-is-east-or-west-of-a-river?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/78929/determine-if-location-is-east-or-west-of-a-river?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/78929/determine-if-location-is-east-or-west-of-a-river?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="78932"></a>
+<div class="answer accepted-answer" id="answer-container-78932">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/78932/up/" id="post-78932-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-78932-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/78932/down/" id="post-78932-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/78932/" rel="nofollow" title="RedAlakazam has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>If you use osm2pgsql to load the OSM data into PostGIS database (based on postsql) then you can use use the ST_closestpoint() function to find the closest point on a way (your river) to a point. You can then take the two points (one on the river and the one you are interested in) and use the ST_Azimuth() function to determine the direction of travel between the two points.</p>
+<p>If the the river is serpentine you may get a result other than what you wish for (if the point is within a loop or near a curve in the river the azimuth could be quite different than you want). I don’t have enough experience with this stuff to suggest a way around that issue though.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/78932/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Feb '21, 02:24</strong>
+</p>
+<img alt="n76's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f60af53a4eba0c21f25c22674fb4a8cc?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5918/n76">n76</a><br/>
+<span class="score" title="10839 reputation points"><span class="">10.8k</span></span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="82 badges"><span class="silver">●</span><span class="badgecount">82</span></span><span title="172 badges"><span class="bronze">●</span><span class="badgecount">172</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="n76 has 48 accepted answers">17%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-78932">
+</div>
+<div class="comment-tools" id="comment-tools-78932">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-78932-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="78992"></a>
+<div class="answer answered-by-owner" id="answer-container-78992">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/78992/up/" id="post-78992-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-78992-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/78992/down/" id="post-78992-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I ended up using <a href="https://help.openstreetmap.org/users/5918/stf">@stf</a>'s suggestion of using the ST_AZIMUTH() function. </p>
+<p><code>SELECT
+ CASE WHEN 
+        DEGREES(ST_AZIMUTH(pt, cl_pt)) &gt; 180 
+           THEN 'right' ELSE 'left' END AS RIVER_ORIENTATION,
+        ROUND(ST_DISTANCE(pt, cl_pt)) AS RIVER_DISTANCE,
+        name
+FROM (
+       SELECT name, ST_ClosestPoint(pt, line) AS pt,
+       ST_CLOSESTPOINT(line, pt) AS cl_pt,
+       line as river
+FROM 
+       (SELECT name,
+        ST_TRANSFORM(ST_setSRID(ST_MAKEPOINT(longitude, latitude), 4326), 3857) AS pt
+             FROM location_information) tmp1,
+        (SELECT ST_UNION(way) AS 
+             FROM planet_osm_line WHERE name='INSERT RIVER NAME') tmp2                 
+) tmp3</code></p>
+<p>Making the left/right distinction at 180 degrees worked out perfectly in this case. 
+<a href="https://help.openstreetmap.org/users/104/frederik-ramm">@Frederik Ramm</a>'s suggestion of splitting the map in two using the river would've lead to a more robust solution but the river had some arms with the same name which made it inconvenient in my case.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/78992/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Feb '21, 18:21</strong>
+</p>
+<img alt="RedAlakazam's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/88e2e6e0cf86ece948ac915f94d3c640?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19758/redalakazam">RedAlakazam</a><br/>
+<span class="score" title="91 reputation points">91</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="8 badges"><span class="bronze">●</span><span class="badgecount">8</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="RedAlakazam has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-78992">
+</div>
+<div class="comment-tools" id="comment-tools-78992">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-78992-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="78947"></a>
+<div class="answer" id="answer-container-78947">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/78947/up/" id="post-78947-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-78947-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/78947/down/" id="post-78947-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Another computational option would be: 1. Create polygon around whole city. 2. Get river geometry as a line. 3. split polygon in two along that line. 4. for every point, ask "is this point in the left-land polygon", if not it'll be on the right. </p>
+<p>If I understand the question correctly, the main issue is extracting the river's coordinates. This could potentially be done in PostGIS if the data is loaded (something along the lines of <code>SELECT ST_UNION(way) FROM planet_osm_line WHERE "natural"='river' AND name="XYZ River")</code>. This query would also take care of combining several "pieces" of river into one, but would yield unwanted results if the river should have "arms" that share the same name! If you don't want to load the data into PostGIS first, the Overpass service can be used to request all things tagged natural=river with a certain name in a certain bounding box, however additional libraries would then have to be used to combine river parts into one, to split a polygon, or to determine wheter a point is inside a polygon. If you're attempting to do it all in Javascript then Turf.js is an option for that.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/78947/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Feb '21, 15:11</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-78947">
+</div>
+<div class="comment-tools" id="comment-tools-78947">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-78947-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/78929/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Xa2xDtGB0sVjbxzj66LmqRAbYCOs6syd"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

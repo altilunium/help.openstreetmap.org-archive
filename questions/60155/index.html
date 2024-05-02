@@ -1,0 +1,175 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/60155/dynamically-generate-tiles-with-different-mapnik-xml-file-without-restarting-renderd">Dynamically generate tiles with different Mapnik XML file without restarting renderd</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/60155/up/" id="post-60155-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-60155-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/60155/down/" id="post-60155-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/60155/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am attempting to allow users to view a map and use UI components, such as checkboxes, to toggle certain layers of data on or off. Each time a user toggles a layer on, it should send a request to my tile server with the layers that should be visible (LayerX status="on", LayerY status="on"). </p>
+<p>The default for all of my layers in the Mapnik XML style file is status="off". Is there currently a method of passing these parameters to the renderd service and dynamically changing the XML file before rendering the tiles?</p>
+<p>Since each request has the possibility to generate a new version of a tile, I would not like to cache each request. How can I turn off mod_tile's caching abilities to prevent tiles with the wrong data being returned the the client?</p>
+<p>From what I have noticed, after every change to the XML file, renderd is required to be restarted. Is it possible to not restart renderd, but modify the XML file to display different layers?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-renderd" href="/tags/renderd/" rel="tag" title="see questions tagged 'renderd'">renderd</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+<a class="post-tag tag-link-mod_tile" href="/tags/mod_tile/" rel="tag" title="see questions tagged 'mod_tile'">mod_tile</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>17 Oct '17, 19:30</strong>
+</p>
+<img alt="pantaphobic's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/57a3221d36da383f5c0a6f5b29f611cc?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14326/pantaphobic">pantaphobic</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="pantaphobic has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-60155">
+<a name="60156"></a>
+<div class="comment" id="comment-60156">
+<div class="comment-score" id="post-60156-score"></div>
+<div class="comment-text"><p>No idea about within Mapnik, but could you perhaps have different layers of tiles turned on and off within Leaflet?</p></div>
+<div class="comment-info" id="comment-60156-info">
+<span class="comment-age">(17 Oct '17, 19:32)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="60157"></a>
+<div class="comment" id="comment-60157">
+<div class="comment-score" id="post-60157-score"></div>
+<div class="comment-text"><p>I am not currently using and am not planning on using leaflet. I am using the google maps API to get the base world map and adding transparent tiles overtop of that rendered by Mapnik.</p></div>
+<div class="comment-info" id="comment-60157-info">
+<span class="comment-age">(17 Oct '17, 20:09)</span>
+<a class="comment-user userinfo" href="/users/14326/pantaphobic">pantaphobic</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-60155">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-60155-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/60155/dynamically-generate-tiles-with-different-mapnik-xml-file-without-restarting-renderd?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/60155/dynamically-generate-tiles-with-different-mapnik-xml-file-without-restarting-renderd?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/60155/dynamically-generate-tiles-with-different-mapnik-xml-file-without-restarting-renderd?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/60155/dynamically-generate-tiles-with-different-mapnik-xml-file-without-restarting-renderd?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="60159"></a>
+<div class="answer" id="answer-container-60159">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/60159/up/" id="post-60159-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-60159-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/60159/down/" id="post-60159-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You'll probably not want to use renderd and mod_tile, but instead something like "LiveTiles" (<a href="https://github.com/openstreetmap/mapnik-stylesheets/blob/master/livetiles/livetiles.wsgi">https://github.com/openstreetmap/mapnik-stylesheets/blob/master/livetiles/livetiles.wsgi</a> - but there are other similar implementations). This never caches tiles. You'll have to add a little code that parses a layer list from the tile URL and switches on the layers before actually rendering the tile but that's only a few lines of code.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/60159/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>17 Oct '17, 21:38</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-60159">
+<a name="60160"></a>
+<div class="comment" id="comment-60160">
+<div class="comment-score" id="post-60160-score"></div>
+<div class="comment-text"><p>This looks exactly like what I need, but I am a bit concerned with the following line in their documentation: 
+"render live mapnik tiles on request which is handy for maintenance of mapnik styles and completely unsuitable for a production tileserver."
+Do you think for my unique use case this should be ignored?</p></div>
+<div class="comment-info" id="comment-60160-info">
+<span class="comment-age">(17 Oct '17, 21:43)</span>
+<a class="comment-user userinfo" href="/users/14326/pantaphobic">pantaphobic</a>
+</div>
+</div>
+<a name="60161"></a>
+<div class="comment" id="comment-60161">
+<div class="comment-score" id="post-60161-score"></div>
+<div class="comment-text"><p>According to open street maps documentation, it looks like this tool was replaced by TileLite. I will look into it further, thank you for the recommendation!
+<a href="http://wiki.openstreetmap.org/wiki/User:Stanton/Mapnik_Test_Server#Live_Rendering_with_LiveTiles_TileLite">http://wiki.openstreetmap.org/wiki/User:Stanton/Mapnik_Test_Server#Live_Rendering_with_LiveTiles_TileLite</a></p></div>
+<div class="comment-info" id="comment-60161-info">
+<span class="comment-age">(17 Oct '17, 21:49)</span>
+<a class="comment-user userinfo" href="/users/14326/pantaphobic">pantaphobic</a>
+</div>
+</div>
+<a name="60162"></a>
+<div class="comment" id="comment-60162">
+<div class="comment-score" id="post-60162-score">2</div>
+<div class="comment-text"><p>The whole approach of rendering <em>all</em> tiles on demand is unsuitable for a production server if you are using a style that comes anywhere near the standard style in complexity. However, if your layers are relatively simple and your database small then you can get away with it. The problem with the approach is that not only does it not cache tiles, it also doesn't do meta tiles which leads to a higher load on the database. For your particular use case, TileLite or LiveTiles probably does not make a difference.</p></div>
+<div class="comment-info" id="comment-60162-info">
+<span class="comment-age">(17 Oct '17, 21:59)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-60159">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-60159-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/60155/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="4J9uPsK65AoUJDCZlCm9tvIsx61LG7vG"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

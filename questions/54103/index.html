@@ -1,0 +1,128 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/54103/best-way-to-derive-motorway-and-direction-from-a-geo-position">Best way to derive motorway and direction from a geo position</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/54103/up/" id="post-54103-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-54103-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/54103/down/" id="post-54103-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/54103/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>I'm trying to find the motorway and direction from a GPS coordinate of a car driving on a motorway in France. For example for [47.980539, 3.190048], I want to be able to determine that the driver is on motorway called A6 towards city called Lyon. 
+Initially I tried to use the nearest service but the data returned is not always populated and I could not trust it.
+As a result, the only solution I found was to call the route/v1/driving service by feeding it the driver's GPS coordinate and some far GPS position (in my case: close to Spain border). Then from the JSON object returned I take routes[0]-&gt;legs[0]-&gt;steps[0]-&gt;Ref which gives me the motorway on which the user is. Then for direction I use again route/v1/driving to compute the route distance between beginning location of the motorway and driver and then from driver to end of the motorway and I compare it to a the real length of the motorway. If I find a close match for 1 of the 2 directions, I assume the driver is driving in this direction.</p>
+<p>It's a bit complicated and not always reliable.
+Is there a better way to retrieve such information ? </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-road_from_coord" href="/tags/road_from_coord/" rel="tag" title="see questions tagged 'road_from_coord'">road_from_coord</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>17 Jan '17, 15:57</strong>
+</p>
+<img alt="06pboivin06's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7998acb6628483825d62dc4f11055d2a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13205/06pboivin06">06pboivin06</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="06pboivin06 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-54103">
+</div>
+<div class="comment-tools" id="comment-tools-54103">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-54103-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/54103/best-way-to-derive-motorway-and-direction-from-a-geo-position?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/54103/best-way-to-derive-motorway-and-direction-from-a-geo-position?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/54103/best-way-to-derive-motorway-and-direction-from-a-geo-position?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/54103/best-way-to-derive-motorway-and-direction-from-a-geo-position?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="54110"></a>
+<div class="answer" id="answer-container-54110">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/54110/up/" id="post-54110-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-54110-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/54110/down/" id="post-54110-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>A single location won't suffice. Ideally you should wait until having obtained multiple locations. Then use these locations to calculate the driving direction and the most plausible way(s) the driver is on.</p>
+<p>You can also go through the source of one of the many open source routing engines for OSM. See <a href="https://wiki.openstreetmap.org/wiki/Routing">routing</a> as well as the list of <a href="https://wiki.openstreetmap.org/wiki/Routing/online_routers">online routers</a> and <a href="https://wiki.openstreetmap.org/wiki/Routing/offline_routers">offline routers</a> for various examples.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/54110/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>17 Jan '17, 16:36</strong>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="scai has 168 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-54110">
+</div>
+<div class="comment-tools" id="comment-tools-54110">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-54110-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/54103/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="S6lAyRXz9f2Hs64sAWot3DVidpCzhoal"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

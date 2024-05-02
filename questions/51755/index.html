@@ -1,0 +1,201 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/51755/change-speed-limit-of-part-of-a-road">Change speed limit of part of a road</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/51755/up/" id="post-51755-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-51755-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/51755/down/" id="post-51755-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/51755/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I've been using <a href="https://en.wikipedia.org/wiki/OsmAnd">osmAnd~</a> for navigation in Sweden and found that a road with a speed limit of 90km/h has a section of several kilometers that allow 100km/h.</p>
+<p>What steps do I have to do in the default web-based OSM editor to change the speed limit of a part of the road? </p>
+<p>Neither <a href="http://wiki.openstreetmap.org/wiki/Speed_limits">wiki:Speed limits</a>, <a href="http://wiki.openstreetmap.org/wiki/Key:maxspeed">wiki:maxspeed</a> nor <a href="https://help.openstreetmap.org/questions/1330/speed-limits-map-correction">Speed Limits map correction</a> give any help on this.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-speedlimit" href="/tags/speedlimit/" rel="tag" title="see questions tagged 'speedlimit'">speedlimit</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>27 Aug '16, 16:17</strong>
+</p>
+<img alt="cweiske's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9e263681488308e5e5d5e548b2f9bc99?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7159/cweiske">cweiske</a><br/>
+<span class="score" title="156 reputation points">156</span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="15 badges"><span class="bronze">●</span><span class="badgecount">15</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="cweiske has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-51755">
+</div>
+<div class="comment-tools" id="comment-tools-51755">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-51755-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/51755/change-speed-limit-of-part-of-a-road?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/51755/change-speed-limit-of-part-of-a-road?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/51755/change-speed-limit-of-part-of-a-road?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/51755/change-speed-limit-of-part-of-a-road?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="51757"></a>
+<div class="answer" id="answer-container-51757">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/51757/up/" id="post-51757-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-51757-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/51757/down/" id="post-51757-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You must "split" the road at both points where the speed limit changes in order to isolate that section. Once the 100 kph section is separate, tag it with maxspeed=100</p>
+<p>In Potlatch add a node where the limit goes to 100 kph, then type "x" or use the scissors in the toolkit to split the way at that point. Do the same thing when the limit changes back again. Now select that section of highway and apply the new maxspeed tag to it.</p>
+<p>Cheers,</p>
+<p>Dave</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/51757/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>27 Aug '16, 16:48</strong>
+</p>
+<img alt="AlaskaDave's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/04dddf6f5ffde333747d385af3ce5829?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5016/alaskadave">AlaskaDave</a><br/>
+<span class="score" title="5415 reputation points"><span class="">5.4k</span></span><span title="76 badges"><span class="badge1">●</span><span class="badgecount">76</span></span><span title="107 badges"><span class="silver">●</span><span class="badgecount">107</span></span><span title="164 badges"><span class="bronze">●</span><span class="badgecount">164</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="AlaskaDave has 17 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-51757">
+</div>
+<div class="comment-tools" id="comment-tools-51757">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-51757-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="51756"></a>
+<div class="answer answered-by-owner" id="answer-container-51756">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/51756/up/" id="post-51756-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-51756-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/51756/down/" id="post-51756-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<ol>
+<li>Go to beginning of speed limit change</li>
+<li>Select node (or double-click line to create node at this location)</li>
+<li>In the popup, click the scissors icon to split the line</li>
+<li>Go to the end of the speed limit change</li>
+<li>Select the node</li>
+<li>In the popup, click the scissors icon to split the line</li>
+<li>Change the speed limit of the line that has been split</li>
+</ol>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/51756/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>27 Aug '16, 16:41</strong>
+</p>
+<img alt="cweiske's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9e263681488308e5e5d5e548b2f9bc99?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7159/cweiske">cweiske</a><br/>
+<span class="score" title="156 reputation points">156</span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="15 badges"><span class="bronze">●</span><span class="badgecount">15</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="cweiske has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-51756">
+<a name="87730"></a>
+<div class="comment" id="comment-87730">
+<div class="comment-score" id="post-87730-score"></div>
+<div class="comment-text"><p>Thank you for this!!!</p></div>
+<div class="comment-info" id="comment-87730-info">
+<span class="comment-age">(21 Aug '23, 23:42)</span>
+<a class="comment-user userinfo" href="/users/23278/352guy">352Guy</a>
+</div>
+</div>
+<a name="87731"></a>
+<div class="comment" id="comment-87731">
+<div class="comment-score" id="post-87731-score"></div>
+<div class="comment-text"><p>Note that at least one response here considers Potlatch to be the default editor. This hasn't been the case since the end of Flash player. You may need to seek out instructions for the iD editor instead.</p></div>
+<div class="comment-info" id="comment-87731-info">
+<span class="comment-age">(22 Aug '23, 02:40)</span>
+<a class="comment-user userinfo" href="/users/4426/insertuser">InsertUser</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-51756">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-51756-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/51755/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="F8zcjxRgyBJQA6dOSTpGXBZ3xgXalo5r"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

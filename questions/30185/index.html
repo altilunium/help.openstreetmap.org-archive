@@ -1,0 +1,138 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/30185/error-while-installing-nominatim-on-ubuntu">Error while installing Nominatim on ubuntu</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/30185/up/" id="post-30185-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-30185-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/30185/down/" id="post-30185-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/30185/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Using projection SRS 4326 (Latlong)</p>
+<pre><code>NOTICE:  table "place" does not exist, skipping
+NOTICE:  type "keyvalue" does not exist, skipping
+NOTICE:  type "wordscore" does not exist, skipping
+NOTICE:  type "stringlanguagetype" does not exist, skipping
+NOTICE:  type "keyvaluetype" does not exist, skipping
+NOTICE:  function get_connected_ways(pg_catalog.int4[]) does not exist, skipping
+Allocating memory for dense node cache
+Allocating dense node cache in one big chunk
+Out of memory for dense node cache, reduce --cache size
+Error occurred, cleaning up
+ERROR: Error executing external command: /home/nominatim/Nominatim/osm2pgsql/osm2pgsql -lsc -O 
+gazetteer --hstore -C 4664 -P 5432 -d nominatim /home/nominatim/Nominatim/data/europe/andorra-latest.osm.pbf
+Symlinks created
+WARNING: Unable to access the website at <a href="http://nominatim.localhost/">http://nominatim.localhost/</a>
+You may want to update settings/local.php with @define('CONST_Website_BaseURL', 'http://[HOST]/[PATH]/');
+ERROR: Site 400-nominatim does not exist!
+</code></pre>
+<p>In Browser url(<a href="http://localhost/nominatim/)">http://localhost/nominatim/)</a> shows like </p>
+<pre><code>string(19) "pgsql://@/nominatim" object(DB_Error)#2 (8) { ["error_message_prefix"]=&gt; string(0) "" ["mode"]=&gt; int(1) ["level"]=&gt; int(1024) ["code"]=&gt; int(-25) ["message"]=&gt; string(29) "DB Error: extension not found" ["userinfo"]=&gt; string(55) " [DB Error: extension not found] ** pgsql://@/nominatim" ["backtrace"]=&gt; array(7) { [0]=&gt; array(6) { ["file"]=&gt; string(21) "/usr/share/php/DB.php" ["line"]=&gt; int(966) ["function"]=&gt; string(10) "PEAR_Error" ["class"]=&gt; string(10) "PEAR_Error" ["type"]=&gt; string(2) "-&gt;" ["args"]=&gt; array(5) { [0]=&gt; string(29) "DB Error: extension not found" [1]=&gt; int(-25) [2]=&gt; int(1) [3]=&gt; int(1024) ...
+...
+...
+["_default_error_mode"]=&gt; NULL ["_default_error_options"]=&gt; NULL ["_default_error_handler"]=&gt; string(0) "" ["_error_class"]=&gt; string(8) "DB_Error" ["_expected_errors"]=&gt; array(0) { } } ["type"]=&gt; string(2) "-&gt;" ["args"]=&gt; array(2) { [0]=&gt; array(9) { ["phptype"]=&gt; string(5) "pgsql" ["dbsyntax"]=&gt; string(5) "pgsql" ["username"]=&gt; string(0) "" ["password"]=&gt; bool(false) ["protocol"]=&gt; string(3) "tcp" ["hostspec"]=&gt; string(0) "" ["port"]=&gt; bool(false) ["socket"]=&gt; bool(false) ["database"]=&gt; string(9) "nominatim" } [1]=&gt; bool(false) } } [5]=&gt; array(6) { ["file"]=&gt; string(36) "/home/nominatim/Nominatim/lib/db.php" ["line"]=&gt; int(7) ["function"]=&gt; string(7) "connect" ["class"]=&gt; string(2) "DB" ["type"]=&gt; string(2) "::" ["args"]=&gt; array(2) { [0]=&gt; string(19) "pgsql://@/nominatim" [1]=&gt; bool(false) } } [6]=&gt; array(4) { ["file"]=&gt; string(44) "/home/nominatim/Nominatim/website/search.php" ["line"]=&gt; int(10) ["function"]=&gt; string(5) "getDB" ["args"]=&gt; array(0) { } } } ["callback"]=&gt; NULL } DB Error: extension not found
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-ubuntu" href="/tags/ubuntu/" rel="tag" title="see questions tagged 'ubuntu'">ubuntu</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>24 Jan '14, 13:59</strong>
+</p>
+<img alt="Arun%20kmp's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/672f9138349e062b5fc0a11d50a9ca6f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8219/arun-kmp">Arun kmp</a><br/>
+<span class="score" title="63 reputation points">63</span><span title="14 badges"><span class="badge1">●</span><span class="badgecount">14</span></span><span title="15 badges"><span class="silver">●</span><span class="badgecount">15</span></span><span title="19 badges"><span class="bronze">●</span><span class="badgecount">19</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Arun kmp has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/30185/">
+                wikified
+                <strong>25 Jan '14, 06:50</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-30185">
+<a name="30186"></a>
+<div class="comment" id="comment-30186">
+<div class="comment-score" id="post-30186-score">2</div>
+<div class="comment-text"><p>Please write your question on top of all that log stuff.</p></div>
+<div class="comment-info" id="comment-30186-info">
+<span class="comment-age">(24 Jan '14, 14:18)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+<a name="30187"></a>
+<div class="comment" id="comment-30187">
+<div class="comment-score" id="post-30187-score"></div>
+<div class="comment-text"><p>The title says install, but you are talking about the import and indexing, right?</p></div>
+<div class="comment-info" id="comment-30187-info">
+<span class="comment-age">(24 Jan '14, 15:25)</span>
+<a class="comment-user userinfo" href="/users/4984/iii">iii</a>
+</div>
+</div>
+<a name="30189"></a>
+<div class="comment" id="comment-30189">
+<div class="comment-score" id="post-30189-score">3</div>
+<div class="comment-text"><p>The error says "Out of memory for dense node cache, reduce --cache size". Have you tried doing what it suggests?</p></div>
+<div class="comment-info" id="comment-30189-info">
+<span class="comment-age">(24 Jan '14, 17:18)</span>
+<a class="comment-user userinfo" href="/users/5/richard">Richard ♦</a>
+</div>
+</div>
+<a name="30195"></a>
+<div class="comment" id="comment-30195">
+<div class="comment-score" id="post-30195-score"></div>
+<div class="comment-text"><p>Thank you guys for your kind responce....</p>
+<p>Actually i am new to this Nominatim and OSM.</p>
+<p>i am ubuntu user, i am trying to install Nominatim from the script which taken from </p>
+<p><a href="https://github.com/cyclestreets/nominatim-install">https://github.com/cyclestreets/nominatim-install</a></p>
+<p>While i am starting the script as per the instruction they given i got the above error.</p>
+<p>i know "out of memory for dense node cache,reduce the --cache size", what to do for that,</p>
+<p>and also tell me what is the minimum memory needs to install Nominatim.</p></div>
+<div class="comment-info" id="comment-30195-info">
+<span class="comment-age">(25 Jan '14, 06:49)</span>
+<a class="comment-user userinfo" href="/users/8219/arun-kmp">Arun kmp</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-30185">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-30185-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/30185/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="VVEeLyTpYSe046Gzu30jsSbs0S3bdHtj"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

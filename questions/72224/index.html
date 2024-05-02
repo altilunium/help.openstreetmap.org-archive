@@ -1,0 +1,127 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/72224/local-cache-of-osm-data-that-i-can-query-with-overpass-ql">Local cache of OSM data that I can query with Overpass QL</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/72224/up/" id="post-72224-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-72224-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/72224/down/" id="post-72224-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/72224/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm making an application that will need to query OSM data using Overpass QL. Instead of querying <a href="https://overpass-turbo.eu/">https://overpass-turbo.eu/</a> for every user request, I would like to query the data once, and cache it in my own database. Future queries in the same area would use the cached data.</p>
+<p>How can I do this? Would I need to setup some kind of local OSM server with the cached data? Is there a guide somewhere on how to do that?</p>
+<p>If that's not readily available and I have to do a lot myself, how much of it do I have to do from scratch? Will I need to design a database model for the data myself, and then query from overpass-turbo and store in my own DB? Do I need to write my own parser for Overpass QL for my application to query from my "osm cache" db?</p>
+<p>Is there already a library (for Java) that can do what I'm looking for so I won't have to reinvent the wheel?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-java" href="/tags/java/" rel="tag" title="see questions tagged 'java'">java</a>
+<a class="post-tag tag-link-overpass-ql" href="/tags/overpass-ql/" rel="tag" title="see questions tagged 'overpass-ql'">overpass-ql</a>
+<a class="post-tag tag-link-offlinemaps" href="/tags/offlinemaps/" rel="tag" title="see questions tagged 'offlinemaps'">offlinemaps</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>27 Dec '19, 01:52</strong>
+</p>
+<img alt="devil0150's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b963eb1a8b1152bb420093dc2c9bbcc7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17617/devil0150">devil0150</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="devil0150 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-72224">
+</div>
+<div class="comment-tools" id="comment-tools-72224">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-72224-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/72224/local-cache-of-osm-data-that-i-can-query-with-overpass-ql?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/72224/local-cache-of-osm-data-that-i-can-query-with-overpass-ql?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/72224/local-cache-of-osm-data-that-i-can-query-with-overpass-ql?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/72224/local-cache-of-osm-data-that-i-can-query-with-overpass-ql?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="72233"></a>
+<div class="answer" id="answer-container-72233">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/72233/up/" id="post-72233-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-72233-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/72233/down/" id="post-72233-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Overpass is open <a href="https://github.com/drolbr/Overpass-API">source</a> and has installation instructions <a href="https://overpass-api.de/no_frills.html">online</a>. I don't know if there is a way to cache as you describe, but the whole database can be cloned during setup and kept up to date with diffs.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/72233/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>27 Dec '19, 15:12</strong>
+</p>
+<img alt="InsertUser's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ec8a0cf213f9797ad1c1ae2c28c2332d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4426/insertuser">InsertUser</a><br/>
+<span class="score" title="11005 reputation points"><span class="">11.0k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="69 badges"><span class="silver">●</span><span class="badgecount">69</span></span><span title="185 badges"><span class="bronze">●</span><span class="badgecount">185</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="InsertUser has 73 accepted answers">19%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-72233">
+</div>
+<div class="comment-tools" id="comment-tools-72233">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-72233-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/72224/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="eXRpk9otxllPaSEON7pyTfPlxCmYlVE9"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

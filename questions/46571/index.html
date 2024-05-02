@@ -1,0 +1,175 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/46571/how-can-i-convert-the-land-polygons-to-a-raster-land-mask">How can I convert the land-polygons to a raster land mask?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/46571/up/" id="post-46571-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-46571-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/46571/down/" id="post-46571-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/46571/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>How can I use gdal_rasterize to produce a (GeoTiff) raster mask from the polygons found in:
+<a href="http://openstreetmapdata.com/data/land-polygons">http://openstreetmapdata.com/data/land-polygons</a> (WGS84 Shapefile split-polygons)?</p>
+<p>I have tried variations such as:</p>
+<pre><code>gdal_rasterize -l land_polygons -init 0 -b 1 -burn 255 -of gtiff -ts 2000 1000 land_polygons.shp land_polygons.tif
+</code></pre>
+<p>... but all I get is a raster filled with 0.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-raster" href="/tags/raster/" rel="tag" title="see questions tagged 'raster'">raster</a>
+<a class="post-tag tag-link-polygons" href="/tags/polygons/" rel="tag" title="see questions tagged 'polygons'">polygons</a>
+<a class="post-tag tag-link-land-mask" href="/tags/land-mask/" rel="tag" title="see questions tagged 'land-mask'">land-mask</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>13 Nov '15, 19:59</strong>
+</p>
+<img alt="rosstrafford's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a08659a77aaa993318279ee48ee2ca67?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11683/rosstrafford">rosstrafford</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="rosstrafford has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-46571">
+</div>
+<div class="comment-tools" id="comment-tools-46571">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-46571-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/46571/how-can-i-convert-the-land-polygons-to-a-raster-land-mask?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/46571/how-can-i-convert-the-land-polygons-to-a-raster-land-mask?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/46571/how-can-i-convert-the-land-polygons-to-a-raster-land-mask?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/46571/how-can-i-convert-the-land-polygons-to-a-raster-land-mask?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="46574"></a>
+<div class="answer" id="answer-container-46574">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/46574/up/" id="post-46574-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-46574-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/46574/down/" id="post-46574-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I ran this with the simplified_land_polygons shapefile (no need to go super detailed if your output file is just 2k x 1k pixels):</p>
+<pre><code>gdal_rasterize -l simplified_land_polygons -burn 255 -of gtiff -ts 2000 1000 simplified_land_polygons.shp out.tiff
+</code></pre>
+<p>and it worked nicely. Note the omission of your "-b 1" which gave an error message for me.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/46574/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>13 Nov '15, 22:10</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-46574">
+<a name="46583"></a>
+<div class="comment" id="comment-46583">
+<div class="comment-score" id="post-46583-score">1</div>
+<div class="comment-text"><p>Thanks Frederik, I'll give that a try shortly.  Yes, I did have to get rid of the "-b 1" as well.</p>
+<p>This should get me somewhere for now.  However, I would like to do a bit better.</p>
+<p>It's likely that the "simplified" polygons are considerably lower resolution (only 23 MB) than the ones I was trying to use.  In the end, I want very detailed resolution - I will want to carve out tiles that are a few degrees wide, and ultimately want to get down below 100m resolution, so this dataset might not do the trick.</p>
+<p>I also see that the simplified polygons are delivered in Mercator rather that WGS84 (lat/lon).  I'd like to get as far north (and south) as I can, so the WGS84 sets would be preferable.  Anyway, there are 3 other datasets I could try, so I'll cross my fingers.</p>
+<p>I'll re-post back here to indicate which datasets work and don't work.</p></div>
+<div class="comment-info" id="comment-46583-info">
+<span class="comment-age">(14 Nov '15, 05:26)</span>
+<a class="comment-user userinfo" href="/users/11683/rosstrafford">rosstrafford</a>
+</div>
+</div>
+<a name="46597"></a>
+<div class="comment" id="comment-46597">
+<div class="comment-score" id="post-46597-score"></div>
+<div class="comment-text"><p>Hi Frederik.</p>
+<p>Using the simplified polygons also does NOT work for me.</p>
+<p>Maybe I should question my gdal/ogr library.  I am using 1.11.1 built from source on SuSE 12.2.  What version are you using?</p></div>
+<div class="comment-info" id="comment-46597-info">
+<span class="comment-age">(15 Nov '15, 15:34)</span>
+<a class="comment-user userinfo" href="/users/11683/rosstrafford">rosstrafford</a>
+</div>
+</div>
+<a name="46598"></a>
+<div class="comment" id="comment-46598">
+<div class="comment-score" id="post-46598-score"></div>
+<div class="comment-text"><p>1.10.1 on Ubuntu.</p></div>
+<div class="comment-info" id="comment-46598-info">
+<span class="comment-age">(15 Nov '15, 15:38)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="46621"></a>
+<div class="comment" id="comment-46621">
+<div class="comment-score" id="post-46621-score"></div>
+<div class="comment-text"><p>Do you have any other suggestions?</p>
+<p>What I am really shooting for is to use it as a mask for DEM topography and bathymetry (to display one or the other in any given pixel).  I need to get this big shapefile into 10 degree square tiles, and use these as a mask.  Keeping it as vector, may actually be better (to get the resolution I need with raster would be immensely huge for the whole world), but I think that testing "inside vs outside" for each polygon will be seriously costly.</p></div>
+<div class="comment-info" id="comment-46621-info">
+<span class="comment-age">(16 Nov '15, 17:38)</span>
+<a class="comment-user userinfo" href="/users/11683/rosstrafford">rosstrafford</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-46574">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-46574-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/46571/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="zFWIm1FiZam5qiQvl6gZx5fLianSh3LI"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,201 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/47080/areas-broken-on-all-overpass-servers">Areas broken on all overpass servers?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/47080/up/" id="post-47080-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-47080-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/47080/down/" id="post-47080-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/47080/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Ed Loach´s "Admin Boundary Analysis" service has not updated since 15 November. I contacted Ed about this and he says it´s being crippled at the moment by the "area update" issues in Overpass.</p>
+<p>According to the Platform Status page, all three overpass instances (France, Germany, Russia) seem to be having the same problem with updating areas.</p>
+<p>Does anyone know what is going on? Will this be fixed soon? Or will the change that caused the problem be backed out?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>09 Dec '15, 18:56</strong>
+</p>
+<img alt="csmale's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/81868786ff539d9a5b1f21ed57b6e13a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11526/csmale">csmale</a><br/>
+<span class="score" title="81 reputation points">81</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="csmale has one accepted answer">16%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/47080/">
+                edited
+                <strong>10 Dec '15, 10:32</strong>
+</a>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-47080">
+<a name="47089"></a>
+<div class="comment" id="comment-47089">
+<div class="comment-score" id="post-47089-score">2</div>
+<div class="comment-text"><p>As an aside, I used to download a geofabrik extract daily, then filter to just the boundary related stuff, but Overpass proved more efficient. I should perhaps switch to using a local database and processing the daily diff files, but haven't got around to it.</p></div>
+<div class="comment-info" id="comment-47089-info">
+<span class="comment-age">(10 Dec '15, 13:12)</span>
+<a class="comment-user userinfo" href="/users/339/edloach">EdLoach ♦</a>
+</div>
+</div>
+<a name="47102"></a>
+<div class="comment" id="comment-47102">
+<div class="comment-score" id="post-47102-score"></div>
+<div class="comment-text"><p>Platform status has been updated to suggest the German instance is OK now. I am still getting the same Gateway Timeout I've been getting since it last worked:
+wget -Ogreat_britain.osm "http://overpass-api.de/api/interpreter?data=[timeout:86400];(rel<a href="50.06419,-11.1621,59.04055,2.19727">"boundary"</a>;);( .<em>;way(r););out meta;"
+--2015-12-11 16:04:17--  <a href="http://overpass-api.de/api/interpreter?data=[timeout:86400];(rel">http://overpass-api.de/api/interpreter?data=[timeout:86400];(rel</a><a href="50.06419,-11.1621,59.04055,2.19727">boundary</a>;);(%20.</em>;way(r););out%20 meta;
+Resolving overpass-api.de... 46.4.41.83
+Connecting to overpass-api.de|46.4.41.83|:80... connected.
+HTTP request sent, awaiting response... 504 Gateway Timeout
+2015-12-11 16:04:33 ERROR 504: Gateway Timeout.</p></div>
+<div class="comment-info" id="comment-47102-info">
+<span class="comment-age">(11 Dec '15, 16:10)</span>
+<a class="comment-user userinfo" href="/users/339/edloach">EdLoach ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-47080">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-47080-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/47080/areas-broken-on-all-overpass-servers?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/47080/areas-broken-on-all-overpass-servers?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/47080/areas-broken-on-all-overpass-servers?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/47080/areas-broken-on-all-overpass-servers?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="47105"></a>
+<div class="answer" id="answer-container-47105">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/47105/up/" id="post-47105-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-47105-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/47105/down/" id="post-47105-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The issue <a href="http://help.openstreetmap.org/users/339/edloach"><a href="http://help.openstreetmap.org/users/339/edloach">@EdLoach</a></a> is facing is pretty much unrelated to the <em>area update</em> issue. In fact his query doesn't even use the word <code>area</code> in there, so there's nothing to worry about. It would have worked all the time.</p>
+<p>Now, the reason for the 504 Gateway issue is the <em>way</em> too large timeout value. I'd suggest to reduce that at least down to 3600 seconds or even lower. 24hours timeout is deemed to be a resource killer by Overpass API and the query get immediately canceled.</p>
+<p>Here's my log for the same query with 3600 seconds timeout - results returned back in 1 minute 30 seconds. </p>
+<pre><code>wget "http://overpass-api.de/api/interpreter?data=[timeout:3600];(rel["boundary"](50.06419,-11.1621,59.04055,2.19727););( ._;way(r););out meta;" -O res.osm
+--2015-12-11 17:11:28--  <a href="http://overpass-api.de/api/interpreter?data=[timeout:3600];(rel[boundary](50.06419,-11.1621,59.04055,2.19727););(%20._;way(r););out%20meta;">http://overpass-api.de/api/interpreter?data=[timeout:3600];(rel[boundary](50.06419,-11.1621,59.04055,2.19727););(%20._;way(r););out%20meta;</a>
+Resolving overpass-api.de (overpass-api.de)... 2a01:4f8:131:6109::2, 46.4.41.83
+Connecting to overpass-api.de (overpass-api.de)|2a01:4f8:131:6109::2|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/osm3s+xml]
+Saving to: 'res.osm'
+
+    [                              &lt;=&gt;                                             ] 326,493,532 28.3MB/s   in 8.3s
+
+2015-12-11 17:12:52 (37.6 MB/s) - 'res.osm' saved [326493532]
+</code></pre>
+<p>NB: The issue on the French server was reported some time back but I don't have an up to date status from <a href="http://help.openstreetmap.org/users/3436/sly">@sly</a>. The Russian server is facing some hard disk issues now and then. The issue on the German server was reported back in November, but I also don't have a feedback from Roland, why the update job stopped. Nevertheless, the area creation job was scheduled again on overpass-api.de, so you should get up-to-date areas now. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/47105/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>11 Dec '15, 17:17</strong>
+</p>
+<img alt="mmd's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/264d84ab05b942224b05960903eba7a7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8708/mmd">mmd</a><br/>
+<span class="score" title="5682 reputation points"><span class="">5.7k</span></span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="53 badges"><span class="silver">●</span><span class="badgecount">53</span></span><span title="88 badges"><span class="bronze">●</span><span class="badgecount">88</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="mmd has 44 accepted answers">37%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/47105/">
+                edited
+                <strong>11 Dec '15, 18:09</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-47105">
+<a name="47117"></a>
+<div class="comment" id="comment-47117">
+<div class="comment-score" id="post-47117-score"></div>
+<div class="comment-text"><p>Thank you! Scheduled task updated and due to run in less than an hour from now. I presume I got 86400 from some example query somewhere and as noted above it was working...</p></div>
+<div class="comment-info" id="comment-47117-info">
+<span class="comment-age">(12 Dec '15, 09:33)</span>
+<a class="comment-user userinfo" href="/users/339/edloach">EdLoach ♦</a>
+</div>
+</div>
+<a name="47263"></a>
+<div class="comment" id="comment-47263">
+<div class="comment-score" id="post-47263-score"></div>
+<div class="comment-text"><p>Area creation on overpass-api.de seems to have stopped again 4 days ago (see the yellow background in overpass turbo on the bottom right for queries involving areas).</p>
+<p>Unfortunately I don't have any more details. Roland is the only person having access to production, afaik.</p></div>
+<div class="comment-info" id="comment-47263-info">
+<span class="comment-age">(22 Dec '15, 10:50)</span>
+<a class="comment-user userinfo" href="/users/8708/mmd">mmd</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-47105">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-47105-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/47080/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="mW70nzf6BwSGUoRCItwS6rxI47EhKRfY"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

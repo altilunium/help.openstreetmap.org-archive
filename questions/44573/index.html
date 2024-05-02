@@ -1,0 +1,267 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/44573/how-to-select-multiple-ways-by-id-using-overpass-api">How to select multiple ways by id using Overpass API?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44573/up/" id="post-44573-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44573-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/44573/down/" id="post-44573-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/44573/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>How can I select multiple ways by their OSM id using the overpass API?</p>
+<pre><code>[out:json];way(104178011);way(18916837);out tags;
+</code></pre>
+<p>The above query only includes the data about the second way. <a href="http://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%3Bway%28104178011%29%3Bway%2818916837%29%3Bout%20tags%3B%0A">Link.</a></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpassapi" href="/tags/overpassapi/" rel="tag" title="see questions tagged 'overpassapi'">overpassapi</a>
+<a class="post-tag tag-link-overpass-ql" href="/tags/overpass-ql/" rel="tag" title="see questions tagged 'overpass-ql'">overpass-ql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>31 Jul '15, 16:07</strong>
+</p>
+<img alt="CrazyDave2345's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/887e8dcd0dc913a9516e6ad0f5ab5a56?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11047/crazydave2345">CrazyDave2345</a><br/>
+<span class="score" title="55 reputation points">55</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="CrazyDave2345 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44573">
+</div>
+<div class="comment-tools" id="comment-tools-44573">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44573-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/44573/how-to-select-multiple-ways-by-id-using-overpass-api?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/44573/how-to-select-multiple-ways-by-id-using-overpass-api?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/44573/how-to-select-multiple-ways-by-id-using-overpass-api?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/44573/how-to-select-multiple-ways-by-id-using-overpass-api?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="64860"></a>
+<div class="answer" id="answer-container-64860">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/64860/up/" id="post-64860-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-64860-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/64860/down/" id="post-64860-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>For those arriving here via an internet search, this is a quicker way to do it now:</p>
+<pre><code> [out:json];way(id:104178011,18916837);out tags;
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/64860/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Jul '18, 14:16</strong>
+</p>
+<img alt="DaveF's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c9c8b421ad22f51ddd62f23413717036?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1532/davef">DaveF</a><br/>
+<span class="score" title="3264 reputation points"><span class="">3.3k</span></span><span title="84 badges"><span class="badge1">●</span><span class="badgecount">84</span></span><span title="98 badges"><span class="silver">●</span><span class="badgecount">98</span></span><span title="133 badges"><span class="bronze">●</span><span class="badgecount">133</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="DaveF has 17 accepted answers">16%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/64860/">
+                edited
+                <strong>10 Apr '23, 11:48</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-64860">
+</div>
+<div class="comment-tools" id="comment-tools-64860">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-64860-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="44574"></a>
+<div class="answer answered-by-owner" id="answer-container-44574">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/44574/up/" id="post-44574-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-44574-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/44574/down/" id="post-44574-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Found it for myself this way:
+    [out:json];way(104178011);out tags;way(18916837);out tags;</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/44574/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>31 Jul '15, 16:36</strong>
+</p>
+<img alt="CrazyDave2345's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/887e8dcd0dc913a9516e6ad0f5ab5a56?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11047/crazydave2345">CrazyDave2345</a><br/>
+<span class="score" title="55 reputation points">55</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="CrazyDave2345 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-44574">
+<a name="44575"></a>
+<div class="comment" id="comment-44575">
+<div class="comment-score" id="post-44575-score">2</div>
+<div class="comment-text"><p>Another solution is to use a union, using parentheses: </p>
+<p>(way(104178011);way(18916837););</p>
+<p>Not important for simple output, but unions are useful for more complicated scripts.</p></div>
+<div class="comment-info" id="comment-44575-info">
+<span class="comment-age">(31 Jul '15, 17:59)</span>
+<a class="comment-user userinfo" href="/users/10973/maxerickson">maxerickson</a>
+</div>
+</div>
+<a name="44576"></a>
+<div class="comment" id="comment-44576">
+<div class="comment-score" id="post-44576-score"></div>
+<div class="comment-text"><p>@macerickson Yeah its more formal and stuff.</p></div>
+<div class="comment-info" id="comment-44576-info">
+<span class="comment-age">(31 Jul '15, 22:16)</span>
+<a class="comment-user userinfo" href="/users/11047/crazydave2345">CrazyDave2345</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-44574">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-44574-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="87091"></a>
+<div class="answer" id="answer-container-87091">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/87091/up/" id="post-87091-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-87091-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/87091/down/" id="post-87091-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>To get the result shown in UI, run this query:</p>
+<pre><code>[out:json];
+way(id:104178011,18916837);
+out body;
+&gt;;
+out skel qt;
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/87091/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>10 Apr '23, 08:03</strong>
+</p>
+<img alt="Mappist's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c28ac242106e3ef8aaa62f576fe2fbf0?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11832/mappist">Mappist</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Mappist has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/87091/">
+                edited
+                <strong>10 Apr '23, 08:04</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-87091">
+</div>
+<div class="comment-tools" id="comment-tools-87091">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-87091-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/44573/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="ZjzfOwjKUrXIdZjL8XR8ak9rkTN4UR8V"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,184 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/45930/osmosis-import-duplicate-key-value-violates-unique-constraint">osmosis import : duplicate key value violates unique constraint</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/45930/up/" id="post-45930-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-45930-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/45930/down/" id="post-45930-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/45930/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello everyone,</p>
+<p>I had successfully installed openstreetmap-website on Ubuntu 14.04.
+Now I'am trying to import a pbf file into the "openstreetmap" database using the following command:</p>
+<p><code>osmosis --read-pbf /home/osm-data/my_citie.osm.pbf   --write-apidb host="localhost" database="openstreetmap"   user="postgres" password="*********" validateSchemaVersion="no</code></p>
+<p>but I still get this error:</p>
+<pre><code>org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "current_nodes_pkey1"
+</code></pre>
+<p>Note: Osmosis Version is 0.40.1<br/>
+I installed it with "sudo apt-get install osmosis"<br/>
+PBF file downloded from Mapzen Metro Extracts<br/>
+PostgreSQL version is 9.3</p>
+<p>I need your help please</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Oct '15, 09:04</strong>
+</p>
+<img alt="AYARI's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7355dafb903301c43c303a104c75f265?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11584/ayari">AYARI</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="AYARI has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/45930/">
+                edited
+                <strong>16 Oct '15, 09:15</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-45930">
+<a name="45936"></a>
+<div class="comment not_top_scorer" id="comment-45936">
+<div class="comment-score" id="post-45936-score"></div>
+<div class="comment-text"><p>Does the full error message state which key is duplicated?</p></div>
+<div class="comment-info" id="comment-45936-info">
+<span class="comment-age">(16 Oct '15, 09:59)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="45937"></a>
+<div class="comment not_top_scorer" id="comment-45937">
+<div class="comment-score" id="post-45937-score"></div>
+<div class="comment-text"><p>Yes, this is the full message :</p>
+<pre><code>Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "nodes_pkey" Détail : Key (node_id, version)=(27564968, 67) already exists.
+</code></pre></div>
+<div class="comment-info" id="comment-45937-info">
+<span class="comment-age">(16 Oct '15, 10:09)</span>
+<a class="comment-user userinfo" href="/users/11584/ayari">AYARI</a>
+</div>
+</div>
+<a name="45939"></a>
+<div class="comment" id="comment-45939">
+<div class="comment-score" id="post-45939-score">1</div>
+<div class="comment-text"><p>Maybe the extract is broken, you could try a different <a href="https://wiki.openstreetmap.org/wiki/Planet.osm#Country_and_area_extracts">extract</a>. And/or a newer osmosis version (the latest version is 0.44.1) but a duplicated key or a duplicated node sounds weird.</p></div>
+<div class="comment-info" id="comment-45939-info">
+<span class="comment-age">(16 Oct '15, 10:36)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="45940"></a>
+<div class="comment not_top_scorer" id="comment-45940">
+<div class="comment-score" id="post-45940-score"></div>
+<div class="comment-text"><p>I tried with another extract from geofabrik, but I always get the same error.</p>
+<p>How can I install the latest osmosis version ?? apt-get always install 0.40.1</p></div>
+<div class="comment-info" id="comment-45940-info">
+<span class="comment-age">(16 Oct '15, 11:16)</span>
+<a class="comment-user userinfo" href="/users/11584/ayari">AYARI</a>
+</div>
+</div>
+<a name="45941"></a>
+<div class="comment" id="comment-45941">
+<div class="comment-score" id="post-45941-score">1</div>
+<div class="comment-text"><p>You have to <a href="https://wiki.openstreetmap.org/wiki/Osmosis">download</a> it yourself, unpack it and run it via <code>./osmosis-latest/bin/osmosis</code> (or whatever path you extracted it to).</p></div>
+<div class="comment-info" id="comment-45941-info">
+<span class="comment-age">(16 Oct '15, 11:28)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="45942"></a>
+<div class="comment not_top_scorer" id="comment-45942">
+<div class="comment-score" id="post-45942-score"></div>
+<div class="comment-text"><p>As an aside, it might be worth adding (or asking in another question) what you're planning to use a copy of the OSM website with Tunis data in it for - there might be an easier way to achieve what you're trying to do by some other method.</p></div>
+<div class="comment-info" id="comment-45942-info">
+<span class="comment-age">(16 Oct '15, 11:45)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="45952"></a>
+<div class="comment" id="comment-45952">
+<div class="comment-score" id="post-45952-score">2</div>
+<div class="comment-text"><p>finally solved</p>
+<p>I used the latest version of osmosis (0.44.1) and a ".bz2" osm file that I downloaded from geofabrik, now the import goes without any error.</p>
+<p>But I still do not understand the issue</p></div>
+<div class="comment-info" id="comment-45952-info">
+<span class="comment-age">(16 Oct '15, 14:11)</span>
+<a class="comment-user userinfo" href="/users/11584/ayari">AYARI</a>
+</div>
+</div>
+<a name="45953"></a>
+<div class="comment" id="comment-45953">
+<div class="comment-score" id="post-45953-score">1</div>
+<div class="comment-text"><p>SomeoneElse : </p>
+<p>I'am using Tunis data just for test, but I'am working on the whole planet database for map rendering, geocoding and routing..</p></div>
+<div class="comment-info" id="comment-45953-info">
+<span class="comment-age">(16 Oct '15, 14:23)</span>
+<a class="comment-user userinfo" href="/users/11584/ayari">AYARI</a>
+</div>
+</div>
+<a name="45956"></a>
+<div class="comment not_top_scorer" id="comment-45956">
+<div class="comment-score" id="post-45956-score"></div>
+<div class="comment-text"><p>If you're interested in rendering, geocoding and routing, then an APIDB may not be the way to go.  For rendering in the same way as osm.org, see <a href="https://switch2osm.org/serving-tiles/">https://switch2osm.org/serving-tiles/</a> (though other renderers are available), for geocoding see <a href="http://wiki.openstreetmap.org/wiki/Nominatim/Installation">http://wiki.openstreetmap.org/wiki/Nominatim/Installation</a> (again, other geocoders exist), for routing perhaps some of the examples from <a href="http://wiki.openstreetmap.org/wiki/Routing#Developers">http://wiki.openstreetmap.org/wiki/Routing#Developers</a> .</p></div>
+<div class="comment-info" id="comment-45956-info">
+<span class="comment-age">(16 Oct '15, 14:41)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="45957"></a>
+<div class="comment" id="comment-45957">
+<div class="comment-score" id="post-45957-score">3</div>
+<div class="comment-text"><p>According to <a href="https://github.com/openstreetmap/osmosis/blob/master/package/changes.txt">changes.txt</a> version 0.44.1 fixed an issue with "duplicate way nodes in pgsnapshot module" which could be the reason for your error. Or one of the many other fixes between version 0.40.1 and 0.44.1.</p></div>
+<div class="comment-info" id="comment-45957-info">
+<span class="comment-age">(16 Oct '15, 16:20)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-45930">
+<span class="comments-showing">
+            showing 5 of 10
+        </span>
+<a class="show-all-comments-link" href="#">show 5 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-45930-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/45930/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="jOx9TQEl1GTyt2BBhchLhAoxd5b780xh"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

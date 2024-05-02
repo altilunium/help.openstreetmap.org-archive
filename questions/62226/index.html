@@ -1,0 +1,151 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/62226/no-street-name-nominatim">No Street Name - Nominatim</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/62226/up/" id="post-62226-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-62226-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/62226/down/" id="post-62226-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/62226/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Ive setup my own nominatim instance with data from here: <a href="https://download.geofabrik.de/europe/great-britain.html">https://download.geofabrik.de/europe/great-britain.html</a></p>
+<p>However when i run a reverse geocode, i dont get any street names as below </p>
+<pre><code>{"place_id":"2192355","licence":"Data © OpenStreetMap contributors, ODbL 1.0. https:\/\/osm.org\/copyright","osm_type":"way","osm_id":"48368272","lat":"51.3971413","lon":"0.458866249992111","display_name":"Knights Place Estate, Strood, Medway, South East, England, Groussbritannien an Nordirland","address":{"residential":"Knights Place Estate","town":"Strood","county":"Medway","state_district":"South East","state":"England","country":"Groussbritannien an Nordirland","country_code":"gb"},"boundingbox":["51.3957208","51.3985316","0.4521022","0.4643315"]}
+</code></pre>
+<p>When i run the same query at <a href="http://nominatim.openstreetmap.org">http://nominatim.openstreetmap.org</a> </p>
+<p>and i get the below 
+    {"place_id":"82606933","licence":"Data © OpenStreetMap contributors, ODbL 1.0. https:\/\/osm.org\/copyright","osm_type":"way","osm_id":"48368273","lat":"51.3967521","lon":"0.4586866","display_name":"Swale Road, Knights Place Estate, Strood, Medway, South East, England, ME2 2TT, United Kingdom","address":{"road":"Swale Road","residential":"Knights Place Estate","town":"Strood","county":"Medway","state_district":"South East","state":"England","postcode":"ME2 2TT","country":"United Kingdom","country_code":"gb"},"boundingbox":["51.3967496","51.3977321","0.4575055","0.4592328"]}</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-reversegeocoding" href="/tags/reversegeocoding/" rel="tag" title="see questions tagged 'reversegeocoding'">reversegeocoding</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>20 Feb '18, 19:54</strong>
+</p>
+<img alt="Teshiburu's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/5eb51b2fbf0f82509523633744b21186?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14778/teshiburu">Teshiburu</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Teshiburu has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-62226">
+<a name="62229"></a>
+<div class="comment" id="comment-62229">
+<div class="comment-score" id="post-62229-score"></div>
+<div class="comment-text"><p>Can you post the full URL with all parameters (OK, to remove the domain name)? Which version of Nominatim are you running? When was the data last imported/updated?</p></div>
+<div class="comment-info" id="comment-62229-info">
+<span class="comment-age">(20 Feb '18, 21:14)</span>
+<a class="comment-user userinfo" href="/users/150/mtmail">mtmail</a>
+</div>
+</div>
+<a name="62233"></a>
+<div class="comment" id="comment-62233">
+<div class="comment-score" id="post-62233-score"></div>
+<div class="comment-text"><p>Oh wait, you say you never get any street names? That's a first. Do you get street names when you forward geocode?</p></div>
+<div class="comment-info" id="comment-62233-info">
+<span class="comment-age">(20 Feb '18, 23:33)</span>
+<a class="comment-user userinfo" href="/users/150/mtmail">mtmail</a>
+</div>
+</div>
+<a name="62236"></a>
+<div class="comment" id="comment-62236">
+<div class="comment-score" id="post-62236-score"></div>
+<div class="comment-text"><p>Forward geocode? Sorry fairly new to all of this!</p>
+<p>I don't have the UK postcodes or Wikipedia data </p></div>
+<div class="comment-info" id="comment-62236-info">
+<span class="comment-age">(21 Feb '18, 06:59)</span>
+<a class="comment-user userinfo" href="/users/14778/teshiburu">Teshiburu</a>
+</div>
+</div>
+<a name="62242"></a>
+<div class="comment" id="comment-62242">
+<div class="comment-score" id="post-62242-score"></div>
+<div class="comment-text"><p>Just managed to get back to the machine in question, and it appears that it is still doing some setup tasks? </p>
+<p>Done 1605812 in 46677 @ 34.402641 per second - Rank 26 ETA (seconds): 4190.986328
+  Done 1605880 in 46678 @ 34.403358 per second - Rank 26 ETA (seconds): 4188.922363</p>
+<p>Got lots of lines of this, guess ill have to wait 5000 seconds :P</p></div>
+<div class="comment-info" id="comment-62242-info">
+<span class="comment-age">(21 Feb '18, 08:25)</span>
+<a class="comment-user userinfo" href="/users/14778/teshiburu">Teshiburu</a>
+</div>
+</div>
+<a name="62243"></a>
+<div class="comment" id="comment-62243">
+<div class="comment-score" id="post-62243-score"></div>
+<div class="comment-text"><p>Longer. After Rank 26 there'll be Rank 30 which takes twice as long alone. Then follows the search index generation.</p></div>
+<div class="comment-info" id="comment-62243-info">
+<span class="comment-age">(21 Feb '18, 10:30)</span>
+<a class="comment-user userinfo" href="/users/150/mtmail">mtmail</a>
+</div>
+</div>
+<a name="62249"></a>
+<div class="comment not_top_scorer" id="comment-62249">
+<div class="comment-score" id="post-62249-score"></div>
+<div class="comment-text"><p>I can't help you with Nominatim, but I'm interested as I grew up on that estate and mapped it eight years ago!</p></div>
+<div class="comment-info" id="comment-62249-info">
+<span class="comment-age">(21 Feb '18, 13:33)</span>
+<a class="comment-user userinfo" href="/users/4383/sdoerr">sdoerr</a>
+</div>
+</div>
+<a name="62253"></a>
+<div class="comment not_top_scorer" id="comment-62253">
+<div class="comment-score" id="post-62253-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/4383/sdoerr">@sdoerr</a> - which estate?</p></div>
+<div class="comment-info" id="comment-62253-info">
+<span class="comment-age">(21 Feb '18, 13:58)</span>
+<a class="comment-user userinfo" href="/users/14778/teshiburu">Teshiburu</a>
+</div>
+</div>
+<a name="62256"></a>
+<div class="comment not_top_scorer" id="comment-62256">
+<div class="comment-score" id="post-62256-score"></div>
+<div class="comment-text"><p>Knights Place</p></div>
+<div class="comment-info" id="comment-62256-info">
+<span class="comment-age">(21 Feb '18, 15:41)</span>
+<a class="comment-user userinfo" href="/users/4383/sdoerr">sdoerr</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-62226">
+<span class="comments-showing">
+            showing 5 of 8
+        </span>
+<a class="show-all-comments-link" href="#">show 3 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-62226-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/62226/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Teyf0ckzLUpubSE4jFcad5LH8QaDPaCX"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

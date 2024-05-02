@@ -1,0 +1,174 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/31195/embedded-map-in-modal-is-fully-zoomed-out">Embedded map in modal is fully zoomed out.</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/31195/up/" id="post-31195-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-31195-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/31195/down/" id="post-31195-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/31195/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm not sure how to get the following behavior to work. I want to render an iframe embed in a modal and show the map when a modal comes up. </p>
+<p>Whenever I try to add the iframe to a div that is <code>display: none</code> and then brought into view the map is all the way zoomed out. I have no problem if I use the same code and remove the <code>display: none</code> div from around it.</p>
+<p>Any ideas on how to fix that?</p>
+<p>Thanks for this awesome resource. Truly awesome.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-rendering" href="/tags/rendering/" rel="tag" title="see questions tagged 'rendering'">rendering</a>
+<a class="post-tag tag-link-embed" href="/tags/embed/" rel="tag" title="see questions tagged 'embed'">embed</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>02 Mar '14, 23:33</strong>
+</p>
+<img alt="cyro's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/cb1af1fae773efa19477c50827ebe998?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8436/cyro">cyro</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="cyro has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-31195">
+<a name="31197"></a>
+<div class="comment" id="comment-31197">
+<div class="comment-score" id="post-31197-score"></div>
+<div class="comment-text"><p>Is this related to OpenStreetMap in some way?</p>
+<p>Most people render some tiles from somewhere using a Javascript library such as Leaflet or Openlayers - are you trying to do that, or something else?</p></div>
+<div class="comment-info" id="comment-31197-info">
+<span class="comment-age">(02 Mar '14, 23:57)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="31198"></a>
+<div class="comment" id="comment-31198">
+<div class="comment-score" id="post-31198-score">2</div>
+<div class="comment-text"><p>Here is an example of what I'm trying to embed <code>&lt;iframe frameborder="0" src="http://www.openstreetmap.org/export/embed.html?bbox=-122.480427%2C37.745703%2C-122.472427%2C37.753703&amp;amp;layer=mapnik&amp;amp;marker=37.749703%2C-122.476427" style="border: 1px solid black"&gt;&lt;/iframe&gt;</code></p></div>
+<div class="comment-info" id="comment-31198-info">
+<span class="comment-age">(03 Mar '14, 00:12)</span>
+<a class="comment-user userinfo" href="/users/8436/cyro">cyro</a>
+</div>
+</div>
+<a name="33133"></a>
+<div class="comment" id="comment-33133">
+<div class="comment-score" id="post-33133-score">1</div>
+<div class="comment-text"><p>I experienced the same, trying to put the map in a Bootstrap 3 modal dialog. The map is loaded, but fully zoomed out.</p>
+<p>Placed outside of the modal, the map is rendered correctly.</p></div>
+<div class="comment-info" id="comment-33133-info">
+<span class="comment-age">(13 May '14, 11:54)</span>
+<a class="comment-user userinfo" href="/users/8844/travellersam">travellersam</a>
+</div>
+</div>
+<a name="41775"></a>
+<div class="comment" id="comment-41775">
+<div class="comment-score" id="post-41775-score"></div>
+<div class="comment-text"><p>Subscribing to follow this thread. Same issue here. Manually reloading the frame fixes it (as does leaving the map visible to begin with). Neither of these is acceptable in my application. I've attempted to reload the iframe automatically from the parent on open but this isn't working out well. My next attempt will be to create the iframe visible but off the page and move it back onscreen when "opened". If that doesn't work I'll try a lightbox or something but that really messes up the UI I'm trying to achieve.</p></div>
+<div class="comment-info" id="comment-41775-info">
+<span class="comment-age">(18 Mar '15, 00:56)</span>
+<a class="comment-user userinfo" href="/users/10686/macgirvin">macgirvin</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-31195">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-31195-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/31195/embedded-map-in-modal-is-fully-zoomed-out?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/31195/embedded-map-in-modal-is-fully-zoomed-out?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/31195/embedded-map-in-modal-is-fully-zoomed-out?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/31195/embedded-map-in-modal-is-fully-zoomed-out?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="41776"></a>
+<div class="answer" id="answer-container-41776">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/41776/up/" id="post-41776-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-41776-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/41776/down/" id="post-41776-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>My "next attempt" (see my previous comment) was successful. I created the iframe inside a div with position: absolute and left and top both set to -9999 but with display: block. So it's technically "visible" but you can't see it. A button click event switches it to relative and auto (putting it back into its normal place on the page - one can style this to simulate a modal bootstrap element). Works well. The tiling engine seems to have issues with being initialised inside a display: none container. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/41776/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>18 Mar '15, 03:28</strong>
+</p>
+<img alt="macgirvin's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/74685c9f342f159611317a68c2655218?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10686/macgirvin">macgirvin</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="macgirvin has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-41776">
+<a name="41779"></a>
+<div class="comment" id="comment-41779">
+<div class="comment-score" id="post-41779-score">1</div>
+<div class="comment-text"><p>Yes, Leaflet (the map display library used by osm.org) doesn't like being initialised on a hidden div. See for example <a href="https://github.com/tombatossals/angular-leaflet-directive/issues/168">https://github.com/tombatossals/angular-leaflet-directive/issues/168</a> .</p></div>
+<div class="comment-info" id="comment-41779-info">
+<span class="comment-age">(18 Mar '15, 12:29)</span>
+<a class="comment-user userinfo" href="/users/5/richard">Richard ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-41776">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-41776-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/31195/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Fx7z49sEzoxMoV8IovPFGBlHbp1lXM1k"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,136 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/53986/best-programmatic-solution-to-push-changesets-from-local-postgis-osm-replicant">Best programmatic solution to push changesets from local PostGIS OSM replicant</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/53986/up/" id="post-53986-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-53986-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/53986/down/" id="post-53986-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/53986/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm setting up a server to replicate a small subset of the OSM database (amenities in the United Kingdom tagged as "place of worship") which will be stored on a cartoDB instance (PostGIS database) and updated on an hourly basis. From what I can tell current best practice for this is to use osmosis to filter out a subset of the planet.osm databse. This all seems straight-forward and well documented, and this brings me to my question. The current data in OSM is pretty messy and incomplete, and I have already generated a nearly complete set of data. So I'd like to merge in a bulk changeset on these POIs (around 25,000 points) to OSM and then continue to push smaller changesets as metadata is updated on the local server periodically as well. Can someone recommend the best practice for push rather than pull interaction with OSM?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+<a class="post-tag tag-link-poi" href="/tags/poi/" rel="tag" title="see questions tagged 'poi'">poi</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>11 Jan '17, 18:08</strong>
+</p>
+<img alt="kidwellj's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/802a09b11098c939c866273db5352db9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/13182/kidwellj">kidwellj</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="kidwellj has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-53986">
+</div>
+<div class="comment-tools" id="comment-tools-53986">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-53986-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/53986/best-programmatic-solution-to-push-changesets-from-local-postgis-osm-replicant?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/53986/best-programmatic-solution-to-push-changesets-from-local-postgis-osm-replicant?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/53986/best-programmatic-solution-to-push-changesets-from-local-postgis-osm-replicant?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/53986/best-programmatic-solution-to-push-changesets-from-local-postgis-osm-replicant?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="53987"></a>
+<div class="answer accepted-answer" id="answer-container-53987">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/53987/up/" id="post-53987-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-53987-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/53987/down/" id="post-53987-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/53987/" rel="nofollow" title="kidwellj has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>JOSM has the option of reading shape files and converting them to OSM data, and there's also a number of shp2osm-style programs around, but none of these techniques actually allows updating existing objects. Doing so will require, among other things, conflict resolution for cases where the object has been edited in the mean time. You might want to check out the codebase of "POSM" here <a href="https://github.com/AmericanRedCross/posm">https://github.com/AmericanRedCross/posm</a> which has the aim of allowing offline edits and loading them into OSM later; perhaps there's something you can re-use.</p>
+<p>Having said that: You write that you have "generated" a nearly complete set of data. If this involves (a) the automatic conversion/use of third-party data sources and/or (b) the query-based or rule-based editing of OSM objects (e.g. search+replace operations on names, geometric operations like merging tags from nodes to ways or vice versa, removal of duplicates, etc.etc.), then you must follow the appropriate policies for imports and/or mechanical edits. The most important point of both these policies is that you must discuss your import/edit with the community before you act, and you must explain what rules you've applied to what data. If you simply stuff the results of some computation into OSM then your edits will be reverted. The same is true if you plan to continually apply automatic edits - seek community agreement before you act. The reason we have these policies is that a lot can go wrong, even if people think they know what they're doing. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/53987/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>11 Jan '17, 18:56</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-53987">
+<a name="53989"></a>
+<div class="comment" id="comment-53989">
+<div class="comment-score" id="post-53989-score"></div>
+<div class="comment-text"><p>Thanks for pointing this out. I've been reading the policy (<a href="http://wiki.openstreetmap.org/wiki/Import/Guidelines)">http://wiki.openstreetmap.org/wiki/Import/Guidelines)</a> in-depth and plan definitely to work through the human/consensus aspect before flipping the switch. I've already begun conversations regarding tagging etc. and plan to get input and consensus along the way, with a wiki page for the import process in draft. Just out of curiosity, have you worked with osmsync (<a href="http://wiki.openstreetmap.org/wiki/Osmsync)?">http://wiki.openstreetmap.org/wiki/Osmsync)?</a> And hadn't thought of POSM. I'll add that to my list!</p></div>
+<div class="comment-info" id="comment-53989-info">
+<span class="comment-age">(11 Jan '17, 19:20)</span>
+<a class="comment-user userinfo" href="/users/13182/kidwellj">kidwellj</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-53987">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-53987-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/53986/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="CrQUkSgjLpgtqdAJ9Nxjb737HNSqk611"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

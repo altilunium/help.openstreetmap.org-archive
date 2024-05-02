@@ -1,0 +1,140 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/62517/problem-installing-umap-locally-and-problem-saving-pois-probably-connected">problem installing uMap locally and problem saving POIs (probably connected)</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/62517/up/" id="post-62517-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-62517-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/62517/down/" id="post-62517-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/62517/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>So I managed to set up both an osm tile server (which runs like a charm thanks to an exceptionally good tutorial on how to set it up) and uMAP locally and it mostly works (completely without internet access, just like it wanted it), but I experience two issues (which may or may not be connected - as I understand really VERY little of how Linux and all of this works behind the scenes). I can get things running with the help of a good tutorial, but I'm totally lost when something goes wrong. </p>
+<p>Problem is: My tiles load in the background, I can access the uMAP-GUI, create a new map, even create POIs and everything - but I can't save my POIs. </p>
+<p>However, I already had an issue during installation (I followed this guide: <a href="https://umap-project.readthedocs.io/en/latest/install/):">https://umap-project.readthedocs.io/en/latest/install/):</a></p>
+<p>"umap collectstatic" doesn't work and gives me this error
+OSError: [Errno 2] No such file or directory: '/home/ybon/Code/js/Leaflet.Storage</p>
+<p>I don't know how important this is (and what collectstatic actually does...)- I was able to continue with my installation normally and still able to start my server. I tried so many things that I'm not sure if this was the first error message or not (I think there was something else about a directory missing before that and I created one by hand but not sure)</p>
+<p>No idea where the file/directory is supposed to be coming from and why it is not there /where and when it should have been created and what else I can do. I was supposed to configure a couple of paths in a local.py - file but this one was not among them. I was supposed to change these paths (and created the folders respectively)</p>
+<h1>For static deployment</h1>
+<p>STATIC_ROOT = '/home/fayyy/umap/var/static'</p>
+<h1>For users' statics (geojson mainly)</h1>
+<p>MEDIA_ROOT = '/home/fayyy/umap/var/data'</p>
+<p>That was during installation.</p>
+<p>Now, when I try to save a POI I get "Problem in the response" and this error</p>
+<p>OSError: [Errno 13] Permission denied: '/home/ybon/.virtualenvs/umap/var/uploads</p>
+<p>Problem is, that this folder (probably?) doesn't even exist and I don't know WHERE I even should put it (or look for it to change its permissions)(since this is in a virtual environment as suggested in the installation guide).
+There is no folder "ybon" anywhere anyway. I could create one but I guess that's not the way. </p>
+<p>Can somebody please help me ? I've been trying to find a solution for hours. For someone experienced with Linux and all these shell commands this is probably crystal clear and super easy, but I absolutely have no clue what's going on...</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-umap" href="/tags/umap/" rel="tag" title="see questions tagged 'umap'">umap</a>
+<a class="post-tag tag-link-installation" href="/tags/installation/" rel="tag" title="see questions tagged 'installation'">installation</a>
+<a class="post-tag tag-link-linux" href="/tags/linux/" rel="tag" title="see questions tagged 'linux'">linux</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>05 Mar '18, 18:31</strong>
+</p>
+<img alt="fayyyyyy's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/4a2043cccc6b63fd0449319af86e560e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14668/fayyyyyy">fayyyyyy</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="fayyyyyy has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-62517">
+</div>
+<div class="comment-tools" id="comment-tools-62517">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-62517-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/62517/problem-installing-umap-locally-and-problem-saving-pois-probably-connected?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/62517/problem-installing-umap-locally-and-problem-saving-pois-probably-connected?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/62517/problem-installing-umap-locally-and-problem-saving-pois-probably-connected?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/62517/problem-installing-umap-locally-and-problem-saving-pois-probably-connected?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="65583"></a>
+<div class="answer" id="answer-container-65583">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/65583/up/" id="post-65583-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-65583-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/65583/down/" id="post-65583-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Geolocation error: position unavailable. I live in San Juan PR</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/65583/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>27 Aug '18, 17:47</strong>
+</p>
+<img alt="jrvelezb's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f4f9e29920b41b112fecf3c42321fbd3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15591/jrvelezb">jrvelezb</a><br/>
+<span class="score" title="1 reputation points">1</span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="jrvelezb has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-65583">
+</div>
+<div class="comment-tools" id="comment-tools-65583">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-65583-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/62517/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="ZdSOtUj2VHotoSAuj61mm4rjoJ9pREDS"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,117 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/49958/osmosis-replication">Osmosis Replication</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/49958/up/" id="post-49958-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-49958-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/49958/down/" id="post-49958-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/49958/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I've managed to setup both locally tile_server and API on rails-port. Their dbs are populated with local copy of maps.
+Im able to preview tiles and download rawdata from API using JOSM.
+When im uploading changes back to API server i cannot see the changes on tiles, which is ok because they have seperate databases.</p>
+<p>I assume replication is needed.</p>
+<p>I've gone through <a href="http://wiki.openstreetmap.org/wiki/Osmosis/Replication">http://wiki.openstreetmap.org/wiki/Osmosis/Replication</a> and <a href="http://wiki.openstreetmap.org/wiki/Osmosis/Detailed_Usage_0.43">http://wiki.openstreetmap.org/wiki/Osmosis/Detailed_Usage_0.43</a></p>
+<p>Right now im a bit stuck because, when i tried to use</p>
+<p>osmosis --replicate-apidb</p>
+<p>I ended up with new folder called replicate which has state.txt replicate.lock files and 000 folder and inside this folder i have 001.state.txt and 001.osc.gz</p>
+<p>but it appears that there is no data, like if there were no changes at all.</p>
+<p>i've also tried osmosis -q --replicate-apidb iterations=0 minInterval=10000 maxInterval=60000 authFile=dbAuth.txt --send-replication-sequence port=8081 --write-replication workingDirectory=data</p>
+<p>but here i end up with error message: Task type write-replication doesn't exist.</p>
+<p>It seems that im missing some steps but i have no clue where to look.</p>
+<p>Right now i want just to update my tile_server db with my recent change, but when this works i would like to set osmosis to do it automatically every hour or minute, so that i dont bother anymore with console.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-replication" href="/tags/replication/" rel="tag" title="see questions tagged 'replication'">replication</a>
+<a class="post-tag tag-link-api" href="/tags/api/" rel="tag" title="see questions tagged 'api'">api</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+<a class="post-tag tag-link-railsport" href="/tags/railsport/" rel="tag" title="see questions tagged 'railsport'">railsport</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>01 Jun '16, 15:44</strong>
+</p>
+<img alt="jorax's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/016ab1463a1f9187246270165f1a0a25?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11611/jorax">jorax</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="jorax has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-49958">
+<a name="49971"></a>
+<div class="comment" id="comment-49971">
+<div class="comment-score" id="post-49971-score"></div>
+<div class="comment-text"><p>Today i tried to make one-off data migration.</p>
+<p>osmosis --read-apidb-change authFile=Auth.txt validateSchemaVersion=no intervalBegin="2016-05-29_00:00:00" --write-xml-change</p>
+<p>THis produced change.osc with the data i want so big success</p>
+<p>Now something is wrong with db:</p>
+<p>osmosis --read-xml-change --write-pgsql-change authfile=Auth.txt validateSchemaVersion=no</p>
+<p>this results in error:</p>
+<p>org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [SELECT id, name FROM users WHERE id = ?]; nested exception is org.postgresql.util.PSQLException: ERROR: relation "users" does not exist</p>
+<p>So i tried osm2pgsql</p>
+<p>osm2pgsql -l --append --database gis --username root --slim --cache 2048 change.osc</p>
+<p>This ends up with another error:</p>
+<p>Osm2pgsql failed due to ERROR: result COPY_END for planet_osm_polygon failed: ERROR:  Geometry SRID (4326) does not match column SRID (900913)
+CONTEXT:  COPY planet_osm_polygon, line 1, column way: "SRID=4326;POLYGON ((9.6640657999999995 53.5647483999999992, 9.6643272000000007 53.5649425000000008, ..."</p></div>
+<div class="comment-info" id="comment-49971-info">
+<span class="comment-age">(02 Jun '16, 09:31)</span>
+<a class="comment-user userinfo" href="/users/11611/jorax">jorax</a>
+</div>
+</div>
+<a name="49982"></a>
+<div class="comment" id="comment-49982">
+<div class="comment-score" id="post-49982-score"></div>
+<div class="comment-text"><p>Ok above comment is almost ok, problem was with flag -l. After removing this flag, i managed to import change.osc file. But still this is a manual process. My goal is to have this automatically.</p></div>
+<div class="comment-info" id="comment-49982-info">
+<span class="comment-age">(03 Jun '16, 09:08)</span>
+<a class="comment-user userinfo" href="/users/11611/jorax">jorax</a>
+</div>
+</div>
+<a name="51996"></a>
+<div class="comment" id="comment-51996">
+<div class="comment-score" id="post-51996-score"></div>
+<div class="comment-text"><p>Do you success to set the osmosis replication task automatically? Can you tell me how to make it automatically?</p></div>
+<div class="comment-info" id="comment-51996-info">
+<span class="comment-age">(12 Sep '16, 08:21)</span>
+<a class="comment-user userinfo" href="/users/12524/yuyy">yuyy</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-49958">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-49958-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/49958/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="e0KPc43v9R1VhONOy560bLwLy7C96BsJ"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

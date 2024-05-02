@@ -1,0 +1,211 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/76176/start-josm-with-imagery-layers-already-loaded">Start JOSM with imagery layers already loaded</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/76176/up/" id="post-76176-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-76176-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/76176/down/" id="post-76176-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/76176/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Every time I invoke JOSM to begin an editing session I must manually load some satellite imagery. I use the same satellite imagery every time; Maxar-Premium, Maxar-Standard, ESRI Clarity, and USGS Topos.</p>
+<p>Is there a way to start JOSM perhaps with a command string containing these choices as parameters? I think I've seen the answer to this question in this forum a while ago but cannot find it right now.</p>
+<p>Dave</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-josm" href="/tags/josm/" rel="tag" title="see questions tagged 'josm'">josm</a>
+<a class="post-tag tag-link-imagery" href="/tags/imagery/" rel="tag" title="see questions tagged 'imagery'">imagery</a>
+<a class="post-tag tag-link-startup" href="/tags/startup/" rel="tag" title="see questions tagged 'startup'">startup</a>
+<a class="post-tag tag-link-parameters" href="/tags/parameters/" rel="tag" title="see questions tagged 'parameters'">parameters</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>18 Aug '20, 05:07</strong>
+</p>
+<img alt="AlaskaDave's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/04dddf6f5ffde333747d385af3ce5829?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5016/alaskadave">AlaskaDave</a><br/>
+<span class="score" title="5415 reputation points"><span class="">5.4k</span></span><span title="76 badges"><span class="badge1">●</span><span class="badgecount">76</span></span><span title="107 badges"><span class="silver">●</span><span class="badgecount">107</span></span><span title="164 badges"><span class="bronze">●</span><span class="badgecount">164</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="AlaskaDave has 17 accepted answers">16%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/76176/">
+                edited
+                <strong>18 Aug '20, 05:07</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-76176">
+</div>
+<div class="comment-tools" id="comment-tools-76176">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-76176-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/76176/start-josm-with-imagery-layers-already-loaded?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/76176/start-josm-with-imagery-layers-already-loaded?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/76176/start-josm-with-imagery-layers-already-loaded?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/76176/start-josm-with-imagery-layers-already-loaded?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="76177"></a>
+<div class="answer" id="answer-container-76177">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/76177/up/" id="post-76177-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-76177-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/76177/down/" id="post-76177-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Ah, yes, that is one of the annoying "why was it ever done this way?" things about JOSM.</p>
+<p>See <a href="https://labs.mapbox.com/mapping/becoming-a-power-mapper/editing-saving-and-loading-josm-session/">https://labs.mapbox.com/mapping/becoming-a-power-mapper/editing-saving-and-loading-josm-session/</a>  for how to create a session configuration file (relatively new feature).</p>
+<p>And, found after some experimenting, the session file can be specified on the command line with</p>
+<p><code>--download &lt;session file&gt;</code></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/76177/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>18 Aug '20, 08:23</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/76177/">
+                edited
+                <strong>18 Aug '20, 08:49</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-76177">
+<a name="76178"></a>
+<div class="comment" id="comment-76178">
+<div class="comment-score" id="post-76178-score"></div>
+<div class="comment-text"><p>I thought for a minute this might have answered another JOSM layers question. 
+How to stop JOSM automatically loading the OpenStreetCam and OneWay layers?
+Anyone have a way to stop the orange spots?</p>
+<p>As an addition to the above answer I found that if you centre your JOSM    map on your area of interest before saving the session JOSM will next open at that place and zoom level.</p></div>
+<div class="comment-info" id="comment-76178-info">
+<span class="comment-age">(18 Aug '20, 09:14)</span>
+<a class="comment-user userinfo" href="/users/2925/bcnorwich">BCNorwich</a>
+</div>
+</div>
+<a name="76179"></a>
+<div class="comment" id="comment-76179">
+<div class="comment-score" id="post-76179-score">1</div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/2925/bcnorwich">@BCNorwich</a> according to the answer to <a href="https://help.openstreetmap.org/questions/70538/disable-josm-overlay-layers">this</a> you need to close the layer using the right click menu rather than the button below the layer list. </p></div>
+<div class="comment-info" id="comment-76179-info">
+<span class="comment-age">(18 Aug '20, 09:49)</span>
+<a class="comment-user userinfo" href="/users/4426/insertuser">InsertUser</a>
+</div>
+</div>
+<a name="76180"></a>
+<div class="comment" id="comment-76180">
+<div class="comment-score" id="post-76180-score"></div>
+<div class="comment-text"><p>Oh so easy, I'd just been clicking the trash can/delete button. Many Thanks!</p></div>
+<div class="comment-info" id="comment-76180-info">
+<span class="comment-age">(18 Aug '20, 09:57)</span>
+<a class="comment-user userinfo" href="/users/2925/bcnorwich">BCNorwich</a>
+</div>
+</div>
+<a name="76232"></a>
+<div class="comment" id="comment-76232">
+<div class="comment-score" id="post-76232-score"></div>
+<div class="comment-text"><p>Sorry to be so late to reply. I forgot to subscribe.</p>
+<p>It looks like it's possible to do what I want but I would prefer to not have the viewport showing any particular area. I want JOSM to open with only the imagery layers loaded and the viewport in the same location as when I quit JOSM in the previous session, which is what it normally does now.</p>
+<p>I haven't experimented with this yet but wanted to let you know I'm still interested.</p>
+<p>Thank you....</p></div>
+<div class="comment-info" id="comment-76232-info">
+<span class="comment-age">(20 Aug '20, 09:42)</span>
+<a class="comment-user userinfo" href="/users/5016/alaskadave">AlaskaDave</a>
+</div>
+</div>
+<a name="76308"></a>
+<div class="comment" id="comment-76308">
+<div class="comment-score" id="post-76308-score"></div>
+<div class="comment-text"><p>Strange, my JOSM doesn't have a Sessions submenu in the File menu. It has a Save Session As option but not Load Session. I can still load it by right clicking the session file and using Open With -&gt; JOSM, or passing it as an argument when launching from the shell though.</p></div>
+<div class="comment-info" id="comment-76308-info">
+<span class="comment-age">(26 Aug '20, 08:55)</span>
+<a class="comment-user userinfo" href="/users/16647/tguen">tguen</a>
+</div>
+</div>
+<a name="76309"></a>
+<div class="comment not_top_scorer" id="comment-76309">
+<div class="comment-score" id="post-76309-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/16647/tguen">@tguen</a>: You can use the standard Open dialogue to open sessions. The same you use for opening images, tracks, data files, ...</p></div>
+<div class="comment-info" id="comment-76309-info">
+<span class="comment-age">(26 Aug '20, 09:16)</span>
+<a class="comment-user userinfo" href="/users/10133/tzorn">TZorn</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-76177">
+<span class="comments-showing">
+            showing 5 of 6
+        </span>
+<a class="show-all-comments-link" href="#">show 1 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-76177-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/76176/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="MoaB8Gagh3BB5n6Lu0dszAqqOH5LfjQ1"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

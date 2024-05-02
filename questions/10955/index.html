@@ -1,0 +1,233 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/10955/nominatim-planet_osm_rels-does-not-exist">Nominatim: planet_osm_rels does not exist</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/10955/up/" id="post-10955-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-10955-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/10955/down/" id="post-10955-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/10955/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>i'm doing a setup.php -all for a full planet.pbf, after all steps  without errors(aparently)
+when i exec --index option appears this errors:</p>
+<p>what's the meaning of these errors?</p>
+<hr/>
+<p>Starting rank 25
+  Done 19 in 0 @ 19.000000 per second - ETA (seconds): 2187.684326</p>
+<p>Done 210 in 1 @ 210.000000 per second - ETA (seconds): 197.023804</p>
+<p>Done 258 in 1 @ 258.000000 per second - ETA (seconds): 160.182175</p>
+<p>index_placex: UPDATE failed: ERROR:  relation "planet_osm_rels" does not exist</p>
+<p>LINE 1: select * from planet_osm_rels where parts @&gt; ARRAY[NEW.osm_i...
+                      ^
+QUERY:  select * from planet_osm_rels where parts @&gt; ARRAY[NEW.osm_id::integer] and members @&gt; ARRAY['n'||NEW.osm_id]</p>
+<p>CONTEXT:  PL/pgSQL function "placex_update" line 112 at FOR over SELECT rows</p>
+<p>index_placex: UPDATE failed: ERROR:  relation "planet_osm_rels" does not exist</p>
+<p>LINE 1: select * from planet_osm_rels where parts @&gt; ARRAY[NEW.osm_i...</p>
+<p>....
+...
+....
+same error</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-installation" href="/tags/installation/" rel="tag" title="see questions tagged 'installation'">installation</a>
+<a class="post-tag tag-link-install" href="/tags/install/" rel="tag" title="see questions tagged 'install'">install</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 Mar '12, 02:27</strong>
+</p>
+<img alt="luup2k's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9c330cb7225d0a8d2f82a7438b76b608?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2968/luup2k">luup2k</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="luup2k has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/10955/">
+                edited
+                <strong>03 Mar '12, 09:00</strong>
+</a>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-10955">
+<a name="10957"></a>
+<div class="comment" id="comment-10957">
+<div class="comment-score" id="post-10957-score"></div>
+<div class="comment-text"><p>i'm using setup.php script</p>
+<p></p><hr/>
+<p>passthru($osm2pgsql.' -lsc -O gazetteer -C 9000 --hstore -d '.$aDSNInfo['database'].' '.$aCMDResult['osm-file']);</p>
+<hr/>
+<p><em></em></p><em>
+</em><p><em>additional: i'm testing with other small country ( belgium.osm.pbf ) and with this country i have other fail... but too in index proceseing and related with planet_osm_</em> tables</p>
+<hr/>
+<p>QUERY:  select nodes from planet_osm_ways where id = wayid<br/>
+CONTEXT:  PL/pgSQL function "create_interpolation" line 26 at SQL statement<br/>
+PL/pgSQL function "placex_update" line 57 at assignment<br/>
+  Done 4 in 50 @ 0.080000 per second - Rank 28 ETA (seconds): 28425.000000<br/>
+index_placex: UPDATE failed: ERROR:  relation "planet_osm_ways" does not exist<br/>
+LINE 1: select nodes from planet_osm_ways where id = wayid<br/></p>
+<hr/><p></p></div>
+<div class="comment-info" id="comment-10957-info">
+<span class="comment-age">(03 Mar '12, 09:59)</span>
+<a class="comment-user userinfo" href="/users/2968/luup2k">luup2k</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-10955">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-10955-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/10955/nominatim-planet_osm_rels-does-not-exist?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/10955/nominatim-planet_osm_rels-does-not-exist?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/10955/nominatim-planet_osm_rels-does-not-exist?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/10955/nominatim-planet_osm_rels-does-not-exist?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="11082"></a>
+<div class="answer" id="answer-container-11082">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/11082/up/" id="post-11082-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-11082-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/11082/down/" id="post-11082-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>These kind of installation problems should better be discussed on one of the developer mailing lists. For Nominatim, you can use either the <a href="http://lists.openstreetmap.org/listinfo/geocoding">geocoding</a> mailing list or the more general <a href="http://lists.openstreetmap.org/listinfo/dev">dev list</a>.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/11082/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Mar '12, 22:39</strong>
+</p>
+<img alt="lonvia's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d888b712d85dee0aa304297f2dc697c7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2921/lonvia">lonvia</a><br/>
+<span class="score" title="6213 reputation points"><span class="">6.2k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="57 badges"><span class="silver">●</span><span class="badgecount">57</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="lonvia has 43 accepted answers">40%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-11082">
+<a name="12497"></a>
+<div class="comment" id="comment-12497">
+<div class="comment-score" id="post-12497-score"></div>
+<div class="comment-text"><p>I politely disagree. If you can figure out, it should be here so when other people have the same error, they can google it.</p></div>
+<div class="comment-info" id="comment-12497-info">
+<span class="comment-age">(01 May '12, 23:25)</span>
+<a class="comment-user userinfo" href="/users/3497/rafamvc">rafamvc</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-11082">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-11082-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="12509"></a>
+<div class="answer" id="answer-container-12509">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/12509/up/" id="post-12509-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-12509-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/12509/down/" id="post-12509-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I had the same problem. It turns out I was using osm2pgsql provided by my distro and not the one from SVN. Is this your case as well?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/12509/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>02 May '12, 18:58</strong>
+</p>
+<img alt="Norm1's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e17c2bfaed82349f7a355866ff24e4cf?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3409/norm1">Norm1</a><br/>
+<span class="score" title="126 reputation points">126</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="8 badges"><span class="bronze">●</span><span class="badgecount">8</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Norm1 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-12509">
+</div>
+<div class="comment-tools" id="comment-tools-12509">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-12509-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/10955/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="kONL0aDgZNtXUpSgW8BS4PMOwlmJ7FkI"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

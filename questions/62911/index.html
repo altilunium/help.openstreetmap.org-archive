@@ -1,0 +1,159 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/62911/download-pbf-file-through-overpass-api-on-command-line">Download .pbf file through Overpass API on command line</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/62911/up/" id="post-62911-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-62911-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/62911/down/" id="post-62911-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/62911/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I would like to be able to download .pbf files of OSM data extracts directly through the Overpass API (or suitable alternative) using wget, cURL or something similar from the command line.  My goal is to be able to specify a country name (using a country boundary for the extract) to be used in the Overpass API request, like this:</p>
+<pre><code>wget "http://overpass-api.de/api/interpreter?data=node[name=\"Singapore\"];out;"
+</code></pre>
+<p>I've been working with the documentation for this <a href="https://wiki.openstreetmap.org/wiki/User:Tagtheworld/overpass-api_commandline">here</a>, but can't figure out how to download a .pbf formatted file directly.  So far I can only get a download of .osm format file to work, with this:</p>
+<pre><code>wget -O target.osm "http://overpass-api.de/api/interpreter?data=node[name=\"Singapore\"];out;"
+</code></pre>
+<p>I tried several methods of converting the .osm to a .pbf using osmconvert, osmosis, ogr2ogr, etc after downloading, but ran into problems or documentation that I couldn't follow to set the options properly in all cases.  </p>
+<p>It seems like downloading directly to .pbf format is the simplest method, maybe I am missing something basic to specify this.  </p>
+<p>To summarize my key asks, I would like:
+ * to download directly from the command line
+ * data in .pbf format 
+ * to use country boundaries (such as offered with name=&lt;countryname&gt;) in the Overpass API for the extract specification</p>
+<p>My environment is a Mac.</p>
+<p>Thanks!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpassapi" href="/tags/overpassapi/" rel="tag" title="see questions tagged 'overpassapi'">overpassapi</a>
+<a class="post-tag tag-link-wget" href="/tags/wget/" rel="tag" title="see questions tagged 'wget'">wget</a>
+<a class="post-tag tag-link-pbf" href="/tags/pbf/" rel="tag" title="see questions tagged 'pbf'">pbf</a>
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>04 Apr '18, 21:31</strong>
+</p>
+<img alt="neutronbarn's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/12cd3da9d1a0d975766591dc679e01c0?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14944/neutronbarn">neutronbarn</a><br/>
+<span class="score" title="14 reputation points">14</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="neutronbarn has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/62911/">
+                edited
+                <strong>04 Apr '18, 22:13</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-62911">
+</div>
+<div class="comment-tools" id="comment-tools-62911">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-62911-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/62911/download-pbf-file-through-overpass-api-on-command-line?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/62911/download-pbf-file-through-overpass-api-on-command-line?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/62911/download-pbf-file-through-overpass-api-on-command-line?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/62911/download-pbf-file-through-overpass-api-on-command-line?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="62913"></a>
+<div class="answer accepted-answer" id="answer-container-62913">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/62913/up/" id="post-62913-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-62913-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/62913/down/" id="post-62913-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/62913/" rel="nofollow" title="neutronbarn has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>What you're asking will put a high burden on the Overpass server since it has to collect all the data for the whole country. Overpass will refuse to do this for all but the smallest countries, and rightly so - a few people downloading a whole country like that could easily make the server unusable for everybody else.</p>
+<p>So: don't do it.</p>
+<p>Instead, download the nightly updated country files from download.geofabrik.de; if the fact that these are slightly larger than the exact country boundary is a problem, run an "osmium" or "osmosis" step afterwards to cut out the precise country extent. If what you're looking for is not found on download.geofabrik.de, head over to extracts.bbbike.org where you can request custom extracts for arbitrary polygonal areas; they, too, have a size limit but they will allow larger files than Overpass.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/62913/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>04 Apr '18, 22:35</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-62913">
+<a name="62914"></a>
+<div class="comment" id="comment-62914">
+<div class="comment-score" id="post-62914-score"></div>
+<div class="comment-text"><p>It sounds like cutting at the country boundary after download from geofabrik is what I want.  I'll give this a try with osmium and osmosis.  Thanks for the description of why not to do this on the Overpass server.</p></div>
+<div class="comment-info" id="comment-62914-info">
+<span class="comment-age">(04 Apr '18, 22:40)</span>
+<a class="comment-user userinfo" href="/users/14944/neutronbarn">neutronbarn</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-62913">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-62913-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/62911/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Y1N49R1ZYHgk2lmume7oV3WQR3Y4dWHJ"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

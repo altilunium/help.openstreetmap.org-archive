@@ -1,0 +1,164 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/70767/best-approach-for-rotated-maps">Best approach for rotated maps?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/70767/up/" id="post-70767-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-70767-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/70767/down/" id="post-70767-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/70767/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm building a mobile app in which I'd like to show maps relative to a user's direction of motion, so that up is always forward for the user. (Sort of like what navigation apps do.) When I try this with normal tiles, the text is awkward to read. What's my best approach to fixing the text orientation?</p>
+<p>The two obvious approaches I can find are rendering my own bitmap tiles and dynamically rendering from vector tiles. Are there other approaches I should be looking at? And what are the tradeoffs?</p>
+<p>If it's helpful in answering the question, I'm a developer comfortable running my own servers, but the tile-server stuff looks complicated enough I'm happy to avoid that. Thanks!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-vector" href="/tags/vector/" rel="tag" title="see questions tagged 'vector'">vector</a>
+<a class="post-tag tag-link-rendering" href="/tags/rendering/" rel="tag" title="see questions tagged 'rendering'">rendering</a>
+<a class="post-tag tag-link-rotate" href="/tags/rotate/" rel="tag" title="see questions tagged 'rotate'">rotate</a>
+<a class="post-tag tag-link-custom_tiles" href="/tags/custom_tiles/" rel="tag" title="see questions tagged 'custom_tiles'">custom_tiles</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>13 Sep '19, 17:42</strong>
+</p>
+<img alt="WilliamPietri's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/19a866fd7c999be94578126c56f2b65a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17183/williampietri">WilliamPietri</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="WilliamPietri has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-70767">
+<a name="70769"></a>
+<div class="comment" id="comment-70769">
+<div class="comment-score" id="post-70769-score"></div>
+<div class="comment-text"><p>Non-answer: In case you haven't seen it, there is a rather long list of <a href="https://wiki.openstreetmap.org/wiki/Frameworks#Displaying_interactive_maps">frameworks on the wiki</a>.</p></div>
+<div class="comment-info" id="comment-70769-info">
+<span class="comment-age">(13 Sep '19, 18:53)</span>
+<a class="comment-user userinfo" href="/users/4426/insertuser">InsertUser</a>
+</div>
+</div>
+<a name="70770"></a>
+<div class="comment" id="comment-70770">
+<div class="comment-score" id="post-70770-score"></div>
+<div class="comment-text"><p>Thanks! In this case I'm writing in Dart and Flutter, so none of the existing tools will do. I could build something based on MapBox's vector tiles, but I thought I'd first look at what I could do with OSM, as I'd rather go an open-source route if it's not too much extra work.</p></div>
+<div class="comment-info" id="comment-70770-info">
+<span class="comment-age">(13 Sep '19, 22:18)</span>
+<a class="comment-user userinfo" href="/users/17183/williampietri">WilliamPietri</a>
+</div>
+</div>
+<a name="70796"></a>
+<div class="comment" id="comment-70796">
+<div class="comment-score" id="post-70796-score"></div>
+<div class="comment-text"><p>Mapbox vector tiles are almost certainly the way to go, but there are lots of open-source options for generating them from OSM data.</p></div>
+<div class="comment-info" id="comment-70796-info">
+<span class="comment-age">(15 Sep '19, 23:31)</span>
+<a class="comment-user userinfo" href="/users/5/richard">Richard ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-70767">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-70767-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/70767/best-approach-for-rotated-maps?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/70767/best-approach-for-rotated-maps?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/70767/best-approach-for-rotated-maps?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/70767/best-approach-for-rotated-maps?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="70771"></a>
+<div class="answer" id="answer-container-70771">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/70771/up/" id="post-70771-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-70771-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/70771/down/" id="post-70771-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>There's likely no such thing as the "best approach" InsertUser has already pointed to the wiki list of frameworks, so I'll leave that out.</p>
+<p>Essentially it really depends on if you believe that asking your users to download an area in advance is a good idea or not. If the answer is yes you could use mapsforge, OsmAnd or mapsme format (you would likely need to produce the necessary glue/bindings for Dart). If no then you are stuck with vector tiles either with mapbox gl, or if you are in to zombies, mapzens tangram. You don't necessarily need to have a lot of infrastructure to do that, you just need something serving pre-generated tiles if you don't mind having stale data (see for example <a href="https://openmaptiles.org/">https://openmaptiles.org/</a> ). </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/70771/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>14 Sep '19, 12:54</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/70771/">
+                edited
+                <strong>16 Sep '19, 11:24</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-70771">
+</div>
+<div class="comment-tools" id="comment-tools-70771">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-70771-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/70767/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="V3gSNZVIb2fpDssUP88mFo0UfAN28ZWC"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

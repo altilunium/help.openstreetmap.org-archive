@@ -1,0 +1,168 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/47224/bad-wrong-location-name">Bad / wrong location name</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/47224/up/" id="post-47224-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-47224-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/47224/down/" id="post-47224-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/47224/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi!</p>
+<p>I've recently installed an OSM file of Nominatim 2.4 in a new Server, but it shows an error message at the end of the instalation. Here is some of the end lines in setup.log file "/utils/setup.log":</p>
+<pre><code>Done 9688999 in 280842 @ 34.499821 per second - Rank 26 ETA (seconds): 127908.812500
+Done 9688999 in 280842 @ 34.499821 per second - Rank 26 ETA (seconds): 127908.812500
+Done 9688999 in 280843 @ 34.499699 per second - Rank 26 ETA (seconds): 127909.265625
+Done 9688999 in 280844 @ 34.499577 per second - Rank 26 ETA (seconds): 127909.710938
+Done 9688999 in 280844 @ 34.499577 per second - Rank 26 ETA (seconds): 127909.710938
+
+index_placex: UPDATE failed: ERROR:  could not read block 20133 in file "base/2205538/2719940": Error de entrada/salida
+CONTEXT:  SQL statement "DELETE FROM location_road_2 where place_id = in_place_id"
+PL/pgSQL function deleteroad(integer,bigint) line 1197 at SQL statement
+PL/pgSQL function placex_update() line 77 at assignment
+Done 9688999 in 280845 @ 34.499454 per second - Rank 26 ETA (seconds): 127910.164062
+ERROR: Error executing external command: /home/nominatim/Nominatim/nominatim/nominatim -i -d nominatim -P 5432 -t 1 -r 26
+Error executing external command: /home/nominatim/Nominatim/nominatim/nominatim -i -d nominatim -P 5432 -t 1 -r 26
+</code></pre>
+<p>The instalation finsed and it's a complete continent (NorthAmerica)...
+So, when I try to find a place, the Address request from Nominatim is wrong.</p>
+<p>This is an example with the next lat/long data in the new server: "25.539999","-103.427098"</p>
+<pre><code>URL: <a href="http://192.168.1.207/nominatim/reverse?format=json&amp;addressdetails=0&amp;zoom=18&amp;lat=25.539999&amp;lon=-103.427098">http://192.168.1.207/nominatim/reverse?format=json&amp;addressdetails=0&amp;zoom=18&amp;lat=25.539999&amp;lon=-103.427098</a>
+</code></pre>
+<p>Returns:</p>
+<pre><code>"Central de Abastos, Torreón, Coahuila de Zaragoza, 27010, México"
+
+{"place_id":"21325872","licence":"Data © OpenStreetMap contributors, ODbL 1.0. http:\/\/www.openstreetmap.org\/copyright","osm_type":"way","osm_id":"116771106","lat":"25.5542692","lon":"-103.425345760978","display_name":"Central de Abastos, Torreón, Coahuila de Zaragoza, 27010, México"}
+</code></pre>
+<p>And searching the place in my old server, it should be showing some thing like this:</p>
+<pre><code>URL: <a href="http://192.168.1.178/nominatim/reverse?format=json&amp;addressdetails=0&amp;zoom=18&amp;lat=25.539999&amp;lon=-103.427098">http://192.168.1.178/nominatim/reverse?format=json&amp;addressdetails=0&amp;zoom=18&amp;lat=25.539999&amp;lon=-103.427098</a>
+
+"Av. Matamoros, Torreón, Coahuila de Zaragoza, 27010, México"
+
+{"place_id":"275172","licence":"Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http:\/\/www.openstreetmap.org\/copyright","osm_type":"way","osm_id":"50857796","lat":"25.5400986","lon":"-103.4204802","display_name":"Av. Matamoros, Torre\u00f3n, Coahuila de Zaragoza, 27010, M\u00e9xico"}
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-reversegeocoding" href="/tags/reversegeocoding/" rel="tag" title="see questions tagged 'reversegeocoding'">reversegeocoding</a>
+<a class="post-tag tag-link-bad" href="/tags/bad/" rel="tag" title="see questions tagged 'bad'">bad</a>
+<a class="post-tag tag-link-wrongname" href="/tags/wrongname/" rel="tag" title="see questions tagged 'wrongname'">wrongname</a>
+<a class="post-tag tag-link-wrong" href="/tags/wrong/" rel="tag" title="see questions tagged 'wrong'">wrong</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>18 Dec '15, 23:04</strong>
+</p>
+<img alt="Nahum%20Larriva's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad1381f8d4450095fae2b1b678f90957?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11778/nahum-larriva">Nahum Larriva</a><br/>
+<span class="score" title="0 reputation points">0</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Nahum Larriva has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-47224">
+</div>
+<div class="comment-tools" id="comment-tools-47224">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-47224-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/47224/bad-wrong-location-name?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/47224/bad-wrong-location-name?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/47224/bad-wrong-location-name?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/47224/bad-wrong-location-name?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="47225"></a>
+<div class="answer accepted-answer" id="answer-container-47225">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/47225/up/" id="post-47225-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-47225-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/47225/down/" id="post-47225-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/47225/" rel="nofollow" title="Nahum Larriva has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Your disk is faulty. Type <code>dmesg</code> to confirm (or run SMART checks). You will have to replace the disk and run the import again.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/47225/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>18 Dec '15, 23:14</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-47225">
+<a name="47226"></a>
+<div class="comment" id="comment-47226">
+<div class="comment-score" id="post-47226-score"></div>
+<div class="comment-text"><p>Thanks, i´m gonna run a chek disk and tell you the resoults.</p></div>
+<div class="comment-info" id="comment-47226-info">
+<span class="comment-age">(18 Dec '15, 23:53)</span>
+<a class="comment-user userinfo" href="/users/11778/nahum-larriva">Nahum Larriva</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-47225">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-47225-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/47224/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="rOJFokhDV8PnMFxRWKEetxckVydJBoia"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

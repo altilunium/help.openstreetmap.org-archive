@@ -1,0 +1,420 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/48322/installing-osrm-in-centos-7-x64-error-cmake">Installing OSRM in CENTOS 7 x64 - error Cmake ..</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48322/up/" id="post-48322-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48322-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/48322/down/" id="post-48322-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/48322/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p><strong>I'm trying to install osrm in my server centos  7, but i can't do it... i tried a lot and differents ways.. but i can't</strong></p>
+<hr/>
+<pre><code>[root@u18343387 build]# cmake ..
+-- Building on a 64 bit system
+-- Configuring OSRM in release mode
+-- Setting linker optimizations
+-- Boost version: 1.52.0
+-- Found the following Boost libraries:
+--   date_time
+--   filesystem
+--   iostreams
+--   program_options
+--   regex
+--   system
+--   thread
+--   unit_test_framework
+-- Found Intel TBB
+-- Looking for Luabind...
+CMake Error at /usr/local/share/cmake-3.4/Modules/FindPackageHandleStandardArgs.cmake:148 (message):
+  Could NOT find Luabind (missing: LUABIND_LIBRARIES LUABIND_INCLUDE_DIR)
+Call Stack (most recent call first):
+  /usr/local/share/cmake-3.4/Modules/FindPackageHandleStandardArgs.cmake:388 (_FPHSA_FAILURE_MESSAGE)
+  cmake/FindLuabind.cmake:64 (FIND_PACKAGE_HANDLE_STANDARD_ARGS)
+  CMakeLists.txt:247 (find_package)
+</code></pre>
+<hr/>
+<p><strong>what can i do...
+plx, explane me, i'm a new in this...
+this  the content of the file cmake error</strong></p>
+<hr/>
+<pre><code>Performing C++ SOURCE FILE Test LTO_AVAILABLE failed with the following output:
+Change Dir: /home/osrm/osrm-backend/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec2838510061/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec2838510061.dir/build.make CMakeFiles/cmTryCompileExec2838510061.dir/build
+gmake[1]: Entering directory `/home/osrm/osrm-backend/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/osrm/osrm-backend/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2838510061.dir/src.cxx.o
+/usr/bin/c++    -DLTO_AVAILABLE   -flto -o CMakeFiles/cmTryCompileExec2838510061.dir/src.cxx.o -c /home/osrm/osrm-backend/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: unrecognized command line option "-flto"
+gmake[1]: *** [CMakeFiles/cmTryCompileExec2838510061.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/home/osrm/osrm-backend/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec2838510061/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test HAS_COLOR_FLAG failed with the following output:
+Change Dir: /home/osrm/osrm-backend/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec2322203982/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec2322203982.dir/build.make CMakeFiles/cmTryCompileExec2322203982.dir/build
+gmake[1]: Entering directory `/home/osrm/osrm-backend/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/osrm/osrm-backend/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2322203982.dir/src.cxx.o
+/usr/bin/c++    -DHAS_COLOR_FLAG   -fdiagnostics-color=auto -o CMakeFiles/cmTryCompileExec2322203982.dir/src.cxx.o -c /home/osrm/osrm-backend/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: unrecognized command line option "-fdiagnostics-color=auto"
+gmake[1]: *** [CMakeFiles/cmTryCompileExec2322203982.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/home/osrm/osrm-backend/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec2322203982/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/osrm/osrm-backend/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec869518868/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec869518868.dir/build.make CMakeFiles/cmTryCompileExec869518868.dir/build
+gmake[1]: Entering directory `/home/osrm/osrm-backend/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/osrm/osrm-backend/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec869518868.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec869518868.dir/CheckSymbolExists.c.o   -c /home/osrm/osrm-backend/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec869518868
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec869518868.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec869518868.dir/CheckSymbolExists.c.o  -o cmTryCompileExec869518868 -rdynamic 
+CMakeFiles/cmTryCompileExec869518868.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0xc): undefined reference to `pthread_create'
+collect2: ld returned 1 exit status
+gmake[1]: *** [cmTryCompileExec869518868] Error 1
+gmake[1]: Leaving directory `/home/osrm/osrm-backend/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec869518868/fast] Error 2
+
+File /home/osrm/osrm-backend/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include &lt;pthread.h&gt;
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&amp;pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/osrm/osrm-backend/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec1634399928/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec1634399928.dir/build.make CMakeFiles/cmTryCompileExec1634399928.dir/build
+gmake[1]: Entering directory `/home/osrm/osrm-backend/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/osrm/osrm-backend/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1634399928.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec1634399928.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1634399928
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1634399928.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec1634399928.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1634399928 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: ld returned 1 exit status
+gmake[1]: *** [cmTryCompileExec1634399928] Error 1
+gmake[1]: Leaving directory `/home/osrm/osrm-backend/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec1634399928/fast] Error 2
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osrm" href="/tags/osrm/" rel="tag" title="see questions tagged 'osrm'">osrm</a>
+<a class="post-tag tag-link-problem" href="/tags/problem/" rel="tag" title="see questions tagged 'problem'">problem</a>
+<a class="post-tag tag-link-cmake" href="/tags/cmake/" rel="tag" title="see questions tagged 'cmake'">cmake</a>
+<a class="post-tag tag-link-installation" href="/tags/installation/" rel="tag" title="see questions tagged 'installation'">installation</a>
+<a class="post-tag tag-link-centos" href="/tags/centos/" rel="tag" title="see questions tagged 'centos'">centos</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>24 Feb '16, 07:24</strong>
+</p>
+<img alt="DarckBlezzer's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9bd2a84fbfcb6ee54b372f83189bb6d1?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11396/darckblezzer">DarckBlezzer</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="DarckBlezzer has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/48322/">
+                edited
+                <strong>24 Feb '16, 07:28</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48322">
+</div>
+<div class="comment-tools" id="comment-tools-48322">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48322-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/48322/installing-osrm-in-centos-7-x64-error-cmake?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/48322/installing-osrm-in-centos-7-x64-error-cmake?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/48322/installing-osrm-in-centos-7-x64-error-cmake?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/48322/installing-osrm-in-centos-7-x64-error-cmake?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="48323"></a>
+<div class="answer" id="answer-container-48323">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48323/up/" id="post-48323-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48323-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/48323/down/" id="post-48323-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<pre><code>Make Error at /usr/local/share/cmake-3.4/Modules/FindPackageHandleStandardArgs.cmake:148 (message):   Could NOT find Luabind (missing: LUABIND_LIBRARIES LUABIND_INCLUDE_DIR)
+</code></pre>
+<p>You have to install luabind. See <a href="https://github.com/Project-OSRM/osrm-backend/wiki/Building-OSRM">Building OSRM</a> in the OSRM wiki for information on how to build OSRM on CentOS.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/48323/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>24 Feb '16, 09:22</strong>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="scai has 168 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48323">
+<a name="48335"></a>
+<div class="comment" id="comment-48335">
+<div class="comment-score" id="post-48335-score"></div>
+<div class="comment-text"><p>i have this error </p>
+<pre><code>-- Building on a 64 bit system
+-- Configuring OSRM in release mode
+-- Setting linker optimizations
+-- Boost version: 1.52.0
+-- Found the following Boost libraries:
+--   date_time
+--   filesystem
+--   iostreams
+--   program_options
+--   regex
+--   system
+--   thread
+--   unit_test_framework
+-- Found Intel TBB
+-- Looking for Luabind...
+-- Found Luabind: /opt/osrm_infrastructure/luabind-0.9.1/lib/libluabindd.so
+-- Found Luabind: /opt/osrm_infrastructure/luabind-0.9.1/lib/libluabindd.so
+-- Found Lua52: /usr/lib64/liblua.so;/usr/lib64/libm.so (found version "5.1.4")
+-- Looking for LuaJIT 5.2
+-- Found LUAJIT: /opt/osrm_infrastructure/LuaJIT-2.0.2/lib/libluajit-5.1.so
+-- Found LuaJIT: LUAJIT_LIBRARY-NOTFOUND
+-- Performing Test LUABIND_WORKS
+-- Performing Test LUABIND_WORKS - Failed
+-- Luabind/Lua5.2 not feasible, falling back to Lua 5.1.
+-- Found Lua51: /usr/lib64/liblua.so;/usr/lib64/libm.so (found version "5.1.4")
+-- Looking for LuaJIT 5.1
+-- Found LuaJIT: LUAJIT_LIBRARY-NOTFOUND
+-- Performing Test LUABIND51_WORKS
+-- Performing Test LUABIND51_WORKS - Failed
+CMake Error at cmake/check_luabind.cmake:38 (message):
+  Luabind does not work with Lua 5.1 at /usr/lib64/liblua-5.1.so, no working
+  Luabind found
+Call Stack (most recent call first
+</code></pre>
+<p>I need to downgrade lua???</p></div>
+<div class="comment-info" id="comment-48335-info">
+<span class="comment-age">(24 Feb '16, 16:34)</span>
+<a class="comment-user userinfo" href="/users/11396/darckblezzer">DarckBlezzer</a>
+</div>
+</div>
+<a name="48336"></a>
+<div class="comment" id="comment-48336">
+<div class="comment-score" id="post-48336-score">1</div>
+<div class="comment-text"><p>The first hit when searching for "Luabind does not work with Lua 5.1" is <a href="https://github.com/Project-OSRM/osrm-backend/issues/1196">OSRM issue 1196</a>. According to the comments this can happen if you have a parallel installation of lua 5.1 and 5.2 (which should be fixed if I understood correctly) or your system has not enough memory. The latter is also explained in <a href="https://github.com/Project-OSRM/osrm-backend/issues/1580">issue 1580</a>.</p></div>
+<div class="comment-info" id="comment-48336-info">
+<span class="comment-age">(24 Feb '16, 17:22)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-48323">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48323-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="48343"></a>
+<div class="answer answered-by-owner" id="answer-container-48343">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/48343/up/" id="post-48343-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-48343-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/48343/down/" id="post-48343-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Well i have less error, but i can't pass from this, i don't know how to downgrade or change the LUA,</p>
+<p>now i have this error</p>
+<pre><code>[root@u18343387 build]# cmake ..
+-- Building on a 64 bit system
+-- Configuring OSRM in release mode
+-- Setting linker optimizations
+-- Boost version: 1.52.0
+-- Found the following Boost libraries:
+--   date_time
+--   filesystem
+--   iostreams
+--   program_options
+--   regex
+--   system
+--   thread
+--   unit_test_framework
+-- Found Intel TBB
+-- Looking for Luabind...
+-- Found Luabind: /opt/osrm_infrastructure/luabind-0.9.1/lib/libluabindd.so
+-- Looking for LuaJIT 5.2
+-- Found LuaJIT: LUAJIT_LIBRARY-NOTFOUND
+-- Performing Test LUABIND_WORKS
+-- Performing Test LUABIND_WORKS - Failed
+-- Luabind/Lua5.2 not feasible, falling back to Lua 5.1.
+-- Found Lua51: /usr/lib64/liblua.so;/usr/lib64/libm.so
+-- Looking for LuaJIT 5.1
+-- Found LuaJIT: LUAJIT_LIBRARY-NOTFOUND
+-- Performing Test LUABIND51_WORKS
+-- Performing Test LUABIND51_WORKS - Failed
+CMake Error at cmake/check_luabind.cmake:38 (message):
+  Luabind does not work with Lua 5.1 at /usr/lib64/liblua-5.1.so, no working
+  Luabind found
+Call Stack (most recent call first):
+  CMakeLists.txt:248 (include)
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/osrm/osrm-backend/build/CMakeFiles/CMakeOutput.log".
+See also "/home/osrm/osrm-backend/build/CMakeFiles/CMakeError.log".
+</code></pre>
+<p>i saw the last links but i can't find a answer to change or somthing to make it run correctly</p>
+<pre><code>[root@u18343387 build]# rpm -qa | grep lua
+lua-devel-5.1.4-4.1.el6.x86_64
+lua-5.1.4-4.1.el6.x86_64
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/48343/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>24 Feb '16, 23:22</strong>
+</p>
+<img alt="DarckBlezzer's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9bd2a84fbfcb6ee54b372f83189bb6d1?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11396/darckblezzer">DarckBlezzer</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="DarckBlezzer has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/48343/">
+                edited
+                <strong>24 Feb '16, 23:26</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-48343">
+<a name="48344"></a>
+<div class="comment" id="comment-48344">
+<div class="comment-score" id="post-48344-score"></div>
+<div class="comment-text"><p>Did you check for the other cause of the problem I mentioned in my comment, i.e. too few memory?</p></div>
+<div class="comment-info" id="comment-48344-info">
+<span class="comment-age">(25 Feb '16, 08:00)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="48357"></a>
+<div class="comment" id="comment-48357">
+<div class="comment-score" id="post-48357-score"></div>
+<div class="comment-text"><p>the server has 16 gb of ram, and i think it doesn't affect,or not?</p></div>
+<div class="comment-info" id="comment-48357-info">
+<span class="comment-age">(25 Feb '16, 15:36)</span>
+<a class="comment-user userinfo" href="/users/11396/darckblezzer">DarckBlezzer</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-48343">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-48343-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/48322/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="zdXDX5ORfiXl4fnBaxJlUPYat9Qd8KZ1"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

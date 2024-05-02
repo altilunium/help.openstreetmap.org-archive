@@ -1,0 +1,189 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/45261/error-nomination-geocode-with-wget">error nomination geocode with wget</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/45261/up/" id="post-45261-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-45261-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/45261/down/" id="post-45261-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/45261/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi, i'm try to use the reverse geocode provider:
+<a href="http://nominatim.openstreetmap.org/reverse?lat=-0.24136&amp;lon=-80.48281">http://nominatim.openstreetmap.org/reverse?lat=-0.24136&amp;lon=-80.48281</a></p>
+<p>i can do that with my browser, but when i make the same request from my server (opengts server) i receive an error. I think the error is because the web server detect this is not a browser and refused connection.</p>
+<p>how can i use this web services with my server? please your help</p>
+<p>++++</p>
+<pre><code> this is the error message sending with terminal:
+
+ [root@gps]# wget <a href="http://nominatim.openstreetmap.org/reverse?format=xml&amp;limit=1&amp;addressdetails=1&amp;zoom=18&amp;email=&amp;lat=-0.24136&amp;lon=98.48281">http://nominatim.openstreetmap.org/reverse?format=xml&amp;limit=1&amp;addressdetails=1&amp;zoom=18&amp;email=&amp;lat=-0.24136&amp;lon=98.48281</a>
+ [1] 16844
+ [2] 16845
+ [3] 16846
+ [4] 16847
+ [5] 16848
+ [6] 16849
+ [2]   Done                    limit=1
+ [3]   Done                    addressdetails=1
+ [4]   Done                    zoom=18
+ [5]-  Done                    email=
+ [root@bitacoragps bitacoragps]# --2015-09-15 23:35:14--  <a href="http://nominatim.openstreetmap.org/reverse?format=xml">http://nominatim.openstreetmap.org/reverse?format=xml</a>
+ Resolving nominatim.openstreetmap.org... 128.40.45.204
+ Connecting to nominatim.openstreetmap.org|128.40.45.204|:80... failed: Connection refused.
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-wget" href="/tags/wget/" rel="tag" title="see questions tagged 'wget'">wget</a>
+<a class="post-tag tag-link-reversegeocoding" href="/tags/reversegeocoding/" rel="tag" title="see questions tagged 'reversegeocoding'">reversegeocoding</a>
+<a class="post-tag tag-link-error" href="/tags/error/" rel="tag" title="see questions tagged 'error'">error</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>15 Sep '15, 22:37</strong>
+</p>
+<img alt="HugoAlejo's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a64c09f76fb862e5d6ba7f2eb71bb2f9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11467/hugoalejo">HugoAlejo</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="HugoAlejo has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/45261/">
+                edited
+                <strong>17 Sep '15, 06:07</strong>
+</a>
+</p>
+<img alt="aseerel4c26's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/66f0dc05b44574e3894be07b0b37cf37?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5179/aseerel4c26">aseerel4c26 ♦</a><br/>
+<span class="score" title="32615 reputation points"><span class="">32.6k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="248 badges"><span class="silver">●</span><span class="badgecount">248</span></span><span title="554 badges"><span class="bronze">●</span><span class="badgecount">554</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-45261">
+<a name="45317"></a>
+<div class="comment" id="comment-45317">
+<div class="comment-score" id="post-45317-score"></div>
+<div class="comment-text"><p>Scai has found the issue here, but this is still relevant in general: Chances are quite good, that you are guessing right (maybe due to a missing identification of your client). Please check and obey the services usage policy which you are using. In this case: <a href="//wiki.openstreetmap.org/wiki/Nominatim.openstreetmap.org/Usage_policy">Nominatim.openstreetmap.org/Usage_policy</a>. This is important because we are just a project living on donations which cannot handle every load. :-)</p>
+<p>If you just send some requests the default user agent identification may be tolerable, but please change it if those are many requests (I do not know your server software). I think it should be something like this (nominatim's email parameter filled in (and/or a new user agent): <code>wget "http://nominatim.openstreetmap.org/reverse?format=xml&amp;limit=1&amp;addressdetails=1&amp;zoom=18&amp;email=HugoA@example.com&amp;lat=-0.24136&amp;lon=98.48281" --user-agent=HugoAOpenGTS</code></p>
+<p>Note, that I am no server admin, but setting a good user agent and ensuring to not do too many requests per time frame would be a first try.</p></div>
+<div class="comment-info" id="comment-45317-info">
+<span class="comment-age">(17 Sep '15, 06:07)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-45261">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-45261-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/45261/error-nomination-geocode-with-wget?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/45261/error-nomination-geocode-with-wget?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/45261/error-nomination-geocode-with-wget?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/45261/error-nomination-geocode-with-wget?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="45269"></a>
+<div class="answer" id="answer-container-45269">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/45269/up/" id="post-45269-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-45269-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/45269/down/" id="post-45269-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You have to quote the URL because it contains special characters such as <code>&amp;</code>. Try this instead:</p>
+<blockquote>
+<p>wget "http://nominatim.openstreetmap.org/reverse?format=xml&amp;limit=1&amp;addressdetails=1&amp;zoom=18&amp;email=&amp;lat=-0.24136&amp;lon=98.48281"</p>
+</blockquote>
+<p>Some background information: As you can see in your output, wget actually only tries to open <code><a href="http://nominatim.openstreetmap.org/reverse?format=xml">http://nominatim.openstreetmap.org/reverse?format=xml</a></code> (everything before the first <code>&amp;</code>) due to the fact that your shell interprets <code>&amp;</code> in a special way. It assumes the program and all of its arguments end at right before the <code>&amp;</code> and puts it into the background (that's what the <code>&amp;</code> is for). That's why you are seeing the <em>[1] 16844</em>, <em>[2] 16845</em> and so on which are the PIDs of the programs put into the background. And this URL wget is trying to retrieve won't ever give you an useful response.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/45269/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>16 Sep '15, 08:04</strong>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="scai has 168 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/45269/">
+                edited
+                <strong>16 Sep '15, 08:41</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-45269">
+<a name="45316"></a>
+<div class="comment" id="comment-45316">
+<div class="comment-score" id="post-45316-score"></div>
+<div class="comment-text"><p>oh, yes, indeed! thanks, I missed that.</p></div>
+<div class="comment-info" id="comment-45316-info">
+<span class="comment-age">(17 Sep '15, 06:01)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-45269">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-45269-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/45261/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="NhRCflLADovdWcJkpODFvLOeg8ocJDQV"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

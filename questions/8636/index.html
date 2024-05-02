@@ -1,0 +1,149 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/8636/how-to-make-custom-ways-in-potlatch2-color-line-type-description-etc">How to make custom ways in potlatch2? (color, line type, description etc)</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/8636/up/" id="post-8636-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-8636-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/8636/down/" id="post-8636-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/8636/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'm trying to draw a line that will represent data transport cables. I want to make them of a specific colour, thickness, line type etc. I also want to be able to give it some properties, as how many cables exist per line, how many are used etc. And i can't seem to find how to make my custom ways/markers.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-potlatch2" href="/tags/potlatch2/" rel="tag" title="see questions tagged 'potlatch2'">potlatch2</a>
+<a class="post-tag tag-link-ways" href="/tags/ways/" rel="tag" title="see questions tagged 'ways'">ways</a>
+<a class="post-tag tag-link-editing" href="/tags/editing/" rel="tag" title="see questions tagged 'editing'">editing</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 Oct '11, 09:34</strong>
+</p>
+<img alt="alexz's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/dc9b01669c0702f230fa57c384b947a8?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2226/alexz">alexz</a><br/>
+<span class="score" title="225 reputation points">225</span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="22 badges"><span class="silver">●</span><span class="badgecount">22</span></span><span title="26 badges"><span class="bronze">●</span><span class="badgecount">26</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="alexz has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-8636">
+</div>
+<div class="comment-tools" id="comment-tools-8636">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-8636-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/8636/how-to-make-custom-ways-in-potlatch2-color-line-type-description-etc?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/8636/how-to-make-custom-ways-in-potlatch2-color-line-type-description-etc?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/8636/how-to-make-custom-ways-in-potlatch2-color-line-type-description-etc?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/8636/how-to-make-custom-ways-in-potlatch2-color-line-type-description-etc?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="8639"></a>
+<div class="answer accepted-answer" id="answer-container-8639">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/8639/up/" id="post-8639-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-8639-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/8639/down/" id="post-8639-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/8639/" rel="nofollow" title="alexz has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>OSM is not about making a map rendering but about making a vector map that is easy for others to use. You should find or make a descriptive tag set to mark data cables.</p>
+<p>For Potlatch2 you can create your own <a href="http://www.mapcss.org/">mapCSS</a> and add it to <em>stylesheets.xml</em> on a local potlatch2 installation (i assume from your previous posts that you have one). This style sheet can also be used in JOSM.</p>
+<p>If you want to customize Potlatch's tagging presets you can edit <a href="http://wiki.openstreetmap.org/wiki/Potlatch_2/Developer_Documentation/Map_Features"><em>map_features.xml</em></a>, but this in itself doesn't alter how anything appears in the editor.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/8639/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Oct '11, 10:49</strong>
+</p>
+<img alt="Gnonthgol's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/44a4438f0146dfd898e24c221fd28b58?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/131/gnonthgol">Gnonthgol ♦</a><br/>
+<span class="score" title="13750 reputation points"><span class="">13.8k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="103 badges"><span class="silver">●</span><span class="badgecount">103</span></span><span title="198 badges"><span class="bronze">●</span><span class="badgecount">198</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Gnonthgol has 57 accepted answers">16%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/8639/">
+                edited
+                <strong>25 Oct '11, 15:41</strong>
+</a>
+</p>
+<img alt="Jonathan%20Bennett's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9fe361843971cf8b23dc93517f00b996?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6/jonathan-bennett">Jonathan Ben...</a><br/>
+<span class="score" title="8261 reputation points"><span class="">8.3k</span></span><span title="17 badges"><span class="badge1">●</span><span class="badgecount">17</span></span><span title="85 badges"><span class="silver">●</span><span class="badgecount">85</span></span><span title="108 badges"><span class="bronze">●</span><span class="badgecount">108</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-8639">
+<a name="8640"></a>
+<div class="comment" id="comment-8640">
+<div class="comment-score" id="post-8640-score"></div>
+<div class="comment-text"><p>Hm, i don't think i want to make a totally new map style. All i want is to be able to make custom notations, like misc devices and data cables. It looks like editing map_features.xml is all i need. Unless you can advise me differently? Are there some map making principles i should follow to increase its flexibility?
+Thx a lot for you answer,btw!</p></div>
+<div class="comment-info" id="comment-8640-info">
+<span class="comment-age">(25 Oct '11, 12:56)</span>
+<a class="comment-user userinfo" href="/users/2226/alexz">alexz</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-8639">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-8639-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/8636/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="NYILTyPyw18JEQShaYKkKhIbQEC3gOvZ"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

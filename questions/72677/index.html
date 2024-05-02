@@ -1,0 +1,163 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/72677/how-to-extract-only-roads-that-are-a-part-of-a-relation">How to extract only roads that are a part of a relation?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/72677/up/" id="post-72677-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-72677-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/72677/down/" id="post-72677-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/72677/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I want to retrieve a map of all the roads that are a part of a particular relation. This can be a specific public transport route in a city, or its entire public transport network. I have the following input data:</p>
+<ul>
+<li>the map of the country downloaded from Geofabrik as <code>country-latest.osm.pbf</code></li>
+<li>the relation ID</li>
+</ul>
+<p>For example, for the country of Moldova, relation <code>6726484</code> includes all the public transport routes in its capital.</p>
+<p>Is it possible to filter this data with <code>osmosis</code>, using the command line?</p>
+<p>So far my best shot at it is <code>osmosis --rbf moldova-latest.osm.pbf --tf accept-ways highway=* --tf reject-ways highway=steps,footway,pedestrian,service,residential --wx moldova-roads-only.osm</code></p>
+<p>In other words, I am removing all the ways that are not likely to be part of any route, but this is a very rough approach, and I suspect that I could get much better results if I could leverage the information about the relation itself.</p>
+<p>How can this be accomplished?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-query" href="/tags/query/" rel="tag" title="see questions tagged 'query'">query</a>
+<a class="post-tag tag-link-public-transport" href="/tags/public-transport/" rel="tag" title="see questions tagged 'public-transport'">public-transport</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 Jan '20, 16:57</strong>
+</p>
+<img alt="ralien's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f670011755afca7029c6be1f9abe2c98?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16295/ralien">ralien</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ralien has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/72677/">
+                edited
+                <strong>25 Jan '20, 20:53</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-72677">
+</div>
+<div class="comment-tools" id="comment-tools-72677">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-72677-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/72677/how-to-extract-only-roads-that-are-a-part-of-a-relation?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/72677/how-to-extract-only-roads-that-are-a-part-of-a-relation?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/72677/how-to-extract-only-roads-that-are-a-part-of-a-relation?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/72677/how-to-extract-only-roads-that-are-a-part-of-a-relation?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="72679"></a>
+<div class="answer accepted-answer" id="answer-container-72679">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/72679/up/" id="post-72679-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-72679-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/72679/down/" id="post-72679-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/72679/" rel="nofollow" title="ralien has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can do this with <a href="https://osmcode.org/osmium-tool/">Osmium</a> using the <a href="https://docs.osmcode.org/osmium/latest/osmium-getid.html">getid</a> command:</p>
+<pre><code>osmium getid -r moldova-latest.osm.pbf rRELATION_ID
+</code></pre>
+<p>Osmium also has the tags-filter command to filter by tags if you need that, too.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/72679/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Jan '20, 20:13</strong>
+</p>
+<img alt="Jochen%20Topf's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2d4dfcdcde73aa5e2ffa4a9b3a7cb51d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/112/jochen-topf">Jochen Topf</a><br/>
+<span class="score" title="5244 reputation points"><span class="">5.2k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="50 badges"><span class="silver">●</span><span class="badgecount">50</span></span><span title="74 badges"><span class="bronze">●</span><span class="badgecount">74</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jochen Topf has 32 accepted answers">31%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/72679/">
+                edited
+                <strong>25 Jan '20, 20:14</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-72679">
+<a name="72680"></a>
+<div class="comment" id="comment-72680">
+<div class="comment-score" id="post-72680-score"></div>
+<div class="comment-text"><p>Thanks, this does exactly what I wanted. I am marking it as the accepted answer, even though it is <code>osmium</code> rather than <code>osmosis</code>. I will edit the question title, to make it easier to find.</p></div>
+<div class="comment-info" id="comment-72680-info">
+<span class="comment-age">(25 Jan '20, 20:52)</span>
+<a class="comment-user userinfo" href="/users/16295/ralien">ralien</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-72679">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-72679-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/72677/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="X0AemJXurqRH9fKIfVurS026Xcbr1wws"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,226 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/25008/shouldnt-a-man-made-pier-get-layer-1">Shouldnt a man-made pier get layer 1 ?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/25008/up/" id="post-25008-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-25008-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/25008/down/" id="post-25008-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/25008/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi a man made pier is mostly build over water. I did not find a trace, hint nor a pier with the tag 1. A bridge gets layer 1, shouldn’t a man made pier be tagged layer 1 ?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-bridge" href="/tags/bridge/" rel="tag" title="see questions tagged 'bridge'">bridge</a>
+<a class="post-tag tag-link-layer" href="/tags/layer/" rel="tag" title="see questions tagged 'layer'">layer</a>
+<a class="post-tag tag-link-pier" href="/tags/pier/" rel="tag" title="see questions tagged 'pier'">pier</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>06 Aug '13, 22:54</strong>
+</p>
+<img alt="Hendrikklaas's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/742e93034cd38ad243f7ab26f350b659?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3443/hendrikklaas">Hendrikklaas</a><br/>
+<span class="score" title="9286 reputation points"><span class="">9.3k</span></span><span title="207 badges"><span class="badge1">●</span><span class="badgecount">207</span></span><span title="238 badges"><span class="silver">●</span><span class="badgecount">238</span></span><span title="387 badges"><span class="bronze">●</span><span class="badgecount">387</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Hendrikklaas has 39 accepted answers">5%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-25008">
+</div>
+<div class="comment-tools" id="comment-tools-25008">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-25008-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/25008/shouldnt-a-man-made-pier-get-layer-1?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/25008/shouldnt-a-man-made-pier-get-layer-1?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/25008/shouldnt-a-man-made-pier-get-layer-1?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/25008/shouldnt-a-man-made-pier-get-layer-1?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="25009"></a>
+<div class="answer accepted-answer" id="answer-container-25009">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/25009/up/" id="post-25009-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-25009-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/25009/down/" id="post-25009-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/25009/" rel="nofollow" title="Hendrikklaas has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Well, there is some logic to what you ask. However, the general consensus is that certain features are always "background", and are to be drawn behind everything else, without the need for <code>layer</code>.</p>
+<p>Examples for "background features":</p>
+<ul>
+<li><code>landuse</code></li>
+<li><code>natural</code> (when used for areas)</li>
+<li><code>highway</code> (when used for areas, though it is drawn above <code>landuse</code> or <code>natural</code>)</li>
+</ul>
+<p>So since the water is implicitly "background", there's no need to give the pier a layer.</p>
+<p>For example, the <a href="http://wiki.openstreetmap.org/wiki/Key:layer">wiki</a> explains:</p>
+<blockquote>
+<p>Waterways (waterway=*) do not normally
+need to be tagged with a layer and are
+generally rendered as if they flow
+underneath built features.
+[...]
+Landuses, such as parks and woods should not normally be tagged with a layer. </p>
+</blockquote>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/25009/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Aug '13, 23:21</strong>
+</p>
+<img alt="sleske's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/6c2dd6a39d3f38f1bb47a8c1fe8325e2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/666/sleske">sleske</a><br/>
+<span class="score" title="4090 reputation points"><span class="">4.1k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="56 badges"><span class="silver">●</span><span class="badgecount">56</span></span><span title="78 badges"><span class="bronze">●</span><span class="badgecount">78</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="sleske has 19 accepted answers">24%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-25009">
+<a name="25013"></a>
+<div class="comment" id="comment-25013">
+<div class="comment-score" id="post-25013-score"></div>
+<div class="comment-text"><p>… but it also does not harm to tag it explicitly, does it? I think the transition between implicit assumptions (by some more/most renderers) and trying to correct the most prevalent errors (by some/many renderers) is continuous (e.g. what is about smaller landuse areas on top of bigger landuse areas?). The comparison with a a bridge sounds reasonable.</p></div>
+<div class="comment-info" id="comment-25013-info">
+<span class="comment-age">(06 Aug '13, 23:39)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+<a name="25019"></a>
+<div class="comment" id="comment-25019">
+<div class="comment-score" id="post-25019-score">2</div>
+<div class="comment-text"><p>A pier is similar to a bridge. But whereas bridges can have other roads beneath them, piers usually don't. Nevertheless adding the layer tag won't harm, that's true.</p></div>
+<div class="comment-info" id="comment-25019-info">
+<span class="comment-age">(07 Aug '13, 06:26)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="25034"></a>
+<div class="comment" id="comment-25034">
+<div class="comment-score" id="post-25034-score"></div>
+<div class="comment-text"><p>Hmm, yes. Depending on the type of support (many or just a few big poles) below the pier some small boats could pass through.</p></div>
+<div class="comment-info" id="comment-25034-info">
+<span class="comment-age">(07 Aug '13, 14:26)</span>
+<a class="comment-user userinfo" href="/users/5179/aseerel4c26">aseerel4c26 ♦</a>
+</div>
+</div>
+<a name="25035"></a>
+<div class="comment" id="comment-25035">
+<div class="comment-score" id="post-25035-score"></div>
+<div class="comment-text"><p>That's an interesting issue. But for tagging if and which boats can pass through additional tags are required (height, width, draught).</p></div>
+<div class="comment-info" id="comment-25035-info">
+<span class="comment-age">(07 Aug '13, 14:50)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-25009">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-25009-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="25036"></a>
+<div class="answer" id="answer-container-25036">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/25036/up/" id="post-25036-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-25036-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/25036/down/" id="post-25036-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Well strictly speaking the <a href="http://wiki.openstreetmap.org/wiki/Layer">layer tag</a> is relative, so what value is used will depend on what else is mapped (or is planned to be mapped) under or over it.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/25036/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>07 Aug '13, 15:29</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-25036">
+</div>
+<div class="comment-tools" id="comment-tools-25036">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-25036-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/25008/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="eA45ZASwMTVBDbteBeXneNDmFEfQI5ne"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

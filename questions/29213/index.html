@@ -1,0 +1,136 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/29213/what-does-debug-information-means">What does debug information means?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/29213/up/" id="post-29213-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-29213-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/29213/down/" id="post-29213-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/29213/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I downloaded data from planet.osm.pbf into the database "Nominatim". I have messages in console such as </p>
+<ul>
+<li>Done 41901225 in 105214 @ 398.247620 per second - Rank 30 ETA (seconds): 97671.335938</li>
+</ul>
+<p>What do this numbers mean: 41901225, 105214, 398.247620, 97671.335938 ? Can I predict the completion  time of loading data into the database?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-download" href="/tags/download/" rel="tag" title="see questions tagged 'download'">download</a>
+<a class="post-tag tag-link-information" href="/tags/information/" rel="tag" title="see questions tagged 'information'">information</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>20 Dec '13, 11:28</strong>
+</p>
+<img alt="amshegar's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/aea8cdb05518a630ebad09bd7c777dc3?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8014/amshegar">amshegar</a><br/>
+<span class="score" title="46 reputation points">46</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="amshegar has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-29213">
+</div>
+<div class="comment-tools" id="comment-tools-29213">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-29213-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/29213/what-does-debug-information-means?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/29213/what-does-debug-information-means?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/29213/what-does-debug-information-means?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/29213/what-does-debug-information-means?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="29217"></a>
+<div class="answer" id="answer-container-29217">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/29217/up/" id="post-29217-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-29217-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/29217/down/" id="post-29217-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The last number in that debug message gives you an estimate for completion time.</p>
+<p>The line shows some statistics about how the address computation (or indexing) of objects is going for the current rank. There are 30 ranks in total, with rank 30 being the final one to be processed. The numbers mean:</p>
+<pre><code>Done [1] in [2] @ [3] per second - Rank 30 ETA (seconds): [4]
+</code></pre>
+<p>[1] number of objects already processed</p>
+<p>[2] time (in seconds) already passed for indexing this rank</p>
+<p>[3] number of objects that are processed per second</p>
+<p>[4] estimated time (in seconds) to finish this rank</p>
+<p>Rank 26 and 30 are the ones that take by far the longest. After rank 30 has finished, some additional database indexes need to be created. That takes a few hours more to complete.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/29217/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>20 Dec '13, 13:00</strong>
+</p>
+<img alt="lonvia's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d888b712d85dee0aa304297f2dc697c7?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2921/lonvia">lonvia</a><br/>
+<span class="score" title="6213 reputation points"><span class="">6.2k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="57 badges"><span class="silver">●</span><span class="badgecount">57</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="lonvia has 43 accepted answers">40%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-29217">
+</div>
+<div class="comment-tools" id="comment-tools-29217">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-29217-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/29213/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="wLwSaTQJd0Co5aEMg5zW04EAq0LyUZIM"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

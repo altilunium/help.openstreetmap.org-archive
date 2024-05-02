@@ -1,0 +1,164 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/72686/a-fountains-coordinatesnode-id-by-tag-wikidataq">a fountain's coordinates/node id by tag wikidata=Q...</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/72686/up/" id="post-72686-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-72686-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/72686/down/" id="post-72686-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/72686/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>sorry for the newbie question.</p>
+<p>What would be the overpass query to get the following:</p>
+<p>For example <a href="https://www.openstreetmap.org/node/7158766201">https://www.openstreetmap.org/node/7158766201</a></p>
+<p>it should be found by solely handing over "Q83630092" and the query should return the "Location" coordinates and optionally also '7158766201'</p>
+<p>as a collateral, we might restrict the results to amentiy "fountain" or "drinking_water" .</p>
+<p>Any help would be highly appreciated.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-wikidata" href="/tags/wikidata/" rel="tag" title="see questions tagged 'wikidata'">wikidata</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>26 Jan '20, 09:03</strong>
+</p>
+<img alt="ralfhauser's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/802d4b8327c309d72d4136f72d17aef1?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17788/ralfhauser">ralfhauser</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ralfhauser has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/72686/">
+                edited
+                <strong>29 Jan '20, 10:30</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-72686">
+</div>
+<div class="comment-tools" id="comment-tools-72686">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-72686-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/72686/a-fountains-coordinatesnode-id-by-tag-wikidataq?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/72686/a-fountains-coordinatesnode-id-by-tag-wikidataq?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/72686/a-fountains-coordinatesnode-id-by-tag-wikidataq?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/72686/a-fountains-coordinatesnode-id-by-tag-wikidataq?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="72687"></a>
+<div class="answer" id="answer-container-72687">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/72687/up/" id="post-72687-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-72687-score" title="current number of votes">
+    6
+</div>
+<a class="ajax-command post-vote down" href="/vote/72687/down/" id="post-72687-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hi</p>
+<p>This is the correct place for newbie questions.</p>
+<p>This will return what you want:</p>
+<pre><code>node[amenity=fountain][wikidata=Q83630092];
+out center;
+</code></pre>
+<p><a href="https://overpass-turbo.eu/s/Q62">https://overpass-turbo.eu/s/Q62</a></p>
+<p>If you don't know if the entity was mapped as a single point, swap <code>node</code> for <code>nwr</code> (Node, Way, Relation),</p>
+<p>If you want to search for all in area of visible screen:</p>
+<pre><code>[bbox:{{bbox}}];
+nwr[amenity=fountain][wikidata];
+out geom;
+</code></pre>
+<p><a href="https://overpass-turbo.eu/s/Q64">https://overpass-turbo.eu/s/Q64</a></p>
+<p>You should be able to work out how to filter for <code>drinking_water</code> from these examples.</p>
+<p>If you want to output as a CSV list, add <code>[out:csv(::id, "name", "wikidata"; false; ",")]</code> as line one.</p>
+<p>To tie in with your other posted question - to find entities which don't have <code>name</code> (or <code>wikipedia</code>) tags add an exclamation mark:</p>
+<pre><code>[bbox:{{bbox}}];
+nwr[amenity=fountain][wikidata][!name];
+out geom;
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/72687/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>26 Jan '20, 11:19</strong>
+</p>
+<img alt="DaveF's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c9c8b421ad22f51ddd62f23413717036?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1532/davef">DaveF</a><br/>
+<span class="score" title="3264 reputation points"><span class="">3.3k</span></span><span title="84 badges"><span class="badge1">●</span><span class="badgecount">84</span></span><span title="98 badges"><span class="silver">●</span><span class="badgecount">98</span></span><span title="133 badges"><span class="bronze">●</span><span class="badgecount">133</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="DaveF has 17 accepted answers">16%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/72687/">
+                edited
+                <strong>26 Jan '20, 11:43</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-72687">
+</div>
+<div class="comment-tools" id="comment-tools-72687">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-72687-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/72686/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="OjsvfGkq40Zhk7EJxCfNKi089yuC6t8Q"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

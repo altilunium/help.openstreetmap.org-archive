@@ -1,0 +1,180 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/38775/create-change-file-in-geographical-boundaries-with-osmupdate">Create change file in geographical boundaries with osmupdate</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/38775/up/" id="post-38775-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-38775-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/38775/down/" id="post-38775-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/38775/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hey,</p>
+<p>is it possible to create a change file in geographical boundaries with osmupdate. </p>
+<p>I already tried:</p>
+<p>osmupdate germany-latest.osm.pbf 2014-11-23T21:22:02Z change_file.osc.gz -B=germany.poly</p>
+<p>But the Change File always contains the entire globe.</p>
+<p>regards</p>
+<p>lakul</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-changeset" href="/tags/changeset/" rel="tag" title="see questions tagged 'changeset'">changeset</a>
+<a class="post-tag tag-link-osmconvert" href="/tags/osmconvert/" rel="tag" title="see questions tagged 'osmconvert'">osmconvert</a>
+<a class="post-tag tag-link-regional" href="/tags/regional/" rel="tag" title="see questions tagged 'regional'">regional</a>
+<a class="post-tag tag-link-update" href="/tags/update/" rel="tag" title="see questions tagged 'update'">update</a>
+<a class="post-tag tag-link-change" href="/tags/change/" rel="tag" title="see questions tagged 'change'">change</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 Nov '14, 11:40</strong>
+</p>
+<img alt="lakul83's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9b6ed29df9f64447f43439473548aae5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10054/lakul83">lakul83</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="lakul83 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/38775/">
+                edited
+                <strong>25 Nov '14, 11:55</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-38775">
+</div>
+<div class="comment-tools" id="comment-tools-38775">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-38775-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/38775/create-change-file-in-geographical-boundaries-with-osmupdate?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/38775/create-change-file-in-geographical-boundaries-with-osmupdate?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/38775/create-change-file-in-geographical-boundaries-with-osmupdate?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/38775/create-change-file-in-geographical-boundaries-with-osmupdate?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="38777"></a>
+<div class="answer" id="answer-container-38777">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/38777/up/" id="post-38777-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-38777-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/38777/down/" id="post-38777-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Yes it is possible, but it is a bit more complicated.</p>
+<p>First you update your extract with osmupdate:</p>
+<pre><code>osmupdate germany-latest.osm.pbf germany-updated.osm.pbf -B=germany.poly
+</code></pre>
+<p>Then you calculate the differences with osmconvert:</p>
+<pre><code>osmconvert germany-updated.osm.pbf germany-latest.osm.pbf --diff --fake-lonlat --emulate-osmosis -o=diff.osc
+</code></pre>
+<p>This gies you the desired osm change file. After that you probably want to rename <code>germany-updated.osm.pbf</code> to <code>germany-latest.osm.pbf</code> to be able to run the same process again to get the next diff.</p>
+<p>It has a slight problem though: you might get incomplete extracts when ways or relations move inside your boundary. This is why I do a slightly more complicated variant for the swiss extract on planet.osm.ch:</p>
+<p>use a larger bbox around swizerland:</p>
+<pre><code>BBOX="5,45.3,11.3,48.3"
+</code></pre>
+<p>update this bbox:</p>
+<pre><code>osmupdate chbbox_updated.o5m chbbox.o5m --minutely -b=$BBOX
+</code></pre>
+<p>cut out switzerland from this larger region:</p>
+<pre><code>osmconvert chbbox_updated.o5m -B=$CHPOLY -o=switzerland_updated.o5m
+</code></pre>
+<p>and create the diff between the old cut out and the new one:</p>
+<pre><code>osmconvert switzerland_updated.o5m switzerland.o5m --diff --fake-lonlat --emulate-osmosis -o=diff.osc
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/38777/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Nov '14, 13:01</strong>
+</p>
+<img alt="datendelphin's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0697f0a3c5fdeff1999768f7df9cb2af?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3029/datendelphin">datendelphin</a><br/>
+<span class="score" title="234 reputation points">234</span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="datendelphin has one accepted answer">14%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-38777">
+<a name="38790"></a>
+<div class="comment" id="comment-38790">
+<div class="comment-score" id="post-38790-score"></div>
+<div class="comment-text"><p>Hi,</p>
+<p>many thanks. This idea I had. The update of the file germany-latest.pbf but takes too long. I would like to update my tile server every 5 minutes.</p>
+<p>Greetings Lakul</p></div>
+<div class="comment-info" id="comment-38790-info">
+<span class="comment-age">(25 Nov '14, 14:01)</span>
+<a class="comment-user userinfo" href="/users/10054/lakul83">lakul83</a>
+</div>
+</div>
+<a name="38804"></a>
+<div class="comment" id="comment-38804">
+<div class="comment-score" id="post-38804-score"></div>
+<div class="comment-text"><p>This is ambitious. If your server is too slow, you will have to rely on other resources or tools. For example overpass offers augmented diffs: <a href="http://wiki.openstreetmap.org/wiki/Overpass_API/Augmented_Diffs">http://wiki.openstreetmap.org/wiki/Overpass_API/Augmented_Diffs</a> But it only support BBOX for extracting a region. Or let someone with a fast server provide you with the regional diffs.</p></div>
+<div class="comment-info" id="comment-38804-info">
+<span class="comment-age">(25 Nov '14, 19:29)</span>
+<a class="comment-user userinfo" href="/users/3029/datendelphin">datendelphin</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-38777">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-38777-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/38775/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="dD61cujXL70llIHJJS34FWit42yNdOyE"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

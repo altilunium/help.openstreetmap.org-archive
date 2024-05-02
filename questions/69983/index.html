@@ -1,0 +1,176 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/69983/slow-query">Slow query</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/69983/up/" id="post-69983-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-69983-score" title="current number of votes">
+    -3
+</div>
+<a class="ajax-command post-vote down" href="/vote/69983/down/" id="post-69983-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/69983/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello, 
+I have a very slow query, </p>
+<p>if I remove the </p>
+<pre><code>WHERE active is null
+</code></pre>
+<p>Its work great
+(there is an index on that field of course)</p>
+<p>Query:</p>
+<pre><code>SELECT data_gis.id, ex_data.title, ex_data.description, ex_data.ex_text,  
+    ST_Y(ST_Transform(way, 4326)) as lat, ST_X(ST_Transform(way, 4326)) as lon, active 
+FROM ex_data join data_gis 
+    on ex_data.data_gis_id = data_gis.id 
+WHERE 
+    active is null 
+    and ST_DWithin(ST_Transform(ST_SetSrid(ST_Point(51.758783,-1.152665), 4326), 3857), way, 5000.0)  
+ORDER BY 
+    way &lt;-&gt; ST_Transform(ST_SetSrid(ST_Point(51.758783,-1.152665), 4326), 3857)  
+LIMIT 25;
+</code></pre>
+<p>Query plan:</p>
+<pre><code> Limit  (cost=60141.06..60143.98 rows=25 width=269)
+   -&gt;  Gather Merge  (cost=60141.06..60175.13 rows=292 width=269)
+         Workers Planned: 2
+         -&gt;  Sort  (cost=59141.04..59141.40 rows=146 width=269)
+               Sort Key: ((data_gis.way &lt;-&gt; '010100....'::geometry))
+               -&gt;  Nested Loop  (cost=285.26..59135.79 rows=146 width=269)
+                     -&gt;  Parallel Bitmap Heap Scan on ex_data  (cost=284.82..28888.62 rows=10972 width=148)
+                           Recheck Cond: (active IS NULL)
+                           -&gt;  Bitmap Index Scan on ex_data_org_lang_pkey  (cost=0.00..278.24 rows=26334 width=0)
+                                 Index Cond: (org_lang IS NULL)
+                     -&gt;  Index Scan using data_gis_pkey on data_gis  (cost=0.44..2.76 rows=1 width=137)
+                           Index Cond: (id = ex_data.data_gis_id)
+                           Filter: ((way &amp;&amp; '010300002......'::geometry) AND ('010100002011.....'::geometry &amp;&amp; st_expand(way, '5000'::double precision)) AND _st_dwithin('01010...'::geometry, way, '5000'::double precision))
+(13 rows)
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-query" href="/tags/query/" rel="tag" title="see questions tagged 'query'">query</a>
+<a class="post-tag tag-link-slow" href="/tags/slow/" rel="tag" title="see questions tagged 'slow'">slow</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>11 Jul '19, 07:35</strong>
+</p>
+<img alt="altopalo's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/53c4a40bd104f3de1bbc6ccb735e52eb?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14437/altopalo">altopalo</a><br/>
+<span class="score" title="53 reputation points">53</span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="10 badges"><span class="silver">●</span><span class="badgecount">10</span></span><span title="13 badges"><span class="bronze">●</span><span class="badgecount">13</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="altopalo has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/69983/">
+                edited
+                <strong>11 Jul '19, 07:35</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-69983">
+</div>
+<div class="comment-tools" id="comment-tools-69983">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-69983-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/69983/slow-query?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/69983/slow-query?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/69983/slow-query?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/69983/slow-query?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="69984"></a>
+<div class="answer" id="answer-container-69984">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/69984/up/" id="post-69984-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-69984-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/69984/down/" id="post-69984-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This question is off-topic here since it has nothing to do with OSM. Assuming that "acive" is in the same table as data_gis then you can likely fix the issue by creating a conditional index (<code>create index foo on table on data_gis using gist(way) where active is null</code>).</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/69984/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>11 Jul '19, 08:11</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-69984">
+<a name="69985"></a>
+<div class="comment" id="comment-69985">
+<div class="comment-score" id="post-69985-score"></div>
+<div class="comment-text"><p>tn'x
+but active field is in ex_data table and way is in data_gis table.</p></div>
+<div class="comment-info" id="comment-69985-info">
+<span class="comment-age">(11 Jul '19, 08:32)</span>
+<a class="comment-user userinfo" href="/users/14437/altopalo">altopalo</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-69984">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-69984-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/69983/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="jsGN4KU5jETA8xSdo4Klw44HK34yguDc"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,255 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/14932/why-are-the-cache-duration-settings-configured-in-mod_tile-being-ignored">Why are the cache duration settings configured in mod_tile being ignored?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/14932/up/" id="post-14932-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-14932-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/14932/down/" id="post-14932-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/14932/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>I`m running a tile server on Ubuntu 12.04LTS according to the documentation of switch2osm.org using the openstreetmap ppa from kakrueger. </p>
+<p>The geo-data doesn`t need to be update more than once in a month so I`ve set the caching times in mod_tile to one month - every cache duration setting I found in tileserver_site. When analyzing the tile requests with firebug the correct cache duration settings appear in the header.</p>
+<p>However, three days after the tiles are being pre-rendered they are considered to be outdated and rendered again on-the-fly when being requested by a client! So my cache duration settings in the config-file tileserver_site seem to be ignored.</p>
+<p>Now my questions:</p>
+<p><strong>How to enforce longer caching times? Where do I have to configure these settings to take effect? Does renderd ignore the mod_tile settings?</strong>
+What I do is:
+- touch the planet_import_complete after data-import with osm2pgsql
+- pre-render important and slow-rendered zoom-levels with render_list
+(Have to note that render_list tells me that it is missing the timestamp file:</p>
+<pre><code>Planet timestamp file (/var/lib/mod_tile//planet-import-complete) is missing
+</code></pre>
+<p>but after googling around this seems to be a bug, isn`t it?)</p>
+<p>I would be really glad if there is someone out there to help me or give me a hint...</p>
+<p>EDIT: As there are many comments I think it`s not a bad idea to summarize them:</p>
+<p>The answer of Frederik Ramm was the key: My timestamp file had a wrong name.
+I had </p>
+<p>planet_import_complete </p>
+<p>in the right folder. But the name must be</p>
+<p>planet-import-complete</p>
+<p>After correcting the file name of the timestamp-file render_list was reporting a correct message indicating the last update of the timestamp.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-renderd" href="/tags/renderd/" rel="tag" title="see questions tagged 'renderd'">renderd</a>
+<a class="post-tag tag-link-cache" href="/tags/cache/" rel="tag" title="see questions tagged 'cache'">cache</a>
+<a class="post-tag tag-link-mod_tile" href="/tags/mod_tile/" rel="tag" title="see questions tagged 'mod_tile'">mod_tile</a>
+<a class="post-tag tag-link-ubuntu" href="/tags/ubuntu/" rel="tag" title="see questions tagged 'ubuntu'">ubuntu</a>
+<a class="post-tag tag-link-switch2osm" href="/tags/switch2osm/" rel="tag" title="see questions tagged 'switch2osm'">switch2osm</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>09 Aug '12, 20:15</strong>
+</p>
+<img alt="OSMDeveloperBK's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/cfb323a8b79422753c14105f98941ec5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4257/osmdeveloperbk">OSMDeveloperBK</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="OSMDeveloperBK has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/14932/">
+                edited
+                <strong>10 Aug '12, 22:24</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-14932">
+</div>
+<div class="comment-tools" id="comment-tools-14932">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-14932-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/14932/why-are-the-cache-duration-settings-configured-in-mod_tile-being-ignored?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/14932/why-are-the-cache-duration-settings-configured-in-mod_tile-being-ignored?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/14932/why-are-the-cache-duration-settings-configured-in-mod_tile-being-ignored?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/14932/why-are-the-cache-duration-settings-configured-in-mod_tile-being-ignored?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="14933"></a>
+<div class="answer accepted-answer" id="answer-container-14933">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/14933/up/" id="post-14933-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-14933-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/14933/down/" id="post-14933-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/14933/" rel="nofollow" title="OSMDeveloperBK has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>What you see is consistent with the error message. When no planet-import-complete file is found, mod_tile will assume the planet file is three days old, and any tile older than three days will be re-rendered.</p>
+<p>If this is indeed a bug then you better get yourself a mod_tile version that doesn't have the bug. Are you really sure that you have your planet-import-complete file in the right location? It must either be in /var/lib/mod_tile or in /var/lib/mod_tile/whatever-your-stylename-is. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/14933/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Aug '12, 23:38</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/14933/">
+                edited
+                <strong>10 Aug '12, 08:33</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-14933">
+<a name="14936"></a>
+<div class="comment" id="comment-14936">
+<div class="comment-score" id="post-14936-score"></div>
+<div class="comment-text"><p>Well, as I wrote in my question, there is the Planet timestamp in the location you mentioned and I`m always touching it after the data-import.
+But is the directory mentioned in the error message really existing?
+/var/lib/mod_tile//planet-import-complete</p>
+<p>I mean the double slash before planet-import-complete
+This may indicate that the name of the Whatever-your-stylename-is that you mentioned in your answer is not set but expected?
+Where do I set that stylename? In the osm.xml or where?
+By the way, I`m using the German style created in a bachelor thesis you were responsible for.</p></div>
+<div class="comment-info" id="comment-14936-info">
+<span class="comment-age">(10 Aug '12, 08:37)</span>
+<a class="comment-user userinfo" href="/users/4257/osmdeveloperbk">OSMDeveloperBK</a>
+</div>
+</div>
+<a name="14937"></a>
+<div class="comment" id="comment-14937">
+<div class="comment-score" id="post-14937-score">1</div>
+<div class="comment-text"><p>I don't know if the file really exists on your computer. Enter the command</p>
+<p><code>[ -f /var/lib/mod_tile//planet-import-complete ] || echo "oh no, the file does not exist"</code></p>
+<p>to check. The double slash should not be a problem. - You say you're always touching the file after data import but by that you mean once a month, or are you updating more frequently? If the file exists, then any tile older than the file timestamp will be re-rendered. So if you update your database every day but are happy to have old tiles lying around, then it would not be good to touch the file after each update....</p></div>
+<div class="comment-info" id="comment-14937-info">
+<span class="comment-age">(10 Aug '12, 08:43)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="14938"></a>
+<div class="comment not_top_scorer" id="comment-14938">
+<div class="comment-score" id="post-14938-score"></div>
+<div class="comment-text"><p>Ah that means I should touch it before running render_list to prerender tiles? And what is whith the cache duration settings of mod-tile? Are they done relative to the timestamp?
+The file exists and everybody (especially www-data) has full access to it though your command seems to be incomplete.</p></div>
+<div class="comment-info" id="comment-14938-info">
+<span class="comment-age">(10 Aug '12, 08:56)</span>
+<a class="comment-user userinfo" href="/users/4257/osmdeveloperbk">OSMDeveloperBK</a>
+</div>
+</div>
+<a name="14939"></a>
+<div class="comment" id="comment-14939">
+<div class="comment-score" id="post-14939-score">1</div>
+<div class="comment-text"><p>render_list does not look at the planet-import-complete file, it just renders whatever you tell it. Only mod_tile looks at that timestamp file. The cache duration settings are there to control how long the browser is told to keep the tile, they have nothing to do with how often the tile is rendered.</p></div>
+<div class="comment-info" id="comment-14939-info">
+<span class="comment-age">(10 Aug '12, 09:13)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="14941"></a>
+<div class="comment not_top_scorer" id="comment-14941">
+<div class="comment-score" id="post-14941-score"></div>
+<div class="comment-text"><p>Now I<code>ve checked my experimental map server installation inside a VM where the standard mapnik style is used and there render_list doesn</code>t say that the timestamp file is missing.
+So I think in my case the style name is set to an empty string and so it cannot be found. (I think that because of the double slash in the path name of the error message)
+Where do I have to set the style name? Is it set during the import with osm2pgsql or within renderd.conf or the style-File or where?</p></div>
+<div class="comment-info" id="comment-14941-info">
+<span class="comment-age">(10 Aug '12, 09:50)</span>
+<a class="comment-user userinfo" href="/users/4257/osmdeveloperbk">OSMDeveloperBK</a>
+</div>
+</div>
+<a name="14942"></a>
+<div class="comment" id="comment-14942">
+<div class="comment-score" id="post-14942-score">2</div>
+<div class="comment-text"><p>Usually the name is in your Apache configuration where you have the AddTileConfig directive. The first parameter is the web path, and the second is the style name.</p></div>
+<div class="comment-info" id="comment-14942-info">
+<span class="comment-age">(10 Aug '12, 09:57)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="14943"></a>
+<div class="comment not_top_scorer" id="comment-14943">
+<div class="comment-score" id="post-14943-score"></div>
+<div class="comment-text"><p>Hmm, in my config file AddTileConfig is commented out and instead the following is used:</p>
+<p>LoadTileConfigFile /etc/renderd.conf</p>
+<p>But in renderd.conf there is no option/section for the stylename.</p></div>
+<div class="comment-info" id="comment-14943-info">
+<span class="comment-age">(10 Aug '12, 10:09)</span>
+<a class="comment-user userinfo" href="/users/4257/osmdeveloperbk">OSMDeveloperBK</a>
+</div>
+</div>
+<a name="14960"></a>
+<div class="comment" id="comment-14960">
+<div class="comment-score" id="post-14960-score">2</div>
+<div class="comment-text"><p>Frederik, you were absolutely right: The timestamp file was missing on my system. I had planet_import_complete instead of the required planet-import-complete. Now render_list is not missing the timestamp anymore. In three days I should know it exactly. Thank you very much for this hint!
+BTW I faced a strange issue when configuring the german map style, but I don<code>t know where to report this bug (?). I</code>ve already described it here: <a href="http://forum.openstreetmap.org/viewtopic.php?pid=253552#p253552">http://forum.openstreetmap.org/viewtopic.php?pid=253552#p253552</a></p></div>
+<div class="comment-info" id="comment-14960-info">
+<span class="comment-age">(10 Aug '12, 22:06)</span>
+<a class="comment-user userinfo" href="/users/4257/osmdeveloperbk">OSMDeveloperBK</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-14933">
+<span class="comments-showing">
+            showing 5 of 8
+        </span>
+<a class="show-all-comments-link" href="#">show 3 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-14933-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/14932/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="uVsWW1zQ0rFwWfMOTIABbLyF2Hh3lhMx"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,180 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/85374/osmosis-cannot-begin-reading-in-add-stage-must-call-complete-first-error">Osmosis Cannot begin reading in Add stage, must call complete first. ERROR</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/85374/up/" id="post-85374-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-85374-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/85374/down/" id="post-85374-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/85374/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am trying to compile a map, I added fake version and fake author with osmconvert. But I am getting this error. Btw I am using latest stable. The command I have used: </p>
+<p>bin/osmosis --rx file="engineering-raw-auth-version.osm" --mapfile-writer file=engineering-base-drawing.map type=hd tag-conf-file=tag-mapping.xml tag-values=true</p>
+<p>````
+org.openstreetmap.osmosis.core.OsmosisRuntimeException: Cannot begin reading in Add stage, must call complete first.
+        at org.openstreetmap.osmosis.core.store.RandomAccessObjectStore.initializeReadingStage(RandomAccessObjectStore.java:156)
+        at org.openstreetmap.osmosis.core.store.RandomAccessObjectStore.createReader(RandomAccessObjectStore.java:181)
+        at org.openstreetmap.osmosis.core.store.IndexStore.createReader(IndexStore.java:151)
+        at org.openstreetmap.osmosis.core.store.IndexedObjectStore.createReader(IndexedObjectStore.java:96)
+        at org.mapsforge.map.writer.HDTileBasedDataProcessor.complete(HDTileBasedDataProcessor.java:132)
+        at org.mapsforge.map.writer.osmosis.MapFileWriterTask.complete(MapFileWriterTask.java:104)
+        at org.openstreetmap.osmosis.xml.v0_6.XmlReader.run(XmlReader.java:53)
+        at java.base/java.lang.Thread.run(Thread.java:834)</p>
+<p>Aug 18, 2022 3:30:15 PM org.openstreetmap.osmosis.core.Osmosis main
+SEVERE: Execution aborted.
+org.openstreetmap.osmosis.core.OsmosisRuntimeException: One or more tasks failed.
+        at org.openstreetmap.osmosis.core.pipeline.common.Pipeline.waitForCompletion(Pipeline.java:146)
+        at org.openstreetmap.osmosis.core.Osmosis.run(Osmosis.java:92)
+        at org.openstreetmap.osmosis.core.Osmosis.main(Osmosis.java:37)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.launchStandard(Launcher.java:330)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:238)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+        at org.codehaus.classworlds.Launcher.main(Launcher.java:47)
+````</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>18 Aug '22, 13:35</strong>
+</p>
+<img alt="baranacikgoz's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7f1c260e99dffff55f895757e570cf43?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/21065/baranacikgoz">baranacikgoz</a><br/>
+<span class="score" title="76 reputation points">76</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="baranacikgoz has 2 accepted answers">100%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/85374/">
+                edited
+                <strong>18 Aug '22, 13:58</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-85374">
+<a name="85375"></a>
+<div class="comment" id="comment-85375">
+<div class="comment-score" id="post-85375-score"></div>
+<div class="comment-text"><p>Two questions:</p>
+<p>1) What osmosis command did you actually run?</p>
+<p>2) What is your end goal?  I'm not sure what "compile a map" means, and it may be there is a better way to do whatever it is that you are trying to do.</p></div>
+<div class="comment-info" id="comment-85375-info">
+<span class="comment-age">(18 Aug '22, 13:46)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="85376"></a>
+<div class="comment" id="comment-85376">
+<div class="comment-score" id="post-85376-score"></div>
+<div class="comment-text"><p>Sorry, the command was I use: </p>
+<p>bin/osmosis --rx file="engineering-raw-auth-version.osm" --mapfile-writer file=engineering-base-drawing.map type=hd tag-conf-file=tag-mapping.xml tag-values=true</p></div>
+<div class="comment-info" id="comment-85376-info">
+<span class="comment-age">(18 Aug '22, 13:58)</span>
+<a class="comment-user userinfo" href="/users/21065/baranacikgoz">baranacikgoz</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-85374">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-85374-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/85374/osmosis-cannot-begin-reading-in-add-stage-must-call-complete-first-error?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/85374/osmosis-cannot-begin-reading-in-add-stage-must-call-complete-first-error?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/85374/osmosis-cannot-begin-reading-in-add-stage-must-call-complete-first-error?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/85374/osmosis-cannot-begin-reading-in-add-stage-must-call-complete-first-error?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="85377"></a>
+<div class="answer accepted-answer answered-by-owner" id="answer-container-85377">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/85377/up/" id="post-85377-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-85377-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/85377/down/" id="post-85377-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/85377/" rel="nofollow" title="SomeoneElse has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I just removed the type=hd and it worked.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/85377/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>18 Aug '22, 14:00</strong>
+</p>
+<img alt="baranacikgoz's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7f1c260e99dffff55f895757e570cf43?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/21065/baranacikgoz">baranacikgoz</a><br/>
+<span class="score" title="76 reputation points">76</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="baranacikgoz has 2 accepted answers">100%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-85377">
+</div>
+<div class="comment-tools" id="comment-tools-85377">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-85377-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/85374/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="zE0wqENzIwIYJNveK9Wza82DB7YSVlVh"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

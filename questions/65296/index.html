@@ -1,0 +1,181 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/65296/are-polygons-allowed-to-use-the-same-point-more-than-once">Are polygons allowed to use the same point more than once?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/65296/up/" id="post-65296-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-65296-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/65296/down/" id="post-65296-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/65296/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>The OGC Simple Feature spec says that the rings making up the boundaries of a polygon must be closed and simple, and its definition of "simple" includes that the ring may not pass through the same point more than once (except at the ends). However, Mapnik happily renders such polygons, for example (at the time of writing this) <a href="https://www.openstreetmap.org/way/447865387">way 447865387</a>, which uses node 4449293245 twice.</p>
+<p>Should I fix my import pipeline to convert this into a multipolygon (or simply two polygons) before loading it into PostGIS, or should I fix the data to remove the self-intersection?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-validation" href="/tags/validation/" rel="tag" title="see questions tagged 'validation'">validation</a>
+<a class="post-tag tag-link-polygon" href="/tags/polygon/" rel="tag" title="see questions tagged 'polygon'">polygon</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>13 Aug '18, 11:21</strong>
+</p>
+<img alt="turepalsson's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/80abc4597de5aeb507c5a7ccd4ccee7a?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3893/turepalsson">turepalsson</a><br/>
+<span class="score" title="836 reputation points">836</span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="16 badges"><span class="silver">●</span><span class="badgecount">16</span></span><span title="25 badges"><span class="bronze">●</span><span class="badgecount">25</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="turepalsson has 3 accepted answers">25%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/65296/">
+                edited
+                <strong>13 Aug '18, 11:22</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-65296">
+<a name="65302"></a>
+<div class="comment" id="comment-65302">
+<div class="comment-score" id="post-65302-score"></div>
+<div class="comment-text"><p>"However, Mapnik happily renders such polygons,"
+I don't think it does: <a href="https://www.openstreetmap.org/way/447865387#map=19/63.27383/18.67055">https://www.openstreetmap.org/way/447865387#map=19/63.27383/18.67055</a></p></div>
+<div class="comment-info" id="comment-65302-info">
+<span class="comment-age">(13 Aug '18, 16:22)</span>
+<a class="comment-user userinfo" href="/users/1532/davef">DaveF</a>
+</div>
+</div>
+<a name="65310"></a>
+<div class="comment" id="comment-65310">
+<div class="comment-score" id="post-65310-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/1532/davef">@DaveF</a>: Hm, no, you're right. My bad. What about this one, then? It has a "pocket" in it, but looks like it's rendering: <a href="https://www.openstreetmap.org/way/481643030">https://www.openstreetmap.org/way/481643030</a></p></div>
+<div class="comment-info" id="comment-65310-info">
+<span class="comment-age">(13 Aug '18, 18:58)</span>
+<a class="comment-user userinfo" href="/users/3893/turepalsson">turepalsson</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-65296">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-65296-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/65296/are-polygons-allowed-to-use-the-same-point-more-than-once?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/65296/are-polygons-allowed-to-use-the-same-point-more-than-once?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/65296/are-polygons-allowed-to-use-the-same-point-more-than-once?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/65296/are-polygons-allowed-to-use-the-same-point-more-than-once?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="65297"></a>
+<div class="answer accepted-answer" id="answer-container-65297">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/65297/up/" id="post-65297-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-65297-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/65297/down/" id="post-65297-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/65297/" rel="nofollow" title="turepalsson has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Self intersection is an error in the OSM data model too (insofar we actually have a notion of such), however most tools will undertake an effort to process not quite valid objects.</p>
+<p>In summary IMHO you should fix the object in question in OSM. More reading: <a href="https://wiki.openstreetmap.org/wiki/Relation:multipolygon#Valid_Multipolygon_conditions">https://wiki.openstreetmap.org/wiki/Relation:multipolygon#Valid_Multipolygon_conditions</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/65297/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>13 Aug '18, 11:40</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/65297/">
+                edited
+                <strong>13 Aug '18, 14:47</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-65297">
+<a name="65298"></a>
+<div class="comment" id="comment-65298">
+<div class="comment-score" id="post-65298-score"></div>
+<div class="comment-text"><p>For multipolygon, the wiki (<a href="https://wiki.openstreetmap.org/wiki/Relation:multipolygon/validity)">https://wiki.openstreetmap.org/wiki/Relation:multipolygon/validity)</a> explicitly allows some self-intersections. Perhaps that should be changed?</p></div>
+<div class="comment-info" id="comment-65298-info">
+<span class="comment-age">(13 Aug '18, 11:47)</span>
+<a class="comment-user userinfo" href="/users/3893/turepalsson">turepalsson</a>
+</div>
+</div>
+<a name="65301"></a>
+<div class="comment" id="comment-65301">
+<div class="comment-score" id="post-65301-score"></div>
+<div class="comment-text"><p>I would consider the first variant "wrong" too, the thing is, as already mentioned there is no validation on input so you can essentially construct lots of things that you shouldn't do. JOSM will complain about a self-intersecting way in any case.</p>
+<p>Note <a href="https://wiki.openstreetmap.org/wiki/Relation:multipolygon/validity">https://wiki.openstreetmap.org/wiki/Relation:multipolygon/validity</a> has essentially had one editor that added the original content 6 years ago, we would need to discuss if ire represents current thinking.</p></div>
+<div class="comment-info" id="comment-65301-info">
+<span class="comment-age">(13 Aug '18, 14:46)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-65297">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-65297-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/65296/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="czLNFUXv1eoaaEvtSntWCSIjyPwfHkVL"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,144 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/73905/overpassapi-url-interpreter-and-geocodearea">OverpassAPI: url interpreter and geocodeArea</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/73905/up/" id="post-73905-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-73905-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/73905/down/" id="post-73905-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/73905/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi, </p>
+<p>I try to get all restaurants by cities in a region. In Overpass Turbo, I have : (<a href="http://overpass-turbo.eu/s/S9W)">http://overpass-turbo.eu/s/S9W)</a></p>
+<pre><code>[out:json][timeout:300];
+    {{geocodeArea:"Le Puy-en-Velay Auvergne-Rhône-Alpes France"}}-&gt;.searchArea;
+    (
+      node["amenity"="restaurant"](area.searchArea);
+      way["amenity"="restaurant"](area.searchArea);
+      relation["amenity"="restaurant"](area.searchArea);
+    );
+    out center;
+</code></pre>
+<p>This is working fine. <br/>
+But I have hundred of cities in my region (all recovered from Wikidata) and I want to get restaurants for all cities.  </p>
+<p>I don't want to do it manually in overpass-turbo.eu tool, so I tried to export my "query" as an url. This is the generated url:    </p>
+<blockquote>
+<p><a href="http://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A300%5D%3B%0Aarea%283600120067%29-%3E.searchArea%3B%0A%28%0A%20%20node%5B%22amenity%22%3D">http://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A300%5D%3B%0Aarea%283600120067%29-%3E.searchArea%3B%0A%28%0A%20%20node%5B%22amenity%22%3D</a>
+%22restaurant%22%5D%28area.searchArea%29%3B%0A%20%20way%5B%22amenity%22%3D%22restaurant
+%22%5D%28area.searchArea%29%3B%0A%20%20relation%5B%22amenity%22%3D
+%22restaurant%22%5D%28area.searchArea%29%3B%0A%29%3B%0Aout%20center%3B</p>
+</blockquote>
+<p>As you can see in the generated url, <strong>the geocodeArea is converted to an area with ID 3600120067.</strong> </p>
+<p>Is there a way to keep generated url with the geocodeArea as string, so I can write a script which will generate url for all cities ?<br/>
+And, if not, where can I get this area ID ?   </p>
+<p>Thanks.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-url" href="/tags/url/" rel="tag" title="see questions tagged 'url'">url</a>
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+<a class="post-tag tag-link-geocodearea" href="/tags/geocodearea/" rel="tag" title="see questions tagged 'geocodearea'">geocodearea</a>
+<a class="post-tag tag-link-overpass-api" href="/tags/overpass-api/" rel="tag" title="see questions tagged 'overpass-api'">overpass-api</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>01 Apr '20, 09:26</strong>
+</p>
+<img alt="Aximem's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/4d18662ea155ef401b24f79a0789f354?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18122/aximem">Aximem</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Aximem has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/73905/">
+                edited
+                <strong>01 Apr '20, 09:28</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-73905">
+<a name="73909"></a>
+<div class="comment" id="comment-73909">
+<div class="comment-score" id="post-73909-score">1</div>
+<div class="comment-text"><p>the algorithm to determine the ID is given in <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Language_Guide#Area_clauses_.28.22area_filters.22.29">https://wiki.openstreetmap.org/wiki/Overpass_API/Language_Guide#Area_clauses_.28.22area_filters.22.29</a></p></div>
+<div class="comment-info" id="comment-73909-info">
+<span class="comment-age">(01 Apr '20, 10:34)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+<a name="73913"></a>
+<div class="comment" id="comment-73913">
+<div class="comment-score" id="post-73913-score">1</div>
+<div class="comment-text"><p>If the names are consistent in OSM, you can use a query like <code>area[admin_level=8][name=NAME];</code> to access the area directly from Overpass API. Cities are usually admin level 8, but that can vary.</p></div>
+<div class="comment-info" id="comment-73913-info">
+<span class="comment-age">(01 Apr '20, 12:23)</span>
+<a class="comment-user userinfo" href="/users/10973/maxerickson">maxerickson</a>
+</div>
+</div>
+<a name="73914"></a>
+<div class="comment" id="comment-73914">
+<div class="comment-score" id="post-73914-score"></div>
+<div class="comment-text"><p>Thanks for your help, I will give it a try</p></div>
+<div class="comment-info" id="comment-73914-info">
+<span class="comment-age">(01 Apr '20, 12:25)</span>
+<a class="comment-user userinfo" href="/users/18122/aximem">Aximem</a>
+</div>
+</div>
+<a name="73915"></a>
+<div class="comment" id="comment-73915">
+<div class="comment-score" id="post-73915-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/10973/maxerickson">@maxerickson</a>, this is working but I have to use exact city name. Some cities have the same name. For example there is 12 "Beaulieu" in France. That's why, with geocodeArea, I use "city + region + country". I cannot do this with area.</p></div>
+<div class="comment-info" id="comment-73915-info">
+<span class="comment-age">(01 Apr '20, 12:32)</span>
+<a class="comment-user userinfo" href="/users/18122/aximem">Aximem</a>
+</div>
+</div>
+<a name="73916"></a>
+<div class="comment" id="comment-73916">
+<div class="comment-score" id="post-73916-score"></div>
+<div class="comment-text"><p>You can do an outer area query to deal with that, and then restrict the city query to that area. And then do another one to restrict the region query to a country, and so on.</p>
+<p>Having nominatim deal with all that is nice. For some problems, using the admin_level based area query ends up being quite a bit simpler.</p></div>
+<div class="comment-info" id="comment-73916-info">
+<span class="comment-age">(01 Apr '20, 12:53)</span>
+<a class="comment-user userinfo" href="/users/10973/maxerickson">maxerickson</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-73905">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-73905-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/73905/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="R1gNrGKT2VyRBiTXbNgrwhxaUKh1Q1y1"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

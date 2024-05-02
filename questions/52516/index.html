@@ -1,0 +1,180 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/52516/how-can-i-install-my-local-routing-engine">How can i install my local routing engine?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/52516/up/" id="post-52516-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-52516-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/52516/down/" id="post-52516-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/52516/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I　want to set up a map which used in local area network. As i have installed the rails port, tile server and nominatim. I am going to build my local routing engine next step. And i find that OpenStreetMap use four online routing engine on the website, they are graphhopper, mapquest, mapzen and osrm. I have looked for many website on the wiki, but i still have no ideal what should i do to build local routing engine. Can someone tell me the overall step to build local routing engine . </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-routing" href="/tags/routing/" rel="tag" title="see questions tagged 'routing'">routing</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>13 Oct '16, 07:56</strong>
+</p>
+<img alt="yuyy's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3522efac952d508cf251cd2590e68ca5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12524/yuyy">yuyy</a><br/>
+<span class="score" title="236 reputation points">236</span><span title="22 badges"><span class="badge1">●</span><span class="badgecount">22</span></span><span title="24 badges"><span class="silver">●</span><span class="badgecount">24</span></span><span title="31 badges"><span class="bronze">●</span><span class="badgecount">31</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="yuyy has one accepted answer">20%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-52516">
+</div>
+<div class="comment-tools" id="comment-tools-52516">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-52516-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/52516/how-can-i-install-my-local-routing-engine?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/52516/how-can-i-install-my-local-routing-engine?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/52516/how-can-i-install-my-local-routing-engine?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/52516/how-can-i-install-my-local-routing-engine?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="52519"></a>
+<div class="answer" id="answer-container-52519">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/52519/up/" id="post-52519-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-52519-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/52519/down/" id="post-52519-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The realistic choices for running your own routing engines are likely</p>
+<p>graphhopper - <a href="http://wiki.openstreetmap.org/wiki/GraphHopper">http://wiki.openstreetmap.org/wiki/GraphHopper</a></p>
+<p>mapzen - <a href="https://github.com/valhalla">https://github.com/valhalla</a></p>
+<p>OSRM - <a href="https://github.com/Project-OSRM">https://github.com/Project-OSRM</a></p>
+<p>Which one is best suited for your needs depends really on your criteria, for example how large the area is you want to route over, if you want to be able to adjust routing parameters on the fly, what resources you have access to and so on.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/52519/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>13 Oct '16, 08:30</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/52519/">
+                edited
+                <strong>13 Oct '16, 13:29</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-52519">
+<a name="52521"></a>
+<div class="comment" id="comment-52521">
+<div class="comment-score" id="post-52521-score"></div>
+<div class="comment-text"><p>Thanks to you reply, can you simply explain the difference between these three engines?</p></div>
+<div class="comment-info" id="comment-52521-info">
+<span class="comment-age">(13 Oct '16, 09:10)</span>
+<a class="comment-user userinfo" href="/users/12524/yuyy">yuyy</a>
+</div>
+</div>
+<a name="52522"></a>
+<div class="comment" id="comment-52522">
+<div class="comment-score" id="post-52522-score">2</div>
+<div class="comment-text"><p>See <a href="https://wiki.openstreetmap.org/wiki/Routing/online_routers">https://wiki.openstreetmap.org/wiki/Routing/online_routers</a> for a comparison.</p></div>
+<div class="comment-info" id="comment-52522-info">
+<span class="comment-age">(13 Oct '16, 09:26)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="52523"></a>
+<div class="comment" id="comment-52523">
+<div class="comment-score" id="post-52523-score">2</div>
+<div class="comment-text"><p>Hi yuyy, would it be better to start reading the linked pages first and ask specific questions later ?</p></div>
+<div class="comment-info" id="comment-52523-info">
+<span class="comment-age">(13 Oct '16, 09:31)</span>
+<a class="comment-user userinfo" href="/users/3443/hendrikklaas">Hendrikklaas</a>
+</div>
+</div>
+<a name="52669"></a>
+<div class="comment" id="comment-52669">
+<div class="comment-score" id="post-52669-score"></div>
+<div class="comment-text"><p>I want try to install mapzen routing service, and i have read the mapzen turn-by-turn document in the mapzen website. Then i downloaded and installed thor on the <a href="https://github.com/valhalla/thor,">https://github.com/valhalla/thor,</a> but i don't know how to use it. Should i build a routing tile and make a web front end that provide a browser-based routing interface. If so  what should i do to realize that. 
+I don't have a clear idea, can someone tell me a feasible solution? And i am sorry that i reply so late and ask this so nasty problem.</p></div>
+<div class="comment-info" id="comment-52669-info">
+<span class="comment-age">(25 Oct '16, 08:26)</span>
+<a class="comment-user userinfo" href="/users/12524/yuyy">yuyy</a>
+</div>
+</div>
+<a name="52670"></a>
+<div class="comment" id="comment-52670">
+<div class="comment-score" id="post-52670-score">1</div>
+<div class="comment-text"><p>This is a separate problem. Please open a new question for it.</p></div>
+<div class="comment-info" id="comment-52670-info">
+<span class="comment-age">(25 Oct '16, 08:39)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-52519">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-52519-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/52516/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="9PVZ75B5FhUT7y448vQdOoT515reBBMz"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

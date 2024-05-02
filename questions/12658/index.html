@@ -1,0 +1,136 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/12658/markers-not-displayed-in-xhtml">[closed] Markers not displayed in xhtml</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/12658/up/" id="post-12658-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-12658-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/12658/down/" id="post-12658-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/12658/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>I just started working with OpenLayers because I want to include a map on my JSF page (.xhtml files). I want to use the same feature that is demonstrated in this example:
+<a href="http://openlayers.org/dev/examples/styles-context.html">http://openlayers.org/dev/examples/styles-context.html</a></p>
+<p>I played with the code a little bit in the html example files that come with the .zip download.</p>
+<p>When I copied the code into my JSF .xhtml page, the map appears but the markers are not displayed. Here is the example code:</p>
+<pre><code>&lt;script type="text/javascript"&gt;
+//&lt;![CDATA[
+var map;
+function init(){
+ map = new OpenLayers.Map('map', {maxResolution:'auto'});
+var wms = new OpenLayers.Layer.WMS.InlineXhtml( "OpenLayers WMS",
+ "http://vmap0.tiles.osgeo.org/wms/vmap0", {layers: 'basic', format: 'image/svg+xml'} );
+ map.addLayer(wms);
+
+// create 50 random features in the northern hemisphere
+ // give them a "type" attribute that will be used to style
+// them by size
+var features = new Array(50);
+            for (var i=0; i&lt;features.length; i++) {
+ features[i] = new OpenLayers.Feature.Vector(
+new OpenLayers.Geometry.Point(
+                        (360 * Math.random()) - 180, 90 * Math.random()
+), {
+ type: 5 + parseInt(5 * Math.random())
+}
+);
+ }
+
+ // allow testing of specific renderers via "?renderer=Canvas", etc
+ var renderer = OpenLayers.Util.getParameters(window.location.href).renderer;
+ renderer = (renderer) ? [renderer] : OpenLayers.Layer.Vector.prototype.renderers;
+
+            // create the layer styleMap with a simple symbolizer template
+yer1 = new OpenLayers.Layer.Vector('Points', {
+styleMap: new OpenLayers.StyleMap({
+pointRadius: "${type}", // based on feature.attributes.type
+ fillColor: "#000000"
+ }),
+ renderers: renderer
+});
+layer1.addFeatures(features);
+
+ map.addLayers([layer1]);
+map.zoomToExtent(layer1.getDataExtent());
+ }
+//]]&gt;
+ &lt;/script&gt;
+</code></pre>
+<p>I added:</p>
+<pre><code>map.zoomToExtent(layer1.getDataExtent());
+</code></pre>
+<p>and changed the markers from 50 random to 2 markers of the coordinates of London and Berlin. And the map was centered exactly to show them, but the markers are still not displayed.  But that proves that the markers are read and loaded to the map correctly, just not displayed. If I do the same back in the example .html page the map is again centered properly and the markers are displayed.</p>
+<p>Is it the problem of xhtml? How to fix this? </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-marker" href="/tags/marker/" rel="tag" title="see questions tagged 'marker'">marker</a>
+<a class="post-tag tag-link-xhtml" href="/tags/xhtml/" rel="tag" title="see questions tagged 'xhtml'">xhtml</a>
+<a class="post-tag tag-link-openlayers" href="/tags/openlayers/" rel="tag" title="see questions tagged 'openlayers'">openlayers</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>10 May '12, 14:57</strong>
+</p>
+<img alt="srd_pl's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/96eef35222da3d02a2bd5fe9e66548bb?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3565/srd_pl">srd_pl</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="srd_pl has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/12658/">
+                closed
+                <strong>10 May '12, 15:19</strong>
+</a>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-12658">
+</div>
+<div class="comment-tools" id="comment-tools-12658">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-12658-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<div class="question-status" style="margin-bottom:15px">
+<h3>
+                The question has been closed for the following reason "This is not an OpenLayers support forum. Your Question is not OpenStreetMap related. Please see http://openlayers.org/ for OpenLayers mailing lists and support." by
+                <a href="/users/104/frederik-ramm">Frederik Ramm</a>
+                 10 May '12, 15:19
+            </h3>
+</div>
+<form action="/questions/12658/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="wcvGEMguQdUy2v55FuhsJjRAChTDpSAW"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

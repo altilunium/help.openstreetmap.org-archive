@@ -1,0 +1,166 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/60724/cant-upload-osc-to-local-rails-port-instance">Can't upload .osc to local Rails Port instance.</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/60724/up/" id="post-60724-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-60724-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/60724/down/" id="post-60724-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/60724/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have been experimenting with a local instance of Rails Port. I used <code>osmosis</code> to load a small <code>pbf</code> of my neighborhood. Using JOSM I edited some data on the local instance. Then a few weeks later I downloaded the latest <code>osm</code> of my neighborhood. Using <code>osmosis</code> I generated a <code>.osc</code> file, a diff between my postgres database and the new <code>osm</code> file. I opened the <code>.osc</code> file with <code>JOSM</code> where I could see the changes, but I couldn't upload the changes to local postgres database. It shows a conflict and upon giving sync, both entire data set and specific node it wouldn't upload ans keep showing the same conflict message.</p>
+<p>P.S.: yes I have a user account on local Rails Port instance with what I can upload data manually and yes I changed the OSM Server URL to point my local instance which is <a href="http://localhost:3000/api">http://localhost:3000/api</a></p>
+<p>Thanks in advance!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-.osc" href="/tags/.osc/" rel="tag" title="see questions tagged '.osc'">.osc</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+<a class="post-tag tag-link-railsport" href="/tags/railsport/" rel="tag" title="see questions tagged 'railsport'">railsport</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Nov '17, 11:57</strong>
+</p>
+<img alt="Sawan%20Shariar's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fa2f470a891d0bee66ec570d0e94868b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12680/sawan-shariar">Sawan Shariar</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Sawan Shariar has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/60724/">
+                edited
+                <strong>23 Nov '17, 13:23</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-60724">
+<a name="60725"></a>
+<div class="comment" id="comment-60725">
+<div class="comment-score" id="post-60725-score"></div>
+<div class="comment-text"><p>Have you really created a diff between your <em>database</em> and the new osm file, or a diff between the old pbf file and the new osm file? -- Could you post the conflict error message?</p></div>
+<div class="comment-info" id="comment-60725-info">
+<span class="comment-age">(21 Nov '17, 12:33)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="60747"></a>
+<div class="comment" id="comment-60747">
+<div class="comment-score" id="post-60747-score"></div>
+<div class="comment-text"><p>yes, I created a diff between my database and the new osm file.
+Error message from JOSM:
+'Conflicts detected Uploading failed because the server has a newer version of one of your nodes, ways, or relations. The conflict is caused by the node with id 1,472,108,803, the server has version 1, your version is 2. Click to Synchronize node 1,472,108,803 only to synchronize the conflicting primitive only. Click to Synchronize entire dataset to synchronize the entire local dataset with the server.Click Cancel to abort and continue editing.' If I click on any of them it syncs with the database and gives me the same conflict error.</p></div>
+<div class="comment-info" id="comment-60747-info">
+<span class="comment-age">(23 Nov '17, 13:22)</span>
+<a class="comment-user userinfo" href="/users/12680/sawan-shariar">Sawan Shariar</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-60724">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-60724-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/60724/cant-upload-osc-to-local-rails-port-instance?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/60724/cant-upload-osc-to-local-rails-port-instance?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/60724/cant-upload-osc-to-local-rails-port-instance?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/60724/cant-upload-osc-to-local-rails-port-instance?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="60753"></a>
+<div class="answer" id="answer-container-60753">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/60753/up/" id="post-60753-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-60753-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/60753/down/" id="post-60753-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The versions of the objects in your .osc have somehow been incremented and no longer match what's in the database. As per <a href="http://wiki.openstreetmap.org/wiki/Elements">Elements</a>:</p>
+<p>"Version: Integer - The edit version of the object. Newly created objects start at version 1 and the value is incremented by the server when a client uploads a new version of the object. <strong>The server will reject a new version of an object if the version sent by the client does not match the current version of the object in the database.</strong>"</p>
+<p>Once you upload the modified objects with the same version as in the database, the server will then increment the version number for you.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/60753/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>23 Nov '17, 16:57</strong>
+</p>
+<img alt="alester's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/087bb38ba920baadf1df9dfc473208ec?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8189/alester">alester</a><br/>
+<span class="score" title="6631 reputation points"><span class="">6.6k</span></span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="66 badges"><span class="silver">●</span><span class="badgecount">66</span></span><span title="100 badges"><span class="bronze">●</span><span class="badgecount">100</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="alester has 37 accepted answers">28%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-60753">
+<a name="60772"></a>
+<div class="comment" id="comment-60772">
+<div class="comment-score" id="post-60772-score"></div>
+<div class="comment-text"><p>so how do you suggest I go ahead with the marge?</p></div>
+<div class="comment-info" id="comment-60772-info">
+<span class="comment-age">(25 Nov '17, 09:12)</span>
+<a class="comment-user userinfo" href="/users/12680/sawan-shariar">Sawan Shariar</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-60753">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-60753-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/60724/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="JAYUfQ4xrcaw1sfkMjFbPL12alrCrWYV"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

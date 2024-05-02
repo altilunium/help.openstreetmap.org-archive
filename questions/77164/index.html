@@ -1,0 +1,242 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/77164/i-dont-know-how-to-show-the-button">i don't know how to show the button.</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/77164/up/" id="post-77164-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-77164-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/77164/down/" id="post-77164-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/77164/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>i am using org.osmdroid:osmdroid-android:6.1.8 and making android app include map.
+ after i place mapview and button in layout.xml, i can't find button.
+ what is problem and how can i solve this problem?</p>
+<p>here layout.xml</p>
+
+&lt;relativelayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical"&gt;
+
+<pre><code>&lt;Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentEnd="true"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="10dp"
+    android:text="Select"
+    /&gt;
+
+&lt;org.osmdroid.views.MapView
+    android:id="@+id/locationMap"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" /&gt;
+</code></pre>
+<p>&lt;/relativelayout&gt;</p>
+<p>here is java code
+package com.example.copsys.OSM;</p>
+<p>import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Toast;</p>
+<p>import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;</p>
+<p>import com.example.copsys.R;</p>
+<p>import org.osmdroid.api.IMapController;
+import org.osmdroid.config.Configuration;
+import org.osmdroid.events.MapEventsReceiver;
+import org.osmdroid.tileprovider.tilesource.XYTileSource;
+import org.osmdroid.util.GeoPoint;
+import org.osmdroid.views.MapView;
+import org.osmdroid.views.Projection;
+import org.osmdroid.views.overlay.ItemizedIconOverlay;
+import org.osmdroid.views.overlay.ItemizedOverlayWithFocus;
+import org.osmdroid.views.overlay.MapEventsOverlay;
+import org.osmdroid.views.overlay.Overlay;
+import org.osmdroid.views.overlay.OverlayItem;</p>
+<p>import java.util.ArrayList;</p>
+<p>public class LocationMap extends AppCompatActivity {</p>
+<pre><code>private final String TAG = "LocationMap";
+
+MapView map = null;
+XYTileSource tileSource_4uMaps;
+ArrayList&lt;OverlayItem&gt; items;
+OverlayItem here = null;
+
+@Override
+public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    getSupportActionBar().hide();
+    //handle permissions first, before map is created. not depicted here
+    //load/initialize the osmdroid configuration, this can be done
+    Context ctx = getApplicationContext();
+    Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx));
+    //setting this before the layout is inflated is a good idea
+    //it 'should' ensure that the map has a writable location for the map cache, even without permissions
+    //if no tiles are displayed, you can try overriding the cache path using Configuration.getInstance().setCachePath
+    //see also StorageUtils
+    //note, the load method also sets the HTTP User Agent to your application's package name, abusing osm's tile servers will get you banned based on this string
+    //inflate and create the map
+    setContentView(R.layout.osm_layout);
+
+    map = (MapView)findViewById(R.id.map);
+    tileSource_4uMaps = new XYTileSource("4uMaps", 8, 15, 256, ".png", new String[] {});
+</code></pre>
+<p>//        tileSource_google = new XYTileSource("Google Maps Earth Kor", 8, 19, 256, ".png", new String[] {});
+        map.setTileSource(tileSource_4uMaps);
+        map.setUseDataConnection(false); //optional, but a good way to prevent loading from the network and test your zip loading.
+        map.setBuiltInZoomControls(true);
+        map.setMultiTouchControls(true);</p>
+<pre><code>    IMapController mapController = map.getController();
+    mapController.setZoom(15);
+    GeoPoint startPoint = new GeoPoint( 35.86666, 128.600);
+    mapController.setCenter(startPoint);
+</code></pre>
+<p>//
+        //your items
+        items = new ArrayList&lt;overlayitem&gt;();
+        here = null;
+//        items.add(new OverlayItem("Title", "Description", startPoint)); // Lat/Lon decimal degrees
+//
+//        //the overlay
+//        ItemizedOverlayWithFocus&lt;overlayitem&gt; mOverlay = new ItemizedOverlayWithFocus&lt;overlayitem&gt;(items,
+//                new ItemizedIconOverlay.OnItemGestureListener&lt;overlayitem&gt;() {
+//                    @Override
+//                    public boolean onItemSingleTapUp(final int index, final OverlayItem item) {
+//                        //do something
+////                        map.setTileSource(tileSource_4uMaps);
+//                        return true;
+//                    }
+//                    @Override
+//                    public boolean onItemLongPress(final int index, final OverlayItem item) {
+////                        map.setTileSource(tileSource_google);
+//                        return false;
+//                    }
+//                }, getApplicationContext());
+//        mOverlay.setFocusItemsOnTap(true);
+//        map.getOverlays().add(mOverlay);
+        MapEventsReceiver mReceive = new MapEventsReceiver() {
+            @Override
+            public boolean singleTapConfirmedHelper(GeoPoint p) {
+                Toast.makeText(getBaseContext(),p.getLatitude() + " - "+p.getLongitude(),Toast.LENGTH_LONG).show();</p>
+<pre><code>            here = new OverlayItem("Here", "select", p);
+            items.add(here);
+                    //the overlay
+            ItemizedOverlayWithFocus&lt;OverlayItem&gt; mOverlay = new ItemizedOverlayWithFocus&lt;OverlayItem&gt;(items,
+                    new ItemizedIconOverlay.OnItemGestureListener&lt;OverlayItem&gt;() {
+                        @Override
+                        public boolean onItemSingleTapUp(final int index, final OverlayItem item) {
+                            //do something
+    //                        map.setTileSource(tileSource_4uMaps);
+                            return true;
+                        }
+                        @Override
+                        public boolean onItemLongPress(final int index, final OverlayItem item) {
+    //                        map.setTileSource(tileSource_google);
+                            return false;
+                        }
+                    }, getApplicationContext());
+            mOverlay.setFocusItemsOnTap(true);
+            map.getOverlays().add(mOverlay);
+
+            Intent i = new Intent();
+            i.putExtra("lon", p.getLongitude());
+            i.putExtra("lat", p.getLatitude());
+            setResult(RESULT_OK, i);
+            finish();
+
+            return false;
+        }
+
+        @Override
+        public boolean longPressHelper(GeoPoint p) {
+            return false;
+        }
+    };
+
+
+    MapEventsOverlay OverlayEvents = new MapEventsOverlay(getBaseContext(), mReceive);
+    map.getOverlays().add(OverlayEvents);
+
+
+}
+
+public void onResume(){
+    super.onResume();
+    //this will refresh the osmdroid configuration on resuming.
+    //if you make changes to the configuration, use
+    //SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+    //Configuration.getInstance().load(this, PreferenceManager.getDefaultSharedPreferences(this));
+    map.onResume(); //needed for compass, my location overlays, v6.0.0 and up
+}
+
+public void onPause(){
+    super.onPause();
+    //this will refresh the osmdroid configuration on resuming.
+    //if you make changes to the configuration, use
+    //SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+    //Configuration.getInstance().save(this, prefs);
+    map.onPause();  //needed for compass, my location overlays, v6.0.0 and up
+}
+</code></pre>
+<p>}</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osmdroid" href="/tags/osmdroid/" rel="tag" title="see questions tagged 'osmdroid'">osmdroid</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>20 Oct '20, 03:50</strong>
+</p>
+<img alt="idkwiwtk's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fb411fa87f059d06f5b2719b465e6832?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19156/idkwiwtk">idkwiwtk</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="idkwiwtk has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-77164">
+</div>
+<div class="comment-tools" id="comment-tools-77164">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-77164-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/77164/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="EJSukrp87iGUVKwmvYU462oulNoUExsf"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

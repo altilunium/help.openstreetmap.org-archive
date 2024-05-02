@@ -1,0 +1,157 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/65576/planet-replication-url">Planet replication url</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/65576/up/" id="post-65576-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-65576-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/65576/down/" id="post-65576-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/65576/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,
+I setup nominatim with planet data from planet.openstreetmap.org, now want to update daily/hourly data.</p>
+<p>Got following error, when use planet.openstreetmap.org/replication for update. </p>
+<p><strong>Warning: file_get_contents(<a href="https://planet.openstreetmap.org/replication/hour/state.txt):">https://planet.openstreetmap.org/replication/hour/state.txt):</a> failed to open stream: HTTP request failed! HTTP/1.1 421 Misdirected Request</strong></p>
+<p>How to fix this?</p>
+<p>Or must be use any mirror from <a href="https://wiki.openstreetmap.org/wiki/Planet.osm#Planet.osm_mirrors">https://wiki.openstreetmap.org/wiki/Planet.osm#Planet.osm_mirrors</a> instead of planet.openstreetmap.org ?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-update" href="/tags/update/" rel="tag" title="see questions tagged 'update'">update</a>
+<a class="post-tag tag-link-mirror" href="/tags/mirror/" rel="tag" title="see questions tagged 'mirror'">mirror</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>27 Aug '18, 12:36</strong>
+</p>
+<img alt="Rajavelu_M's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1ffa52ca3632b5a0cf02b51459b7529b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11165/rajavelu_m">Rajavelu_M</a><br/>
+<span class="score" title="253 reputation points">253</span><span title="45 badges"><span class="badge1">●</span><span class="badgecount">45</span></span><span title="48 badges"><span class="silver">●</span><span class="badgecount">48</span></span><span title="58 badges"><span class="bronze">●</span><span class="badgecount">58</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Rajavelu_M has one accepted answer">33%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/65576/">
+                edited
+                <strong>27 Aug '18, 12:45</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-65576">
+<a name="65587"></a>
+<div class="comment" id="comment-65587">
+<div class="comment-score" id="post-65587-score"></div>
+<div class="comment-text"><p>Can you download the state file manually, e.g. with <code>wget -O - <a href="https://planet.openstreetmap.org/replication/hour/state.txt">https://planet.openstreetmap.org/replication/hour/state.txt</a></code>?</p></div>
+<div class="comment-info" id="comment-65587-info">
+<span class="comment-age">(27 Aug '18, 19:26)</span>
+<a class="comment-user userinfo" href="/users/2921/lonvia">lonvia</a>
+</div>
+</div>
+<a name="65604"></a>
+<div class="comment" id="comment-65604">
+<div class="comment-score" id="post-65604-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/2921/lonvia"></a><a href="https://help.openstreetmap.org/users/2921/lonvia">@lonvia</a>: Yes. i can download via wget. But in php got above error. Also tried in separate php file as follows(but met same err).</p>
+<p>stream_context_set_default(['http'=&gt;['proxy'=&gt;'proxy:3128', 'header'=&gt;'Proxy-Authorization: Basic '.base64_encode('user:password')]]);
+echo file_get_contents("https://planet.openstreetmap.org/replication/hour/state.txt");</p>
+<p>I can get state.txt from <a href="https://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/replication/day/state.txt">https://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/replication/day/state.txt</a> . Can I use the same for update?</p></div>
+<div class="comment-info" id="comment-65604-info">
+<span class="comment-age">(28 Aug '18, 08:11)</span>
+<a class="comment-user userinfo" href="/users/11165/rajavelu_m">Rajavelu_M</a>
+</div>
+</div>
+<a name="65607"></a>
+<div class="comment" id="comment-65607">
+<div class="comment-score" id="post-65607-score"></div>
+<div class="comment-text"><p>Just to be 100% sure - your PHP is definitely downloading via https not http ?</p></div>
+<div class="comment-info" id="comment-65607-info">
+<span class="comment-age">(28 Aug '18, 10:12)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="65610"></a>
+<div class="comment" id="comment-65610">
+<div class="comment-score" id="post-65610-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/387/someoneelse"></a><a href="https://help.openstreetmap.org/users/387/someoneelse">@SomeoneElse</a> Yes, My PHP downloading via https. 
+Also got 400 response code for <a href="https://free.nchc.org.tw">https://free.nchc.org.tw</a></p>
+<p>my php file:</p>
+<p>stream_context_set_default(['http'=&gt;['proxy'=&gt;'proxy:3128', 'header'=&gt;'Proxy-Authorization: Basic '.base64_encode('user:pwdl')]]);
+echo file_get_contents("https://download.geofabrik.de/europe/andorra-updates/state.txt");
+echo file_get_contents("https://planet.openstreetmap.org/replication/day/state.txt");
+echo file_get_contents("https://free.nchc.org.tw/osm.planet/replication/day/state.txt");
+echo file_get_contents("https://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/replication/day/state.txt");</p>
+<p>Response:</p>
+<h1>original OSM minutely replication sequence number 3121624</h1>
+<p>timestamp=2018-08-27T20\:14\:02Z
+sequenceNumber=1987</p>
+<p>Warning: file_get_contents(<a href="https://planet.openstreetmap.org/replication/day/state.txt):">https://planet.openstreetmap.org/replication/day/state.txt):</a> failed to open stream: HTTP request failed! HTTP/1.1 421 Misdirected Request</p>
+<p>Warning: file_get_contents(<a href="https://free.nchc.org.tw/osm.planet/replication/day/state.txt):">https://free.nchc.org.tw/osm.planet/replication/day/state.txt):</a> failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request</p>
+<h1>Tue Aug 28 00:06:42 UTC 2018</h1>
+<p>sequenceNumber=2176
+timestamp=2018-08-28T00\:00\:00Z</p></div>
+<div class="comment-info" id="comment-65610-info">
+<span class="comment-age">(28 Aug '18, 11:17)</span>
+<a class="comment-user userinfo" href="/users/11165/rajavelu_m">Rajavelu_M</a>
+</div>
+</div>
+<a name="65619"></a>
+<div class="comment" id="comment-65619">
+<div class="comment-score" id="post-65619-score"></div>
+<div class="comment-text"><p>This looks like an issue with your proxy, likely a misconfiguration of HTTPS forwarding or SSL. I recommend that you get in touch with your system administrator to find out more.</p></div>
+<div class="comment-info" id="comment-65619-info">
+<span class="comment-age">(28 Aug '18, 22:14)</span>
+<a class="comment-user userinfo" href="/users/2921/lonvia">lonvia</a>
+</div>
+</div>
+<a name="65639"></a>
+<div class="comment not_top_scorer" id="comment-65639">
+<div class="comment-score" id="post-65639-score"></div>
+<div class="comment-text"><p>I can get state.txt from <a href="https://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/replication/day/state.txt">https://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/replication/day/state.txt</a> . 
+Can I use the same as CONST_Replication_Url for update ?</p></div>
+<div class="comment-info" id="comment-65639-info">
+<span class="comment-age">(30 Aug '18, 07:29)</span>
+<a class="comment-user userinfo" href="/users/11165/rajavelu_m">Rajavelu_M</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-65576">
+<span class="comments-showing">
+            showing 5 of 6
+        </span>
+<a class="show-all-comments-link" href="#">show 1 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-65576-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/65576/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="TNybG9eqJM1qL7O16pWUKwfypnFXL5uz"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

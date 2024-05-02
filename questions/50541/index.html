@@ -1,0 +1,133 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/50541/mod_tilemapnik-bottleneck-in-save_as_png8_hex">mod_tile/mapnik bottleneck in save_as_png8_hex?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/50541/up/" id="post-50541-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-50541-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/50541/down/" id="post-50541-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/50541/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am setting up a tile server using the latest mod_tile build, so Mapnik 3.0.12.  I noticed after doing all optimizations that some tiles were still serving particularly slowly so I:</p>
+<ul>
+<li>Turned all layers off in the XML so it is only rendering the map background</li>
+<li>Changed the tile directory to a RAM-mounted filesystem</li>
+<li>Ran perf for 60 seconds and dragged around a slippy map a whole load to render lots of background-only tiles (not science, I know)</li>
+</ul>
+<p>The result is a lot of tile requests with TTFB latencies ranging from 2ms to 600ms and a perf log that looks like this:</p>
+<p><img alt="perf log" src="http://help.openstreetmap.org/upfiles/write-png-perf.png"/></p>
+<p>A background tile looks like this, no interaction required:</p>
+<p><img alt="ocean tile" src="http://help.openstreetmap.org/upfiles/oceantile.png"/></p>
+<p>The server has loads of head room (2x Intel Xeon 5500s and 32GB of RAM).  Any ideas?</p>
+<p><strong>Edit:</strong> The tiles with long waits are the ones which cause a new metatile to be rendered.  If I watch the requests come through on the server all meta tiles are taking about the same time to render:</p>
+<pre><code>renderd[3150]: DEBUG: DONE TILE default 19 2848-2855 424-431 in 0.551 seconds
+renderd[3150]: DEBUG: DONE TILE default 19 2848-2855 416-423 in 0.523 seconds
+renderd[3174]: DEBUG: DONE TILE default 19 2856-2863 416-423 in 0.557 seconds
+renderd[3174]: DEBUG: DONE TILE default 19 2856-2863 416-423 in 0.550 seconds
+renderd[3174]: DEBUG: DONE TILE default 19 2864-2871 416-423 in 0.551 seconds
+renderd[3174]: DEBUG: DONE TILE default 19 2864-2871 416-423 in 0.561 seconds
+renderd[3174]: DEBUG: DONE TILE default 19 2864-2871 416-423 in 0.561 seconds
+</code></pre>
+<p>Is this a regular time for a 2048 x 2048px metatile?  If I replace the background image with a colour it drops to about 450ms.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-development" href="/tags/development/" rel="tag" title="see questions tagged 'development'">development</a>
+<a class="post-tag tag-link-performance" href="/tags/performance/" rel="tag" title="see questions tagged 'performance'">performance</a>
+<a class="post-tag tag-link-mod_tile" href="/tags/mod_tile/" rel="tag" title="see questions tagged 'mod_tile'">mod_tile</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+<a class="post-tag tag-link-tileserver" href="/tags/tileserver/" rel="tag" title="see questions tagged 'tileserver'">tileserver</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>30 Jun '16, 19:46</strong>
+</p>
+<img alt="PeterDevoy's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0c3c9aeb9895679ea13a8776fcbd362f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12497/peterdevoy">PeterDevoy</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="PeterDevoy has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/50541/">
+                edited
+                <strong>02 Jul '16, 16:26</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-50541">
+<a name="50549"></a>
+<div class="comment" id="comment-50549">
+<div class="comment-score" id="post-50549-score"></div>
+<div class="comment-text"><p>Maybe more relevant to create an issue in mod_tile or mapnik github? Or the tile-serving@ mailing list.</p></div>
+<div class="comment-info" id="comment-50549-info">
+<span class="comment-age">(01 Jul '16, 21:33)</span>
+<a class="comment-user userinfo" href="/users/5587/yvecai">yvecai</a>
+</div>
+</div>
+<a name="50559"></a>
+<div class="comment" id="comment-50559">
+<div class="comment-score" id="post-50559-score"></div>
+<div class="comment-text"><p>Devs are a bit slow responding to issues on the repos, I will try the mailing list, thanks.</p></div>
+<div class="comment-info" id="comment-50559-info">
+<span class="comment-age">(02 Jul '16, 12:42)</span>
+<a class="comment-user userinfo" href="/users/12497/peterdevoy">PeterDevoy</a>
+</div>
+</div>
+<a name="50563"></a>
+<div class="comment" id="comment-50563">
+<div class="comment-score" id="post-50563-score"></div>
+<div class="comment-text"><p>btw: the screenshot above shows save_as_png8_<strong>hex</strong> with 41%.</p>
+<p>Follow up post is here: <a href="https://lists.openstreetmap.org/pipermail/tile-serving/2016-July/003961.html">https://lists.openstreetmap.org/pipermail/tile-serving/2016-July/003961.html</a></p></div>
+<div class="comment-info" id="comment-50563-info">
+<span class="comment-age">(02 Jul '16, 15:45)</span>
+<a class="comment-user userinfo" href="/users/8708/mmd">mmd</a>
+</div>
+</div>
+<a name="50566"></a>
+<div class="comment" id="comment-50566">
+<div class="comment-score" id="post-50566-score"></div>
+<div class="comment-text"><p>Thanks, well spotted, I have updated the title.</p></div>
+<div class="comment-info" id="comment-50566-info">
+<span class="comment-age">(02 Jul '16, 16:25)</span>
+<a class="comment-user userinfo" href="/users/12497/peterdevoy">PeterDevoy</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-50541">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-50541-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/50541/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="s8zi4dhEEGQhMi8wrNoWKQ79lQM5dbHy"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

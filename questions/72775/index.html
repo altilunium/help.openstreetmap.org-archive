@@ -1,0 +1,164 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/72775/limiting-overpass-turbo-query-by-postal_code-and-countrycity">Limiting overpass turbo query by postal_code and country/city</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/72775/up/" id="post-72775-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-72775-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/72775/down/" id="post-72775-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/72775/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I'd like to limit a query (for highways) by postal_code and country (since the postal_codes are only unique on a national level).</p>
+<p>Let's say that is my query:</p>
+<pre><code>area[postal_code="19300"]-&gt;.searchArea;
+area.searchArea[name="Germany"];
+way(area.searchArea)[highway][name];
+(._;&gt;;);
+out;
+</code></pre>
+<p><a href="http://overpass-turbo.eu/s/QeG">http://overpass-turbo.eu/s/QeG</a></p>
+<p>By that I get highways in Germany and in France.</p>
+<p>I thought about something like</p>
+<pre><code>area.searchArea[name="Germany"].-&gt;searchArea2;
+way(area.searchArea2)[highway][name];
+</code></pre>
+<p>But this doesn't work.</p>
+<p>What would be the correct syntax?</p>
+<p>Or how could I link something like</p>
+<pre><code>{{geocodeArea:Germany}}
+</code></pre>
+<p>to this kind of query?</p>
+<p>Thanks!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>30 Jan '20, 14:04</strong>
+</p>
+<img alt="entenbein's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/df59efd5a42c57c0a08274b519c82e49?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17814/entenbein">entenbein</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="entenbein has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-72775">
+<a name="72776"></a>
+<div class="comment" id="comment-72776">
+<div class="comment-score" id="post-72776-score">1</div>
+<div class="comment-text"><p>crosspost, including an answer: <a href="https://gis.stackexchange.com/questions/349037/limiting-overpass-turbo-query-by-postal-code-and-country">https://gis.stackexchange.com/questions/349037/limiting-overpass-turbo-query-by-postal-code-and-country</a></p></div>
+<div class="comment-info" id="comment-72776-info">
+<span class="comment-age">(30 Jan '20, 14:49)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="72777"></a>
+<div class="comment" id="comment-72777">
+<div class="comment-score" id="post-72777-score"></div>
+<div class="comment-text"><p>Yeah, that one solved it!</p></div>
+<div class="comment-info" id="comment-72777-info">
+<span class="comment-age">(30 Jan '20, 14:57)</span>
+<a class="comment-user userinfo" href="/users/17814/entenbein">entenbein</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-72775">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-72775-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/72775/limiting-overpass-turbo-query-by-postal_code-and-countrycity?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/72775/limiting-overpass-turbo-query-by-postal_code-and-countrycity?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/72775/limiting-overpass-turbo-query-by-postal_code-and-countrycity?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/72775/limiting-overpass-turbo-query-by-postal_code-and-countrycity?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="72778"></a>
+<div class="answer answered-by-owner" id="answer-container-72778">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/72778/up/" id="post-72778-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-72778-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/72778/down/" id="post-72778-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>That one solved it
+<a href="https://gis.stackexchange.com/a/349089/157271">https://gis.stackexchange.com/a/349089/157271</a></p>
+<p>Thanks <a href="https://help.openstreetmap.org/users/8708/mmd">@mmd</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/72778/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Jan '20, 14:58</strong>
+</p>
+<img alt="entenbein's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/df59efd5a42c57c0a08274b519c82e49?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17814/entenbein">entenbein</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="entenbein has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-72778">
+</div>
+<div class="comment-tools" id="comment-tools-72778">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-72778-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/72775/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="2CgmNnpVU034QFmZV8p5LUorOrDcpj2y"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

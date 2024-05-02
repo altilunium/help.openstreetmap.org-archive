@@ -1,0 +1,199 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/1457/exporting-osm-map-to-use-in-mapinfo">Exporting OSM map to use in MapInfo</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1457/up/" id="post-1457-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1457-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/1457/down/" id="post-1457-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/1457/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Please let me know how I can export osm format maps to get them in SHP (ESRI), XLM or GML format?
+Do you have any converter which I can use?
+I used to work with maps with MapInfo and would like to keep it as a tool. Can anybody help?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-conversion" href="/tags/conversion/" rel="tag" title="see questions tagged 'conversion'">conversion</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>05 Nov '10, 08:56</strong>
+</p>
+<img alt="korotie's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/dd6287312105b16537c142fb34e6af75?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/401/korotie">korotie</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="korotie has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1457">
+</div>
+<div class="comment-tools" id="comment-tools-1457">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1457-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/1457/exporting-osm-map-to-use-in-mapinfo?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/1457/exporting-osm-map-to-use-in-mapinfo?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/1457/exporting-osm-map-to-use-in-mapinfo?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/1457/exporting-osm-map-to-use-in-mapinfo?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="1461"></a>
+<div class="answer" id="answer-container-1461">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/1461/up/" id="post-1461-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-1461-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/1461/down/" id="post-1461-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can download ready-made SHP-format maps from <a href="http://download.geofabrik.de/osm/">Geofabrik</a> or <a href="http://downloads.cloudmade.com/">Cloudmade</a>.</p>
+<p>I believe most people creating shapefiles (including the download services listed above) are doing so by putting OSM data into a PostGIS database, and then using the built in psql2shp function.</p>
+<p>There are a few command-line tools to do a more direct conversion from osm to shapefiles. In fact it looks like there are two different tools called '<em>osm2shp</em>' under development (<a href="http://trac.openstreetmap.org/browser/applications/utils/export/osm2shp">one by Frederick</a> of geofabrik, <a href="http://code.google.com/p/osm2shp/">one by someone else</a>), and a ruby library called '<a href="http://osmlib.rubyforge.org/">OSMLib</a>'.</p>
+<p>All the alternatives are listed on the <a href="http://wiki.openstreetmap.org/wiki/Shapefiles">Shapefiles</a> wiki page.</p>
+<p>...and aside from shapefiles, you can actually convert or otherwise use OSM data more directly with MapInfo. See the <a href="http://wiki.openstreetmap.org/wiki/MapInfo">MapInfo</a> wiki page (although that information could do with some tidying up by a MapInfo expert)</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/1461/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>05 Nov '10, 12:46</strong>
+</p>
+<img alt="Harry%20Wood's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9e04333be840d50c6aa66fb112aad77c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/107/harry-wood">Harry Wood</a><br/>
+<span class="score" title="9489 reputation points"><span class="">9.5k</span></span><span title="25 badges"><span class="badge1">●</span><span class="badgecount">25</span></span><span title="88 badges"><span class="silver">●</span><span class="badgecount">88</span></span><span title="128 badges"><span class="bronze">●</span><span class="badgecount">128</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Harry Wood has 19 accepted answers">14%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/1461/">
+                edited
+                <strong>05 Nov '10, 12:51</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-1461">
+</div>
+<div class="comment-tools" id="comment-tools-1461">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-1461-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="16261"></a>
+<div class="answer" id="answer-container-16261">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/16261/up/" id="post-16261-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-16261-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/16261/down/" id="post-16261-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can also save as Raster from OSM - for example JPEG - and then create your own .TAB file for use with this Raster. The .TAB specifies rference points for conversion (Lon,Lat) -&gt; (pixel).
+Top Left is always pixel (0,0). Subtract -1 from the pixel count (since the numbering starts from pixel '0').</p>
+<p>Example .TAB file below for Raster 2223 Wide by 1733 high:</p>
+<p>!table
+!version 300
+!charset WindowsLatin1</p>
+<p>Definition Table
+  File "MyRaster.jpg"
+  Type "RASTER"
+  (-87.407,39.076) (0,0) Label "TopLeft",
+  (-86.708,39.076) (2222,0) Label "TopRight",
+  (-87.407,38.652) (0,1732) Label "BottomLeft",
+  (-86.708,38.652) (2222,1732) Label "BottomRight"
+  CoordSys Earth Projection 1, 104
+  Units "degree"
+ReadOnly</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/16261/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Sep '12, 20:14</strong>
+</p>
+<img alt="NeilS's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/89997183f2c7e6a4ec23da0e081141cf?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4547/neils">NeilS</a><br/>
+<span class="score" title="1 reputation points">1</span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="NeilS has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-16261">
+</div>
+<div class="comment-tools" id="comment-tools-16261">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-16261-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/1457/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="rpZm5uqy4LSxWM3DDjXXS03rzdiUaldV"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

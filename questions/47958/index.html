@@ -1,0 +1,101 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/47958/geo-referenced-house-numbers-from-osm-through-linkedgeodata">geo-referenced house numbers from OSM through LinkedGeoData</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/47958/up/" id="post-47958-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-47958-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/47958/down/" id="post-47958-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/47958/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have a question regarding the retrieval of the house numbers from Open Street Map through the <a href="http://linkedgeodata.org/About">Linked Geo Data</a> <a href="http://linkedgeodata.org/sparql">sparql endpoint</a>:</p>
+<p>If I run a query to select all the buildings which have a house number located in the city of, for example, of Esino Lario I get only 11 results whereas in OSM seems that a lot of building of that village have explicitly indicated a housenumber (compare the <a href="http://linkedgeodata.org/sparql?default-graph-uri=http%3A%2F%2Flinkedgeodata.org&amp;query=Select%20*%0D%0AWhere%20%7B%0D%0A%3Fs%0D%0A%20%20%20%20%3Chttp%3A%2F%2Flinkedgeodata.org%2Fontology%2Faddr%253Acity%3E%20%22Esino%20Lario%22%3B%0D%0A%20%20%20%20%3Chttp%3A%2F%2Flinkedgeodata.org%2Fontology%2Faddr%253Ahousenumber%3E%20%3Fhousenumber.%0D%0A%7D&amp;format=text%2Fhtml&amp;timeout=0&amp;debug=on">query result</a> with the <a href="https://www.openstreetmap.org/#map=17/45.99498/9.33471">actual view from OSM</a>).</p>
+<p>Even if i expand my search to the whole world broadening the research to include all possibilities I get only 1,176,404 results which seems not reasonable at all (<a href="http://linkedgeodata.org/sparql?default-graph-uri=http%3A%2F%2Flinkedgeodata.org&amp;query=Select%20count%28%3Fhousenumber%20%29%20as%20%3Fn%0D%0A%20%20%20%20Where%20%7B%20%3Fs%20%20%3Chttp%3A%2F%2Flinkedgeodata.org%2Fontology%2Faddr%253Ahousenumber%3E%20%3Fhousenumber%20%7D&amp;format=text%2Fhtml&amp;timeout=0&amp;debug=on">here the query result</a>).</p>
+<p>The queries used are the following:</p>
+<pre><code>Select *
+Where {
+?s
+    &lt;<a href="http://linkedgeodata.org/ontology/addr%3Acity&gt;">http://linkedgeodata.org/ontology/addr%3Acity&gt;</a> "Esino Lario";
+    &lt;<a href="http://linkedgeodata.org/ontology/addr%3Ahousenumber&gt;">http://linkedgeodata.org/ontology/addr%3Ahousenumber&gt;</a> ?housenumber.
+}
+</code></pre>
+<p>and</p>
+<pre><code>Select count(?housenumber ) as ?n
+Where { ?s  &lt;<a href="http://linkedgeodata.org/ontology/addr%3Ahousenumber&gt;">http://linkedgeodata.org/ontology/addr%3Ahousenumber&gt;</a> ?housenumber }
+</code></pre>
+<p>Seems that the LGD database is not complete or not updated at Jan 2016 as declared. Or, which is more plausible, I am doing some bad mistakes in the query or I do not understand properly the ontology used.</p>
+<p>Can somebody please help me unravel this mystery? Responses that do not involve SPARQL but help me better understand the taxonomy of OSM are also appreciated</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-linkeddata" href="/tags/linkeddata/" rel="tag" title="see questions tagged 'linkeddata'">linkeddata</a>
+<a class="post-tag tag-link-housenumbers" href="/tags/housenumbers/" rel="tag" title="see questions tagged 'housenumbers'">housenumbers</a>
+<a class="post-tag tag-link-linkedgeodata" href="/tags/linkedgeodata/" rel="tag" title="see questions tagged 'linkedgeodata'">linkedgeodata</a>
+<a class="post-tag tag-link-geocoding" href="/tags/geocoding/" rel="tag" title="see questions tagged 'geocoding'">geocoding</a>
+<a class="post-tag tag-link-housenumbering" href="/tags/housenumbering/" rel="tag" title="see questions tagged 'housenumbering'">housenumbering</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>05 Feb '16, 17:08</strong>
+</p>
+<img alt="ilTrabucchiere's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/58d5627ab8324e45c23f4262e3ee7c24?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/11951/iltrabucchiere">ilTrabucchiere</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="ilTrabucchiere has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/47958/">
+                edited
+                <strong>06 Feb '16, 13:33</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-47958">
+<a name="47974"></a>
+<div class="comment" id="comment-47974">
+<div class="comment-score" id="post-47974-score">2</div>
+<div class="comment-text"><p>My first intention to get a solution for you was to recommend a direct contact to the guys from LinkedGeoData.org, then I saw your posting in their googlegroup mailinglist ... so lets see where you get better hints.</p></div>
+<div class="comment-info" id="comment-47974-info">
+<span class="comment-age">(06 Feb '16, 10:55)</span>
+<a class="comment-user userinfo" href="/users/99/stephan75">stephan75</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-47958">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-47958-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/47958/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="1SvasYsd9dZaR5gKupVJhiFcRSjbl2tM"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

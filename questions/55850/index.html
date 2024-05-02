@@ -1,0 +1,235 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/55850/source-geometry-in-osm-maps">Source geometry in OSM maps?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/55850/up/" id="post-55850-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-55850-score" title="current number of votes">
+    -2
+</div>
+<a class="ajax-command post-vote down" href="/vote/55850/down/" id="post-55850-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/55850/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Is there an OSM map that shows the original/source geometry without manipulation, for instance in the highest zoom/scale?    <br/>
+Testing some 20-25 publicly available maps I could not find one. Many geometries look just fine/perfect but actually they are wrong. Consequently, many anomalies remain not corrected in a long time (maybe for ever) because they look fine in maps the (local) mappers are looking at. Let me illustrate the issue with some line-work objects, for instance roundabouts. Looking at examples here <a href="https://goo.gl/VMTwSI">https://goo.gl/VMTwSI</a> or here <a href="https://goo.gl/zOHfJZ">https://goo.gl/zOHfJZ</a> we may get an impression that these geometries are correct and nice. However, in the source data these geometries look badly like here <a href="https://goo.gl/eEImHh">https://goo.gl/eEImHh</a> or here <a href="https://goo.gl/UsUS3m.">https://goo.gl/UsUS3m.</a> There are some 10K similar roundabout ussies (not counting error cases) some of them being really serious anomalies like here <a href="http://osm.org/go/T87HnTe2C">http://osm.org/go/T87HnTe2C</a> . The roundabout looks just perfect but, essentially, in the source data this roundabout does not exist at all.     </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-mapsource" href="/tags/mapsource/" rel="tag" title="see questions tagged 'mapsource'">mapsource</a>
+<a class="post-tag tag-link-rendering" href="/tags/rendering/" rel="tag" title="see questions tagged 'rendering'">rendering</a>
+<a class="post-tag tag-link-anomalies" href="/tags/anomalies/" rel="tag" title="see questions tagged 'anomalies'">anomalies</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>25 Apr '17, 11:03</strong>
+</p>
+<img alt="sanser's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/03cd9ea0efd97a7040fda0d6a76aba8e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3194/sanser">sanser</a><br/>
+<span class="score" title="695 reputation points">695</span><span title="38 badges"><span class="badge1">●</span><span class="badgecount">38</span></span><span title="39 badges"><span class="silver">●</span><span class="badgecount">39</span></span><span title="55 badges"><span class="bronze">●</span><span class="badgecount">55</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="sanser has 2 accepted answers">5%</span>
+</br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-55850">
+</div>
+<div class="comment-tools" id="comment-tools-55850">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-55850-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/55850/source-geometry-in-osm-maps?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/55850/source-geometry-in-osm-maps?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/55850/source-geometry-in-osm-maps?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/55850/source-geometry-in-osm-maps?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="55851"></a>
+<div class="answer" id="answer-container-55851">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/55851/up/" id="post-55851-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-55851-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/55851/down/" id="post-55851-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Most maps generated from OSM data are intended to be maps and the rendering process will tend to smooth out small irregularities and (for example if Bezier curves are used) might even show geometries that do not exist in that form in the original data. This is not specific to OSM btw. The data layer on openstreetmap.org shows the original geometry as do most editors.</p>
+<p>Naturally from a pedantic pov the roundabouts themselves should really be cleaned up and it would seem to be a good subject for a <a href="http://maproulette.org/">maproulette challenge</a> if you can generate a list.</p>
+<p>Note: your last example may simply be a case of wrong tagging (not everything that looks circular is legally a roundabout). </p>
+<p>Edit: see my comment below DaveF answer: what is likely happening is that whatever you are using to extract OSM data is loosing precision on export, as the geometries you have in your illustrations have nothing to do with what is in the data.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/55851/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Apr '17, 11:39</strong>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SimonPoole has 209 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/55851/">
+                edited
+                <strong>25 Apr '17, 14:25</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-55851">
+<a name="55901"></a>
+<div class="comment" id="comment-55901">
+<div class="comment-score" id="post-55901-score"></div>
+<div class="comment-text"><p>Simon, thanks for your time. I fully agree about the map-makers data preparation strategies. Implicitly you are saying that you don't no for an OSM map that has an option to show the source (not manipulated) data in some higher scale. I know this is not a place for arguing but for clarity I have to add two more comments.  <br/>
+The "edit" text is confusing and could be valid in one and only one case - if the OSM regular dump is wrong (essentially not a "dump"). Otherwise, the examples perfectly reflect the data from the dump with no precision loss and the image format here is irrelevant.   <br/>
+The "note" related to the last example is also confusing. The problem/error is more in geometry than in tagging. In the roundabout construct ( <a href="https://goo.gl/aVc6JN">https://goo.gl/aVc6JN</a> ) there are 4 poly-lines all tagged roundabout. So, there is much higher probability that the circular shape in the middle is a roundabout compared to your suggestion (in brackets). Though, there is no even a segment of that shape in the source data.</p></div>
+<div class="comment-info" id="comment-55901-info">
+<span class="comment-age">(26 Apr '17, 22:24)</span>
+<a class="comment-user userinfo" href="/users/3194/sanser">sanser</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-55851">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-55851-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="55858"></a>
+<div class="answer" id="answer-container-55858">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/55858/up/" id="post-55858-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-55858-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/55858/down/" id="post-55858-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hi
+Where are you getting your source data/images from?</p>
+<p>This is the first roundabout in Wireframe mode in Potlatch 2. Looks pretty round to me:
+<a href="http://www.openstreetmap.org/edit#map=21/45.52146/-122.64957">http://www.openstreetmap.org/edit#map=21/45.52146/-122.64957</a></p>
+<p>Could your Jpeg creator be set to low detail?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/55858/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Apr '17, 13:41</strong>
+</p>
+<img alt="DaveF's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c9c8b421ad22f51ddd62f23413717036?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1532/davef">DaveF</a><br/>
+<span class="score" title="3264 reputation points"><span class="">3.3k</span></span><span title="84 badges"><span class="badge1">●</span><span class="badgecount">84</span></span><span title="98 badges"><span class="silver">●</span><span class="badgecount">98</span></span><span title="133 badges"><span class="bronze">●</span><span class="badgecount">133</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="DaveF has 17 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-55858">
+<a name="55860"></a>
+<div class="comment" id="comment-55860">
+<div class="comment-score" id="post-55860-score"></div>
+<div class="comment-text"><p>It would not be a JPEG artefact, if it is actually on output only it looks like (too) limited precision in the output coordinates as you can clearly see a point raster.</p></div>
+<div class="comment-info" id="comment-55860-info">
+<span class="comment-age">(25 Apr '17, 14:20)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+<a name="55897"></a>
+<div class="comment" id="comment-55897">
+<div class="comment-score" id="post-55897-score"></div>
+<div class="comment-text"><p>The data is from the OSM dump, XML format, from some weeks ago. The images are JPG format of the screen dump from a vector map/rendering, and perfectly reflect the vectors/poly-lines in 1:1 scale from the source and there is no precision loss. The objects are the same in years and that is my point. In maps they are rendered manipulated and just fine, so there is no anomaly visualisation that could trigger the local mappers attention.</p></div>
+<div class="comment-info" id="comment-55897-info">
+<span class="comment-age">(26 Apr '17, 21:03)</span>
+<a class="comment-user userinfo" href="/users/3194/sanser">sanser</a>
+</div>
+</div>
+<a name="55902"></a>
+<div class="comment" id="comment-55902">
+<div class="comment-score" id="post-55902-score">1</div>
+<div class="comment-text"><p>I just loaded way 158898111 into JOSM and the nodes in the source data are arranged in a perfect circle. Whatever's causing the loss of precision is happening somewhere in your toolchain, which apparently isn't the perfect 1:1 reflection that you thought. What software are you using that displays the "drunken" roundabouts?</p></div>
+<div class="comment-info" id="comment-55902-info">
+<span class="comment-age">(27 Apr '17, 00:16)</span>
+<a class="comment-user userinfo" href="/users/8189/alester">alester</a>
+</div>
+</div>
+<a name="55911"></a>
+<div class="comment" id="comment-55911">
+<div class="comment-score" id="post-55911-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/3194/sanser">@sanser</a> Provide your source XML for this one: <a href="https://goo.gl/eEImHh">https://goo.gl/eEImHh</a></p></div>
+<div class="comment-info" id="comment-55911-info">
+<span class="comment-age">(27 Apr '17, 13:08)</span>
+<a class="comment-user userinfo" href="/users/1532/davef">DaveF</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-55858">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-55858-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/55850/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="m4CwYgiOvxqgCcIg0Dugm6c3OaRDzGVU"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

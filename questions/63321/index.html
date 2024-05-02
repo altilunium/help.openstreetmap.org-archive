@@ -1,0 +1,231 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/63321/finding-all-new-elements-from-a-user">Finding all new elements from a user</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/63321/up/" id="post-63321-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-63321-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/63321/down/" id="post-63321-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/63321/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,
+   I am struggling with attempting to find all brand new elements created by a single user. I have currently the following but how do I check for version=1 (or similar) please so I only get where they have created a brand new element please? Happy with any other alternatives. What I would like to validate new work by a particular user where they have created a road or similar. I am not interested in their modifications to existing content.</p>
+<p>Thanks</p>
+<pre><code>{{user=funkyUserName}}
+&lt;osm-script output="json"&gt;
+  &lt;union&gt;
+    &lt;query type="node"&gt;
+       &lt;user name="{{user}}"/&gt;
+      &lt;bbox-query {{bbox}}/&gt;
+    &lt;/query&gt;
+    &lt;query type="way"&gt;
+      &lt;user name="{{user}}"  /&gt;
+      &lt;bbox-query {{bbox}}/&gt;
+    &lt;/query&gt;
+  &lt;/union&gt;
+  &lt;print mode="body"/&gt;
+  &lt;recurse type="down"/&gt;
+  &lt;print mode="skeleton"/&gt;
+&lt;/osm-script&gt;
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-version" href="/tags/version/" rel="tag" title="see questions tagged 'version'">version</a>
+<a class="post-tag tag-link-user" href="/tags/user/" rel="tag" title="see questions tagged 'user'">user</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>05 May '18, 10:34</strong>
+</p>
+<img alt="Ewen%20Hill's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a8dbda930e9da736915267cbe67e5f05?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8697/ewen-hill">Ewen Hill</a><br/>
+<span class="score" title="91 reputation points">91</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="9 badges"><span class="bronze">●</span><span class="badgecount">9</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Ewen Hill has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/63321/">
+                edited
+                <strong>06 May '18, 02:28</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-63321">
+</div>
+<div class="comment-tools" id="comment-tools-63321">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-63321-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/63321/finding-all-new-elements-from-a-user?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/63321/finding-all-new-elements-from-a-user?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/63321/finding-all-new-elements-from-a-user?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/63321/finding-all-new-elements-from-a-user?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="63329"></a>
+<div class="answer accepted-answer" id="answer-container-63329">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/63329/up/" id="post-63329-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-63329-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/63329/down/" id="post-63329-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/63329/" rel="nofollow" title="Ewen Hill has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Depending on the size of the area the user has edited in, I'll recommend just loading it in JOSM, then run the search (Ctrl-F) <strong>user:spjaquish version:1</strong></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/63329/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>05 May '18, 18:52</strong>
+</p>
+<img alt="Hjart's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/6edf3a421a450237beae62ba93582637?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3577/hjart">Hjart</a><br/>
+<span class="score" title="2961 reputation points"><span class="">3.0k</span></span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="26 badges"><span class="silver">●</span><span class="badgecount">26</span></span><span title="56 badges"><span class="bronze">●</span><span class="badgecount">56</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Hjart has 14 accepted answers">18%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/63329/">
+                edited
+                <strong>05 May '18, 18:53</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-63329">
+<a name="63332"></a>
+<div class="comment not_top_scorer" id="comment-63332">
+<div class="comment-score" id="post-63332-score"></div>
+<div class="comment-text"><p>Thanks, this is excellent but the area is huge so an Overpass method would still be wonderful</p></div>
+<div class="comment-info" id="comment-63332-info">
+<span class="comment-age">(05 May '18, 21:28)</span>
+<a class="comment-user userinfo" href="/users/8697/ewen-hill">Ewen Hill</a>
+</div>
+</div>
+<a name="63333"></a>
+<div class="comment" id="comment-63333">
+<div class="comment-score" id="post-63333-score">2</div>
+<div class="comment-text"><p>Ok. Overpass queries can be run from within JOSM. In the Download window, select the "download from Overpass" tab, click the wizard button and enter 'user:spjaquish', then on the map select the bbox to search within, then press download. When data is downloaded, do Ctrl-F 'version:1'</p>
+<p>See <a href="https://josm.openstreetmap.de/wiki/Help/Action/Download">https://josm.openstreetmap.de/wiki/Help/Action/Download</a></p></div>
+<div class="comment-info" id="comment-63333-info">
+<span class="comment-age">(05 May '18, 21:37)</span>
+<a class="comment-user userinfo" href="/users/3577/hjart">Hjart</a>
+</div>
+</div>
+<a name="63336"></a>
+<div class="comment" id="comment-63336">
+<div class="comment-score" id="post-63336-score">3</div>
+<div class="comment-text"><p>Just for completeness, here's an example of restricting a query to version=1 objects: <a href="http://overpass-turbo.eu/s/yyr">http://overpass-turbo.eu/s/yyr</a> .</p>
+<p>Not sure how the performance would be.</p></div>
+<div class="comment-info" id="comment-63336-info">
+<span class="comment-age">(05 May '18, 23:42)</span>
+<a class="comment-user userinfo" href="/users/10973/maxerickson">maxerickson</a>
+</div>
+</div>
+<a name="63338"></a>
+<div class="comment not_top_scorer" id="comment-63338">
+<div class="comment-score" id="post-63338-score"></div>
+<div class="comment-text"><p>Thank you <a href="https://help.openstreetmap.org/users/10973/maxerickson">@maxerickson</a>  and <a href="https://help.openstreetmap.org/users/3577/hjart">@Hjart</a> as both of you have been a wealth of knowledge. The Overpass example did the trick but I was also unaware of the JOSM options. Performance is dire as we are looking at 4000km by 3000km area however I expected this.</p></div>
+<div class="comment-info" id="comment-63338-info">
+<span class="comment-age">(06 May '18, 02:34)</span>
+<a class="comment-user userinfo" href="/users/8697/ewen-hill">Ewen Hill</a>
+</div>
+</div>
+<a name="63340"></a>
+<div class="comment" id="comment-63340">
+<div class="comment-score" id="post-63340-score">1</div>
+<div class="comment-text"><p>I almost always prefer the JOSM option, because it allows closer inspection without having to go through further hoops. <a href="https://wiki.openstreetmap.org/wiki/JOSM/Plugins/TODO_list">https://wiki.openstreetmap.org/wiki/JOSM/Plugins/TODO_list</a> also often comes in extremely handy.</p>
+<p>Also note that simpler Overpass queries of course always perform better.</p></div>
+<div class="comment-info" id="comment-63340-info">
+<span class="comment-age">(06 May '18, 08:02)</span>
+<a class="comment-user userinfo" href="/users/3577/hjart">Hjart</a>
+</div>
+</div>
+<a name="63343"></a>
+<div class="comment" id="comment-63343">
+<div class="comment-score" id="post-63343-score">1</div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/10973/maxerickson">@maxerickson</a>,
+Wonderful answer. But is there any way to accomplish the same thing using only the Overpass Turbo Wizard? I don't want to have to learn the complex syntax of the standard Query Language.</p></div>
+<div class="comment-info" id="comment-63343-info">
+<span class="comment-age">(06 May '18, 15:47)</span>
+<a class="comment-user userinfo" href="/users/5016/alaskadave">AlaskaDave</a>
+</div>
+</div>
+<a name="63346"></a>
+<div class="comment" id="comment-63346">
+<div class="comment-score" id="post-63346-score">1</div>
+<div class="comment-text"><p>I guess not. Wizard features should be documented on <a href="https://wiki.openstreetmap.org/wiki/Overpass_turbo/Wizard">https://wiki.openstreetmap.org/wiki/Overpass_turbo/Wizard</a> fairly soon after they exist. It seems it could support something like version:1, but it does not right now.</p></div>
+<div class="comment-info" id="comment-63346-info">
+<span class="comment-age">(06 May '18, 16:16)</span>
+<a class="comment-user userinfo" href="/users/10973/maxerickson">maxerickson</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-63329">
+<span class="comments-showing">
+            showing 5 of 7
+        </span>
+<a class="show-all-comments-link" href="#">show 2 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-63329-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/63321/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="BuKj5XMa4hFKySEyHGlJ0cmqtXqCGH0D"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

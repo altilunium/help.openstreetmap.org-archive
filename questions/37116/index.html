@@ -1,0 +1,161 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/37116/how-do-i-generate-tiles-from-a-raw-osm-xml-file">How do I generate tiles from a raw OSM XML file?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/37116/up/" id="post-37116-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-37116-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/37116/down/" id="post-37116-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/37116/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I recently downloaded Maperitive and generated tiles from a raw OSM XML file. The average rate was approximately 70-80 tiles per second. This seems like a decent pace but when your map has 16 million tiles on a zoom level, it could take some time to generate all the necessary tiles. In a nutshell, Maperitive (Windows, .NET 4.0) works fine and I've used it to generate some test data. I could see it being a solution but there are some gotchas.</p>
+<p>Over the last few days, I've been reading articles &amp; blog posts trying to find the best approach for processing raw OSM XML files. At this point, my requirements are minimal: a) the process must take a raw OSM XML file and, at the end of the process, give me map tiles, and b) the process runs on my hardware (no SAAS). Other than that, I'm not too concerned about the actual process. </p>
+<p>The process could run on Ubuntu or Windows 7/8, client machine or, if absolutely necessary, server. I'm not too familiar with Linux so that would require more detailed steps but I'm willing to learn.</p>
+<p>I understand multiple products may be necessary to process the XML files. If that is the case, I can handle that. One product would be easiest but if several products are required, one for each step of the process, I can live with that.</p>
+<p>Lastly, the area of my study is not available as a pre-built dataset from some of the websites. For example, my map will not cover the metro area of Chicago or New York. Its wider and doesn't fit nicely in a single state, metropolitan area, and maybe not even a single country. Therefore, I've been getting the raw data directly from OpenStreetMap.org and this will not change due to the geographic extents of the project.</p>
+<p>So where an I find the best practice approach (preferably a document / tutorial / blog posts / video / ???) to processing raw OSM XML data into map tiles and which tools should I use?</p>
+<p>Thanks!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-tiles" href="/tags/tiles/" rel="tag" title="see questions tagged 'tiles'">tiles</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>29 Sep '14, 18:34</strong>
+</p>
+<img alt="Squatchy's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/767934a648524da57388558217ad9c2d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9723/squatchy">Squatchy</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Squatchy has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/37116/">
+                edited
+                <strong>29 Sep '14, 18:55</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-37116">
+<a name="37120"></a>
+<div class="comment" id="comment-37120">
+<div class="comment-score" id="post-37120-score"></div>
+<div class="comment-text"><p>Would it be possible to give an idea of the rough size of bounding box that you're interested in (perhaps using <a href="http://osm.duschmarke.de/bbox.html">http://osm.duschmarke.de/bbox.html</a> )?  Also what tile zoom levels?</p>
+<p>Do you want to use a map style that you've already designed (e.g. in Maperitive), an existing Mapnik one (e.g. openstreetmap-carto, used by the "standard" layer on the OSM website) or something else?</p>
+<p>Also, reading between the lines of the question a bit, do you want something that you can easily automate on a client machine over which you don't have direct control?</p></div>
+<div class="comment-info" id="comment-37120-info">
+<span class="comment-age">(29 Sep '14, 20:19)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="37130"></a>
+<div class="comment" id="comment-37130">
+<div class="comment-score" id="post-37130-score">1</div>
+<div class="comment-text"><p>The rough size is the State of Minnesota. Zoom level 4 - 19, but that may be limited to 17 / 18 depending on size and ability to generate the tiles in a reasonable amount of time. Currently completing Level 17 and it's pushing my definition of "reasonable time". At the moment, out of the box styles are sufficient as I haven't created any yet in Maperitive. Custom styles may be something I attempt in the future. I would like to automate the process. Now, for example, I'd like to spin up a few cloud VMs and process each zoom level in its own vm.</p></div>
+<div class="comment-info" id="comment-37130-info">
+<span class="comment-age">(30 Sep '14, 02:00)</span>
+<a class="comment-user userinfo" href="/users/9723/squatchy">Squatchy</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-37116">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-37116-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/37116/how-do-i-generate-tiles-from-a-raw-osm-xml-file?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/37116/how-do-i-generate-tiles-from-a-raw-osm-xml-file?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/37116/how-do-i-generate-tiles-from-a-raw-osm-xml-file?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/37116/how-do-i-generate-tiles-from-a-raw-osm-xml-file?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="37121"></a>
+<div class="answer" id="answer-container-37121">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/37121/up/" id="post-37121-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-37121-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/37121/down/" id="post-37121-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Seeing as I've just done something a bit like this for a project of mine, I'll explain what I did.  It might not match exactly what you want (hence the questions in the comment) but hopefully you'll find it useful:</p>
+<p>1) Load the data into a <a href="http://switch2osm.org/serving-tiles/">switch2osm</a>-style rendering database.  What I actually did is described <a href="http://wiki.openstreetmap.org/wiki/User:SomeoneElse/Ubuntu_1404_tileserver">here</a>.</p>
+<p>2) In my case I wanted to use the "standard" <a href="https://github.com/gravitystorm/openstreetmap-carto">openstreetmap-carto</a> style, but loaded via a <a href="https://github.com/openstreetmap/osm2pgsql/blob/master/docs/lua.md">lua tag transform</a> similar to <a href="https://github.com/SomeoneElseOSM/designation-style">this one</a> to modify the data on the way into the database, as described <a href="http://wiki.openstreetmap.org/wiki/User:SomeoneElse/Ubuntu_1404_tileserver_load">here</a>.  You could of course use a modified style of some sort (perhaps by using <a href="https://www.mapbox.com/tilemill/docs/crashcourse/introduction/">TileMill</a>).</p>
+<p>3) I then used <a href="http://svn.openstreetmap.org/applications/rendering/mapnik/generate_tiles.py">generate_tiles.py</a> from <a href="http://svn.openstreetmap.org/applications/rendering/mapnik/">here</a> to generate the actual tiles that I wanted (in my case just .pngs).  I had to edit "openstreetmap-carto"'s mapnik.xml slightly to not reference fonts that I didn't have installed (see <a href="https://github.com/gravitystorm/openstreetmap-carto/issues/999">here</a>) but that's very easy to do manually.</p>
+<p>The reason that I took this approach is that I already had (1) and (2) set up, so only actually needed to do (3).  If you have instead already got a Maperitive style that does what you want, that may be easier for you.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/37121/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>29 Sep '14, 20:37</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-37121">
+</div>
+<div class="comment-tools" id="comment-tools-37121">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-37121-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/37116/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="ZpaLRRSLGitcVOpeBbgnlJCIWRAjSYAH"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

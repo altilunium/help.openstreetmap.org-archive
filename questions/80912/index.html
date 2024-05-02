@@ -1,0 +1,242 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/80912/search-for-restaurants-around-a-distance">Search for restaurants around a distance</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80912/up/" id="post-80912-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80912-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/80912/down/" id="post-80912-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/80912/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>I need the following:
+I'm searching for restaurants around "95448 Bayreuth" (Germany) 1000 meters.</p>
+<p>This is what I got so far, it works nearly, but it shows also restaurants outside the 1000 meters radius:</p>
+<pre><code>[out:json][timeout:25];
+// fetch area "Bonn" to search in
+{{geocodeArea:95448 Bayreuth}}-&gt;.searchArea;
+// gather results
+(
+  // query part for: "restaurant"
+  node(around:1000)["amenity"="restaurant"](area.searchArea);
+  way["amenity"="restaurant"](area.searchArea);
+  relation["amenity"="restaurant"](area.searchArea);
+);
+// print results
+out body;
+&gt;;
+out skel qt;
+</code></pre>
+<p>May you help me with that, please?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+<a class="post-tag tag-link-around" href="/tags/around/" rel="tag" title="see questions tagged 'around'">around</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>10 Jul '21, 16:28</strong>
+</p>
+<img alt="alpham8's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d69ef280e0dcf73b27ef022acb0ef864?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20481/alpham8">alpham8</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="alpham8 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/80912/">
+                edited
+                <strong>10 Jul '21, 16:37</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80912">
+<a name="80917"></a>
+<div class="comment" id="comment-80917">
+<div class="comment-score" id="post-80917-score"></div>
+<div class="comment-text"><p>Please clarify what you mean by 95448 Bayreuth as that is a boundary.
+{{geocodeArea:95448 Bayreuth}};
+rel(pivot);
+out geom;</p></div>
+<div class="comment-info" id="comment-80917-info">
+<span class="comment-age">(10 Jul '21, 19:59)</span>
+<a class="comment-user userinfo" href="/users/1532/davef">DaveF</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-80912">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80912-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/80912/search-for-restaurants-around-a-distance?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/80912/search-for-restaurants-around-a-distance?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/80912/search-for-restaurants-around-a-distance?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/80912/search-for-restaurants-around-a-distance?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="80916"></a>
+<div class="answer accepted-answer" id="answer-container-80916">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80916/up/" id="post-80916-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80916-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/80916/down/" id="post-80916-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/80916/" rel="nofollow" title="alpham8 has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>There are a number of issues with your search:</p>
+<ol>
+<li>You are searching for all restaurants mapped as a node which are in the entire Gemeinde of Bayreuth + those 1000 m outside that boundary. You need to find the node representing the centre of Bayreuth not the area.</li>
+<li>Additionally you are finding any Restaurants mapped as areas within (but not outside) Bayreuth (the around constraint is not applied to ways &amp; areas.</li>
+</ol>
+<p>This appears to be closer to what you want:</p>
+<pre><code>[out:json][timeout:25];
+// gather results
+(
+  // query part for: “name=Bayreuth”
+  node["name"="Bayreuth"][place]-&gt;.a;
+  nwr(around.a:1000)[amenity=restaurant];
+);
+// print results
+out body;
+&gt;;
+out skel qt;
+</code></pre>
+<p>The place node for Bayreuth is places in a result set &amp; that set is searched for restaurants within 1000 m. If there is more than one place with the name other approaches may be needed.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/80916/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>10 Jul '21, 19:34</strong>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br/>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SK53 has 121 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80916">
+</div>
+<div class="comment-tools" id="comment-tools-80916">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80916-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="80918"></a>
+<div class="answer" id="answer-container-80918">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80918/up/" id="post-80918-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80918-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/80918/down/" id="post-80918-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>If you want all restaurants within the boundary of Bayreuth:</p>
+<pre><code>{{geocodeArea:95448 Bayreuth}}-&gt;.Bayreuth;
+rel(pivot.Bayreuth);
+out geom;
+nwr[amenity=restaurant](area.Bayreuth); 
+out center;
+</code></pre>
+<p>If you want all restaurants around the node of the town.</p>
+<pre><code>node[place][name=Bayreuth];
+nwr(around:1000)[amenity=restaurant];
+out center;
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/80918/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>10 Jul '21, 20:15</strong>
+</p>
+<img alt="DaveF's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c9c8b421ad22f51ddd62f23413717036?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1532/davef">DaveF</a><br/>
+<span class="score" title="3264 reputation points"><span class="">3.3k</span></span><span title="84 badges"><span class="badge1">●</span><span class="badgecount">84</span></span><span title="98 badges"><span class="silver">●</span><span class="badgecount">98</span></span><span title="133 badges"><span class="bronze">●</span><span class="badgecount">133</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="DaveF has 17 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80918">
+</div>
+<div class="comment-tools" id="comment-tools-80918">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80918-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/80912/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="pl8Ec4DLBcdAzpNEAPO6nYHVpSx3wgGS"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

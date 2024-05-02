@@ -1,0 +1,130 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/82242/possibilities-to-remove-company-names-places-from-card">Possibilities to remove company-names (Places) from card</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/82242/up/" id="post-82242-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-82242-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/82242/down/" id="post-82242-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/82242/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi there, another question for today ;-),
+I successfully installed my osm tile server with this tutorial: <a href="https://switch2osm.org/serving-tiles/manually-building-a-tile-server-20-04-lts/">https://switch2osm.org/serving-tiles/manually-building-a-tile-server-20-04-lts/</a> and everything looks fine, except the fact, that I need to remove company names (Places). I´ve read that there´s a need for changing the Stylesheet of the map. Can anybody give me a hint, how to manipulate the stylesheet of the tutorial for achieving that?</p>
+<p>Regards</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-stylesheet" href="/tags/stylesheet/" rel="tag" title="see questions tagged 'stylesheet'">stylesheet</a>
+<a class="post-tag tag-link-tileserver" href="/tags/tileserver/" rel="tag" title="see questions tagged 'tileserver'">tileserver</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>19 Oct '21, 10:20</strong>
+</p>
+<img alt="Dom771013's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2ee56dffff70eb5c464e336817ac08a5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20922/dom771013">Dom771013</a><br/>
+<span class="score" title="61 reputation points">61</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Dom771013 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-82242">
+</div>
+<div class="comment-tools" id="comment-tools-82242">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-82242-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/82242/possibilities-to-remove-company-names-places-from-card?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/82242/possibilities-to-remove-company-names-places-from-card?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/82242/possibilities-to-remove-company-names-places-from-card?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/82242/possibilities-to-remove-company-names-places-from-card?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="82250"></a>
+<div class="answer answered-by-owner" id="answer-container-82250">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/82250/up/" id="post-82250-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-82250-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/82250/down/" id="post-82250-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I solved this, by editing the stylesheets in ~/src/openstreetmap-carto/style/*.mss. I just set the unwanted elements on transparent. For sure this is a little bit hacky, but it works. After that you need to do the following:</p>
+<pre><code>carto project.mml &gt; mapnik.xml
+then remove the folder /var/lib/mod_tile/ajt
+then restart via sudo /etc/init.d/renderd restart
+</code></pre>
+<p>Regards</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/82250/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Oct '21, 15:59</strong>
+</p>
+<img alt="Dom771013's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2ee56dffff70eb5c464e336817ac08a5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20922/dom771013">Dom771013</a><br/>
+<span class="score" title="61 reputation points">61</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Dom771013 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-82250">
+</div>
+<div class="comment-tools" id="comment-tools-82250">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-82250-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/82242/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="25hwfU8S9Md6tSKT5fV17Wu9nb94ivJ2"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

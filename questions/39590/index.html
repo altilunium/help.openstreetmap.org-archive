@@ -1,0 +1,136 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/39590/an-error-occurred-while-loading-the-map-layer-default-no-attribute-type-error">An error occurred while loading the map layer 'default': , No Attribute type error</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/39590/up/" id="post-39590-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-39590-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/39590/down/" id="post-39590-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/39590/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello. While styling my maps in Tilemill I'll get a No Attribute Type error when the layers have the attributes like type and name.
+Then on loading the xml file in Mapnik and running it, I'll get An error occurred while loading the map layer 'default': boost::filesystem::status: Permission denied: "/home/carol/Documents/MapBox/project/Open_Uganda/layers/Roads/ne_10m_roads.shp".
+I have tried deleting the 'problematic' layers, but it simply goes to the next one. </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-tilemill" href="/tags/tilemill/" rel="tag" title="see questions tagged 'tilemill'">tilemill</a>
+<a class="post-tag tag-link-errors" href="/tags/errors/" rel="tag" title="see questions tagged 'errors'">errors</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Dec '14, 07:38</strong>
+</p>
+<img alt="David%20SSali's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/cc0de1b5d71fb7c74799148889048261?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/9794/david-ssali">David SSali</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="David SSali has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-39590">
+</div>
+<div class="comment-tools" id="comment-tools-39590">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-39590-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/39590/an-error-occurred-while-loading-the-map-layer-default-no-attribute-type-error?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/39590/an-error-occurred-while-loading-the-map-layer-default-no-attribute-type-error?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/39590/an-error-occurred-while-loading-the-map-layer-default-no-attribute-type-error?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/39590/an-error-occurred-while-loading-the-map-layer-default-no-attribute-type-error?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="39591"></a>
+<div class="answer" id="answer-container-39591">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/39591/up/" id="post-39591-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-39591-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/39591/down/" id="post-39591-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>This is an OpenStreetMap support site. Tilemill is a commercial product made and supported by Mapbox, and any Tilemill specific issues should be <a href="https://www.mapbox.com/help/">raised with them.</a></p>
+<p>As for the Mapnik XML - who is Carol and why are you using her files? If the file ne_10m_roads.shp really resides in the given path, then make sure you have access permissions to that. Else open the XML in an editor and search+replace the paths to the shapefiles so that they point to wherever you have saved your shape files to. (Is it possible that you designed the style on one machine and are running it on another, and have only copied the XML and not the supporting shape files?)</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/39591/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>16 Dec '14, 08:16</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-39591">
+<a name="39593"></a>
+<div class="comment" id="comment-39593">
+<div class="comment-score" id="post-39593-score">3</div>
+<div class="comment-text"><p>Tilemill is open source and has been largely abandoned by Mapbox in favour of Mapbox Studio. I don't think it's unreasonable for questions about it to be asked here.</p></div>
+<div class="comment-info" id="comment-39593-info">
+<span class="comment-age">(16 Dec '14, 08:46)</span>
+<a class="comment-user userinfo" href="/users/5/richard">Richard ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-39591">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-39591-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/39590/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="1ubTBtLuPbxcgADfXHOAS0MP2U7jA05E"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

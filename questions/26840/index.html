@@ -1,0 +1,236 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/26840/osm2pgsql-problem-with-projection">osm2pgsql problem with projection</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/26840/up/" id="post-26840-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-26840-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/26840/down/" id="post-26840-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/26840/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I would like to import an .osm file into the postgresql database. I used this code to start import:</p>
+<pre><code>osm2pgsql -M -d postgres -S "/usr/share/osm2pgsql/default.style" -U "postgres" -W -H "localhost" -P 5432 "/home/szg_osm_db.osm"
+</code></pre>
+<p>I have no errors or cleaning ups, but when I open it in QuantumGis from postgresql database
+the geometry has faults. I dont know why. roads locate in wrong place, polygons are on each others.
+Is it projection problem? QuantumGis shows WGS84 Mercator EPGS:3395 projection.
+(I saved a test area from JOSM. It doesnt contain too much value. Its 2MB file.)</p>
+<p>faults:
+<img alt="quantumgis printsceen" src="http://abload.de/img/faultsjrsyb.jpg"/></p>
+<p>I could not recognize this coordinates which QGIS shows.Thanks</p>
+<p>PS: sorry for my bad english</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>29 Sep '13, 11:14</strong>
+</p>
+<img alt="lockdown90's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9261163ee10e32bb91ceac5147b149a9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/7488/lockdown90">lockdown90</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="lockdown90 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/26840/">
+                edited
+                <strong>29 Sep '13, 11:36</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-26840">
+</div>
+<div class="comment-tools" id="comment-tools-26840">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-26840-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/26840/osm2pgsql-problem-with-projection?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/26840/osm2pgsql-problem-with-projection?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/26840/osm2pgsql-problem-with-projection?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/26840/osm2pgsql-problem-with-projection?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="26852"></a>
+<div class="answer" id="answer-container-26852">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/26852/up/" id="post-26852-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-26852-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/26852/down/" id="post-26852-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I remember seeing something similar when using an old version of osm2pgsql that didn't support 64 bit ids. Can you run</p>
+<pre><code>osm2pgsql --version
+</code></pre>
+<p>and verify that it reports "64bit id space"</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/26852/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Sep '13, 03:22</strong>
+</p>
+<img alt="Dymo12's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b9a8b8a3b1418b4b0bb41041555b18a2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2765/dymo12">Dymo12</a><br/>
+<span class="score" title="796 reputation points">796</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="10 badges"><span class="silver">●</span><span class="badgecount">10</span></span><span title="16 badges"><span class="bronze">●</span><span class="badgecount">16</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Dymo12 has 2 accepted answers">12%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-26852">
+<a name="26855"></a>
+<div class="comment" id="comment-26855">
+<div class="comment-score" id="post-26855-score">1</div>
+<div class="comment-text"><p>Wasn't there a 64-bit issue with QGIS itself, as described here:</p>
+<p><a href="http://wiki.openstreetmap.org/wiki/QGIS_OSM_Plugin">http://wiki.openstreetmap.org/wiki/QGIS_OSM_Plugin</a></p></div>
+<div class="comment-info" id="comment-26855-info">
+<span class="comment-age">(30 Sep '13, 08:59)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="26871"></a>
+<div class="comment" id="comment-26871">
+<div class="comment-score" id="post-26871-score">2</div>
+<div class="comment-text"><p>The 64bit issue should be fixed in the newly released QGIS 2.0</p>
+<p>But I have not verified that. Is anyone able to try it and report?</p></div>
+<div class="comment-info" id="comment-26871-info">
+<span class="comment-age">(30 Sep '13, 16:35)</span>
+<a class="comment-user userinfo" href="/users/99/stephan75">stephan75</a>
+</div>
+</div>
+<a name="26873"></a>
+<div class="comment" id="comment-26873">
+<div class="comment-score" id="post-26873-score"></div>
+<div class="comment-text"><p>Like Dymo12 I think this is an osm2pgsql 64-bit problem, rather than anything to do with QGIS.</p></div>
+<div class="comment-info" id="comment-26873-info">
+<span class="comment-age">(30 Sep '13, 17:58)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-26852">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-26852-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="26841"></a>
+<div class="answer" id="answer-container-26841">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/26841/up/" id="post-26841-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-26841-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/26841/down/" id="post-26841-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The coordinates that QGis shows are Mercator meters, just like you requested by adding "-M" to the osm2pgsql command line. Use "-l" (small letter L) instead if you want latitude/longitude values. </p>
+<p>The reason why some geometries are broken is likely that you saved your file from JOSM and some relations will be incomplete. This can break polygons (but not usually lines). A more thorough analysis might be possible if you placed your .osm file somewhere for us to inspect!</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/26841/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>29 Sep '13, 12:26</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-26841">
+<a name="26846"></a>
+<div class="comment" id="comment-26846">
+<div class="comment-score" id="post-26846-score"></div>
+<div class="comment-text"><p>I downloaded the map of Malta from the official site: <a href="http://download.geofabrik.de/europe/malta-latest.osm.bz2">geofabrik</a></p>
+<p>I used this command that you suggested:</p>
+<pre><code>osm2pgsql -l -d GIStest -S "/usr/share/osm2pgsql/default.style" -U "postgres" -W -H "localhost" -P 5432 "/home/malta.osm"
+</code></pre>
+<p>and the result is also same like above. BUT the coordinates changed.
+<img alt="screenshot" src="http://abload.de/img/faults21nsmh.jpg"/></p>
+<p>osm_roads and osm_line originated from one point.</p></div>
+<div class="comment-info" id="comment-26846-info">
+<span class="comment-age">(29 Sep '13, 16:44)</span>
+<a class="comment-user userinfo" href="/users/7488/lockdown90">lockdown90</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-26841">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-26841-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/26840/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="ArnSPrZjgVbRne1O7KsGOL4jpLWutVkw"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

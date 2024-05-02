@@ -1,0 +1,90 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/87106/how-to-programmatically-split-ways-for-turning-lanes">How to programmatically split ways for turning lanes?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/87106/up/" id="post-87106-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-87106-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/87106/down/" id="post-87106-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/87106/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I would like to split the ways in my OSM data that contain turn lane information. For example, if a way has 3 lanes, but 4 turn lanes, I want to split the way into 2, with a 4-lane section at the end of the road (perhaps using the last 2 geometry points)</p>
+<p>I wonder if anyone has any suggestions on how this might be done programmatically? </p>
+<p>I am using the OSM data as an input to build a network in traffic simulator <a href="https://www.eclipse.org/sumo/">SUMO</a> </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-ways" href="/tags/ways/" rel="tag" title="see questions tagged 'ways'">ways</a>
+<a class="post-tag tag-link-split" href="/tags/split/" rel="tag" title="see questions tagged 'split'">split</a>
+<a class="post-tag tag-link-programing" href="/tags/programing/" rel="tag" title="see questions tagged 'programing'">programing</a>
+<a class="post-tag tag-link-turnlanes" href="/tags/turnlanes/" rel="tag" title="see questions tagged 'turnlanes'">turnlanes</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>13 Apr '23, 09:36</strong>
+</p>
+<img alt="gladegan's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/84bb2b757c48fde0ecb9f1d32eab3028?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/22924/gladegan">gladegan</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="gladegan has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-87106">
+<a name="87109"></a>
+<div class="comment" id="comment-87109">
+<div class="comment-score" id="post-87109-score"></div>
+<div class="comment-text"><p>I may be hopelessly naive here (not familiar with SUMO), but it seems to me like the correct place to do this programmatically would be in the converter from OSM format to SUMO format as described in <a href="https://github.com/eclipse/sumo/issues/1990">this issue</a> on their GitHub? From <a href="https://github.com/eclipse/sumo/issues/12978">this</a> later issue and <a href="https://sumo.dlr.de/docs/Networks/Import/OpenStreetMap.html#lane-to-lane_connections">some of the docs</a>, it looks like it might have been implemented?</p></div>
+<div class="comment-info" id="comment-87109-info">
+<span class="comment-age">(13 Apr '23, 15:12)</span>
+<a class="comment-user userinfo" href="/users/4426/insertuser">InsertUser</a>
+</div>
+</div>
+<a name="87151"></a>
+<div class="comment" id="comment-87151">
+<div class="comment-score" id="post-87151-score"></div>
+<div class="comment-text"><p>Hi, thanks for replying. As far as I understand, SUMO reads turn lane information and applies them to the indicated number of lanes. If the number of lanes is 1 and the number of turn lanes is 2, the turn lanes are not applied.</p>
+<p>An example here:
+<a href="https://www.openstreetmap.org/way/1121159178">https://www.openstreetmap.org/way/1121159178</a></p>
+<p>I would like to split such a way into 2 parts, where the turning part has the right number of turning lanes.</p></div>
+<div class="comment-info" id="comment-87151-info">
+<span class="comment-age">(21 Apr '23, 15:37)</span>
+<a class="comment-user userinfo" href="/users/22924/gladegan">gladegan</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-87106">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-87106-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/87106/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="10KD936Bdvz9j5qsyzeZlPrQY3VGEnN5"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

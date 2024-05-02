@@ -1,0 +1,183 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/74336/osm-for-commercial-truck-routing">OSM for commercial truck routing</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/74336/up/" id="post-74336-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-74336-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/74336/down/" id="post-74336-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/74336/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello everyone,</p>
+<p>Please bear with me as I am completely new to maps and routing.  The company I'm working for wants to determine routes for trucks.  Primarily in the USA and have the ability to extend to the rest of the world.  I've looked at OSM and it appears that the routing available is only for cars, walking and bicycling.  Does anyone know if there's commercial truck routing data that we can use in conjunction with OSM maps?  The desired behavior is to have a REST service in place that returns routes in response to requests.</p>
+<p>Thanks very much,  Eugen</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-truck" href="/tags/truck/" rel="tag" title="see questions tagged 'truck'">truck</a>
+<a class="post-tag tag-link-routing" href="/tags/routing/" rel="tag" title="see questions tagged 'routing'">routing</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>22 Apr '20, 21:46</strong>
+</p>
+<img alt="eugen_nw's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad8f49d67fd7b8e25376900e86f57542?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18251/eugen_nw">eugen_nw</a><br/>
+<span class="score" title="31 reputation points">31</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="eugen_nw has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/74336/">
+                edited
+                <strong>22 Apr '20, 21:49</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-74336">
+</div>
+<div class="comment-tools" id="comment-tools-74336">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-74336-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/74336/osm-for-commercial-truck-routing?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/74336/osm-for-commercial-truck-routing?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/74336/osm-for-commercial-truck-routing?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/74336/osm-for-commercial-truck-routing?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="74337"></a>
+<div class="answer accepted-answer" id="answer-container-74337">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/74337/up/" id="post-74337-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-74337-score" title="current number of votes">
+    8
+</div>
+<a class="ajax-command post-vote down" href="/vote/74337/down/" id="post-74337-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/74337/" rel="nofollow" title="eugen_nw has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>To have routing for trucks you need three things: The data, the software, and someone who runs the software for you.</p>
+<p>The data is basically there in OpenStreetMap, though some restrictions that may be relevant to truck routing might be missing in OSM. Remember, the data is collected by volunteers, and perhaps not every volunteer will make it a priority to record bridge heights or maximum weight restrictions. The situation is slowly improving but as of today, commercial data might be more complete for truck routing than OSM is.</p>
+<p>The software is basically there as well; you can activate a truck routing profile in all popular OSM routing engines e.g. Graphhopper, OSRM, or Valhalla. They might differ in what attributes they look at in the OSM data, and if you are keen on doing stuff like routing for heavy or large vehicles where height or weight restrictions start playing a role, you might have to adapt the profiles to your needs. (That you don't find truck routing in available public offers e.g. on openstreetmap.org is mostly due to the fact that each additional routing type uses more resources, and the offers concentrate on frequent use cases.)</p>
+<p>Which brings us to the third issue, someone to run the server for you. Publicly available instances of OSM routing services are mostly for demo purposes or donation-financed offers for the community. They are not meant to be a free-of-charge resource that can be monetised by commercial users. For that reason alone - but also for reasons of flexibility and customisation - you will likely want to run your own instance of the routing software, which isn't a problem because both data and software are open and free to download and use. </p>
+<p>The alternative to doing it yourself is of course buying services, either from a commercial supplier of OSM-based routing services (most will use the same software listed above), or from someone who helps you set up the software for yourself. See <a href="https://wiki.openstreetmap.org/wiki/Commercial_OSM_Software_and_Services">https://wiki.openstreetmap.org/wiki/Commercial_OSM_Software_and_Services</a> for an inoffical list maintainted by the suppliers themselves. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/74337/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Apr '20, 22:16</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/74337/">
+                edited
+                <strong>22 Apr '20, 22:17</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-74337">
+<a name="74338"></a>
+<div class="comment" id="comment-74338">
+<div class="comment-score" id="post-74338-score"></div>
+<div class="comment-text"><p>Thanks very much for the info Frederik!  The fact that the OSM data may not be complete enough for truck routing sounds scary.  From what I've read there are more restrictions on trucks than tunnel/bridge heights and weight: <a href="https://www.developer.here.com/documentation/routing-api/dev_guide/topics/use-cases/truck-routing.html">https://www.developer.here.com/documentation/routing-api/dev_guide/topics/use-cases/truck-routing.html</a></p></div>
+<div class="comment-info" id="comment-74338-info">
+<span class="comment-age">(22 Apr '20, 23:07)</span>
+<a class="comment-user userinfo" href="/users/18251/eugen_nw">eugen_nw</a>
+</div>
+</div>
+<a name="74339"></a>
+<div class="comment" id="comment-74339">
+<div class="comment-score" id="post-74339-score"></div>
+<div class="comment-text"><p>"you might have to adapt the profiles to your needs": how do I do that please?</p></div>
+<div class="comment-info" id="comment-74339-info">
+<span class="comment-age">(22 Apr '20, 23:10)</span>
+<a class="comment-user userinfo" href="/users/18251/eugen_nw">eugen_nw</a>
+</div>
+</div>
+<a name="74342"></a>
+<div class="comment" id="comment-74342">
+<div class="comment-score" id="post-74342-score">1</div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/18251/eugen_nw">@eugen_nw</a>, at least you know beforehand that OSM is not complete, but no map offering is complete (e.g. Google, TomTom and the like also have missing or wrong data).</p></div>
+<div class="comment-info" id="comment-74342-info">
+<span class="comment-age">(23 Apr '20, 04:37)</span>
+<a class="comment-user userinfo" href="/users/5390/escada">escada</a>
+</div>
+</div>
+<a name="74344"></a>
+<div class="comment" id="comment-74344">
+<div class="comment-score" id="post-74344-score"></div>
+<div class="comment-text"><p>Every routing engine has its own system to define routing profiles; some take configuration files in something that looks almost like a programming language, while for others you have write code in the actual programming language of the routing engine. In most cases you have to use the routing profile already during the data import step, because it can then find out which roads to omit entirely and how to preprocess the data. There are <em>some</em> routing engines - e.g. BRouter - that are so versatile that you can actually specify your routing profile when making a routing request instead of when loading the data, but the price for that flexibility is speed. -- This is the car profile for the OSRM routing engine: <a href="https://github.com/Project-OSRM/osrm-backend/blob/master/profiles/car.lua">https://github.com/Project-OSRM/osrm-backend/blob/master/profiles/car.lua</a> someone has made a truck adaptation: <a href="https://github.com/Project-OSRM/osrm-profiles-contrib/tree/master/5/21/truck-soft">https://github.com/Project-OSRM/osrm-profiles-contrib/tree/master/5/21/truck-soft</a> -- In Graphhopper, the profiles are called "Flag Encoders" and they are here <a href="https://github.com/graphhopper/graphhopper/tree/master/core/src/main/java/com/graphhopper/routing/util;">https://github.com/graphhopper/graphhopper/tree/master/core/src/main/java/com/graphhopper/routing/util;</a> GraphHopper's paid service offers a ready-made truck profile but that seems not to be open source.</p></div>
+<div class="comment-info" id="comment-74344-info">
+<span class="comment-age">(23 Apr '20, 08:53)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-74337">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-74337-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/74336/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="cwbVoeGBMGI1KeiMh68YQRNmhct86qFa"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

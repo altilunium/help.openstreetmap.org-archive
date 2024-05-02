@@ -1,0 +1,223 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/71791/show-user-location-by-lat-and-lon">show user location by lat and lon</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/71791/up/" id="post-71791-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-71791-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/71791/down/" id="post-71791-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/71791/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>hi, i show user current location in map.i need after show location by receive lat and lon via user show location on map. thanks for help.</p>
+<pre><code>    &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+
+    &lt;title&gt;view&lt;/title&gt;
+
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+
+
+    &lt;link rel="stylesheet" href="leaflet/leaflet.css" /&gt;
+    &lt;script src="leaflet/leaflet.js"&gt;&lt;/script&gt;
+
+
+    &lt;style&gt;
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        #map {
+            width: 600px;
+            height: 400px;
+        }       
+        div#lat-lon {
+            padding-top: 10px;
+        }
+    &lt;/style&gt;
+
+    &lt;style&gt;body { padding: 0; margin: 0; } &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="main-content"&gt;
+    &lt;div id='map'&gt;&lt;/div&gt;
+    &lt;div id="lat-lon"&gt;
+        &lt;input type="text" id="frmLat"&gt;
+        &lt;input type="text" id="frmLon"&gt;
+        &lt;button onclick="getLocation()"&gt;show lat and lon&lt;/button&gt;
+        &lt;button onclick="setLocation()"&gt;set location&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;script&gt;
+    var map = L.map('map').fitWorld();
+
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=token', {
+        maxZoom: 18,
+
+        id: 'mapbox.streets'
+    }).addTo(map);
+
+    function onLocationFound(e) {
+        var radius = e.accuracy / 2;
+
+        L.marker(e.latlng).addTo(map)
+            .bindPopup("You are within " + radius + " meters from this point").openPopup();
+
+        L.circle(e.latlng, radius).addTo(map);
+    }
+
+    function onLocationError(e) {
+        alert(e.message);
+    }
+
+    map.on('locationfound', onLocationFound);
+    map.on('locationerror', onLocationError);
+
+    map.locate({setView: true, maxZoom: 16});
+
+&lt;/script&gt;
+
+&lt;script&gt;
+var x = document.getElementById("map");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+    document.getElementById("frmLat").value = position.coords.latitude;
+    document.getElementById("frmLon").value = position.coords.longitude;            
+}
+&lt;/script&gt;
+</code></pre>
+<p>&lt;/body&gt;
+&lt;/html&gt;</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-location" href="/tags/location/" rel="tag" title="see questions tagged 'location'">location</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>24 Nov '19, 09:55</strong>
+</p>
+<img alt="eurus's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d32cbb1eecaaae86fd35140149b49f6b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/17454/eurus">eurus</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="eurus has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/71791/">
+                edited
+                <strong>24 Nov '19, 10:12</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-71791">
+<a name="71792"></a>
+<div class="comment" id="comment-71792">
+<div class="comment-score" id="post-71792-score">1</div>
+<div class="comment-text"><p>Can you explain in a bit more detail what you are trying to do and how it is related to OpenStreetMap?</p>
+<p>What sort of platform are you asking about (on the web, on a phone, something else?) and what sort of map (tile-based, vector based, something else again?)</p>
+<p>Questions such as "how do I find the user's location from a web page" (which may be part of what you are asking) are general web technology questions - you'll find answers at this help site but much more in-depth answers elsewhere.</p></div>
+<div class="comment-info" id="comment-71792-info">
+<span class="comment-age">(24 Nov '19, 10:04)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="71793"></a>
+<div class="comment" id="comment-71793">
+<div class="comment-score" id="post-71793-score"></div>
+<div class="comment-text"><p>now can help me ?</p></div>
+<div class="comment-info" id="comment-71793-info">
+<span class="comment-age">(24 Nov '19, 10:13)</span>
+<a class="comment-user userinfo" href="/users/17454/eurus">eurus</a>
+</div>
+</div>
+<a name="71794"></a>
+<div class="comment" id="comment-71794">
+<div class="comment-score" id="post-71794-score">2</div>
+<div class="comment-text"><p>er - not really, since it's unclear what "navigator" is in your code snippet.  I can show you an example of web-based geolocation that works, though - see <a href="https://github.com/SomeoneElseOSM/SomeoneElse-map/blob/master/map/Scripts/leaflet_embed_small.js#L139">here</a>.  That's using leaflet (as you seem to be doing also).  Pressing the "centre" button <a href="https://map.atownsend.org.uk/maps/map/map.html">here</a> will invoke it.</p></div>
+<div class="comment-info" id="comment-71794-info">
+<span class="comment-age">(24 Nov '19, 10:21)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="71795"></a>
+<div class="comment" id="comment-71795">
+<div class="comment-score" id="post-71795-score"></div>
+<div class="comment-text"><p>solved, thanks</p></div>
+<div class="comment-info" id="comment-71795-info">
+<span class="comment-age">(24 Nov '19, 10:29)</span>
+<a class="comment-user userinfo" href="/users/17454/eurus">eurus</a>
+</div>
+</div>
+<a name="71796"></a>
+<div class="comment not_top_scorer" id="comment-71796">
+<div class="comment-score" id="post-71796-score"></div>
+<div class="comment-text"><p>can set marker to center location ?</p></div>
+<div class="comment-info" id="comment-71796-info">
+<span class="comment-age">(24 Nov '19, 10:37)</span>
+<a class="comment-user userinfo" href="/users/17454/eurus">eurus</a>
+</div>
+</div>
+<a name="71797"></a>
+<div class="comment" id="comment-71797">
+<div class="comment-score" id="post-71797-score">1</div>
+<div class="comment-text"><p>There's a ton of examples at the leaflet site <a href="https://leafletjs.com/">here</a> - including setting markers.</p></div>
+<div class="comment-info" id="comment-71797-info">
+<span class="comment-age">(24 Nov '19, 10:40)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-71791">
+<span class="comments-showing">
+            showing 5 of 6
+        </span>
+<a class="show-all-comments-link" href="#">show 1 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-71791-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/71791/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="3hTxNrPA2pq6YZ3OMl1lq9OmwL37BHyd"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

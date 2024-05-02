@@ -1,0 +1,177 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/64602/how-to-specify-multiple-style-file-with-osm2pgsql-query">How to specify multiple style file with osm2pgsql query</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/64602/up/" id="post-64602-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-64602-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/64602/down/" id="post-64602-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/64602/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have imported entire planet data using the following query.</p>
+<pre><code>sudo osm2pgsql --drop --hstore --slim -r pbf -C 32000 --flat-nodes node.cache --number-processes 8 -d gis -U root /mnt/data/planetdata/planet-latest.osm.pbf
+</code></pre>
+<p>But whenever I am testing rendered using-</p>
+<pre><code>renderd -f -c /usr/local/etc/renderd.conf
+</code></pre>
+<p>It is logging the following errors- </p>
+<pre><code>renderd[17978]: An error occurred while loading the map layer 'osm': Postgis Plugin: ERROR:  COALESCE types text and integer cannot be matched
+LINE 18:   ORDER BY COALESCE(layer,0), way_area DESC
+                               ^
+in executeQuery Full sql was: 'SELECT * FROM (SELECT
+way,
+"natural",
+waterway,
+landuse,
+name,
+way_area/NULLIF(0::real*0::real,0) AS way_pixels,
+CASE WHEN tags-&gt;'intermittent' IN ('yes')
+  OR tags-&gt;'seasonal' IN ('yes', 'spring', 'summer', 'autumn', 'winter', 'wet_season', 'dry_season')
+  THEN 'yes' ELSE 'no' END AS int_intermittent
+FROM planet_osm_polygon
+WHERE
+(waterway IN ('dock', 'riverbank')
+  OR landuse IN ('reservoir', 'basin')
+  OR "natural" IN ('water', 'glacier'))
+AND building IS NULL
+AND way_area &gt; 1*0::real*0::real
+ORDER BY COALESCE(layer,0), way_area DESC
+) AS water_areas LIMIT 0'
+encountered during parsing of layer 'water-areas' in Layer at line 8298 of 
+'/mnt/data/styles/osm/openstreetmap-carto-master/osm.xml'
+debug: init_storage_backend: initialising file storage backend at: /var/lib/mod_tile
+renderd[17978]: Loading parameterization function for 
+renderd[17978]: An error occurred while loading the map layer 'osm': Postgis Plugin: ERROR:  COALESCE 
+types text and integer cannot be matched
+LINE 18:   ORDER BY COALESCE(layer,0), way_area DESC
+                               ^
+in executeQuery Full sql was: 'SELECT * FROM (SELECT
+way,
+"natural",
+waterway,
+landuse,
+name,
+way_area/NULLIF(0::real*0::real,0) AS way_pixels,
+CASE WHEN tags-&gt;'intermittent' IN ('yes')
+  OR tags-&gt;'seasonal' IN ('yes', 'spring', 'summer', 'autumn', 'winter', 'wet_season', 'dry_season')
+  THEN 'yes' ELSE 'no' END AS int_intermittent
+FROM planet_osm_polygon
+WHERE
+(waterway IN ('dock', 'riverbank')
+  OR landuse IN ('reservoir', 'basin')
+  OR "natural" IN ('water', 'glacier'))
+AND building IS NULL
+AND way_area &gt; 1*0::real*0::real
+ORDER BY COALESCE(layer,0), way_area DESC
+) AS water_areas LIMIT 0'
+encountered during parsing of layer 'water-areas' in Layer at line 8298 of 
+'/mnt/data/styles/osm/openstreetmap-carto-master/osm.xml'
+</code></pre>
+<p>When I googled for this error.I found a this link referencing the same issue- 
+    <a href="https://github.com/kosmtik/kosmtik/issues/256">link</a></p>
+<p>But I am using style from openstreetmap-carto-master and mapbox-carto(osm-bright) both.</p>
+<p>openstreetmap-carto-master - <a href="https://github.com/gravitystorm/openstreetmap-carto/archive/master.zip">link</a></p>
+<p>mapbox-carto - <a href="https://github.com/mapbox/osm-bright/archive/master.zip">link</a></p>
+<p>So, In my case how can I specify two style file in my query? Or How can I solve this issue? </p>
+<p>If anyone have solved this issue ,please let me know.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap-carto" href="/tags/openstreetmap-carto/" rel="tag" title="see questions tagged 'openstreetmap-carto'">openstreetmap-carto</a>
+<a class="post-tag tag-link-mapbox_osm-bright" href="/tags/mapbox_osm-bright/" rel="tag" title="see questions tagged 'mapbox_osm-bright'">mapbox_osm-bright</a>
+<a class="post-tag tag-link-renderd" href="/tags/renderd/" rel="tag" title="see questions tagged 'renderd'">renderd</a>
+<a class="post-tag tag-link-osm" href="/tags/osm/" rel="tag" title="see questions tagged 'osm'">osm</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>09 Jul '18, 15:16</strong>
+</p>
+<img alt="anuranpal's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/943a788b771da12a63057582fbf250b0?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15374/anuranpal">anuranpal</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="12 badges"><span class="silver">●</span><span class="badgecount">12</span></span><span title="15 badges"><span class="bronze">●</span><span class="badgecount">15</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="anuranpal has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/64602/">
+                edited
+                <strong>10 Jul '18, 11:34</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-64602">
+<a name="64606"></a>
+<div class="comment" id="comment-64606">
+<div class="comment-score" id="post-64606-score"></div>
+<div class="comment-text"><p>Can you explain what you mean by "I am using style from openstreetmap-carto-master and maknik-carto both"?  Can you link to both styles?</p></div>
+<div class="comment-info" id="comment-64606-info">
+<span class="comment-age">(09 Jul '18, 16:42)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="64608"></a>
+<div class="comment" id="comment-64608">
+<div class="comment-score" id="post-64608-score"></div>
+<div class="comment-text"><p>I mean my tileserver can supply multiple carto styles as base map.</p></div>
+<div class="comment-info" id="comment-64608-info">
+<span class="comment-age">(09 Jul '18, 16:59)</span>
+<a class="comment-user userinfo" href="/users/15374/anuranpal">anuranpal</a>
+</div>
+</div>
+<a name="64610"></a>
+<div class="comment" id="comment-64610">
+<div class="comment-score" id="post-64610-score">1</div>
+<div class="comment-text"><p>Can you link to both styles?  That'll help people tell if they can share a database or not.</p></div>
+<div class="comment-info" id="comment-64610-info">
+<span class="comment-age">(09 Jul '18, 17:17)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="64622"></a>
+<div class="comment" id="comment-64622">
+<div class="comment-score" id="post-64622-score"></div>
+<div class="comment-text"><p>I have updated the question. <a href="https://help.openstreetmap.org/users/387/someoneelse">@SomeoneElse</a></p></div>
+<div class="comment-info" id="comment-64622-info">
+<span class="comment-age">(10 Jul '18, 06:32)</span>
+<a class="comment-user userinfo" href="/users/15374/anuranpal">anuranpal</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-64602">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-64602-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/64602/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="8bRt91sFPV7OMQ6yepqrXV8JxEX6bWxA"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

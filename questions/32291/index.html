@@ -1,0 +1,393 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/32291/preparing-a-xslt-processing-to-get-better-results">preparing a xslt-processing  to  get better results</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/32291/up/" id="post-32291-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-32291-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/32291/down/" id="post-32291-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/32291/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>on opensuse 13.1 i try to  do some gis-works with a large file:  france-latest.osm.bz2 which i gathered from here: [url]<a href="http://download.geofabrik.de/europe.html[/url]">http://download.geofabrik.de/europe.html[/url]</a></p>
+<p>what do i do with that file france-latest.osm.bz2</p>
+<pre><code>   bzcat france-latest.osm.bz2
+</code></pre>
+<p>what is aimed? i want to extract all things that belong to the POI restaurant which is 
+long lat 
+name 
+adress
+etc - etx.</p>
+<p>i have the following things up and running: </p>
+<p>package perl-XML-Twig and run xml_split</p>
+<p>with a command available on openSUSE to split xml files named xml_split (it is part of the package perl-XML-Twig) Now we try to run the following command (I hope we have enough hard disk space since the output is roughly 20GB).</p>
+<pre><code> bzcat france.osm.bz2 | xml_split -s 100M -b france -n 3 -
+</code></pre>
+<p>this will result in a bunch of 100 Mb large xml files france-001.xml,france-002.xml and so on. Weu then have the xslt (the name of the root element) and of course we will need a loop in the bash to process the several files and collect all the results together.</p>
+<pre><code>&lt;xsl:stylesheet version = '1.0'
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:xml_split="http://xmltwig.com/xml_split"
+        xmlns:xsl='http://www.w3.org/1999/XSL/Transform'&gt;
+
+    &lt;xsl:output method="text" encoding="UTF-8"/&gt;
+    &lt;xsl:template match="/"&gt;
+
+            &lt;xsl:for-each select="xml_split:root/node/tag[<a href="/users/51/ktim"><a href="/users/51/ktim">@k</a></a>='amenity' and <a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski">@v</a></a>='restaurant']"&gt;
+            &lt;xsl:value-of select="../<a href="/users/260/idoneus">@id</a>"/&gt;
+            &lt;xsl:text&gt;&amp;#x09;&lt;/xsl:text&gt;
+            &lt;xsl:value-of select="../<a href="/users/5110/latroc">@lat</a>"/&gt;
+            &lt;xsl:text&gt;&amp;#x09;&lt;/xsl:text&gt;
+            &lt;xsl:value-of select="../<a href="/users/1350/longestaugust">@lon</a>"/&gt;
+            &lt;xsl:text&gt;&amp;#x09;&lt;/xsl:text&gt;
+            &lt;xsl:for-each select="../tag[<a href="/users/51/ktim"><a href="/users/51/ktim">@k</a></a>='name']"&gt;
+                &lt;xsl:value-of select="<a href="/users/121/victor-bielawski"><a href="/users/121/victor-bielawski">@v</a></a>"/&gt;
+            &lt;/xsl:for-each&gt;
+            &lt;xsl:text&gt;&amp;#x0A;&lt;/xsl:text&gt;
+        &lt;/xsl:for-each&gt;
+    &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;
+</code></pre>
+<p>question: what do i need to  get all the aimed data out of the dataset - i.e. </p>
+<p>long lat 
+name 
+adress
+etc - etx.</p>
+<p>here below we have a data-chunk out of the xml-file that we have parsed: see it</p>
+<pre><code>&lt;node id="52768810" lat="48.2044749" lon="11.3249434" version="7" changeset="9490517" user="wheelmap_visitor" uid="290680" timestamp="2011-10-07T20:24:46Z"&gt;
+    &lt;tag k="addr:city" v="Olching" /&gt;
+    &lt;tag k="addr:country" v="DE" /&gt;
+    &lt;tag k="addr:housenumber" v="72" /&gt;
+    &lt;tag k="addr:postcode" v="82140" /&gt;
+    &lt;tag k="addr:street" v="Hauptstraße" /&gt;
+    &lt;tag k="amenity" v="restaurant" /&gt;
+    &lt;tag k="cuisine" v="mexican" /&gt;
+    &lt;tag k="email" v="info@cantina-olching.de" /&gt;
+    &lt;tag k="name" v="La Cantina" /&gt;
+    &lt;tag k="opening_hours" v="Mo-Su 17:00-01:00" /&gt;
+    &lt;tag k="phone" v="+49 (8142) 444393" /&gt;
+    &lt;tag k="website" v="http://www.cantina-olching.com/" /&gt;
+    &lt;tag k="wheelchair" v="no" /&gt;
+</code></pre>
+<p>well - how to get all the data out of the above mentioned file with the xslt-processing</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-extract" href="/tags/extract/" rel="tag" title="see questions tagged 'extract'">extract</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>11 Apr '14, 11:38</strong>
+</p>
+<img alt="say_hello_to_the_world's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bf4d2d8660e82c4a7387b7d2a8a8cfcd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8644/say_hello_to_the_world">say_hello_to...</a><br/>
+<span class="score" title="19 reputation points">19</span><span title="23 badges"><span class="badge1">●</span><span class="badgecount">23</span></span><span title="24 badges"><span class="silver">●</span><span class="badgecount">24</span></span><span title="27 badges"><span class="bronze">●</span><span class="badgecount">27</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="say_hello_to_the_world has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/32291/">
+                edited
+                <strong>11 Apr '14, 11:41</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-32291">
+<a name="32306"></a>
+<div class="comment" id="comment-32306">
+<div class="comment-score" id="post-32306-score">1</div>
+<div class="comment-text"><p>I would NOT recommend using xslt to extract data from OSM XML files. It's just a lot more work and more complicated than using some of the available OSM tools.</p></div>
+<div class="comment-info" id="comment-32306-info">
+<span class="comment-age">(11 Apr '14, 15:39)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="32316"></a>
+<div class="comment" id="comment-32316">
+<div class="comment-score" id="post-32316-score"></div>
+<div class="comment-text"><p>hello dear sk53 many many thanks - i will follow your advices and will do as you recommend.  btw - if i have a big big file such as the one of germany - should i separate it into pieces using xml-split!?</p></div>
+<div class="comment-info" id="comment-32316-info">
+<span class="comment-age">(12 Apr '14, 13:39)</span>
+<a class="comment-user userinfo" href="/users/8644/say_hello_to_the_world">say_hello_to...</a>
+</div>
+</div>
+<a name="32320"></a>
+<div class="comment" id="comment-32320">
+<div class="comment-score" id="post-32320-score"></div>
+<div class="comment-text"><p>Personally, I'd use <a href="http://wiki.openstreetmap.org/wiki/Osmosis">osmosis</a> to extract data from within a large downloaded .osm or osm.pbf file</p></div>
+<div class="comment-info" id="comment-32320-info">
+<span class="comment-age">(12 Apr '14, 14:16)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="32322"></a>
+<div class="comment" id="comment-32322">
+<div class="comment-score" id="post-32322-score"></div>
+<div class="comment-text"><p>See also <a href="http://forum.openstreetmap.org/viewtopic.php?id=25031">this forum question</a> which seems to be related (and has a bit more info).</p></div>
+<div class="comment-info" id="comment-32322-info">
+<span class="comment-age">(12 Apr '14, 15:48)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-32291">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-32291-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/32291/preparing-a-xslt-processing-to-get-better-results?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/32291/preparing-a-xslt-processing-to-get-better-results?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/32291/preparing-a-xslt-processing-to-get-better-results?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/32291/preparing-a-xslt-processing-to-get-better-results?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="32323"></a>
+<div class="answer accepted-answer" id="answer-container-32323">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/32323/up/" id="post-32323-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-32323-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/32323/down/" id="post-32323-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/32323/" rel="nofollow" title="say_hello_to_the_world has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I wouldn't get hung up on the fact that OSM data's in XML format.  As <a href="/users/647/sk53">@SK53</a> suggested above, there are lots of existing OSM tools for extracting data (most of which have had questions asked about before here).<br/>
+</p>
+<p>I'd extract (an initially small) geographical area using <a href="https://help.openstreetmap.org/search/?q=osmosis&amp;Submit=Search&amp;t=question">osmosis</a>, then look at using <a href="https://help.openstreetmap.org/search/?q=osmfilter&amp;Submit=Search&amp;t=question">osmfilter</a> to extract the data (possibly having used <a href="https://help.openstreetmap.org/search/?q=osmconvert&amp;Submit=Search&amp;t=question">osmconvert</a> to convert the data into a format that osmfilter can understand).  Also perhaps consider <a href="https://help.openstreetmap.org/search/?q=osmium&amp;Submit=Search&amp;t=question">osmium</a>.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/32323/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Apr '14, 15:56</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-32323">
+<a name="32330"></a>
+<div class="comment" id="comment-32330">
+<div class="comment-score" id="post-32330-score"></div>
+<div class="comment-text"><p>many many thanks for all your ideas  - i will add all those packages on opensuse 13.1 .- hopefully i will get them installed - either via commandline or yast</p></div>
+<div class="comment-info" id="comment-32330-info">
+<span class="comment-age">(12 Apr '14, 21:07)</span>
+<a class="comment-user userinfo" href="/users/8644/say_hello_to_the_world">say_hello_to...</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-32323">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-32323-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="32292"></a>
+<div class="answer" id="answer-container-32292">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/32292/up/" id="post-32292-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-32292-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/32292/down/" id="post-32292-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Are you aware that bzcat and bz2 file name extension is a hint to a compressed osm file?</p>
+<p>You have to uncompress it in the very right way, so I would NOT recommend to use anything like a pipe in your console prompt.</p>
+<p>Instead of downloading france.osm.bz2 ... try the osm.pbf file ... it is a kind of binary format.</p>
+<p>Then you should get familiar with the tools calles osmconvert and osmfilter ... see the OSM wiki how to use them.</p>
+<p>and before processing the whole France, I recommend to try some tests before with a smaller country extract or a region extract available also via geofabrik.de</p>
+<p>With osmconvert you can produce a CSV file from raw OSM data, to load in a database or spreadsheet programm.</p>
+<p>Success?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/32292/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>11 Apr '14, 12:12</strong>
+</p>
+<img alt="stephan75's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/245b73d4390c3408fe3c6da759b9897f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/99/stephan75">stephan75</a><br/>
+<span class="score" title="12642 reputation points"><span class="">12.6k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="56 badges"><span class="silver">●</span><span class="badgecount">56</span></span><span title="210 badges"><span class="bronze">●</span><span class="badgecount">210</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="stephan75 has 37 accepted answers">6%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-32292">
+<a name="32310"></a>
+<div class="comment" id="comment-32310">
+<div class="comment-score" id="post-32310-score">1</div>
+<div class="comment-text"><p>He already uncompresses it via <code>bzcat</code>.</p></div>
+<div class="comment-info" id="comment-32310-info">
+<span class="comment-age">(11 Apr '14, 21:23)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="32314"></a>
+<div class="comment" id="comment-32314">
+<div class="comment-score" id="post-32314-score"></div>
+<div class="comment-text"><p>hello dear stephan many many thanks - i will follow your advices and will do as you recommend. </p>
+<p>i try to work on a smaller country-extract or region - guess that geofabrik has some.</p>
+<p>love to do some conversions to csv - or to load into a  db-or spreadsheet</p></div>
+<div class="comment-info" id="comment-32314-info">
+<span class="comment-age">(12 Apr '14, 13:37)</span>
+<a class="comment-user userinfo" href="/users/8644/say_hello_to_the_world">say_hello_to...</a>
+</div>
+</div>
+<a name="32317"></a>
+<div class="comment" id="comment-32317">
+<div class="comment-score" id="post-32317-score"></div>
+<div class="comment-text"><p>btw - if i have a big big file such as the one of germany - should i separate it into pieces using xml-split!?</p></div>
+<div class="comment-info" id="comment-32317-info">
+<span class="comment-age">(12 Apr '14, 13:39)</span>
+<a class="comment-user userinfo" href="/users/8644/say_hello_to_the_world">say_hello_to...</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-32292">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-32292-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="32333"></a>
+<div class="answer answered-by-owner" id="answer-container-32333">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/32333/up/" id="post-32333-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-32333-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/32333/down/" id="post-32333-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>btw - i also installed osmfilter: see  here </p>
+<p><a href="http://wiki.openstreetmap.org/wiki/Osmfilter">http://wiki.openstreetmap.org/wiki/Osmfilter</a></p>
+<pre><code>Download and build in one run:   wget -O - <a href="http://m.m.i24.cc/osmfilter.c">http://m.m.i24.cc/osmfilter.c</a> |cc -x c - -O3 -o osmfilter
+
+As usual: There is no warranty, to the extent permitted by law.
+
+linux-70ce:/home/martin #  wget -O - <a href="http://m.m.i24.cc/osmfilter.c">http://m.m.i24.cc/osmfilter.c</a> |cc -x c - -O3 -o osmfilter
+--2014-04-12 22:34:49--  <a href="http://m.m.i24.cc/osmfilter.c">http://m.m.i24.cc/osmfilter.c</a>
+Auflösen des Hostnamen »m.m.i24.cc (m.m.i24.cc)«... 80.67.17.148, 2a00:1158:0:300:432f::1
+Verbindungsaufbau zu m.m.i24.cc (m.m.i24.cc)|80.67.17.148|:80... verbunden.
+HTTP-Anforderung gesendet, warte auf Antwort... 200 OK
+Länge: 213497 (208K) [text/plain]
+In »»STDOUT«« speichern.
+
+100%[==========================================================================================================================================&gt;] 213.497     1,14MB/s   in 0,2s
+
+2014-04-12 22:34:49 (1,14 MB/s) - auf die Standardausgabe geschrieben [213497/213497]
+
+&lt;stdin&gt;: In function ‘oo__close’:
+&lt;stdin&gt;:5166:5: warning: call to function ‘read_close’ without a real prototype [-Wunprototyped-calls]
+&lt;stdin&gt;:1079:13: note: ‘read_close’ was declared here
+linux-70ce:/home/martin #
+</code></pre>
+<p>i am not sure if it succeedet or failed!?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/32333/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Apr '14, 21:43</strong>
+</p>
+<img alt="say_hello_to_the_world's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bf4d2d8660e82c4a7387b7d2a8a8cfcd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8644/say_hello_to_the_world">say_hello_to...</a><br/>
+<span class="score" title="19 reputation points">19</span><span title="23 badges"><span class="badge1">●</span><span class="badgecount">23</span></span><span title="24 badges"><span class="silver">●</span><span class="badgecount">24</span></span><span title="27 badges"><span class="bronze">●</span><span class="badgecount">27</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="say_hello_to_the_world has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-32333">
+</div>
+<div class="comment-tools" id="comment-tools-32333">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-32333-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/32291/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="0IrBiGLlfmxA1SABH3117DvqTeeZqvsJ"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

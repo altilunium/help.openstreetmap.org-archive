@@ -1,0 +1,210 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/21887/nominatim-php-postgres-c-pattern">Nominatim: PHP - Postgres - C pattern</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/21887/up/" id="post-21887-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-21887-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/21887/down/" id="post-21887-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/21887/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi,</p>
+<p>as there's no documentation on Nominatim's search.php, I'm trying to make sense of the code myself. I noticed that for tokenizing search queries PHP code invokes a stored procedure in Postgresql, which in turn invokes a Nominatim custom module compiled from C code. Coming from the Java world I am wondering:</p>
+<p>Is that a common LAPP-pattern?</p>
+<p>I understand that string-crunching is faster in C than in an interpreted language, still many things happen in PHP in the Nominatim implementation. What's the reason for invoking such a tool-chain? Google didn't help me finding an explanation for that so I thought I'd just ask.</p>
+<p>Thanks!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-implementation" href="/tags/implementation/" rel="tag" title="see questions tagged 'implementation'">implementation</a>
+<a class="post-tag tag-link-c" href="/tags/c/" rel="tag" title="see questions tagged 'c'">c</a>
+<a class="post-tag tag-link-nominatim" href="/tags/nominatim/" rel="tag" title="see questions tagged 'nominatim'">nominatim</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-php" href="/tags/php/" rel="tag" title="see questions tagged 'php'">php</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>26 Apr '13, 15:14</strong>
+</p>
+<img alt="konstantin's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/680bc1d9127776b4acb2e6af485a6869?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4888/konstantin">konstantin</a><br/>
+<span class="score" title="61 reputation points">61</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="konstantin has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-21887">
+</div>
+<div class="comment-tools" id="comment-tools-21887">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-21887-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/21887/nominatim-php-postgres-c-pattern?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/21887/nominatim-php-postgres-c-pattern?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/21887/nominatim-php-postgres-c-pattern?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/21887/nominatim-php-postgres-c-pattern?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="21892"></a>
+<div class="answer" id="answer-container-21892">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/21892/up/" id="post-21892-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-21892-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/21892/down/" id="post-21892-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The string standardisation and tokenising are all also required during indexing of data and that is almost entirely done in plpgsql and c.  For consistency the php search code then accesses those same functions.</p>
+<p>So, the postgresql module acts as a common point between the indexing and search code.</p>
+<p>The other reason is as you suggest - there is a significant speed gain from writing this frequent operation in c.  During the search phase this speed is less important but during indexing it is essential.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/21892/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>26 Apr '13, 16:05</strong>
+</p>
+<img alt="twain's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/bda08a105bb6a4a606d47c1b27187fac?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4/twain">twain</a><br/>
+<span class="score" title="2381 reputation points"><span class="">2.4k</span></span><span title="25 badges"><span class="silver">●</span><span class="badgecount">25</span></span><span title="38 badges"><span class="bronze">●</span><span class="badgecount">38</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="twain has 15 accepted answers">40%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/21892/">
+                edited
+                <strong>26 Apr '13, 16:19</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-21892">
+</div>
+<div class="comment-tools" id="comment-tools-21892">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-21892-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="21890"></a>
+<div class="answer" id="answer-container-21890">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/21890/up/" id="post-21890-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-21890-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/21890/down/" id="post-21890-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I haven't looked at the nominatim code, but the pattern doesn't seem wrong to me :</p>
+<p>While it may look like "just a string tokenizer", chances are that some complicated logic like word stemming is necessary. Two reasons for doing that inside the database come to mind: either we want to use the exact same algorithm as the database is using (so reusing code that's available in the db makes sense), or the process requires fectching data from the db (so going back and forth between php and postgres would kill performance).</p>
+<p>The richness and ease of use of server-side languages and extenstion is actually one of postgresql's killer feature compared to other databases. It's a great tool that can make postgres look more like a software platform than an RDBMS. Learn to love it :)</p>
+<p>Concerning the idea that string-crunching is better done in C than an interpreted language, it is generaly false. Interpreted languages are often <em>very</em> good at string-crunching, and beating that in C can take enormous effort. I doubt this is the reason for nominatim's pattern.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/21890/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>26 Apr '13, 15:54</strong>
+</p>
+<img alt="Vincent%20de%20Phily's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d20f86db9a6f03cb070e9fbaaf0b7228?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/867/vincent-de-phily">Vincent de P... ♦</a><br/>
+<span class="score" title="17304 reputation points"><span class="">17.3k</span></span><span title="18 badges"><span class="badge1">●</span><span class="badgecount">18</span></span><span title="152 badges"><span class="silver">●</span><span class="badgecount">152</span></span><span title="249 badges"><span class="bronze">●</span><span class="badgecount">249</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Vincent de Phily has 64 accepted answers">19%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-21890">
+<a name="21893"></a>
+<div class="comment" id="comment-21893">
+<div class="comment-score" id="post-21893-score"></div>
+<div class="comment-text"><p>Having looked at the code I assure you: There's nothing complicated in that c module invoked. Also no data is fetched from the DB itself. </p>
+<p>Twain's explanation sounds reasonable to me: The same logic used at indexing time needs to be invoked during search. Thanks!</p></div>
+<div class="comment-info" id="comment-21893-info">
+<span class="comment-age">(26 Apr '13, 16:12)</span>
+<a class="comment-user userinfo" href="/users/4888/konstantin">konstantin</a>
+</div>
+</div>
+<a name="21894"></a>
+<div class="comment" id="comment-21894">
+<div class="comment-score" id="post-21894-score"></div>
+<div class="comment-text"><p>While you are entirely right about string handling and C vs interpreted in the general case in this particular case plpgsql string handling is particularly poor and the operations involved (character table lookups and reductions in simple ascii) are particularly well suited to c.</p></div>
+<div class="comment-info" id="comment-21894-info">
+<span class="comment-age">(26 Apr '13, 16:18)</span>
+<a class="comment-user userinfo" href="/users/4/twain">twain</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-21890">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-21890-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/21887/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="6Hryqz4qqkH2Ry3mZr2JifXT9GQmK3zQ"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

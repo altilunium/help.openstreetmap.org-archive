@@ -1,0 +1,285 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/9690/why-geting-null-result-from-openlslus_geocodephp">why geting null-result from OpenLSLUS_Geocode.php?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/9690/up/" id="post-9690-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-9690-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/9690/down/" id="post-9690-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/9690/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>I try to use part of the example <a href="http://openlayers.org/dev/examples/openls.html">http://openlayers.org/dev/examples/openls.html</a> to include a map in my website and let users search for the address. But I alway get a null-value as response.responseXML.</p>
+<p>To verify that I have no error in my code I have copied the whole example to my site. Calling it shows the same error as the code in my own site (for the example see code below).</p>
+<p>I found a posting in an OSM-forum that I have to use a proxy and so I have installed proxy.php from the mapbuilder-site and changed the code like follows:</p>
+<pre><code>            function init() {
+            OpenLayers.ProxyHost = "proxy.php?url=";
+            map = new OpenLayers.Map('map', {
+                controls: [
+                    new OpenLayers.Control.PanZoom(),
+                    new OpenLayers.Control.Navigation()
+                ]
+            });
+            layer = new OpenLayers.Layer.OSM("OpenStreetMap", null, {
+                transitionEffect: 'resize'
+            });
+            map.addLayers([layer]);
+            map.zoomToMaxExtent();
+        }
+        function submitform() {
+           var queryString = document.forms[0].query.value;
+            OpenLayers.Request.POST({
+                url: "http://www.openrouteservice.org/php/OpenLSLUS_Geocode.php",
+                scope: this,
+                failure: this.requestFailure,
+                success: this.requestSuccess,
+                headers: {"Content-Type": "application/x-www-form-urlencoded"},
+                data: "FreeFormAdress=" + encodeURIComponent(queryString) + "&amp;MaxResponse=1"
+            });
+        }
+        function requestSuccess(response) {
+alert(response.responseXML);
+            var format = new OpenLayers.Format.XLS();
+            var output = format.read(response.responseXML);
+            if (output.responseLists[0]) {
+                var geometry = output.responseLists[0].features[0].geometry;
+                var foundPosition = new OpenLayers.LonLat(geometry.x, geometry.y).transform(
+                        new OpenLayers.Projection("EPSG:4326"),
+                        map.getProjectionObject()
+                        );
+                map.setCenter(foundPosition, 16);
+            } else {
+                alert("Sorry, no address found");
+            }
+        }
+        function requestFailure(response) {
+            alert("An error occurred while communicating with the OpenLS service. Please try again.");
+        }
+</code></pre>
+<p>The alert in function requestSuccess(response) returns null whatever I set as proxy. I have tried with "", "proxy.php", "proxy.php?url=", all with the same result. The only diffenrence ist that with "" there are about 5 seconds from calling the service until I get the result. In all other cases (using the proxy.php) the result comes in less than one second.</p>
+<p>What is wrong in my code?</p>
+<p>(I also tried to use proxy.cgi, but this won't work on my server - I get an 500 internal-server-error)</p>
+<p>Thank you for all tipps!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-search" href="/tags/search/" rel="tag" title="see questions tagged 'search'">search</a>
+<a class="post-tag tag-link-proxy.php" href="/tags/proxy.php/" rel="tag" title="see questions tagged 'proxy.php'">proxy.php</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>29 Dec '11, 21:04</strong>
+</p>
+<img alt="s_glodek's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f6df6c2dd8c16fdbc9e5e6c138d1af4f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2551/s_glodek">s_glodek</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="s_glodek has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/9690/">
+                edited
+                <strong>31 Jan '13, 17:54</strong>
+</a>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-9690">
+</div>
+<div class="comment-tools" id="comment-tools-9690">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-9690-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/9690/why-geting-null-result-from-openlslus_geocodephp?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/9690/why-geting-null-result-from-openlslus_geocodephp?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/9690/why-geting-null-result-from-openlslus_geocodephp?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/9690/why-geting-null-result-from-openlslus_geocodephp?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="9693"></a>
+<div class="answer accepted-answer" id="answer-container-9693">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/9693/up/" id="post-9693-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-9693-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/9693/down/" id="post-9693-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/9693/" rel="nofollow" title="s_glodek has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Are you sure that your proxy script is working? You can test this by pointing your normal browser to <a href="http://localhost/proxy.php?url=http://a.tile.openstreetmap.org/0/0/0.png">http://localhost/proxy.php?url=http://a.tile.openstreetmap.org/0/0/0.png</a> Your proxy script needs to support POST as well as GET.</p>
+<p>You may want to open the debuging tools in your browser and see what requests get sent and what error messeges you get from them.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/9693/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Dec '11, 01:11</strong>
+</p>
+<img alt="Gnonthgol's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/44a4438f0146dfd898e24c221fd28b58?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/131/gnonthgol">Gnonthgol ♦</a><br/>
+<span class="score" title="13750 reputation points"><span class="">13.8k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="103 badges"><span class="silver">●</span><span class="badgecount">103</span></span><span title="198 badges"><span class="bronze">●</span><span class="badgecount">198</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Gnonthgol has 57 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-9693">
+<a name="9722"></a>
+<div class="comment" id="comment-9722">
+<div class="comment-score" id="post-9722-score"></div>
+<div class="comment-text"><p>Jippiyeah!! I have it!!</p>
+<p>The error ist the Content-Type: application/xml in the POST-request.
+I changed it to "Content-Type: application/x-www-form-urlencodedrn" and now it works!</p>
+<p>Thanks to Gnonthgol for the hint to use the debug-tools of the browser and to google to find a posting with a short description to send a post in php :-).</p></div>
+<div class="comment-info" id="comment-9722-info">
+<span class="comment-age">(31 Dec '11, 12:32)</span>
+<a class="comment-user userinfo" href="/users/2551/s_glodek">s_glodek</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-9693">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-9693-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="9695"></a>
+<div class="answer" id="answer-container-9695">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/9695/up/" id="post-9695-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-9695-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/9695/down/" id="post-9695-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Please use the OpenLayers proxy.cgi explained here: 
+<a href="http://trac.osgeo.org/openlayers/wiki/FrequentlyAskedQuestions#ProxyHost">http://trac.osgeo.org/openlayers/wiki/FrequentlyAskedQuestions#ProxyHost</a></p>
+<p>The normal OpenLayers proxy.cgi already contains the OpenRouteService host. 
+See here: <a href="http://trac.osgeo.org/openlayers/browser/trunk/openlayers/examples/proxy.cgi">http://trac.osgeo.org/openlayers/browser/trunk/openlayers/examples/proxy.cgi</a></p>
+<p>Please beware that the proxy script has the right permission to execute!
+Hope that helps :)</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/9695/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>30 Dec '11, 08:34</strong>
+</p>
+<img alt="pascal_n's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/7a8cda7811375896a1bb0cf0809dd234?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2208/pascal_n">pascal_n</a><br/>
+<span class="score" title="186 reputation points">186</span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="pascal_n has one accepted answer">14%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-9695">
+<a name="9720"></a>
+<div class="comment" id="comment-9720">
+<div class="comment-score" id="post-9720-score"></div>
+<div class="comment-text"><p>I'm not able to use proxy.cgi - it always returns 500 - server error.</p>
+<p>Using proxy.php I can see with firebug that proxy.php sends the following request:</p>
+<pre><code>POST /php/OpenLSLUS_Geocode.php? HTTP/1.0
+Host:<a href="http://www.openrouteservice.org">www.openrouteservice.org</a>
+User-Agent: MyAgent
+Content-Type: application/xml
+Content-Length: 62
+
+FreeFormAdress=Rue%20des%20Berges%2037%20Payerne&amp;MaxResponse=1
+</code></pre>
+<p>The answer from <a href="http://www.openrouteservice.org">www.openrouteservice.org</a> is </p>
+<pre><code>HTTP/1.1 200 OK
+Date: Sat, 31 Dec 2011 11:57:44 GMT
+Server: Apache
+X-Powered-By: PHP/5.2.6-1+lenny13
+Vary: Accept-Encoding
+Content-Length: 20
+Connection: close
+Content-Type: text/html
+
+Nix uebermittelt!!
+</code></pre>
+<p>It seems to be an error in transferring the POST-data. 
+The proxy.php-script is available as text-file on <a href="http://osm.glodek-edv.de/proxy.txt">http://osm.glodek-edv.de/proxy.txt</a> and the test-site is <a href="http://osm.glodek-edv.de/openls.html">http://osm.glodek-edv.de/openls.html</a></p></div>
+<div class="comment-info" id="comment-9720-info">
+<span class="comment-age">(31 Dec '11, 12:09)</span>
+<a class="comment-user userinfo" href="/users/2551/s_glodek">s_glodek</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-9695">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-9695-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/9690/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="6EcdNxmJJH2N1jYc0s3WfIt2zh5FNCpQ"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

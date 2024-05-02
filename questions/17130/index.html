@@ -1,0 +1,308 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/17130/many-questions-xml-definitionpbf-or-xml-extract-parts-from-planet-coastlines-additional-data-beside-osm-data">Many questions, XML-definition,pbf or xml, extract parts from planet, coastlines, additional data beside osm-data</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/17130/up/" id="post-17130-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-17130-score" title="current number of votes">
+    -3
+</div>
+<a class="ajax-command post-vote down" href="/vote/17130/down/" id="post-17130-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/17130/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<pre>Hi!
+I'm about to write my own renderer.
+But there are a few things I don't find myself or that aren't clear to me.
+
+So I have a couple of questions, some easy, some maybe not.
+
+ 1. I used on <a href="http://www.openstreetmap.org">http://www.openstreetmap.org</a> the "Export" link to get a file of "OpenStreetMap-XML"-Data of my area. The area was around 1km x 1km.
+Where do I find the official definition for this XML? Which tag-names do exist?
+?xml - osm, bounds, node, tag, nd
+(In my following questions I might refer to them as tag-objects.)
+
+ 2. For example there were these nd ref="[somenumber]" -tags, all contained in some way-objects.
+So I just assume the number in the ref-attribute should reference some other tag-object in this xml-file. But it's not like that.
+The numbers are either unique or sometimes happen to be in another nd-object used there as ref also.
+Is that a bug in the export function? Or a feature? :P 
+
+ 3. For general purposes of course I want to extract those datas related to a selected area myself out of the planet-file.
+Assuming I use a xml-planet file: Do I have to look for all node-objects (A) with latitude and longitude inside my area, and then in a second run I would have to look for all tags which contain directly or indirectly aforementionened "ref"-attributes that point to those nodeobjects (A)? Do I have to do it a couple of times, in case there are "ref"-attributes pointing to another way-object?
+
+ 4. Though I would much prefer to work with a planet file in xml-format, I would switch to pbf-format, if it is much faster in the processing *and* if pbf is definitly state of art in the OSM-project.
+Are the current planet files xml, or already pbf? Or is the pbf idea already outdated again?
+Assuming I have a planet file in xml and one in pbf, will they both hold the same data, will one hold a subgroup of the other, or may both contain data that isn't in the other? - Or in short: What should be taken as the official planet file?
+Assume I have to download the pbf file to get the "official" planet data: Which program to use to convert it all into an xml file?
+
+ 5. About coastline files: Seeing there are coastline files, does that mean that the coastlines are not included as tag-objects in the planet file, or are they only implicitly included, or are the coastline files just some sort of handy service for map-makers?
+If they are only implicitly included: Is it difficult to generate those coastlines, so that I just should use the coastline files provided here, or is it fairly simply (technically and in CPU-usage) to generate the coastlines myself?
+
+ 6. Is it advisable to use the data from <a href="http://www.naturalearthdata.com">http://www.naturalearthdata.com</a>? As far as I have read through the wiki-pages, mapnik uses them, and mapnik is used by openstreetmap.org themselves.
+Do I need or is it advisable to use <a href="http://www.mapability.com/info/vmap1_index.html">http://www.mapability.com/info/vmap1_index.html</a> ? Are there any advantages using that?
+
+ 7. Last but not least: Should I better use the OSM forums (<a href="http://forum.openstreetmap.org/index.php">http://forum.openstreetmap.org/index.php</a> - no link on the homepage) or the help-section (<a href="https://help.openstreetmap.org">https://help.openstreetmap.org</a> - prominent link on the homepage) for questions? <s>If it's ok I would prefer this help-section. :)</s> In the future I will probably try the forum, to avoid the automatic styles being applied here. 
+
+I'm sure I won't run out of questions. :P
+
+Greetings
+WS
+</pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-xml" href="/tags/xml/" rel="tag" title="see questions tagged 'xml'">xml</a>
+<a class="post-tag tag-link-extraction" href="/tags/extraction/" rel="tag" title="see questions tagged 'extraction'">extraction</a>
+<a class="post-tag tag-link-pbf" href="/tags/pbf/" rel="tag" title="see questions tagged 'pbf'">pbf</a>
+<a class="post-tag tag-link-coastlines" href="/tags/coastlines/" rel="tag" title="see questions tagged 'coastlines'">coastlines</a>
+<a class="post-tag tag-link-additional-data" href="/tags/additional-data/" rel="tag" title="see questions tagged 'additional-data'">additional-data</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>23 Oct '12, 15:43</strong>
+</p>
+<img alt="WhyStand2's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1d3aa062ab2624577c100844c482d071?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4825/whystand2">WhyStand2</a><br/>
+<span class="score" title="8 reputation points">8</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="WhyStand2 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-17130">
+<a name="17132"></a>
+<div class="comment" id="comment-17132">
+<div class="comment-score" id="post-17132-score">4</div>
+<div class="comment-text"><p>What you should definitely do is to ask one question at a time - nobody is going to write an answer that covers all these questions.</p></div>
+<div class="comment-info" id="comment-17132-info">
+<span class="comment-age">(23 Oct '12, 16:05)</span>
+<a class="comment-user userinfo" href="/users/1/tomh">TomH ♦♦</a>
+</div>
+</div>
+<a name="17135"></a>
+<div class="comment" id="comment-17135">
+<div class="comment-score" id="post-17135-score"></div>
+<div class="comment-text"><p>I tried, but it took from before you added your comment ;)</p></div>
+<div class="comment-info" id="comment-17135-info">
+<span class="comment-age">(23 Oct '12, 16:26)</span>
+<a class="comment-user userinfo" href="/users/339/edloach">EdLoach ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-17130">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-17130-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    3 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/17130/many-questions-xml-definitionpbf-or-xml-extract-parts-from-planet-coastlines-additional-data-beside-osm-data?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/17130/many-questions-xml-definitionpbf-or-xml-extract-parts-from-planet-coastlines-additional-data-beside-osm-data?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/17130/many-questions-xml-definitionpbf-or-xml-extract-parts-from-planet-coastlines-additional-data-beside-osm-data?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/17130/many-questions-xml-definitionpbf-or-xml-extract-parts-from-planet-coastlines-additional-data-beside-osm-data?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="17134"></a>
+<div class="answer" id="answer-container-17134">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/17134/up/" id="post-17134-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-17134-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/17134/down/" id="post-17134-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Many of the answers I think are on the wiki.</p>
+<ol>
+<li>Does <a href="http://wiki.openstreetmap.org/wiki/OSM_XML">OSM XML</a> cover things?</li>
+<li>The <code>&lt;nd ref="292403538"/&gt;</code> lines should be part of a &lt;way&gt; definition. A way is a sorted list of nodes, and the way can (probably will) have tags with key (k) and value (v). Nearer the start of the file you should find a &lt;node&gt; definition for the node with the relevant reference id, which will also have lat and lon values, version details, and may have tags with k/v properties as well.</li>
+<li>You might find there is an <a href="http://wiki.openstreetmap.org/wiki/Extract">extract</a> for your area of interest already available. If not look at <a href="http://wiki.openstreetmap.org/wiki/Osmosis">Osmosis</a> which can cut an area from a larger extract.</li>
+<li>If they are generated at the same time they should hold the same information. I understand working with PBF for many uses is faster, but I think usually when rendering the data is imported into a spatial database rather than being processed directly from the OSM data (whether XML or PBF).</li>
+<li>I think the Coastline files are something Mapnik uses to speed things up. See the bit about the <a href="http://wiki.openstreetmap.org/wiki/Coastline_error_checker">coastline error checker</a>. Ah, and the bit about Rendering on <a href="http://wiki.openstreetmap.org/w/index.php?title=Coastline&amp;oldid=773274">this old edit</a> of the coastline page.</li>
+<li>I think VMAP1 is for vertical elevations. If so then the OSM Mapnik doesn't use it, but if you are writing your own then you might want to use it, or maybe <a href="http://wiki.openstreetmap.org/wiki/SRTM">SRTM</a>. The cyclemap includes contours and hill shading for example and this isn't from the OSM dataset.</li>
+<li>Tricky. You might want to also look at the <a href="http://lists.openstreetmap.org/listinfo">mailing lists</a> and <a href="http://irc.openstreetmap.org/">irc channels</a>. My preferences are for email and irc, but also watch the help.osm.org rss feed. The forums as well take up too much of my time so I visit those rarely. Other people are active there though.</li>
+</ol>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/17134/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>23 Oct '12, 16:26</strong>
+</p>
+<img alt="EdLoach's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f25a8392e12ed696b16554b3d08e4e2b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/339/edloach">EdLoach ♦</a><br/>
+<span class="score" title="19478 reputation points"><span class="">19.5k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="156 badges"><span class="silver">●</span><span class="badgecount">156</span></span><span title="280 badges"><span class="bronze">●</span><span class="badgecount">280</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="EdLoach has 93 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-17134">
+<a name="17137"></a>
+<div class="comment" id="comment-17137">
+<div class="comment-score" id="post-17137-score"></div>
+<div class="comment-text"><p>Hi! And thank you for the answer.
+I will ask the remaining questions again in single threads. Might be better. =)
+1. I found that, and now I found the links to the definitions on that page, too.
+2. That's how I imagined it should be. The exported file from the openstreetmap.org export function wasn't like that. ):
+3. I hope the definitions will enable me to write my own extractor.
+4. True.
+5. I will read through.
+6. Ok.
+7. =) I'll give this here a second try.
+Greetings
+WS</p></div>
+<div class="comment-info" id="comment-17137-info">
+<span class="comment-age">(23 Oct '12, 17:05)</span>
+<a class="comment-user userinfo" href="/users/4825/whystand2">WhyStand2</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-17134">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-17134-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="17143"></a>
+<div class="answer" id="answer-container-17143">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/17143/up/" id="post-17143-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-17143-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/17143/down/" id="post-17143-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>(a slightly tangential answer)</p>
+<p>What I'd suggest first is have a go at mapping something local to you and adding it to OSM (using either Potlatch in "advanced" mode so that you can see the tags and node numbers, or JOSM).  Then have a go with something that <a href="http://wiki.openstreetmap.org/wiki/Rendering">renders the data</a> (not necessarily a full rendering database).  That way you'll get familiar with the way the data is connected, and answers to questions like "what's an 'nd' in a way definition" will reveal themselves.</p>
+<p>On the last point, the questions that you're asking might fit here (though better one at a time!) or on the "dev" mailing list, or (with some context in a pastebin that you can refer to) one of the IRC channels.  There is a "Development" area of the forum but it's relatively low traffic.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/17143/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>23 Oct '12, 20:43</strong>
+</p>
+<img alt="SomeoneElse's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/0bf1aa22f7f5e045b0eb8beb79fe7907?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/387/someoneelse">SomeoneElse ♦</a><br/>
+<span class="score" title="36866 reputation points"><span class="">36.9k</span></span><span title="71 badges"><span class="badge1">●</span><span class="badgecount">71</span></span><span title="370 badges"><span class="silver">●</span><span class="badgecount">370</span></span><span title="866 badges"><span class="bronze">●</span><span class="badgecount">866</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SomeoneElse has 228 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-17143">
+</div>
+<div class="comment-tools" id="comment-tools-17143">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-17143-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="17158"></a>
+<div class="answer" id="answer-container-17158">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/17158/up/" id="post-17158-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-17158-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/17158/down/" id="post-17158-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<ol>
+<li>For me (loading the full planet) working with PBF files is faster not because of the file format "per se", but because they do not require to be uncompressed first (either to a separate, 330GB XML file or a memory buffer). It seems that the "official" format is now PBF, at least for older versions of the planet file.</li>
+</ol>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/17158/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>24 Oct '12, 14:22</strong>
+</p>
+<img alt="MCPicoli's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/94b019f273c04cd88bc1c8dd0a8f2161?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4231/mcpicoli">MCPicoli</a><br/>
+<span class="score" title="2172 reputation points"><span class="">2.2k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="30 badges"><span class="silver">●</span><span class="badgecount">30</span></span><span title="47 badges"><span class="bronze">●</span><span class="badgecount">47</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="MCPicoli has 10 accepted answers">24%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-17158">
+</div>
+<div class="comment-tools" id="comment-tools-17158">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-17158-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/17130/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="HSBVL39MmCt79tJpD1sd8iC3FMqmJAyk"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

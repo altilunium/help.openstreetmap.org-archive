@@ -1,0 +1,215 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/31829/how-to-get-street-names-for-current-city">How to get street names for current city?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/31829/up/" id="post-31829-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-31829-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/31829/down/" id="post-31829-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/31829/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>We want to do the following. Please tell us if it is possible and how is the easiest way to do this?</p>
+<p>We want to set a parameter - country and city and get all street names that are found in this city. Get them as a list. Could this happen?</p>
+<p>Can we use directly your database with API? We not need uploaded everything on our own server? Can we see somewhere a sample query, how to do it and get the data? Or step by step help info?</p>
+<p>Thank you very much!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-city" href="/tags/city/" rel="tag" title="see questions tagged 'city'">city</a>
+<a class="post-tag tag-link-streetnames" href="/tags/streetnames/" rel="tag" title="see questions tagged 'streetnames'">streetnames</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>24 Mar '14, 11:47</strong>
+</p>
+<img alt="Petar81's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b1f1fd6379c69bc7e75b9eb7f90afdf6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8560/petar81">Petar81</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="5 badges"><span class="bronze">●</span><span class="badgecount">5</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Petar81 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-31829">
+<a name="31938"></a>
+<div class="comment" id="comment-31938">
+<div class="comment-score" id="post-31938-score"></div>
+<div class="comment-text"><p>Hello,</p>
+<p>I was trying to get all streets names from a service on  <a href="http://www.gisgraphy.com">http://www.gisgraphy.com</a> when I saw that there is a Ban list in which my server can go in on multiple requests. My question is: what is the best way to get all streets from multiple Cities using PHP with given Name of City or Geo location?</p>
+<p>Regards</p></div>
+<div class="comment-info" id="comment-31938-info">
+<span class="comment-age">(27 Mar '14, 10:34)</span>
+<a class="comment-user userinfo" href="/users/8560/petar81">Petar81</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-31829">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-31829-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/31829/how-to-get-street-names-for-current-city?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/31829/how-to-get-street-names-for-current-city?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/31829/how-to-get-street-names-for-current-city?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/31829/how-to-get-street-names-for-current-city?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="31831"></a>
+<div class="answer" id="answer-container-31831">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/31831/up/" id="post-31831-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-31831-score" title="current number of votes">
+    5
+</div>
+<a class="ajax-command post-vote down" href="/vote/31831/down/" id="post-31831-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>OpenStreetMap does not offer an interface for that. You will have to download the data for the city in question (or a whole country or even more), import it into a database, and extract the road names that lie within the boundary. The "Nominatim" geocoder could be a starting point for this, and there's even an export script for that here <a href="https://github.com/lonvia/Nominatim/blob/export-script/utils/export.php">https://github.com/lonvia/Nominatim/blob/export-script/utils/export.php</a> but I'm unsure if this still works.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/31831/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>24 Mar '14, 11:58</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-31831">
+<a name="31879"></a>
+<div class="comment" id="comment-31879">
+<div class="comment-score" id="post-31879-score"></div>
+<div class="comment-text"><p>Thank you!</p>
+<p>Is not possible we contact with API to openstreetmap.org, right?</p></div>
+<div class="comment-info" id="comment-31879-info">
+<span class="comment-age">(25 Mar '14, 09:32)</span>
+<a class="comment-user userinfo" href="/users/8560/petar81">Petar81</a>
+</div>
+</div>
+<a name="31883"></a>
+<div class="comment" id="comment-31883">
+<div class="comment-score" id="post-31883-score">2</div>
+<div class="comment-text"><p>Contacting the API is possible of course. But as already explained by Frederik it doesn't support such a query. And it should not be used for downloading huge amounts of data. See <a href="https://wiki.openstreetmap.org/wiki/Downloading_data">downloading data</a> in the wiki for alternative methods.</p></div>
+<div class="comment-info" id="comment-31883-info">
+<span class="comment-age">(25 Mar '14, 10:20)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="31887"></a>
+<div class="comment" id="comment-31887">
+<div class="comment-score" id="post-31887-score">1</div>
+<div class="comment-text"><p>It's possible to use the API if it is for a limited area and if you do this only once. But as Frederik said, you will get OSM raw data where one street can be divided in multiple small segments/ways. You could also check the application <a href="http://maposmatic.org/">http://maposmatic.org/</a> creating street indexes (all details here <a href="http://maposmatic.org/about/)">http://maposmatic.org/about/)</a></p></div>
+<div class="comment-info" id="comment-31887-info">
+<span class="comment-age">(25 Mar '14, 13:31)</span>
+<a class="comment-user userinfo" href="/users/87/pieren">Pieren</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-31831">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-31831-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="31894"></a>
+<div class="answer" id="answer-container-31894">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/31894/up/" id="post-31894-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-31894-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/31894/down/" id="post-31894-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>please enter "street list" in the search field of this FAQ site.</p>
+<p>There are already solutions for your aim.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/31894/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>25 Mar '14, 17:13</strong>
+</p>
+<img alt="stephan75's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/245b73d4390c3408fe3c6da759b9897f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/99/stephan75">stephan75</a><br/>
+<span class="score" title="12642 reputation points"><span class="">12.6k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="56 badges"><span class="silver">●</span><span class="badgecount">56</span></span><span title="210 badges"><span class="bronze">●</span><span class="badgecount">210</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="stephan75 has 37 accepted answers">6%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-31894">
+</div>
+<div class="comment-tools" id="comment-tools-31894">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-31894-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/31829/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="vzt2kqXrfVHMELZeE03tadbIQyl4z66i"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

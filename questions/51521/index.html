@@ -1,0 +1,174 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/51521/mapnik-and-postgresql-in-differents-servers">mapnik and postgresql in differents servers</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/51521/up/" id="post-51521-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-51521-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/51521/down/" id="post-51521-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/51521/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have installed:</p>
+<p>on a server: mapnik, openstreetmap-carto and mod_tile in apache2</p>
+<p>in another: postgresql, postgis</p>
+<p>where I have to put the connection parameters to the database:
+user, password, host, port, ...</p>
+<p>I tried:</p>
+<pre><code> set | grep MAPNIK
+MAPNIK_DBHOST=192.168.1.1
+MAPNIK_DBNAME=gis
+MAPNIK_DBPASS=xxxxxxxx
+MAPNIK_DBPORT=5432
+MAPNIK_DBUSER=userdb
+</code></pre>
+<p>with the same result</p>
+<p><strong>Do I have to install Mapnik-style (default) Or there somewhere to register values?</strong></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+<a class="post-tag tag-link-mod_tile" href="/tags/mod_tile/" rel="tag" title="see questions tagged 'mod_tile'">mod_tile</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>18 Aug '16, 16:08</strong>
+</p>
+<img alt="arcadio%20ortega's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/304bf9b97689c5eb6191600403aaf65b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12643/arcadio-ortega">arcadio ortega</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="arcadio ortega has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/51521/">
+                edited
+                <strong>18 Aug '16, 16:52</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-51521">
+</div>
+<div class="comment-tools" id="comment-tools-51521">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-51521-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/51521/mapnik-and-postgresql-in-differents-servers?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/51521/mapnik-and-postgresql-in-differents-servers?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/51521/mapnik-and-postgresql-in-differents-servers?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/51521/mapnik-and-postgresql-in-differents-servers?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="51527"></a>
+<div class="answer" id="answer-container-51527">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/51527/up/" id="post-51527-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-51527-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/51527/down/" id="post-51527-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I've never run Postgres on a different server, but I think you'd have to change the <a href="https://github.com/gravitystorm/openstreetmap-carto/blob/ef48cd7448ff3b139e717f161bccddd164c47665/project.yaml#L31-L36">osm2pgsql connection settings</a> inside the openstreetmap-carto project.</p>
+<p>Add a <code>host</code>/<code>user</code>/etc value to this part:</p>
+<pre><code>  osm2pgsql: &amp;osm2pgsql
+    type: "postgis"
+    dbname: "gis"
+    key_field: ""
+    geometry_field: "way"
+    extent: "-20037508,-20037508,20037508,20037508"
+</code></pre>
+<p>See also: <a href="https://github.com/mapnik/mapnik/wiki/PostGIS">Mapnik's PostgreSQL settings</a>.</p>
+<p>The openstreetmap-carto style makes use of some shapefiles, you will need to have them locally on the mapnik server, not the postgresql server.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/51527/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>19 Aug '16, 07:51</strong>
+</p>
+<img alt="rorym's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/16e12e337f6edc3750681492656097ed?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/30/rorym">rorym</a><br/>
+<span class="score" title="5358 reputation points"><span class="">5.4k</span></span><span title="14 badges"><span class="badge1">●</span><span class="badgecount">14</span></span><span title="49 badges"><span class="silver">●</span><span class="badgecount">49</span></span><span title="100 badges"><span class="bronze">●</span><span class="badgecount">100</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="rorym has 18 accepted answers">11%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-51527">
+<a name="51529"></a>
+<div class="comment" id="comment-51529">
+<div class="comment-score" id="post-51529-score"></div>
+<div class="comment-text"><p>I execute "carto project.mml &gt; osm.xml" if I change something in project.yaml  then nothing changes in osm.xml and everything stays the same.</p></div>
+<div class="comment-info" id="comment-51529-info">
+<span class="comment-age">(19 Aug '16, 08:12)</span>
+<a class="comment-user userinfo" href="/users/12643/arcadio-ortega">arcadio ortega</a>
+</div>
+</div>
+<a name="51538"></a>
+<div class="comment" id="comment-51538">
+<div class="comment-score" id="post-51538-score"></div>
+<div class="comment-text"><p>Where I add this: <a href="https://github.com/mapnik/mapnik/wiki/PostGIS#user-content-usage-from-c">PostGIS_user-content-usage-from-c</a> it can be the solution</p></div>
+<div class="comment-info" id="comment-51538-info">
+<span class="comment-age">(19 Aug '16, 10:10)</span>
+<a class="comment-user userinfo" href="/users/12643/arcadio-ortega">arcadio ortega</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-51527">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-51527-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/51521/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="akdK7RmD8WLLE4gKXkWeww6KsBzXLmDq"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

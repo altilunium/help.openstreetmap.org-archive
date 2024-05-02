@@ -1,0 +1,287 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/13394/merkaartor-v018-crashes-on-mac-1074">Merkaartor v0.18 Crashes on Mac 10.7.4</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/13394/up/" id="post-13394-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-13394-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/13394/down/" id="post-13394-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/13394/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Merkaartor v0.18 crashes on my MacMini running OS 10.7.4 as soon as it tries to contact OSM servers. For example: </p>
+<ul>
+<li>
+<p>If I try to download map data,
+   Merkaartor instantly crashes.</p>
+</li>
+<li>
+<p>If I try to enter my OSM user name
+   and password into Merkaartor's
+   preferences, it instantly crashes.</p>
+</li>
+</ul>
+<p>I mailed crash logs to the developer, but he seemed uninterested in dealing with the issue.</p>
+<p>I have no problem with JOSM or Potlatch.</p>
+<p>Since this seems to be a problem exclusive with me, it must be something with my machine.</p>
+<p>Any ideas?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-merkaartor" href="/tags/merkaartor/" rel="tag" title="see questions tagged 'merkaartor'">merkaartor</a>
+<a class="post-tag tag-link-crash" href="/tags/crash/" rel="tag" title="see questions tagged 'crash'">crash</a>
+<a class="post-tag tag-link-mac" href="/tags/mac/" rel="tag" title="see questions tagged 'mac'">mac</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>10 Jun '12, 01:20</strong>
+</p>
+<img alt="Buadhai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/4b379e6b8654d3932e9d74e80a630c48?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3803/buadhai">Buadhai</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Buadhai has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/13394/">
+                edited
+                <strong>10 Jun '12, 10:51</strong>
+</a>
+</p>
+<img alt="SimonPoole's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ad2513d6f8e3d709d576ace900c12fa5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2053/simonpoole">SimonPoole ♦</a><br/>
+<span class="score" title="44667 reputation points"><span class="">44.7k</span></span><span title="13 badges"><span class="badge1">●</span><span class="badgecount">13</span></span><span title="326 badges"><span class="silver">●</span><span class="badgecount">326</span></span><span title="701 badges"><span class="bronze">●</span><span class="badgecount">701</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-13394">
+<a name="13412"></a>
+<div class="comment" id="comment-13412">
+<div class="comment-score" id="post-13412-score">1</div>
+<div class="comment-text"><p>I'm not sure how many OSM users have psychic powers, but without them we're unlikely to know how exactly Merkaartor crashes on your Mac.  Could you perhaps post a little more information - does the program just exit, does it display an error message, or something else?</p></div>
+<div class="comment-info" id="comment-13412-info">
+<span class="comment-age">(10 Jun '12, 18:14)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="13418"></a>
+<div class="comment" id="comment-13418">
+<div class="comment-score" id="post-13418-score"></div>
+<div class="comment-text"><p>No error message. The program simply exits, but the OS does display as a Problem Report the crash log which starts out like this:</p>
+<blockquote>
+<p>Crashed Thread:  0  Dispatch queue:
+com.apple.main-thread</p>
+<p>Exception Type:  EXC_BREAKPOINT
+(SIGTRAP) Exception Codes:
+0x0000000000000002, 0x0000000000000000</p>
+<p>Application Specific Information:</p>
+<p>objc[47884]: garbage collection is OFF</p>
+<p>Dyld Error Message:   Symbol not
+found: _EVP_idea_cbc</p>
+<p>Referenced from:
+/usr/local/lib/libssl.0.9.8.dylib</p>
+<p>Expected in:
+/usr/lib/libcrypto.0.9.8.dylib</p>
+</blockquote>
+<p>Entire crash log is here: <a href="http://pastebin.com/ncim3EZ9">Pastebin Merkaartor Crash Log</a></p></div>
+<div class="comment-info" id="comment-13418-info">
+<span class="comment-age">(10 Jun '12, 23:21)</span>
+<a class="comment-user userinfo" href="/users/3803/buadhai">Buadhai</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-13394">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-13394-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/13394/merkaartor-v018-crashes-on-mac-1074?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/13394/merkaartor-v018-crashes-on-mac-1074?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/13394/merkaartor-v018-crashes-on-mac-1074?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/13394/merkaartor-v018-crashes-on-mac-1074?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="13419"></a>
+<div class="answer accepted-answer" id="answer-container-13419">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/13419/up/" id="post-13419-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-13419-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/13419/down/" id="post-13419-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/13419/" rel="nofollow" title="Buadhai has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It looks to be a generic OS X problem referenced here:</p>
+<ul>
+<li><a href="http://musescore.org/en/node/16030">http://musescore.org/en/node/16030</a></li>
+<li><a href="http://fritzing.org/forum/thread/332/">http://fritzing.org/forum/thread/332/</a></li>
+</ul>
+<p>Suggest you follow the advice there to fix libssl.0.9.8.dylib and see if that works better.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/13419/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>11 Jun '12, 08:46</strong>
+</p>
+<img alt="Richard's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/08324717c25d6067fa4ff23ef37d455f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5/richard">Richard ♦</a><br/>
+<span class="score" title="30902 reputation points"><span class="">30.9k</span></span><span title="44 badges"><span class="badge1">●</span><span class="badgecount">44</span></span><span title="279 badges"><span class="silver">●</span><span class="badgecount">279</span></span><span title="412 badges"><span class="bronze">●</span><span class="badgecount">412</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Richard has 98 accepted answers">18%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-13419">
+<a name="13443"></a>
+<div class="comment" id="comment-13443">
+<div class="comment-score" id="post-13443-score"></div>
+<div class="comment-text"><p>Thank you. On the road now so no chance to check until tomorrow. </p>
+<p>Odd that the developer was unaware of this and no mention on the Merkaartor web site. </p></div>
+<div class="comment-info" id="comment-13443-info">
+<span class="comment-age">(12 Jun '12, 05:22)</span>
+<a class="comment-user userinfo" href="/users/3803/buadhai">Buadhai</a>
+</div>
+</div>
+<a name="13444"></a>
+<div class="comment" id="comment-13444">
+<div class="comment-score" id="post-13444-score"></div>
+<div class="comment-text"><p>Logged in remotely and now I see the problem. Looks like a typo in the symlink:</p>
+<p>lrwxr-xr-x  1 root  wheel      32 Sep 13  2011 libssl.dylib -&gt; /usr/local/liblibssl.0.9.8.dylib</p>
+<p>Easy to fix. Many thanks. </p></div>
+<div class="comment-info" id="comment-13444-info">
+<span class="comment-age">(12 Jun '12, 05:33)</span>
+<a class="comment-user userinfo" href="/users/3803/buadhai">Buadhai</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-13419">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-13419-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="13454"></a>
+<div class="answer answered-by-owner" id="answer-container-13454">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/13454/up/" id="post-13454-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-13454-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/13454/down/" id="post-13454-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Apparently it's not easy for me to fix. Too dumb, I guess.</p>
+<p>In what directory should the symlink libssl.dylib be and to what file should it point?</p>
+<p>Now I have this, but I get the same crash</p>
+<pre><code>bleach:lib boss$ pwd
+/usr/lib
+bleach:lib boss$ ls -la libss*
+-rwxr-xr-x  1 root  wheel  428848 Jan 28 14:02 libssl.0.9.7.dylib
+-rwxr-xr-x  1 root  wheel  614832 Jan 28 14:02 libssl.0.9.8.dylib
+lrwxr-xr-x  1 root  wheel      18 Jan 28 14:03 libssl.dylib -&gt; libssl.0.9.8.dylib
+bleach:lib boss$ cd /usr/local/lib
+bleach:lib boss$ pwd
+/usr/local/lib
+bleach:lib boss$ ls -la libss*
+-r-xr-xr-x@ 1 root  wheel  604608 Mar  6  2010 libssl.0.9.8.dylib
+lrwxr-xr-x  1 root  wheel      27 Jun 12 17:30 libssl.dylib -&gt; /usr/lib/libssl.0.9.8.dylib
+</code></pre>
+<p>I assumed that the March 2010 version of libssl.0.9.8.dylib was out of date, so I pointed both symlinks to the Jan 2012 version which is in /usr/lib</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/13454/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Jun '12, 11:36</strong>
+</p>
+<img alt="Buadhai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/4b379e6b8654d3932e9d74e80a630c48?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3803/buadhai">Buadhai</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Buadhai has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-13454">
+<a name="13480"></a>
+<div class="comment" id="comment-13480">
+<div class="comment-score" id="post-13480-score"></div>
+<div class="comment-text"><p>I finally got it. The key was to remove this file:</p>
+<p>/usr/local/lib/libssl.0.9.8.dylib (the March 6, 2010 version).</p>
+<p>For reasons I don't understand it was not enough to simply fix the symlink.</p></div>
+<div class="comment-info" id="comment-13480-info">
+<span class="comment-age">(12 Jun '12, 23:59)</span>
+<a class="comment-user userinfo" href="/users/3803/buadhai">Buadhai</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-13454">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-13454-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/13394/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="NmIz7G2hhGfaTF0Jp2tdhNULKuWo2seZ"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,228 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/60612/overpass-installation-fails-broken-pipe">Overpass Installation fails: broken pipe</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/60612/up/" id="post-60612-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-60612-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/60612/down/" id="post-60612-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/60612/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>I would like to setup a small private OSM Server in the cloud for testing an application.
+To achieve this, I've launched an AWS EC2 t2.micro instance and followed the installation steps from the  <a href="http://wiki.openstreetmap.org/wiki/Overpass_API/Installation">Official OSM Install Guide</a>.</p>
+<p>In general the installation worked fine, at least for very small countries.
+I've successfully installed Andorra (<a href="http://download.geofabrik.de/europe/andorra-latest.osm.bz2">Geofabrik-Link</a>) and Faroe Islands (<a href="http://download.geofabrik.de/europe/faroe-islands-latest.osm.bz2">Geofabrik-Link</a>) and was able to run queries on the instance.</p>
+<p>When trying to do same with a little bit larger country, in this case Austria (<a href="http://download.geofabrik.de/europe/austria-latest.osm.bz2">Geofabrik-Link</a>), i receive a "<strong>broken pipe</strong>" error:</p>
+<blockquote>
+<p>Reading XML file ...terminate called
+after throwing an instance of
+'std::bad_alloc' what(): 
+std::bad_alloc
+src/bin/init_osm3s.sh: line 44: 29086
+Broken pipe             bunzip2 &lt;
+$PLANET_FILE
+ 29087 Aborted                 (core
+dumped) |
+$EXEC_DIR/bin/update_database
+--db-dir=$DB_DIR/ $META $COMPRESSION</p>
+</blockquote>
+<p>Can someone help me to get this fixed?</p>
+<p>The resources of my EC2 instance currently are the following:
+- Ubuntu Server 16.04 LTS (HVM)
+ - 1 GB RAM
+ - ~25-30GB of free disk space (using AWS EBS)</p>
+<p>My simple guess is that the resources are too low, especially the Memory of 1GB.
+Before I upgrade to more resources (I want to avoid costs as much as possible) and test again, I would like to how likely this would fix my problem?
+Also, can anybody tell me how much RAM and Disk Space I approximately need for a ~900MB OSM-file like Austria?</p>
+<p><strong>Update 1:</strong> 
+In the meantime I've upgraded my machine and now have the following resources:</p>
+<ul>
+<li>Ubuntu 16.04 LTS</li>
+<li>2vCPUs</li>
+<li>7.5 GB RAM</li>
+<li>~50 GB of free SSD disk space</li>
+</ul>
+<p>I tried to run the Austria Import again. Unfortunately it failed again (shortly after starting the import) with a slightly different error:</p>
+<blockquote>
+<p>Reading XML file ... elapsed node
+1559520430. ./exec/bin/init_osm3s.sh: line 44: 18530 Broken pipe          $
+     18531 Killed                  | $EXEC_DIR/bin/update_database
+--db-dir=$DB_DIR/ $META $COMPRESSION</p>
+</blockquote>
+<p>Again, I was able to import the very small country export Faroe-Island.
+I also tried importing a "medium" large country in terms of file size: Belgium.
+Running the import with Belgium showed no errors. (I manually canceled the import after around 5-10mins).</p>
+<p>Is 7.5GB RAM still not enough? Or can it be another problem?</p>
+<p><strong>Update 2:</strong> 
+Now I also tested importing a larger country, Czech Republic with a file size of ~1.1GB.
+Interestingly, the import again seemed to run without problems and I saw the import progress without any errors (i.e. many lines with "Reading XM L file...elapsed node xxxx. Flushing to databse ... done.)
+I cancelled after around 10min.</p>
+<p>To summarize my import approaches:</p>
+<ul>
+<li>country    |   filesize    |    status</li>
+<li>austria     |   ~900MB  |   failed (both on 1GB RAM and 7.5GB RAM)</li>
+<li>faroe       |   ~3MB  |   worked (both)</li>
+<li>belgium   |   ~500MB  |   worked (on 7.5GB RAM)</li>
+<li>czechrep |   ~1.1GB  |   worked (on 7.5GB RAM)</li>
+</ul>
+<p>I can only guess, but since importing all countries (even larger one's) except for Austria seemed to work, I suspect there might be something wrong with the export hosted at Geofabrik? 
+Anyone had similar problems before? Someone knows another server that hosts country files, or is there a way how I can find out if the file is "OK"?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-fails" href="/tags/fails/" rel="tag" title="see questions tagged 'fails'">fails</a>
+<a class="post-tag tag-link-aws" href="/tags/aws/" rel="tag" title="see questions tagged 'aws'">aws</a>
+<a class="post-tag tag-link-installation" href="/tags/installation/" rel="tag" title="see questions tagged 'installation'">installation</a>
+<a class="post-tag tag-link-broken-pipe" href="/tags/broken-pipe/" rel="tag" title="see questions tagged 'broken-pipe'">broken-pipe</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>14 Nov '17, 13:13</strong>
+</p>
+<img alt="hiasel's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b2429b48885174828e926ec537ce8f41?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14429/hiasel">hiasel</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="hiasel has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/60612/">
+                edited
+                <strong>15 Nov '17, 10:21</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-60612">
+<a name="60613"></a>
+<div class="comment" id="comment-60613">
+<div class="comment-score" id="post-60613-score"></div>
+<div class="comment-text"><p>1 GB RAM sounds pretty low. Check <code>dmesg</code> for out of memory (OOM) messages.</p></div>
+<div class="comment-info" id="comment-60613-info">
+<span class="comment-age">(14 Nov '17, 13:18)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="60614"></a>
+<div class="comment" id="comment-60614">
+<div class="comment-score" id="post-60614-score"></div>
+<div class="comment-text"><p>Thanks for quick response. Could you help me how exactly i shall use the dmesg command?
+I've just executed it and simply searched for "OOM", but can't find anything.
+Or shall I run this command (in parallel) while I do the database import?</p></div>
+<div class="comment-info" id="comment-60614-info">
+<span class="comment-age">(14 Nov '17, 13:24)</span>
+<a class="comment-user userinfo" href="/users/14429/hiasel">hiasel</a>
+</div>
+</div>
+<a name="60615"></a>
+<div class="comment not_top_scorer" id="comment-60615">
+<div class="comment-score" id="post-60615-score"></div>
+<div class="comment-text"><p>Run it afterwards: <code>dmesg | grep -i "out of memory"</code>. If there is no output then too few memory is not your issue.</p></div>
+<div class="comment-info" id="comment-60615-info">
+<span class="comment-age">(14 Nov '17, 13:43)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="60617"></a>
+<div class="comment not_top_scorer" id="comment-60617">
+<div class="comment-score" id="post-60617-score"></div>
+<div class="comment-text"><p>hm. just executed dmesg | grep -i "out of memory" right after calling init_osm3s.sh and there is indeed no output.
+The error remains.
+The full error message btw. starts with "Reading XML file ...terminate called after throwing an instance of 'std::bad_alloc' what():  std::bad_alloc" (i've updated that in the question).</p></div>
+<div class="comment-info" id="comment-60617-info">
+<span class="comment-age">(14 Nov '17, 14:31)</span>
+<a class="comment-user userinfo" href="/users/14429/hiasel">hiasel</a>
+</div>
+</div>
+<a name="60618"></a>
+<div class="comment" id="comment-60618">
+<div class="comment-score" id="post-60618-score">1</div>
+<div class="comment-text"><p><code>std::bad_alloc</code> definitely sounds like having too few memory. The program doesn't get killed by the kernel but terminates itself since it can't allocate enough memory. Get more RAM or try a smaller map extract.</p></div>
+<div class="comment-info" id="comment-60618-info">
+<span class="comment-age">(14 Nov '17, 15:32)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="60619"></a>
+<div class="comment not_top_scorer" id="comment-60619">
+<div class="comment-score" id="post-60619-score"></div>
+<div class="comment-text"><p>allright, then I will upgrade my machine and post the result as soon as I got it running.
+Thanks a lot already for your help :)</p></div>
+<div class="comment-info" id="comment-60619-info">
+<span class="comment-age">(14 Nov '17, 15:36)</span>
+<a class="comment-user userinfo" href="/users/14429/hiasel">hiasel</a>
+</div>
+</div>
+<a name="60628"></a>
+<div class="comment not_top_scorer" id="comment-60628">
+<div class="comment-score" id="post-60628-score"></div>
+<div class="comment-text"><p>I just tried running the import again with an upgrade machine (See my updated question). Still no success. 
+I wonder if 7.5GB is still not enough? 
+According to the Install Guide "1 GB of RAM and sufficient swap space for a small extract or a development system." To me, austria still seems like a "small" extract compared to others, so I thought with ~8GB i'm on the safe side.
+Is it possible that there is something wrong with the file-extract of austria at geofabrik? (I've downloaded a fresh copy each time i tried running the import, so it shouldnt be my fault)</p></div>
+<div class="comment-info" id="comment-60628-info">
+<span class="comment-age">(15 Nov '17, 09:39)</span>
+<a class="comment-user userinfo" href="/users/14429/hiasel">hiasel</a>
+</div>
+</div>
+<a name="60629"></a>
+<div class="comment" id="comment-60629">
+<div class="comment-score" id="post-60629-score">1</div>
+<div class="comment-text"><p>You could try one of the <a href="https://wiki.openstreetmap.org/wiki/Planet.osm#Country_and_area_extracts">other extracts</a>.</p></div>
+<div class="comment-info" id="comment-60629-info">
+<span class="comment-age">(15 Nov '17, 10:29)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+<a name="60642"></a>
+<div class="comment" id="comment-60642">
+<div class="comment-score" id="post-60642-score">1</div>
+<div class="comment-text"><p>Thanks for pointing me to the list of extracts. In the end I used a custom extract from: <a href="http://extract.bbbike.org/.">http://extract.bbbike.org/.</a> For my project I only need a part of Austria, i.e. my custom extract file size now is only ~150MB. Importing this custom extract worked without problems and I can perform queries on my cloud instance :)</p></div>
+<div class="comment-info" id="comment-60642-info">
+<span class="comment-age">(16 Nov '17, 10:04)</span>
+<a class="comment-user userinfo" href="/users/14429/hiasel">hiasel</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-60612">
+<span class="comments-showing">
+            showing 5 of 9
+        </span>
+<a class="show-all-comments-link" href="#">show 4 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-60612-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/60612/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="FSYqsLx6zGXbOySf50qTcSbEhRSttLWo"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

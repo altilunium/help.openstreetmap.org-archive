@@ -1,0 +1,156 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/78879/download-only-water-shade-from-osm">download only water shade from OSM</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/78879/up/" id="post-78879-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-78879-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/78879/down/" id="post-78879-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/78879/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hello,</p>
+<p>I am very new to this topic and maybe my question is a bit dumb.
+For a private Projekt I am looking for the possibility, to download the rivers and lakes from a bigger area (the alps). 
+Until now, I alway tried to download the PDF and import the file in my CAD-Program.
+Unfortunately, this way is extremely laborious cause I have to download many small tiles and try to put them together afterwards.
+So is there the possibility to download a bigger area as a vectorized file, maybe where only the contours of the rivers and lakes are shown?</p>
+<p>Thanks for your help!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-download" href="/tags/download/" rel="tag" title="see questions tagged 'download'">download</a>
+<a class="post-tag tag-link-water" href="/tags/water/" rel="tag" title="see questions tagged 'water'">water</a>
+<a class="post-tag tag-link-vector" href="/tags/vector/" rel="tag" title="see questions tagged 'vector'">vector</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Feb '21, 12:50</strong>
+</p>
+<img alt="Bast123's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/464f2d8db2faf75e1847f9df75f139f4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19745/bast123">Bast123</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Bast123 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-78879">
+</div>
+<div class="comment-tools" id="comment-tools-78879">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-78879-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/78879/download-only-water-shade-from-osm?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/78879/download-only-water-shade-from-osm?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/78879/download-only-water-shade-from-osm?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/78879/download-only-water-shade-from-osm?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="78880"></a>
+<div class="answer" id="answer-container-78880">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/78880/up/" id="post-78880-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-78880-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/78880/down/" id="post-78880-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>While Overpass lets you download specific features, downloading all water bodies for the whole Alps could be too taxing for the server (and you might run into timeouts). A failsafe process would be to download the "Alps" data file from <a href="http://download.geofabrik.de/europe/alps.html">http://download.geofabrik.de/europe/alps.html</a> and then</p>
+<ul>
+<li>either use the <code>osmium</code> command line program to filter out the waterways from that (<code>osmium tag-filter</code>) and then export to a GIS data format with <code>osmium export</code>,</li>
+<li>or use <code>osm2pgsql</code> to import the data into a PostGIS database from where you can then export shape files or CSV files as needed</li>
+<li>or use <code>ogr2ogr</code> to convert the OSM data to some other GIS format, including DXF</li>
+</ul>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/78880/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>16 Feb '21, 13:04</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-78880">
+<a name="79028"></a>
+<div class="comment" id="comment-79028">
+<div class="comment-score" id="post-79028-score"></div>
+<div class="comment-text"><p>Hello,
+thank you for your detailed reply.
+I think I unterstand your proposed method, but I'm a bit lost with the handling of the programs.
+Which programs (and sub-programs etc.) do I need to install for macOS, so I can use your way of solution?</p></div>
+<div class="comment-info" id="comment-79028-info">
+<span class="comment-age">(25 Feb '21, 12:54)</span>
+<a class="comment-user userinfo" href="/users/19745/bast123">Bast123</a>
+</div>
+</div>
+<a name="79029"></a>
+<div class="comment" id="comment-79029">
+<div class="comment-score" id="post-79029-score">1</div>
+<div class="comment-text"><p>You might get by with installing just the osmium command line tool which claims to be available for macOS but you'll probably have to do some digging for a pre-compiled version - the instructions <a href="https://osmcode.org/osmium-tool/manual.html">https://osmcode.org/osmium-tool/manual.html</a> only link to building the package yourself and that might not be appropriate for your skill level.</p></div>
+<div class="comment-info" id="comment-79029-info">
+<span class="comment-age">(25 Feb '21, 13:05)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-78880">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-78880-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/78879/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Z9aEiuZCPks0AmhunsnL2TtzeG87W3Mi"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

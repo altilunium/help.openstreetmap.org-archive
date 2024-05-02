@@ -1,0 +1,151 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/50918/mapgetbounds-not-working">[closed] map.getBounds() Not Working...</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/50918/up/" id="post-50918-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-50918-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/50918/down/" id="post-50918-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/50918/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>How to get map corner latlong in OSM.
+i have many tried to solve it but i did not solve it.</p>
+<p>i have use below example.</p>
+<p>===================================================</p>
+<p>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;OpenLayers Demo&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        html, body, #basicMap
+        {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+    &lt;/style&gt;</p>
+<pre><code>&lt;script src="http://www.openlayers.org/api/OpenLayers.js" type="text/javascript"&gt;&lt;/script&gt;
+
+&lt;script type="text/javascript"&gt;
+    function init() {
+        var marker_layer = new OpenLayers.Layer.Markers("Markers");
+
+        var map = new OpenLayers.Map("basicMap");
+        var mapnik = new OpenLayers.Layer.OSM();
+        var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
+        var toProjection = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
+
+        var position1 = new OpenLayers.LonLat(78.9629, 20.5937).transform(fromProjection, toProjection);
+        var position2 = new OpenLayers.LonLat(79.2629, 20.9937).transform(fromProjection, toProjection);
+        var zoom = 8;
+
+        map.addLayer(mapnik);
+        map.setCenter(position1, zoom);
+
+
+        debugger;
+
+        var bounds = map.getBounds();       //Error : map.getBounds is not a function
+
+        var vv1 = map.getView().calculateExtent();  //Error : map.getView is not a function
+
+    }
+&lt;/script&gt;
+</code></pre>
+<p>&lt;/head&gt;
+&lt;body onload="init();"&gt;
+    </p><div>
+</div>
+&lt;/body&gt;
+&lt;/html&gt;<p></p>
+<p>===================================================</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-getview" href="/tags/getview/" rel="tag" title="see questions tagged 'getview'">getview</a>
+<a class="post-tag tag-link-getbounds" href="/tags/getbounds/" rel="tag" title="see questions tagged 'getbounds'">getbounds</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>15 Jul '16, 08:30</strong>
+</p>
+<img alt="Jatin%20Patel's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fc38080d9e980459bc64bf221f56bc62?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/12521/jatin-patel">Jatin Patel</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="7 badges"><span class="bronze">●</span><span class="badgecount">7</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Jatin Patel has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/50918/">
+                closed
+                <strong>16 Jul '16, 07:47</strong>
+</a>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-50918">
+<a name="50929"></a>
+<div class="comment" id="comment-50929">
+<div class="comment-score" id="post-50929-score">2</div>
+<div class="comment-text"><p>Isn't this a duplicate of <a href="https://help.openstreetmap.org/questions/50696/how-to-get-map-corner-latlong-using-open-layer">https://help.openstreetmap.org/questions/50696/how-to-get-map-corner-latlong-using-open-layer</a> ?</p></div>
+<div class="comment-info" id="comment-50929-info">
+<span class="comment-age">(15 Jul '16, 17:52)</span>
+<a class="comment-user userinfo" href="/users/8189/alester">alester</a>
+</div>
+</div>
+<a name="50936"></a>
+<div class="comment" id="comment-50936">
+<div class="comment-score" id="post-50936-score"></div>
+<div class="comment-text"><p>If possible then write a solution for above query...</p>
+<p>Thanks in advance.</p></div>
+<div class="comment-info" id="comment-50936-info">
+<span class="comment-age">(16 Jul '16, 07:13)</span>
+<a class="comment-user userinfo" href="/users/12521/jatin-patel">Jatin Patel</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-50918">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-50918-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<div class="question-status" style="margin-bottom:15px">
+<h3>
+                The question has been closed for the following reason "Duplicate Question, see https://help.openstreetmap.org/questions/50696/how-to-get-map-corner-latlong-using-open-layer" by
+                <a href="/users/158/scai">scai</a>
+                 16 Jul '16, 07:47
+            </h3>
+</div>
+<form action="/questions/50918/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="usF1GrFo77umdv9qIlggM1nfqcfSM4h0"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

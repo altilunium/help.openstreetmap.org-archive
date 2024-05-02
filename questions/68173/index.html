@@ -1,0 +1,151 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/68173/build-tile-server-manually-with-postgres-db-on-a-different-server">build tile server manually with Postgres db on a different server</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68173/up/" id="post-68173-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68173-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/68173/down/" id="post-68173-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/68173/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have set up my map tile server and have used the following components:</p>
+<ol>
+<li>Mod_tile</li>
+<li>osm2pgsql</li>
+<li>postgres</li>
+<li>Mapnik</li>
+<li>open street map carto</li>
+</ol>
+<p>In my configuration, postgres is on a different server. when I access the /osm_tiles/0/0/0.png, I get a blank square. 
+I think the data is not being fetched from postgres database. How do I tell my server that the postgres db is on another server? I have mentioned the configuration in the osm2pgsql/project.yaml  file. </p>
+<ol>
+<li>Do I need to mention the db details in some other place as well? </li>
+<li>Which of tool fetches the tiles from the postgres db to be displayed?</li>
+</ol>
+<p>P.s I've used this <a href="https://github.com/s6o/aws-osm-rds">link</a> as the setup guide.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-mod_tile" href="/tags/mod_tile/" rel="tag" title="see questions tagged 'mod_tile'">mod_tile</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+<a class="post-tag tag-link-server" href="/tags/server/" rel="tag" title="see questions tagged 'server'">server</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+<a class="post-tag tag-link-tileserver" href="/tags/tileserver/" rel="tag" title="see questions tagged 'tileserver'">tileserver</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>27 Feb '19, 05:28</strong>
+</p>
+<img alt="vishy91's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/153d30d9d12370c8532371eaaa3593b8?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15764/vishy91">vishy91</a><br/>
+<span class="score" title="66 reputation points">66</span><span title="6 badges"><span class="badge1">●</span><span class="badgecount">6</span></span><span title="6 badges"><span class="silver">●</span><span class="badgecount">6</span></span><span title="11 badges"><span class="bronze">●</span><span class="badgecount">11</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="vishy91 has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68173">
+<a name="68174"></a>
+<div class="comment" id="comment-68174">
+<div class="comment-score" id="post-68174-score"></div>
+<div class="comment-text"><p>crosspost: <a href="https://gis.stackexchange.com/questions/313715/build-tile-server-manually-with-postgres-db-on-a-different-server">https://gis.stackexchange.com/questions/313715/build-tile-server-manually-with-postgres-db-on-a-different-server</a></p></div>
+<div class="comment-info" id="comment-68174-info">
+<span class="comment-age">(27 Feb '19, 09:09)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-68173">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68173-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/68173/build-tile-server-manually-with-postgres-db-on-a-different-server?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/68173/build-tile-server-manually-with-postgres-db-on-a-different-server?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/68173/build-tile-server-manually-with-postgres-db-on-a-different-server?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/68173/build-tile-server-manually-with-postgres-db-on-a-different-server?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="68175"></a>
+<div class="answer" id="answer-container-68175">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68175/up/" id="post-68175-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68175-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/68175/down/" id="post-68175-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>project.yaml (in the openstreetmap-carto directory, not in the osm2pgsql directory) is the source of the style description and contains database access information, but when you run renderd it will actually access project.xml (cf. your renderd.conf which will likely point to that). Your project.xml will still contain the old database parameters. To re-generate project.xml, you have to do this:</p>
+<pre><code>carto -a 3.0.0 project.yaml &gt; project.xml
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/68175/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>27 Feb '19, 10:19</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68175">
+</div>
+<div class="comment-tools" id="comment-tools-68175">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68175-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/68173/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="ukjYd8CGelu6bMFQWJzT1Esv9kwe54kd"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

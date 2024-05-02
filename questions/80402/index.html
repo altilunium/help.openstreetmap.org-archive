@@ -1,0 +1,169 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/80402/osmium-cyclosm-data">Osmium - CyclOSM data</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80402/up/" id="post-80402-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80402-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/80402/down/" id="post-80402-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/80402/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi all,</p>
+<p>I am using Osmium to extract data from a europe_latest.pbf file.</p>
+<p>I am trying to find the correct request in order to map the International, National, Regional and Local bike routes as presented on the CyclOSM website: <a href="https://www.cyclosm.org/#map=5/47.730/17.830/cyclosm_live">https://www.cyclosm.org/#map=5/47.730/17.830/cyclosm_live</a></p>
+<p>I have not figured it out yet. I tried requests such as <code>osmium tags-filter data/_pbf/europe-latest.osm.pbf wr/route=bicycle wr/network=icn -o data/_osm/europe_cycleways_int.osm</code> but the export file is very huge. It seems it is not filtered as the multitagging would suggest.</p>
+<p>Have someone already tried working on cycling routes with Osmium?</p>
+<p>Thank you for your time.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-osmium" href="/tags/osmium/" rel="tag" title="see questions tagged 'osmium'">osmium</a>
+<a class="post-tag tag-link-europe" href="/tags/europe/" rel="tag" title="see questions tagged 'europe'">europe</a>
+<a class="post-tag tag-link-cyclosm" href="/tags/cyclosm/" rel="tag" title="see questions tagged 'cyclosm'">cyclosm</a>
+<a class="post-tag tag-link-cycling" href="/tags/cycling/" rel="tag" title="see questions tagged 'cycling'">cycling</a>
+<a class="post-tag tag-link-request" href="/tags/request/" rel="tag" title="see questions tagged 'request'">request</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>03 Jun '21, 16:08</strong>
+</p>
+<img alt="Lina%20Kortobi's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/2938dda98f86560b48f2afbdcce51fb5?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/20302/lina-kortobi">Lina Kortobi</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Lina Kortobi has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80402">
+<a name="80416"></a>
+<div class="comment" id="comment-80416">
+<div class="comment-score" id="post-80416-score">1</div>
+<div class="comment-text"><p>Not sure what you mean with "very huge". When you ask for the all bicycle routes you'll get lots of roads over which those routes go, so that is quite a bit of data. So that seems normal. Not sure also what you mean with "multitagging". It seems you need to familiarize yourself a bit more with the OSM data model. Have a look at the -R and -t options, maybe one or the other is what you need.</p></div>
+<div class="comment-info" id="comment-80416-info">
+<span class="comment-age">(04 Jun '21, 09:36)</span>
+<a class="comment-user userinfo" href="/users/112/jochen-topf">Jochen Topf</a>
+</div>
+</div>
+<a name="80417"></a>
+<div class="comment" id="comment-80417">
+<div class="comment-score" id="post-80417-score"></div>
+<div class="comment-text"><p>By multitagging I meant using the osmium tool to filter the request. In the example above, when I type wr/route=bicycle wr/network=icn, I want it to understand there is an 'and' between the tags - bicycle routes and international networks which would export only the international bicycle routes.
+However, I end up with all of them, and some of them are not even bicycle routes in my extract.</p></div>
+<div class="comment-info" id="comment-80417-info">
+<span class="comment-age">(04 Jun '21, 09:43)</span>
+<a class="comment-user userinfo" href="/users/20302/lina-kortobi">Lina Kortobi</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-80402">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80402-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/80402/osmium-cyclosm-data?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/80402/osmium-cyclosm-data?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/80402/osmium-cyclosm-data?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/80402/osmium-cyclosm-data?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="80434"></a>
+<div class="answer" id="answer-container-80434">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/80434/up/" id="post-80434-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-80434-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/80434/down/" id="post-80434-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>It seems to me that osmium tags-filter do OR not AND. You can however do what you want in two passes, which would be efficient if you want international, national and regional routes in separate files. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/80434/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>06 Jun '21, 18:17</strong>
+</p>
+<img alt="yvecai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/3c7cffe544d6a1c46c97a25b2fdcdedc?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5587/yvecai">yvecai</a><br/>
+<span class="score" title="1481 reputation points"><span class="">1.5k</span></span><span title="12 badges"><span class="silver">●</span><span class="badgecount">12</span></span><span title="26 badges"><span class="bronze">●</span><span class="badgecount">26</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="yvecai has 7 accepted answers">9%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-80434">
+<a name="80444"></a>
+<div class="comment" id="comment-80444">
+<div class="comment-score" id="post-80444-score"></div>
+<div class="comment-text"><p>Thank you for your help!
+What would exactly be doing it in two passes?</p></div>
+<div class="comment-info" id="comment-80444-info">
+<span class="comment-age">(07 Jun '21, 10:05)</span>
+<a class="comment-user userinfo" href="/users/20302/lina-kortobi">Lina Kortobi</a>
+</div>
+</div>
+<a name="80445"></a>
+<div class="comment" id="comment-80445">
+<div class="comment-score" id="post-80445-score">3</div>
+<div class="comment-text"><p>Create a first file containing all route=bicycle, then filter this file with network=icn.</p></div>
+<div class="comment-info" id="comment-80445-info">
+<span class="comment-age">(07 Jun '21, 10:11)</span>
+<a class="comment-user userinfo" href="/users/5587/yvecai">yvecai</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-80434">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-80434-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/80402/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="CXaNiwPNTDMQv619l6teAIE8Bv0nZAdt"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

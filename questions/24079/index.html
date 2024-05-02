@@ -1,0 +1,234 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/24079/osm-to-postgresql-import-and-basemaps-problem">Osm to postgresql import and basemaps problem</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/24079/up/" id="post-24079-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-24079-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/24079/down/" id="post-24079-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/24079/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi!</p>
+<p>I am using imposm to import data downloaded from OpenStreetMap. I am trying to generate map images using MapServer, using the guide from here: <a href="https://github.com/mapserver/mapserver/wiki/RenderingOsmDataOnUbuntuv2">https://github.com/mapserver/mapserver/wiki/RenderingOsmDataOnUbuntuv2</a></p>
+<p>When I import the data to my PostgreSql database using imposm, everything goes fine. But in the basemap XML there are a couple of problems. The following tables are not generated:</p>
+<pre><code>osm_new_landusages_gen00  
+osm_new_waterways_gen0  
+osm_new_waterways_gen1
+</code></pre>
+<p>But these tables are referenced in the basemap MapServer XML.</p>
+<p>The following pictures show the problem. The first is my result, the second is the expected (from OpenStreetMap website map):
+<img alt="alt text" src="http://help.openstreetmap.org/upfiles/Screen_Shot_2013-07-08_at_10.45.33.png"/>
+<img alt="alt text" src="http://help.openstreetmap.org/upfiles/Screen_Shot_2013-07-08_at_10.46.36.png"/></p>
+<p>Thanks for any help!</p>
+<p><strong>Edit:</strong></p>
+<p>Now my maps look better and the tables are generated, still, the water area is not fixed. I found another example for problematic data:</p>
+<p><img alt="alt text" src="http://help.openstreetmap.org/upfiles/Screen_Shot_2013-07-08_at_14.30.02.png"/></p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap" href="/tags/openstreetmap/" rel="tag" title="see questions tagged 'openstreetmap'">openstreetmap</a>
+<a class="post-tag tag-link-import" href="/tags/import/" rel="tag" title="see questions tagged 'import'">import</a>
+<a class="post-tag tag-link-mapserver" href="/tags/mapserver/" rel="tag" title="see questions tagged 'mapserver'">mapserver</a>
+<a class="post-tag tag-link-postgresql" href="/tags/postgresql/" rel="tag" title="see questions tagged 'postgresql'">postgresql</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>08 Jul '13, 11:21</strong>
+</p>
+<img alt="Aston's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/083145391e68ec47ff73b0670ee42335?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6823/aston">Aston</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Aston has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/24079/">
+                edited
+                <strong>08 Jul '13, 14:31</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-24079">
+</div>
+<div class="comment-tools" id="comment-tools-24079">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-24079-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/24079/osm-to-postgresql-import-and-basemaps-problem?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/24079/osm-to-postgresql-import-and-basemaps-problem?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/24079/osm-to-postgresql-import-and-basemaps-problem?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/24079/osm-to-postgresql-import-and-basemaps-problem?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="24084"></a>
+<div class="answer" id="answer-container-24084">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/24084/up/" id="post-24084-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-24084-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/24084/down/" id="post-24084-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>The basemap uses a custom Imposm mapping. See <a href="https://github.com/mapserver/basemaps/blob/master/imposm-mapping.py">imposm-mapping.py</a></p>
+<p>You need to import with: <code>imposm --mapping path/to/imposm-mapping.py ...</code></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/24084/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Jul '13, 12:46</strong>
+</p>
+<img alt="olt's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/11b55b18f1f8312c7d917a0fce158162?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6824/olt">olt</a><br/>
+<span class="score" title="76 reputation points">76</span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="olt has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-24084">
+<a name="24085"></a>
+<div class="comment" id="comment-24085">
+<div class="comment-score" id="post-24085-score"></div>
+<div class="comment-text"><p>Thanks! I am checking it out. The tables are getting generated but the water area is still oddly missing unfortunately. I also had to switch to the basemaps 6-2 branch ...</p></div>
+<div class="comment-info" id="comment-24085-info">
+<span class="comment-age">(08 Jul '13, 13:50)</span>
+<a class="comment-user userinfo" href="/users/6823/aston">Aston</a>
+</div>
+</div>
+<a name="24087"></a>
+<div class="comment" id="comment-24087">
+<div class="comment-score" id="post-24087-score"></div>
+<div class="comment-text"><p>The maps look much better now with the mapping file, but still, the odd missing water area problem persists : -(</p></div>
+<div class="comment-info" id="comment-24087-info">
+<span class="comment-age">(08 Jul '13, 14:17)</span>
+<a class="comment-user userinfo" href="/users/6823/aston">Aston</a>
+</div>
+</div>
+<a name="24117"></a>
+<div class="comment" id="comment-24117">
+<div class="comment-score" id="post-24117-score"></div>
+<div class="comment-text"><p>Do you see these errors when you zoom in? If not, then you should try a newer version of Imposm (pip install <a href="https://github.com/omniscale/imposm/archive/master.zip)">https://github.com/omniscale/imposm/archive/master.zip)</a>
+We fixed some issues during generalization.</p></div>
+<div class="comment-info" id="comment-24117-info">
+<span class="comment-age">(09 Jul '13, 07:31)</span>
+<a class="comment-user userinfo" href="/users/6824/olt">olt</a>
+</div>
+</div>
+<a name="24122"></a>
+<div class="comment" id="comment-24122">
+<div class="comment-score" id="post-24122-score"></div>
+<div class="comment-text"><p>I tried with this latest version, but the same problem exists unfortunately. Is there any debug to catch elements that could not be processed? My original problem with the missing water area is like one well defined element that is just clearly missing from all zoom levels. The other problem, as you said, only appears on certain zoom levels.</p></div>
+<div class="comment-info" id="comment-24122-info">
+<span class="comment-age">(09 Jul '13, 12:01)</span>
+<a class="comment-user userinfo" href="/users/6823/aston">Aston</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-24084">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-24084-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="24180"></a>
+<div class="answer" id="answer-container-24180">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/24180/up/" id="post-24180-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-24180-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/24180/down/" id="post-24180-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You should try the latest version from GitHub and not the latest release (in case you didn't). You should also make sure that the geometry is completely included in you OSM extract (where did you get that extract?).
+Then there is the possibility that the geometry itself is broken. You could tweak <code>imposm.config</code> <a href="https://github.com/mapserver/basemaps/blob/master/imposm-mapping.py#L27..L33">https://github.com/mapserver/basemaps/blob/master/imposm-mapping.py#L27..L33</a> and set import_partial_relations to True and/or change relation_builder to 'union' and see if the geometry gets imported.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/24180/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Jul '13, 07:20</strong>
+</p>
+<img alt="olt's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/11b55b18f1f8312c7d917a0fce158162?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6824/olt">olt</a><br/>
+<span class="score" title="76 reputation points">76</span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="olt has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-24180">
+</div>
+<div class="comment-tools" id="comment-tools-24180">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-24180-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/24079/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="j2LNc6TIJqIBWYoAmHe8DDyjA637LQ5z"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,234 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/24397/a-algorithm-with-osm">A* algorithm with OSM</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/24397/up/" id="post-24397-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-24397-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/24397/down/" id="post-24397-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/24397/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I want to implement an A* Search Algorithm with OSM, but how can I get the coordinates just from the streets, not from the houses etc? And how can I get the neighbor's coordinates from this specific street coordinate? How can I identify crossroads? Does someone have an idea? I need this to trace a route, but using my own algorithm *Coordinates= Latitude,Longitude</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-api" href="/tags/api/" rel="tag" title="see questions tagged 'api'">api</a>
+<a class="post-tag tag-link-xapi" href="/tags/xapi/" rel="tag" title="see questions tagged 'xapi'">xapi</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>21 Jul '13, 03:02</strong>
+</p>
+<img alt="user's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fc2465c602afc28e2b926c36282d17c4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6901/user">user</a><br/>
+<span class="score" title="26 reputation points">26</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="user has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/24397/">
+                edited
+                <strong>22 Jul '13, 01:24</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-24397">
+</div>
+<div class="comment-tools" id="comment-tools-24397">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-24397-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/24397/a-algorithm-with-osm?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/24397/a-algorithm-with-osm?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/24397/a-algorithm-with-osm?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/24397/a-algorithm-with-osm?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="24407"></a>
+<div class="answer" id="answer-container-24407">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/24407/up/" id="post-24407-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-24407-score" title="current number of votes">
+    3
+</div>
+<a class="ajax-command post-vote down" href="/vote/24407/down/" id="post-24407-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You need to read up on the basics of the OSM data model, e.g. <a href="http://wiki.openstreetmap.org/wiki/Data_model">on the Wiki</a>. This will give you an idea of how to identify what is a street. You will then be able to process an OSM data set and export streets only, or identify crossroads. Finding neighbour's coordinates is a simple geometric problem. Many people will have "an idea" about this but the space here is too short to explain it all! It is possible that importing OSM data into a spatial database (e.g. imposm, osm2pgsql - read other answers about these in this help system) will help you, since you can then query the database for geometries or things like nearest neighbours.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/24407/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>21 Jul '13, 17:13</strong>
+</p>
+<img alt="Frederik%20Ramm's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2b38d937e70ab39d895d17da0dd1ba4?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/104/frederik-ramm">Frederik Ramm ♦</a><br/>
+<span class="score" title="82494 reputation points"><span class="">82.5k</span></span><span title="92 badges"><span class="badge1">●</span><span class="badgecount">92</span></span><span title="720 badges"><span class="silver">●</span><span class="badgecount">720</span></span><span title="1273 badges"><span class="bronze">●</span><span class="badgecount">1273</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Frederik Ramm has 417 accepted answers">23%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-24407">
+<a name="24458"></a>
+<div class="comment" id="comment-24458">
+<div class="comment-score" id="post-24458-score"></div>
+<div class="comment-text"><p>how can I get the neighbor's coordinates from a specific street coordinate?</p></div>
+<div class="comment-info" id="comment-24458-info">
+<span class="comment-age">(22 Jul '13, 18:20)</span>
+<a class="comment-user userinfo" href="/users/6901/user">user</a>
+</div>
+</div>
+<a name="24468"></a>
+<div class="comment" id="comment-24468">
+<div class="comment-score" id="post-24468-score"></div>
+<div class="comment-text"><p>I have to download the spatial database? I can't do this using HTTP request?</p></div>
+<div class="comment-info" id="comment-24468-info">
+<span class="comment-age">(23 Jul '13, 03:58)</span>
+<a class="comment-user userinfo" href="/users/6901/user">user</a>
+</div>
+</div>
+<a name="24474"></a>
+<div class="comment" id="comment-24474">
+<div class="comment-score" id="post-24474-score">3</div>
+<div class="comment-text"><p>To do anything directly with the OSM data (such as routing) you'll almost certainly want to download an extract of the data (such as from one of the links <a href="http://wiki.openstreetmap.org/wiki/Extract">here</a>) first.</p></div>
+<div class="comment-info" id="comment-24474-info">
+<span class="comment-age">(23 Jul '13, 09:55)</span>
+<a class="comment-user userinfo" href="/users/387/someoneelse">SomeoneElse ♦</a>
+</div>
+</div>
+<a name="24475"></a>
+<div class="comment" id="comment-24475">
+<div class="comment-score" id="post-24475-score">2</div>
+<div class="comment-text"><p>You have to download the data and prepare it in a suitable fashion. You cannot use an API for what you want to do because you need access to much more data than you can download from the API, and your algorithm would be terribly slow. Getting the neighbour's coordinate is a geometric problem that e.g. a PostGIS database would solve for you (search the web for "nearest point postgis" or so).</p></div>
+<div class="comment-info" id="comment-24475-info">
+<span class="comment-age">(23 Jul '13, 09:59)</span>
+<a class="comment-user userinfo" href="/users/104/frederik-ramm">Frederik Ramm ♦</a>
+</div>
+</div>
+<a name="24548"></a>
+<div class="comment" id="comment-24548">
+<div class="comment-score" id="post-24548-score"></div>
+<div class="comment-text"><p>ok, I'm using PostGis with Osm2pgsql schema now, but it's not the nearest point, I need of all points around. look this image <a href="http://www.policyalmanac.org/games/aStarT3.jpg">Here</a>,
+the green square is my current location and the red square is the destination, so, How can I represent these squares on osm2pgsql schema? line, point, polygon or roads? and the main question is: how to get the squares around of my current location?</p></div>
+<div class="comment-info" id="comment-24548-info">
+<span class="comment-age">(25 Jul '13, 04:57)</span>
+<a class="comment-user userinfo" href="/users/6901/user">user</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-24407">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-24407-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="24461"></a>
+<div class="answer" id="answer-container-24461">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/24461/up/" id="post-24461-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-24461-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/24461/down/" id="post-24461-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Maybe there are some hints from opensource solutions from <a href="http://wiki.openstreetmap.org/wiki/Routing">Routing</a> ?</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/24461/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Jul '13, 22:47</strong>
+</p>
+<img alt="stephan75's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/245b73d4390c3408fe3c6da759b9897f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/99/stephan75">stephan75</a><br/>
+<span class="score" title="12642 reputation points"><span class="">12.6k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="56 badges"><span class="silver">●</span><span class="badgecount">56</span></span><span title="210 badges"><span class="bronze">●</span><span class="badgecount">210</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="stephan75 has 37 accepted answers">6%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-24461">
+<a name="24467"></a>
+<div class="comment" id="comment-24467">
+<div class="comment-score" id="post-24467-score"></div>
+<div class="comment-text"><p>It was helpful thanks, but I didn't find anything that solved my problem.</p></div>
+<div class="comment-info" id="comment-24467-info">
+<span class="comment-age">(23 Jul '13, 03:55)</span>
+<a class="comment-user userinfo" href="/users/6901/user">user</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-24461">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-24461-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/24397/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="XEhL3HksmtqZwyfShOnQ4KgNij5cc9th"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

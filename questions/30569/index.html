@@ -1,0 +1,131 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/30569/errorneous-gpx-zip-upload">Errorneous GPX zip upload</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/30569/up/" id="post-30569-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-30569-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/30569/down/" id="post-30569-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/30569/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I want to upload many gpx files in one zip archive.</p>
+<p>After uploading I get following message on my email:</p>
+<pre>It looks like your GPX file
+2010.zip
+with the description
+2010, Krasnoyarsk kr
+and the following tags:
+automobile
+failed to import. Here's the error:
+
+Generic XML parse error
+XML parser at line 1 column 2
+</pre>
+<p>I checked all gpx files inside archive with xmllint, and sure that they are parsable.
+Also I've opened each of them in josm, and they opened and displayed ok.</p>
+<p>How can i know which gpx file in uploaded archive is errorneous ?</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-import" href="/tags/import/" rel="tag" title="see questions tagged 'import'">import</a>
+<a class="post-tag tag-link-gpx" href="/tags/gpx/" rel="tag" title="see questions tagged 'gpx'">gpx</a>
+<a class="post-tag tag-link-upload" href="/tags/upload/" rel="tag" title="see questions tagged 'upload'">upload</a>
+<a class="post-tag tag-link-zip" href="/tags/zip/" rel="tag" title="see questions tagged 'zip'">zip</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>09 Feb '14, 11:40</strong>
+</p>
+<img alt="tupka's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/16a5107ca0c722de83e57801d071fe2e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/8300/tupka">tupka</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="tupka has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-30569">
+<a name="30570"></a>
+<div class="comment" id="comment-30570">
+<div class="comment-score" id="post-30570-score"></div>
+<div class="comment-text"><p>Did you use it on <a href="http://www.openstreetmap.org/trace/create">http://www.openstreetmap.org/trace/create</a> ?</p>
+<p>I don't think it accepts <code>.zip</code> files.</p></div>
+<div class="comment-info" id="comment-30570-info">
+<span class="comment-age">(09 Feb '14, 13:06)</span>
+<a class="comment-user userinfo" href="/users/8178/jgpacker">jgpacker</a>
+</div>
+</div>
+<a name="30571"></a>
+<div class="comment" id="comment-30571">
+<div class="comment-score" id="post-30571-score">2</div>
+<div class="comment-text"><p>Yes, I use this interface and it accepts zip files - I have succeffully uploaded and imported a couple of archives in the past.</p></div>
+<div class="comment-info" id="comment-30571-info">
+<span class="comment-age">(09 Feb '14, 13:23)</span>
+<a class="comment-user userinfo" href="/users/8300/tupka">tupka</a>
+</div>
+</div>
+<a name="30572"></a>
+<div class="comment" id="comment-30572">
+<div class="comment-score" id="post-30572-score">2</div>
+<div class="comment-text"><p>I also used .zip but this was a year ago or so.<br/>
+What about zipping just the half of the GPX files, and then the next half of the remaining tracks.... so you have somekind of 'binary search' that guides you to the .GPX that causes the problems?</p></div>
+<div class="comment-info" id="comment-30572-info">
+<span class="comment-age">(09 Feb '14, 17:23)</span>
+<a class="comment-user userinfo" href="/users/4984/iii">iii</a>
+</div>
+</div>
+<a name="30610"></a>
+<div class="comment" id="comment-30610">
+<div class="comment-score" id="post-30610-score"></div>
+<div class="comment-text"><p>Yes I think it is possible to find out bad file this way. But it is not convinient as I have many gpx archives in addition to 2010.zip which are produce the same bad result on import.</p>
+<p>I created a ticket <a href="https://trac.openstreetmap.org/ticket/5115">here</a>, maybe there is a bug in site engine.</p></div>
+<div class="comment-info" id="comment-30610-info">
+<span class="comment-age">(11 Feb '14, 02:58)</span>
+<a class="comment-user userinfo" href="/users/8300/tupka">tupka</a>
+</div>
+</div>
+<a name="30611"></a>
+<div class="comment" id="comment-30611">
+<div class="comment-score" id="post-30611-score"></div>
+<div class="comment-text"><p>I doubt a "bug in the engine". I upload now and then gzipped gpx files and never got such an error.
+After having found the erroneous file(s) using the method iii suggested you should be able to found other erroneous files more easily.</p></div>
+<div class="comment-info" id="comment-30611-info">
+<span class="comment-age">(11 Feb '14, 04:29)</span>
+<a class="comment-user userinfo" href="/users/583/malenki">malenki</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-30569">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-30569-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/30569/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="lNpiBTJHxI6R7ixhMKs875EZcWGGdK0z"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

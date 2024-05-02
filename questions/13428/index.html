@@ -1,0 +1,232 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/13428/is-there-a-datum-shift-between-osm-and-true-wgs84">is there a  datum shift between OSM  and true WGS84</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/13428/up/" id="post-13428-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-13428-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/13428/down/" id="post-13428-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/13428/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi I've converted some OSM data of Cambridgeshire UK into POSTGIS using osm2pgsql like this.</p>
+<pre><code> createDB osm
+ createlang plpgsql osm –U username 
+ psql –U username –d osm  -f /path/to/postgis1.5/postgis.sql
+ psql –U username –d osm  -f /path/to/postgis1.5/spatial_ref_sys.sql
+ osm2pgsql –S /path/to/osm2pgsql/default.style –U username –d osm  -l –c /path/to/ cambridgeshire.osm.bz2
+</code></pre>
+<p>I've overlayed it on some imagery of the area. The image has been orthorectified to WGS84 Geographical &amp; fits all other data sets used. In QuantumGis both the image and the OSM data are showing the same datum but the OSM vectors are approximately 25m -30m North East of the image.</p>
+<pre><code> QGIS Layer spatial referance system
+ +proj=longlat +ellps=WGS84 +datum=WG84 +no_defs
+</code></pre>
+<p>How might I get the OSM data to fit the image? Please note once i've worked out how to do this i'll be moving on to a larger dataset
+Thanx 
+Holly </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-wgs84" href="/tags/wgs84/" rel="tag" title="see questions tagged 'wgs84'">wgs84</a>
+<a class="post-tag tag-link-osm2pgsql" href="/tags/osm2pgsql/" rel="tag" title="see questions tagged 'osm2pgsql'">osm2pgsql</a>
+<a class="post-tag tag-link-postgis" href="/tags/postgis/" rel="tag" title="see questions tagged 'postgis'">postgis</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>11 Jun '12, 17:59</strong>
+</p>
+<img alt="HollyG's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/4d0ecaa0e9d043e9a58a7a4896a9fc2f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3824/hollyg">HollyG</a><br/>
+<span class="score" title="1 reputation points">1</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="HollyG has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-13428">
+<a name="13459"></a>
+<div class="comment" id="comment-13459">
+<div class="comment-score" id="post-13459-score">1</div>
+<div class="comment-text"><p>Could you add a permalink to the area (zoom the map on www.openstreetmap.org to the area and select the "Permalink" link) to your question? Thanks</p></div>
+<div class="comment-info" id="comment-13459-info">
+<span class="comment-age">(12 Jun '12, 14:08)</span>
+<a class="comment-user userinfo" href="/users/2053/simonpoole">SimonPoole ♦</a>
+</div>
+</div>
+<a name="13472"></a>
+<div class="comment" id="comment-13472">
+<div class="comment-score" id="post-13472-score"></div>
+<div class="comment-text"><p>I am using a standalone system</p></div>
+<div class="comment-info" id="comment-13472-info">
+<span class="comment-age">(12 Jun '12, 18:17)</span>
+<a class="comment-user userinfo" href="/users/3824/hollyg">HollyG</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-13428">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-13428-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/13428/is-there-a-datum-shift-between-osm-and-true-wgs84?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/13428/is-there-a-datum-shift-between-osm-and-true-wgs84?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/13428/is-there-a-datum-shift-between-osm-and-true-wgs84?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/13428/is-there-a-datum-shift-between-osm-and-true-wgs84?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="13461"></a>
+<div class="answer" id="answer-container-13461">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/13461/up/" id="post-13461-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-13461-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/13461/down/" id="post-13461-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>OSM data is true WGS84. Without any links to the area in question I can not tell exactly what is going on. When I look at Camebridge OSM matches bing areal, google maps and even the raw gps data collected. If you open an editor for the area you can select other sources to add as layers and view the accuracy. It might be that there are some errors in the osm data, that there are some errors in your setup or that your orthorectified sources are wrong. I can not tell.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/13461/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Jun '12, 14:43</strong>
+</p>
+<img alt="Gnonthgol's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/44a4438f0146dfd898e24c221fd28b58?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/131/gnonthgol">Gnonthgol ♦</a><br/>
+<span class="score" title="13750 reputation points"><span class="">13.8k</span></span><span title="16 badges"><span class="badge1">●</span><span class="badgecount">16</span></span><span title="103 badges"><span class="silver">●</span><span class="badgecount">103</span></span><span title="198 badges"><span class="bronze">●</span><span class="badgecount">198</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Gnonthgol has 57 accepted answers">16%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-13461">
+<a name="13476"></a>
+<div class="comment" id="comment-13476">
+<div class="comment-score" id="post-13476-score"></div>
+<div class="comment-text"><p>I'm not suggesting OSM is wrong it uses google Mercator projection 900913 which is aligned to WGS84 we use unprojeted WGS84 datum EPSG:4326 all the imagery sources you quot use the same google Mercator projection so they will fit what i'm after is a trigonometric function that when applied to the coordinates of OSM 900913 data to shift them to EPSG:4326</p></div>
+<div class="comment-info" id="comment-13476-info">
+<span class="comment-age">(12 Jun '12, 19:11)</span>
+<a class="comment-user userinfo" href="/users/3824/hollyg">HollyG</a>
+</div>
+</div>
+<a name="13488"></a>
+<div class="comment" id="comment-13488">
+<div class="comment-score" id="post-13488-score"></div>
+<div class="comment-text"><p>Again in Qgis I've inserted the raw osm file I then overlayed the PostGIS layers they align perfectly. I had assumed there would be differences between the 900913 projected osm vectors and the unprojected WGS84 datum EPSG:4326.</p></div>
+<div class="comment-info" id="comment-13488-info">
+<span class="comment-age">(13 Jun '12, 07:07)</span>
+<a class="comment-user userinfo" href="/users/3824/hollyg">HollyG</a>
+</div>
+</div>
+<a name="13524"></a>
+<div class="comment" id="comment-13524">
+<div class="comment-score" id="post-13524-score">1</div>
+<div class="comment-text"><p>You need to realise that OSM data is recorded in WGS84, and that's what you receive when you download any osm.bz2 files. Sure, the maps and the editing interface is (often, but not always) shown in 900913, but underneath it's all pure WGS84.</p></div>
+<div class="comment-info" id="comment-13524-info">
+<span class="comment-age">(14 Jun '12, 09:49)</span>
+<a class="comment-user userinfo" href="/users/3/andy-allan">Andy Allan</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-13461">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-13461-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="41688"></a>
+<div class="answer" id="answer-container-41688">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/41688/up/" id="post-41688-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-41688-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/41688/down/" id="post-41688-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>An extremely late (archival) answer!</p>
+<p>There were some bugs in various OSGeo products in transforming in and out of the OSGB NT36 (EPSG code 27700). In addition failure to specify a complete Helmert Transformation in WKT or proj4 or in ESRI projection files often results in this type of error. (I would have to find a 3 year old installation of PostGIS to demonstrate this properly, but one could put in a known British National Grid co-ordinate and convert to WGS, or ECTS or Google Spherical Mercator and back and the point would be dislocated a few metres). (This caused me quite a few problems when preparing my SotM-EU presentation in 2011).</p>
+<p>In conclusion it was probably the orthorectified images transformed to either WGS84 or Spherical Mercator which were misaligned.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/41688/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>13 Mar '15, 16:23</strong>
+</p>
+<img alt="SK53's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/06cd84075f1adc2870ad102c7233e661?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/647/sk53">SK53 ♦</a><br/>
+<span class="score" title="28084 reputation points"><span class="">28.1k</span></span><span title="48 badges"><span class="badge1">●</span><span class="badgecount">48</span></span><span title="268 badges"><span class="silver">●</span><span class="badgecount">268</span></span><span title="433 badges"><span class="bronze">●</span><span class="badgecount">433</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="SK53 has 121 accepted answers">22%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-41688">
+</div>
+<div class="comment-tools" id="comment-tools-41688">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-41688-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/13428/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="1xk0q5BusmIoneJayoigV9KkZ3bJjwPq"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

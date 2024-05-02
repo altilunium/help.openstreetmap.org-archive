@@ -1,0 +1,154 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/86138/how-to-export-relation-type-boundary-without-points">How to export relation type boundary without points?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/86138/up/" id="post-86138-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-86138-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/86138/down/" id="post-86138-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/86138/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am trying to export as GeoJson the boundary of the regions of Ghana. My simple query is the following: </p>
+<pre><code>[out:json];
+area[admin_level=2][name=Ghana];
+rel[boundary=administrative][admin_level=4](area);
+out geom;
+</code></pre>
+<p>My challenge is that when exporting it to GeoJson I do not only get the contour but also a point or two in each region. Is there a way to get rid of it in the query? Right now, my only workaround is to remove it manually which is very slow. </p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-boundary" href="/tags/boundary/" rel="tag" title="see questions tagged 'boundary'">boundary</a>
+<a class="post-tag tag-link-points" href="/tags/points/" rel="tag" title="see questions tagged 'points'">points</a>
+<a class="post-tag tag-link-beginner" href="/tags/beginner/" rel="tag" title="see questions tagged 'beginner'">beginner</a>
+<a class="post-tag tag-link-geojson" href="/tags/geojson/" rel="tag" title="see questions tagged 'geojson'">geojson</a>
+<a class="post-tag tag-link-relations" href="/tags/relations/" rel="tag" title="see questions tagged 'relations'">relations</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>11 Nov '22, 20:42</strong>
+</p>
+<img alt="gmacia's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/17251d09b89731b82e605ff9ba5b0d6d?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/22427/gmacia">gmacia</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="gmacia has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-86138">
+</div>
+<div class="comment-tools" id="comment-tools-86138">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-86138-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/86138/how-to-export-relation-type-boundary-without-points?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/86138/how-to-export-relation-type-boundary-without-points?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/86138/how-to-export-relation-type-boundary-without-points?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/86138/how-to-export-relation-type-boundary-without-points?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="86451"></a>
+<div class="answer" id="answer-container-86451">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/86451/up/" id="post-86451-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-86451-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/86451/down/" id="post-86451-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Those <em>points</em> are the administrative centre of each region and the label of each region. The first are nodes with role <em>admin_centre</em>, and the second are nodes with the role <em>label</em>. See <a href="https://wiki.openstreetmap.org/wiki/Relation:boundary#Relation_members">this wiki page</a> for more info about <em>type=boundary</em> relation members.</p>
+<p>You have to use <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Recurse_(n,_w,_r,_bn,_bw,_br)">recurse statements</a> to get rid of those two nodes. One query that works is the following one, but there might be simpler ones:</p>
+<pre><code>[out:json][timeout:50];
+area[admin_level=2][name=Ghana];
+//We put the 16 regions relations in the .allRelations set:
+rel[boundary=administrative][admin_level=4](area)-&gt;.allRelations;
+//We get only the ways members of the relations, that means, the border ways of the regions,
+//and we put them in the .relationWays set:
+way(r.allRelations)-&gt;.relationWays;
+//And now we get all the nodes of those border ways, and put them in the .waysNodes set:
+node(w.relationWays)-&gt;.waysNodes;
+//Now we get the union of all the three sets (relations, their ways and those ways nodes):
+(
+  .allRelations;
+  .relationWays;
+  .waysNodes;
+);
+//And we output all data:
+out meta;
+</code></pre>
+<p>Note 1: You can't use <strong>out geom;</strong> here, because <strong>out geom;</strong> adds, among others, a sequence of "nd" members with coordinates to all relations, and therefore you would get those nodes you want to get rid of.</p>
+<p>Note 2: We could use <strong>out body;</strong> instead of <strong>out meta;</strong> if we are not interested in metadata, like version of objets, changeset id, timestamp, and the user data of the user that last touched the object.</p>
+<p>See <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#out">this wiki page</a> section for more info about the out standalone statement.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/86451/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>07 Jan '23, 18:39</strong>
+</p>
+<img alt="edvac's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/d45c161edd4b471fd947a7ec574274ca?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3339/edvac">edvac</a><br/>
+<span class="score" title="665 reputation points">665</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="6 badges"><span class="silver">●</span><span class="badgecount">6</span></span><span title="19 badges"><span class="bronze">●</span><span class="badgecount">19</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="edvac has 4 accepted answers">15%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-86451">
+</div>
+<div class="comment-tools" id="comment-tools-86451">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-86451-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/86138/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="hPBr12B4jZbUxPxJzhBmxDkmQ4rZ8FXE"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

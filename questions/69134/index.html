@@ -1,0 +1,101 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/69134/osmosis-always-filters-out-lakes">Osmosis always filters out lakes</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/69134/up/" id="post-69134-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-69134-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/69134/down/" id="post-69134-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/69134/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi, I'm trying to create a .pbf file with only water (Coastlines, rivers, streams, lakes). I'm using the following with perfect results except none of the lakes come through:</p>
+<p>osmosis --rbf file.osm.pbf outPipe.0=1 --wkv keyValueList=natural.coastline,natural.water,waterway.river,waterway.riverbank,waterway.stream,water.lake inPipe.0=1 outPipe.0=2 --tf reject-relations inPipe.0=2 outPipe.0=3 --used-nodes inPipe.0=3 outPipe.0=4 --wb file=filewater.osm.pbf inPipe.0=4</p>
+<p>I'm running Osmosis version 0.47 on Windows 10 with Java 8 (update 211). I've tried many variation on the keyValueList and no matter what I try, the lakes won't pass through. I've been working on this for days and haven't been able to figure things out; any help would be greatly appreciated. btw, the file I'm starting with has the lakes in it, with natural=water, and water=lake in the keyValues tags.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-water" href="/tags/water/" rel="tag" title="see questions tagged 'water'">water</a>
+<a class="post-tag tag-link-natural" href="/tags/natural/" rel="tag" title="see questions tagged 'natural'">natural</a>
+<a class="post-tag tag-link-lakes" href="/tags/lakes/" rel="tag" title="see questions tagged 'lakes'">lakes</a>
+<a class="post-tag tag-link-osmosis" href="/tags/osmosis/" rel="tag" title="see questions tagged 'osmosis'">osmosis</a>
+<a class="post-tag tag-link-wkv" href="/tags/wkv/" rel="tag" title="see questions tagged 'wkv'">wkv</a>
+</div>
+<div class="post-controls" id="question-controls">
+<div class="community-wiki">
+        This question is marked "community wiki".
+        
+    </div>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>08 May '19, 22:02</strong>
+</p>
+<img alt="dmoore45's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f0727be5ba3a840fbc2c2f4edaa7ae8f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16650/dmoore45">dmoore45</a><br/>
+<span class="score" title="21 reputation points">21</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="dmoore45 has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/69134/">
+                edited
+                <strong>08 May '19, 22:05</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-69134">
+<a name="69141"></a>
+<div class="comment" id="comment-69141">
+<div class="comment-score" id="post-69141-score">2</div>
+<div class="comment-text"><p>You are rejecting relations: most larger waterbodies will be mapped as such. I would suggest perhaps using osmfilter which provides a less complicated way of doing this.</p></div>
+<div class="comment-info" id="comment-69141-info">
+<span class="comment-age">(09 May '19, 13:33)</span>
+<a class="comment-user userinfo" href="/users/647/sk53">SK53 ♦</a>
+</div>
+</div>
+<a name="69146"></a>
+<div class="comment" id="comment-69146">
+<div class="comment-score" id="post-69146-score"></div>
+<div class="comment-text"><p>SK53, I have run the same command with --tf accept-relations, and also leaving accept/reject out altogether. I get the same result: lakes are gone.</p>
+<p>Thanks for the suggestion on osmfilter. I'll play with that to see if I can get it to work. I appreciate your help!</p></div>
+<div class="comment-info" id="comment-69146-info">
+<span class="comment-age">(09 May '19, 17:54)</span>
+<a class="comment-user userinfo" href="/users/16650/dmoore45">dmoore45</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-69134">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-69134-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/69134/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="SDwVVdzEdJXs5KD9zISlyxC8lVvHn3aU"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

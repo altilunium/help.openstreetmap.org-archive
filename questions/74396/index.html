@@ -1,0 +1,91 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/74396/overpass-draw-multiple-cities-with-district-boundaries-to-calculate-population-in-driving-range">overpass draw multiple cities with district boundaries, to calculate population in driving range</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/74396/up/" id="post-74396-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-74396-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/74396/down/" id="post-74396-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/74396/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Hi there, I want to draw the city(including district) boundaries on Overpass, including district and Xian boundaries. </p>
+<p>I want to draw the city, district, and County(Xian in China) level boundaries of those cities: Shanghai, Suzhou, Wuxi, Changzhou, Huzhou, Jiaxing, Hangzhou, Shaoxing and Ningbo. Please help. please</p>
+<p>I have tried this code for each province, JS, SH, ZJ</p>
+<pre><code>[out:xml][timeout:45];
+area["ISO3166-2"="CN-AH"]-&gt;.a;
+(relation(area.a)["admin_level"=6][boundary="administrative"];);
+out meta;
+&gt;;
+out meta qt;
+</code></pre>
+<p>But what I really want is more detailed district level boundaries of several cities: Shanghai, Suzhou, Wuxi, Changzhou, Huzhou, Jiaxing, Hangzhou, Shaoxing and Ningbo. and Xuancheng</p>
+<p>And using that data with the year population data, I think I can calculate the population of a 2 hour driving range which cuts those district boundaries.</p>
+<p>Please help</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-boundaries" href="/tags/boundaries/" rel="tag" title="see questions tagged 'boundaries'">boundaries</a>
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-china" href="/tags/china/" rel="tag" title="see questions tagged 'china'">china</a>
+<a class="post-tag tag-link-population" href="/tags/population/" rel="tag" title="see questions tagged 'population'">population</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>27 Apr '20, 07:01</strong>
+</p>
+<img alt="CliffHU's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/1e1ce4fc4e5cfdefa2e6c481eeee176b?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18244/cliffhu">CliffHU</a><br/>
+<span class="score" title="16 reputation points">16</span><span title="2 badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="2 badges"><span class="silver">●</span><span class="badgecount">2</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="CliffHU has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/74396/">
+                edited
+                <strong>27 Apr '20, 07:11</strong>
+</a>
+</p>
+<img alt="scai's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/52d3234f3be58156770e8a91d575bfbd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/158/scai">scai ♦</a><br/>
+<span class="score" title="33317 reputation points"><span class="">33.3k</span></span><span title="21 badges"><span class="badge1">●</span><span class="badgecount">21</span></span><span title="309 badges"><span class="silver">●</span><span class="badgecount">309</span></span><span title="459 badges"><span class="bronze">●</span><span class="badgecount">459</span></span></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-74396">
+</div>
+<div class="comment-tools" id="comment-tools-74396">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-74396-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<form action="/questions/74396/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="HOFvP9v5hOBxAGWJkdx5KI6QZSaS0rpb"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,232 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/68238/how-to-style-roads-having-trouble-with-road-colorsyaml">How to style roads?  Having trouble with road-colors.yaml</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/68238/up/" id="post-68238-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-68238-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/68238/down/" id="post-68238-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/68238/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I am using the basic openstreetmap-carto styling for my map.  I am trying to re-color the roads so that all roads are white.</p>
+<p>To make this change, I came across the file named <code>road-colors.yaml</code>.</p>
+<p>The color syntax is nothing I have seen before.  I found no instructions online as to how I can edit this file.</p>
+<p>I simply want all roads to be white.  How do I do that?</p>
+<p>Default file contents:</p>
+<pre><code># This is the input for scripts/generate_road_colours.py
+
+# All road classes colours will be generated for, in order of importance
+# (biggest first).
+roads:
+  - motorway
+  - trunk
+  - primary
+  - secondary
+
+# The starting and ending hue. The range goes from 0 to 360, with 0 and 360
+# representing red.
+hue: [10, 106]
+
+# The lightness and chroma (also known as saturation) for each type of colour.
+# Lightness ranges from 0 to 100; dark to bright.
+# Chroma ranges from 0 to 100 too; unsaturated to fully saturated.
+classes:
+  # Colours for output into the MSS file
+  mss:
+    fill:
+      lightness: [70, 97]
+      chroma: [35, 29]
+    casing:
+      lightness: [50, 50]
+      chroma: [70, 55]
+    low-zoom:
+      lightness: [62, 92]
+      chroma: [50, 40]
+    low-zoom-casing:
+      lightness: [50, 70]
+      chroma: [50, 65]
+    shield:
+      lightness: [20, 25]
+      chroma: [40, 42]
+  # Colours used by the road shields script
+  shield:
+    fill:
+      lightness: [85, 95]
+      chroma: [12, 14]
+    stroke_fill:
+      lightness: [70, 80]
+      chroma: [22, 24]
+</code></pre>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap-carto" href="/tags/openstreetmap-carto/" rel="tag" title="see questions tagged 'openstreetmap-carto'">openstreetmap-carto</a>
+<a class="post-tag tag-link-style" href="/tags/style/" rel="tag" title="see questions tagged 'style'">style</a>
+<a class="post-tag tag-link-carto" href="/tags/carto/" rel="tag" title="see questions tagged 'carto'">carto</a>
+<a class="post-tag tag-link-mapnik" href="/tags/mapnik/" rel="tag" title="see questions tagged 'mapnik'">mapnik</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>04 Mar '19, 02:05</strong>
+</p>
+<img alt="valachio's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/b1e3fbb6f31c5e0144e7b18fcd7d5d33?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/16323/valachio">valachio</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="8 badges"><span class="badge1">●</span><span class="badgecount">8</span></span><span title="9 badges"><span class="silver">●</span><span class="badgecount">9</span></span><span title="13 badges"><span class="bronze">●</span><span class="badgecount">13</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="valachio has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-68238">
+</div>
+<div class="comment-tools" id="comment-tools-68238">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-68238-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/68238/how-to-style-roads-having-trouble-with-road-colorsyaml?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/68238/how-to-style-roads-having-trouble-with-road-colorsyaml?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/68238/how-to-style-roads-having-trouble-with-road-colorsyaml?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/68238/how-to-style-roads-having-trouble-with-road-colorsyaml?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="79279"></a>
+<div class="answer" id="answer-container-79279">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/79279/up/" id="post-79279-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-79279-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/79279/down/" id="post-79279-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>You can always override colors in <code>style.mms</code>. Just copy the bunch of definitions you want to modify, change the colors and voilà! </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/79279/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>15 Mar '21, 20:39</strong>
+</p>
+<img alt="Marcos%20Dione's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e4587465b2b1b94834e5e625b80a29dd?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/15564/marcos-dione">Marcos Dione</a><br/>
+<span class="score" title="71 reputation points">71</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="bronze">●</span><span class="badgecount">3</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Marcos Dione has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-79279">
+</div>
+<div class="comment-tools" id="comment-tools-79279">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-79279-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="79353"></a>
+<div class="answer" id="answer-container-79353">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/79353/up/" id="post-79353-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-79353-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/79353/down/" id="post-79353-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>I know it's not preferable way by documentation but in my case I changed color hash codes in <code>style/road-colors-generated.mss</code> and during later updates it works fine. It's about colours of road. 
+But not all 'line items' definitions you can find there. There is also file <code>style/roads.mss</code> where rest of colours are defined for that group (i.e. <code>living-street</code>, <code>residential</code>, <code>footway</code>, <code>taxiway</code>, <code>railway</code> etc.). Here you can customize every tag by ZOOM level including road width and object casing.</p>
+<p>What (I think) is worth to be mentioned is that road definition is divided into 2 parts. One part is responsible for road itself (colour, width, casing), and in the same file but in lated parts you can find definition how street names are generated (font colour, spacing between next labels, linings etc.). The same file structure is in <code>style/amenity-points.mss</code></p>
+<p>I think it might be valuable knowledge especially for beginnners. It wasn't so clear for me couple days ago when I started to customize my own style.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/79353/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>22 Mar '21, 08:27</strong>
+</p>
+<img alt="engopy's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/735ed8c1abf1a1f7b907b78d9594303c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/19203/engopy">engopy</a><br/>
+<span class="score" title="126 reputation points">126</span><span title="10 badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="10 badges"><span class="silver">●</span><span class="badgecount">10</span></span><span title="15 badges"><span class="bronze">●</span><span class="badgecount">15</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="engopy has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/79353/">
+                edited
+                <strong>22 Mar '21, 08:27</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-79353">
+</div>
+<div class="comment-tools" id="comment-tools-79353">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-79353-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/68238/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="dCmzngQZvhGJR9ttoQNgp8QWSIaftW0M"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

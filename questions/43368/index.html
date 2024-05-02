@@ -1,0 +1,174 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/43368/add-features-to-map-to-osmand">Add features to map to OSMand</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/43368/up/" id="post-43368-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-43368-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/43368/down/" id="post-43368-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/43368/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I would like to add a list of features (points) to OSMand that I need to survey on the ground. Steps I have managed so far:</p>
+<ol>
+<li>I have got an extract (by clicking the GPX file link at <a href="http://robert.mathmos.net/osm/postboxes/2/map.html?lat=52.39322&amp;lon=-1.62701&amp;zoom=13&amp;layers=TB0T">http://robert.mathmos.net/osm/postboxes/2/map.html?lat=52.39322&amp;lon=-1.62701&amp;zoom=13&amp;layers=TB0T</a> ) </li>
+<li>Have copied this to /osmand/tracks on the phone</li>
+<li>Have got the GPS "track" to show.</li>
+</ol>
+<p>My issue is that all features appear the same in OSMand and clicking on each one only brings up the waypoint name (some useless ID).</p>
+<p>What I would ideally like is to be able to view each waypoint in a different colour depending on its status (see link above). Is this possible? If not then is there some other way to achieve a similar effect.</p>
+<p>Thanks</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-gpx" href="/tags/gpx/" rel="tag" title="see questions tagged 'gpx'">gpx</a>
+<a class="post-tag tag-link-android" href="/tags/android/" rel="tag" title="see questions tagged 'android'">android</a>
+<a class="post-tag tag-link-osmand" href="/tags/osmand/" rel="tag" title="see questions tagged 'osmand'">osmand</a>
+<a class="post-tag tag-link-waypoints" href="/tags/waypoints/" rel="tag" title="see questions tagged 'waypoints'">waypoints</a>
+<a class="post-tag tag-link-ios" href="/tags/ios/" rel="tag" title="see questions tagged 'ios'">ios</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>02 Jun '15, 23:03</strong>
+</p>
+<img alt="RobJN's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/132b767a2673eaf42f00ceaa141a619c?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/6527/robjn">RobJN</a><br/>
+<span class="score" title="160 reputation points">160</span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="5 badges"><span class="silver">●</span><span class="badgecount">5</span></span><span title="11 badges"><span class="bronze">●</span><span class="badgecount">11</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="RobJN has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-43368">
+<a name="43369"></a>
+<div class="comment" id="comment-43369">
+<div class="comment-score" id="post-43369-score">1</div>
+<div class="comment-text"><p>I used text wrangler to replace the &lt;/name&gt; &lt;cmt&gt; with a space and then the &lt;/cmt&gt; with &lt;/name&gt; from your boxes.gpx</p>
+<p>From this... <br/>
+&lt;wpt lat="52.411469959414" lon="-1.67507208439022"&gt;
+  &lt;name&gt;PB-014&lt;/name&gt;
+  &lt;cmt&gt;Missing OSM Box&lt;/cmt&gt;
+  &lt;sym&gt;Post Office&lt;/sym&gt;
+&lt;/wpt&gt;</p>
+<p>to give this at each waypoint ... <br/>
+&lt;wpt lat="52.411469959414" lon="-1.67507208439022"&gt;
+  &lt;name&gt;PB-014 Missing OSM Box &lt;/name&gt;
+  &lt;sym&gt;Post Office&lt;/sym&gt;
+&lt;/wpt&gt;</p>
+<p>and you can copy it from <a href="https://www.dropbox.com/s/0y3higaej9eztlr/boxes2.gpx?dl=0">https://www.dropbox.com/s/0y3higaej9eztlr/boxes2.gpx?dl=0</a></p>
+<p>This may work for you.</p></div>
+<div class="comment-info" id="comment-43369-info">
+<span class="comment-age">(03 Jun '15, 01:44)</span>
+<a class="comment-user userinfo" href="/users/7380/nevw">nevw</a>
+</div>
+</div>
+<a name="43457"></a>
+<div class="comment" id="comment-43457">
+<div class="comment-score" id="post-43457-score"></div>
+<div class="comment-text"><p>Editing the text file seems like the best approach for now. I don't want to add a load of Notes as this could get very cluttered very quickly.</p></div>
+<div class="comment-info" id="comment-43457-info">
+<span class="comment-age">(07 Jun '15, 23:06)</span>
+<a class="comment-user userinfo" href="/users/6527/robjn">RobJN</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-43368">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-43368-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/43368/add-features-to-map-to-osmand?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/43368/add-features-to-map-to-osmand?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/43368/add-features-to-map-to-osmand?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/43368/add-features-to-map-to-osmand?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="43383"></a>
+<div class="answer" id="answer-container-43383">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/43383/up/" id="post-43383-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-43383-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/43383/down/" id="post-43383-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Use the notes feature. As far as I can recall, OSMand pulls in open notes</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/43383/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>03 Jun '15, 18:26</strong>
+</p>
+<img alt="DaCor's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/9f0faef4659de616c82f448ff3f4e8e2?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/5669/dacor">DaCor</a><br/>
+<span class="score" title="1339 reputation points"><span class="">1.3k</span></span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="11 badges"><span class="silver">●</span><span class="badgecount">11</span></span><span title="29 badges"><span class="bronze">●</span><span class="badgecount">29</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="DaCor has one accepted answer">2%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-43383">
+<a name="43385"></a>
+<div class="comment" id="comment-43385">
+<div class="comment-score" id="post-43385-score">1</div>
+<div class="comment-text"><p>It does after activating the corresponding notes plugin.</p></div>
+<div class="comment-info" id="comment-43385-info">
+<span class="comment-age">(03 Jun '15, 19:37)</span>
+<a class="comment-user userinfo" href="/users/158/scai">scai ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-43383">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-43383-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/43368/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="NFoVvEp0TkqnFeFej88gcfNlVSGUCUrN"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

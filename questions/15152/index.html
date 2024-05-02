@@ -1,0 +1,548 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/15152/openlayers-marker-for-start-of-gpx-track-and-centering-the-map-on-the-trace">Openlayers - marker for start of GPX track and centering the map on the trace</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/15152/up/" id="post-15152-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-15152-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/15152/down/" id="post-15152-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/15152/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+   1
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>Using the example <a href="http://wiki.openstreetmap.org/wiki/Openlayers_Track_example">http://wiki.openstreetmap.org/wiki/Openlayers_Track_example</a> I can make a map with a GPX trace on it but I have to centre the map by finding the co-ordinates separately and assigning them to variables for lat lon, and getting the zoom level by trial and error. 
+I can also add a pin to mark the start but again have to position it by manually entering the co-ordinates. 
+It's entirely possible to use javascript to parse the GPX file to find the bounds of the trace, and the centre point. The start point is also simply the first trackpoint. </p>
+<p>Does anyone have any idea how to do this? I'm capable of adapting examples but not of generating this complexity of scripting!</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-marker" href="/tags/marker/" rel="tag" title="see questions tagged 'marker'">marker</a>
+<a class="post-tag tag-link-track" href="/tags/track/" rel="tag" title="see questions tagged 'track'">track</a>
+<a class="post-tag tag-link-gpx" href="/tags/gpx/" rel="tag" title="see questions tagged 'gpx'">gpx</a>
+<a class="post-tag tag-link-openlayers" href="/tags/openlayers/" rel="tag" title="see questions tagged 'openlayers'">openlayers</a>
+<a class="post-tag tag-link-start" href="/tags/start/" rel="tag" title="see questions tagged 'start'">start</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>16 Aug '12, 15:59</strong>
+</p>
+<img alt="digby's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e82dee06cd9f989e30bc1c57f2afc2d9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2662/digby">digby</a><br/>
+<span class="score" title="46 reputation points">46</span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="6 badges"><span class="silver">●</span><span class="badgecount">6</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="digby has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/15152/">
+                edited
+                <strong>16 Aug '12, 16:17</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-15152">
+</div>
+<div class="comment-tools" id="comment-tools-15152">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-15152-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    6 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/15152/openlayers-marker-for-start-of-gpx-track-and-centering-the-map-on-the-trace?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/15152/openlayers-marker-for-start-of-gpx-track-and-centering-the-map-on-the-trace?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/15152/openlayers-marker-for-start-of-gpx-track-and-centering-the-map-on-the-trace?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/15152/openlayers-marker-for-start-of-gpx-track-and-centering-the-map-on-the-trace?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="15176"></a>
+<div class="answer accepted-answer" id="answer-container-15176">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/15176/up/" id="post-15176-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-15176-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/15176/down/" id="post-15176-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="accept-answer on" href="/accept_answer/15176/" rel="nofollow" title="digby has selected this answer as the correct answer">
+</a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hi,</p>
+<p>Although this question is more related to OpenLayers than OSM, you can try with this code:</p>
+<blockquote>
+<p>map.zoomToExtent(lgpx.getDataExtent());</p>
+</blockquote>
+<p>EDIT: this code add also the marker at the startpoint and should be placed after adding the layer lgpx to the map (map.addLayer(lgpx))</p>
+<pre><code>lgpx.events.register("loadend", lgpx, function() {
+  this.map.zoomToExtent(this.getDataExtent());
+  var startPoint = this.features[0].geometry.components[0];
+  layerMarkers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(startPoint.x, startPoint.y),icon));
+});
+</code></pre>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/15176/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>16 Aug '12, 21:27</strong>
+</p>
+<img alt="NicolasDumoulin's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a2839f25c5f2da24f6ffd25de1641684?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/868/nicolasdumoulin">NicolasDumoulin</a><br/>
+<span class="score" title="3327 reputation points"><span class="">3.3k</span></span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="22 badges"><span class="silver">●</span><span class="badgecount">22</span></span><span title="56 badges"><span class="bronze">●</span><span class="badgecount">56</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="NicolasDumoulin has 15 accepted answers">13%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/15176/">
+                edited
+                <strong>17 Aug '12, 11:27</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-15176">
+<a name="15191"></a>
+<div class="comment" id="comment-15191">
+<div class="comment-score" id="post-15191-score"></div>
+<div class="comment-text"><p>Am I asking in the wrong forum?</p></div>
+<div class="comment-info" id="comment-15191-info">
+<span class="comment-age">(17 Aug '12, 08:23)</span>
+<a class="comment-user userinfo" href="/users/2662/digby">digby</a>
+</div>
+</div>
+<a name="15192"></a>
+<div class="comment" id="comment-15192">
+<div class="comment-score" id="post-15192-score">2</div>
+<div class="comment-text"><p>If you want to be sure to get an answer (and a good one), it's better to ask your question to the OpenLayers community.
+Anyway, what about my answer?</p></div>
+<div class="comment-info" id="comment-15192-info">
+<span class="comment-age">(17 Aug '12, 08:31)</span>
+<a class="comment-user userinfo" href="/users/868/nicolasdumoulin">NicolasDumoulin</a>
+</div>
+</div>
+<a name="15198"></a>
+<div class="comment" id="comment-15198">
+<div class="comment-score" id="post-15198-score"></div>
+<div class="comment-text"><p>Not sure where to put it. Does it just go in as is? Does it override the vars of lat lon and zoom? Tried it in various places without success.
+<a href="http://www.carnethy.com/maps/mapping%20info/osm_map_layer_to_use_in_iframe.htm">http://www.carnethy.com/maps/mapping%20info/osm_map_layer_to_use_in_iframe.htm</a></p></div>
+<div class="comment-info" id="comment-15198-info">
+<span class="comment-age">(17 Aug '12, 09:22)</span>
+<a class="comment-user userinfo" href="/users/2662/digby">digby</a>
+</div>
+</div>
+<a name="15200"></a>
+<div class="comment" id="comment-15200">
+<div class="comment-score" id="post-15200-score"></div>
+<div class="comment-text"><p>Ok, it works by adding this code after map.addLayer(lgpx):
+lgpx.events.register("loadend", lgpx, function() { this.map.zoomToExtent(this.getDataExtent()) } );</p></div>
+<div class="comment-info" id="comment-15200-info">
+<span class="comment-age">(17 Aug '12, 09:42)</span>
+<a class="comment-user userinfo" href="/users/868/nicolasdumoulin">NicolasDumoulin</a>
+</div>
+</div>
+<a name="15202"></a>
+<div class="comment" id="comment-15202">
+<div class="comment-score" id="post-15202-score">1</div>
+<div class="comment-text"><p>Wow! It works! Thanks.
+And any idea how to get the start point from the GPX to set the pin in the right place?</p></div>
+<div class="comment-info" id="comment-15202-info">
+<span class="comment-age">(17 Aug '12, 09:58)</span>
+<a class="comment-user userinfo" href="/users/2662/digby">digby</a>
+</div>
+</div>
+<a name="15204"></a>
+<div class="comment not_top_scorer" id="comment-15204">
+<div class="comment-score" id="post-15204-score"></div>
+<div class="comment-text"><p>You can add the marker at the startpoint by modifying the previous giving code as follow:</p>
+<p>lgpx.events.register("loadend", lgpx, function() {</p>
+<p>this.map.zoomToExtent(this.getDataExtent());</p>
+<p>var startPoint = this.features[0].geometry.components[0];</p>
+<p>layerMarkers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(startPoint.x, startPoint.y),icon));</p>
+<p>});</p></div>
+<div class="comment-info" id="comment-15204-info">
+<span class="comment-age">(17 Aug '12, 10:15)</span>
+<a class="comment-user userinfo" href="/users/868/nicolasdumoulin">NicolasDumoulin</a>
+</div>
+</div>
+<a name="15207"></a>
+<div class="comment not_top_scorer" id="comment-15207">
+<div class="comment-score" id="post-15207-score"></div>
+<div class="comment-text"><p>I can only laugh in amazement! Never in a milliion years could I have worked that out!</p></div>
+<div class="comment-info" id="comment-15207-info">
+<span class="comment-age">(17 Aug '12, 11:32)</span>
+<a class="comment-user userinfo" href="/users/2662/digby">digby</a>
+</div>
+</div>
+<a name="15216"></a>
+<div class="comment not_top_scorer" id="comment-15216">
+<div class="comment-score" id="post-15216-score"></div>
+<div class="comment-text"><p>Can I further try your patience and ask how you would return the end point of a trace to place a finish pin? Would you adapt 
+var startPoint = this.features[0].geometry.components[0];         <br/>
+layerMarkers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(startPoint.x, startPoint.y),icon));</p>
+<p>to var endPoint = something?</p></div>
+<div class="comment-info" id="comment-15216-info">
+<span class="comment-age">(17 Aug '12, 15:01)</span>
+<a class="comment-user userinfo" href="/users/2662/digby">digby</a>
+</div>
+</div>
+<a name="15217"></a>
+<div class="comment not_top_scorer" id="comment-15217">
+<div class="comment-score" id="post-15217-score"></div>
+<div class="comment-text"><p>Right, something like that: var endPoint = this.features[0].geometry.components[this.features[0].geometry.components.length - 1];</p></div>
+<div class="comment-info" id="comment-15217-info">
+<span class="comment-age">(17 Aug '12, 15:33)</span>
+<a class="comment-user userinfo" href="/users/868/nicolasdumoulin">NicolasDumoulin</a>
+</div>
+</div>
+<a name="15218"></a>
+<div class="comment not_top_scorer" id="comment-15218">
+<div class="comment-score" id="post-15218-score"></div>
+<div class="comment-text"><p>Hmm. Didn't work! It puts a pin at the start, or maybe -1 trackpoint from the start</p></div>
+<div class="comment-info" id="comment-15218-info">
+<span class="comment-age">(17 Aug '12, 17:00)</span>
+<a class="comment-user userinfo" href="/users/2662/digby">digby</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-15176">
+<span class="comments-showing">
+            showing 5 of 10
+        </span>
+<a class="show-all-comments-link" href="#">show 5 more comments</a>
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-15176-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="15179"></a>
+<div class="answer" id="answer-container-15179">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/15179/up/" id="post-15179-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-15179-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/15179/down/" id="post-15179-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Two methods of finding a lat lon in a trace are  open the GPX with a text editor and just read them or upload the trace to OSM then click on edit trace and in polatch2 under options tick the box that shows lat lon. EDIT You can display the whole trace on an up to date OSM map and pick out boundary Lan Lons by opening the GPX with GPS Prune it's free from the activity workshop, but it does need Java to run ( as does JOSM ). 
+<a href="https://activityworkshop.net/software/gpsprune/">https://activityworkshop.net/software/gpsprune/</a></p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/15179/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>16 Aug '12, 23:09</strong>
+</p>
+<img alt="andy%20mackey's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/efa7ca36d4499200879223dc5ad5ecac?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/644/andy-mackey">andy mackey</a><br/>
+<span class="score" title="13238 reputation points"><span class="">13.2k</span></span><span title="87 badges"><span class="badge1">●</span><span class="badgecount">87</span></span><span title="143 badges"><span class="silver">●</span><span class="badgecount">143</span></span><span title="285 badges"><span class="bronze">●</span><span class="badgecount">285</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="andy mackey has 37 accepted answers">4%</span>
+</br></p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/15179/">
+                edited
+                <strong>09 Oct '17, 21:23</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-15179">
+<a name="15201"></a>
+<div class="comment" id="comment-15201">
+<div class="comment-score" id="post-15201-score">1</div>
+<div class="comment-text"><p>I know I can open the trace in a text editor and read it, but this doesn't help with setting the centre and bounds of an openlayers map.</p></div>
+<div class="comment-info" id="comment-15201-info">
+<span class="comment-age">(17 Aug '12, 09:47)</span>
+<a class="comment-user userinfo" href="/users/2662/digby">digby</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-15179">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-15179-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="60003"></a>
+<div class="answer" id="answer-container-60003">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/60003/up/" id="post-60003-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-60003-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/60003/down/" id="post-60003-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Hi, how i put a marker on the end of gps track?
+i try use the similar code that you provided, but doesn't work. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/60003/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Oct '17, 00:53</strong>
+</p>
+<img alt="Wesley's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a27cae3d949a53902bd3c0600e0de893?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14295/wesley">Wesley</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Wesley has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-60003">
+</div>
+<div class="comment-tools" id="comment-tools-60003">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-60003-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="60004"></a>
+<div class="answer answered-by-owner" id="answer-container-60004">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/60004/up/" id="post-60004-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-60004-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/60004/down/" id="post-60004-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<pre><code>lgpx.events.register("loadend", lgpx, function() {
+                    this.map.zoomToExtent(this.getDataExtent());
+                    var startPoint = this.features[0].geometry.components[0];               
+                    layerMarkers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(startPoint.x, startPoint.y),icon));
+</code></pre>
+<p>Add this to the previous code, and add a new finish icon in the same way as the start point icon. By the way, I have no idea how this all works!</p>
+<pre><code>var endPoint = this.features[0].geometry.components[this.features[0].geometry.components.length - 1];
+                    layerMarkers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(endPoint.x, endPoint.y),icon2));
+                });
+</code></pre>
+<p>In our case the icons are set so:</p>
+<pre><code>var size = new OpenLayers.Size(21, 25);
+            var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
+            var icon = new OpenLayers.Icon('../../mapping%20info/small_red_pin.png',size,offset);
+            var icon2 = new OpenLayers.Icon('../../mapping%20info/small_blue_pin.png',size,offset);
+</code></pre>
+<p>If the map has a circular route on it the finish icon will overlay the start icon which will be hidden if it's the same shape. But you could set the offset to deal with that. Increasing the negative number on length pushes the marker back down the trace. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/60004/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>08 Oct '17, 07:27</strong>
+</p>
+<img alt="digby's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e82dee06cd9f989e30bc1c57f2afc2d9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2662/digby">digby</a><br/>
+<span class="score" title="46 reputation points">46</span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="6 badges"><span class="silver">●</span><span class="badgecount">6</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="digby has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/60004/">
+                edited
+                <strong>08 Oct '17, 08:19</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-60004">
+</div>
+<div class="comment-tools" id="comment-tools-60004">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-60004-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="60029"></a>
+<div class="answer" id="answer-container-60029">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/60029/up/" id="post-60029-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-60029-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/60029/down/" id="post-60029-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Thank you, this problem was solved, now i'm fencing another problem: i want that the my app calculate the distance between two points. </p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/60029/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Oct '17, 13:53</strong>
+</p>
+<img alt="Wesley's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/a27cae3d949a53902bd3c0600e0de893?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/14295/wesley">Wesley</a><br/>
+<span class="score" title="11 reputation points">11</span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Wesley has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-60029">
+</div>
+<div class="comment-tools" id="comment-tools-60029">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-60029-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="60030"></a>
+<div class="answer answered-by-owner" id="answer-container-60030">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/60030/up/" id="post-60030-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-60030-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/60030/down/" id="post-60030-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>That's got nothing to do with this question. You should start a new topic or find one that is relevant.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/60030/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>09 Oct '17, 13:57</strong>
+</p>
+<img alt="digby's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/e82dee06cd9f989e30bc1c57f2afc2d9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/2662/digby">digby</a><br/>
+<span class="score" title="46 reputation points">46</span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="6 badges"><span class="silver">●</span><span class="badgecount">6</span></span><span title="12 badges"><span class="bronze">●</span><span class="badgecount">12</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="digby has no accepted answers">0%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-60030">
+</div>
+<div class="comment-tools" id="comment-tools-60030">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-60030-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/15152/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="Y259GINoiGTSQpqCdMtBgrhx6fM2l2hM"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

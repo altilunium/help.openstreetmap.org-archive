@@ -1,0 +1,240 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/76593/get-polygon-shapefilekml-for-a-nodelocation-in-openstreetmap">Get polygon shapefile/KML for a node/location in openstreetmap</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/76593/up/" id="post-76593-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-76593-score" title="current number of votes">
+    1
+</div>
+<a class="ajax-command post-vote down" href="/vote/76593/down/" id="post-76593-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/76593/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>I have about 1000 nodes/locations of interest from openstreetmap. I queried overpassturbo API to get coordinates of those 1000 locations/nodes. What I am interested in is, getting a polygon based KML/shapefile for each of those 1000 locations. So basically, let's say I go to 1 of those 1000 locations on the map, currently I just have one location pointer for that location. But I need a whole polygon drawn for the location. For example, if it's a supermarket, I need a KML file for it such that it can show me a polygon drawn over the entire supermarket and not just a location pointer.</p>
+<p>Is it possible to get that from overpassturbo API or anywhere else? Thanks in advance.</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-openstreetmap" href="/tags/openstreetmap/" rel="tag" title="see questions tagged 'openstreetmap'">openstreetmap</a>
+<a class="post-tag tag-link-overpass" href="/tags/overpass/" rel="tag" title="see questions tagged 'overpass'">overpass</a>
+<a class="post-tag tag-link-shapefile" href="/tags/shapefile/" rel="tag" title="see questions tagged 'shapefile'">shapefile</a>
+<a class="post-tag tag-link-overpass-turbo" href="/tags/overpass-turbo/" rel="tag" title="see questions tagged 'overpass-turbo'">overpass-turbo</a>
+<a class="post-tag tag-link-kml" href="/tags/kml/" rel="tag" title="see questions tagged 'kml'">kml</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>14 Sep '20, 15:51</strong>
+</p>
+<img alt="Aashay's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/6b39601bea3eda27d2cbe0f1f503674f?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/18966/aashay">Aashay</a><br/>
+<span class="score" title="36 reputation points">36</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Aashay has no accepted answers">0%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/76593/">
+                edited
+                <strong>14 Sep '20, 20:34</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-76593">
+<a name="76605"></a>
+<div class="comment" id="comment-76605">
+<div class="comment-score" id="post-76605-score"></div>
+<div class="comment-text"><p>post your current turbo routine.</p></div>
+<div class="comment-info" id="comment-76605-info">
+<span class="comment-age">(14 Sep '20, 19:47)</span>
+<a class="comment-user userinfo" href="/users/1532/davef">DaveF</a>
+</div>
+</div>
+<a name="76607"></a>
+<div class="comment" id="comment-76607">
+<div class="comment-score" id="post-76607-score"></div>
+<div class="comment-text"><p><a href="https://help.openstreetmap.org/users/1532/davef"></a><a href="https://help.openstreetmap.org/users/1532/davef">@DaveF</a></p>
+<p>I am just simply querying for a few nodes of my interest from overpassturbo-api. And I get all the location pointers for my places of interest. But what I need is, a polygon of the entire place drawn for each of those location pointers. Here's a sample query im using:</p>
+<p>[out:json][timeout:25];
+(
+  node["building"="&lt;xyz&gt;"];
+);
+out body;</p></div>
+<div class="comment-info" id="comment-76607-info">
+<span class="comment-age">(14 Sep '20, 20:32)</span>
+<a class="comment-user userinfo" href="/users/18966/aashay">Aashay</a>
+</div>
+</div>
+<a name="76608"></a>
+<div class="comment" id="comment-76608">
+<div class="comment-score" id="post-76608-score"></div>
+<div class="comment-text"><p>If you want ways, why are you querying nodes?</p></div>
+<div class="comment-info" id="comment-76608-info">
+<span class="comment-age">(14 Sep '20, 21:46)</span>
+<a class="comment-user userinfo" href="/users/4426/insertuser">InsertUser</a>
+</div>
+</div>
+<a name="76609"></a>
+<div class="comment" id="comment-76609">
+<div class="comment-score" id="post-76609-score"></div>
+<div class="comment-text"><p>Actually, I need nodes only. Basically all I need is, let's say I have a location pointer pointing to a supermarket - I need a kml or a shape file where in there is a polygon drawn over the edges of the supermarket. Or else even an array of coordinates that run along the boundaries of the supermarket is fine. I am not sure if that is even possible with overpassturbo-api. Is there any way in which I can get this? or any alternative way to get this?</p></div>
+<div class="comment-info" id="comment-76609-info">
+<span class="comment-age">(14 Sep '20, 21:53)</span>
+<a class="comment-user userinfo" href="/users/18966/aashay">Aashay</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-76593">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-76593-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    2 Answers:
+                    </div>
+<div class="tabsA"><a href="/questions/76593/get-polygon-shapefilekml-for-a-nodelocation-in-openstreetmap?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/76593/get-polygon-shapefilekml-for-a-nodelocation-in-openstreetmap?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/76593/get-polygon-shapefilekml-for-a-nodelocation-in-openstreetmap?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/76593/get-polygon-shapefilekml-for-a-nodelocation-in-openstreetmap?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="76620"></a>
+<div class="answer" id="answer-container-76620">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/76620/up/" id="post-76620-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-76620-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/76620/down/" id="post-76620-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>Objects in OSM can be mapped as dots, as areas or as multipolygons. It's a matter of mapping preference, object complexity, available time and other factors how a mapper does it.</p>
+<p>With your query you are only retrieving those buildings that have only been mapped as a single node without outline. To get all buildings you need to also query for ways and relations. As a start you can change <code>node["building"="xyz"]</code> to <code>nwr["building"="xyz"]</code>.</p>
+<p>Modify your query and if you need more help please post the new query with specific questions.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/76620/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>15 Sep '20, 10:12</strong>
+</p>
+<img alt="TZorn's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/ddebc8d5f4e0458413eacf65e36561a9?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/10133/tzorn">TZorn</a><br/>
+<span class="score" title="12350 reputation points"><span class="">12.3k</span></span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="64 badges"><span class="silver">●</span><span class="badgecount">64</span></span><span title="225 badges"><span class="bronze">●</span><span class="badgecount">225</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="TZorn has 63 accepted answers">15%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-76620">
+</div>
+<div class="comment-tools" id="comment-tools-76620">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-76620-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<a name="76650"></a>
+<div class="answer" id="answer-container-76650">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/76650/up/" id="post-76650-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-76650-score" title="current number of votes">
+    0
+</div>
+<a class="ajax-command post-vote down" href="/vote/76650/down/" id="post-76650-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<pre><code>[bbox:{{bbox}}];
+wr[building=school];
+out geom;
+</code></pre>
+<p>Save as KML under Export option in Turbo</p>
+<p>[bbox:{{bbox}}]; is required to limit returned data to the size of your window otherwise you'll download worldwide.</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/76650/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>15 Sep '20, 23:53</strong>
+</p>
+<img alt="DaveF's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/c9c8b421ad22f51ddd62f23413717036?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/1532/davef">DaveF</a><br/>
+<span class="score" title="3264 reputation points"><span class="">3.3k</span></span><span title="84 badges"><span class="badge1">●</span><span class="badgecount">84</span></span><span title="98 badges"><span class="silver">●</span><span class="badgecount">98</span></span><span title="133 badges"><span class="bronze">●</span><span class="badgecount">133</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="DaveF has 17 accepted answers">16%</span>
+</p>
+</div>
+<div class="post-update-info post-update-info-edited">
+<p style="line-height:12px;">
+<a href="/revisions/76650/">
+                edited
+                <strong>16 Sep '20, 01:17</strong>
+</a>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-76650">
+</div>
+<div class="comment-tools" id="comment-tools-76650">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-76650-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/76593/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="UCZivXCGhp8j25xGCjAxhgrzZH29J7AV"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>

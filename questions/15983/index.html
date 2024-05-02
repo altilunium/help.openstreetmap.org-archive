@@ -1,0 +1,143 @@
+<meta charset="utf-8"/><link href="../style.css" rel="stylesheet" type="text/css"/><div id="CALeft"><center><a href="../"><img id="ll" src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"/></a></center>
+<div class="headNormal">
+<h1><a href="/questions/15983/is-layer-based-export-possible">Is layer based export possible?</a></h1>
+</div>
+<div class="" id="main-body">
+<div id="askform">
+<table id="question-table" style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/15983/up/" id="post-15983-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-15983-score" title="current number of votes">
+    2
+</div>
+<a class="ajax-command post-vote down" href="/vote/15983/down/" id="post-15983-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+<a class="ajax-command favorite-mark" href="/mark_favorite/15983/" id="favorite-mark" rel="nofollow" title="mark/unmark this question as favorite (click again to cancel)"> </a>
+<div class="favorite-count" id="favorite-count">
+</div>
+</div>
+</td>
+<td>
+<div id="item-right">
+<div class="question-body">
+<p>While importing an area these is a restriction on the number of nodes. Not the all nodes are equally necessary for any specific mapping. By using ArcGIS Editor for OpenStreetmap, it is both so huge to load osm and so difficult to manage the complexity of datas. </p>
+<p>Is there any way to extract map by sellecting different the layers?<br/>
+</p>
+</div>
+<div class="tags-container tags" id="question-tags">
+<a class="post-tag tag-link-arcgis" href="/tags/arcgis/" rel="tag" title="see questions tagged 'arcgis'">arcgis</a>
+<a class="post-tag tag-link-layer" href="/tags/layer/" rel="tag" title="see questions tagged 'layer'">layer</a>
+<a class="post-tag tag-link-import" href="/tags/import/" rel="tag" title="see questions tagged 'import'">import</a>
+</div>
+<div class="post-controls" id="question-controls">
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        asked
+        <strong>12 Sep '12, 01:53</strong>
+</p>
+<img alt="sinanf's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/f68589722472cc6f28a8973204fb104e?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/4492/sinanf">sinanf</a><br/>
+<span class="score" title="41 reputation points">41</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="sinanf has no accepted answers">0%</span>
+</br></p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-15983">
+</div>
+<div class="comment-tools" id="comment-tools-15983">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-15983-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<div class="tabBar">
+<a name="sort-top"></a>
+<div class="headQuestions">
+                    One Answer:
+                    </div>
+<div class="tabsA"><a href="/questions/15983/is-layer-based-export-possible?sort=active" title="most recently updated answers/comments will be shown first">active answers</a><a href="/questions/15983/is-layer-based-export-possible?sort=oldest" title="oldest answers will be shown first">oldest answers</a><a href="/questions/15983/is-layer-based-export-possible?sort=newest" title="newest answers will be shown first">newest answers</a><a class="on" href="/questions/15983/is-layer-based-export-possible?sort=votes" title="most voted answers will be shown first">popular answers</a></div>
+</div>
+<a name="15989"></a>
+<div class="answer" id="answer-container-15989">
+<table style="width:100%;">
+<tr>
+<td style="width:30px;vertical-align:top">
+<div class="vote-buttons">
+<a class="ajax-command post-vote up" href="/vote/15989/up/" id="post-15989-upvote" rel="nofollow" title="I like this post (click again to cancel)"> </a>
+<div class="post-score" id="post-15989-score" title="current number of votes">
+    4
+</div>
+<a class="ajax-command post-vote down" href="/vote/15989/down/" id="post-15989-downvote" rel="nofollow" title="I dont like this post (click again to cancel)"> </a>
+</div>
+</td>
+<td>
+<div class="item-right">
+<div class="answer-body">
+<p>There is no concept of predefined layers within OpenStreetMap.</p>
+<p>However, you can get for example the street grid related objects with a query like</p>
+<p><a href="http://overpass-api.de/api/interpreter?data=(node[highway](bbox);way[highway](bbox););(._;&lt;;&gt;;);out">http://overpass-api.de/api/interpreter?data=(node[highway](bbox);way[highway](bbox););(._;&lt;;&gt;;);out</a> meta;&amp;bbox=7.0,50.6,7.3,50.8</p>
+<p>This is only one forth of the total data in this region. The region is specified with the bounding box</p>
+<pre><code>bbox=7.0,50.6,7.3,50.8
+</code></pre>
+<p>where 7.0 is the western border in degrees of longitude east (degrees of longitude west by negative values), 50.6 (degrees of latitude north) is the southern border, 7.3 is the eastern border and 50.8 the northern border.</p>
+<p>If you want to download much larger areas, it will take much mor time. In this case you must tell the server that you expect a large download by providing the maximum timeout in seconds:</p>
+<p><a href="http://overpass-api.de/api/interpreter?data=[timeout:900];(node[highway](bbox);way[highway](bbox););(._;&lt;;&gt;;);out">http://overpass-api.de/api/interpreter?data=[timeout:900];(node[highway](bbox);way[highway](bbox););(._;&lt;;&gt;;);out</a> meta;&amp;bbox=7.0,50.6,7.3,50.8</p>
+</div>
+<div class="answer-controls post-controls">
+<span class="action-link"><a class="ajax-command withprompt copy" href="/answer_link/15989/" rel="nofollow" title="answer permanent link">permanent link</a></span>
+</div>
+<div class="post-update-info-container">
+<div class="post-update-info post-update-info-user">
+<p style="line-height:12px;">
+        answered
+        <strong>12 Sep '12, 08:53</strong>
+</p>
+<img alt="Roland%20Olbricht's gravatar image" class="gravatar" height="32" src="https://secure.gravatar.com/avatar/fcfdb0825826fd13d2ff0d83d58819c6?s=32&amp;d=identicon&amp;r=g" width="32"/>
+<p><a href="/users/3480/roland-olbricht">Roland Olbricht</a><br/>
+<span class="score" title="6666 reputation points"><span class="">6.7k</span></span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="64 badges"><span class="silver">●</span><span class="badgecount">64</span></span><span title="89 badges"><span class="bronze">●</span><span class="badgecount">89</span></span><br/>
+<span class="accept_rate" title="Rate of the user's accepted answers">accept rate:</span>
+<span title="Roland Olbricht has 40 accepted answers">36%</span>
+</p>
+</div>
+</div>
+<div class="comments-container" id="comments-container-15989">
+<a name="15996"></a>
+<div class="comment" id="comment-15996">
+<div class="comment-score" id="post-15996-score">2</div>
+<div class="comment-text"><p>This is great for viewing, but dangerous for editing. For example, the data you downloaded may be sharing nodes non-dowloaded data. Since OSM data is pretty much free-form, there is no garantee that a given area respects "reasonable constraints". So please do not work with partial data if you intend to contribute back to OSM.</p></div>
+<div class="comment-info" id="comment-15996-info">
+<span class="comment-age">(12 Sep '12, 11:54)</span>
+<a class="comment-user userinfo" href="/users/867/vincent-de-phily">Vincent de P... ♦</a>
+</div>
+</div>
+</div>
+<div class="comment-tools" id="comment-tools-15989">
+</div>
+<div class="clear"></div>
+<div class="comment-form-container" id="comment-15989-form-container">
+</div>
+<div class="clear"></div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paginator-container-left">
+</div>
+<form action="/questions/15983/answer/" id="fmanswer" method="post">
+<input name="csrfmiddlewaretoken" type="hidden" value="nyJ2M1EzFMrb5xZt0xfyYX9lEioqQ326"/>
+<div style="clear:both">
+</div>
+</form>
+</div>
+</div>
+</div>
