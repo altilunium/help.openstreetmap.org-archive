@@ -1,8 +1,65 @@
 <link rel="stylesheet" href="dt.css" />
+<style>
+#mytable {
+  max-width:800px;
+}
+#c{
+  max-width: 800px;
+}
+td a {
+  color: #2a5594;
+    font-family: trebuchet ms, segoe ui, arial, sans-serif;
+    font-size: 17px;
+        text-decoration: none;
+}
+
+
+body {
+  font-family: sans-serif;
+}
+
+#announcement {
+    padding: 1em;
+    margin-top: .5em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    border: 1px solid #6b2b28;
+    background: #f3e3e1;
+    max-width: 800px;
+    color: #000;
+    font-family: sans-serif;
+    font-size: 12px;
+    line-height: 150%;
+}
+
+#logo {
+    padding: 5px 0 0;
+}
+
+#top {
+      margin: 0 auto;
+    padding: 0;
+}
+
+#qa_content {
+  width: 740px;
+    margin: auto;
+}
+
+</style>
 <script src="j.js"></script>
 <script src="dt.js"></script>
 
+<center>
+<div id="qa_content">
+<div id="top"><div id="logo"><img src="https://help.openstreetmap.org/upfiles/osm_help_logo_6.png"></div></div>
+<div id="announcement">
+This is a static archive of our old Q&amp;A Site.
+Please post any new questions and answers at <a href="https://community.openstreetmap.org/">community.openstreetmap.org</a>.
+</div>
 <div id ="c">Please wait... Processing data..</div>
+</div>
+</center>
 
 
 <script src="output.json"></script>
@@ -12,7 +69,8 @@
 window.onload = function() {
   
 
-  let keys = Object.keys(a).sort((a, b) => parseInt(b) - parseInt(a));
+  let keys = Object.keys(a)
+
 
   var stri = "<table id='mytable'class='display'><thead><tr><td>ID</th><th>Title</th><th>Score</th></thead><tbody>"
   for (let key of keys){
@@ -24,7 +82,7 @@ window.onload = function() {
   stri = stri + "</tbody></table>"
   cc.innerHTML = stri
   	
-  let table = new DataTable('#mytable');
+  let table = new DataTable('#mytable',{pageLength:100,order:[[0,'desc']]});
 };
 
 </script>
